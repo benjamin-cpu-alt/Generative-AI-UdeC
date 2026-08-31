@@ -6,66 +6,7 @@
 
 ## La Tarea
 Matching Automático Comprador-Propiedad con Optimización de Restricciones Cruzadas.  
-El sistema actúa como un motor de validación basado en agentes que lee descripciones de propiedades no estructuradas y las evalúa frente a reglas estrictas del comprador. Esto incluye resolver operaciones matemáticas dinámicas (conversiones de UF a CLP, cálculos de ROI) y restricciones espaciales o lógicas.
-
-## El prompt utilizado para la prueba
-Eres el motor de validación de una plataforma B2B de matching inmobiliario. Tu tarea es procesar el texto no estructurado de corredores de propiedades y cruzarlo contra los criterios estrictos (Hard Constraints) de un comprador, además de calcular un score de preferencias (Soft Constraints). No puedes cometer errores aritméticos. No puedes incluir texto conversacional en tu respuesta, solo el objeto JSON crudo.
-
-VALOR UF HOY: $39.200 CLP
-
-PERFIL DEL COMPRADOR — HARD CONSTRAINTS (descalifican si se incumplen):
-1. Presupuesto Máximo de Compra: $150.000.000 CLP (usa el valor de la UF de hoy si el precio viene en UF).
-2. Mascotas: Tiene 1 perro mediano de 18kg (la propiedad debe permitir explícitamente mascotas de ese tamaño y especie).
-3. Distancia máxima a transporte público (metro O paradero de buses troncal): 1 km.
-4. Dormitorios: Mínimo 2 dormitorios reales.
-5. Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado (no sirve estacionamiento de visitas ni en la calle).
-
-SOFT CONSTRAINTS (no descalifican, pero determinan el ranking del Top 3):
-- Ubicación preferida: Providencia o Ñuñoa (mayor preferencia).
-- ROI esperado: calcula (arriendo mensual estimado × 12) / precio de la propiedad. Mayor ROI = mejor score.
-
-CATÁLOGO RAW DE PROPIEDADES (datos extraídos con OCR/Scraping):
-
-[PROP-A42] "Depto en Providencia, 65m², 2D/2B. Precio rebajado a 3.850 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 950m de la estación de metro Los Leones. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $980.000/mes."
-
-[PROP-B19] "Depto en Ñuñoa, 80m², 3D/2B. Valor $148.500.000. Ubicado a 1,4 km de la estación Ñuñoa, unos 15 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento."
-
-[PROP-C88] "Depto en San Miguel, 55m², 2D/1B. Precio: 3.500 UF. A 400m de paradero de buses troncal, y 1,2km del metro más cercano. Se aceptan mascotas pequeñas y medianas hasta 20kg, previa autorización de la administración. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente."
-
-[PROP-D05] "Depto en Providencia, 58m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 2B. Precio 3.600 UF. A 500m del metro. No se especifica política de mascotas. Incluye estacionamiento."
-
-[PROP-E33] "Depto en Ñuñoa, 70m², 2D/2B. Precio $145.000.000. A 850m del metro Plaza Egaña. Aceptamos mascotas pequeñas, gatos y perros hasta 10kg. Incluye 1 estacionamiento."
-
-[PROP-F61] "Depto en Providencia, 68m², 2D/2B. Precio: 3.700 UF. A 700m del metro Manquehue. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $920.000/mes."
-
-[PROP-G77] "Depto en Ñuñoa, 60m², 2D/1B. Precio $142.000.000. A 300m del metro Irarrázaval. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $880.000/mes."
-
-[PROP-H12] "Casa en La Reina, 3D/2B, con patio, ideal para mascotas grandes. Precio $151.000.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses a 200m. Incluye estacionamiento propio."
-
-TAREA: Evalúa cada propiedad contra las 5 Hard Constraints. Las que violen INCLUSO UNA deben ir a "rejected" con la razón exacta. Con las propiedades aprobadas, calcula el ROI y ordénalas por score de preferencias para construir el Top 3. Responde ÚNICAMENTE con el siguiente JSON, sin texto adicional:
-
-```json
-{
-  "approved_matches": [
-    {
-      "id": "...",
-      "price_clp": 0,
-      "distance_to_transport_m": 0,
-      "roi_calculado_pct": 0.0,
-      "ranking_score_justificacion": "..."
-    }
-  ],
-  "rejected": [
-    {
-      "id": "...",
-      "failed_constraints": [
-        "..."
-      ]
-    }
-  ]
-}
-```
-
+El sistema actúa como un motor de validación basado en agentes que lee descripciones de propiedades no estructuradas y las evalúa frente a reglas estrictas del comprador. Esto incluye resolver operaciones matemáticas dinámicas (conversiones de UF a CLP, cálculos de ROI) y restricciones espaciales o lógicas. *(El prompt base y los datos de prueba se encuentran en la carpeta `/data`)*.
 
 ## Modelos Candidatos
 1. **DeepSeek-R1-Distill-Qwen (7.0B) [PRINCIPAL]:** Resuelve las alucinaciones aritméticas mediante el uso de Cadena de Pensamiento (CoT).
@@ -75,4 +16,4 @@ TAREA: Evalúa cada propiedad contra las 5 Hard Constraints. Las que violen INCL
 ## Estado del Trabajo (Entregable 1)
 * Pruebas empíricas de línea base (*zero-shot*) completadas.
 * Ejecutado 100% de forma local (Edge AI) en un entorno híbrido: Workstation Windows (NVIDIA RTX 3050 6GB) y Apple Silicon (MacBook Air M4), utilizando Ollama con cuantización a 4-bits.
-* Los registros de evidencia empírica están disponibles en la carpeta `/experiments`, demostrando que los modelos de 7B a 8B fallan catastróficamente en tareas matemáticas y de retención lógica si no están apoyados por un sistema de agentes (Agentic Harness).
+* Los registros de evidencia empírica están disponibles en la carpeta `/experiments`, demostrando que los modelos de 3B a 8B fallan catastróficamente en tareas matemáticas y de retención lógica si no están apoyados por un sistema de agentes (Agentic Harness).
