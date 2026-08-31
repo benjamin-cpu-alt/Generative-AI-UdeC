@@ -1,19 +1,19 @@
 # Real Estate AI Matcher (Generative AI - 580694)
 
-**Team Member:** Carla Maureira V.  
-**Course:** Generative Artificial Intelligence (Spring 2026)  
-**Instructor:** Carlos Navarrete, PhD  
+**Miembro del Equipo:** Carla Maureira V.  
+**Curso:** Generative Artificial Intelligence (Primavera 2026)  
+**Profesor:** Carlos Navarrete, PhD  
 
-## The Task
-Automated Buyer-Property Matching with Cross-Constraint Optimization.
-The system acts as an agentic validation engine that reads unstructured property descriptions and evaluates them against strict buyer rules.
+## La Tarea
+Matching Automático Comprador-Propiedad con Optimización de Restricciones.
+El sistema actúa como un motor de validación que lee descripciones de propiedades no estructuradas y las cruza contra reglas estrictas de un comprador.
 
-## Model Candidates
-1. **DeepSeek-R1-Distill-Qwen (7.0B):** Resolves arithmetic hallucinations via Chain-of-Thought.
-2. **Granite 4.1 (8.0B):** Resolves format collapse, ensuring strict JSON compliance.
-3. **Llama-3.1-8B-Instruct:** Resolves attention drift over long property catalogs.
+## Modelos Candidatos
+1. **DeepSeek-R1-Distill-Qwen (7.0B):** Resuelve alucinaciones aritméticas usando Cadena de Pensamiento (CoT).
+2. **Granite 4.1 (8.0B):** Resuelve el colapso de formato, garantizando cumplimiento estricto de JSON.
+3. **Llama-3.1-8B-Instruct:** Resuelve la pérdida de atención en catálogos extensos de propiedades.
 
-## State of the Work (Deliverable 1)
-* Baseline zero-shot testing complete.
-* Executed locally on macOS using Ollama (4-bit quantization).
-* Evidence logs are available in the `/logs` directory, proving 8B models fail at math and attention tasks without an agentic harness.
+## Estado del Trabajo (Entregable 1)
+* Pruebas base de *zero-shot* completadas.
+* Ejecutado localmente en macOS usando Ollama (cuantización a 4-bits).
+* Los registros de evidencia están disponibles en el directorio `/logs`, demostrando que los modelos <8B fallan en atención y matemáticas si no se utiliza un flujo con herramientas (Agentic Harness).
