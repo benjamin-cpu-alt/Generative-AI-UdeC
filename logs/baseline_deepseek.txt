@@ -1,0 +1,22 @@
+MODELO: deepseek-r1:7b
+EJECUCIÓN: Local (macOS / Ollama)
+RESULTADO: Fallo (Alucinación Aritmética y Colapso de Formato)
+
+--- LOG ---
+Thinking...
+Alright, I need to evaluate each property against the client's hard constraints. Let's go through them one by one.
+First, the presupuesto máximo de compra is $4,500 UF. I'll check each property's price...
+Prop-D05 is over the budget, so it's rejected. 
+
+[ERROR: La Prop-D05 cuesta 4.100 UF, lo cual es MENOR a 4.500. El modelo alucinó una falla matemática].
+...done thinking.
+
+```json
+{
+  "approved_matches": [
+    { "id": "PROP-A42", "price_uf": 4300, "monthly_expenses_clp": 90000 }
+  ],
+  "rejected": [
+    { "id": "PROP-D05", "failed_constraints": ["Presupuesto Máximo de Compra"] }
+  ]
+}
