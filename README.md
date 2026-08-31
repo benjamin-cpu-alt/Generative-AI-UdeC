@@ -44,6 +44,7 @@ CATÁLOGO RAW DE PROPIEDADES (datos extraídos con OCR/Scraping):
 
 TAREA: Evalúa cada propiedad contra las 5 Hard Constraints. Las que violen INCLUSO UNA deben ir a "rejected" con la razón exacta. Con las propiedades aprobadas, calcula el ROI y ordénalas por score de preferencias para construir el Top 3. Responde ÚNICAMENTE con el siguiente JSON, sin texto adicional:
 
+```json
 {
   "approved_matches": [
     {
@@ -57,10 +58,13 @@ TAREA: Evalúa cada propiedad contra las 5 Hard Constraints. Las que violen INCL
   "rejected": [
     {
       "id": "...",
-      "failed_constraints": ["..."]
+      "failed_constraints": [
+        "..."
+      ]
     }
   ]
 }
+```
 
 
 ## Modelos Candidatos
