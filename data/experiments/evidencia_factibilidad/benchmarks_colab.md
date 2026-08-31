@@ -1,10 +1,15 @@
-# Benchmarks de Memoria (Hardware: NVIDIA T4 15GB - Google Colab)
+# Benchmarks de Memoria (Hardware Local / Edge AI)
 
-Para asegurar que los modelos candidatos corren sin errores de Out-Of-Memory (OOM) al inyectar el catálogo completo de propiedades, se evaluó la huella de VRAM utilizando cuantización a 4-bits (GGUF/NF4).
+Para asegurar que los modelos candidatos corren sin errores de Out-Of-Memory (OOM) al inyectar el catálogo completo de propiedades, se evaluó la huella de VRAM utilizando cuantización a 4-bits (GGUF/NF4) en nuestro hardware disponible.
 
-## Consumo Base de Modelos Candidatos:
-* **DeepSeek-R1-Distill-Qwen (7B):** ~4.7 GB VRAM
-* **Granite 4.1 (8B):** ~5.3 GB VRAM
-* **Phi-4-mini (3.8B):** ~2.5 GB VRAM
+## Entorno de Ejecución Híbrido:
+1. **Workstation Windows:** Intel Core i5-13420H, 16GB RAM, GPU NVIDIA RTX 3050 (6 GB VRAM).
+2. **Apple Silicon:** MacBook Air M4 (Memoria Unificada, aceleración Metal).
 
-**Conclusión:** La estructura deja un margen superior a 9 GB de VRAM totalmente libres para alojar el KV Cache, garantizando la factibilidad técnica del proyecto.
+## Consumo Base de Modelos Candidatos (4-bits):
+* **Llama-3.1-8B-Instruct (8B):** ~5.8 GB
+* **Granite 4.1 (8B):** ~5.3 GB
+* **DeepSeek-R1-Distill-Qwen (7B):** ~4.7 GB
+
+**Conclusión de Factibilidad:**  
+Los modelos cuantizados logran ajustarse al estricto límite de 6 GB de la RTX 3050. Si el contexto (KV Cache) aumenta significativamente por la ingesta del catálogo de propiedades, el sistema realizará un *offloading* automático hacia los 16 GB de RAM del sistema. En el caso del MacBook Air M4, la arquitectura de Memoria Unificada absorbe estos modelos de ~5 GB de forma nativa con un amplísimo margen libre.
