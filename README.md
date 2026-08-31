@@ -8,7 +8,7 @@
 Matching Automático Comprador-Propiedad con Optimización de Restricciones Cruzadas.  
 El sistema actúa como un motor de validación basado en agentes que lee descripciones de propiedades no estructuradas y las evalúa frente a reglas estrictas del comprador. Esto incluye resolver operaciones matemáticas dinámicas (conversiones de UF a CLP, cálculos de ROI) y restricciones espaciales o lógicas.
 
-## El prompt utilizado para la primera prueba
+## El prompt utilizado para la prueba
 Eres el motor de validación de una plataforma B2B de matching inmobiliario. Tu tarea es procesar el texto no estructurado de corredores de propiedades y cruzarlo contra los criterios estrictos (Hard Constraints) de un comprador, además de calcular un score de preferencias (Soft Constraints). No puedes cometer errores aritméticos. No puedes incluir texto conversacional en tu respuesta, solo el objeto JSON crudo.
 
 VALOR UF HOY: $39.200 CLP
