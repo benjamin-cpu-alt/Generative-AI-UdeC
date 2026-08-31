@@ -1,0 +1,13 @@
+{
+  "hard_constraints": {
+    "presupuesto_max_clp": 150000000,
+    "mascotas": "1 perro mediano 18kg",
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicacion_preferida": ["Providencia", "Ñuñoa"],
+    "optimizar_por": "ROI estimado (arriendo_anual / precio)"
+  }
+}
