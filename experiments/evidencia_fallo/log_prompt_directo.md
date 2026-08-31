@@ -1,4 +1,4 @@
-MODELO: deepseek-r1:7b
+## MODELO: deepseek-r1:7b
 EJECUCIÓN: Local (macOS / Ollama)
 RESULTADO: Fallo (Alucinación Aritmética y Colapso de Formato)
 
@@ -53,7 +53,7 @@ RESULTADO: Fallo (Alucinación de Datos y Colapso de Formato)
 }
 [ANÁLISIS DEL ERROR: El modelo alucinó severamente al extraer la información numérica. Rechazó la PROP-A42 afirmando que sus gastos comunes (90.000) superaban el máximo (120.000). También rechazó la PROP-B19 afirmando que le faltaban habitaciones, cuando el texto indicaba explícitamente "3D/2B" (3 dormitorios). Además, rompió el contrato de formato al inyectar etiquetas de bloque Markdown].
 ```
-##MODELO: granite4.1:8b
+## MODELO: granite4.1:8b
 EJECUCIÓN: Local (macOS / Ollama)
 RESULTADO: Fallo (Atención Selectiva / Lógica)
 --- LOG ---
