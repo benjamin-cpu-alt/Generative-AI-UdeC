@@ -74,5 +74,5 @@ TAREA: Evalúa cada propiedad contra las 5 Hard Constraints. Las que violen INCL
 
 ## Estado del Trabajo (Entregable 1)
 * Pruebas empíricas de línea base (*zero-shot*) completadas.
-* Ejecutado localmente en macOS utilizando Ollama (cuantización a 4-bits).
-* Los registros de evidencia están disponibles en el directorio `/logs`, demostrando que los modelos de 3B a 8B fallan catastróficamente en tareas matemáticas y de retención lógica si no están apoyados por un sistema de agentes (Agentic Harness).
+* Ejecutado 100% de forma local (Edge AI) en un entorno híbrido: Workstation Windows (NVIDIA RTX 3050 6GB) y Apple Silicon (MacBook Air M4), utilizando Ollama con cuantización a 4-bits.
+* Los registros de evidencia empírica están disponibles en la carpeta `/experiments`, demostrando que los modelos de 7B a 8B fallan catastróficamente en tareas matemáticas y de retención lógica si no están apoyados por un sistema de agentes (Agentic Harness).
