@@ -1,6 +1,6 @@
 # Real Estate AI Matcher (Generative AI - 580694)
 
-**Miembro del Equipo:** Benjamín Grandón V, Carla Maureira V.  
+**Miembros del Equipo:** Benjamín Grandón V, Carla Maureira V.  
 **Curso:** Generative Artificial Intelligence 
 **Profesor:** Carlos Navarrete, PhD  
 
