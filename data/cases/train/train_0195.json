@@ -1,0 +1,142 @@
+{
+  "id": "train_0195",
+  "uf_value": 39950,
+  "hard_constraints": {
+    "presupuesto_max_clp": 208000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 10,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-V30",
+      "text": "Depto en Providencia, 79m², 2D/2B. Precio: 5229 UF (el mejor valor por m² del sector). A 332m de paradero de buses troncal, y 0,8km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 332,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5229,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-M38",
+      "text": "Depto en La Reina, 102m², 4D/2B. Valor $159.000.000. A 1,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 500m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $940.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 159000000,
+        "rent_monthly_clp": 940000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-F46",
+      "text": "Depto en Ñuñoa, 101m², 4D/2B. Precio: UF 4.731. A 318m de la estación de metro Los Leones. Excelente conectividad. Solo se admiten gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.040.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 318,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4731,
+        "price_clp": null,
+        "rent_monthly_clp": 1040000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-G61",
+      "text": "Depto en Providencia, 97m², 4D/2B. Precio: 5292 UF (el mejor valor por m² del sector). A 468m de paradero de buses troncal, y 1,5km del metro más cercano. Luminoso y con vista despejada. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 468,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5292,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-N60",
+      "text": "Depto en Recoleta, 78m², 2 dormitorios, 2 baños. Valor $215.500.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 426m de la estación de metro Cal y Canto. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Ideal para inversionistas. Arriendo estimado: $1.260.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 426,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 215500000,
+        "rent_monthly_clp": 1260000,
+        "location": "Recoleta"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-X22",
+      "text": "Depto en Peñalolén, 105m², 4D/1B. Precio: 5.459 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 750m del metro Los Leones, muy bien conectado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5459,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "multi",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

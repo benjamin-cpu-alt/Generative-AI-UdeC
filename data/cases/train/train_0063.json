@@ -1,0 +1,205 @@
+{
+  "id": "train_0063",
+  "uf_value": 39300,
+  "hard_constraints": {
+    "presupuesto_max_clp": 112000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 20,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-B50",
+      "text": "Depto en Vitacura, 73m², 2 dormitorios, 1 baño. Precio rebajado a $102.900.000. Luminoso y con vista despejada. A 984m de paradero de buses troncal, y 1,9km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $730.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 984,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 102900000,
+        "rent_monthly_clp": 730000,
+        "location": "Vitacura"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-J74",
+      "text": "Depto en Recoleta, 62m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio: 2.628 UF. A 901m de la estación de metro Los Leones. Entrega inmediata. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo referencial de la zona: $530.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 901,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2628,
+        "price_clp": null,
+        "rent_monthly_clp": 530000,
+        "location": "Recoleta"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-R60",
+      "text": "Depto en Las Condes, 92m², 3D/1B. Ideal para inversionistas. Precio: 2399 UF. A 1013m de la estación de metro Baquedano. Solo se admiten perros de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $750.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1013,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2399,
+        "price_clp": null,
+        "rent_monthly_clp": 750000,
+        "location": "Las Condes"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-K93",
+      "text": "Depto en Las Condes, 46m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Precio: UF 2.458. A 720m de la estación de metro Ñuñoa. 100% pet friendly, sin restricciones de tamaño ni especie. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $630.000/mes. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 720,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 2458,
+        "price_clp": null,
+        "rent_monthly_clp": 630000,
+        "location": "Las Condes"
+      },
+      "scenario": "multi",
+      "trap": "dormitorio 'convertible' que no es real; estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-P16",
+      "text": "Depto en La Cisterna, 103m², 4 dormitorios, 1 baño. Valor $100.200.000. A 654m de la estación de metro Escuela Militar. No se especifica política de mascotas. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $630.000/mes. ¡Oportunidad única!",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 654,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 100200000,
+        "rent_monthly_clp": 630000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-F93",
+      "text": "Depto en Maipú, 83m², 3 dormitorios, 2 baños. Precio: 2308 UF. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 396m. Se aceptan mascotas pequeñas y medianas hasta 20kg, previa autorización de la administración. Luminoso y con vista despejada. Incluye estacionamiento propio. Arriendo estimado: $500.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 396,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 20
+        },
+        "parking": "propio",
+        "price_uf": 2308,
+        "price_clp": null,
+        "rent_monthly_clp": 500000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-X92",
+      "text": "Depto en Estación Central, 69m², 2D/2B. Valor $117.000.000 (el mejor valor por m² del sector). A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1038m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $460.000/mes. Recién remodelado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1038,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 117000000,
+        "rent_monthly_clp": 460000,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-Z90",
+      "text": "Casa en Providencia, 81m², 3 dormitorios, 1 baño. Precio: 3005 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 1,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 344m. Precio rebajado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $490.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 344,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3005,
+        "price_clp": null,
+        "rent_monthly_clp": 490000,
+        "location": "Providencia"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-E78",
+      "text": "Casa en Macul, 105m², 4D/2B. Precio: UF 2.229. A 745m de la estación de metro Baquedano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo estimado: $430.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 745,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 2229,
+        "price_clp": null,
+        "rent_monthly_clp": 430000,
+        "location": "Macul"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    }
+  ]
+}

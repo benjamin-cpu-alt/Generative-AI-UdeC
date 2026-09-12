@@ -1,0 +1,119 @@
+{
+  "id": "train_0114",
+  "uf_value": 40300,
+  "hard_constraints": {
+    "presupuesto_max_clp": 221500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-K37",
+      "text": "Casa en Peñalolén, 96m², 3D/2B. Precio: $207.800.000. A 1200m de la estación de metro Franklin. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. ¡Oportunidad única! Incluye estacionamiento propio. Arriendo estimado: $1.010.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 207800000,
+        "rent_monthly_clp": 1010000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-X97",
+      "text": "Casa en La Cisterna, 95m², 3D/1B. Precio: 5.578 UF (precio negociable, el propietario está abierto a ofertas). A 2,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 886m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.210.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 886,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5578,
+        "price_clp": null,
+        "rent_monthly_clp": 1210000,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-A86",
+      "text": "Depto en Macul, 66m², 2D/2B. Precio rebajado a $210.700.000. A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 275m. Ideal para inversionistas. No se especifica política de mascotas. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.730.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 275,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 210700000,
+        "rent_monthly_clp": 1730000,
+        "location": "Macul"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-E64",
+      "text": "Depto en Santiago Centro, 90m², 3 dormitorios, 2 baños. Precio rebajado a $193.500.000. A 220m de la estación de metro Bellas Artes. ¡Oportunidad única! Aceptamos mascotas, gatos y perros hasta 6kg. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.070.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 220,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 6
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 193500000,
+        "rent_monthly_clp": 1070000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-D35",
+      "text": "Depto en Independencia, 82m², 3 dormitorios, 2 baños. Precio: 5283 UF. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 397m. No se aceptan mascotas. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 397,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5283,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    }
+  ]
+}

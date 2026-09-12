@@ -1,0 +1,186 @@
+{
+  "id": "train_0197",
+  "uf_value": 39800,
+  "hard_constraints": {
+    "presupuesto_max_clp": 214500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-X10",
+      "text": "Depto en Providencia, 68m², 2D/2B. Precio: $191.900.000. A 500m de la estación de metro Cal y Canto. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Entrega inmediata. Arriendo estimado: $1.590.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 191900000,
+        "rent_monthly_clp": 1590000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-U33",
+      "text": "Depto en Vitacura, 83m², 3D/2B. Valor $212.600.000. Ideal para inversionistas. A 229m de la estación de metro Manquehue. Se aceptan mascotas pequeñas y medianas hasta 3kg, previa autorización de la administración. Sin estacionamiento.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 229,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 3
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 212600000,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "multi",
+      "trap": "límite de peso 3kg < mascota 5kg; estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-Q77",
+      "text": "Depto en Vitacura, 85m², 3D/1B. Precio: 5.362 UF. A 152m de la estación de metro Los Leones. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 152,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5362,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-M31",
+      "text": "Depto en Independencia, 78m², 2 dormitorios, 2 baños. Precio: 5570 UF (precio negociable, el propietario está abierto a ofertas). A 464m de la estación de metro Lo Vial. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo estimado: $1.210.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 464,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 5570,
+        "price_clp": null,
+        "rent_monthly_clp": 1210000,
+        "location": "Independencia"
+      },
+      "scenario": "multi",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple; precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-E76",
+      "text": "Casa en Vitacura, 95m², 3 dormitorios, 1 baño. Precio: 4676 UF. A 221m de la estación de metro Tobalaba. Se aceptan mascotas pequeñas y medianas hasta 4kg, previa autorización de la administración. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $940.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 221,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "calle",
+        "price_uf": 4676,
+        "price_clp": null,
+        "rent_monthly_clp": 940000,
+        "location": "Vitacura"
+      },
+      "scenario": "multi",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple; límite de peso 4kg < mascota 5kg"
+    },
+    {
+      "id": "PROP-D25",
+      "text": "Casa en Maipú, 99m², 4D/2B. Precio: 5611 UF (el mejor valor por m² del sector). A 328m de la estación de metro Lo Vial. Recién remodelado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 328,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5611,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-W95",
+      "text": "Depto en Recoleta, 61m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio: 4525 UF. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 171m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.370.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 171,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4525,
+        "price_clp": null,
+        "rent_monthly_clp": 1370000,
+        "location": "Recoleta"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-B92",
+      "text": "Casa en Macul, 86m², 3D/1B. Precio: 4633 UF. A 243m de la estación de metro Los Leones. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $890.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 243,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4633,
+        "price_clp": null,
+        "rent_monthly_clp": 890000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "id": "test_0039",
+  "uf_value": 40000,
+  "hard_constraints": {
+    "presupuesto_max_clp": 200000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 30,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-F43",
+      "text": "Casa en Las Condes, 92m², 3 dormitorios, 2 baños. Precio: UF 5.102 (¡bajo el presupuesto del cliente según nuestro tasador!). A 1164m de paradero de buses troncal, y 2,0km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.220.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1164,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5102,
+        "price_clp": null,
+        "rent_monthly_clp": 1220000,
+        "location": "Las Condes"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-C11",
+      "text": "Depto en Providencia, 69m², 2D/2B. Valor $161.700.000. A 548m de la estación de metro Cal y Canto. Aceptamos mascotas, gatos y perros hasta 25kg. Precio rebajado. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.270.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 548,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 25
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 161700000,
+        "rent_monthly_clp": 1270000,
+        "location": "Providencia"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 25kg < mascota 30kg"
+    },
+    {
+      "id": "PROP-B68",
+      "text": "Depto en Recoleta, 77m², 2 dormitorios, 1 baño. Valor $180.300.000. A 1158m de paradero de buses troncal, y 1,6km del metro más cercano. Recién remodelado. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.400.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1158,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 180300000,
+        "rent_monthly_clp": 1400000,
+        "location": "Recoleta"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-H45",
+      "text": "Depto en La Florida, 109m², 4 dormitorios, 1 baño. Precio: 4950 UF. A 2,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1485m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.040.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1485,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4950,
+        "price_clp": null,
+        "rent_monthly_clp": 1040000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-Q96",
+      "text": "Depto en Maipú, 48m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Precio: 4.672 UF. A 929m de paradero de buses troncal, y 1,5km del metro más cercano. Pet friendly con límite de 27kg por mascota. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 929,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 27
+        },
+        "parking": "asignado",
+        "price_uf": 4672,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "multi",
+      "trap": "límite de peso 27kg < mascota 30kg; dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-J43",
+      "text": "Depto en Las Condes, 86m², 3 dormitorios, 2 baños. Precio: 3.682 UF. A 821m de paradero de buses troncal, y 1,5km del metro más cercano. Edificio sin mascotas por reglamento de copropiedad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $920.000/mes. Excelente conectividad.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 821,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3682,
+        "price_clp": null,
+        "rent_monthly_clp": 920000,
+        "location": "Las Condes"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-T39",
+      "text": "Depto en La Cisterna, 94m², 3 dormitorios, 2 baños. Precio: 4.815 UF. A 1057m de la estación de metro Bellas Artes. No se especifica política de mascotas. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1057,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4815,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-X28",
+      "text": "Depto en Recoleta, 67m², 2 dormitorios, 1 baño. Valor $149.900.000. A 2,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1168m. Pet friendly con límite de 30kg por mascota. Incluye estacionamiento propio. Arriendo estimado: $1.110.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1168,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 30
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 149900000,
+        "rent_monthly_clp": 1110000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "train_0207",
+  "uf_value": 38950,
+  "hard_constraints": {
+    "presupuesto_max_clp": 87000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-D66",
+      "text": "Depto en Santiago Centro, 79m², 3D/2B. Valor $76.900.000. Ubicado a 1,5 km de la estación Tobalaba, unos 19 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 76900000,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-S95",
+      "text": "Casa en Vitacura, 113m², 4 dormitorios, 1 baño. Valor $89.000.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 729m de la estación de metro Escuela Militar. Excelente conectividad. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $360.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 729,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 89000000,
+        "rent_monthly_clp": 360000,
+        "location": "Vitacura"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-Y44",
+      "text": "Casa en Santiago Centro, 84m², 3D/2B. Valor $65.000.000. A 183m de la estación de metro Bellas Artes. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Excelente conectividad. Incluye estacionamiento propio. Arriendo referencial de la zona: $400.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 183,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 65000000,
+        "rent_monthly_clp": 400000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-B90",
+      "text": "Depto en Estación Central, 79m², 3 dormitorios, 2 baños. Precio: 2257 UF (precio negociable, el propietario está abierto a ofertas). A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 415m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $480.000/mes. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 415,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2257,
+        "price_clp": null,
+        "rent_monthly_clp": 480000,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-M90",
+      "text": "Depto en La Florida, 68m², 2D/2B. Entrega inmediata. Precio: 2113 UF. A 824m de la estación de metro Los Leones. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $660.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 824,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2113,
+        "price_clp": null,
+        "rent_monthly_clp": 660000,
+        "location": "La Florida"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    }
+  ]
+}

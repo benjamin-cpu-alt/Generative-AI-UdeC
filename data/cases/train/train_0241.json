@@ -1,0 +1,121 @@
+{
+  "id": "train_0241",
+  "uf_value": 38350,
+  "hard_constraints": {
+    "presupuesto_max_clp": 91500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-A38",
+      "text": "Casa en Macul, 92m², 3 dormitorios, 1 baño. Entrega inmediata. Precio rebajado a $67.500.000. A 1300m del metro Escuela Militar, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $330.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 67500000,
+        "rent_monthly_clp": 330000,
+        "location": "Macul"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-C92",
+      "text": "Depto en Santiago Centro, 63m², 2 dormitorios, 1 baño. Valor $82.600.000. A 290m de paradero de buses troncal, y 1,1km del metro más cercano. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $460.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 290,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 82600000,
+        "rent_monthly_clp": 460000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-E25",
+      "text": "Depto en Macul, 68m², 2D/2B. Ideal para inversionistas. Valor $69.900.000. A 388m de paradero de buses troncal, y 1,4km del metro más cercano. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento. Arriendo referencial de la zona: $510.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 388,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 69900000,
+        "rent_monthly_clp": 510000,
+        "location": "Macul"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-J90",
+      "text": "Depto en Estación Central, 51m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Valor $87.600.000. A 786m de paradero de buses troncal, y 1,6km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 786,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 87600000,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-G16",
+      "text": "Depto en Santiago Centro, 48m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Valor $88.100.000. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 346m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 346,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 88100000,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    }
+  ]
+}

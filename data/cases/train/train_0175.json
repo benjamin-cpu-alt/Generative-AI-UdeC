@@ -1,0 +1,121 @@
+{
+  "id": "train_0175",
+  "uf_value": 40600,
+  "hard_constraints": {
+    "presupuesto_max_clp": 146500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-G40",
+      "text": "Casa en Vitacura, 90m², 3 dormitorios, 1 baño. Precio: 2663 UF. A 464m de la estación de metro Cal y Canto. No se aceptan mascotas. Incluye 1 estacionamiento subterráneo asignado. Piso alto, orientación norte. Arriendo referencial de la zona: $560.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 464,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2663,
+        "price_clp": null,
+        "rent_monthly_clp": 560000,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-A58",
+      "text": "Depto en Maipú, 68m², 2D/1B. Precio: 2.741 UF. A 2800m del metro Vicente Valdés, a pasos de todo. 100% pet friendly, sin restricciones de tamaño ni especie. Ideal para inversionistas. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $810.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 2800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2741,
+        "price_clp": null,
+        "rent_monthly_clp": 810000,
+        "location": "Maipú"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-Q19",
+      "text": "Depto en Vitacura, 114m², 4 dormitorios, 1 baño. Precio: 2877 UF. A 2700m del metro Los Leones, muy bien conectado. Recién remodelado. Aceptamos mascotas, gatos y perros hasta 15kg. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 2700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "asignado",
+        "price_uf": 2877,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "multi",
+      "trap": "límite de peso 15kg < mascota 18kg; distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-Y95",
+      "text": "Depto en Maipú, 72m², 2 dormitorios, 1 baño. Precio: UF 3.209. Excelente conectividad. A 974m de la estación de metro Cal y Canto. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 974,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 3209,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-X42",
+      "text": "Depto en San Miguel, 85m², 3 dormitorios, 1 baño. Precio rebajado a UF 2.894. A 507m de paradero de buses troncal, y 1,3km del metro más cercano. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $940.000/mes. Recién remodelado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 507,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2894,
+        "price_clp": null,
+        "rent_monthly_clp": 940000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    }
+  ]
+}

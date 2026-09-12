@@ -1,0 +1,121 @@
+{
+  "id": "test_0002",
+  "uf_value": 40150,
+  "hard_constraints": {
+    "presupuesto_max_clp": 195500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 22,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-X47",
+      "text": "Depto en San Miguel, 89m², 3D/1B. Precio: 4.814 UF. A 236m de paradero de buses troncal, y 1,2km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.120.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 236,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4814,
+        "price_clp": null,
+        "rent_monthly_clp": 1120000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-J63",
+      "text": "Casa en La Cisterna, 94m², 3D/1B. Ideal para inversionistas. Precio: 5116 UF (el mejor valor por m² del sector). A 380m de la estación de metro Bellas Artes. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.050.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 380,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5116,
+        "price_clp": null,
+        "rent_monthly_clp": 1050000,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-W46",
+      "text": "Casa en La Cisterna, 97m², 4 dormitorios, 2 baños. Precio: 3.639 UF. A 347m de la estación de metro Franklin. Aceptamos mascotas, gatos y perros hasta 21kg. Incluye 1 estacionamiento subterráneo asignado. Precio rebajado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 347,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 21
+        },
+        "parking": "asignado",
+        "price_uf": 3639,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 21kg < mascota 22kg"
+    },
+    {
+      "id": "PROP-Z59",
+      "text": "Depto en Ñuñoa, 89m², 3D/1B. Recién remodelado. Valor $184.000.000. A 492m de la estación de metro Manquehue. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye estacionamiento propio. Arriendo estimado: $1.090.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 492,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 184000000,
+        "rent_monthly_clp": 1090000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-G78",
+      "text": "Depto en Estación Central, 97m², 3D/1B. Valor $200.500.000 (el mejor valor por m² del sector). A 485m de paradero de buses troncal, y 1,2km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 485,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 200500000,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    }
+  ]
+}

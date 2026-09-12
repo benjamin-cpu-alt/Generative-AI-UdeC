@@ -1,0 +1,161 @@
+{
+  "id": "train_0202",
+  "uf_value": 39750,
+  "hard_constraints": {
+    "presupuesto_max_clp": 204000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 12,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-K81",
+      "text": "Depto en Estación Central, 77m², 2D/2B. Precio: 4682 UF. A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 785m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.120.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 785,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4682,
+        "price_clp": null,
+        "rent_monthly_clp": 1120000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-H96",
+      "text": "Depto en Maipú, 79m², 2 dormitorios, 1 baño. Precio: UF 5.283 (el mejor valor por m² del sector). A 729m de la estación de metro Baquedano. Ideal para inversionistas. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 729,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5283,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-C50",
+      "text": "Depto en Santiago Centro, 71m², 2D/1B. Excelente conectividad. Precio rebajado a $165.100.000. A 677m de la estación de metro Vicente Valdés. No se especifica política de mascotas. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $780.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 677,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 165100000,
+        "rent_monthly_clp": 780000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-E53",
+      "text": "Depto en Recoleta, 62m², 2 dormitorios, 2 baños. Valor $172.500.000. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 800m. 100% pet friendly, sin restricciones de tamaño ni especie. Ideal para inversionistas. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $970.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 172500000,
+        "rent_monthly_clp": 970000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-U63",
+      "text": "Depto en Ñuñoa, 68m², 2D/1B. Valor $155.500.000. A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 730m. Aceptamos mascotas, gatos y perros hasta 9kg. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.000.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 730,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 9
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 155500000,
+        "rent_monthly_clp": 1000000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 9kg < mascota 12kg"
+    },
+    {
+      "id": "PROP-X54",
+      "text": "Casa en Recoleta, 79m², 3D/1B. Valor $211.500.000 (el mejor valor por m² del sector). A 264m de la estación de metro Bellas Artes. Ideal para inversionistas. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 264,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 211500000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-G32",
+      "text": "Depto en Peñalolén, 46m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio: 5326 UF (precio negociable, el propietario está abierto a ofertas). A 208m de paradero de buses troncal, y 1,2km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.160.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 208,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5326,
+        "price_clp": null,
+        "rent_monthly_clp": 1160000,
+        "location": "Peñalolén"
+      },
+      "scenario": "multi",
+      "trap": "dormitorio 'convertible' que no es real; precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

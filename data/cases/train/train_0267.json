@@ -1,0 +1,121 @@
+{
+  "id": "train_0267",
+  "uf_value": 38800,
+  "hard_constraints": {
+    "presupuesto_max_clp": 206500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 12,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-M58",
+      "text": "Depto en Santiago Centro, 51m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio rebajado a 5211 UF. A 671m de la estación de metro Escuela Militar. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.090.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 671,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5211,
+        "price_clp": null,
+        "rent_monthly_clp": 1090000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-J72",
+      "text": "Casa en Recoleta, 100m², 4D/2B. Precio: $166.600.000. A 745m de la estación de metro Ñuñoa. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo estimado: $1.020.000/mes. Excelente conectividad.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 745,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": null,
+        "price_clp": 166600000,
+        "rent_monthly_clp": 1020000,
+        "location": "Recoleta"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-C66",
+      "text": "Casa en Estación Central, 85m², 3 dormitorios, 2 baños. Precio rebajado a 4.082 UF. A 891m de la estación de metro Franklin. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.270.000/mes. Excelente conectividad.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 891,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4082,
+        "price_clp": null,
+        "rent_monthly_clp": 1270000,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-F20",
+      "text": "Casa en La Cisterna, 100m², 4D/2B. Precio: 5500 UF (el mejor valor por m² del sector). A 979m de la estación de metro Plaza Egaña. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Precio rebajado. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $850.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 979,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5500,
+        "price_clp": null,
+        "rent_monthly_clp": 850000,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-K34",
+      "text": "Depto en San Miguel, 45m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio: UF 4.392. A 562m de la estación de metro Príncipe de Gales. ¡Oportunidad única! Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 562,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4392,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    }
+  ]
+}

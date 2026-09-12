@@ -1,0 +1,119 @@
+{
+  "id": "train_0158",
+  "uf_value": 40200,
+  "hard_constraints": {
+    "presupuesto_max_clp": 160500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 15,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-J51",
+      "text": "Depto en Recoleta, 62m², 2D/1B. Valor $123.900.000. Ubicado a 1,8 km de la estación Tobalaba, unos 22 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 123900000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-R86",
+      "text": "Depto en Vitacura, 79m², 2 dormitorios, 1 baño. Precio: 3.945 UF. A 208m de la estación de metro Lo Vial. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $860.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 208,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3945,
+        "price_clp": null,
+        "rent_monthly_clp": 860000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-E74",
+      "text": "Depto en Vitacura, 70m², 2D/1B. Precio rebajado a 3898 UF. Ubicado a 1,5 km de la estación Baquedano, unos 19 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Piso alto, orientación norte.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3898,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-W36",
+      "text": "Depto en La Cisterna, 84m², 3D/1B. Valor $167.000.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). Precio rebajado. A 733m de la estación de metro Los Leones. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $820.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 733,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 167000000,
+        "rent_monthly_clp": 820000,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-U65",
+      "text": "Depto en Las Condes, 53m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Valor $146.400.000. A 860m de la estación de metro Baquedano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $760.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 860,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 146400000,
+        "rent_monthly_clp": 760000,
+        "location": "Las Condes"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    }
+  ]
+}

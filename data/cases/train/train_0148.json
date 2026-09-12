@@ -1,0 +1,163 @@
+{
+  "id": "train_0148",
+  "uf_value": 39000,
+  "hard_constraints": {
+    "presupuesto_max_clp": 222000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 8,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-H95",
+      "text": "Depto en Estación Central, 70m², 2 dormitorios, 2 baños. Precio: $202.300.000. A 1500m del metro Baquedano, a pasos de todo. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Entrega inmediata. Arriendo estimado: $970.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 202300000,
+        "rent_monthly_clp": 970000,
+        "location": "Estación Central"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-W87",
+      "text": "Depto en La Florida, 74m², 2 dormitorios, 2 baños. Precio rebajado a 5.003 UF. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 303m. Pet friendly con límite de 8kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.030.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 303,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 8
+        },
+        "parking": "asignado",
+        "price_uf": 5003,
+        "price_clp": null,
+        "rent_monthly_clp": 1030000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-Q14",
+      "text": "Depto en Santiago Centro, 70m², 2D/1B. Precio rebajado a 5.513 UF. A 756m de paradero de buses troncal, y 1,5km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $1.760.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 756,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 5513,
+        "price_clp": null,
+        "rent_monthly_clp": 1760000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-G59",
+      "text": "Depto en La Florida, 73m², 2D/2B. Precio: UF 5.390. A 298m de la estación de metro Escuela Militar. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.080.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 298,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5390,
+        "price_clp": null,
+        "rent_monthly_clp": 1080000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-N90",
+      "text": "Depto en Providencia, 78m², 2 dormitorios, 2 baños. Precio rebajado a 5167 UF. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 271m. Excelente conectividad. No se aceptan mascotas. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 271,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5167,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-V33",
+      "text": "Depto en La Reina, 66m², 2 dormitorios, 1 baño. Precio: 5831 UF (¡bajo el presupuesto del cliente según nuestro tasador!). Ideal para inversionistas. A 545m de la estación de metro Irarrázaval. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo estimado: $1.030.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 545,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5831,
+        "price_clp": null,
+        "rent_monthly_clp": 1030000,
+        "location": "La Reina"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-P59",
+      "text": "Depto en Providencia, 78m², 2 dormitorios, 2 baños. Precio: 5018 UF. A 1750m del metro Lo Vial, a pasos de todo. Ideal para inversionistas. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5018,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

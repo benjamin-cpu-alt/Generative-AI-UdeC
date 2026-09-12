@@ -1,0 +1,140 @@
+{
+  "id": "train_0266",
+  "uf_value": 40200,
+  "hard_constraints": {
+    "presupuesto_max_clp": 208000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 8,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-F64",
+      "text": "Depto en Las Condes, 96m², 4D/2B. Ideal para inversionistas. Precio: 5057 UF. A 571m de la estación de metro Lo Vial. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $1.240.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 571,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5057,
+        "price_clp": null,
+        "rent_monthly_clp": 1240000,
+        "location": "Las Condes"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-A99",
+      "text": "Casa en Las Condes, 110m², 4D/2B. Precio rebajado a 4.582 UF. A 1250m del metro Baquedano, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $840.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1250,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4582,
+        "price_clp": null,
+        "rent_monthly_clp": 840000,
+        "location": "Las Condes"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-P35",
+      "text": "Depto en La Cisterna, 80m², 2 dormitorios, 1 baño. Precio: 5.448 UF (el mejor valor por m² del sector). A 475m de la estación de metro Tobalaba. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 475,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5448,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-X20",
+      "text": "Casa en La Florida, 80m², 3 dormitorios, 2 baños. Precio: UF 4.154. A 159m de la estación de metro Tobalaba. 100% pet friendly, sin restricciones de tamaño ni especie. Sin estacionamiento. Arriendo referencial de la zona: $950.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 159,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 4154,
+        "price_clp": null,
+        "rent_monthly_clp": 950000,
+        "location": "La Florida"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-N14",
+      "text": "Depto en Vitacura, 52m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Precio rebajado a 4525 UF. A 978m de la estación de metro Bellas Artes. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 978,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4525,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-W96",
+      "text": "Depto en Peñalolén, 67m², 2D/1B. Precio rebajado a 5.025 UF. A 891m de paradero de buses troncal, y 1,5km del metro más cercano. Incluye 1 estacionamiento subterráneo asignado. Entrega inmediata. Arriendo referencial de la zona: $970.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 891,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5025,
+        "price_clp": null,
+        "rent_monthly_clp": 970000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    }
+  ]
+}

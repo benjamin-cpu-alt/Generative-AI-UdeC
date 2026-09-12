@@ -1,0 +1,161 @@
+{
+  "id": "train_0010",
+  "uf_value": 39900,
+  "hard_constraints": {
+    "presupuesto_max_clp": 224000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-H54",
+      "text": "Depto en La Cisterna, 66m², 2D/2B. Precio: 5669 UF (precio negociable, el propietario está abierto a ofertas). A 150m de la estación de metro Lo Vial. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.360.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 150,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5669,
+        "price_clp": null,
+        "rent_monthly_clp": 1360000,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-Z18",
+      "text": "Depto en Peñalolén, 62m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio rebajado a UF 5.318. A 650m del metro Ñuñoa, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5318,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "multi",
+      "trap": "distancia excedida, minimizada en minutos caminando; dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-W42",
+      "text": "Depto en La Reina, 93m², 3 dormitorios, 2 baños. Recién remodelado. Precio: 5.917 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 186m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 186,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5917,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-M53",
+      "text": "Casa en Maipú, 85m², 3D/2B. Valor $162.600.000. Ubicado a 0,6 km de la estación Cal y Canto, unos 8 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Luminoso y con vista despejada. Arriendo referencial de la zona: $1.100.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 162600000,
+        "rent_monthly_clp": 1100000,
+        "location": "Maipú"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-C15",
+      "text": "Depto en Macul, 62m², 2 dormitorios, 2 baños. Precio: UF 5.396. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 310m. Se aceptan mascotas pequeñas y medianas hasta 3kg, previa autorización de la administración. Incluye 1 estacionamiento techado asignado. Precio rebajado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 310,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 3
+        },
+        "parking": "asignado",
+        "price_uf": 5396,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 3kg < mascota 5kg"
+    },
+    {
+      "id": "PROP-P15",
+      "text": "Depto en La Cisterna, 114m², 4D/2B. Precio: 5642 UF (el mejor valor por m² del sector). A 370m de la estación de metro Los Leones. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 370,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5642,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-L13",
+      "text": "Depto en Ñuñoa, 75m², 2 dormitorios, 1 baño. Precio: UF 4.313. A 235m de la estación de metro Los Leones. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Piso alto, orientación norte. Arriendo referencial de la zona: $1.360.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 235,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4313,
+        "price_clp": null,
+        "rent_monthly_clp": 1360000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    }
+  ]
+}

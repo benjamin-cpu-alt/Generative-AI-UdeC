@@ -1,0 +1,119 @@
+{
+  "id": "train_0061",
+  "uf_value": 38850,
+  "hard_constraints": {
+    "presupuesto_max_clp": 167000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-E76",
+      "text": "Depto en Santiago Centro, 88m², 3D/1B. Valor $152.200.000. A 1200m del metro Lo Vial, muy bien conectado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Excelente conectividad. Incluye 1 estacionamiento. Arriendo estimado: $1.270.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 152200000,
+        "rent_monthly_clp": 1270000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-U79",
+      "text": "Casa en Independencia, 92m², 3D/1B. Precio: 3712 UF. A 649m de la estación de metro Los Leones. Se aceptan mascotas pequeñas y medianas hasta 4kg, previa autorización de la administración. Recién remodelado. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.120.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 649,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "propio",
+        "price_uf": 3712,
+        "price_clp": null,
+        "rent_monthly_clp": 1120000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-G52",
+      "text": "Depto en Peñalolén, 85m², 3D/1B. Valor $150.900.000. Ubicado a 1,1 km de la estación Bellas Artes, unos 14 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Recién remodelado. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1100,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 150900000,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-X86",
+      "text": "Depto en La Cisterna, 91m², 3 dormitorios, 1 baño. Valor $175.000.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 752m de la estación de metro Plaza Egaña. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 752,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 175000000,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-K16",
+      "text": "Depto en La Cisterna, 64m², 2D/2B. Valor $138.400.000. Excelente conectividad. A 800m de la estación de metro Baquedano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $850.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 138400000,
+        "rent_monthly_clp": 850000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    }
+  ]
+}

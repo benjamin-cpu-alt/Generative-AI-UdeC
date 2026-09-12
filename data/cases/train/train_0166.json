@@ -1,0 +1,182 @@
+{
+  "id": "train_0166",
+  "uf_value": 38100,
+  "hard_constraints": {
+    "presupuesto_max_clp": 196000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 8,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Z20",
+      "text": "Depto en Recoleta, 82m², 3D/2B. Precio: 5365 UF (precio negociable, el propietario está abierto a ofertas). Recién remodelado. A 457m de la estación de metro Plaza Egaña. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $900.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 457,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5365,
+        "price_clp": null,
+        "rent_monthly_clp": 900000,
+        "location": "Recoleta"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-A86",
+      "text": "Depto en Vitacura, 71m², 2D/1B. Precio: UF 4.210. A 600m de la estación de metro Tobalaba. Piso alto, orientación norte. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $790.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4210,
+        "price_clp": null,
+        "rent_monthly_clp": 790000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-E60",
+      "text": "Depto en Macul, 72m², 2 dormitorios, 2 baños. Precio: UF 4.089. A 386m de la estación de metro Escuela Militar. Pet friendly con límite de 7kg por mascota. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.280.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 386,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 7
+        },
+        "parking": "propio",
+        "price_uf": 4089,
+        "price_clp": null,
+        "rent_monthly_clp": 1280000,
+        "location": "Macul"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 7kg < mascota 8kg"
+    },
+    {
+      "id": "PROP-J78",
+      "text": "Depto en Santiago Centro, 96m², 3 dormitorios, 2 baños. Valor $188.000.000. A 351m de la estación de metro Lo Vial. Se aceptan mascotas pequeñas y medianas hasta 8kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.580.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 351,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 8
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 188000000,
+        "rent_monthly_clp": 1580000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-X25",
+      "text": "Depto en La Florida, 88m², 3D/1B. Precio: 5.451 UF (precio negociable, el propietario está abierto a ofertas). Piso alto, orientación norte. A 343m de la estación de metro Tobalaba. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $840.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 343,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5451,
+        "price_clp": null,
+        "rent_monthly_clp": 840000,
+        "location": "La Florida"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-V19",
+      "text": "Depto en San Miguel, 97m², 4D/1B. Precio: 5381 UF (precio negociable, el propietario está abierto a ofertas). A 186m de la estación de metro Ñuñoa. 100% pet friendly, sin restricciones de tamaño ni especie. Ideal para inversionistas. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $810.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 186,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5381,
+        "price_clp": null,
+        "rent_monthly_clp": 810000,
+        "location": "San Miguel"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-D22",
+      "text": "Depto en Peñalolén, 73m², 2 dormitorios, 1 baño. Precio: 4869 UF. A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 310m. Se aceptan mascotas pequeñas y medianas hasta 6kg, previa autorización de la administración. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 310,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 6
+        },
+        "parking": "asignado",
+        "price_uf": 4869,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 6kg < mascota 8kg"
+    },
+    {
+      "id": "PROP-U32",
+      "text": "Casa en Peñalolén, 90m², 3 dormitorios, 1 baño. Valor $183.100.000. A 350m de paradero de buses troncal, y 1,4km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Sin estacionamiento. Arriendo estimado: $1.050.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 350,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 183100000,
+        "rent_monthly_clp": 1050000,
+        "location": "Peñalolén"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    }
+  ]
+}

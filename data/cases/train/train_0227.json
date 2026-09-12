@@ -1,0 +1,161 @@
+{
+  "id": "train_0227",
+  "uf_value": 40550,
+  "hard_constraints": {
+    "presupuesto_max_clp": 123000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-S50",
+      "text": "Depto en La Reina, 111m², 4 dormitorios, 1 baño. Valor $109.200.000. A 850m del metro Escuela Militar, muy bien conectado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Precio rebajado. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 850,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 109200000,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-V73",
+      "text": "Depto en Las Condes, 100m², 4 dormitorios, 1 baño. Valor $108.600.000. A 461m de la estación de metro Lo Vial. No se aceptan mascotas. Recién remodelado. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 461,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 108600000,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-T50",
+      "text": "Depto en Peñalolén, 79m², 3 dormitorios, 1 baño. Precio: UF 2.816. Ubicado a 0,8 km de la estación Irarrázaval, unos 9 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Precio rebajado. Arriendo estimado: $910.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2816,
+        "price_clp": null,
+        "rent_monthly_clp": 910000,
+        "location": "Peñalolén"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-H37",
+      "text": "Depto en San Miguel, 92m², 3D/2B. Precio: 3.105 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 323m de la estación de metro Franklin. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $560.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 323,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3105,
+        "price_clp": null,
+        "rent_monthly_clp": 560000,
+        "location": "San Miguel"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-W59",
+      "text": "Depto en Recoleta, 98m², 4 dormitorios, 2 baños. Precio rebajado a $111.300.000. ¡Oportunidad única! A 317m de la estación de metro Irarrázaval. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $910.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 317,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 111300000,
+        "rent_monthly_clp": 910000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-K44",
+      "text": "Depto en La Reina, 95m², 3D/1B. Valor $93.400.000. A 205m de la estación de metro Lo Vial. Pet friendly con límite de 6kg por mascota. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $770.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 205,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 6
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 93400000,
+        "rent_monthly_clp": 770000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-A89",
+      "text": "Depto en Ñuñoa, 81m², 3 dormitorios, 1 baño. Precio: 3.100 UF (el mejor valor por m² del sector). Entrega inmediata. A 476m de paradero de buses troncal, y 1,5km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 476,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3100,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

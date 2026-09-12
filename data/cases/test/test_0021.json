@@ -1,0 +1,161 @@
+{
+  "id": "test_0021",
+  "uf_value": 40050,
+  "hard_constraints": {
+    "presupuesto_max_clp": 224000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-L33",
+      "text": "Depto en Ñuñoa, 53m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio: 4.345 UF. A 574m de la estación de metro Escuela Militar. Precio rebajado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.070.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 574,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4345,
+        "price_clp": null,
+        "rent_monthly_clp": 1070000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-Z56",
+      "text": "Depto en Maipú, 77m², 2D/1B. Precio: 4404 UF. A 354m de paradero de buses troncal, y 1,5km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.230.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 354,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4404,
+        "price_clp": null,
+        "rent_monthly_clp": 1230000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-J93",
+      "text": "Depto en San Miguel, 87m², 3 dormitorios, 1 baño. Precio: 5.558 UF. A 720m de la estación de metro Cal y Canto. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.250.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 720,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5558,
+        "price_clp": null,
+        "rent_monthly_clp": 1250000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-E30",
+      "text": "Depto en Santiago Centro, 46m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Excelente conectividad. Valor $205.300.000. A 402m de la estación de metro Franklin. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.480.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 402,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 205300000,
+        "rent_monthly_clp": 1480000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-W56",
+      "text": "Depto en Independencia, 87m², 3 dormitorios, 1 baño. Precio: 5.745 UF (el mejor valor por m² del sector). A 1,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 691m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Excelente conectividad.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 691,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5745,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-G33",
+      "text": "Casa en Providencia, 110m², 4 dormitorios, 2 baños. Valor $186.800.000. A 1100m del metro Plaza Egaña, muy bien conectado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.470.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1100,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 186800000,
+        "rent_monthly_clp": 1470000,
+        "location": "Providencia"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-S10",
+      "text": "Depto en San Miguel, 96m², 4 dormitorios, 2 baños. Precio: 5890 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 0,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 265m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $930.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 265,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5890,
+        "price_clp": null,
+        "rent_monthly_clp": 930000,
+        "location": "San Miguel"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

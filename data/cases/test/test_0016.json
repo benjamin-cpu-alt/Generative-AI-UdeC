@@ -1,0 +1,184 @@
+{
+  "id": "test_0016",
+  "uf_value": 38950,
+  "hard_constraints": {
+    "presupuesto_max_clp": 90000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 15,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-W79",
+      "text": "Depto en Providencia, 79m², 3 dormitorios, 2 baños. Precio: $76.600.000. A 1000m de la estación de metro Bellas Artes. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo referencial de la zona: $560.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 76600000,
+        "rent_monthly_clp": 560000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-G24",
+      "text": "Depto en Maipú, 80m², 2D/1B. Valor $69.900.000. Precio rebajado. A 1,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 167m. Se aceptan mascotas pequeñas y medianas hasta 14kg, previa autorización de la administración. Incluye estacionamiento propio. Arriendo estimado: $420.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 167,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 14
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 69900000,
+        "rent_monthly_clp": 420000,
+        "location": "Maipú"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 14kg < mascota 15kg"
+    },
+    {
+      "id": "PROP-F30",
+      "text": "Depto en Ñuñoa, 77m², 2D/2B. Precio: UF 2.039. Ubicado a 1,7 km de la estación Tobalaba, unos 21 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Recién remodelado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2039,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-D82",
+      "text": "Casa en Independencia, 95m², 3 dormitorios, 1 baño. Excelente conectividad. Precio: UF 2.277. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 508m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $570.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 508,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2277,
+        "price_clp": null,
+        "rent_monthly_clp": 570000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-L77",
+      "text": "Depto en Vitacura, 103m², 4D/1B. Valor $72.300.000. A 674m de la estación de metro Irarrázaval. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento. Excelente conectividad. Arriendo referencial de la zona: $590.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 674,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 72300000,
+        "rent_monthly_clp": 590000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-M58",
+      "text": "Casa en La Florida, 86m², 3D/2B. Precio: 2429 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 691m de la estación de metro Tobalaba. 100% pet friendly, sin restricciones de tamaño ni especie. No incluye estacionamiento (posible arriendo en edificio vecino).",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 691,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 2429,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      },
+      "scenario": "multi",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple; precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-K10",
+      "text": "Casa en Las Condes, 107m², 4 dormitorios, 2 baños. Precio: $69.300.000. A 533m de la estación de metro Ñuñoa. 100% pet friendly, sin restricciones de tamaño ni especie. Luminoso y con vista despejada. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo estimado: $320.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 533,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": null,
+        "price_clp": 69300000,
+        "rent_monthly_clp": 320000,
+        "location": "Las Condes"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-Z86",
+      "text": "Casa en La Florida, 100m², 4 dormitorios, 1 baño. Precio: 2354 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 883m de la estación de metro Plaza Egaña. Excelente conectividad. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $550.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 883,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2354,
+        "price_clp": null,
+        "rent_monthly_clp": 550000,
+        "location": "La Florida"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

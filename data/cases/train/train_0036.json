@@ -1,0 +1,203 @@
+{
+  "id": "train_0036",
+  "uf_value": 39950,
+  "hard_constraints": {
+    "presupuesto_max_clp": 217000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 12,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-L64",
+      "text": "Depto en Maipú, 94m², 3D/2B. Precio: 4.651 UF. A 858m de la estación de metro Plaza Egaña. Aceptamos mascotas, gatos y perros hasta 11kg. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 858,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 11
+        },
+        "parking": "asignado",
+        "price_uf": 4651,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 11kg < mascota 12kg"
+    },
+    {
+      "id": "PROP-G27",
+      "text": "Depto en Vitacura, 81m², 3D/2B. Excelente conectividad. Precio rebajado a $179.000.000. A 843m de la estación de metro Baquedano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.250.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 843,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 179000000,
+        "rent_monthly_clp": 1250000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-N79",
+      "text": "Depto en La Cisterna, 84m², 3D/1B. Valor $224.000.000 (precio negociable, el propietario está abierto a ofertas). A 757m de paradero de buses troncal, y 1,6km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Luminoso y con vista despejada. Arriendo referencial de la zona: $940.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 757,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 224000000,
+        "rent_monthly_clp": 940000,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-M34",
+      "text": "Depto en Independencia, 63m², 1 dormitorios, 1 baño. Precio: UF 4.718. Excelente conectividad. A 2,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1000m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.030.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4718,
+        "price_clp": null,
+        "rent_monthly_clp": 1030000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-R61",
+      "text": "Depto estudio en Independencia, 52m², ambiente único + loggia cerrada, ideal como pieza extra, 1B. Valor $205.600.000. Precio rebajado. A 865m de la estación de metro Escuela Militar. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.090.000/mes.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 865,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 205600000,
+        "rent_monthly_clp": 1090000,
+        "location": "Independencia"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-Q70",
+      "text": "Depto en Ñuñoa, 76m², 2D/1B. Precio: 5.309 UF. Luminoso y con vista despejada. A 384m de la estación de metro Tobalaba. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo estimado: $910.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 384,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5309,
+        "price_clp": null,
+        "rent_monthly_clp": 910000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-F83",
+      "text": "Depto estudio en Las Condes, 55m², ambiente único + loggia cerrada, ideal como pieza extra, 1B. Valor $184.500.000. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 865m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.340.000/mes.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 865,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 184500000,
+        "rent_monthly_clp": 1340000,
+        "location": "Las Condes"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-E17",
+      "text": "Depto en Independencia, 64m², 2 dormitorios, 1 baño. Excelente conectividad. Precio: 3965 UF. A 1000m de la estación de metro Lo Vial. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $890.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3965,
+        "price_clp": null,
+        "rent_monthly_clp": 890000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-J62",
+      "text": "Depto en Maipú, 55m², 1D/1B. Excelente conectividad. Precio: 4288 UF. Ubicado a 1,5 km de la estación Franklin, unos 19 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4288,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

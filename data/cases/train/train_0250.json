@@ -1,0 +1,184 @@
+{
+  "id": "train_0250",
+  "uf_value": 39200,
+  "hard_constraints": {
+    "presupuesto_max_clp": 104500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-E14",
+      "text": "Depto en Las Condes, 85m², 3 dormitorios, 2 baños. Excelente conectividad. Precio: 2.554 UF. Ubicado a 1,2 km de la estación Plaza Egaña, unos 16 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1250,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2554,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-D52",
+      "text": "Casa en Peñalolén, 96m², 4D/1B. Precio: UF 2.602. A 800m de paradero de buses troncal, y 1,7km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $650.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2602,
+        "price_clp": null,
+        "rent_monthly_clp": 650000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-G85",
+      "text": "Casa en La Cisterna, 87m², 3D/2B. Precio: 2217 UF. A 0,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 179m. Luminoso y con vista despejada. Edificio sin mascotas por reglamento de copropiedad. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 179,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2217,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-X94",
+      "text": "Depto en Ñuñoa, 77m², 2D/2B. Precio: $75.800.000. A 702m de la estación de metro Vicente Valdés. Solo se admiten gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 702,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 75800000,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-Q90",
+      "text": "Depto en Las Condes, 67m², 2 dormitorios, 2 baños. Precio rebajado a $88.700.000. ¡Oportunidad única! A 800m de la estación de metro Escuela Militar. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $510.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 88700000,
+        "rent_monthly_clp": 510000,
+        "location": "Las Condes"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-J83",
+      "text": "Casa en San Miguel, 100m², 4 dormitorios, 1 baño. Precio: UF 2.793 (el mejor valor por m² del sector). A 356m de la estación de metro Irarrázaval. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 356,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2793,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-K24",
+      "text": "Depto en Providencia, 92m², 3D/2B. Precio rebajado a $94.500.000. A 779m de paradero de buses troncal, y 1,4km del metro más cercano. No se especifica política de mascotas. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $570.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 779,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 94500000,
+        "rent_monthly_clp": 570000,
+        "location": "Providencia"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-T59",
+      "text": "Depto en Providencia, 69m², 2D/2B. Precio: 2605 UF. A 539m de la estación de metro Plaza Egaña. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $560.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 539,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2605,
+        "price_clp": null,
+        "rent_monthly_clp": 560000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    }
+  ]
+}

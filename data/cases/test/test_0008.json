@@ -1,0 +1,144 @@
+{
+  "id": "test_0008",
+  "uf_value": 38050,
+  "hard_constraints": {
+    "presupuesto_max_clp": 115500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Z15",
+      "text": "Casa en Vitacura, 98m², 4D/2B. Entrega inmediata. Valor $93.200.000. A 266m de la estación de metro Escuela Militar. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 266,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 93200000,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-B87",
+      "text": "Depto en Macul, 81m², 3 dormitorios, 2 baños. Precio rebajado a 3.007 UF. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 381m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $740.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 381,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3007,
+        "price_clp": null,
+        "rent_monthly_clp": 740000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-T48",
+      "text": "Depto en La Reina, 90m², 3D/1B. Valor $110.800.000. A 212m de la estación de metro Cal y Canto. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $750.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 212,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 110800000,
+        "rent_monthly_clp": 750000,
+        "location": "La Reina"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-K59",
+      "text": "Depto en Maipú, 74m², 2 dormitorios, 1 baño. Precio: 2986 UF. A 365m de la estación de metro Irarrázaval. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento. Arriendo referencial de la zona: $670.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 365,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2986,
+        "price_clp": null,
+        "rent_monthly_clp": 670000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-P68",
+      "text": "Depto en La Florida, 88m², 3D/2B. Precio: 3.198 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). ¡Oportunidad única! A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 967m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $740.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 967,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3198,
+        "price_clp": null,
+        "rent_monthly_clp": 740000,
+        "location": "La Florida"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-S47",
+      "text": "Depto en La Reina, 47m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Valor $101.800.000. A 417m de paradero de buses troncal, y 1,0km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 417,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 101800000,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    }
+  ]
+}

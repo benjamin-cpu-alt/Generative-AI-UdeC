@@ -1,0 +1,121 @@
+{
+  "id": "train_0161",
+  "uf_value": 39800,
+  "hard_constraints": {
+    "presupuesto_max_clp": 203000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 10,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-L58",
+      "text": "Depto en San Miguel, 78m², 2 dormitorios, 2 baños. Precio: UF 4.633. Excelente conectividad. Ubicado a 1,4 km de la estación Cal y Canto, unos 17 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1350,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 4633,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "multi",
+      "trap": "distancia excedida, minimizada en minutos caminando; estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-F17",
+      "text": "Depto en La Cisterna, 63m², 2D/2B. Precio rebajado a $149.400.000. A 0,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 218m. Luminoso y con vista despejada. No se aceptan mascotas. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.170.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 218,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 149400000,
+        "rent_monthly_clp": 1170000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-N87",
+      "text": "Depto en San Miguel, 67m², 2 dormitorios, 2 baños. Precio: UF 4.849. A 597m de la estación de metro Los Leones. Se aceptan mascotas pequeñas y medianas hasta 10kg, previa autorización de la administración. Incluye 1 estacionamiento techado asignado. Ideal para inversionistas. Arriendo estimado: $920.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 597,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 10
+        },
+        "parking": "asignado",
+        "price_uf": 4849,
+        "price_clp": null,
+        "rent_monthly_clp": 920000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-W34",
+      "text": "Casa en La Florida, 82m², 3 dormitorios, 2 baños. ¡Oportunidad única! Precio rebajado a 5018 UF. A 657m de paradero de buses troncal, y 1,3km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo referencial de la zona: $930.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 657,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5018,
+        "price_clp": null,
+        "rent_monthly_clp": 930000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-M58",
+      "text": "Depto en La Florida, 56m², 1D/1B. Precio: 4621 UF. A 312m de la estación de metro Vicente Valdés. Solo se admiten gatos de cualquier tamaño. Incluye estacionamiento propio. Recién remodelado. Arriendo estimado: $1.150.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 312,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4621,
+        "price_clp": null,
+        "rent_monthly_clp": 1150000,
+        "location": "La Florida"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    }
+  ]
+}

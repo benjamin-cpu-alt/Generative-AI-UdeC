@@ -1,0 +1,123 @@
+{
+  "id": "train_0248",
+  "uf_value": 39950,
+  "hard_constraints": {
+    "presupuesto_max_clp": 133500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 8,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-V45",
+      "text": "Depto en Ñuñoa, 63m², 2D/1B. Precio: 2.816 UF. A 866m de la estación de metro Príncipe de Gales. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 866,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2816,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-M30",
+      "text": "Casa en Recoleta, 81m², 3 dormitorios, 1 baño. Valor $124.600.000. A 1039m de la estación de metro Escuela Militar. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Piso alto, orientación norte. Arriendo estimado: $690.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1039,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 124600000,
+        "rent_monthly_clp": 690000,
+        "location": "Recoleta"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-K62",
+      "text": "Depto en La Cisterna, 75m², 2D/1B. Precio: 3284 UF. A 1,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 410m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Recién remodelado. Arriendo referencial de la zona: $620.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 410,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3284,
+        "price_clp": null,
+        "rent_monthly_clp": 620000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-J88",
+      "text": "Depto en Santiago Centro, 45m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Ideal para inversionistas. Precio: UF 2.914. A 2,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1123m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1123,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2914,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-F83",
+      "text": "Depto en Vitacura, 87m², 3 dormitorios, 2 baños. Precio: 2.783 UF. A 174m de la estación de metro Tobalaba. Pet friendly con límite de 3kg por mascota. Entrega inmediata. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $750.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 174,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 3
+        },
+        "parking": "asignado",
+        "price_uf": 2783,
+        "price_clp": null,
+        "rent_monthly_clp": 750000,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 3kg < mascota 8kg"
+    }
+  ]
+}

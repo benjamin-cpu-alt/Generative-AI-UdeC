@@ -1,0 +1,119 @@
+{
+  "id": "train_0260",
+  "uf_value": 39300,
+  "hard_constraints": {
+    "presupuesto_max_clp": 143500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 30,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-T47",
+      "text": "Casa en Santiago Centro, 79m², 3 dormitorios, 2 baños. Precio: 3865 UF (precio negociable, el propietario está abierto a ofertas). Luminoso y con vista despejada. A 152m de la estación de metro Vicente Valdés. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $920.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 152,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3865,
+        "price_clp": null,
+        "rent_monthly_clp": 920000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-S27",
+      "text": "Depto en Estación Central, 68m², 2 dormitorios, 1 baño. Precio: 3.598 UF. A 644m de la estación de metro Plaza Egaña. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Precio rebajado. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $670.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 644,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3598,
+        "price_clp": null,
+        "rent_monthly_clp": 670000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-Q46",
+      "text": "Depto en Independencia, 66m², 2D/2B. Precio: 2.835 UF. A 219m de la estación de metro Escuela Militar. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 219,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 2835,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-E91",
+      "text": "Depto en Ñuñoa, 74m², 2D/1B. Precio rebajado a 3013 UF. A 720m de la estación de metro Plaza Egaña. Pet friendly con límite de 30kg por mascota. Incluye estacionamiento propio. Arriendo referencial de la zona: $690.000/mes. Luminoso y con vista despejada.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 720,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 30
+        },
+        "parking": "propio",
+        "price_uf": 3013,
+        "price_clp": null,
+        "rent_monthly_clp": 690000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-A26",
+      "text": "Depto en Vitacura, 93m², 3 dormitorios, 1 baño. Valor $131.300.000. A 160m de la estación de metro Baquedano. Edificio sin mascotas por reglamento de copropiedad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Excelente conectividad. Arriendo estimado: $640.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 160,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 131300000,
+        "rent_monthly_clp": 640000,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    }
+  ]
+}

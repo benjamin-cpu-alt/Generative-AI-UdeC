@@ -1,0 +1,121 @@
+{
+  "id": "train_0042",
+  "uf_value": 38050,
+  "hard_constraints": {
+    "presupuesto_max_clp": 139500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-G40",
+      "text": "Depto en La Florida, 91m², 3 dormitorios, 1 baño. Precio: 2746 UF. A 1000m de la estación de metro Bellas Artes. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $530.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2746,
+        "price_clp": null,
+        "rent_monthly_clp": 530000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-U85",
+      "text": "Casa en Peñalolén, 96m², 3D/1B. Precio: 2.731 UF. Ubicado a 1,4 km de la estación Baquedano, unos 18 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $820.000/mes. Piso alto, orientación norte.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2731,
+        "price_clp": null,
+        "rent_monthly_clp": 820000,
+        "location": "Peñalolén"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-T69",
+      "text": "Casa en La Reina, 108m², 4 dormitorios, 1 baño. Piso alto, orientación norte. Valor $125.900.000. A 424m de la estación de metro Plaza Egaña. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.040.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 424,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 125900000,
+        "rent_monthly_clp": 1040000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-B97",
+      "text": "Depto en La Florida, 78m², 2D/2B. Precio: 2746 UF. A 699m de la estación de metro Bellas Artes. Edificio sin mascotas por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $570.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 699,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2746,
+        "price_clp": null,
+        "rent_monthly_clp": 570000,
+        "location": "La Florida"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-F57",
+      "text": "Depto en La Cisterna, 66m², 2D/2B. Valor $133.900.000. A 1150m del metro Lo Vial, a pasos de todo. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1150,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 133900000,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

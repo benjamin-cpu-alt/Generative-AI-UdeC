@@ -1,0 +1,142 @@
+{
+  "id": "train_0141",
+  "uf_value": 39900,
+  "hard_constraints": {
+    "presupuesto_max_clp": 191500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-P49",
+      "text": "Casa en Las Condes, 89m², 3 dormitorios, 2 baños. Valor $144.700.000. A 479m de la estación de metro Plaza Egaña. Ideal para inversionistas. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.080.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 479,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 144700000,
+        "rent_monthly_clp": 1080000,
+        "location": "Las Condes"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-K60",
+      "text": "Depto en La Florida, 95m², 3 dormitorios, 2 baños. Precio: UF 4.774. Entrega inmediata. A 818m de paradero de buses troncal, y 1,9km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.040.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 818,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4774,
+        "price_clp": null,
+        "rent_monthly_clp": 1040000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-F23",
+      "text": "Depto en Independencia, 88m², 3 dormitorios, 1 baño. Precio: 3.511 UF. A 661m de paradero de buses troncal, y 1,7km del metro más cercano. No se especifica política de mascotas. Piso alto, orientación norte. Incluye estacionamiento propio. Arriendo referencial de la zona: $710.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 661,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3511,
+        "price_clp": null,
+        "rent_monthly_clp": 710000,
+        "location": "Independencia"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-Y86",
+      "text": "Casa en Independencia, 114m², 4 dormitorios, 1 baño. Valor $186.700.000. Recién remodelado. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 463m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $1.470.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 463,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 186700000,
+        "rent_monthly_clp": 1470000,
+        "location": "Independencia"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-T40",
+      "text": "Casa en Maipú, 98m², 4 dormitorios, 2 baños. Precio: 4424 UF. A 524m de paradero de buses troncal, y 1,6km del metro más cercano. Pet friendly con límite de 2kg por mascota. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.400.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 524,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "asignado",
+        "price_uf": 4424,
+        "price_clp": null,
+        "rent_monthly_clp": 1400000,
+        "location": "Maipú"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 4kg"
+    },
+    {
+      "id": "PROP-A76",
+      "text": "Depto en Vitacura, 105m², 4D/1B. Precio: 4875 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 983m de la estación de metro Plaza Egaña. Piso alto, orientación norte. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 983,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4875,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

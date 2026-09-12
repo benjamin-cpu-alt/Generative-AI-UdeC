@@ -1,0 +1,163 @@
+{
+  "id": "train_0232",
+  "uf_value": 39700,
+  "hard_constraints": {
+    "presupuesto_max_clp": 192500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 12,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-J73",
+      "text": "Depto en La Florida, 77m², 2D/2B. Precio: 5013 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 1,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 286m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Piso alto, orientación norte. Arriendo estimado: $1.200.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 286,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5013,
+        "price_clp": null,
+        "rent_monthly_clp": 1200000,
+        "location": "La Florida"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-P32",
+      "text": "Depto en Las Condes, 97m², 3 dormitorios, 2 baños. Precio: UF 4.975 (el mejor valor por m² del sector). A 297m de la estación de metro Lo Vial. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.310.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 297,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4975,
+        "price_clp": null,
+        "rent_monthly_clp": 1310000,
+        "location": "Las Condes"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-Y33",
+      "text": "Depto en Santiago Centro, 62m², 2D/1B. Precio: 4.106 UF. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 443m. Se aceptan mascotas pequeñas y medianas hasta 11kg, previa autorización de la administración. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 443,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 11
+        },
+        "parking": "propio",
+        "price_uf": 4106,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 11kg < mascota 12kg"
+    },
+    {
+      "id": "PROP-C60",
+      "text": "Depto en Santiago Centro, 76m², 2D/1B. Precio: 4.776 UF. A 302m de paradero de buses troncal, y 1,0km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.380.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 302,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4776,
+        "price_clp": null,
+        "rent_monthly_clp": 1380000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-W51",
+      "text": "Casa en Vitacura, 106m², 4D/1B. Precio: 3622 UF. A 384m de la estación de metro Manquehue. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye estacionamiento propio. Arriendo referencial de la zona: $820.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 384,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3622,
+        "price_clp": null,
+        "rent_monthly_clp": 820000,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-B28",
+      "text": "Depto en Ñuñoa, 73m², 2 dormitorios, 1 baño. Precio: 4.786 UF. A 200m de la estación de metro Los Leones. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo estimado: $980.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4786,
+        "price_clp": null,
+        "rent_monthly_clp": 980000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-U71",
+      "text": "Depto en La Florida, 74m², 2D/2B. Precio: 5093 UF (precio negociable, el propietario está abierto a ofertas). A 253m de la estación de metro Franklin. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Precio rebajado. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.290.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 253,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5093,
+        "price_clp": null,
+        "rent_monthly_clp": 1290000,
+        "location": "La Florida"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

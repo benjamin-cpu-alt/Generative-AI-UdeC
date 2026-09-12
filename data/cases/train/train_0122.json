@@ -1,0 +1,184 @@
+{
+  "id": "train_0122",
+  "uf_value": 40200,
+  "hard_constraints": {
+    "presupuesto_max_clp": 134500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-L73",
+      "text": "Depto en Maipú, 71m², 2 dormitorios, 2 baños. Precio: $116.800.000. A 1,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 269m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $600.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 269,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 116800000,
+        "rent_monthly_clp": 600000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-B27",
+      "text": "Casa en Independencia, 94m², 3D/1B. Precio: UF 3.286. A 185m de paradero de buses troncal, y 1,3km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.010.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 185,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3286,
+        "price_clp": null,
+        "rent_monthly_clp": 1010000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-P97",
+      "text": "Depto en Maipú, 75m², 2D/2B. Precio rebajado a $121.500.000. A 458m de la estación de metro Manquehue. Pet friendly con límite de 5kg por mascota. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $660.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 458,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 121500000,
+        "rent_monthly_clp": 660000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-R56",
+      "text": "Casa en Santiago Centro, 80m², 3 dormitorios, 1 baño. Precio rebajado a $125.800.000. A 789m de paradero de buses troncal, y 1,3km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 789,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": null,
+        "price_clp": 125800000,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-S28",
+      "text": "Depto en Providencia, 66m², 2 dormitorios, 2 baños. Precio: 2.604 UF. A 510m de la estación de metro Los Leones. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $640.000/mes. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 510,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2604,
+        "price_clp": null,
+        "rent_monthly_clp": 640000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-N94",
+      "text": "Casa en Macul, 83m², 3 dormitorios, 1 baño. Precio rebajado a $120.200.000. A 495m de la estación de metro Escuela Militar. Entrega inmediata. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $670.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 495,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 120200000,
+        "rent_monthly_clp": 670000,
+        "location": "Macul"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-W62",
+      "text": "Casa en Maipú, 99m², 4 dormitorios, 1 baño. Precio: $132.300.000. A 450m de la estación de metro Ñuñoa. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $1.060.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 450,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 132300000,
+        "rent_monthly_clp": 1060000,
+        "location": "Maipú"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-K66",
+      "text": "Depto en Independencia, 71m², 2D/1B. Valor $114.400.000. A 1500m del metro Plaza Egaña, a pasos de todo. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 114400000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

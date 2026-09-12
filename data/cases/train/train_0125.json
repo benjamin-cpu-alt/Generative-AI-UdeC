@@ -1,0 +1,140 @@
+{
+  "id": "train_0125",
+  "uf_value": 39850,
+  "hard_constraints": {
+    "presupuesto_max_clp": 123500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 3,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-W65",
+      "text": "Depto en La Cisterna, 87m², 3D/1B. Valor $93.700.000. Ubicado a 0,7 km de la estación Tobalaba, unos 8 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Entrega inmediata. Arriendo referencial de la zona: $720.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 93700000,
+        "rent_monthly_clp": 720000,
+        "location": "La Cisterna"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-J53",
+      "text": "Casa en San Miguel, 94m², 3 dormitorios, 1 baño. Precio: 2.811 UF. A 232m de paradero de buses troncal, y 1,3km del metro más cercano. Incluye estacionamiento propio. Excelente conectividad.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 232,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2811,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-F92",
+      "text": "Depto en Recoleta, 86m², 3 dormitorios, 2 baños. Valor $118.000.000. Ubicado a 0,8 km de la estación Manquehue, unos 11 minutos caminando. Excelente conectividad. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $590.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 850,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 118000000,
+        "rent_monthly_clp": 590000,
+        "location": "Recoleta"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-Q50",
+      "text": "Depto en Providencia, 62m², 2 dormitorios, 2 baños. Precio: UF 3.046. Ubicado a 0,7 km de la estación Manquehue, unos 9 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $800.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3046,
+        "price_clp": null,
+        "rent_monthly_clp": 800000,
+        "location": "Providencia"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-T61",
+      "text": "Depto en Ñuñoa, 72m², 2 dormitorios, 1 baño. Precio: UF 2.233. A 402m de paradero de buses troncal, y 1,3km del metro más cercano. Aceptamos mascotas, gatos y perros hasta 2kg. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $630.000/mes. Excelente conectividad.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 402,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "propio",
+        "price_uf": 2233,
+        "price_clp": null,
+        "rent_monthly_clp": 630000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 3kg"
+    },
+    {
+      "id": "PROP-X70",
+      "text": "Depto en Ñuñoa, 58m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Valor $111.100.000. A 471m de la estación de metro Baquedano. 100% pet friendly, sin restricciones de tamaño ni especie. No incluye estacionamiento (posible arriendo en edificio vecino).",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 471,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 111100000,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "multi",
+      "trap": "dormitorio 'convertible' que no es real; estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    }
+  ]
+}

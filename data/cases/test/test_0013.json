@@ -1,0 +1,121 @@
+{
+  "id": "test_0013",
+  "uf_value": 39250,
+  "hard_constraints": {
+    "presupuesto_max_clp": 157500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 3,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Q26",
+      "text": "Depto en Maipú, 74m², 2 dormitorios, 1 baño. Precio rebajado a UF 3.878. Ideal para inversionistas. A 312m de la estación de metro Los Leones. No se aceptan mascotas. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 312,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3878,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-B46",
+      "text": "Depto en Santiago Centro, 51m², 1D/1B. Valor $127.600.000. A 2,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 750m. ¡Oportunidad única! Aceptamos mascotas, gatos y perros hasta 2kg. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.010.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 127600000,
+        "rent_monthly_clp": 1010000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 3kg"
+    },
+    {
+      "id": "PROP-X94",
+      "text": "Depto en La Florida, 77m², 2 dormitorios, 1 baño. Precio: 4.107 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). Ideal para inversionistas. A 303m de paradero de buses troncal, y 1,5km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 303,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4107,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-F81",
+      "text": "Depto en San Miguel, 46m², 1D/1B. Precio: 3383 UF. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 449m. Recién remodelado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. No incluye estacionamiento (posible arriendo en edificio vecino).",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 449,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3383,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-V11",
+      "text": "Casa en Estación Central, 84m², 3 dormitorios, 1 baño. Valor $136.700.000. A 536m de la estación de metro Escuela Militar. Piso alto, orientación norte. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 536,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 136700000,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    }
+  ]
+}

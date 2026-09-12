@@ -1,0 +1,119 @@
+{
+  "id": "train_0046",
+  "uf_value": 39850,
+  "hard_constraints": {
+    "presupuesto_max_clp": 86500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 7,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Y48",
+      "text": "Depto en Peñalolén, 79m², 2 dormitorios, 1 baño. Precio: UF 2.038. A 374m de la estación de metro Baquedano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Luminoso y con vista despejada. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $520.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 374,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 2038,
+        "price_clp": null,
+        "rent_monthly_clp": 520000,
+        "location": "Peñalolén"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-K63",
+      "text": "Depto en Independencia, 80m², 2 dormitorios, 2 baños. Precio: 1744 UF. Ubicado a 1,8 km de la estación Príncipe de Gales, unos 22 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 1744,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-N73",
+      "text": "Depto en Providencia, 74m², 2D/2B. Precio rebajado. Precio: UF 2.208 (¡bajo el presupuesto del cliente según nuestro tasador!). A 1134m de la estación de metro Vicente Valdés. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1134,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2208,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-G80",
+      "text": "Depto en Vitacura, 66m², 2 dormitorios, 1 baño. Precio: UF 2.181 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 1131m de la estación de metro Cal y Canto. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $540.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1131,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2181,
+        "price_clp": null,
+        "rent_monthly_clp": 540000,
+        "location": "Vitacura"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-F86",
+      "text": "Depto en La Reina, 72m², 2 dormitorios, 1 baño. Precio: 2133 UF. A 1107m de la estación de metro Ñuñoa. Se aceptan mascotas pequeñas y medianas hasta 7kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $500.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1107,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 7
+        },
+        "parking": "asignado",
+        "price_uf": 2133,
+        "price_clp": null,
+        "rent_monthly_clp": 500000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "train_0112",
+  "uf_value": 38550,
+  "hard_constraints": {
+    "presupuesto_max_clp": 198500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 12,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-M24",
+      "text": "Depto en La Cisterna, 85m², 3D/1B. Excelente conectividad. Valor $152.300.000. A 840m de paradero de buses troncal, y 2,0km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $960.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 840,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 152300000,
+        "rent_monthly_clp": 960000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-S15",
+      "text": "Depto en Providencia, 63m², 2 dormitorios, 1 baño. Valor $202.500.000 (¡bajo el presupuesto del cliente según nuestro tasador!). A 2,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 996m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Luminoso y con vista despejada. Arriendo estimado: $1.050.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 996,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 202500000,
+        "rent_monthly_clp": 1050000,
+        "location": "Providencia"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-B20",
+      "text": "Depto en La Reina, 98m², 4D/1B. Valor $166.400.000. ¡Oportunidad única! A 647m de paradero de buses troncal, y 1,5km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $810.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 647,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": null,
+        "price_clp": 166400000,
+        "rent_monthly_clp": 810000,
+        "location": "La Reina"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-P55",
+      "text": "Depto en Vitacura, 96m², 4 dormitorios, 2 baños. Valor $143.000.000. ¡Oportunidad única! A 940m de la estación de metro Lo Vial. Pet friendly con límite de 11kg por mascota. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 940,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 11
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 143000000,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 11kg < mascota 12kg"
+    },
+    {
+      "id": "PROP-D69",
+      "text": "Depto en Vitacura, 69m², 2 dormitorios, 1 baño. Precio: 5.027 UF. A 435m de la estación de metro Bellas Artes. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $920.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 435,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5027,
+        "price_clp": null,
+        "rent_monthly_clp": 920000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    }
+  ]
+}

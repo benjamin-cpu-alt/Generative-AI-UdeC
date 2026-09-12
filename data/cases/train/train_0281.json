@@ -1,0 +1,207 @@
+{
+  "id": "train_0281",
+  "uf_value": 38100,
+  "hard_constraints": {
+    "presupuesto_max_clp": 196500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 15,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-M66",
+      "text": "Depto en Las Condes, 63m², 2 dormitorios, 2 baños. Valor $155.400.000. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 907m. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.030.000/mes. Luminoso y con vista despejada.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 907,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 155400000,
+        "rent_monthly_clp": 1030000,
+        "location": "Las Condes"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-Q53",
+      "text": "Depto en Recoleta, 71m², 2D/2B. Precio: UF 5.018. Ubicado a 1,6 km de la estación Los Leones, unos 20 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Excelente conectividad. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5018,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-B53",
+      "text": "Depto en Maipú, 62m², 2D/1B. Valor $190.900.000. A 965m de paradero de buses troncal, y 1,8km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Precio rebajado. Estacionamiento en la calle, sin problemas para aparcar en el sector.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 965,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 190900000,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-S17",
+      "text": "Depto en Estación Central, 64m², 2D/2B. Precio: UF 3.942. A 298m de paradero de buses troncal, y 1,3km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Luminoso y con vista despejada. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $1.180.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 298,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 3942,
+        "price_clp": null,
+        "rent_monthly_clp": 1180000,
+        "location": "Estación Central"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-Z49",
+      "text": "Depto en Recoleta, 52m², 1D/1B. Valor $146.000.000. A 807m de la estación de metro Ñuñoa. 100% pet friendly, sin restricciones de tamaño ni especie. No incluye estacionamiento (posible arriendo en edificio vecino). Arriendo referencial de la zona: $1.070.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 807,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 146000000,
+        "rent_monthly_clp": 1070000,
+        "location": "Recoleta"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-G27",
+      "text": "Depto en Las Condes, 49m², 1D/1B. Precio: 5383 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). Luminoso y con vista despejada. A 277m de la estación de metro Los Leones. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.270.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 277,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5383,
+        "price_clp": null,
+        "rent_monthly_clp": 1270000,
+        "location": "Las Condes"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-D87",
+      "text": "Depto en Maipú, 70m², 2D/2B. Valor $180.700.000. Luminoso y con vista despejada. A 272m de la estación de metro Manquehue. Pet friendly con límite de 7kg por mascota. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 272,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 7
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 180700000,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 7kg < mascota 15kg"
+    },
+    {
+      "id": "PROP-J27",
+      "text": "Depto en Ñuñoa, 85m², 3 dormitorios, 1 baño. Valor $178.400.000. A 843m de paradero de buses troncal, y 1,4km del metro más cercano. Solo se admiten gatos de cualquier tamaño. Excelente conectividad. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.130.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 843,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 178400000,
+        "rent_monthly_clp": 1130000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-X57",
+      "text": "Depto en Providencia, 83m², 3 dormitorios, 2 baños. Valor $202.500.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 708m de la estación de metro Príncipe de Gales. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $1.110.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 708,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 202500000,
+        "rent_monthly_clp": 1110000,
+        "location": "Providencia"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    }
+  ]
+}

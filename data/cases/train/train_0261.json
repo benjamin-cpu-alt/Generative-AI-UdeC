@@ -1,0 +1,140 @@
+{
+  "id": "train_0261",
+  "uf_value": 38150,
+  "hard_constraints": {
+    "presupuesto_max_clp": 208500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-W21",
+      "text": "Depto en Ñuñoa, 69m², 2D/1B. Precio rebajado a 4.178 UF. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 581m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Ideal para inversionistas. Arriendo referencial de la zona: $750.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 581,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4178,
+        "price_clp": null,
+        "rent_monthly_clp": 750000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-C88",
+      "text": "Depto en Macul, 54m², 1 dormitorios, 1 baño. Valor $209.500.000 (el mejor valor por m² del sector). Recién remodelado. A 1129m de paradero de buses troncal, y 1,9km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1129,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 209500000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-Y81",
+      "text": "Casa en La Reina, 86m², 3 dormitorios, 1 baño. Precio: 5.520 UF (el mejor valor por m² del sector). A 1,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 181m. Recién remodelado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $810.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 181,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5520,
+        "price_clp": null,
+        "rent_monthly_clp": 810000,
+        "location": "La Reina"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-P13",
+      "text": "Casa en Independencia, 81m², 3D/2B. Precio: 5.206 UF. A 1374m de paradero de buses troncal, y 2,0km del metro más cercano. Entrega inmediata. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1374,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5206,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-N25",
+      "text": "Depto en La Reina, 75m², 2 dormitorios, 1 baño. Precio: UF 5.350. Ideal para inversionistas. A 363m de la estación de metro Plaza Egaña. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.130.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 363,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5350,
+        "price_clp": null,
+        "rent_monthly_clp": 1130000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-R87",
+      "text": "Depto en Macul, 70m², 2D/2B. Valor $166.600.000. A 969m de la estación de metro Los Leones. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 969,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": null,
+        "price_clp": 166600000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    }
+  ]
+}

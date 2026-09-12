@@ -1,0 +1,184 @@
+{
+  "id": "train_0196",
+  "uf_value": 39700,
+  "hard_constraints": {
+    "presupuesto_max_clp": 210500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-J36",
+      "text": "Depto en Maipú, 102m², 4D/1B. Valor $198.900.000. A 197m de la estación de metro Vicente Valdés. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. No incluye estacionamiento (posible arriendo en edificio vecino).",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 197,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 198900000,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-P55",
+      "text": "Depto en La Cisterna, 68m², 2 dormitorios + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 2B. Precio: 4.723 UF. A 273m de la estación de metro Bellas Artes. Recién remodelado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $860.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 273,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4723,
+        "price_clp": null,
+        "rent_monthly_clp": 860000,
+        "location": "La Cisterna"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-X20",
+      "text": "Depto en La Florida, 80m², 3 dormitorios, 2 baños. Precio: 4935 UF. Recién remodelado. A 911m de la estación de metro Manquehue. No se especifica política de mascotas. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.050.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 911,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4935,
+        "price_clp": null,
+        "rent_monthly_clp": 1050000,
+        "location": "La Florida"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-B40",
+      "text": "Depto en San Miguel, 83m², 3 dormitorios, 2 baños. Valor $165.300.000. A 1650m del metro Lo Vial, muy bien conectado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Excelente conectividad.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 165300000,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-K54",
+      "text": "Depto en Estación Central, 84m², 3D/2B. Precio: UF 5.456 (el mejor valor por m² del sector). A 234m de paradero de buses troncal, y 0,9km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Recién remodelado. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.470.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 234,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5456,
+        "price_clp": null,
+        "rent_monthly_clp": 1470000,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-D85",
+      "text": "Casa en La Reina, 112m², 4 dormitorios, 1 baño. Precio rebajado a 5.232 UF. A 930m de la estación de metro Bellas Artes. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $960.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 930,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5232,
+        "price_clp": null,
+        "rent_monthly_clp": 960000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-Z97",
+      "text": "Casa en La Cisterna, 88m², 3 dormitorios, 2 baños. Precio: 4.657 UF. A 952m de la estación de metro Ñuñoa. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.340.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 952,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4657,
+        "price_clp": null,
+        "rent_monthly_clp": 1340000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-S13",
+      "text": "Casa en Providencia, 107m², 4D/1B. Valor $214.500.000 (¡bajo el presupuesto del cliente según nuestro tasador!). A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 698m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.010.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 698,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 214500000,
+        "rent_monthly_clp": 1010000,
+        "location": "Providencia"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    }
+  ]
+}

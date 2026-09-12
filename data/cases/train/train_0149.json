@@ -1,0 +1,165 @@
+{
+  "id": "train_0149",
+  "uf_value": 39100,
+  "hard_constraints": {
+    "presupuesto_max_clp": 216000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-R59",
+      "text": "Depto en Ñuñoa, 94m², 3 dormitorios, 2 baños. Precio: UF 4.425. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 762m. Se aceptan mascotas pequeñas y medianas hasta 2kg, previa autorización de la administración. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.280.000/mes. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 762,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "propio",
+        "price_uf": 4425,
+        "price_clp": null,
+        "rent_monthly_clp": 1280000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 4kg"
+    },
+    {
+      "id": "PROP-E87",
+      "text": "Casa en Macul, 102m², 4D/1B. Valor $176.300.000. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 483m. Ideal para inversionistas. Solo se admiten gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $850.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 483,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 176300000,
+        "rent_monthly_clp": 850000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-S50",
+      "text": "Depto en Providencia, 78m², 2D/1B. Precio: UF 4.276. A 321m de paradero de buses troncal, y 1,4km del metro más cercano. Aceptamos mascotas, gatos y perros hasta 2kg. Incluye estacionamiento propio. Arriendo estimado: $1.070.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 321,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "propio",
+        "price_uf": 4276,
+        "price_clp": null,
+        "rent_monthly_clp": 1070000,
+        "location": "Providencia"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 4kg"
+    },
+    {
+      "id": "PROP-K15",
+      "text": "Casa en La Reina, 103m², 4D/2B. Precio: UF 4.269. Ubicado a 1,1 km de la estación Plaza Egaña, unos 13 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $1.080.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1050,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4269,
+        "price_clp": null,
+        "rent_monthly_clp": 1080000,
+        "location": "La Reina"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-C53",
+      "text": "Depto en Recoleta, 95m², 3 dormitorios, 2 baños. Precio: 5.404 UF. A 270m de paradero de buses troncal, y 1,3km del metro más cercano. Edificio sin mascotas por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.390.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 270,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5404,
+        "price_clp": null,
+        "rent_monthly_clp": 1390000,
+        "location": "Recoleta"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-B20",
+      "text": "Depto en San Miguel, 64m², 2D/2B. Precio: 5376 UF. A 691m de la estación de metro Manquehue. Solo se admiten perros de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.100.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 691,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5376,
+        "price_clp": null,
+        "rent_monthly_clp": 1100000,
+        "location": "San Miguel"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-G34",
+      "text": "Depto en Independencia, 64m², 2 dormitorios, 1 baño. Precio: 5402 UF. A 156m de paradero de buses troncal, y 0,6km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $890.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 156,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5402,
+        "price_clp": null,
+        "rent_monthly_clp": 890000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    }
+  ]
+}

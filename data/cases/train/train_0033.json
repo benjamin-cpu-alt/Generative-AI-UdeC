@@ -1,0 +1,140 @@
+{
+  "id": "train_0033",
+  "uf_value": 39950,
+  "hard_constraints": {
+    "presupuesto_max_clp": 148000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-C39",
+      "text": "Depto en San Miguel, 79m², 2D/1B. Valor $117.400.000. A 597m de la estación de metro Manquehue. Se aceptan mascotas pequeñas y medianas hasta 18kg, previa autorización de la administración. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $910.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 597,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 18
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 117400000,
+        "rent_monthly_clp": 910000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-D16",
+      "text": "Depto en Vitacura, 72m², 2 dormitorios, 1 baño. Precio: UF 3.642. A 999m de paradero de buses troncal, y 1,8km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $560.000/mes. Luminoso y con vista despejada.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 999,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3642,
+        "price_clp": null,
+        "rent_monthly_clp": 560000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-Y73",
+      "text": "Depto en La Cisterna, 51m², 1D/1B. Ideal para inversionistas. Precio: UF 3.907 (precio negociable, el propietario está abierto a ofertas). A 351m de paradero de buses troncal, y 1,3km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $900.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 351,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3907,
+        "price_clp": null,
+        "rent_monthly_clp": 900000,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-Z91",
+      "text": "Depto estudio en Providencia, 55m², ambiente único + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Precio rebajado a 2964 UF. A 837m de paradero de buses troncal, y 1,4km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Entrega inmediata. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 837,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2964,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-U20",
+      "text": "Depto estudio en Peñalolén, 53m², ambiente único + loggia cerrada, ideal como pieza extra, 1B. Precio rebajado. Precio: $135.200.000. A 745m de la estación de metro Irarrázaval. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 745,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 135200000,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-F10",
+      "text": "Depto en Maipú, 70m², 2D/2B. Precio: 3.670 UF. A 694m de paradero de buses troncal, y 1,6km del metro más cercano. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $840.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 694,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3670,
+        "price_clp": null,
+        "rent_monthly_clp": 840000,
+        "location": "Maipú"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    }
+  ]
+}

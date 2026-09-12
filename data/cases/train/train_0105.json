@@ -1,0 +1,140 @@
+{
+  "id": "train_0105",
+  "uf_value": 38950,
+  "hard_constraints": {
+    "presupuesto_max_clp": 108500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-K53",
+      "text": "Casa en Santiago Centro, 91m², 3 dormitorios, 1 baño. Precio rebajado a UF 2.724. A 363m de la estación de metro Irarrázaval. Se aceptan mascotas pequeñas y medianas hasta 18kg, previa autorización de la administración. Excelente conectividad. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $840.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 363,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 18
+        },
+        "parking": "asignado",
+        "price_uf": 2724,
+        "price_clp": null,
+        "rent_monthly_clp": 840000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-U11",
+      "text": "Depto en Ñuñoa, 72m², 2 dormitorios, 1 baño. Precio: 2673 UF. A 1000m de la estación de metro Irarrázaval. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Luminoso y con vista despejada. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $510.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2673,
+        "price_clp": null,
+        "rent_monthly_clp": 510000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-W48",
+      "text": "Depto en San Miguel, 73m², 2D/1B. Precio: $103.100.000. A 703m de la estación de metro Príncipe de Gales. Aceptamos mascotas, gatos y perros hasta 13kg. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $850.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 703,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 13
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 103100000,
+        "rent_monthly_clp": 850000,
+        "location": "San Miguel"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 13kg < mascota 18kg"
+    },
+    {
+      "id": "PROP-D20",
+      "text": "Depto en San Miguel, 51m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Precio: 2.041 UF. A 868m de paradero de buses troncal, y 1,6km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $470.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 868,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 2041,
+        "price_clp": null,
+        "rent_monthly_clp": 470000,
+        "location": "San Miguel"
+      },
+      "scenario": "multi",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple; dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-V51",
+      "text": "Depto en Maipú, 88m², 3D/1B. Precio rebajado a $105.400.000. A 375m de la estación de metro Cal y Canto. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Piso alto, orientación norte. Arriendo estimado: $770.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 375,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": null,
+        "price_clp": 105400000,
+        "rent_monthly_clp": 770000,
+        "location": "Maipú"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-L86",
+      "text": "Depto en Maipú, 106m², 4D/2B. Precio: UF 2.413. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 587m. Recién remodelado. No se aceptan mascotas. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $590.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 587,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2413,
+        "price_clp": null,
+        "rent_monthly_clp": 590000,
+        "location": "Maipú"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    }
+  ]
+}

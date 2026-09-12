@@ -1,0 +1,140 @@
+{
+  "id": "train_0275",
+  "uf_value": 40450,
+  "hard_constraints": {
+    "presupuesto_max_clp": 99000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Q29",
+      "text": "Depto en Santiago Centro, 66m², 2 dormitorios, 1 baño. Precio: 2017 UF. A 723m de la estación de metro Lo Vial. Aceptamos mascotas, gatos y perros hasta 6kg. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $650.000/mes. ¡Oportunidad única!",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 723,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 6
+        },
+        "parking": "propio",
+        "price_uf": 2017,
+        "price_clp": null,
+        "rent_monthly_clp": 650000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-Y99",
+      "text": "Depto en Vitacura, 66m², 2 dormitorios, 2 baños. Precio: 2220 UF. Precio rebajado. A 590m de la estación de metro Irarrázaval. Pet friendly con límite de 6kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $480.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 590,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 6
+        },
+        "parking": "asignado",
+        "price_uf": 2220,
+        "price_clp": null,
+        "rent_monthly_clp": 480000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-F20",
+      "text": "Casa en Ñuñoa, 79m², 3 dormitorios, 1 baño. Precio rebajado. Valor $78.700.000. A 249m de paradero de buses troncal, y 0,9km del metro más cercano. No se especifica política de mascotas. Incluye 1 estacionamiento. Arriendo estimado: $490.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 249,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 78700000,
+        "rent_monthly_clp": 490000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-C61",
+      "text": "Casa en Maipú, 85m², 3 dormitorios, 2 baños. Valor $81.000.000. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 505m. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 505,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 81000000,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-L75",
+      "text": "Depto en Santiago Centro, 73m², 2D/2B. Precio: UF 1.995. A 279m de la estación de metro Baquedano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $430.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 279,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 1995,
+        "price_clp": null,
+        "rent_monthly_clp": 430000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-S62",
+      "text": "Depto en Peñalolén, 65m², 2 dormitorios, 2 baños. Precio: UF 2.489 (precio negociable, el propietario está abierto a ofertas). A 732m de paradero de buses troncal, y 1,7km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 732,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2489,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

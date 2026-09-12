@@ -1,0 +1,207 @@
+{
+  "id": "train_0019",
+  "uf_value": 39600,
+  "hard_constraints": {
+    "presupuesto_max_clp": 151000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 10,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-N44",
+      "text": "Casa en La Reina, 87m², 3D/1B. Valor $142.000.000. A 2,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1200m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.160.000/mes. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 142000000,
+        "rent_monthly_clp": 1160000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-A43",
+      "text": "Depto en Ñuñoa, 106m², 4 dormitorios, 1 baño. Precio: 2.881 UF. A 1152m de la estación de metro Cal y Canto. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $660.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1152,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2881,
+        "price_clp": null,
+        "rent_monthly_clp": 660000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-J73",
+      "text": "Depto en Estación Central, 99m², 4 dormitorios, 2 baños. Valor $143.700.000. A 248m de la estación de metro Lo Vial. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 248,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 143700000,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-B37",
+      "text": "Depto en San Miguel, 98m², 4D/1B. Precio: 2.773 UF. A 1950m del metro Bellas Artes, muy bien conectado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Luminoso y con vista despejada. Sin estacionamiento.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1950,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 2773,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "multi",
+      "trap": "distancia excedida, minimizada en minutos caminando; estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-D42",
+      "text": "Depto en Providencia, 93m², 3 dormitorios, 1 baño. Precio: 3.192 UF. A 1,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 526m. Aceptamos mascotas, gatos y perros hasta 10kg. Incluye estacionamiento propio. Arriendo estimado: $760.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 526,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 10
+        },
+        "parking": "propio",
+        "price_uf": 3192,
+        "price_clp": null,
+        "rent_monthly_clp": 760000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-X13",
+      "text": "Depto en La Cisterna, 79m², 3 dormitorios, 2 baños. Precio: $135.600.000. A 507m de la estación de metro Tobalaba. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Sin estacionamiento. Arriendo estimado: $720.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 507,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 135600000,
+        "rent_monthly_clp": 720000,
+        "location": "La Cisterna"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-S99",
+      "text": "Depto en La Florida, 89m², 3D/1B. Precio: 3740 UF. A 709m de la estación de metro Vicente Valdés. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Recién remodelado. Arriendo referencial de la zona: $620.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 709,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3740,
+        "price_clp": null,
+        "rent_monthly_clp": 620000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-P16",
+      "text": "Depto en Independencia, 110m², 4D/1B. Precio: UF 3.621. A 449m de paradero de buses troncal, y 1,2km del metro más cercano. Se aceptan mascotas pequeñas y medianas hasta 10kg, previa autorización de la administración. Incluye 1 estacionamiento. Recién remodelado. Arriendo referencial de la zona: $740.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 449,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 10
+        },
+        "parking": "propio",
+        "price_uf": 3621,
+        "price_clp": null,
+        "rent_monthly_clp": 740000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-C51",
+      "text": "Depto en Independencia, 79m², 3D/2B. Precio: UF 3.460. Entrega inmediata. Ubicado a 1,6 km de la estación Escuela Militar, unos 19 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1550,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3460,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

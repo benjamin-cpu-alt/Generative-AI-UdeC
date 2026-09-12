@@ -1,0 +1,205 @@
+{
+  "id": "train_0001",
+  "uf_value": 38300,
+  "hard_constraints": {
+    "presupuesto_max_clp": 179000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 7,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-V21",
+      "text": "Casa en Macul, 97m², 3D/2B. Excelente conectividad. Precio: UF 4.081. A 222m de paradero de buses troncal, y 1,2km del metro más cercano. Aceptamos mascotas, gatos y perros hasta 4kg. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $720.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 222,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "asignado",
+        "price_uf": 4081,
+        "price_clp": null,
+        "rent_monthly_clp": 720000,
+        "location": "Macul"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 4kg < mascota 7kg"
+    },
+    {
+      "id": "PROP-T26",
+      "text": "Depto en Las Condes, 103m², 4 dormitorios, 1 baño. Valor $169.200.000. A 493m de paradero de buses troncal, y 1,5km del metro más cercano. Aceptamos mascotas, gatos y perros hasta 7kg. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.250.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 493,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 7
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 169200000,
+        "rent_monthly_clp": 1250000,
+        "location": "Las Condes"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-P61",
+      "text": "Depto en Peñalolén, 94m², 3D/2B. Piso alto, orientación norte. Precio: UF 3.922. A 154m de la estación de metro Escuela Militar. Aceptamos mascotas, gatos y perros hasta 2kg. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 154,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "propio",
+        "price_uf": 3922,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 7kg"
+    },
+    {
+      "id": "PROP-U98",
+      "text": "Depto en La Reina, 87m², 3 dormitorios, 2 baños. Precio: $164.200.000. A 381m de la estación de metro Los Leones. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento. ¡Oportunidad única! Arriendo estimado: $1.370.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 381,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 164200000,
+        "rent_monthly_clp": 1370000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-Y79",
+      "text": "Depto en Estación Central, 83m², 3 dormitorios, 1 baño. Valor $184.500.000 (precio negociable, el propietario está abierto a ofertas). Precio rebajado. A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 229m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 229,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 184500000,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-R85",
+      "text": "Depto en Macul, 64m², 2 dormitorios, 1 baño. Piso alto, orientación norte. Precio: 3757 UF. A 416m de paradero de buses troncal, y 0,8km del metro más cercano. No se especifica política de mascotas. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 416,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3757,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-Q69",
+      "text": "Depto en Recoleta, 64m², 2D/2B. Precio: 4.614 UF. A 452m de la estación de metro Vicente Valdés. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $980.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 452,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4614,
+        "price_clp": null,
+        "rent_monthly_clp": 980000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-H12",
+      "text": "Depto en San Miguel, 109m², 4 dormitorios, 1 baño. Precio rebajado a UF 3.530. A 220m de la estación de metro Bellas Artes. Incluye estacionamiento propio. Piso alto, orientación norte. Arriendo estimado: $970.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 220,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3530,
+        "price_clp": null,
+        "rent_monthly_clp": 970000,
+        "location": "San Miguel"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-A25",
+      "text": "Depto en Recoleta, 96m², 3D/1B. Precio: UF 4.042. A 198m de la estación de metro Vicente Valdés. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 198,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 4042,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    }
+  ]
+}

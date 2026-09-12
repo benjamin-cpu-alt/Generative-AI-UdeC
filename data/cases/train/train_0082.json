@@ -1,0 +1,119 @@
+{
+  "id": "train_0082",
+  "uf_value": 40400,
+  "hard_constraints": {
+    "presupuesto_max_clp": 108500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 8,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-R12",
+      "text": "Casa en Maipú, 93m², 3 dormitorios, 2 baños. Precio: UF 2.639. A 579m de la estación de metro Tobalaba. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $430.000/mes. Recién remodelado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 579,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2639,
+        "price_clp": null,
+        "rent_monthly_clp": 430000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-B18",
+      "text": "Depto en Peñalolén, 65m², 2D/1B. Precio: UF 2.785 (el mejor valor por m² del sector). A 687m de la estación de metro Baquedano. Recién remodelado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $600.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 687,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2785,
+        "price_clp": null,
+        "rent_monthly_clp": 600000,
+        "location": "Peñalolén"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-Z26",
+      "text": "Depto en Providencia, 58m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Valor $78.600.000. A 1200m del metro Franklin, muy bien conectado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $380.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 78600000,
+        "rent_monthly_clp": 380000,
+        "location": "Providencia"
+      },
+      "scenario": "multi",
+      "trap": "distancia excedida, minimizada en minutos caminando; dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-E91",
+      "text": "Depto en Ñuñoa, 95m², 3D/1B. Precio: 2493 UF. A 936m de la estación de metro Ñuñoa. Pet friendly con límite de 3kg por mascota. Incluye 1 estacionamiento. Arriendo referencial de la zona: $540.000/mes. Luminoso y con vista despejada.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 936,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 3
+        },
+        "parking": "propio",
+        "price_uf": 2493,
+        "price_clp": null,
+        "rent_monthly_clp": 540000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 3kg < mascota 8kg"
+    },
+    {
+      "id": "PROP-Y77",
+      "text": "Depto en Estación Central, 96m², 4 dormitorios, 2 baños. Precio: $93.600.000. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 227m. No se aceptan mascotas. Incluye 1 estacionamiento. Arriendo estimado: $620.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 227,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 93600000,
+        "rent_monthly_clp": 620000,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    }
+  ]
+}

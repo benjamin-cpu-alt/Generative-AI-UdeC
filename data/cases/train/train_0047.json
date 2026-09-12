@@ -1,0 +1,140 @@
+{
+  "id": "train_0047",
+  "uf_value": 39550,
+  "hard_constraints": {
+    "presupuesto_max_clp": 95000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 12,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-S35",
+      "text": "Depto en Maipú, 67m², 2D/2B. Valor $97.000.000 (precio negociable, el propietario está abierto a ofertas). A 282m de paradero de buses troncal, y 0,9km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Piso alto, orientación norte. Incluye 1 estacionamiento. Arriendo referencial de la zona: $700.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 282,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 97000000,
+        "rent_monthly_clp": 700000,
+        "location": "Maipú"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-U66",
+      "text": "Depto en Providencia, 111m², 4 dormitorios, 1 baño. Recién remodelado. Precio: 2.248 UF. A 443m de la estación de metro Tobalaba. 100% pet friendly, sin restricciones de tamaño ni especie. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $540.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 443,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 2248,
+        "price_clp": null,
+        "rent_monthly_clp": 540000,
+        "location": "Providencia"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-G32",
+      "text": "Depto en Santiago Centro, 71m², 2D/2B. Precio: 2197 UF. Entrega inmediata. A 327m de la estación de metro Ñuñoa. Aceptamos mascotas, gatos y perros hasta 12kg. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $700.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 327,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 12
+        },
+        "parking": "asignado",
+        "price_uf": 2197,
+        "price_clp": null,
+        "rent_monthly_clp": 700000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-Q76",
+      "text": "Depto en La Reina, 72m², 2D/1B. Recién remodelado. Precio: 1.790 UF. A 323m de la estación de metro Irarrázaval. Aceptamos mascotas, gatos y perros hasta 10kg. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $420.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 323,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 10
+        },
+        "parking": "propio",
+        "price_uf": 1790,
+        "price_clp": null,
+        "rent_monthly_clp": 420000,
+        "location": "La Reina"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 10kg < mascota 12kg"
+    },
+    {
+      "id": "PROP-X35",
+      "text": "Depto en Peñalolén, 78m², 2D/1B. Precio: 2389 UF. A 0,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 273m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $450.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 273,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2389,
+        "price_clp": null,
+        "rent_monthly_clp": 450000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-C83",
+      "text": "Depto en Providencia, 80m², 2D/2B. Precio: 2.260 UF. A 385m de paradero de buses troncal, y 1,2km del metro más cercano. No se especifica política de mascotas. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $420.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 385,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2260,
+        "price_clp": null,
+        "rent_monthly_clp": 420000,
+        "location": "Providencia"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    }
+  ]
+}

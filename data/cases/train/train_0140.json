@@ -1,0 +1,186 @@
+{
+  "id": "train_0140",
+  "uf_value": 40450,
+  "hard_constraints": {
+    "presupuesto_max_clp": 109500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-R33",
+      "text": "Casa en Macul, 94m², 3 dormitorios, 1 baño. Precio rebajado. Precio: 2.655 UF. A 1180m de la estación de metro Lo Vial. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $610.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1180,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2655,
+        "price_clp": null,
+        "rent_monthly_clp": 610000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-S25",
+      "text": "Depto en Macul, 107m², 4D/2B. Entrega inmediata. Valor $99.500.000. A 1850m del metro Lo Vial, a pasos de todo. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo estimado: $800.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1850,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 99500000,
+        "rent_monthly_clp": 800000,
+        "location": "Macul"
+      },
+      "scenario": "multi",
+      "trap": "distancia excedida, minimizada en minutos caminando; estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-U96",
+      "text": "Depto en Estación Central, 106m², 4D/2B. Precio: $83.800.000. A 682m de la estación de metro Manquehue. Ideal para inversionistas. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Sin estacionamiento. Arriendo estimado: $440.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 682,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 83800000,
+        "rent_monthly_clp": 440000,
+        "location": "Estación Central"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-L97",
+      "text": "Depto en Recoleta, 104m², 4D/1B. Valor $88.300.000. A 1850m del metro Irarrázaval, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $680.000/mes. Recién remodelado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1850,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 88300000,
+        "rent_monthly_clp": 680000,
+        "location": "Recoleta"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-A41",
+      "text": "Depto en La Reina, 104m², 4D/1B. Precio: 2682 UF. A 1412m de la estación de metro Franklin. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $680.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1412,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2682,
+        "price_clp": null,
+        "rent_monthly_clp": 680000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-H80",
+      "text": "Depto en Ñuñoa, 70m², 2 dormitorios + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 2B. Precio rebajado a 2.336 UF. Luminoso y con vista despejada. A 1241m de la estación de metro Irarrázaval. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1241,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2336,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-F80",
+      "text": "Depto en Maipú, 109m², 4D/2B. Ideal para inversionistas. Precio: 2124 UF. A 2300m del metro Escuela Militar, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 2300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2124,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-B50",
+      "text": "Depto en Maipú, 103m², 4D/2B. Precio: UF 2.153. A 1413m de paradero de buses troncal, y 2,3km del metro más cercano. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $690.000/mes. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1413,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2153,
+        "price_clp": null,
+        "rent_monthly_clp": 690000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    }
+  ]
+}

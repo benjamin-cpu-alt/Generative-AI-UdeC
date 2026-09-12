@@ -1,0 +1,184 @@
+{
+  "id": "train_0165",
+  "uf_value": 38550,
+  "hard_constraints": {
+    "presupuesto_max_clp": 160000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-M52",
+      "text": "Depto en Las Condes, 49m², 1 dormitorios, 1 baño. Precio: 3.136 UF. A 1247m de la estación de metro Tobalaba. Solo se admiten gatos de cualquier tamaño. Incluye estacionamiento propio. Entrega inmediata. Arriendo estimado: $850.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1247,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3136,
+        "price_clp": null,
+        "rent_monthly_clp": 850000,
+        "location": "Las Condes"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-D91",
+      "text": "Depto en La Florida, 54m², 1D/1B. Precio: 4.054 UF. A 187m de paradero de buses troncal, y 1,1km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $620.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 187,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4054,
+        "price_clp": null,
+        "rent_monthly_clp": 620000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-B32",
+      "text": "Depto en Providencia, 89m², 3D/2B. Valor $135.600.000. A 2350m del metro Franklin, muy bien conectado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo estimado: $1.070.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 2350,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 135600000,
+        "rent_monthly_clp": 1070000,
+        "location": "Providencia"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-A92",
+      "text": "Depto en Providencia, 76m², 2 dormitorios, 2 baños. Precio: 3380 UF. A 635m de la estación de metro Manquehue. Entrega inmediata. Edificio sin mascotas por reglamento de copropiedad. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 635,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3380,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-F16",
+      "text": "Depto en Macul, 47m², 1D/1B. Recién remodelado. Precio rebajado a UF 3.946. A 469m de la estación de metro Escuela Militar. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $1.100.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 469,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 3946,
+        "price_clp": null,
+        "rent_monthly_clp": 1100000,
+        "location": "Macul"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-H24",
+      "text": "Depto en Peñalolén, 45m², 1D/1B. Precio rebajado a $134.000.000. A 858m de paradero de buses troncal, y 1,9km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $910.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 858,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": null,
+        "price_clp": 134000000,
+        "rent_monthly_clp": 910000,
+        "location": "Peñalolén"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-Y31",
+      "text": "Depto en San Miguel, 73m², 2D/2B. Precio rebajado a $155.000.000. A 150m de la estación de metro Irarrázaval. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $1.150.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 150,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 155000000,
+        "rent_monthly_clp": 1150000,
+        "location": "San Miguel"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-E38",
+      "text": "Depto en La Florida, 66m², 2D/2B. Precio: 4.054 UF. A 996m de paradero de buses troncal, y 1,9km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.160.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 996,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4054,
+        "price_clp": null,
+        "rent_monthly_clp": 1160000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    }
+  ]
+}

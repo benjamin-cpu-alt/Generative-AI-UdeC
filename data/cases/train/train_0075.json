@@ -1,0 +1,163 @@
+{
+  "id": "train_0075",
+  "uf_value": 38800,
+  "hard_constraints": {
+    "presupuesto_max_clp": 152000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 25,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-R29",
+      "text": "Depto en Macul, 69m², 2D/1B. Recién remodelado. Valor $112.500.000. A 1700m del metro Bellas Artes, muy bien conectado. Se aceptan mascotas pequeñas y medianas hasta 24kg, previa autorización de la administración. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 24
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 112500000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "multi",
+      "trap": "límite de peso 24kg < mascota 25kg; distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-N37",
+      "text": "Depto en Independencia, 51m², 1D/1B. Precio: 3098 UF. A 2,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 984m. Precio rebajado. Aceptamos mascotas, gatos y perros hasta 22kg. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 984,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 22
+        },
+        "parking": "visitas",
+        "price_uf": 3098,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "multi",
+      "trap": "límite de peso 22kg < mascota 25kg; estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-G84",
+      "text": "Depto en Peñalolén, 84m², 3D/1B. Valor $139.600.000. A 827m de la estación de metro Lo Vial. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $900.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 827,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 139600000,
+        "rent_monthly_clp": 900000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-J57",
+      "text": "Depto en Providencia, 52m², 1D/1B. Precio: 3.451 UF. A 825m de paradero de buses troncal, y 1,3km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $830.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 825,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 3451,
+        "price_clp": null,
+        "rent_monthly_clp": 830000,
+        "location": "Providencia"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-B46",
+      "text": "Depto en Peñalolén, 55m², 1D/1B. Precio rebajado a $115.800.000. A 469m de la estación de metro Baquedano. 100% pet friendly, sin restricciones de tamaño ni especie. Piso alto, orientación norte. Incluye estacionamiento propio. Arriendo referencial de la zona: $930.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 469,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 115800000,
+        "rent_monthly_clp": 930000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-Q27",
+      "text": "Depto en Peñalolén, 95m², 3 dormitorios, 1 baño. Precio rebajado a $142.800.000. A 1169m de la estación de metro Plaza Egaña. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.140.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1169,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 142800000,
+        "rent_monthly_clp": 1140000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-H29",
+      "text": "Depto en Estación Central, 63m², 2D/1B. Precio: 4008 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 271m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Excelente conectividad. Incluye 1 estacionamiento. Arriendo referencial de la zona: $580.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 271,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4008,
+        "price_clp": null,
+        "rent_monthly_clp": 580000,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "train_0295",
+  "uf_value": 38550,
+  "hard_constraints": {
+    "presupuesto_max_clp": 128500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 7,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-D41",
+      "text": "Depto en Peñalolén, 92m², 3D/1B. Precio rebajado a 2.903 UF. A 935m de la estación de metro Manquehue. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye estacionamiento propio. Arriendo estimado: $840.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 935,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2903,
+        "price_clp": null,
+        "rent_monthly_clp": 840000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-Y94",
+      "text": "Depto en Estación Central, 64m², 2D/1B. Precio: 2.573 UF. A 881m de la estación de metro Irarrázaval. Pet friendly con límite de 4kg por mascota. Incluye 1 estacionamiento. Arriendo estimado: $640.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 881,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "propio",
+        "price_uf": 2573,
+        "price_clp": null,
+        "rent_monthly_clp": 640000,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 4kg < mascota 7kg"
+    },
+    {
+      "id": "PROP-H83",
+      "text": "Depto en Recoleta, 51m², 1D/1B. Precio: 2405 UF. A 1271m de la estación de metro Plaza Egaña. Aceptamos mascotas, gatos y perros hasta 4kg. Incluye 1 estacionamiento techado asignado. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1271,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "asignado",
+        "price_uf": 2405,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 4kg < mascota 7kg"
+    },
+    {
+      "id": "PROP-W12",
+      "text": "Depto en La Reina, 82m², 3 dormitorios, 2 baños. Precio: 3.271 UF. A 2,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1330m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $680.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1330,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3271,
+        "price_clp": null,
+        "rent_monthly_clp": 680000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-T70",
+      "text": "Depto en Recoleta, 60m², 1D/1B. Precio: 2599 UF. A 1750m del metro Escuela Militar, a pasos de todo. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $670.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2599,
+        "price_clp": null,
+        "rent_monthly_clp": 670000,
+        "location": "Recoleta"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

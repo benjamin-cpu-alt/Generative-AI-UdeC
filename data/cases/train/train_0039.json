@@ -1,0 +1,125 @@
+{
+  "id": "train_0039",
+  "uf_value": 39800,
+  "hard_constraints": {
+    "presupuesto_max_clp": 228000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 15,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-N54",
+      "text": "Depto en La Florida, 72m², 2D/2B. Precio: UF 5.435. A 662m de la estación de metro Ñuñoa. Recién remodelado. Solo se admiten perros de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.370.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 662,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5435,
+        "price_clp": null,
+        "rent_monthly_clp": 1370000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-W75",
+      "text": "Casa en Maipú, 87m², 3D/2B. Valor $211.900.000. A 379m de la estación de metro Ñuñoa. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye estacionamiento propio. ¡Oportunidad única!",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 379,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 211900000,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-A18",
+      "text": "Depto en La Florida, 86m², 3D/2B. Valor $234.500.000 (precio negociable, el propietario está abierto a ofertas). A 802m de la estación de metro Escuela Militar. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Luminoso y con vista despejada. Arriendo referencial de la zona: $1.020.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 802,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 234500000,
+        "rent_monthly_clp": 1020000,
+        "location": "La Florida"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-G72",
+      "text": "Casa en La Cisterna, 94m², 3D/1B. Valor $183.800.000. A 1650m del metro Príncipe de Gales, a pasos de todo. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.290.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 183800000,
+        "rent_monthly_clp": 1290000,
+        "location": "La Cisterna"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-X40",
+      "text": "Depto en La Florida, 67m², 2D/1B. Precio rebajado a $174.600.000. A 255m de paradero de buses troncal, y 1,2km del metro más cercano. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $850.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 255,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 174600000,
+        "rent_monthly_clp": 850000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    }
+  ]
+}

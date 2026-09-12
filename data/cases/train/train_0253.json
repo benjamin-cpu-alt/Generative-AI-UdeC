@@ -1,0 +1,140 @@
+{
+  "id": "train_0253",
+  "uf_value": 38650,
+  "hard_constraints": {
+    "presupuesto_max_clp": 92500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-M93",
+      "text": "Depto en Providencia, 63m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Precio: 1.972 UF. A 435m de paradero de buses troncal, y 0,9km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $530.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 435,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 1972,
+        "price_clp": null,
+        "rent_monthly_clp": 530000,
+        "location": "Providencia"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-E42",
+      "text": "Depto en Providencia, 69m², 2D/2B. Precio: $89.100.000. A 865m de la estación de metro Cal y Canto. Aceptamos mascotas, gatos y perros hasta 5kg. Incluye 1 estacionamiento subterráneo asignado. Recién remodelado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 865,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 89100000,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 5kg < mascota 6kg"
+    },
+    {
+      "id": "PROP-J74",
+      "text": "Depto en Ñuñoa, 46m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Valor $89.400.000. A 1136m de la estación de metro Lo Vial. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $470.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1136,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 89400000,
+        "rent_monthly_clp": 470000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-H51",
+      "text": "Casa en San Miguel, 111m², 4D/2B. Precio rebajado a UF 1.793. A 1400m del metro Irarrázaval, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $470.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 1793,
+        "price_clp": null,
+        "rent_monthly_clp": 470000,
+        "location": "San Miguel"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-W46",
+      "text": "Depto en Vitacura, 62m², 2 dormitorios, 1 baño. Piso alto, orientación norte. Valor $94.000.000 (¡bajo el presupuesto del cliente según nuestro tasador!). A 289m de la estación de metro Franklin. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $500.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 289,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 94000000,
+        "rent_monthly_clp": 500000,
+        "location": "Vitacura"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-G15",
+      "text": "Depto en Estación Central, 70m², 2D/1B. Precio: UF 1.811. A 782m de paradero de buses troncal, y 1,9km del metro más cercano. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $540.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 782,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 1811,
+        "price_clp": null,
+        "rent_monthly_clp": 540000,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    }
+  ]
+}

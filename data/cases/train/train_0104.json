@@ -1,0 +1,207 @@
+{
+  "id": "train_0104",
+  "uf_value": 38950,
+  "hard_constraints": {
+    "presupuesto_max_clp": 99500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-E61",
+      "text": "Depto en Santiago Centro, 88m², 3 dormitorios, 2 baños. Precio rebajado a 2039 UF. A 737m de la estación de metro Príncipe de Gales. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $420.000/mes. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 737,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2039,
+        "price_clp": null,
+        "rent_monthly_clp": 420000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-F21",
+      "text": "Casa en San Miguel, 92m², 3D/2B. Precio: 2193 UF. A 1000m de paradero de buses troncal, y 2,2km del metro más cercano. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $660.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2193,
+        "price_clp": null,
+        "rent_monthly_clp": 660000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-G50",
+      "text": "Depto en Santiago Centro, 84m², 3D/1B. Precio rebajado a UF 2.393. A 165m de la estación de metro Lo Vial. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento. Arriendo estimado: $720.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 165,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2393,
+        "price_clp": null,
+        "rent_monthly_clp": 720000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-H46",
+      "text": "Casa en San Miguel, 92m², 3 dormitorios, 1 baño. Valor $92.300.000. A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1000m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $560.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 92300000,
+        "rent_monthly_clp": 560000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-K85",
+      "text": "Depto en Macul, 77m², 2D/2B. Piso alto, orientación norte. Precio: 2637 UF (precio negociable, el propietario está abierto a ofertas). A 402m de la estación de metro Lo Vial. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $700.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 402,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2637,
+        "price_clp": null,
+        "rent_monthly_clp": 700000,
+        "location": "Macul"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-D23",
+      "text": "Depto en Peñalolén, 93m², 3 dormitorios, 2 baños. Precio: 2.575 UF (precio negociable, el propietario está abierto a ofertas). A 392m de paradero de buses troncal, y 0,9km del metro más cercano. Ideal para inversionistas. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $530.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 392,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2575,
+        "price_clp": null,
+        "rent_monthly_clp": 530000,
+        "location": "Peñalolén"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-L88",
+      "text": "Casa en Estación Central, 83m², 3 dormitorios, 1 baño. Precio: UF 2.023. A 876m de la estación de metro Franklin. Se aceptan mascotas pequeñas y medianas hasta 2kg, previa autorización de la administración. Incluye estacionamiento propio. Arriendo estimado: $630.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 876,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "propio",
+        "price_uf": 2023,
+        "price_clp": null,
+        "rent_monthly_clp": 630000,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 6kg"
+    },
+    {
+      "id": "PROP-W63",
+      "text": "Depto en Independencia, 70m², 2D/1B. Precio: UF 2.311. A 504m de paradero de buses troncal, y 1,6km del metro más cercano. Precio rebajado. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 504,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2311,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-R30",
+      "text": "Depto en San Miguel, 73m², 2 dormitorios, 2 baños. Precio rebajado a $92.700.000. ¡Oportunidad única! Ubicado a 1,6 km de la estación Tobalaba, unos 20 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $490.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 92700000,
+        "rent_monthly_clp": 490000,
+        "location": "San Miguel"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

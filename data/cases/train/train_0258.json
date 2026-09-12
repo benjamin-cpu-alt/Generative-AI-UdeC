@@ -1,0 +1,182 @@
+{
+  "id": "train_0258",
+  "uf_value": 38850,
+  "hard_constraints": {
+    "presupuesto_max_clp": 214000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 7,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-L69",
+      "text": "Casa en Vitacura, 82m², 3D/1B. Precio: 4649 UF. A 306m de paradero de buses troncal, y 1,2km del metro más cercano. Piso alto, orientación norte. No se especifica política de mascotas. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 306,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4649,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-U68",
+      "text": "Depto en Las Condes, 79m², 2D/1B. Valor $209.500.000. A 248m de la estación de metro Los Leones. Pet friendly con límite de 7kg por mascota. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.130.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 248,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 7
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 209500000,
+        "rent_monthly_clp": 1130000,
+        "location": "Las Condes"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-P48",
+      "text": "Casa en Santiago Centro, 97m², 3D/1B. Precio: 5606 UF (el mejor valor por m² del sector). A 1,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 165m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Ideal para inversionistas. Incluye estacionamiento propio. Arriendo estimado: $1.410.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 165,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5606,
+        "price_clp": null,
+        "rent_monthly_clp": 1410000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-C18",
+      "text": "Depto en Ñuñoa, 103m², 4 dormitorios, 1 baño. Precio: UF 5.441. A 569m de paradero de buses troncal, y 1,7km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.390.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 569,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5441,
+        "price_clp": null,
+        "rent_monthly_clp": 1390000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-N70",
+      "text": "Depto en Estación Central, 48m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Valor $154.500.000. A 492m de paradero de buses troncal, y 1,2km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.230.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 492,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 154500000,
+        "rent_monthly_clp": 1230000,
+        "location": "Estación Central"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-X34",
+      "text": "Depto en Maipú, 66m², 2D/2B. Precio: 4932 UF. Ubicado a 0,8 km de la estación Lo Vial, unos 10 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4932,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-F13",
+      "text": "Depto en Las Condes, 77m², 2 dormitorios, 2 baños. Precio: 4.257 UF. A 1050m del metro Lo Vial, a pasos de todo. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. ¡Oportunidad única! Arriendo estimado: $1.250.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1050,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4257,
+        "price_clp": null,
+        "rent_monthly_clp": 1250000,
+        "location": "Las Condes"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-Z84",
+      "text": "Depto en Macul, 78m², 2D/1B. Precio rebajado a 5.449 UF. A 465m de la estación de metro Tobalaba. Piso alto, orientación norte. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $830.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 465,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5449,
+        "price_clp": null,
+        "rent_monthly_clp": 830000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    }
+  ]
+}

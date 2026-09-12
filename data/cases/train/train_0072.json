@@ -1,0 +1,163 @@
+{
+  "id": "train_0072",
+  "uf_value": 40050,
+  "hard_constraints": {
+    "presupuesto_max_clp": 208000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-S43",
+      "text": "Casa en La Florida, 110m², 4D/1B. Valor $150.800.000. A 817m de paradero de buses troncal, y 1,3km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo estimado: $1.110.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 817,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 150800000,
+        "rent_monthly_clp": 1110000,
+        "location": "La Florida"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-K69",
+      "text": "Casa en Macul, 101m², 4 dormitorios, 1 baño. Precio: 4.292 UF. A 1700m del metro Franklin, a pasos de todo. ¡Oportunidad única! Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $870.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4292,
+        "price_clp": null,
+        "rent_monthly_clp": 870000,
+        "location": "Macul"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-N60",
+      "text": "Casa en Las Condes, 97m², 3 dormitorios, 2 baños. Precio: UF 5.288 (¡bajo el presupuesto del cliente según nuestro tasador!). A 362m de paradero de buses troncal, y 0,9km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 362,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5288,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-C97",
+      "text": "Depto en Peñalolén, 90m², 3D/1B. Precio: 4327 UF. Ideal para inversionistas. A 190m de paradero de buses troncal, y 0,6km del metro más cercano. Se aceptan mascotas pequeñas y medianas hasta 5kg, previa autorización de la administración. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.200.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 190,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "asignado",
+        "price_uf": 4327,
+        "price_clp": null,
+        "rent_monthly_clp": 1200000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-P25",
+      "text": "Casa en La Cisterna, 81m², 3 dormitorios, 1 baño. Valor $203.700.000. Excelente conectividad. A 1,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 403m. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.110.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 403,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 203700000,
+        "rent_monthly_clp": 1110000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-J48",
+      "text": "Depto en Maipú, 90m², 3D/2B. Precio: UF 4.180. Ubicado a 1,4 km de la estación Lo Vial, unos 17 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1350,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4180,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-M26",
+      "text": "Casa en La Cisterna, 92m², 3 dormitorios, 1 baño. Valor $175.400.000. A 948m de la estación de metro Tobalaba. Pet friendly con límite de 2kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.080.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 948,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 175400000,
+        "rent_monthly_clp": 1080000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 5kg"
+    }
+  ]
+}

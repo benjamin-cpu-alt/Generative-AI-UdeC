@@ -8,7 +8,7 @@ from matcher.schema import Case
 from matcher.verifier import verify
 
 ROOT = Path(__file__).resolve().parents[1]
-CASE = Case.load(ROOT / "data" / "cases" / "case_001_e1.json")
+CASE = Case.load(ROOT / "data" / "cases" / "test" / "case_001_e1.json")
 
 PERFECT = {
     "approved_matches": [

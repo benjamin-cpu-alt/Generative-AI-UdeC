@@ -1,0 +1,184 @@
+{
+  "id": "train_0264",
+  "uf_value": 39900,
+  "hard_constraints": {
+    "presupuesto_max_clp": 115000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-R94",
+      "text": "Casa en Estación Central, 82m², 3 dormitorios, 2 baños. Precio: 2.825 UF. A 1208m de la estación de metro Los Leones. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $550.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1208,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2825,
+        "price_clp": null,
+        "rent_monthly_clp": 550000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-G99",
+      "text": "Casa en Estación Central, 104m², 4D/2B. Precio: 2.667 UF. A 233m de paradero de buses troncal, y 0,9km del metro más cercano. Entrega inmediata. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $600.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 233,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2667,
+        "price_clp": null,
+        "rent_monthly_clp": 600000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-H62",
+      "text": "Casa en Ñuñoa, 79m², 3 dormitorios, 1 baño. Precio: 2.429 UF. A 1273m de la estación de metro Ñuñoa. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Excelente conectividad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $540.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1273,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2429,
+        "price_clp": null,
+        "rent_monthly_clp": 540000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-B45",
+      "text": "Depto en Independencia, 98m², 4D/2B. Precio rebajado a 2526 UF. Ubicado a 1,9 km de la estación Manquehue, unos 24 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo estimado: $580.000/mes. ¡Oportunidad única!",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1950,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2526,
+        "price_clp": null,
+        "rent_monthly_clp": 580000,
+        "location": "Independencia"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-L20",
+      "text": "Casa en Maipú, 84m², 3 dormitorios, 1 baño. Precio: 2286 UF. A 1010m de paradero de buses troncal, y 1,5km del metro más cercano. No se especifica política de mascotas. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1010,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2286,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-U54",
+      "text": "Depto en Ñuñoa, 67m², 2D/1B. Precio: 2.845 UF. A 1198m de paradero de buses troncal, y 2,3km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $520.000/mes. Recién remodelado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1198,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2845,
+        "price_clp": null,
+        "rent_monthly_clp": 520000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-N91",
+      "text": "Depto en La Reina, 45m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Ideal para inversionistas. Precio rebajado a 2479 UF. A 422m de la estación de metro Cal y Canto. Aceptamos mascotas, gatos y perros hasta 2kg. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 422,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "propio",
+        "price_uf": 2479,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      },
+      "scenario": "multi",
+      "trap": "dormitorio 'convertible' que no es real; límite de peso 2kg < mascota 4kg"
+    },
+    {
+      "id": "PROP-Q79",
+      "text": "Casa en Maipú, 107m², 4D/1B. Precio rebajado a 2221 UF. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 422m. Edificio sin mascotas por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 422,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2221,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    }
+  ]
+}

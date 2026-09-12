@@ -1,0 +1,119 @@
+{
+  "id": "train_0067",
+  "uf_value": 38200,
+  "hard_constraints": {
+    "presupuesto_max_clp": 197500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 7,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-F33",
+      "text": "Depto en Santiago Centro, 84m², 3 dormitorios, 1 baño. Precio: 5.398 UF (el mejor valor por m² del sector). A 1,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 150m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Piso alto, orientación norte.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 150,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5398,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-L47",
+      "text": "Depto en San Miguel, 105m², 4 dormitorios, 1 baño. Valor $204.500.000 (el mejor valor por m² del sector). A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 238m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.160.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 238,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 204500000,
+        "rent_monthly_clp": 1160000,
+        "location": "San Miguel"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-G49",
+      "text": "Depto en La Florida, 64m², 2 dormitorios, 2 baños. Precio: 5401 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 315m de la estación de metro Príncipe de Gales. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Luminoso y con vista despejada.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 315,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5401,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-X95",
+      "text": "Depto en La Cisterna, 54m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio: 4291 UF. A 165m de paradero de buses troncal, y 1,1km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.000.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 165,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4291,
+        "price_clp": null,
+        "rent_monthly_clp": 1000000,
+        "location": "La Cisterna"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-U40",
+      "text": "Depto en Maipú, 83m², 3D/1B. Entrega inmediata. Precio: 4.709 UF. A 330m de la estación de metro Vicente Valdés. Pet friendly con límite de 7kg por mascota. Incluye estacionamiento propio. Arriendo estimado: $1.390.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 330,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 7
+        },
+        "parking": "propio",
+        "price_uf": 4709,
+        "price_clp": null,
+        "rent_monthly_clp": 1390000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    }
+  ]
+}

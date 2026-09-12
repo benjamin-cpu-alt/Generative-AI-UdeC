@@ -1,0 +1,119 @@
+{
+  "id": "test_0005",
+  "uf_value": 38150,
+  "hard_constraints": {
+    "presupuesto_max_clp": 203000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-V24",
+      "text": "Depto en La Florida, 92m², 3 dormitorios, 2 baños. Valor $158.300.000. A 1150m del metro Ñuñoa, muy bien conectado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.280.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1150,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 158300000,
+        "rent_monthly_clp": 1280000,
+        "location": "La Florida"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-Y43",
+      "text": "Depto en La Reina, 103m², 4 dormitorios, 1 baño. Valor $154.200.000. Ubicado a 1,4 km de la estación Irarrázaval, unos 18 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 154200000,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-C34",
+      "text": "Depto en Providencia, 80m², 3 dormitorios, 1 baño. Valor $210.000.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 480m de la estación de metro Baquedano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 480,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 210000000,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-U40",
+      "text": "Casa en La Cisterna, 100m², 4 dormitorios, 2 baños. Precio rebajado a $150.900.000. A 1000m de paradero de buses troncal, y 1,4km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.010.000/mes. ¡Oportunidad única!",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 150900000,
+        "rent_monthly_clp": 1010000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-D72",
+      "text": "Depto en Recoleta, 64m², 2D/2B. Entrega inmediata. Precio rebajado a $173.000.000. A 856m de la estación de metro Escuela Militar. Se aceptan mascotas pequeñas y medianas hasta 18kg, previa autorización de la administración. Incluye 1 estacionamiento. Arriendo estimado: $1.230.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 856,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 18
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 173000000,
+        "rent_monthly_clp": 1230000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    }
+  ]
+}

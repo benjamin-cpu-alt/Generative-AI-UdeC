@@ -1,0 +1,140 @@
+{
+  "id": "train_0200",
+  "uf_value": 38300,
+  "hard_constraints": {
+    "presupuesto_max_clp": 127000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-W74",
+      "text": "Depto estudio en La Reina, 55m², ambiente único + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Valor $95.300.000. A 983m de la estación de metro Baquedano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $720.000/mes.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 983,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 95300000,
+        "rent_monthly_clp": 720000,
+        "location": "La Reina"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-N54",
+      "text": "Depto en Vitacura, 68m², 2 dormitorios, 2 baños. Valor $100.900.000. A 2800m del metro Baquedano, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Piso alto, orientación norte. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $730.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 2800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 100900000,
+        "rent_monthly_clp": 730000,
+        "location": "Vitacura"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-R82",
+      "text": "Depto en Recoleta, 68m², 2 dormitorios, 1 baño. Precio: 3154 UF. A 702m de paradero de buses troncal, y 1,9km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Luminoso y con vista despejada.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 702,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 3154,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-Q24",
+      "text": "Depto en Peñalolén, 47m², 1 dormitorios, 1 baño. Precio rebajado a $124.200.000. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 763m. Aceptamos mascotas, gatos y perros hasta 3kg. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.050.000/mes. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 763,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 3
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 124200000,
+        "rent_monthly_clp": 1050000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 3kg < mascota 5kg"
+    },
+    {
+      "id": "PROP-C21",
+      "text": "Depto en Santiago Centro, 69m², 2D/2B. Valor $104.200.000. A 1187m de la estación de metro Bellas Artes. Aceptamos mascotas, gatos y perros hasta 5kg. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $870.000/mes. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1187,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 104200000,
+        "rent_monthly_clp": 870000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-J62",
+      "text": "Depto en Maipú, 63m², 2 dormitorios, 1 baño. Precio: 3.238 UF. A 705m de paradero de buses troncal, y 1,5km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $760.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 705,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3238,
+        "price_clp": null,
+        "rent_monthly_clp": 760000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    }
+  ]
+}

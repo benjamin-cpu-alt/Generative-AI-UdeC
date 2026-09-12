@@ -1,0 +1,161 @@
+{
+  "id": "train_0153",
+  "uf_value": 40300,
+  "hard_constraints": {
+    "presupuesto_max_clp": 140500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 10,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-B50",
+      "text": "Depto en Providencia, 114m², 4D/1B. Valor $110.700.000. A 289m de la estación de metro Tobalaba. ¡Oportunidad única! Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 289,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 110700000,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-S97",
+      "text": "Depto en La Cisterna, 99m², 4 dormitorios, 1 baño. Excelente conectividad. Valor $141.500.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 1401m de la estación de metro Bellas Artes. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1401,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 141500000,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-G34",
+      "text": "Casa en La Reina, 101m², 4D/1B. Valor $104.700.000. A 1500m de paradero de buses troncal, y 2,6km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Entrega inmediata. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $880.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 104700000,
+        "rent_monthly_clp": 880000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-E62",
+      "text": "Depto en Vitacura, 95m², 3 dormitorios, 2 baños. Precio: UF 2.553. A 1500m de la estación de metro Manquehue. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $480.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2553,
+        "price_clp": null,
+        "rent_monthly_clp": 480000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-C53",
+      "text": "Depto en Ñuñoa, 106m², 4D/2B. Precio: UF 3.042. A 1500m de la estación de metro Manquehue. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Recién remodelado. Arriendo estimado: $910.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3042,
+        "price_clp": null,
+        "rent_monthly_clp": 910000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-A42",
+      "text": "Depto en Macul, 98m², 4D/2B. Precio: 2.782 UF. Ubicado a 2,2 km de la estación Tobalaba, unos 28 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $890.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 2200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 2782,
+        "price_clp": null,
+        "rent_monthly_clp": 890000,
+        "location": "Macul"
+      },
+      "scenario": "multi",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple; distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-P93",
+      "text": "Casa en Recoleta, 108m², 4D/1B. Precio: UF 3.166. A 1478m de la estación de metro Franklin. No se especifica política de mascotas. Precio rebajado. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $830.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1478,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3166,
+        "price_clp": null,
+        "rent_monthly_clp": 830000,
+        "location": "Recoleta"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    }
+  ]
+}

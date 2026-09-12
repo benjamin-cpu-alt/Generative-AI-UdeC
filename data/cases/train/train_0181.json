@@ -1,0 +1,203 @@
+{
+  "id": "train_0181",
+  "uf_value": 38600,
+  "hard_constraints": {
+    "presupuesto_max_clp": 183500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 10,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-R86",
+      "text": "Depto en Macul, 61m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio: UF 4.870 (¡bajo el presupuesto del cliente según nuestro tasador!). A 1,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 897m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.330.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 897,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4870,
+        "price_clp": null,
+        "rent_monthly_clp": 1330000,
+        "location": "Macul"
+      },
+      "scenario": "multi",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-K52",
+      "text": "Depto en Peñalolén, 68m², 2D/1B. Precio: UF 3.570. A 794m de la estación de metro Baquedano. Se aceptan mascotas pequeñas y medianas hasta 5kg, previa autorización de la administración. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Precio rebajado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 794,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "propio",
+        "price_uf": 3570,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 5kg < mascota 10kg"
+    },
+    {
+      "id": "PROP-Q68",
+      "text": "Depto en Recoleta, 79m², 2D/2B. Precio: $177.100.000. Entrega inmediata. A 2100m del metro Ñuñoa, a pasos de todo. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 2100,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 177100000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-B32",
+      "text": "Depto en La Reina, 49m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio: 3878 UF. A 1079m de la estación de metro Plaza Egaña. ¡Oportunidad única! 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1079,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3878,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-L25",
+      "text": "Casa en Recoleta, 80m², 3D/2B. Precio: $172.900.000. A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1200m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.230.000/mes. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 172900000,
+        "rent_monthly_clp": 1230000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-D39",
+      "text": "Casa en La Reina, 96m², 3 dormitorios, 1 baño. Valor $166.700.000. A 834m de la estación de metro Tobalaba. Aceptamos mascotas, gatos y perros hasta 7kg. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $780.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 834,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 7
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 166700000,
+        "rent_monthly_clp": 780000,
+        "location": "La Reina"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 7kg < mascota 10kg"
+    },
+    {
+      "id": "PROP-V59",
+      "text": "Depto en Maipú, 64m², 2D/1B. Precio rebajado a UF 3.427. A 660m de la estación de metro Escuela Militar. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Sin estacionamiento. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 660,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3427,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-Z45",
+      "text": "Casa en Macul, 108m², 4D/1B. Ideal para inversionistas. Precio: 3588 UF. A 254m de la estación de metro Tobalaba. Se aceptan mascotas pequeñas y medianas hasta 9kg, previa autorización de la administración. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 254,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 9
+        },
+        "parking": "propio",
+        "price_uf": 3588,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 9kg < mascota 10kg"
+    },
+    {
+      "id": "PROP-Y41",
+      "text": "Depto en Peñalolén, 64m², 2D/1B. Precio: UF 3.484. A 2,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1200m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Recién remodelado. Arriendo referencial de la zona: $1.120.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3484,
+        "price_clp": null,
+        "rent_monthly_clp": 1120000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    }
+  ]
+}

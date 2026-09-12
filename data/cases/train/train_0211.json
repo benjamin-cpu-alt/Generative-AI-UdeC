@@ -1,0 +1,121 @@
+{
+  "id": "train_0211",
+  "uf_value": 40050,
+  "hard_constraints": {
+    "presupuesto_max_clp": 186000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 3,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-A54",
+      "text": "Depto en Independencia, 69m², 2 dormitorios, 2 baños. ¡Oportunidad única! Precio: UF 4.532. A 495m de la estación de metro Lo Vial. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.080.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 495,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4532,
+        "price_clp": null,
+        "rent_monthly_clp": 1080000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-X13",
+      "text": "Depto en Santiago Centro, 68m², 2 dormitorios, 2 baños. Valor $136.700.000. A 2,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1089m. No se aceptan mascotas. Incluye 1 estacionamiento techado asignado. Recién remodelado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1089,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 136700000,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-K53",
+      "text": "Depto en Maipú, 93m², 3 dormitorios, 2 baños. Valor $184.700.000. A 591m de paradero de buses troncal, y 1,0km del metro más cercano. Se aceptan mascotas pequeñas y medianas hasta 2kg, previa autorización de la administración. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $940.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 591,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 184700000,
+        "rent_monthly_clp": 940000,
+        "location": "Maipú"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 3kg"
+    },
+    {
+      "id": "PROP-L87",
+      "text": "Depto en Recoleta, 53m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio rebajado a $183.400.000. A 370m de la estación de metro Ñuñoa. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. ¡Oportunidad única! Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 370,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 183400000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-S65",
+      "text": "Depto en La Florida, 99m², 4D/1B. Valor $164.200.000. A 1253m de la estación de metro Tobalaba. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Excelente conectividad. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $760.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1253,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 164200000,
+        "rent_monthly_clp": 760000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    }
+  ]
+}

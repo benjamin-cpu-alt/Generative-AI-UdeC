@@ -1,0 +1,140 @@
+{
+  "id": "train_0292",
+  "uf_value": 39750,
+  "hard_constraints": {
+    "presupuesto_max_clp": 122500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 30,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-R71",
+      "text": "Depto en Independencia, 56m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Valor $93.900.000. Precio rebajado. Ubicado a 1,4 km de la estación Irarrázaval, unos 18 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo referencial de la zona: $770.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 93900000,
+        "rent_monthly_clp": 770000,
+        "location": "Independencia"
+      },
+      "scenario": "multi",
+      "trap": "dormitorio 'convertible' que no es real; distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-P51",
+      "text": "Depto en Ñuñoa, 61m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio rebajado a $93.400.000. A 496m de la estación de metro Vicente Valdés. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $590.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 496,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 93400000,
+        "rent_monthly_clp": 590000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-V22",
+      "text": "Depto en Ñuñoa, 50m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio: 2249 UF. A 689m de la estación de metro Escuela Militar. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo referencial de la zona: $570.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 689,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2249,
+        "price_clp": null,
+        "rent_monthly_clp": 570000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-W88",
+      "text": "Depto en Las Condes, 113m², 4 dormitorios, 1 baño. Precio: 2.901 UF. A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 765m. Se aceptan mascotas pequeñas y medianas hasta 29kg, previa autorización de la administración. Incluye estacionamiento propio. Entrega inmediata. Arriendo estimado: $700.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 765,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 29
+        },
+        "parking": "propio",
+        "price_uf": 2901,
+        "price_clp": null,
+        "rent_monthly_clp": 700000,
+        "location": "Las Condes"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 29kg < mascota 30kg"
+    },
+    {
+      "id": "PROP-T55",
+      "text": "Depto en Santiago Centro, 67m², 2 dormitorios, 2 baños. Precio: 2453 UF. A 529m de paradero de buses troncal, y 1,0km del metro más cercano. Aceptamos mascotas, gatos y perros hasta 30kg. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $480.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 529,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 30
+        },
+        "parking": "asignado",
+        "price_uf": 2453,
+        "price_clp": null,
+        "rent_monthly_clp": 480000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-K30",
+      "text": "Casa en Las Condes, 85m², 3D/2B. Precio: 3.182 UF (el mejor valor por m² del sector). A 638m de la estación de metro Príncipe de Gales. Recién remodelado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 638,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3182,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

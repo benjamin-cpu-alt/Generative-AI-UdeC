@@ -1,0 +1,182 @@
+{
+  "id": "train_0265",
+  "uf_value": 39750,
+  "hard_constraints": {
+    "presupuesto_max_clp": 115000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 3,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Q16",
+      "text": "Depto en Peñalolén, 97m², 3D/1B. Valor $91.200.000. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 748m. Se aceptan mascotas pequeñas y medianas hasta 3kg, previa autorización de la administración. Incluye 1 estacionamiento. Arriendo estimado: $540.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 748,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 3
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 91200000,
+        "rent_monthly_clp": 540000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-R17",
+      "text": "Depto en Independencia, 85m², 3D/1B. Precio: 2.405 UF. A 1,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 272m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo estimado: $590.000/mes. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 272,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 2405,
+        "price_clp": null,
+        "rent_monthly_clp": 590000,
+        "location": "Independencia"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-Y65",
+      "text": "Depto en Ñuñoa, 89m², 3 dormitorios, 1 baño. Precio: 2.682 UF. A 677m de paradero de buses troncal, y 1,5km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $660.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 677,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2682,
+        "price_clp": null,
+        "rent_monthly_clp": 660000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-V61",
+      "text": "Casa en Recoleta, 94m², 3 dormitorios, 2 baños. Valor $97.400.000. A 862m de la estación de metro Vicente Valdés. No se aceptan mascotas. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 862,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 97400000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-W55",
+      "text": "Casa en Maipú, 88m², 3 dormitorios, 2 baños. Valor $83.500.000. A 312m de la estación de metro Ñuñoa. Pet friendly con límite de 2kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $670.000/mes. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 312,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 83500000,
+        "rent_monthly_clp": 670000,
+        "location": "Maipú"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 3kg"
+    },
+    {
+      "id": "PROP-J16",
+      "text": "Depto en Peñalolén, 108m², 4 dormitorios, 1 baño. Valor $106.500.000. A 936m de la estación de metro Príncipe de Gales. Pet friendly con límite de 3kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $740.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 936,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 3
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 106500000,
+        "rent_monthly_clp": 740000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-K27",
+      "text": "Depto en Providencia, 90m², 3 dormitorios, 2 baños. Precio: 3.052 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 310m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Luminoso y con vista despejada. Incluye 1 estacionamiento. Arriendo estimado: $480.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 310,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3052,
+        "price_clp": null,
+        "rent_monthly_clp": 480000,
+        "location": "Providencia"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-M41",
+      "text": "Depto en Macul, 55m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio rebajado a $89.000.000. A 866m de la estación de metro Manquehue. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Luminoso y con vista despejada.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 866,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 89000000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    }
+  ]
+}

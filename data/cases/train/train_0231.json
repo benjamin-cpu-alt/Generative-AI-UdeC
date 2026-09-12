@@ -1,0 +1,186 @@
+{
+  "id": "train_0231",
+  "uf_value": 40550,
+  "hard_constraints": {
+    "presupuesto_max_clp": 144500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 25,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-R30",
+      "text": "Depto en Estación Central, 67m², 2D/2B. Valor $105.700.000. Precio rebajado. A 636m de la estación de metro Ñuñoa. 100% pet friendly, sin restricciones de tamaño ni especie. Estacionamiento en la calle, sin problemas para aparcar en el sector.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 636,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 105700000,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-P29",
+      "text": "Depto en Estación Central, 76m², 2D/1B. Precio: 3581 UF (el mejor valor por m² del sector). A 610m de la estación de metro Cal y Canto. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $560.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 610,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3581,
+        "price_clp": null,
+        "rent_monthly_clp": 560000,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-C62",
+      "text": "Depto en Providencia, 67m², 2D/1B. Precio: 3.744 UF (el mejor valor por m² del sector). A 954m de la estación de metro Baquedano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. No incluye estacionamiento (posible arriendo en edificio vecino). Arriendo estimado: $770.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 954,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3744,
+        "price_clp": null,
+        "rent_monthly_clp": 770000,
+        "location": "Providencia"
+      },
+      "scenario": "multi",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple; precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-L10",
+      "text": "Depto en Vitacura, 86m², 3 dormitorios, 1 baño. Precio: 3292 UF. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1200m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $610.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3292,
+        "price_clp": null,
+        "rent_monthly_clp": 610000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-B36",
+      "text": "Depto en Las Condes, 79m², 2 dormitorios, 1 baño. Precio: UF 3.502. A 1200m de paradero de buses troncal, y 1,8km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.160.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3502,
+        "price_clp": null,
+        "rent_monthly_clp": 1160000,
+        "location": "Las Condes"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-T67",
+      "text": "Depto en Providencia, 69m², 2 dormitorios, 2 baños. Valor $126.800.000. A 287m de la estación de metro Lo Vial. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $780.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 287,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 126800000,
+        "rent_monthly_clp": 780000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-H49",
+      "text": "Depto en Ñuñoa, 63m², 2 dormitorios, 2 baños. Precio: 2.671 UF. A 450m de la estación de metro Vicente Valdés. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $780.000/mes. Recién remodelado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 450,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2671,
+        "price_clp": null,
+        "rent_monthly_clp": 780000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-U21",
+      "text": "Depto en Independencia, 52m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio rebajado. Valor $133.200.000. A 655m de la estación de metro Irarrázaval. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 655,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 133200000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    }
+  ]
+}

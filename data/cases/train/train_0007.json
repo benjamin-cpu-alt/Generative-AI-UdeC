@@ -1,0 +1,142 @@
+{
+  "id": "train_0007",
+  "uf_value": 40250,
+  "hard_constraints": {
+    "presupuesto_max_clp": 192500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 8,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-S76",
+      "text": "Depto en Independencia, 89m², 3 dormitorios, 1 baño. Precio: UF 3.851. A 770m de paradero de buses troncal, y 1,8km del metro más cercano. Solo se admiten gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $700.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 770,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3851,
+        "price_clp": null,
+        "rent_monthly_clp": 700000,
+        "location": "Independencia"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-P67",
+      "text": "Depto en San Miguel, 96m², 4 dormitorios, 2 baños. Valor $169.500.000. A 164m de paradero de buses troncal, y 1,3km del metro más cercano. Aceptamos mascotas, gatos y perros hasta 8kg. Luminoso y con vista despejada. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.020.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 164,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 8
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 169500000,
+        "rent_monthly_clp": 1020000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-J42",
+      "text": "Depto en Estación Central, 96m², 3D/2B. Precio: 3446 UF. A 384m de la estación de metro Lo Vial. Se aceptan mascotas pequeñas y medianas hasta 8kg, previa autorización de la administración. Incluye estacionamiento propio. Arriendo referencial de la zona: $650.000/mes. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 384,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 8
+        },
+        "parking": "propio",
+        "price_uf": 3446,
+        "price_clp": null,
+        "rent_monthly_clp": 650000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-B23",
+      "text": "Depto en Estación Central, 96m², 4 dormitorios, 2 baños. Precio: UF 4.487. A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 902m. No se especifica política de mascotas. Incluye 1 estacionamiento techado asignado. Precio rebajado. Arriendo estimado: $840.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 902,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4487,
+        "price_clp": null,
+        "rent_monthly_clp": 840000,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-T87",
+      "text": "Casa en Peñalolén, 99m², 4 dormitorios, 1 baño. Valor $197.000.000 (precio negociable, el propietario está abierto a ofertas). A 737m de la estación de metro Príncipe de Gales. ¡Oportunidad única! 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 737,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 197000000,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-X23",
+      "text": "Casa en Santiago Centro, 104m², 4 dormitorios, 1 baño. Precio: 4954 UF (¡bajo el presupuesto del cliente según nuestro tasador!). Luminoso y con vista despejada. A 1,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 550m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo estimado: $1.180.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 550,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 4954,
+        "price_clp": null,
+        "rent_monthly_clp": 1180000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "multi",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; estacionamiento 'visitas' menciona la palabra pero no cumple"
+    }
+  ]
+}

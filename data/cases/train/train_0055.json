@@ -1,0 +1,161 @@
+{
+  "id": "train_0055",
+  "uf_value": 39750,
+  "hard_constraints": {
+    "presupuesto_max_clp": 110500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 22,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-J87",
+      "text": "Depto en Estación Central, 54m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio rebajado a UF 2.662. A 262m de paradero de buses troncal, y 1,0km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Sin estacionamiento. Arriendo referencial de la zona: $680.000/mes. ¡Oportunidad única!",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 262,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 2662,
+        "price_clp": null,
+        "rent_monthly_clp": 680000,
+        "location": "Estación Central"
+      },
+      "scenario": "multi",
+      "trap": "dormitorio 'convertible' que no es real; estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-N97",
+      "text": "Depto en Maipú, 66m², 2 dormitorios, 2 baños. Precio: 2.825 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 465m de la estación de metro Ñuñoa. Se aceptan mascotas pequeñas y medianas hasta 20kg, previa autorización de la administración. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $550.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 465,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 20
+        },
+        "parking": "asignado",
+        "price_uf": 2825,
+        "price_clp": null,
+        "rent_monthly_clp": 550000,
+        "location": "Maipú"
+      },
+      "scenario": "multi",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; límite de peso 20kg < mascota 22kg"
+    },
+    {
+      "id": "PROP-H73",
+      "text": "Depto en Estación Central, 80m², 3D/2B. Precio: UF 2.133. A 650m del metro Plaza Egaña, a pasos de todo. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $500.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2133,
+        "price_clp": null,
+        "rent_monthly_clp": 500000,
+        "location": "Estación Central"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-A85",
+      "text": "Depto en La Cisterna, 52m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Valor $105.800.000. A 302m de la estación de metro Ñuñoa. Recién remodelado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 302,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 105800000,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-Z54",
+      "text": "Depto en Santiago Centro, 66m², 2 dormitorios, 1 baño. Precio: 2.669 UF. A 700m del metro Cal y Canto, a pasos de todo. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Entrega inmediata. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2669,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-Y66",
+      "text": "Depto en Estación Central, 63m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Precio: UF 2.762. A 309m de la estación de metro Bellas Artes. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 309,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2762,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-T67",
+      "text": "Depto en La Florida, 69m², 2D/2B. Valor $101.200.000. A 372m de paradero de buses troncal, y 1,4km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Sin estacionamiento.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 372,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 101200000,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    }
+  ]
+}

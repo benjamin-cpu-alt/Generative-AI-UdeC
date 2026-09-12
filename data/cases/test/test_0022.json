@@ -1,0 +1,209 @@
+{
+  "id": "test_0022",
+  "uf_value": 38200,
+  "hard_constraints": {
+    "presupuesto_max_clp": 222000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 10,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-T96",
+      "text": "Depto en La Reina, 73m², 2D/1B. Precio: 6.136 UF (el mejor valor por m² del sector). A 969m de la estación de metro Irarrázaval. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo estimado: $1.190.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 969,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 6136,
+        "price_clp": null,
+        "rent_monthly_clp": 1190000,
+        "location": "La Reina"
+      },
+      "scenario": "multi",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple; precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-Z25",
+      "text": "Depto en La Reina, 75m², 2D/1B. Precio: UF 4.715. A 855m de paradero de buses troncal, y 1,3km del metro más cercano. Solo se admiten gatos de cualquier tamaño. ¡Oportunidad única! Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.230.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 855,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4715,
+        "price_clp": null,
+        "rent_monthly_clp": 1230000,
+        "location": "La Reina"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-A11",
+      "text": "Depto en Ñuñoa, 69m², 2D/1B. Luminoso y con vista despejada. Precio: 5767 UF. A 497m de la estación de metro Ñuñoa. No se especifica política de mascotas. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.210.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 497,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5767,
+        "price_clp": null,
+        "rent_monthly_clp": 1210000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-U38",
+      "text": "Depto en Estación Central, 101m², 4D/2B. Precio: UF 4.448. A 184m de la estación de metro Manquehue. Pet friendly con límite de 7kg por mascota. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.050.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 184,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 7
+        },
+        "parking": "propio",
+        "price_uf": 4448,
+        "price_clp": null,
+        "rent_monthly_clp": 1050000,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 7kg < mascota 10kg"
+    },
+    {
+      "id": "PROP-H59",
+      "text": "Depto en Ñuñoa, 96m², 3D/1B. Precio: 4696 UF. A 643m de paradero de buses troncal, y 1,2km del metro más cercano. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $840.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 643,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4696,
+        "price_clp": null,
+        "rent_monthly_clp": 840000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-M64",
+      "text": "Depto en La Reina, 71m², 2D/2B. Excelente conectividad. Precio: 5.152 UF. A 266m de paradero de buses troncal, y 1,1km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Sin estacionamiento.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 266,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 5152,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-C11",
+      "text": "Depto en La Cisterna, 69m², 2D/1B. Precio: 5.984 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 471m de la estación de metro Lo Vial. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. No incluye estacionamiento (posible arriendo en edificio vecino). Arriendo estimado: $1.330.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 471,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 5984,
+        "price_clp": null,
+        "rent_monthly_clp": 1330000,
+        "location": "La Cisterna"
+      },
+      "scenario": "multi",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple; precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-B63",
+      "text": "Depto en Estación Central, 65m², 2D/2B. Precio: $171.000.000. A 955m de la estación de metro Los Leones. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.330.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 955,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 171000000,
+        "rent_monthly_clp": 1330000,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-K59",
+      "text": "Depto en Estación Central, 69m², 2 dormitorios, 1 baño. Valor $228.000.000 (precio negociable, el propietario está abierto a ofertas). A 321m de la estación de metro Vicente Valdés. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.650.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 321,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 228000000,
+        "rent_monthly_clp": 1650000,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    }
+  ]
+}

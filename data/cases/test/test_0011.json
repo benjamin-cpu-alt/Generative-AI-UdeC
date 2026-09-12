@@ -1,0 +1,119 @@
+{
+  "id": "test_0011",
+  "uf_value": 38250,
+  "hard_constraints": {
+    "presupuesto_max_clp": 149500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-A39",
+      "text": "Depto en Recoleta, 65m², 2D/1B. Valor $109.300.000. A 166m de la estación de metro Vicente Valdés. Luminoso y con vista despejada. Pet friendly con límite de 5kg por mascota. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $540.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 166,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 109300000,
+        "rent_monthly_clp": 540000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-M72",
+      "text": "Depto en Ñuñoa, 93m², 3D/2B. Precio: UF 3.333. A 2,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 826m. Se aceptan mascotas pequeñas y medianas hasta 2kg, previa autorización de la administración. Incluye 1 estacionamiento. Arriendo referencial de la zona: $590.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 826,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "propio",
+        "price_uf": 3333,
+        "price_clp": null,
+        "rent_monthly_clp": 590000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 5kg"
+    },
+    {
+      "id": "PROP-H76",
+      "text": "Depto en Peñalolén, 80m², 2 dormitorios, 2 baños. Valor $157.000.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 310m de la estación de metro Baquedano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 310,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 157000000,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-T42",
+      "text": "Depto en Las Condes, 50m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Valor $137.500.000. Luminoso y con vista despejada. A 753m de paradero de buses troncal, y 1,3km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 753,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 137500000,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-W70",
+      "text": "Depto en La Florida, 66m², 2 dormitorios, 1 baño. Precio: $146.400.000. A 332m de la estación de metro Bellas Artes. Aceptamos mascotas, gatos y perros hasta 5kg. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Entrega inmediata. Arriendo estimado: $1.240.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 332,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 146400000,
+        "rent_monthly_clp": 1240000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    }
+  ]
+}

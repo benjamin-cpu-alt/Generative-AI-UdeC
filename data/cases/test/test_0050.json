@@ -1,0 +1,182 @@
+{
+  "id": "test_0050",
+  "uf_value": 39850,
+  "hard_constraints": {
+    "presupuesto_max_clp": 117500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 3,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-S84",
+      "text": "Depto en Ñuñoa, 114m², 4 dormitorios, 2 baños. Valor $92.800.000. A 1000m de la estación de metro Los Leones. Entrega inmediata. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $700.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 92800000,
+        "rent_monthly_clp": 700000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-U56",
+      "text": "Depto en Maipú, 114m², 4 dormitorios, 2 baños. Precio: $93.900.000. A 449m de la estación de metro Tobalaba. Pet friendly con límite de 2kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $670.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 449,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 93900000,
+        "rent_monthly_clp": 670000,
+        "location": "Maipú"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 3kg"
+    },
+    {
+      "id": "PROP-A27",
+      "text": "Depto en La Reina, 84m², 3 dormitorios, 1 baño. Precio: 2683 UF. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 431m. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 431,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2683,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-C89",
+      "text": "Casa en Estación Central, 103m², 4 dormitorios, 2 baños. Valor $107.400.000. A 483m de la estación de metro Vicente Valdés. No se especifica política de mascotas. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $830.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 483,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 107400000,
+        "rent_monthly_clp": 830000,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-Y49",
+      "text": "Depto en Estación Central, 62m², 2 dormitorios, 2 baños. Precio: 2.979 UF (precio negociable, el propietario está abierto a ofertas). A 916m de la estación de metro Príncipe de Gales. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 916,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2979,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-K18",
+      "text": "Depto en Providencia, 72m², 2 dormitorios, 1 baño. Ideal para inversionistas. Precio: UF 2.816. A 288m de la estación de metro Baquedano. Pet friendly con límite de 3kg por mascota. Incluye estacionamiento propio. Arriendo referencial de la zona: $720.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 288,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 3
+        },
+        "parking": "propio",
+        "price_uf": 2816,
+        "price_clp": null,
+        "rent_monthly_clp": 720000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-Z50",
+      "text": "Depto en Vitacura, 68m², 2D/2B. Precio: 2.680 UF. A 352m de paradero de buses troncal, y 1,0km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $500.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 352,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2680,
+        "price_clp": null,
+        "rent_monthly_clp": 500000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-D64",
+      "text": "Depto en La Cisterna, 79m², 2D/2B. Precio: 2.740 UF. Piso alto, orientación norte. A 557m de la estación de metro Irarrázaval. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $550.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 557,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2740,
+        "price_clp": null,
+        "rent_monthly_clp": 550000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    }
+  ]
+}

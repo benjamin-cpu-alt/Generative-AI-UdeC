@@ -1,0 +1,119 @@
+{
+  "id": "train_0032",
+  "uf_value": 40500,
+  "hard_constraints": {
+    "presupuesto_max_clp": 96500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 20,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-V81",
+      "text": "Depto en Peñalolén, 106m², 4D/2B. Precio: UF 2.222. A 618m de la estación de metro Ñuñoa. Pet friendly con límite de 20kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $690.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 618,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 20
+        },
+        "parking": "asignado",
+        "price_uf": 2222,
+        "price_clp": null,
+        "rent_monthly_clp": 690000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-S36",
+      "text": "Casa en Maipú, 105m², 4 dormitorios, 2 baños. Valor $74.100.000. A 2300m del metro Bellas Artes, muy bien conectado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Luminoso y con vista despejada. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 2300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 74100000,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-R96",
+      "text": "Casa en San Miguel, 79m², 3 dormitorios, 2 baños. Precio rebajado a $86.200.000. A 315m de paradero de buses troncal, y 1,4km del metro más cercano. Pet friendly con límite de 20kg por mascota. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $580.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 315,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 20
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 86200000,
+        "rent_monthly_clp": 580000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-U83",
+      "text": "Depto en Macul, 73m², 2 dormitorios + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Valor $78.600.000. A 409m de paradero de buses troncal, y 1,4km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $540.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 409,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 78600000,
+        "rent_monthly_clp": 540000,
+        "location": "Macul"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-C64",
+      "text": "Depto en Independencia, 63m², 2 dormitorios + sala de estar amplia que puede usarse como dormitorio adicional, 2B. Valor $82.400.000. Precio rebajado. A 915m de la estación de metro Vicente Valdés. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 915,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 82400000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    }
+  ]
+}

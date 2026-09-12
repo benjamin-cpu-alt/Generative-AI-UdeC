@@ -1,0 +1,119 @@
+{
+  "id": "train_0130",
+  "uf_value": 39000,
+  "hard_constraints": {
+    "presupuesto_max_clp": 132000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-F35",
+      "text": "Depto en Ñuñoa, 71m², 2 dormitorios, 2 baños. Precio: 3.408 UF (el mejor valor por m² del sector). Excelente conectividad. A 181m de paradero de buses troncal, y 1,2km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $660.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 181,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3408,
+        "price_clp": null,
+        "rent_monthly_clp": 660000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-C12",
+      "text": "Depto en Recoleta, 67m², 2 dormitorios, 1 baño. Precio rebajado a 3.069 UF. A 699m de la estación de metro Manquehue. Se aceptan mascotas pequeñas y medianas hasta 5kg, previa autorización de la administración. Incluye estacionamiento propio. Arriendo referencial de la zona: $850.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 699,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "propio",
+        "price_uf": 3069,
+        "price_clp": null,
+        "rent_monthly_clp": 850000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-G66",
+      "text": "Depto en La Florida, 112m², 4D/1B. Valor $103.700.000. A 712m de la estación de metro Plaza Egaña. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $640.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 712,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 103700000,
+        "rent_monthly_clp": 640000,
+        "location": "La Florida"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-W11",
+      "text": "Casa en La Reina, 90m², 3D/2B. Luminoso y con vista despejada. Valor $109.600.000. A 343m de la estación de metro Franklin. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 343,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 109600000,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-E11",
+      "text": "Depto en La Florida, 101m², 4D/2B. Precio: $123.700.000. Recién remodelado. Ubicado a 0,9 km de la estación Príncipe de Gales, unos 11 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 123700000,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

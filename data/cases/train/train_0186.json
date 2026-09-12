@@ -1,0 +1,184 @@
+{
+  "id": "train_0186",
+  "uf_value": 38500,
+  "hard_constraints": {
+    "presupuesto_max_clp": 118500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-C32",
+      "text": "Depto en Macul, 92m², 3D/2B. Valor $116.600.000. A 950m del metro Tobalaba, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Piso alto, orientación norte. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 950,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 116600000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-X62",
+      "text": "Depto en Maipú, 89m², 3 dormitorios, 2 baños. Valor $101.900.000. A 500m de la estación de metro Príncipe de Gales. Aceptamos mascotas, gatos y perros hasta 2kg. Incluye estacionamiento propio. Entrega inmediata. Arriendo estimado: $500.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 101900000,
+        "rent_monthly_clp": 500000,
+        "location": "Maipú"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 5kg"
+    },
+    {
+      "id": "PROP-Q90",
+      "text": "Depto en Estación Central, 114m², 4D/1B. Precio: UF 3.062. A 266m de la estación de metro Bellas Artes. Solo se admiten gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $580.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 266,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3062,
+        "price_clp": null,
+        "rent_monthly_clp": 580000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-B72",
+      "text": "Casa en Recoleta, 85m², 3 dormitorios, 2 baños. Precio: 3.021 UF. A 598m de la estación de metro Los Leones. 100% pet friendly, sin restricciones de tamaño ni especie. Entrega inmediata. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $580.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 598,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3021,
+        "price_clp": null,
+        "rent_monthly_clp": 580000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-M49",
+      "text": "Depto en Ñuñoa, 97m², 3D/2B. Precio: $102.400.000. A 1050m del metro Los Leones, a pasos de todo. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. ¡Oportunidad única! Arriendo estimado: $490.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1050,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 102400000,
+        "rent_monthly_clp": 490000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-N45",
+      "text": "Depto en Estación Central, 91m², 3D/1B. Precio: 3236 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 298m de la estación de metro Franklin. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 298,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3236,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-L25",
+      "text": "Casa en Ñuñoa, 99m², 4 dormitorios, 2 baños. Valor $120.000.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 1,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 572m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $680.000/mes. ¡Oportunidad única!",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 572,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 120000000,
+        "rent_monthly_clp": 680000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-Y54",
+      "text": "Casa en Estación Central, 93m², 3D/2B. Piso alto, orientación norte. Precio: 3.187 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 206m de la estación de metro Plaza Egaña. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $520.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 206,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3187,
+        "price_clp": null,
+        "rent_monthly_clp": 520000,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

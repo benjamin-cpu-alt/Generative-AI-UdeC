@@ -1,0 +1,119 @@
+{
+  "id": "train_0285",
+  "uf_value": 38300,
+  "hard_constraints": {
+    "presupuesto_max_clp": 226000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Q18",
+      "text": "Depto en Maipú, 103m², 4 dormitorios, 1 baño. Precio: 4773 UF. A 1459m de la estación de metro Plaza Egaña. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.130.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1459,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4773,
+        "price_clp": null,
+        "rent_monthly_clp": 1130000,
+        "location": "Maipú"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-X91",
+      "text": "Depto en Maipú, 99m², 4 dormitorios, 1 baño. Precio: UF 5.867. A 876m de la estación de metro Tobalaba. 100% pet friendly, sin restricciones de tamaño ni especie. No incluye estacionamiento (posible arriendo en edificio vecino). Arriendo estimado: $1.510.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 876,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 5867,
+        "price_clp": null,
+        "rent_monthly_clp": 1510000,
+        "location": "Maipú"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-K77",
+      "text": "Depto en Santiago Centro, 81m², 3D/2B. Precio: UF 6.232 (el mejor valor por m² del sector). Ideal para inversionistas. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 235m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 235,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 6232,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-J65",
+      "text": "Depto en Providencia, 77m², 2 dormitorios, 2 baños. Precio: UF 4.804. Recién remodelado. A 427m de paradero de buses troncal, y 1,2km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.440.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 427,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4804,
+        "price_clp": null,
+        "rent_monthly_clp": 1440000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-F13",
+      "text": "Depto en La Cisterna, 96m², 3 dormitorios, 2 baños. Precio: UF 6.073 (el mejor valor por m² del sector). A 1165m de la estación de metro Manquehue. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Recién remodelado. Incluye estacionamiento propio. Arriendo estimado: $1.080.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1165,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 6073,
+        "price_clp": null,
+        "rent_monthly_clp": 1080000,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

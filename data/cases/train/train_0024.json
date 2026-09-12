@@ -1,0 +1,163 @@
+{
+  "id": "train_0024",
+  "uf_value": 38800,
+  "hard_constraints": {
+    "presupuesto_max_clp": 218500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-P70",
+      "text": "Depto en La Reina, 79m², 3 dormitorios, 1 baño. Precio: 5.804 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 505m de paradero de buses troncal, y 1,3km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Recién remodelado. Arriendo estimado: $740.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 505,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5804,
+        "price_clp": null,
+        "rent_monthly_clp": 740000,
+        "location": "La Reina"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-W37",
+      "text": "Casa en Las Condes, 92m², 3D/2B. Valor $158.500.000. A 1123m de la estación de metro Tobalaba. Entrega inmediata. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. No incluye estacionamiento (posible arriendo en edificio vecino).",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1123,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 158500000,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-V74",
+      "text": "Depto en Recoleta, 66m², 2D/2B. Valor $171.500.000. Ubicado a 2,6 km de la estación Baquedano, unos 33 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Luminoso y con vista despejada. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 2650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 171500000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-D27",
+      "text": "Depto en Las Condes, 69m², 2D/1B. Entrega inmediata. Valor $226.500.000 (el mejor valor por m² del sector). A 967m de la estación de metro Franklin. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.270.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 967,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 226500000,
+        "rent_monthly_clp": 1270000,
+        "location": "Las Condes"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-M22",
+      "text": "Depto en La Reina, 87m², 3D/1B. Precio rebajado. Precio: UF 4.732. A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 524m. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.240.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 524,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4732,
+        "price_clp": null,
+        "rent_monthly_clp": 1240000,
+        "location": "La Reina"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-Y58",
+      "text": "Depto en La Reina, 90m², 3D/1B. Valor $166.700.000. A 984m de la estación de metro Bellas Artes. 100% pet friendly, sin restricciones de tamaño ni especie. Precio rebajado. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $1.260.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 984,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": null,
+        "price_clp": 166700000,
+        "rent_monthly_clp": 1260000,
+        "location": "La Reina"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-R14",
+      "text": "Depto en La Florida, 86m², 3D/2B. Precio: UF 4.575. A 1850m del metro Escuela Militar, a pasos de todo. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo estimado: $1.280.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1850,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4575,
+        "price_clp": null,
+        "rent_monthly_clp": 1280000,
+        "location": "La Florida"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

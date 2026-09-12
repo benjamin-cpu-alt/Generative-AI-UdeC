@@ -1,0 +1,140 @@
+{
+  "id": "train_0131",
+  "uf_value": 38550,
+  "hard_constraints": {
+    "presupuesto_max_clp": 114500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-W82",
+      "text": "Depto en Vitacura, 49m², 1 dormitorios, 1 baño. Excelente conectividad. Precio: 3051 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). Ubicado a 1,4 km de la estación Lo Vial, unos 18 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $570.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1450,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3051,
+        "price_clp": null,
+        "rent_monthly_clp": 570000,
+        "location": "Vitacura"
+      },
+      "scenario": "multi",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-N88",
+      "text": "Casa en Estación Central, 85m², 3 dormitorios, 2 baños. Precio: UF 3.113 (precio negociable, el propietario está abierto a ofertas). A 197m de paradero de buses troncal, y 0,9km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Excelente conectividad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 197,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3113,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-J95",
+      "text": "Depto estudio en Recoleta, 54m², ambiente único + sala de estar amplia que puede usarse como dormitorio adicional, 1B. ¡Oportunidad única! Precio: 2.996 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 1108m de la estación de metro Manquehue. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 1108,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2996,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "multi",
+      "trap": "dormitorio 'convertible' que no es real; precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-Z25",
+      "text": "Casa en Maipú, 94m², 3 dormitorios, 2 baños. Precio: 3.115 UF (precio negociable, el propietario está abierto a ofertas). Piso alto, orientación norte. A 192m de paradero de buses troncal, y 0,9km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 192,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 3115,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "multi",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple; precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-C58",
+      "text": "Depto en Recoleta, 94m², 3 dormitorios, 2 baños. Precio: UF 2.947. A 1124m de paradero de buses troncal, y 1,6km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Precio rebajado. Arriendo referencial de la zona: $690.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1124,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2947,
+        "price_clp": null,
+        "rent_monthly_clp": 690000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-A20",
+      "text": "Depto en Independencia, 87m², 3 dormitorios, 1 baño. Precio: 2.345 UF. A 1185m de la estación de metro Plaza Egaña. 100% pet friendly, sin restricciones de tamaño ni especie. Estacionamiento en la calle, sin problemas para aparcar en el sector.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1185,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 2345,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    }
+  ]
+}

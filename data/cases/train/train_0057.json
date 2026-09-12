@@ -1,0 +1,140 @@
+{
+  "id": "train_0057",
+  "uf_value": 38900,
+  "hard_constraints": {
+    "presupuesto_max_clp": 135500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-U16",
+      "text": "Depto estudio en Peñalolén, 56m², ambiente único + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio: $102.200.000. A 866m de la estación de metro Escuela Militar. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Luminoso y con vista despejada. Arriendo referencial de la zona: $530.000/mes.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 866,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 102200000,
+        "rent_monthly_clp": 530000,
+        "location": "Peñalolén"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-Q42",
+      "text": "Depto en Peñalolén, 73m², 2 dormitorios, 2 baños. Valor $139.500.000 (el mejor valor por m² del sector). A 1,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 846m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $870.000/mes. Luminoso y con vista despejada.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 846,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 139500000,
+        "rent_monthly_clp": 870000,
+        "location": "Peñalolén"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-J33",
+      "text": "Depto en Recoleta, 64m², 2 dormitorios, 2 baños. Precio: 2.676 UF. A 592m de la estación de metro Irarrázaval. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $860.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 592,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2676,
+        "price_clp": null,
+        "rent_monthly_clp": 860000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-E45",
+      "text": "Depto en La Cisterna, 77m², 2 dormitorios, 2 baños. Precio rebajado a UF 3.344. A 403m de la estación de metro Príncipe de Gales. 100% pet friendly, sin restricciones de tamaño ni especie. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $790.000/mes. Luminoso y con vista despejada.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 403,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 3344,
+        "price_clp": null,
+        "rent_monthly_clp": 790000,
+        "location": "La Cisterna"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-C19",
+      "text": "Depto en La Florida, 67m², 2 dormitorios, 2 baños. Valor $124.100.000. A 896m de paradero de buses troncal, y 1,7km del metro más cercano. Pet friendly con límite de 18kg por mascota. Incluye estacionamiento propio. ¡Oportunidad única! Arriendo estimado: $730.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 896,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 18
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 124100000,
+        "rent_monthly_clp": 730000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-W31",
+      "text": "Depto en La Florida, 47m², 1 dormitorios, 1 baño. Precio: 3.206 UF. A 530m de la estación de metro Vicente Valdés. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $940.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 530,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 3206,
+        "price_clp": null,
+        "rent_monthly_clp": 940000,
+        "location": "La Florida"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    }
+  ]
+}

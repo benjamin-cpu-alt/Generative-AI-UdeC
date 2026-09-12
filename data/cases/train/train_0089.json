@@ -1,0 +1,119 @@
+{
+  "id": "train_0089",
+  "uf_value": 39600,
+  "hard_constraints": {
+    "presupuesto_max_clp": 96000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-V83",
+      "text": "Depto en Las Condes, 50m², 1 dormitorios, 1 baño. Precio: 2374 UF. A 570m de paradero de buses troncal, y 1,5km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $660.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 570,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2374,
+        "price_clp": null,
+        "rent_monthly_clp": 660000,
+        "location": "Las Condes"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-Y12",
+      "text": "Depto en La Florida, 63m², 1D/1B. Precio: 2278 UF. ¡Oportunidad única! A 159m de paradero de buses troncal, y 0,7km del metro más cercano. Pet friendly con límite de 5kg por mascota. Incluye estacionamiento propio. Arriendo estimado: $750.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 159,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "propio",
+        "price_uf": 2278,
+        "price_clp": null,
+        "rent_monthly_clp": 750000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-B48",
+      "text": "Depto en Providencia, 46m², 1 dormitorios, 1 baño. Precio: $93.700.000. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 548m. ¡Oportunidad única! Aceptamos mascotas, gatos y perros hasta 2kg. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 548,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 93700000,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 5kg"
+    },
+    {
+      "id": "PROP-G91",
+      "text": "Depto estudio en Providencia, 54m², ambiente único + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Valor $84.400.000. A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 433m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $690.000/mes.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 433,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 84400000,
+        "rent_monthly_clp": 690000,
+        "location": "Providencia"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-L55",
+      "text": "Depto en Ñuñoa, 63m², 1 dormitorios, 1 baño. Precio: UF 2.442 (¡bajo el presupuesto del cliente según nuestro tasador!). A 574m de la estación de metro Irarrázaval. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 574,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2442,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "id": "test_0037",
+  "uf_value": 39550,
+  "hard_constraints": {
+    "presupuesto_max_clp": 175500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 8,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-P59",
+      "text": "Depto en San Miguel, 114m², 4D/2B. Precio rebajado a 4015 UF. A 348m de la estación de metro Ñuñoa. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.000.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 348,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4015,
+        "price_clp": null,
+        "rent_monthly_clp": 1000000,
+        "location": "San Miguel"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-K28",
+      "text": "Depto en Peñalolén, 81m², 3D/1B. Precio: 4566 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). Piso alto, orientación norte. A 226m de paradero de buses troncal, y 0,8km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.160.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 226,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4566,
+        "price_clp": null,
+        "rent_monthly_clp": 1160000,
+        "location": "Peñalolén"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-W11",
+      "text": "Casa en La Reina, 110m², 4 dormitorios, 2 baños. Precio rebajado. Precio: 4.362 UF. A 499m de la estación de metro Cal y Canto. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo estimado: $720.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 499,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4362,
+        "price_clp": null,
+        "rent_monthly_clp": 720000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-V26",
+      "text": "Depto en Recoleta, 79m², 3D/2B. Precio: UF 4.458 (el mejor valor por m² del sector). A 248m de paradero de buses troncal, y 1,2km del metro más cercano. ¡Oportunidad única! Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 248,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4458,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-U22",
+      "text": "Depto en La Florida, 89m², 3 dormitorios, 1 baño. Valor $153.600.000. Ubicado a 0,6 km de la estación Franklin, unos 8 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo estimado: $1.020.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 153600000,
+        "rent_monthly_clp": 1020000,
+        "location": "La Florida"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-N88",
+      "text": "Casa en Vitacura, 96m², 4 dormitorios, 2 baños. Precio: UF 4.056. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 500m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.280.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4056,
+        "price_clp": null,
+        "rent_monthly_clp": 1280000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-S87",
+      "text": "Depto en Las Condes, 104m², 4D/1B. Precio: $128.400.000. A 254m de la estación de metro Príncipe de Gales. Pet friendly con límite de 8kg por mascota. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $990.000/mes. Piso alto, orientación norte.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 254,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 8
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 128400000,
+        "rent_monthly_clp": 990000,
+        "location": "Las Condes"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 """Runner de evaluación.
 
 Estructura esperada:
-  data/cases/<case_id>.json          casos anotados con `truth`
+  data/cases/test/<case_id>.json     casos held-out anotados con `truth`
   results/<run>/<case_id>.txt        respuesta cruda del modelo para ese caso
 
 Uso:
@@ -22,7 +22,7 @@ from .schema import Case
 from .verifier import Verdict, verify
 
 ROOT = Path(__file__).resolve().parents[2]
-CASES_DIR = ROOT / "data" / "cases"
+CASES_DIR = ROOT / "data" / "cases" / "test"   # held-out; train/ es solo para destilar
 RESULTS_DIR = ROOT / "results"
 
 

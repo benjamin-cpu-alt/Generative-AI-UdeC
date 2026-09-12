@@ -1,0 +1,163 @@
+{
+  "id": "train_0119",
+  "uf_value": 40550,
+  "hard_constraints": {
+    "presupuesto_max_clp": 216000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 15,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-K97",
+      "text": "Depto en La Reina, 91m², 3 dormitorios, 2 baños. Precio: UF 5.211. A 164m de la estación de metro Ñuñoa. No se especifica política de mascotas. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.630.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 164,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5211,
+        "price_clp": null,
+        "rent_monthly_clp": 1630000,
+        "location": "La Reina"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-M32",
+      "text": "Depto en Peñalolén, 63m², 2D/2B. Precio: UF 5.593 (precio negociable, el propietario está abierto a ofertas). A 386m de la estación de metro Manquehue. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo estimado: $1.280.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 386,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5593,
+        "price_clp": null,
+        "rent_monthly_clp": 1280000,
+        "location": "Peñalolén"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-A16",
+      "text": "Depto en San Miguel, 97m², 4 dormitorios, 1 baño. Precio: UF 5.465 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 257m de paradero de buses troncal, y 1,4km del metro más cercano. Recién remodelado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.490.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 257,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5465,
+        "price_clp": null,
+        "rent_monthly_clp": 1490000,
+        "location": "San Miguel"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-W33",
+      "text": "Casa en La Reina, 85m², 3D/2B. Valor $160.300.000. A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 298m. Pet friendly con límite de 14kg por mascota. Estacionamiento en la calle, sin problemas para aparcar en el sector.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 298,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 14
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 160300000,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      },
+      "scenario": "multi",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple; límite de peso 14kg < mascota 15kg"
+    },
+    {
+      "id": "PROP-Q53",
+      "text": "Casa en Estación Central, 84m², 3D/2B. Precio: 4007 UF. A 555m de la estación de metro Franklin. Se aceptan mascotas pequeñas y medianas hasta 15kg, previa autorización de la administración. Incluye 1 estacionamiento. Arriendo estimado: $1.150.000/mes. Piso alto, orientación norte.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 555,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "propio",
+        "price_uf": 4007,
+        "price_clp": null,
+        "rent_monthly_clp": 1150000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-R43",
+      "text": "Depto en Independencia, 67m², 2 dormitorios, 2 baños. Valor $186.000.000. A 1477m de la estación de metro Bellas Artes. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.240.000/mes. Excelente conectividad.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1477,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 186000000,
+        "rent_monthly_clp": 1240000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-E56",
+      "text": "Depto en Maipú, 94m², 3D/2B. Valor $184.200.000. Luminoso y con vista despejada. A 2,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1032m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $890.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1032,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 184200000,
+        "rent_monthly_clp": 890000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": null
+    }
+  ]
+}

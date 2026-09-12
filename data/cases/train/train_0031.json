@@ -1,0 +1,163 @@
+{
+  "id": "train_0031",
+  "uf_value": 40000,
+  "hard_constraints": {
+    "presupuesto_max_clp": 170500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-F56",
+      "text": "Casa en Peñalolén, 109m², 4 dormitorios, 1 baño. Precio: 3448 UF. A 873m de la estación de metro Tobalaba. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $930.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 873,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3448,
+        "price_clp": null,
+        "rent_monthly_clp": 930000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-J95",
+      "text": "Depto en Santiago Centro, 87m², 3D/1B. Precio: 3705 UF. A 2,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 908m. No se especifica política de mascotas. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 908,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3705,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-E73",
+      "text": "Depto en Maipú, 109m², 4 dormitorios, 2 baños. Precio: 3.432 UF. A 412m de la estación de metro Vicente Valdés. Se aceptan mascotas pequeñas y medianas hasta 2kg, previa autorización de la administración. Sin estacionamiento. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 412,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "ninguno",
+        "price_uf": 3432,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "multi",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple; límite de peso 2kg < mascota 5kg"
+    },
+    {
+      "id": "PROP-L18",
+      "text": "Depto en Estación Central, 99m², 4D/2B. Precio: 3302 UF. Recién remodelado. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 756m. No se especifica política de mascotas. Incluye estacionamiento propio. Arriendo referencial de la zona: $860.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 756,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3302,
+        "price_clp": null,
+        "rent_monthly_clp": 860000,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-M56",
+      "text": "Depto en Ñuñoa, 86m², 3D/1B. Precio: 4318 UF (precio negociable, el propietario está abierto a ofertas). A 193m de la estación de metro Plaza Egaña. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 193,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4318,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-T19",
+      "text": "Depto en Independencia, 100m², 4D/2B. Precio: 3615 UF. A 1,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 469m. Se aceptan mascotas pequeñas y medianas hasta 5kg, previa autorización de la administración. Incluye estacionamiento propio. Ideal para inversionistas. Arriendo estimado: $900.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 469,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "propio",
+        "price_uf": 3615,
+        "price_clp": null,
+        "rent_monthly_clp": 900000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-V71",
+      "text": "Depto en Estación Central, 62m², 2 dormitorios, 2 baños. Precio: UF 4.328 (¡bajo el presupuesto del cliente según nuestro tasador!). ¡Oportunidad única! A 759m de la estación de metro Tobalaba. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 759,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4328,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

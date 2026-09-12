@@ -1,0 +1,161 @@
+{
+  "id": "train_0167",
+  "uf_value": 38900,
+  "hard_constraints": {
+    "presupuesto_max_clp": 182000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 30,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-L70",
+      "text": "Depto en Maipú, 83m², 3 dormitorios, 2 baños. Precio: UF 4.879 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 507m de paradero de buses troncal, y 1,3km del metro más cercano. Excelente conectividad. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 507,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4879,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-G64",
+      "text": "Depto en Las Condes, 62m², 2D/1B. Precio: 3.422 UF. A 1550m del metro Ñuñoa, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Recién remodelado. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $940.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1550,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3422,
+        "price_clp": null,
+        "rent_monthly_clp": 940000,
+        "location": "Las Condes"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-X19",
+      "text": "Depto en Santiago Centro, 80m², 2D/2B. Valor $170.700.000. A 1300m del metro Plaza Egaña, a pasos de todo. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $970.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 170700000,
+        "rent_monthly_clp": 970000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-C75",
+      "text": "Depto en Macul, 103m², 4 dormitorios, 2 baños. Precio: 4594 UF. A 2,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 812m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.170.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 812,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4594,
+        "price_clp": null,
+        "rent_monthly_clp": 1170000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-R37",
+      "text": "Casa en Vitacura, 83m², 3 dormitorios, 1 baño. Precio: 4.653 UF. A 815m de paradero de buses troncal, y 1,3km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Ideal para inversionistas. Arriendo referencial de la zona: $750.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 815,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4653,
+        "price_clp": null,
+        "rent_monthly_clp": 750000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-T81",
+      "text": "Casa en La Cisterna, 107m², 4D/2B. Precio: 4.694 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 0,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 200m. 100% pet friendly, sin restricciones de tamaño ni especie. Luminoso y con vista despejada. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4694,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-P22",
+      "text": "Casa en Vitacura, 97m², 4D/1B. Precio: 4.823 UF (el mejor valor por m² del sector). A 824m de la estación de metro Cal y Canto. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $910.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 824,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4823,
+        "price_clp": null,
+        "rent_monthly_clp": 910000,
+        "location": "Vitacura"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

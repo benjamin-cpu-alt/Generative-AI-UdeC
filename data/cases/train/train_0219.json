@@ -1,0 +1,182 @@
+{
+  "id": "train_0219",
+  "uf_value": 40550,
+  "hard_constraints": {
+    "presupuesto_max_clp": 161500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 10,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-X93",
+      "text": "Casa en Ñuñoa, 111m², 4D/2B. Valor $136.000.000. Precio rebajado. A 1450m del metro Bellas Artes, muy bien conectado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1450,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 136000000,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-R69",
+      "text": "Depto en La Reina, 101m², 4 dormitorios, 2 baños. Valor $160.300.000. A 942m de la estación de metro Manquehue. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 942,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": null,
+        "price_clp": 160300000,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-E36",
+      "text": "Depto en Ñuñoa, 94m², 3 dormitorios, 1 baño. Precio rebajado a UF 3.943. A 150m de la estación de metro Bellas Artes. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $820.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 150,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3943,
+        "price_clp": null,
+        "rent_monthly_clp": 820000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-P74",
+      "text": "Casa en Vitacura, 83m², 3D/1B. Precio rebajado a $119.900.000. A 857m de la estación de metro Baquedano. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $630.000/mes. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 857,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": null,
+        "price_clp": 119900000,
+        "rent_monthly_clp": 630000,
+        "location": "Vitacura"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-L58",
+      "text": "Depto en Peñalolén, 99m², 4 dormitorios, 2 baños. Precio: 4175 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 852m de la estación de metro Manquehue. 100% pet friendly, sin restricciones de tamaño ni especie. Piso alto, orientación norte. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $740.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 852,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4175,
+        "price_clp": null,
+        "rent_monthly_clp": 740000,
+        "location": "Peñalolén"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-S98",
+      "text": "Casa en La Cisterna, 92m², 3D/2B. Precio: 3.896 UF. A 188m de paradero de buses troncal, y 1,3km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Precio rebajado. Arriendo referencial de la zona: $1.030.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 188,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3896,
+        "price_clp": null,
+        "rent_monthly_clp": 1030000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-Y45",
+      "text": "Depto en Macul, 109m², 4 dormitorios, 2 baños. Precio: UF 3.931. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 610m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Entrega inmediata. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $750.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 610,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3931,
+        "price_clp": null,
+        "rent_monthly_clp": 750000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-V88",
+      "text": "Depto en Las Condes, 79m², 2 dormitorios + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio rebajado. Valor $156.300.000. A 1550m del metro Lo Vial, a pasos de todo. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1550,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 156300000,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "multi",
+      "trap": "dormitorio 'convertible' que no es real; distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

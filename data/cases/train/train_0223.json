@@ -1,0 +1,182 @@
+{
+  "id": "train_0223",
+  "uf_value": 39300,
+  "hard_constraints": {
+    "presupuesto_max_clp": 88000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-L49",
+      "text": "Depto en San Miguel, 84m², 3D/1B. Precio: 1639 UF. A 194m de la estación de metro Cal y Canto. Se aceptan mascotas pequeñas y medianas hasta 5kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $380.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 194,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "asignado",
+        "price_uf": 1639,
+        "price_clp": null,
+        "rent_monthly_clp": 380000,
+        "location": "San Miguel"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 5kg < mascota 6kg"
+    },
+    {
+      "id": "PROP-Z93",
+      "text": "Depto en La Florida, 108m², 4 dormitorios, 2 baños. Precio: 2219 UF. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 434m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $670.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 434,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2219,
+        "price_clp": null,
+        "rent_monthly_clp": 670000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-S40",
+      "text": "Depto en Estación Central, 97m², 4 dormitorios, 1 baño. Precio: 2.104 UF. A 435m de la estación de metro Bellas Artes. Recién remodelado. Pet friendly con límite de 4kg por mascota. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 435,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "propio",
+        "price_uf": 2104,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 4kg < mascota 6kg"
+    },
+    {
+      "id": "PROP-R29",
+      "text": "Casa en La Cisterna, 81m², 3D/2B. Precio: UF 2.282 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 221m de paradero de buses troncal, y 0,7km del metro más cercano. Excelente conectividad. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo estimado: $530.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 221,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2282,
+        "price_clp": null,
+        "rent_monthly_clp": 530000,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-C52",
+      "text": "Casa en Providencia, 108m², 4D/1B. Valor $76.100.000. A 329m de la estación de metro Escuela Militar. Recién remodelado. Se aceptan mascotas pequeñas y medianas hasta 4kg, previa autorización de la administración. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $530.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 329,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 76100000,
+        "rent_monthly_clp": 530000,
+        "location": "Providencia"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 4kg < mascota 6kg"
+    },
+    {
+      "id": "PROP-B30",
+      "text": "Depto en Macul, 81m², 3 dormitorios, 2 baños. Valor $81.400.000. A 1000m de paradero de buses troncal, y 1,9km del metro más cercano. ¡Oportunidad única! Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $380.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 81400000,
+        "rent_monthly_clp": 380000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-G32",
+      "text": "Casa en Las Condes, 101m², 4D/2B. Precio: $77.100.000. ¡Oportunidad única! A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 417m. Pet friendly con límite de 4kg por mascota. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $560.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 417,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 77100000,
+        "rent_monthly_clp": 560000,
+        "location": "Las Condes"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 4kg < mascota 6kg"
+    },
+    {
+      "id": "PROP-U42",
+      "text": "Depto en Estación Central, 105m², 4 dormitorios, 1 baño. Valor $84.500.000. A 1300m del metro Príncipe de Gales, a pasos de todo. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Excelente conectividad.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 84500000,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

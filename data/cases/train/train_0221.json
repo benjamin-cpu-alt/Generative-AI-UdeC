@@ -1,0 +1,165 @@
+{
+  "id": "train_0221",
+  "uf_value": 38300,
+  "hard_constraints": {
+    "presupuesto_max_clp": 198500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Y71",
+      "text": "Depto en La Florida, 102m², 4 dormitorios, 1 baño. Precio rebajado a $190.700.000. A 700m de la estación de metro Franklin. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.280.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 190700000,
+        "rent_monthly_clp": 1280000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-N60",
+      "text": "Depto en Santiago Centro, 79m², 2D/1B. Valor $159.400.000. A 238m de la estación de metro Bellas Artes. 100% pet friendly, sin restricciones de tamaño ni especie. Sin estacionamiento.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 238,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 159400000,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-A69",
+      "text": "Depto en San Miguel, 63m², 2 dormitorios, 1 baño. Precio: 4.796 UF. Luminoso y con vista despejada. A 1750m del metro Plaza Egaña, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4796,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-P68",
+      "text": "Depto en Santiago Centro, 68m², 2D/2B. Precio rebajado a 4.624 UF. A 931m de la estación de metro Cal y Canto. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $970.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 931,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4624,
+        "price_clp": null,
+        "rent_monthly_clp": 970000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-F27",
+      "text": "Depto en Providencia, 62m², 2D/2B. Precio: 5.008 UF. A 260m de la estación de metro Tobalaba. Aceptamos mascotas, gatos y perros hasta 4kg. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.330.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 260,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "asignado",
+        "price_uf": 5008,
+        "price_clp": null,
+        "rent_monthly_clp": 1330000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-R64",
+      "text": "Depto en Vitacura, 97m², 3 dormitorios, 1 baño. Valor $203.500.000 (precio negociable, el propietario está abierto a ofertas). A 2,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1455m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.460.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1455,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 203500000,
+        "rent_monthly_clp": 1460000,
+        "location": "Vitacura"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-B34",
+      "text": "Depto en Ñuñoa, 84m², 3D/1B. Precio: 4.875 UF. Ubicado a 2,8 km de la estación Baquedano, unos 34 minutos caminando. Entrega inmediata. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.580.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 2750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4875,
+        "price_clp": null,
+        "rent_monthly_clp": 1580000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "id": "train_0206",
+  "uf_value": 39450,
+  "hard_constraints": {
+    "presupuesto_max_clp": 157000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-N77",
+      "text": "Depto en La Florida, 67m², 2D/1B. Precio: $119.700.000. A 293m de la estación de metro Irarrázaval. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Piso alto, orientación norte. Arriendo referencial de la zona: $720.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 293,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 119700000,
+        "rent_monthly_clp": 720000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-Z64",
+      "text": "Casa en Peñalolén, 109m², 4D/1B. Ideal para inversionistas. Precio: 4.144 UF (precio negociable, el propietario está abierto a ofertas). A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 647m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 647,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4144,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-Y20",
+      "text": "Depto en Vitacura, 68m², 2D/1B. Precio: 4122 UF (el mejor valor por m² del sector). A 247m de paradero de buses troncal, y 1,4km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 247,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4122,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-J58",
+      "text": "Depto en Providencia, 69m², 2D/2B. Precio: UF 3.670. A 272m de la estación de metro Manquehue. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.210.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 272,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3670,
+        "price_clp": null,
+        "rent_monthly_clp": 1210000,
+        "location": "Providencia"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-X50",
+      "text": "Depto en La Reina, 96m², 3 dormitorios, 1 baño. Precio: 4.053 UF (el mejor valor por m² del sector). A 286m de la estación de metro Baquedano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.010.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 286,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4053,
+        "price_clp": null,
+        "rent_monthly_clp": 1010000,
+        "location": "La Reina"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-E57",
+      "text": "Depto en Vitacura, 94m², 3D/2B. Precio: 3255 UF. A 279m de la estación de metro Tobalaba. Entrega inmediata. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $780.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 279,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3255,
+        "price_clp": null,
+        "rent_monthly_clp": 780000,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "test_0031",
+  "uf_value": 38850,
+  "hard_constraints": {
+    "presupuesto_max_clp": 125500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-W15",
+      "text": "Depto en La Florida, 92m², 3 dormitorios, 1 baño. Precio: UF 3.318 (¡bajo el presupuesto del cliente según nuestro tasador!). A 228m de la estación de metro Plaza Egaña. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $890.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 228,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3318,
+        "price_clp": null,
+        "rent_monthly_clp": 890000,
+        "location": "La Florida"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-X93",
+      "text": "Depto en Estación Central, 61m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Precio: UF 3.030. A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 594m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo estimado: $990.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 594,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 3030,
+        "price_clp": null,
+        "rent_monthly_clp": 990000,
+        "location": "Estación Central"
+      },
+      "scenario": "multi",
+      "trap": "dormitorio 'convertible' que no es real; estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-Y25",
+      "text": "Depto en Recoleta, 79m², 3 dormitorios, 1 baño. Valor $96.700.000. A 559m de la estación de metro Lo Vial. ¡Oportunidad única! Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 559,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 96700000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-D95",
+      "text": "Depto en Estación Central, 91m², 3 dormitorios, 2 baños. Valor $94.800.000. A 600m de la estación de metro Lo Vial. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $660.000/mes. Piso alto, orientación norte.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 94800000,
+        "rent_monthly_clp": 660000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-E10",
+      "text": "Casa en Recoleta, 111m², 4 dormitorios, 2 baños. Precio: UF 3.300 (el mejor valor por m² del sector). A 580m de la estación de metro Escuela Militar. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 580,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3300,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

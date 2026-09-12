@@ -1,0 +1,163 @@
+{
+  "id": "train_0150",
+  "uf_value": 39400,
+  "hard_constraints": {
+    "presupuesto_max_clp": 88000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 25,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Q37",
+      "text": "Depto en Independencia, 70m², 2 dormitorios, 2 baños. Precio: 2.216 UF. A 195m de paradero de buses troncal, y 0,7km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $420.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 195,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2216,
+        "price_clp": null,
+        "rent_monthly_clp": 420000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-C30",
+      "text": "Depto en Peñalolén, 97m², 4D/1B. Valor $82.300.000. A 643m de paradero de buses troncal, y 1,1km del metro más cercano. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $560.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 643,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 82300000,
+        "rent_monthly_clp": 560000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-E54",
+      "text": "Depto en Vitacura, 97m², 4 dormitorios, 2 baños. Precio: 2.152 UF. Ubicado a 1,7 km de la estación Baquedano, unos 21 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $610.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2152,
+        "price_clp": null,
+        "rent_monthly_clp": 610000,
+        "location": "Vitacura"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-R84",
+      "text": "Depto en Recoleta, 113m², 4D/2B. Precio rebajado a UF 1.792. A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 504m. Entrega inmediata. Incluye 1 estacionamiento. Arriendo estimado: $480.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 504,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 1792,
+        "price_clp": null,
+        "rent_monthly_clp": 480000,
+        "location": "Recoleta"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-D35",
+      "text": "Depto en Independencia, 45m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio rebajado a $67.600.000. A 2,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 980m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $480.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 980,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 67600000,
+        "rent_monthly_clp": 480000,
+        "location": "Independencia"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-M87",
+      "text": "Casa en Santiago Centro, 95m², 3 dormitorios, 1 baño. Precio: $66.900.000. A 471m de la estación de metro Plaza Egaña. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 471,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": null,
+        "price_clp": 66900000,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-B17",
+      "text": "Depto en Independencia, 63m², 2D/1B. Luminoso y con vista despejada. Precio: 2.069 UF. A 284m de la estación de metro Cal y Canto. Pet friendly con límite de 17kg por mascota. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 284,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 17
+        },
+        "parking": "propio",
+        "price_uf": 2069,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 17kg < mascota 25kg"
+    }
+  ]
+}

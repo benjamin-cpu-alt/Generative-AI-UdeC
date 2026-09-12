@@ -1,0 +1,119 @@
+{
+  "id": "test_0001",
+  "uf_value": 39100,
+  "hard_constraints": {
+    "presupuesto_max_clp": 174000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 20,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-W83",
+      "text": "Depto en Estación Central, 64m², 2 dormitorios, 2 baños. Precio: $152.900.000. A 1300m del metro Ñuñoa, a pasos de todo. Luminoso y con vista despejada. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 152900000,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-K38",
+      "text": "Depto en Macul, 86m², 3D/1B. Valor $148.200.000. A 615m de paradero de buses troncal, y 1,5km del metro más cercano. Se aceptan mascotas pequeñas y medianas hasta 20kg, previa autorización de la administración. Incluye estacionamiento propio. Arriendo estimado: $870.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 615,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 20
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 148200000,
+        "rent_monthly_clp": 870000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-R75",
+      "text": "Depto en La Cisterna, 68m², 2 dormitorios, 2 baños. Valor $178.000.000 (¡bajo el presupuesto del cliente según nuestro tasador!). A 1,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 266m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $810.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 266,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 178000000,
+        "rent_monthly_clp": 810000,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-U19",
+      "text": "Depto en Ñuñoa, 97m², 3D/2B. Precio rebajado a 4235 UF. A 734m de paradero de buses troncal, y 1,8km del metro más cercano. Se aceptan mascotas pequeñas y medianas hasta 20kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.190.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 734,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 20
+        },
+        "parking": "asignado",
+        "price_uf": 4235,
+        "price_clp": null,
+        "rent_monthly_clp": 1190000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-F46",
+      "text": "Depto en Recoleta, 75m², 2D/2B. Luminoso y con vista despejada. Valor $132.500.000. A 251m de la estación de metro Manquehue. Se aceptan mascotas pequeñas y medianas hasta 12kg, previa autorización de la administración. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 251,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 12
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 132500000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 12kg < mascota 20kg"
+    }
+  ]
+}

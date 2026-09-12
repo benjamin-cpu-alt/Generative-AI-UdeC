@@ -1,0 +1,182 @@
+{
+  "id": "test_0004",
+  "uf_value": 38850,
+  "hard_constraints": {
+    "presupuesto_max_clp": 145000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 7,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-R57",
+      "text": "Depto en Las Condes, 114m², 4 dormitorios, 2 baños. Valor $130.800.000. A 1750m del metro Cal y Canto, a pasos de todo. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo estimado: $690.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 130800000,
+        "rent_monthly_clp": 690000,
+        "location": "Las Condes"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-Q92",
+      "text": "Depto en Ñuñoa, 46m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Valor $127.800.000. A 456m de paradero de buses troncal, y 1,6km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Luminoso y con vista despejada. Incluye estacionamiento propio. Arriendo referencial de la zona: $910.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 456,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 127800000,
+        "rent_monthly_clp": 910000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-C12",
+      "text": "Depto en Maipú, 65m², 2 dormitorios, 2 baños. Valor $137.600.000. Recién remodelado. Ubicado a 1,7 km de la estación Príncipe de Gales, unos 21 minutos caminando. Se aceptan mascotas pequeñas y medianas hasta 5kg, previa autorización de la administración. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $780.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 137600000,
+        "rent_monthly_clp": 780000,
+        "location": "Maipú"
+      },
+      "scenario": "multi",
+      "trap": "límite de peso 5kg < mascota 7kg; distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-D76",
+      "text": "Casa en La Reina, 92m², 3 dormitorios, 2 baños. Precio: 3699 UF. A 476m de la estación de metro Tobalaba. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $760.000/mes. Piso alto, orientación norte.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 476,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3699,
+        "price_clp": null,
+        "rent_monthly_clp": 760000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-F33",
+      "text": "Casa en La Reina, 93m², 3 dormitorios, 2 baños. Precio: 3148 UF. A 662m de la estación de metro Ñuñoa. Incluye 1 estacionamiento techado asignado. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 662,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3148,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-Z46",
+      "text": "Depto en Macul, 89m², 3 dormitorios, 2 baños. Precio: 2.909 UF. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 623m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $850.000/mes. Piso alto, orientación norte.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 623,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2909,
+        "price_clp": null,
+        "rent_monthly_clp": 850000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-H82",
+      "text": "Depto en Peñalolén, 82m², 3D/1B. Precio: 3.802 UF (el mejor valor por m² del sector). A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 814m. 100% pet friendly, sin restricciones de tamaño ni especie. Excelente conectividad. Incluye estacionamiento propio. Arriendo referencial de la zona: $580.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 814,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3802,
+        "price_clp": null,
+        "rent_monthly_clp": 580000,
+        "location": "Peñalolén"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-G60",
+      "text": "Depto en Las Condes, 63m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Valor $114.000.000. A 305m de la estación de metro Cal y Canto. 100% pet friendly, sin restricciones de tamaño ni especie. Precio rebajado. Incluye 1 estacionamiento. Arriendo referencial de la zona: $730.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 305,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 114000000,
+        "rent_monthly_clp": 730000,
+        "location": "Las Condes"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    }
+  ]
+}

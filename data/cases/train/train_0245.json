@@ -1,0 +1,142 @@
+{
+  "id": "train_0245",
+  "uf_value": 38200,
+  "hard_constraints": {
+    "presupuesto_max_clp": 186500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 20,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-J24",
+      "text": "Depto en Providencia, 86m², 3 dormitorios, 1 baño. Precio: 5063 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 242m de la estación de metro Franklin. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Piso alto, orientación norte. Incluye 1 estacionamiento. Arriendo estimado: $1.270.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 242,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5063,
+        "price_clp": null,
+        "rent_monthly_clp": 1270000,
+        "location": "Providencia"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-E12",
+      "text": "Depto en Maipú, 68m², 2 dormitorios, 2 baños. Precio: UF 4.330. A 1000m de la estación de metro Irarrázaval. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.230.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4330,
+        "price_clp": null,
+        "rent_monthly_clp": 1230000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-U45",
+      "text": "Depto en Ñuñoa, 80m², 3D/2B. Valor $175.300.000. ¡Oportunidad única! A 853m de la estación de metro Los Leones. Pet friendly con límite de 17kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.260.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 853,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 17
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 175300000,
+        "rent_monthly_clp": 1260000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 17kg < mascota 20kg"
+    },
+    {
+      "id": "PROP-M78",
+      "text": "Depto en La Reina, 95m², 3D/1B. Piso alto, orientación norte. Valor $161.100.000. A 2,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1000m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $920.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 161100000,
+        "rent_monthly_clp": 920000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-P39",
+      "text": "Depto en La Florida, 91m², 3 dormitorios, 2 baños. Precio rebajado a 3.869 UF. Luminoso y con vista despejada. A 282m de paradero de buses troncal, y 1,3km del metro más cercano. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $960.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 282,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3869,
+        "price_clp": null,
+        "rent_monthly_clp": 960000,
+        "location": "La Florida"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-C73",
+      "text": "Depto en San Miguel, 66m², 2D/2B. Valor $164.900.000. A 188m de la estación de metro Cal y Canto. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo estimado: $860.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 188,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 164900000,
+        "rent_monthly_clp": 860000,
+        "location": "San Miguel"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    }
+  ]
+}

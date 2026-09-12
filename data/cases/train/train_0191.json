@@ -1,0 +1,119 @@
+{
+  "id": "train_0191",
+  "uf_value": 40150,
+  "hard_constraints": {
+    "presupuesto_max_clp": 130000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 7,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-C61",
+      "text": "Depto en La Cisterna, 97m², 3D/1B. Valor $134.000.000 (¡bajo el presupuesto del cliente según nuestro tasador!). A 546m de paradero de buses troncal, y 1,6km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $790.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 546,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 134000000,
+        "rent_monthly_clp": 790000,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-N16",
+      "text": "Depto en Recoleta, 76m², 2 dormitorios, 2 baños. ¡Oportunidad única! Valor $95.200.000. A 1250m del metro Bellas Artes, a pasos de todo. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $760.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1250,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 95200000,
+        "rent_monthly_clp": 760000,
+        "location": "Recoleta"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-B58",
+      "text": "Depto en Las Condes, 107m², 4 dormitorios, 2 baños. Precio: UF 3.400 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 210m de paradero de buses troncal, y 1,2km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 210,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3400,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-R77",
+      "text": "Depto en Vitacura, 82m², 3 dormitorios, 2 baños. Excelente conectividad. Valor $133.000.000 (el mejor valor por m² del sector). A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 394m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $760.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 394,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 133000000,
+        "rent_monthly_clp": 760000,
+        "location": "Vitacura"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-U40",
+      "text": "Depto en Santiago Centro, 99m², 4D/1B. Precio: 3.126 UF. A 531m de paradero de buses troncal, y 1,6km del metro más cercano. Pet friendly con límite de 4kg por mascota. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 531,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "asignado",
+        "price_uf": 3126,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 4kg < mascota 7kg"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "id": "train_0287",
+  "uf_value": 38550,
+  "hard_constraints": {
+    "presupuesto_max_clp": 212500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 15,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-P56",
+      "text": "Depto en La Reina, 87m², 3D/2B. Precio rebajado a 5.419 UF. A 1333m de la estación de metro Franklin. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.020.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1333,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5419,
+        "price_clp": null,
+        "rent_monthly_clp": 1020000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-B75",
+      "text": "Casa en Recoleta, 85m², 3D/1B. Precio: UF 5.383. A 460m de paradero de buses troncal, y 1,0km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $960.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 460,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5383,
+        "price_clp": null,
+        "rent_monthly_clp": 960000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-Q97",
+      "text": "Depto en Providencia, 80m², 3D/1B. Recién remodelado. Precio: 5346 UF. A 1159m de la estación de metro Baquedano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo estimado: $1.660.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1159,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 5346,
+        "price_clp": null,
+        "rent_monthly_clp": 1660000,
+        "location": "Providencia"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-D55",
+      "text": "Depto en Providencia, 70m², 2 dormitorios, 1 baño. Valor $203.300.000. A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1269m. 100% pet friendly, sin restricciones de tamaño ni especie. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo estimado: $1.350.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1269,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 203300000,
+        "rent_monthly_clp": 1350000,
+        "location": "Providencia"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-Y52",
+      "text": "Depto en Independencia, 104m², 4D/1B. Precio: 5.624 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 776m de paradero de buses troncal, y 1,7km del metro más cercano. ¡Oportunidad única! Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $1.010.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 776,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5624,
+        "price_clp": null,
+        "rent_monthly_clp": 1010000,
+        "location": "Independencia"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-J76",
+      "text": "Depto en Recoleta, 78m², 2 dormitorios, 1 baño. Precio rebajado a 4.765 UF. A 284m de la estación de metro Bellas Artes. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye estacionamiento propio. Arriendo estimado: $1.250.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 284,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4765,
+        "price_clp": null,
+        "rent_monthly_clp": 1250000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-S95",
+      "text": "Depto en La Reina, 79m², 3D/1B. Precio rebajado a 4.254 UF. A 2250m del metro Cal y Canto, a pasos de todo. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.360.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 2250,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4254,
+        "price_clp": null,
+        "rent_monthly_clp": 1360000,
+        "location": "La Reina"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-H18",
+      "text": "Casa en Maipú, 93m², 3D/2B. Valor $168.300.000. A 797m de la estación de metro Franklin. Aceptamos mascotas, gatos y perros hasta 13kg. ¡Oportunidad única! Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.420.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 797,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 13
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 168300000,
+        "rent_monthly_clp": 1420000,
+        "location": "Maipú"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 13kg < mascota 15kg"
+    }
+  ]
+}

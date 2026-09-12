@@ -1,0 +1,203 @@
+{
+  "id": "train_0201",
+  "uf_value": 39600,
+  "hard_constraints": {
+    "presupuesto_max_clp": 195000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 30,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-L62",
+      "text": "Casa en Independencia, 94m², 3 dormitorios, 1 baño. Precio rebajado. Precio: 4.083 UF. A 800m de la estación de metro Tobalaba. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $850.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4083,
+        "price_clp": null,
+        "rent_monthly_clp": 850000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-S35",
+      "text": "Depto en Estación Central, 94m², 3D/2B. Precio: 4848 UF. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 501m. Ideal para inversionistas. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $930.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 501,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4848,
+        "price_clp": null,
+        "rent_monthly_clp": 930000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-X80",
+      "text": "Depto en San Miguel, 49m², 1 dormitorios, 1 baño. Ideal para inversionistas. Precio rebajado a 3.864 UF. A 380m de la estación de metro Baquedano. 100% pet friendly, sin restricciones de tamaño ni especie. No incluye estacionamiento (posible arriendo en edificio vecino).",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 380,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3864,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-C27",
+      "text": "Depto en Estación Central, 62m², 2D/2B. Valor $162.200.000. A 1400m del metro Lo Vial, a pasos de todo. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo referencial de la zona: $850.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 162200000,
+        "rent_monthly_clp": 850000,
+        "location": "Estación Central"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-Y34",
+      "text": "Depto en Providencia, 55m², 1 dormitorios, 1 baño. Precio rebajado a 4.578 UF. A 645m de la estación de metro Lo Vial. No se aceptan mascotas. Luminoso y con vista despejada. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.080.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 645,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4578,
+        "price_clp": null,
+        "rent_monthly_clp": 1080000,
+        "location": "Providencia"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-P82",
+      "text": "Depto en Independencia, 60m², 1D/1B. Precio: UF 4.687. A 381m de paradero de buses troncal, y 1,0km del metro más cercano. Pet friendly con límite de 30kg por mascota. Incluye estacionamiento propio. Arriendo estimado: $1.200.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 381,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 30
+        },
+        "parking": "propio",
+        "price_uf": 4687,
+        "price_clp": null,
+        "rent_monthly_clp": 1200000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-U86",
+      "text": "Depto en La Florida, 68m², 2 dormitorios, 1 baño. Valor $179.200.000. A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 550m. Pet friendly con límite de 30kg por mascota. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $810.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 550,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 30
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 179200000,
+        "rent_monthly_clp": 810000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-N62",
+      "text": "Depto en La Florida, 70m², 2D/2B. Precio: 4232 UF. A 762m de la estación de metro Tobalaba. Precio rebajado. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.350.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 762,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4232,
+        "price_clp": null,
+        "rent_monthly_clp": 1350000,
+        "location": "La Florida"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-K25",
+      "text": "Depto en Ñuñoa, 67m², 2 dormitorios, 1 baño. Valor $184.600.000. A 496m de la estación de metro Manquehue. Pet friendly con límite de 27kg por mascota. Recién remodelado. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.050.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 496,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 27
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 184600000,
+        "rent_monthly_clp": 1050000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 27kg < mascota 30kg"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "id": "train_0151",
+  "uf_value": 40400,
+  "hard_constraints": {
+    "presupuesto_max_clp": 117500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-N22",
+      "text": "Depto en Independencia, 66m², 2 dormitorios, 2 baños. Valor $103.500.000. A 264m de la estación de metro Franklin. Precio rebajado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. No incluye estacionamiento (posible arriendo en edificio vecino).",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 264,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 103500000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-Z35",
+      "text": "Depto en Independencia, 75m², 2 dormitorios, 2 baños. Luminoso y con vista despejada. Precio: UF 2.478. A 382m de la estación de metro Escuela Militar. Pet friendly con límite de 16kg por mascota. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 382,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 16
+        },
+        "parking": "asignado",
+        "price_uf": 2478,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 16kg < mascota 18kg"
+    },
+    {
+      "id": "PROP-C80",
+      "text": "Depto en Estación Central, 88m², 3 dormitorios, 2 baños. Valor $114.200.000. A 510m de la estación de metro Irarrázaval. Pet friendly con límite de 18kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $600.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 510,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 18
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 114200000,
+        "rent_monthly_clp": 600000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-K94",
+      "text": "Depto en Independencia, 67m², 2 dormitorios, 2 baños. Precio: 2.923 UF (el mejor valor por m² del sector). A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 460m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Piso alto, orientación norte. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 460,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2923,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-W99",
+      "text": "Casa en Las Condes, 81m², 3D/2B. ¡Oportunidad única! Valor $119.000.000 (el mejor valor por m² del sector). A 409m de la estación de metro Los Leones. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 409,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 119000000,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-G29",
+      "text": "Depto en San Miguel, 66m², 2 dormitorios, 1 baño. Precio: UF 2.854. A 298m de la estación de metro Vicente Valdés. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Luminoso y con vista despejada. Arriendo estimado: $760.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 298,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2854,
+        "price_clp": null,
+        "rent_monthly_clp": 760000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-M11",
+      "text": "Depto en La Reina, 64m², 2D/2B. Valor $108.700.000. A 600m de la estación de metro Escuela Militar. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $820.000/mes. ¡Oportunidad única!",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 108700000,
+        "rent_monthly_clp": 820000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    }
+  ]
+}

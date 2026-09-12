@@ -1,0 +1,165 @@
+{
+  "id": "train_0291",
+  "uf_value": 39800,
+  "hard_constraints": {
+    "presupuesto_max_clp": 131000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-U41",
+      "text": "Depto en Estación Central, 91m², 3 dormitorios, 2 baños. Valor $117.000.000. Ubicado a 0,7 km de la estación Plaza Egaña, unos 9 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Entrega inmediata. Incluye estacionamiento propio. Arriendo referencial de la zona: $920.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 117000000,
+        "rent_monthly_clp": 920000,
+        "location": "Estación Central"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-V65",
+      "text": "Depto en Vitacura, 109m², 4 dormitorios, 1 baño. Precio: 2616 UF. Luminoso y con vista despejada. A 421m de paradero de buses troncal, y 1,4km del metro más cercano. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $860.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 421,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2616,
+        "price_clp": null,
+        "rent_monthly_clp": 860000,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-Q40",
+      "text": "Depto en Independencia, 54m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Valor $119.700.000. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 175m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $560.000/mes. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 175,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 119700000,
+        "rent_monthly_clp": 560000,
+        "location": "Independencia"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-L15",
+      "text": "Depto en Peñalolén, 79m², 3 dormitorios, 1 baño. Valor $110.300.000. A 426m de la estación de metro Vicente Valdés. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo referencial de la zona: $670.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 426,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 110300000,
+        "rent_monthly_clp": 670000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-R15",
+      "text": "Casa en Estación Central, 108m², 4 dormitorios, 1 baño. Precio: 3095 UF. Recién remodelado. A 449m de la estación de metro Plaza Egaña. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $760.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 449,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3095,
+        "price_clp": null,
+        "rent_monthly_clp": 760000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-C68",
+      "text": "Depto en La Reina, 67m², 2 dormitorios, 1 baño. Valor $115.200.000. A 432m de la estación de metro Franklin. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo estimado: $860.000/mes. Recién remodelado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 432,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 115200000,
+        "rent_monthly_clp": 860000,
+        "location": "La Reina"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-G23",
+      "text": "Depto en Estación Central, 84m², 3D/2B. Precio: UF 3.183. A 650m del metro Los Leones, muy bien conectado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $920.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3183,
+        "price_clp": null,
+        "rent_monthly_clp": 920000,
+        "location": "Estación Central"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "id": "test_0036",
+  "uf_value": 38150,
+  "hard_constraints": {
+    "presupuesto_max_clp": 167500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 10,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-E43",
+      "text": "Depto en San Miguel, 58m², 1 dormitorios, 1 baño. Piso alto, orientación norte. Valor $125.200.000. A 654m de paradero de buses troncal, y 1,7km del metro más cercano. No se especifica política de mascotas. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $810.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 654,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 125200000,
+        "rent_monthly_clp": 810000,
+        "location": "San Miguel"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-H52",
+      "text": "Depto en La Reina, 70m², 2D/2B. Precio rebajado a 3478 UF. A 851m de la estación de metro Bellas Artes. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Excelente conectividad. Arriendo estimado: $900.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 851,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 3478,
+        "price_clp": null,
+        "rent_monthly_clp": 900000,
+        "location": "La Reina"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-G84",
+      "text": "Depto en Estación Central, 49m², 1 dormitorios, 1 baño. Ideal para inversionistas. Valor $168.500.000 (precio negociable, el propietario está abierto a ofertas). A 363m de la estación de metro Irarrázaval. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 363,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 168500000,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-D66",
+      "text": "Depto en Maipú, 76m², 2 dormitorios, 2 baños. Valor $121.500.000. A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1000m. Precio rebajado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $920.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 121500000,
+        "rent_monthly_clp": 920000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-K73",
+      "text": "Depto en La Florida, 61m², 1 dormitorios, 1 baño. Precio: 4.619 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). Precio rebajado. A 270m de la estación de metro Franklin. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.300.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 270,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4619,
+        "price_clp": null,
+        "rent_monthly_clp": 1300000,
+        "location": "La Florida"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-C37",
+      "text": "Depto en Maipú, 83m², 3D/2B. Precio: UF 4.333. A 177m de paradero de buses troncal, y 0,7km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo referencial de la zona: $810.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 177,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4333,
+        "price_clp": null,
+        "rent_monthly_clp": 810000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-W70",
+      "text": "Depto en La Florida, 45m², 1 dormitorios, 1 baño. Valor $135.300.000. A 1000m de la estación de metro Lo Vial. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $720.000/mes. Excelente conectividad.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 135300000,
+        "rent_monthly_clp": 720000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "id": "train_0182",
+  "uf_value": 38000,
+  "hard_constraints": {
+    "presupuesto_max_clp": 130500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-X93",
+      "text": "Casa en Vitacura, 97m², 4 dormitorios, 1 baño. Precio: 2.845 UF. A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 240m. No se aceptan mascotas. Incluye estacionamiento propio. Excelente conectividad. Arriendo estimado: $910.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 240,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2845,
+        "price_clp": null,
+        "rent_monthly_clp": 910000,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-Y65",
+      "text": "Depto en Maipú, 96m², 3D/1B. Precio: 3.079 UF. A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 313m. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $580.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 313,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3079,
+        "price_clp": null,
+        "rent_monthly_clp": 580000,
+        "location": "Maipú"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-T65",
+      "text": "Casa en Vitacura, 83m², 3D/1B. Precio: UF 3.539 (precio negociable, el propietario está abierto a ofertas). A 287m de la estación de metro Escuela Militar. 100% pet friendly, sin restricciones de tamaño ni especie. Piso alto, orientación norte. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 287,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3539,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-Q78",
+      "text": "Depto en Santiago Centro, 103m², 4D/1B. Excelente conectividad. Precio: UF 3.468 (precio negociable, el propietario está abierto a ofertas). A 380m de la estación de metro Franklin. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.070.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 380,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3468,
+        "price_clp": null,
+        "rent_monthly_clp": 1070000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-H97",
+      "text": "Casa en Ñuñoa, 86m², 3 dormitorios, 1 baño. Precio: UF 3.526 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 225m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 225,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3526,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-Z11",
+      "text": "Depto en Estación Central, 88m², 3 dormitorios, 2 baños. Valor $100.400.000. Ubicado a 0,8 km de la estación Manquehue, unos 11 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Excelente conectividad. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 850,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 100400000,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-B41",
+      "text": "Depto en La Reina, 112m², 4D/2B. Precio: 2616 UF. A 234m de la estación de metro Franklin. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Recién remodelado. Sin estacionamiento. Arriendo referencial de la zona: $710.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 234,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 2616,
+        "price_clp": null,
+        "rent_monthly_clp": 710000,
+        "location": "La Reina"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    }
+  ]
+}

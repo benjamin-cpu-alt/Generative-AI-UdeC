@@ -32,11 +32,18 @@ src/matcher/
 ├── schema.py     # dataclasses del caso (perfil, propiedades con `text` + `truth`)
 ├── rules.py      # las 5 hard constraints + ROI -> salida esperada (ground truth)
 ├── verifier.py   # parseo estricto + comparación -> 0/1 y motivo del fallo
-└── evaluate.py   # runner sobre data/cases/*.json y results/<run>/*.txt -> CSV
-data/cases/       # casos anotados: cada propiedad tiene `text` (lo que ve el modelo)
-                  # y `truth` (campos estructurados que solo usa el verificador)
-tests/            # 20 tests (pytest) que fijan el comportamiento del juez
+├── evaluate.py   # runner sobre data/cases/test/*.json y results/<run>/*.txt -> CSV
+├── prompt.py     # renderiza el prompt (mismo para baseline y solución) desde un caso
+└── generate.py   # generador de casos sintéticos auto-verificados
+data/cases/
+├── test/         # 50 casos held-out + case_001_e1 (el de la E1). Solo evaluación.
+└── train/        # 300 casos para generar el dataset de destilación. Nunca se evalúan.
+tests/            # 24 tests (pytest): juez, generador y prompt
 ```
+
+Cada propiedad de un caso tiene `text` (lo que ve el modelo) y `truth` (campos
+estructurados que solo usa el verificador), más `scenario`/`trap` que documentan
+qué distractor se construyó.
 
 ### Criterio de corrección
 
@@ -59,9 +66,30 @@ pip install -r requirements.txt
 python -m pytest tests -q                       # verifica el juez
 
 # Un caso, una respuesta:
-cd src && python -m matcher.verifier ../data/cases/case_001_e1.json respuesta.txt
+cd src && python -m matcher.verifier ../data/cases/test/case_001_e1.json respuesta.txt
 
-# Evaluación sobre todos los casos. Las respuestas crudas van en results/<run>/<case_id>.txt
+# Prompt que ve el modelo para un caso:
+cd src && python -m matcher.prompt ../data/cases/test/test_0001.json
+
+# Evaluación sobre el split test. Las respuestas crudas van en results/<run>/<case_id>.txt
 cd src && python -m matcher.evaluate --runs baseline_phi4 distill_phi4
 # -> results/<run>.csv (por caso) y results/summary.csv (accuracy por run)
 ```
+
+### Dataset sintético
+
+`data/cases/` se regenera de forma determinista con:
+
+```bash
+cd src && python -m matcher.generate --train 300 --test 50 --seed 2026
+```
+
+El generador construye primero el `truth` con un escenario intencionado por
+propiedad (≈30 % pasan todo, el resto falla por presupuesto en UF/CLP, distancia,
+estacionamiento, dormitorios, mascotas por peso/especie/ausencia, o dos a la vez),
+luego renderiza el texto con plantillas en español y los mismos distractores que
+provocaron los fallos de la E1 (precio "bajo presupuesto" según el tasador,
+"negociable", "15 minutos caminando", estacionamiento "de visitas", dormitorio
+"convertible", límite de peso 1 kg bajo la mascota). Cada caso se auto-verifica
+con `rules.py` antes de escribirse: si el juez no coincide con el escenario, la
+generación aborta.

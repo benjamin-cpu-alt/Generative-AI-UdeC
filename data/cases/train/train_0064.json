@@ -1,0 +1,165 @@
+{
+  "id": "train_0064",
+  "uf_value": 40300,
+  "hard_constraints": {
+    "presupuesto_max_clp": 181000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 12,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-S84",
+      "text": "Depto en Macul, 71m², 2D/1B. Precio: UF 4.541 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 230m de la estación de metro Escuela Militar. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $840.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 230,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4541,
+        "price_clp": null,
+        "rent_monthly_clp": 840000,
+        "location": "Macul"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-B28",
+      "text": "Casa en Las Condes, 98m², 4 dormitorios, 2 baños. Valor $185.000.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 633m de la estación de metro Los Leones. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Precio rebajado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 633,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 185000000,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-L98",
+      "text": "Depto en Maipú, 61m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio rebajado a 4.447 UF. Entrega inmediata. A 682m de la estación de metro Ñuñoa. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 682,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4447,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-P51",
+      "text": "Depto en Maipú, 114m², 4 dormitorios, 2 baños. Valor $169.700.000. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 414m. No se especifica política de mascotas. Luminoso y con vista despejada. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.260.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 414,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 169700000,
+        "rent_monthly_clp": 1260000,
+        "location": "Maipú"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-Y58",
+      "text": "Depto en La Cisterna, 77m², 2D/2B. Recién remodelado. Valor $162.500.000. A 707m de paradero de buses troncal, y 1,4km del metro más cercano. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $750.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 707,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 162500000,
+        "rent_monthly_clp": 750000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-D77",
+      "text": "Depto en Las Condes, 83m², 3D/1B. Valor $162.500.000. A 719m de paradero de buses troncal, y 1,4km del metro más cercano. ¡Oportunidad única! Solo se admiten gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.250.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 719,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 162500000,
+        "rent_monthly_clp": 1250000,
+        "location": "Las Condes"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-C91",
+      "text": "Depto en La Reina, 76m², 2D/2B. Precio: 3464 UF. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 346m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $670.000/mes. Recién remodelado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 346,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 3464,
+        "price_clp": null,
+        "rent_monthly_clp": 670000,
+        "location": "La Reina"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    }
+  ]
+}

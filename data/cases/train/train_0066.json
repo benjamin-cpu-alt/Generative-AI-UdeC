@@ -1,0 +1,142 @@
+{
+  "id": "train_0066",
+  "uf_value": 38300,
+  "hard_constraints": {
+    "presupuesto_max_clp": 90500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 30,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-J46",
+      "text": "Casa en Santiago Centro, 103m², 4 dormitorios, 2 baños. Precio rebajado a UF 2.282. A 194m de la estación de metro Los Leones. Aceptamos mascotas, gatos y perros hasta 30kg. Ideal para inversionistas. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $730.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 194,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 30
+        },
+        "parking": "asignado",
+        "price_uf": 2282,
+        "price_clp": null,
+        "rent_monthly_clp": 730000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-H25",
+      "text": "Casa en La Florida, 94m², 3D/2B. Precio: UF 2.313. A 252m de la estación de metro Manquehue. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $540.000/mes. Recién remodelado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 252,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2313,
+        "price_clp": null,
+        "rent_monthly_clp": 540000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-E69",
+      "text": "Depto en Recoleta, 109m², 4D/1B. Precio: UF 2.107. A 566m de la estación de metro Cal y Canto. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento. Arriendo referencial de la zona: $480.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 566,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2107,
+        "price_clp": null,
+        "rent_monthly_clp": 480000,
+        "location": "Recoleta"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-X31",
+      "text": "Depto en Independencia, 113m², 4D/1B. Precio: UF 2.311. A 475m de la estación de metro Los Leones. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Piso alto, orientación norte. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $450.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 475,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2311,
+        "price_clp": null,
+        "rent_monthly_clp": 450000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-F15",
+      "text": "Depto en Vitacura, 83m², 3 dormitorios, 2 baños. Valor $79.500.000. A 483m de la estación de metro Tobalaba. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 483,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 79500000,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-L20",
+      "text": "Depto en Vitacura, 106m², 4D/2B. ¡Oportunidad única! Precio rebajado a $73.900.000. A 1750m del metro Vicente Valdés, a pasos de todo. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 73900000,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

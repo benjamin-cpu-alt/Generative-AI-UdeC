@@ -1,0 +1,167 @@
+{
+  "id": "train_0252",
+  "uf_value": 40450,
+  "hard_constraints": {
+    "presupuesto_max_clp": 153500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-C36",
+      "text": "Depto en Estación Central, 80m², 2D/1B. Precio: UF 3.026. A 430m de la estación de metro Cal y Canto. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye estacionamiento propio. Arriendo referencial de la zona: $790.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 430,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3026,
+        "price_clp": null,
+        "rent_monthly_clp": 790000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-X51",
+      "text": "Casa en Santiago Centro, 86m², 3D/2B. Valor $142.000.000. Ubicado a 1,0 km de la estación Ñuñoa, unos 12 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $740.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 142000000,
+        "rent_monthly_clp": 740000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-T66",
+      "text": "Depto en Ñuñoa, 98m², 4D/1B. Precio: UF 3.706. A 501m de la estación de metro Príncipe de Gales. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $670.000/mes. Recién remodelado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 501,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3706,
+        "price_clp": null,
+        "rent_monthly_clp": 670000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-Q96",
+      "text": "Depto en Las Condes, 58m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Valor $114.000.000. Ubicado a 1,1 km de la estación Lo Vial, unos 14 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $740.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1100,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 114000000,
+        "rent_monthly_clp": 740000,
+        "location": "Las Condes"
+      },
+      "scenario": "multi",
+      "trap": "dormitorio 'convertible' que no es real; distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-E84",
+      "text": "Depto en La Reina, 110m², 4D/1B. Precio: UF 4.017 (¡bajo el presupuesto del cliente según nuestro tasador!). ¡Oportunidad única! A 282m de paradero de buses troncal, y 1,4km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $800.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 282,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4017,
+        "price_clp": null,
+        "rent_monthly_clp": 800000,
+        "location": "La Reina"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-M26",
+      "text": "Depto en San Miguel, 100m², 4D/2B. Valor $114.800.000. A 218m de paradero de buses troncal, y 0,7km del metro más cercano. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 218,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 114800000,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-D31",
+      "text": "Depto en Las Condes, 81m², 3 dormitorios, 2 baños. Precio rebajado a UF 2.826. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 422m. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $550.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 422,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2826,
+        "price_clp": null,
+        "rent_monthly_clp": 550000,
+        "location": "Las Condes"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    }
+  ]
+}

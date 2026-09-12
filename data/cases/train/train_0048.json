@@ -1,0 +1,186 @@
+{
+  "id": "train_0048",
+  "uf_value": 38500,
+  "hard_constraints": {
+    "presupuesto_max_clp": 187000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 30,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-H19",
+      "text": "Depto en Macul, 101m², 4 dormitorios, 2 baños. Precio rebajado a 4.784 UF. A 457m de la estación de metro Los Leones. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. ¡Oportunidad única! Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.120.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 457,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4784,
+        "price_clp": null,
+        "rent_monthly_clp": 1120000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-P64",
+      "text": "Depto en Vitacura, 80m², 3 dormitorios, 2 baños. Precio rebajado a UF 4.813. A 1200m de la estación de metro Irarrázaval. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Entrega inmediata. Arriendo estimado: $1.570.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4813,
+        "price_clp": null,
+        "rent_monthly_clp": 1570000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-W57",
+      "text": "Depto en Independencia, 107m², 4 dormitorios, 1 baño. Precio: UF 4.787. A 647m de la estación de metro Los Leones. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $770.000/mes. Excelente conectividad.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 647,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4787,
+        "price_clp": null,
+        "rent_monthly_clp": 770000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-E52",
+      "text": "Casa en Peñalolén, 110m², 4D/1B. Precio: UF 3.590. Ubicado a 1,4 km de la estación Los Leones, unos 18 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. ¡Oportunidad única! Arriendo referencial de la zona: $750.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1450,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3590,
+        "price_clp": null,
+        "rent_monthly_clp": 750000,
+        "location": "Peñalolén"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-M35",
+      "text": "Depto en Vitacura, 85m², 3D/2B. Precio rebajado a $136.800.000. A 862m de la estación de metro Lo Vial. 100% pet friendly, sin restricciones de tamaño ni especie. Estacionamiento en la calle, sin problemas para aparcar en el sector. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 862,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 136800000,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-A18",
+      "text": "Depto en San Miguel, 87m², 3D/1B. Precio: UF 3.649. A 772m de la estación de metro Escuela Militar. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 772,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3649,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-D56",
+      "text": "Casa en Las Condes, 103m², 4D/2B. Precio: 4.629 UF. A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 544m. Solo se admiten gatos de cualquier tamaño. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 544,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4629,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-J68",
+      "text": "Depto en Ñuñoa, 103m², 4 dormitorios, 2 baños. Precio: UF 4.790. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 225m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. ¡Oportunidad única! Incluye estacionamiento propio. Arriendo estimado: $830.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 225,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4790,
+        "price_clp": null,
+        "rent_monthly_clp": 830000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    }
+  ]
+}

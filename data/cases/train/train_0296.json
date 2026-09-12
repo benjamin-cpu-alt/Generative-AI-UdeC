@@ -1,0 +1,205 @@
+{
+  "id": "train_0296",
+  "uf_value": 39900,
+  "hard_constraints": {
+    "presupuesto_max_clp": 192500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 15,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-X97",
+      "text": "Casa en Peñalolén, 86m², 3 dormitorios, 2 baños. Precio: UF 4.777. A 563m de paradero de buses troncal, y 1,4km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $900.000/mes. Excelente conectividad.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 563,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4777,
+        "price_clp": null,
+        "rent_monthly_clp": 900000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-G66",
+      "text": "Depto en Ñuñoa, 67m², 2D/2B. Precio: 4890 UF (precio negociable, el propietario está abierto a ofertas). Precio rebajado. A 1850m del metro Plaza Egaña, muy bien conectado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1850,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4890,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "multi",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-S21",
+      "text": "Depto en Estación Central, 91m², 3 dormitorios, 2 baños. Precio: 5025 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 516m de la estación de metro Tobalaba. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Entrega inmediata. Arriendo referencial de la zona: $1.030.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 516,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5025,
+        "price_clp": null,
+        "rent_monthly_clp": 1030000,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-W46",
+      "text": "Casa en La Florida, 97m², 3D/2B. Precio: UF 4.724. A 1099m de la estación de metro Príncipe de Gales. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye estacionamiento propio. Piso alto, orientación norte. Arriendo estimado: $1.140.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1099,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4724,
+        "price_clp": null,
+        "rent_monthly_clp": 1140000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-E33",
+      "text": "Depto en La Florida, 111m², 4D/2B. Precio rebajado a $187.500.000. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 321m. Pet friendly con límite de 13kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.570.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 321,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 13
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 187500000,
+        "rent_monthly_clp": 1570000,
+        "location": "La Florida"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 13kg < mascota 15kg"
+    },
+    {
+      "id": "PROP-A82",
+      "text": "Depto en Ñuñoa, 109m², 4 dormitorios, 2 baños. Precio: 4.757 UF. A 735m de la estación de metro Irarrázaval. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.300.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 735,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4757,
+        "price_clp": null,
+        "rent_monthly_clp": 1300000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-D57",
+      "text": "Depto en Providencia, 78m², 2D/2B. Precio rebajado a 4.088 UF. A 615m de la estación de metro Príncipe de Gales. No se especifica política de mascotas. Incluye 1 estacionamiento techado asignado. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 615,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4088,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-C64",
+      "text": "Depto en Macul, 65m², 2D/1B. Precio rebajado a $150.500.000. Excelente conectividad. A 1184m de la estación de metro Príncipe de Gales. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1184,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 150500000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-K66",
+      "text": "Casa en Macul, 96m², 3 dormitorios, 1 baño. Precio: 4.416 UF. A 2250m del metro Bellas Artes, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 2250,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4416,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    }
+  ]
+}

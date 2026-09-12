@@ -1,0 +1,119 @@
+{
+  "id": "train_0016",
+  "uf_value": 38100,
+  "hard_constraints": {
+    "presupuesto_max_clp": 214500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-P91",
+      "text": "Depto en Maipú, 80m², 2D/2B. Precio: 5549 UF. A 683m de la estación de metro Lo Vial. Piso alto, orientación norte. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $890.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 683,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5549,
+        "price_clp": null,
+        "rent_monthly_clp": 890000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-D79",
+      "text": "Depto en Maipú, 80m², 2D/1B. Excelente conectividad. Precio: UF 5.892 (precio negociable, el propietario está abierto a ofertas). A 184m de la estación de metro Príncipe de Gales. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.340.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 184,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5892,
+        "price_clp": null,
+        "rent_monthly_clp": 1340000,
+        "location": "Maipú"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-C92",
+      "text": "Depto en Ñuñoa, 73m², 2 dormitorios, 1 baño. Precio: 4509 UF. A 152m de la estación de metro Tobalaba. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $990.000/mes. ¡Oportunidad única!",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 152,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 4509,
+        "price_clp": null,
+        "rent_monthly_clp": 990000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-F17",
+      "text": "Depto en Peñalolén, 96m², 4 dormitorios, 1 baño. Precio rebajado a 4226 UF. Ubicado a 1,2 km de la estación Los Leones, unos 15 minutos caminando. Luminoso y con vista despejada. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4226,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-X82",
+      "text": "Depto en Recoleta, 92m², 3 dormitorios, 2 baños. Precio: 5.958 UF (¡bajo el presupuesto del cliente según nuestro tasador!). Ubicado a 1,3 km de la estación Franklin, unos 16 minutos caminando. Entrega inmediata. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo estimado: $1.460.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5958,
+        "price_clp": null,
+        "rent_monthly_clp": 1460000,
+        "location": "Recoleta"
+      },
+      "scenario": "multi",
+      "trap": "distancia excedida, minimizada en minutos caminando; precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

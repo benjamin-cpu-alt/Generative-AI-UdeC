@@ -1,0 +1,119 @@
+{
+  "id": "train_0229",
+  "uf_value": 40550,
+  "hard_constraints": {
+    "presupuesto_max_clp": 201500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-E80",
+      "text": "Depto en Macul, 80m², 3D/2B. Precio: $148.600.000. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 500m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Recién remodelado. Incluye estacionamiento propio. Arriendo estimado: $950.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 148600000,
+        "rent_monthly_clp": 950000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-Z88",
+      "text": "Depto en Ñuñoa, 80m², 2D/2B. Precio: 4.935 UF. A 374m de paradero de buses troncal, y 1,1km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.070.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 374,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4935,
+        "price_clp": null,
+        "rent_monthly_clp": 1070000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-M45",
+      "text": "Depto en Macul, 70m², 2 dormitorios, 2 baños. Entrega inmediata. Valor $195.900.000. A 1,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 350m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. No incluye estacionamiento (posible arriendo en edificio vecino).",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 350,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 195900000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-W62",
+      "text": "Casa en Providencia, 79m², 3D/1B. Ideal para inversionistas. Precio: 5186 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 357m de la estación de metro Escuela Militar. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $890.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 357,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5186,
+        "price_clp": null,
+        "rent_monthly_clp": 890000,
+        "location": "Providencia"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-K71",
+      "text": "Depto en Providencia, 75m², 2 dormitorios, 1 baño. Precio rebajado. Valor $157.500.000. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 318m. Pet friendly con límite de 2kg por mascota. Incluye 1 estacionamiento. Arriendo estimado: $850.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 318,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 157500000,
+        "rent_monthly_clp": 850000,
+        "location": "Providencia"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 5kg"
+    }
+  ]
+}

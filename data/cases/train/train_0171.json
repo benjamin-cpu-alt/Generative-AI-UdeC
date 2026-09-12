@@ -1,0 +1,140 @@
+{
+  "id": "train_0171",
+  "uf_value": 39700,
+  "hard_constraints": {
+    "presupuesto_max_clp": 114500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-K50",
+      "text": "Depto en Maipú, 72m², 2D/1B. Valor $98.000.000. A 246m de paradero de buses troncal, y 1,4km del metro más cercano. Aceptamos mascotas, gatos y perros hasta 18kg. Precio rebajado. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $670.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 246,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 18
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 98000000,
+        "rent_monthly_clp": 670000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-P26",
+      "text": "Depto en Las Condes, 63m², 2 dormitorios, 2 baños. Precio: 2285 UF. A 2,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1500m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $540.000/mes. Recién remodelado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2285,
+        "price_clp": null,
+        "rent_monthly_clp": 540000,
+        "location": "Las Condes"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-H78",
+      "text": "Depto en Maipú, 48m², 1D/1B. Precio rebajado a 2821 UF. A 346m de paradero de buses troncal, y 1,3km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Entrega inmediata. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $530.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 346,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2821,
+        "price_clp": null,
+        "rent_monthly_clp": 530000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-V88",
+      "text": "Depto en San Miguel, 58m², 1D/1B. Precio: UF 3.048 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). Piso alto, orientación norte. A 2,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 869m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $800.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 869,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3048,
+        "price_clp": null,
+        "rent_monthly_clp": 800000,
+        "location": "San Miguel"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-M50",
+      "text": "Depto en Peñalolén, 62m², 2 dormitorios, 1 baño. Precio: 2078 UF. A 795m de paradero de buses troncal, y 1,6km del metro más cercano. Piso alto, orientación norte. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 795,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 2078,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-X35",
+      "text": "Depto estudio en Macul, 55m², ambiente único + loggia cerrada, ideal como pieza extra, 1B. Precio: $83.500.000. A 1464m de paradero de buses troncal, y 1,9km del metro más cercano. Luminoso y con vista despejada. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 1464,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 83500000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    }
+  ]
+}

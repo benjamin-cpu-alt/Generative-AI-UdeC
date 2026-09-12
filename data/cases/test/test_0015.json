@@ -1,0 +1,123 @@
+{
+  "id": "test_0015",
+  "uf_value": 39250,
+  "hard_constraints": {
+    "presupuesto_max_clp": 126000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 25,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-S18",
+      "text": "Depto en La Florida, 64m², 2 dormitorios + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 2B. Valor $105.400.000. A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 621m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $790.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 621,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 105400000,
+        "rent_monthly_clp": 790000,
+        "location": "La Florida"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-V91",
+      "text": "Depto en Maipú, 80m², 3D/2B. Valor $98.100.000. A 184m de la estación de metro Bellas Artes. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 184,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 98100000,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-H37",
+      "text": "Depto en Peñalolén, 93m², 3D/2B. Precio: 2.550 UF. ¡Oportunidad única! A 766m de la estación de metro Plaza Egaña. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Sin estacionamiento. Arriendo estimado: $740.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 766,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 2550,
+        "price_clp": null,
+        "rent_monthly_clp": 740000,
+        "location": "Peñalolén"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-C25",
+      "text": "Casa en Macul, 114m², 4 dormitorios, 1 baño. Recién remodelado. Precio: 3141 UF. A 572m de la estación de metro Franklin. Solo se admiten perros de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $660.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 572,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3141,
+        "price_clp": null,
+        "rent_monthly_clp": 660000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-W33",
+      "text": "Casa en Las Condes, 102m², 4 dormitorios, 2 baños. Precio: UF 3.256 (el mejor valor por m² del sector). A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 901m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $630.000/mes. ¡Oportunidad única!",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 901,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3256,
+        "price_clp": null,
+        "rent_monthly_clp": 630000,
+        "location": "Las Condes"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

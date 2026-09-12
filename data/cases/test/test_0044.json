@@ -1,0 +1,165 @@
+{
+  "id": "test_0044",
+  "uf_value": 39550,
+  "hard_constraints": {
+    "presupuesto_max_clp": 96000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 20,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-F48",
+      "text": "Depto en Vitacura, 45m², 1 dormitorios, 1 baño. Valor $79.200.000. A 852m de la estación de metro Escuela Militar. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $580.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 852,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 79200000,
+        "rent_monthly_clp": 580000,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-C31",
+      "text": "Depto en Santiago Centro, 79m², 2D/2B. Valor $86.600.000. A 188m de la estación de metro Franklin. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $400.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 188,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 86600000,
+        "rent_monthly_clp": 400000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-G47",
+      "text": "Depto en Maipú, 79m², 2 dormitorios, 2 baños. Precio: 2298 UF. A 876m de la estación de metro Cal y Canto. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Ideal para inversionistas. Arriendo referencial de la zona: $580.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 876,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2298,
+        "price_clp": null,
+        "rent_monthly_clp": 580000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-Y21",
+      "text": "Depto en Recoleta, 58m², 1D/1B. Valor $91.400.000. A 1115m de la estación de metro Tobalaba. Pet friendly con límite de 15kg por mascota. Incluye 1 estacionamiento subterráneo asignado. Piso alto, orientación norte.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1115,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 91400000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 15kg < mascota 20kg"
+    },
+    {
+      "id": "PROP-J44",
+      "text": "Depto en La Florida, 57m², 1 dormitorios, 1 baño. Precio rebajado a 2389 UF. A 490m de la estación de metro Bellas Artes. Edificio sin mascotas por reglamento de copropiedad. Recién remodelado. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $430.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 490,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2389,
+        "price_clp": null,
+        "rent_monthly_clp": 430000,
+        "location": "La Florida"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-W97",
+      "text": "Depto en San Miguel, 64m², 2 dormitorios, 1 baño. Piso alto, orientación norte. Valor $74.900.000. A 607m de la estación de metro Lo Vial. 100% pet friendly, sin restricciones de tamaño ni especie. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo estimado: $420.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 607,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 74900000,
+        "rent_monthly_clp": 420000,
+        "location": "San Miguel"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-T87",
+      "text": "Depto estudio en Las Condes, 59m², ambiente único + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio: 1762 UF. A 991m de paradero de buses troncal, y 1,7km del metro más cercano. Aceptamos mascotas, gatos y perros hasta 18kg. Incluye 1 estacionamiento. Arriendo estimado: $340.000/mes.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 991,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 18
+        },
+        "parking": "propio",
+        "price_uf": 1762,
+        "price_clp": null,
+        "rent_monthly_clp": 340000,
+        "location": "Las Condes"
+      },
+      "scenario": "multi",
+      "trap": "dormitorio 'convertible' que no es real; límite de peso 18kg < mascota 20kg"
+    }
+  ]
+}

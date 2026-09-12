@@ -1,0 +1,142 @@
+{
+  "id": "train_0286",
+  "uf_value": 38900,
+  "hard_constraints": {
+    "presupuesto_max_clp": 197500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-E57",
+      "text": "Casa en Estación Central, 114m², 4 dormitorios, 2 baños. Precio rebajado a UF 3.866. ¡Oportunidad única! A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 277m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 277,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 3866,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-M62",
+      "text": "Depto en La Florida, 81m², 3 dormitorios, 2 baños. Precio: 5.185 UF (precio negociable, el propietario está abierto a ofertas). A 1,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 318m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.330.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 318,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5185,
+        "price_clp": null,
+        "rent_monthly_clp": 1330000,
+        "location": "La Florida"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-T62",
+      "text": "Depto en Maipú, 90m², 3 dormitorios, 2 baños. Precio: 3.763 UF. A 505m de la estación de metro Cal y Canto. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo estimado: $1.090.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 505,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 3763,
+        "price_clp": null,
+        "rent_monthly_clp": 1090000,
+        "location": "Maipú"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-N22",
+      "text": "Casa en San Miguel, 86m², 3 dormitorios, 1 baño. Valor $159.900.000. A 1000m de paradero de buses troncal, y 2,0km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.030.000/mes. Recién remodelado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 159900000,
+        "rent_monthly_clp": 1030000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-Y37",
+      "text": "Casa en Providencia, 114m², 4 dormitorios, 1 baño. Precio rebajado. Valor $177.300.000. A 522m de la estación de metro Cal y Canto. No se especifica política de mascotas. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.130.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 522,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 177300000,
+        "rent_monthly_clp": 1130000,
+        "location": "Providencia"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-B89",
+      "text": "Depto en Providencia, 102m², 4D/1B. Precio rebajado a 4.401 UF. A 352m de la estación de metro Cal y Canto. Solo se admiten perros de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Piso alto, orientación norte. Arriendo referencial de la zona: $1.220.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 352,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4401,
+        "price_clp": null,
+        "rent_monthly_clp": 1220000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    }
+  ]
+}

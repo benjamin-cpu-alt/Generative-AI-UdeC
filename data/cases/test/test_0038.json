@@ -1,0 +1,182 @@
+{
+  "id": "test_0038",
+  "uf_value": 38750,
+  "hard_constraints": {
+    "presupuesto_max_clp": 196500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 15,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Z17",
+      "text": "Depto en Ñuñoa, 70m², 2 dormitorios, 1 baño. Precio rebajado a $152.300.000. A 368m de la estación de metro Ñuñoa. Pet friendly con límite de 7kg por mascota. Luminoso y con vista despejada. Incluye 1 estacionamiento. Arriendo estimado: $940.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 368,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 7
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 152300000,
+        "rent_monthly_clp": 940000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 7kg < mascota 15kg"
+    },
+    {
+      "id": "PROP-G39",
+      "text": "Depto en Estación Central, 107m², 4D/1B. Precio rebajado. Precio: 5316 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 476m de la estación de metro Príncipe de Gales. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo estimado: $1.510.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 476,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5316,
+        "price_clp": null,
+        "rent_monthly_clp": 1510000,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-X10",
+      "text": "Depto en Estación Central, 79m², 3D/2B. Valor $190.200.000. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 265m. Piso alto, orientación norte. Se aceptan mascotas pequeñas y medianas hasta 15kg, previa autorización de la administración. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.220.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 265,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 190200000,
+        "rent_monthly_clp": 1220000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-W78",
+      "text": "Depto en Independencia, 93m², 3D/2B. Valor $178.100.000. A 175m de la estación de metro Vicente Valdés. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $1.460.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 175,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 178100000,
+        "rent_monthly_clp": 1460000,
+        "location": "Independencia"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-V24",
+      "text": "Depto en La Cisterna, 100m², 4D/1B. Precio rebajado a 4991 UF. A 1,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 345m. Se aceptan mascotas pequeñas y medianas hasta 15kg, previa autorización de la administración. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.530.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 345,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "asignado",
+        "price_uf": 4991,
+        "price_clp": null,
+        "rent_monthly_clp": 1530000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-H43",
+      "text": "Depto en Ñuñoa, 95m², 3 dormitorios, 2 baños. Precio: 4292 UF. A 540m de la estación de metro Ñuñoa. 100% pet friendly, sin restricciones de tamaño ni especie. Estacionamiento en la calle, sin problemas para aparcar en el sector.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 540,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 4292,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-K29",
+      "text": "Depto en Macul, 80m², 3D/2B. Excelente conectividad. Precio: UF 4.421. A 416m de paradero de buses troncal, y 1,6km del metro más cercano. Pet friendly con límite de 13kg por mascota. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 416,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 13
+        },
+        "parking": "asignado",
+        "price_uf": 4421,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 13kg < mascota 15kg"
+    },
+    {
+      "id": "PROP-U50",
+      "text": "Depto en Macul, 75m², 2 dormitorios, 1 baño. Precio: 5316 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 309m de la estación de metro Tobalaba. 100% pet friendly, sin restricciones de tamaño ni especie. Precio rebajado. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 309,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5316,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "id": "train_0034",
+  "uf_value": 39650,
+  "hard_constraints": {
+    "presupuesto_max_clp": 102500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-W47",
+      "text": "Depto en Maipú, 63m², 1D/1B. Valor $83.100.000. A 276m de la estación de metro Manquehue. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo estimado: $600.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 276,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 83100000,
+        "rent_monthly_clp": 600000,
+        "location": "Maipú"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-C15",
+      "text": "Casa en San Miguel, 85m², 3D/2B. Precio: 2.731 UF (precio negociable, el propietario está abierto a ofertas). A 2,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 865m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $520.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 865,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2731,
+        "price_clp": null,
+        "rent_monthly_clp": 520000,
+        "location": "San Miguel"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-H95",
+      "text": "Depto en Las Condes, 91m², 3D/1B. Precio rebajado a $83.700.000. A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 512m. ¡Oportunidad única! Pet friendly con límite de 4kg por mascota. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $570.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 512,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 83700000,
+        "rent_monthly_clp": 570000,
+        "location": "Las Condes"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-V81",
+      "text": "Depto en La Cisterna, 77m², 2D/2B. Precio: UF 1.977. A 272m de paradero de buses troncal, y 1,1km del metro más cercano. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $650.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 272,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 1977,
+        "price_clp": null,
+        "rent_monthly_clp": 650000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-T78",
+      "text": "Depto en San Miguel, 85m², 3D/1B. Precio: 2.288 UF. A 1,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 511m. Recién remodelado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $670.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 511,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2288,
+        "price_clp": null,
+        "rent_monthly_clp": 670000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-F80",
+      "text": "Depto en Providencia, 60m², 1 dormitorios, 1 baño. Valor $104.000.000 (el mejor valor por m² del sector). A 951m de paradero de buses troncal, y 1,9km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $530.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 951,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 104000000,
+        "rent_monthly_clp": 530000,
+        "location": "Providencia"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-N52",
+      "text": "Depto en Recoleta, 62m², 2 dormitorios, 2 baños. Valor $105.500.000 (precio negociable, el propietario está abierto a ofertas). A 362m de paradero de buses troncal, y 1,3km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Ideal para inversionistas. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 362,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 105500000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-M19",
+      "text": "Depto en San Miguel, 67m², 2D/2B. Precio: 2.121 UF. A 584m de la estación de metro Príncipe de Gales. No se aceptan mascotas. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 584,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2121,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    }
+  ]
+}

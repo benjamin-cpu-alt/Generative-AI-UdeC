@@ -1,0 +1,163 @@
+{
+  "id": "train_0233",
+  "uf_value": 40150,
+  "hard_constraints": {
+    "presupuesto_max_clp": 156000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 15,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Y15",
+      "text": "Depto en La Reina, 88m², 3D/1B. Precio: 3.923 UF (precio negociable, el propietario está abierto a ofertas). A 672m de la estación de metro Plaza Egaña. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.160.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 672,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3923,
+        "price_clp": null,
+        "rent_monthly_clp": 1160000,
+        "location": "La Reina"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-L36",
+      "text": "Depto en La Reina, 93m², 3D/1B. Precio: UF 4.102 (¡bajo el presupuesto del cliente según nuestro tasador!). Ubicado a 2,0 km de la estación Bellas Artes, unos 26 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.020.000/mes. Luminoso y con vista despejada.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 2050,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4102,
+        "price_clp": null,
+        "rent_monthly_clp": 1020000,
+        "location": "La Reina"
+      },
+      "scenario": "multi",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-V98",
+      "text": "Depto en Recoleta, 72m², 2D/2B. Precio: 3113 UF. ¡Oportunidad única! A 1022m de la estación de metro Lo Vial. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $600.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1022,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3113,
+        "price_clp": null,
+        "rent_monthly_clp": 600000,
+        "location": "Recoleta"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-B39",
+      "text": "Depto en Vitacura, 80m², 3D/1B. Precio: 4030 UF (precio negociable, el propietario está abierto a ofertas). Ubicado a 2,0 km de la estación Tobalaba, unos 25 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Precio rebajado. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.090.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 2000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4030,
+        "price_clp": null,
+        "rent_monthly_clp": 1090000,
+        "location": "Vitacura"
+      },
+      "scenario": "multi",
+      "trap": "distancia excedida, minimizada en minutos caminando; precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-C48",
+      "text": "Depto en Vitacura, 90m², 3 dormitorios, 1 baño. Precio: $145.500.000. A 1200m de la estación de metro Ñuñoa. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.160.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 145500000,
+        "rent_monthly_clp": 1160000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-M73",
+      "text": "Casa en Recoleta, 88m², 3 dormitorios, 1 baño. Precio: UF 3.776. A 701m de la estación de metro Tobalaba. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.080.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 701,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3776,
+        "price_clp": null,
+        "rent_monthly_clp": 1080000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-X23",
+      "text": "Depto en San Miguel, 87m², 3D/1B. Precio: 4.067 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 1,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 702m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 702,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4067,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

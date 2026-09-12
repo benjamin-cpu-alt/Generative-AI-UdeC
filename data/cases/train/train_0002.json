@@ -1,0 +1,203 @@
+{
+  "id": "train_0002",
+  "uf_value": 38750,
+  "hard_constraints": {
+    "presupuesto_max_clp": 167500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-E17",
+      "text": "Depto en Maipú, 63m², 2 dormitorios, 2 baños. Precio: 3226 UF. A 1500m del metro Vicente Valdés, muy bien conectado. ¡Oportunidad única! Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3226,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-D65",
+      "text": "Depto en Providencia, 89m², 3D/1B. Precio: 4157 UF. Recién remodelado. Ubicado a 1,4 km de la estación Plaza Egaña, unos 18 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo estimado: $920.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1450,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4157,
+        "price_clp": null,
+        "rent_monthly_clp": 920000,
+        "location": "Providencia"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-J63",
+      "text": "Depto en Maipú, 96m², 3 dormitorios, 2 baños. Precio rebajado a 4.217 UF. A 828m de la estación de metro Bellas Artes. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo estimado: $1.050.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 828,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4217,
+        "price_clp": null,
+        "rent_monthly_clp": 1050000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-Y80",
+      "text": "Depto en Maipú, 96m², 4 dormitorios, 1 baño. Precio rebajado a $122.400.000. Recién remodelado. A 989m de paradero de buses troncal, y 1,5km del metro más cercano. Pet friendly con límite de 4kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $720.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 989,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 122400000,
+        "rent_monthly_clp": 720000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-P55",
+      "text": "Casa en La Cisterna, 90m², 3D/2B. Precio: 3659 UF. A 957m de la estación de metro Príncipe de Gales. Aceptamos mascotas, gatos y perros hasta 2kg. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $740.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 957,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "asignado",
+        "price_uf": 3659,
+        "price_clp": null,
+        "rent_monthly_clp": 740000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 4kg"
+    },
+    {
+      "id": "PROP-F99",
+      "text": "Depto en Las Condes, 89m², 3 dormitorios, 2 baños. Precio rebajado a $147.400.000. A 539m de la estación de metro Ñuñoa. No se especifica política de mascotas. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.230.000/mes. ¡Oportunidad única!",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 539,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 147400000,
+        "rent_monthly_clp": 1230000,
+        "location": "Las Condes"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-W87",
+      "text": "Casa en Las Condes, 82m², 3 dormitorios, 1 baño. Precio: 4.243 UF. A 981m de la estación de metro Plaza Egaña. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.110.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 981,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4243,
+        "price_clp": null,
+        "rent_monthly_clp": 1110000,
+        "location": "Las Condes"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-B72",
+      "text": "Depto en La Cisterna, 77m², 2D/1B. Valor $125.500.000. A 1650m del metro Cal y Canto, a pasos de todo. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $870.000/mes. Excelente conectividad.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 125500000,
+        "rent_monthly_clp": 870000,
+        "location": "La Cisterna"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-M31",
+      "text": "Depto en Peñalolén, 59m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio: UF 3.499. A 480m de la estación de metro Cal y Canto. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $830.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 480,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3499,
+        "price_clp": null,
+        "rent_monthly_clp": 830000,
+        "location": "Peñalolén"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    }
+  ]
+}

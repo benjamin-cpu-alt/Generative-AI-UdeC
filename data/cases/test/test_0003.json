@@ -1,0 +1,205 @@
+{
+  "id": "test_0003",
+  "uf_value": 38100,
+  "hard_constraints": {
+    "presupuesto_max_clp": 216500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-N70",
+      "text": "Casa en Estación Central, 86m², 3 dormitorios, 2 baños. Precio: 5428 UF. A 615m de la estación de metro Plaza Egaña. Ideal para inversionistas. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.430.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 615,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5428,
+        "price_clp": null,
+        "rent_monthly_clp": 1430000,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-J81",
+      "text": "Depto en Providencia, 86m², 3 dormitorios, 2 baños. Precio: 5774 UF (el mejor valor por m² del sector). A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 652m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. No incluye estacionamiento (posible arriendo en edificio vecino). Luminoso y con vista despejada. Arriendo estimado: $1.240.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 652,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 5774,
+        "price_clp": null,
+        "rent_monthly_clp": 1240000,
+        "location": "Providencia"
+      },
+      "scenario": "multi",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-B30",
+      "text": "Depto en Estación Central, 104m², 4D/1B. Precio: UF 4.961. A 189m de la estación de metro Vicente Valdés. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $960.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 189,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4961,
+        "price_clp": null,
+        "rent_monthly_clp": 960000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-K89",
+      "text": "Depto en Las Condes, 66m², 2 dormitorios, 2 baños. Precio: 5724 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 241m de paradero de buses troncal, y 1,4km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.460.000/mes. Excelente conectividad.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 241,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5724,
+        "price_clp": null,
+        "rent_monthly_clp": 1460000,
+        "location": "Las Condes"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-Y29",
+      "text": "Depto en Estación Central, 67m², 2 dormitorios, 1 baño. Precio: UF 5.646. A 479m de paradero de buses troncal, y 1,6km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo estimado: $1.170.000/mes. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 479,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5646,
+        "price_clp": null,
+        "rent_monthly_clp": 1170000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-V71",
+      "text": "Depto en La Cisterna, 51m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Valor $156.500.000. A 0,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 205m. Se aceptan mascotas pequeñas y medianas hasta 10kg, previa autorización de la administración. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.080.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 205,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 10
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 156500000,
+        "rent_monthly_clp": 1080000,
+        "location": "La Cisterna"
+      },
+      "scenario": "multi",
+      "trap": "límite de peso 10kg < mascota 18kg; dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-U16",
+      "text": "Depto en San Miguel, 82m², 3 dormitorios, 1 baño. Valor $160.800.000. A 544m de la estación de metro Príncipe de Gales. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo estimado: $750.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 544,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 160800000,
+        "rent_monthly_clp": 750000,
+        "location": "San Miguel"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-W67",
+      "text": "Depto en Santiago Centro, 61m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio: 4.795 UF. A 223m de la estación de metro Ñuñoa. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 223,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4795,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-C19",
+      "text": "Depto en Estación Central, 104m², 4 dormitorios, 1 baño. Precio rebajado a UF 5.118. A 788m de la estación de metro Tobalaba. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo estimado: $960.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 788,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5118,
+        "price_clp": null,
+        "rent_monthly_clp": 960000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": null
+    }
+  ]
+}

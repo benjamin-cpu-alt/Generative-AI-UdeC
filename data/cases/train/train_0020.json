@@ -1,0 +1,121 @@
+{
+  "id": "train_0020",
+  "uf_value": 38650,
+  "hard_constraints": {
+    "presupuesto_max_clp": 161500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 10,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-R34",
+      "text": "Depto en Ñuñoa, 89m², 3 dormitorios, 1 baño. Precio rebajado a 3.408 UF. Ubicado a 1,8 km de la estación Irarrázaval, unos 22 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo referencial de la zona: $990.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3408,
+        "price_clp": null,
+        "rent_monthly_clp": 990000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-T86",
+      "text": "Depto en Vitacura, 74m², 2D/2B. ¡Oportunidad única! Precio: 4.075 UF. A 595m de la estación de metro Ñuñoa. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $920.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 595,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4075,
+        "price_clp": null,
+        "rent_monthly_clp": 920000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-J58",
+      "text": "Depto en Recoleta, 73m², 2D/1B. Precio: 4223 UF (el mejor valor por m² del sector). A 1,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 360m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $710.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 360,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4223,
+        "price_clp": null,
+        "rent_monthly_clp": 710000,
+        "location": "Recoleta"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-B61",
+      "text": "Casa en Estación Central, 91m², 3D/1B. Precio: UF 3.648. A 2,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 915m. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Recién remodelado. Arriendo referencial de la zona: $1.110.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 915,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3648,
+        "price_clp": null,
+        "rent_monthly_clp": 1110000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-C45",
+      "text": "Casa en La Cisterna, 96m², 3D/1B. Precio rebajado a $137.500.000. A 811m de la estación de metro Irarrázaval. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo estimado: $860.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 811,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": null,
+        "price_clp": 137500000,
+        "rent_monthly_clp": 860000,
+        "location": "La Cisterna"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    }
+  ]
+}

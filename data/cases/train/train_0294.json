@@ -1,0 +1,161 @@
+{
+  "id": "train_0294",
+  "uf_value": 40150,
+  "hard_constraints": {
+    "presupuesto_max_clp": 94500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-T83",
+      "text": "Depto en Independencia, 80m², 2 dormitorios, 2 baños. Piso alto, orientación norte. Precio: 2446 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 472m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo estimado: $750.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 472,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2446,
+        "price_clp": null,
+        "rent_monthly_clp": 750000,
+        "location": "Independencia"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-B87",
+      "text": "Depto en Macul, 100m², 4D/2B. Precio: 1935 UF. A 501m de la estación de metro Irarrázaval. Se aceptan mascotas pequeñas y medianas hasta 2kg, previa autorización de la administración. Incluye estacionamiento propio. Arriendo estimado: $610.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 501,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "propio",
+        "price_uf": 1935,
+        "price_clp": null,
+        "rent_monthly_clp": 610000,
+        "location": "Macul"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 4kg"
+    },
+    {
+      "id": "PROP-U87",
+      "text": "Depto en La Cisterna, 80m², 2D/1B. Valor $73.700.000. A 1700m del metro Manquehue, muy bien conectado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $340.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 73700000,
+        "rent_monthly_clp": 340000,
+        "location": "La Cisterna"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-G31",
+      "text": "Casa en Providencia, 92m², 3D/2B. Precio: 2.301 UF. A 235m de la estación de metro Vicente Valdés. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Ideal para inversionistas. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $390.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 235,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2301,
+        "price_clp": null,
+        "rent_monthly_clp": 390000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-R12",
+      "text": "Casa en Independencia, 81m², 3D/2B. Precio: 2.052 UF. A 1000m de la estación de metro Tobalaba. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Piso alto, orientación norte. Incluye 1 estacionamiento. Arriendo referencial de la zona: $430.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2052,
+        "price_clp": null,
+        "rent_monthly_clp": 430000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-K86",
+      "text": "Depto en Providencia, 50m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Valor $77.200.000. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 411m. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $620.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 411,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 77200000,
+        "rent_monthly_clp": 620000,
+        "location": "Providencia"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-E83",
+      "text": "Casa en San Miguel, 111m², 4D/2B. Excelente conectividad. Valor $97.000.000 (precio negociable, el propietario está abierto a ofertas). A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 891m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 891,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 97000000,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    }
+  ]
+}

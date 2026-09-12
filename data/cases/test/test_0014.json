@@ -1,0 +1,119 @@
+{
+  "id": "test_0014",
+  "uf_value": 40600,
+  "hard_constraints": {
+    "presupuesto_max_clp": 199000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-G95",
+      "text": "Depto en Recoleta, 106m², 4 dormitorios, 1 baño. Precio: 4559 UF. Ubicado a 2,0 km de la estación Lo Vial, unos 26 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.380.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 2050,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4559,
+        "price_clp": null,
+        "rent_monthly_clp": 1380000,
+        "location": "Recoleta"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-W37",
+      "text": "Casa en Providencia, 84m², 3 dormitorios, 1 baño. Precio: UF 4.798. A 255m de la estación de metro Tobalaba. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.470.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 255,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4798,
+        "price_clp": null,
+        "rent_monthly_clp": 1470000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-N91",
+      "text": "Casa en Recoleta, 114m², 4D/2B. Valor $172.100.000. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 485m. Pet friendly con límite de 2kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.130.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 485,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 172100000,
+        "rent_monthly_clp": 1130000,
+        "location": "Recoleta"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 6kg"
+    },
+    {
+      "id": "PROP-Z53",
+      "text": "Depto en Providencia, 101m², 4 dormitorios, 1 baño. Excelente conectividad. Valor $164.300.000. A 879m de la estación de metro Bellas Artes. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 879,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 164300000,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-D31",
+      "text": "Depto en San Miguel, 78m², 2D/2B. Precio: 3.995 UF. A 312m de paradero de buses troncal, y 1,4km del metro más cercano. Pet friendly con límite de 5kg por mascota. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 312,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "propio",
+        "price_uf": 3995,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 5kg < mascota 6kg"
+    }
+  ]
+}

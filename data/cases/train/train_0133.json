@@ -1,0 +1,163 @@
+{
+  "id": "train_0133",
+  "uf_value": 40100,
+  "hard_constraints": {
+    "presupuesto_max_clp": 201500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 20,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-W90",
+      "text": "Depto en Independencia, 114m², 4 dormitorios, 2 baños. Precio: 5.145 UF (precio negociable, el propietario está abierto a ofertas). Ideal para inversionistas. A 2,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 904m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.150.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 904,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5145,
+        "price_clp": null,
+        "rent_monthly_clp": 1150000,
+        "location": "Independencia"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-C50",
+      "text": "Depto en Vitacura, 100m², 4D/2B. Precio: 4.788 UF. A 2,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 895m. Piso alto, orientación norte. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $1.250.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 895,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 4788,
+        "price_clp": null,
+        "rent_monthly_clp": 1250000,
+        "location": "Vitacura"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-Z41",
+      "text": "Depto en Independencia, 79m², 3D/1B. Precio rebajado a $151.600.000. A 1900m del metro Lo Vial, muy bien conectado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $770.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1900,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 151600000,
+        "rent_monthly_clp": 770000,
+        "location": "Independencia"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-E33",
+      "text": "Depto en Independencia, 90m², 3D/2B. Valor $159.000.000. Ubicado a 1,6 km de la estación Bellas Artes, unos 19 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Precio rebajado. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.190.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1550,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 159000000,
+        "rent_monthly_clp": 1190000,
+        "location": "Independencia"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-N18",
+      "text": "Casa en La Reina, 109m², 4D/1B. Valor $210.500.000 (el mejor valor por m² del sector). A 2,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 907m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo estimado: $1.240.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 907,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 210500000,
+        "rent_monthly_clp": 1240000,
+        "location": "La Reina"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-B41",
+      "text": "Depto en Estación Central, 80m², 2D/2B. Valor $186.800.000. A 1099m de la estación de metro Plaza Egaña. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Piso alto, orientación norte. Arriendo referencial de la zona: $880.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1099,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 186800000,
+        "rent_monthly_clp": 880000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-F38",
+      "text": "Depto en San Miguel, 104m², 4D/1B. Precio: UF 4.112. A 324m de la estación de metro Lo Vial. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Piso alto, orientación norte. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.250.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 324,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4112,
+        "price_clp": null,
+        "rent_monthly_clp": 1250000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": null
+    }
+  ]
+}

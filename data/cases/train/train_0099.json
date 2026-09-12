@@ -1,0 +1,186 @@
+{
+  "id": "train_0099",
+  "uf_value": 38200,
+  "hard_constraints": {
+    "presupuesto_max_clp": 188000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Z77",
+      "text": "Depto en Ñuñoa, 103m², 4 dormitorios, 2 baños. Precio: UF 3.694. A 1181m de la estación de metro Irarrázaval. Precio rebajado. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1181,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3694,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-X34",
+      "text": "Depto en Vitacura, 104m², 4D/1B. Precio: 3.872 UF. A 1090m de la estación de metro Baquedano. Pet friendly con límite de 16kg por mascota. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1090,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 16
+        },
+        "parking": "asignado",
+        "price_uf": 3872,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 16kg < mascota 18kg"
+    },
+    {
+      "id": "PROP-C75",
+      "text": "Depto en Providencia, 112m², 4D/2B. Precio: 4215 UF. A 538m de la estación de metro Bellas Artes. Pet friendly con límite de 15kg por mascota. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 538,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "asignado",
+        "price_uf": 4215,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 15kg < mascota 18kg"
+    },
+    {
+      "id": "PROP-Y50",
+      "text": "Casa en Vitacura, 106m², 4 dormitorios, 2 baños. Ideal para inversionistas. Precio: 4.741 UF. A 2,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1186m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.410.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1186,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4741,
+        "price_clp": null,
+        "rent_monthly_clp": 1410000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-A33",
+      "text": "Depto en Peñalolén, 90m², 3 dormitorios, 2 baños. Precio rebajado a UF 4.589. A 660m de paradero de buses troncal, y 1,2km del metro más cercano. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $970.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 660,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4589,
+        "price_clp": null,
+        "rent_monthly_clp": 970000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-U52",
+      "text": "Casa en Macul, 109m², 4D/1B. Valor $160.100.000. Excelente conectividad. A 371m de la estación de metro Bellas Artes. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Sin estacionamiento.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 371,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 160100000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-V22",
+      "text": "Depto en Macul, 87m², 3D/2B. Valor $156.400.000. A 1163m de la estación de metro Tobalaba. Se aceptan mascotas pequeñas y medianas hasta 13kg, previa autorización de la administración. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1163,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 13
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 156400000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 13kg < mascota 18kg"
+    },
+    {
+      "id": "PROP-B84",
+      "text": "Casa en La Reina, 110m², 4D/1B. Precio: 4.220 UF. A 179m de la estación de metro Lo Vial. Aceptamos mascotas, gatos y perros hasta 16kg. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $760.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 179,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 16
+        },
+        "parking": "asignado",
+        "price_uf": 4220,
+        "price_clp": null,
+        "rent_monthly_clp": 760000,
+        "location": "La Reina"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 16kg < mascota 18kg"
+    }
+  ]
+}

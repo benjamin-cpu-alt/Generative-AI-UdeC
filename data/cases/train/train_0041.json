@@ -1,0 +1,119 @@
+{
+  "id": "train_0041",
+  "uf_value": 38350,
+  "hard_constraints": {
+    "presupuesto_max_clp": 137500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 15,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-P33",
+      "text": "Depto en Peñalolén, 83m², 3 dormitorios, 1 baño. Precio: 2592 UF. Ideal para inversionistas. A 1000m de la estación de metro Escuela Militar. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $700.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2592,
+        "price_clp": null,
+        "rent_monthly_clp": 700000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-K49",
+      "text": "Depto en Providencia, 78m², 2D/1B. Precio: 2.863 UF. A 584m de paradero de buses troncal, y 1,6km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $600.000/mes. Piso alto, orientación norte.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 584,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2863,
+        "price_clp": null,
+        "rent_monthly_clp": 600000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-Z38",
+      "text": "Depto en Las Condes, 77m², 2D/2B. Precio: $131.100.000. Ubicado a 1,6 km de la estación Irarrázaval, unos 21 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 131100000,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-R43",
+      "text": "Casa en Ñuñoa, 85m², 3D/1B. Precio: 3.742 UF (¡bajo el presupuesto del cliente según nuestro tasador!). Recién remodelado. A 459m de paradero de buses troncal, y 1,6km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $780.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 459,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3742,
+        "price_clp": null,
+        "rent_monthly_clp": 780000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-Q65",
+      "text": "Casa en Estación Central, 99m², 4D/2B. Precio: $118.900.000. Ubicado a 1,7 km de la estación Tobalaba, unos 21 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Sin estacionamiento. Arriendo referencial de la zona: $1.010.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 118900000,
+        "rent_monthly_clp": 1010000,
+        "location": "Estación Central"
+      },
+      "scenario": "multi",
+      "trap": "distancia excedida, minimizada en minutos caminando; estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    }
+  ]
+}

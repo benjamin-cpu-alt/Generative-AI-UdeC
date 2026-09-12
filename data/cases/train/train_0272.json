@@ -1,0 +1,119 @@
+{
+  "id": "train_0272",
+  "uf_value": 39250,
+  "hard_constraints": {
+    "presupuesto_max_clp": 154500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 25,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-H33",
+      "text": "Depto en Vitacura, 70m², 2 dormitorios, 2 baños. Precio: UF 3.185. A 252m de paradero de buses troncal, y 1,4km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $980.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 252,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3185,
+        "price_clp": null,
+        "rent_monthly_clp": 980000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-X69",
+      "text": "Depto en Maipú, 82m², 3D/2B. Precio: UF 4.094 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 517m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. ¡Oportunidad única! Arriendo referencial de la zona: $770.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 517,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4094,
+        "price_clp": null,
+        "rent_monthly_clp": 770000,
+        "location": "Maipú"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-K98",
+      "text": "Depto en Maipú, 69m², 2D/2B. Precio: UF 3.057. Luminoso y con vista despejada. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 487m. Edificio sin mascotas por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $830.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 487,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3057,
+        "price_clp": null,
+        "rent_monthly_clp": 830000,
+        "location": "Maipú"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-J72",
+      "text": "Depto en La Florida, 105m², 4 dormitorios, 1 baño. Precio: 3264 UF. Ubicado a 1,1 km de la estación Los Leones, unos 14 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $980.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1100,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3264,
+        "price_clp": null,
+        "rent_monthly_clp": 980000,
+        "location": "La Florida"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-S20",
+      "text": "Depto en Peñalolén, 47m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Valor $132.400.000. A 248m de la estación de metro Irarrázaval. ¡Oportunidad única! 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 248,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 132400000,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "id": "train_0187",
+  "uf_value": 40300,
+  "hard_constraints": {
+    "presupuesto_max_clp": 212000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 22,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-J53",
+      "text": "Depto en Recoleta, 93m², 3 dormitorios, 2 baños. Precio rebajado a 4958 UF. A 204m de la estación de metro Baquedano. Aceptamos mascotas, gatos y perros hasta 21kg. Piso alto, orientación norte. No incluye estacionamiento (posible arriendo en edificio vecino).",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 204,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 21
+        },
+        "parking": "ninguno",
+        "price_uf": 4958,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "multi",
+      "trap": "límite de peso 21kg < mascota 22kg; estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-T96",
+      "text": "Depto en Ñuñoa, 72m², 2 dormitorios, 1 baño. Valor $181.100.000. A 500m de la estación de metro Cal y Canto. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Piso alto, orientación norte. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $820.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 181100000,
+        "rent_monthly_clp": 820000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-L85",
+      "text": "Depto en San Miguel, 84m², 3 dormitorios, 2 baños. Precio: 4.655 UF. A 325m de la estación de metro Plaza Egaña. Ideal para inversionistas. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.390.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 325,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4655,
+        "price_clp": null,
+        "rent_monthly_clp": 1390000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-Z95",
+      "text": "Casa en Peñalolén, 108m², 4 dormitorios, 2 baños. Precio: UF 5.134. A 412m de paradero de buses troncal, y 1,0km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Precio rebajado. Arriendo estimado: $1.290.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 412,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5134,
+        "price_clp": null,
+        "rent_monthly_clp": 1290000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-D24",
+      "text": "Depto en Recoleta, 78m², 2D/1B. Valor $219.500.000 (el mejor valor por m² del sector). A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 268m. Precio rebajado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.260.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 268,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 219500000,
+        "rent_monthly_clp": 1260000,
+        "location": "Recoleta"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-X48",
+      "text": "Depto en Peñalolén, 71m², 2D/1B. Precio: 5.474 UF (precio negociable, el propietario está abierto a ofertas). A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 264m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. ¡Oportunidad única! Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 264,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5474,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-S44",
+      "text": "Depto en Estación Central, 69m², 2D/2B. Precio: 5377 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 310m de la estación de metro Baquedano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 310,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5377,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "id": "train_0138",
+  "uf_value": 39200,
+  "hard_constraints": {
+    "presupuesto_max_clp": 91000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 15,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-K60",
+      "text": "Casa en Macul, 112m², 4 dormitorios, 2 baños. Valor $89.400.000. ¡Oportunidad única! A 344m de la estación de metro Vicente Valdés. No se aceptan mascotas. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 344,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 89400000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-U99",
+      "text": "Depto en Las Condes, 91m², 3 dormitorios, 2 baños. Valor $91.500.000 (¡bajo el presupuesto del cliente según nuestro tasador!). A 253m de la estación de metro Manquehue. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $540.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 253,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 91500000,
+        "rent_monthly_clp": 540000,
+        "location": "Las Condes"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-S51",
+      "text": "Depto en Peñalolén, 93m², 3 dormitorios, 1 baño. Valor $90.400.000. A 321m de la estación de metro Lo Vial. Excelente conectividad. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $690.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 321,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 90400000,
+        "rent_monthly_clp": 690000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-G69",
+      "text": "Depto en Maipú, 90m², 3 dormitorios, 2 baños. Precio rebajado a 2.110 UF. Ubicado a 2,1 km de la estación Manquehue, unos 27 minutos caminando. Se aceptan mascotas pequeñas y medianas hasta 12kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 2150,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 12
+        },
+        "parking": "asignado",
+        "price_uf": 2110,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "multi",
+      "trap": "límite de peso 12kg < mascota 15kg; distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-H72",
+      "text": "Depto en Las Condes, 93m², 3D/1B. Valor $93.000.000 (el mejor valor por m² del sector). A 927m de la estación de metro Príncipe de Gales. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 927,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 93000000,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-R33",
+      "text": "Depto en Providencia, 63m², 2D/2B. Valor $76.800.000. A 570m de la estación de metro Príncipe de Gales. Ideal para inversionistas. Se aceptan mascotas pequeñas y medianas hasta 15kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $600.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 570,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 76800000,
+        "rent_monthly_clp": 600000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-N93",
+      "text": "Depto en Ñuñoa, 64m², 2D/2B. Precio: 2048 UF. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 603m. 100% pet friendly, sin restricciones de tamaño ni especie. Sin estacionamiento. Arriendo estimado: $530.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 603,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 2048,
+        "price_clp": null,
+        "rent_monthly_clp": 530000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    }
+  ]
+}

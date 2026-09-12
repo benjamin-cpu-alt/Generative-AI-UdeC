@@ -1,0 +1,163 @@
+{
+  "id": "train_0142",
+  "uf_value": 39800,
+  "hard_constraints": {
+    "presupuesto_max_clp": 142000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Z46",
+      "text": "Depto en Macul, 56m², 1D/1B. Precio: 3.482 UF. Piso alto, orientación norte. A 421m de la estación de metro Franklin. No se aceptan mascotas. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.160.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 421,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3482,
+        "price_clp": null,
+        "rent_monthly_clp": 1160000,
+        "location": "Macul"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-C80",
+      "text": "Depto en San Miguel, 71m², 2D/1B. Precio: UF 3.379. Luminoso y con vista despejada. A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1112m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. No incluye estacionamiento (posible arriendo en edificio vecino). Arriendo referencial de la zona: $990.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1112,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3379,
+        "price_clp": null,
+        "rent_monthly_clp": 990000,
+        "location": "San Miguel"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-T53",
+      "text": "Depto en Independencia, 70m², 2 dormitorios, 1 baño. Precio: UF 3.106. A 451m de la estación de metro Vicente Valdés. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. No incluye estacionamiento (posible arriendo en edificio vecino). Arriendo referencial de la zona: $760.000/mes. Precio rebajado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 451,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3106,
+        "price_clp": null,
+        "rent_monthly_clp": 760000,
+        "location": "Independencia"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-D68",
+      "text": "Depto en Maipú, 72m², 2D/1B. Precio: 2915 UF. A 394m de la estación de metro Irarrázaval. Se aceptan mascotas pequeñas y medianas hasta 15kg, previa autorización de la administración. Piso alto, orientación norte. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $960.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 394,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "asignado",
+        "price_uf": 2915,
+        "price_clp": null,
+        "rent_monthly_clp": 960000,
+        "location": "Maipú"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 15kg < mascota 18kg"
+    },
+    {
+      "id": "PROP-R84",
+      "text": "Casa en Vitacura, 81m², 3 dormitorios, 1 baño. Precio: UF 3.485. Excelente conectividad. A 516m de la estación de metro Cal y Canto. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $860.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 516,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3485,
+        "price_clp": null,
+        "rent_monthly_clp": 860000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-F43",
+      "text": "Depto en Vitacura, 46m², 1 dormitorios, 1 baño. Valor $138.900.000. A 948m de la estación de metro Franklin. Aceptamos mascotas, gatos y perros hasta 18kg. Incluye 1 estacionamiento techado asignado. ¡Oportunidad única! Arriendo estimado: $1.110.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 948,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 18
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 138900000,
+        "rent_monthly_clp": 1110000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-Q69",
+      "text": "Depto en Las Condes, 80m², 2D/2B. Valor $124.400.000. A 1,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 345m. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $750.000/mes. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 345,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 124400000,
+        "rent_monthly_clp": 750000,
+        "location": "Las Condes"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    }
+  ]
+}

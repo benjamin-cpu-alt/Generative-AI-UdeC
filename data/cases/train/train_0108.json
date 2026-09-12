@@ -1,0 +1,163 @@
+{
+  "id": "train_0108",
+  "uf_value": 39300,
+  "hard_constraints": {
+    "presupuesto_max_clp": 157500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 22,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Q64",
+      "text": "Depto en Santiago Centro, 70m², 2 dormitorios, 1 baño. Precio: UF 3.588. A 192m de la estación de metro Tobalaba. No se aceptan mascotas. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 192,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3588,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-F37",
+      "text": "Depto en Providencia, 86m², 3 dormitorios, 1 baño. Precio: UF 3.237. A 1400m del metro Ñuñoa, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3237,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-L81",
+      "text": "Casa en La Reina, 103m², 4D/1B. Precio: $137.300.000. Piso alto, orientación norte. Ubicado a 2,0 km de la estación Manquehue, unos 26 minutos caminando. Aceptamos mascotas, gatos y perros hasta 14kg. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 2050,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 14
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 137300000,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      },
+      "scenario": "multi",
+      "trap": "distancia excedida, minimizada en minutos caminando; límite de peso 14kg < mascota 22kg"
+    },
+    {
+      "id": "PROP-Z89",
+      "text": "Casa en La Cisterna, 87m², 3 dormitorios, 2 baños. Precio: 3911 UF. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1200m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $790.000/mes. Piso alto, orientación norte.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3911,
+        "price_clp": null,
+        "rent_monthly_clp": 790000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-K81",
+      "text": "Depto en Vitacura, 67m², 2 dormitorios, 1 baño. Precio: 3.855 UF. A 918m de paradero de buses troncal, y 1,6km del metro más cercano. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Recién remodelado. Arriendo referencial de la zona: $1.060.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 918,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3855,
+        "price_clp": null,
+        "rent_monthly_clp": 1060000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-S93",
+      "text": "Depto en La Florida, 99m², 4D/1B. Precio: 3964 UF. A 785m de la estación de metro Príncipe de Gales. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $1.180.000/mes. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 785,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3964,
+        "price_clp": null,
+        "rent_monthly_clp": 1180000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-H88",
+      "text": "Depto en Independencia, 72m², 2D/2B. Precio: 3.565 UF. A 678m de la estación de metro Bellas Artes. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $850.000/mes. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 678,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3565,
+        "price_clp": null,
+        "rent_monthly_clp": 850000,
+        "location": "Independencia"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    }
+  ]
+}

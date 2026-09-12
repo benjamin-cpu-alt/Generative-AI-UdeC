@@ -1,0 +1,207 @@
+{
+  "id": "train_0098",
+  "uf_value": 39500,
+  "hard_constraints": {
+    "presupuesto_max_clp": 222000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-L94",
+      "text": "Depto en La Florida, 49m², 1 dormitorios, 1 baño. Precio: 4803 UF. A 465m de paradero de buses troncal, y 1,3km del metro más cercano. Entrega inmediata. Se aceptan mascotas pequeñas y medianas hasta 4kg, previa autorización de la administración. Incluye estacionamiento propio. Arriendo estimado: $1.310.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 465,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "propio",
+        "price_uf": 4803,
+        "price_clp": null,
+        "rent_monthly_clp": 1310000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-Z27",
+      "text": "Depto en Independencia, 55m², 1D/1B. Precio: 5516 UF. A 0,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 245m. Ideal para inversionistas. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.710.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 245,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5516,
+        "price_clp": null,
+        "rent_monthly_clp": 1710000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-Q76",
+      "text": "Depto en Providencia, 85m², 3D/1B. Precio: 5175 UF. A 1,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 276m. Recién remodelado. Pet friendly con límite de 4kg por mascota. Incluye estacionamiento propio. Arriendo estimado: $1.460.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 276,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "propio",
+        "price_uf": 5175,
+        "price_clp": null,
+        "rent_monthly_clp": 1460000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-T98",
+      "text": "Depto estudio en La Reina, 55m², ambiente único + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio: 4.656 UF. A 406m de la estación de metro Ñuñoa. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.540.000/mes.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 406,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4656,
+        "price_clp": null,
+        "rent_monthly_clp": 1540000,
+        "location": "La Reina"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-P52",
+      "text": "Depto en La Florida, 64m², 2 dormitorios, 2 baños. Valor $205.300.000. A 269m de paradero de buses troncal, y 1,4km del metro más cercano. Pet friendly con límite de 4kg por mascota. Incluye 1 estacionamiento. Arriendo estimado: $1.390.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 269,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 205300000,
+        "rent_monthly_clp": 1390000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-F33",
+      "text": "Depto en La Florida, 61m², 1D/1B. Precio: $181.800.000. A 473m de la estación de metro Franklin. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Entrega inmediata. Arriendo estimado: $1.180.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 473,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 181800000,
+        "rent_monthly_clp": 1180000,
+        "location": "La Florida"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-D52",
+      "text": "Depto en La Florida, 74m², 2 dormitorios, 1 baño. Precio: 5.228 UF. A 168m de la estación de metro Franklin. Incluye 1 estacionamiento techado asignado. Entrega inmediata. Arriendo estimado: $950.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 168,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5228,
+        "price_clp": null,
+        "rent_monthly_clp": 950000,
+        "location": "La Florida"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-A99",
+      "text": "Depto en Providencia, 62m², 2 dormitorios, 2 baños. ¡Oportunidad única! Precio: 4615 UF. A 500m de la estación de metro Los Leones. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $1.310.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 4615,
+        "price_clp": null,
+        "rent_monthly_clp": 1310000,
+        "location": "Providencia"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-E29",
+      "text": "Depto en Independencia, 66m², 2 dormitorios, 2 baños. Valor $189.600.000. A 245m de paradero de buses troncal, y 1,3km del metro más cercano. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.590.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 245,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 189600000,
+        "rent_monthly_clp": 1590000,
+        "location": "Independencia"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    }
+  ]
+}

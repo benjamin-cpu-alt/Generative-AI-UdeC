@@ -1,0 +1,119 @@
+{
+  "id": "train_0213",
+  "uf_value": 40550,
+  "hard_constraints": {
+    "presupuesto_max_clp": 108000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 10,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-Q65",
+      "text": "Depto estudio en Independencia, 49m², ambiente único + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio: UF 2.118. A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 688m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 688,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2118,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-U15",
+      "text": "Depto en Independencia, 80m², 2D/1B. Valor $94.800.000. A 934m de la estación de metro Baquedano. 100% pet friendly, sin restricciones de tamaño ni especie. Ideal para inversionistas. Incluye estacionamiento propio. Arriendo estimado: $510.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 934,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 94800000,
+        "rent_monthly_clp": 510000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-H94",
+      "text": "Depto en La Reina, 58m², 1 dormitorios, 1 baño. Precio: 1985 UF. A 632m de la estación de metro Cal y Canto. 100% pet friendly, sin restricciones de tamaño ni especie. Precio rebajado. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $400.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 632,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 1985,
+        "price_clp": null,
+        "rent_monthly_clp": 400000,
+        "location": "La Reina"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-C42",
+      "text": "Depto en Vitacura, 68m², 2D/1B. Valor $80.500.000. A 785m de la estación de metro Los Leones. Pet friendly con límite de 2kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $520.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 785,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 80500000,
+        "rent_monthly_clp": 520000,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 10kg"
+    },
+    {
+      "id": "PROP-D70",
+      "text": "Depto estudio en La Cisterna, 51m², ambiente único + loggia cerrada, ideal como pieza extra, 1B. Valor $86.000.000. ¡Oportunidad única! A 476m de la estación de metro Tobalaba. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $510.000/mes.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 476,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 86000000,
+        "rent_monthly_clp": 510000,
+        "location": "La Cisterna"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    }
+  ]
+}

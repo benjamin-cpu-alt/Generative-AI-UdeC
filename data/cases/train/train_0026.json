@@ -1,0 +1,140 @@
+{
+  "id": "train_0026",
+  "uf_value": 38800,
+  "hard_constraints": {
+    "presupuesto_max_clp": 190500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 25,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-H30",
+      "text": "Depto en Ñuñoa, 82m², 3 dormitorios, 2 baños. Precio: 4838 UF. A 373m de la estación de metro Cal y Canto. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $680.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 373,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4838,
+        "price_clp": null,
+        "rent_monthly_clp": 680000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-W55",
+      "text": "Depto en La Florida, 103m², 4 dormitorios, 2 baños. Precio rebajado a $167.700.000. A 782m de la estación de metro Tobalaba. Aceptamos mascotas, gatos y perros hasta 24kg. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 782,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 24
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 167700000,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 24kg < mascota 25kg"
+    },
+    {
+      "id": "PROP-E99",
+      "text": "Depto en Maipú, 70m², 2D/2B. Precio rebajado. Valor $174.900.000. A 339m de la estación de metro Tobalaba. Aceptamos mascotas, gatos y perros hasta 20kg. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 339,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 20
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 174900000,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 20kg < mascota 25kg"
+    },
+    {
+      "id": "PROP-Q52",
+      "text": "Casa en Santiago Centro, 104m², 4 dormitorios, 2 baños. Precio: 4822 UF. Ideal para inversionistas. A 575m de la estación de metro Irarrázaval. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.120.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 575,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4822,
+        "price_clp": null,
+        "rent_monthly_clp": 1120000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-U64",
+      "text": "Depto en Recoleta, 99m², 4 dormitorios, 1 baño. Precio rebajado a $143.500.000. A 730m de la estación de metro Ñuñoa. Excelente conectividad. No se aceptan mascotas. Incluye estacionamiento propio. Arriendo estimado: $760.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 730,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 143500000,
+        "rent_monthly_clp": 760000,
+        "location": "Recoleta"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-K52",
+      "text": "Depto en La Florida, 57m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Valor $151.600.000. A 153m de paradero de buses troncal, y 0,9km del metro más cercano. Excelente conectividad. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 153,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 151600000,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    }
+  ]
+}

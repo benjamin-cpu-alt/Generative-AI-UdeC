@@ -1,0 +1,123 @@
+{
+  "id": "train_0203",
+  "uf_value": 38700,
+  "hard_constraints": {
+    "presupuesto_max_clp": 226500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 8,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-L11",
+      "text": "Casa en La Cisterna, 104m², 4D/2B. Precio rebajado a $168.800.000. Recién remodelado. A 993m de paradero de buses troncal, y 1,5km del metro más cercano. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 993,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 168800000,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-F32",
+      "text": "Casa en Recoleta, 97m², 3 dormitorios, 1 baño. Precio: 4.571 UF. A 677m de la estación de metro Irarrázaval. Aceptamos mascotas, gatos y perros hasta 8kg. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $860.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 677,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 8
+        },
+        "parking": "asignado",
+        "price_uf": 4571,
+        "price_clp": null,
+        "rent_monthly_clp": 860000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-S29",
+      "text": "Depto en Ñuñoa, 108m², 4D/1B. Precio rebajado a 5716 UF. A 1185m de la estación de metro Los Leones. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.600.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1185,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5716,
+        "price_clp": null,
+        "rent_monthly_clp": 1600000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-B94",
+      "text": "Casa en La Cisterna, 82m², 3 dormitorios, 1 baño. Precio: 4372 UF. A 1178m de la estación de metro Los Leones. No se especifica política de mascotas. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.250.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1178,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4372,
+        "price_clp": null,
+        "rent_monthly_clp": 1250000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-A85",
+      "text": "Depto en Santiago Centro, 101m², 4D/1B. Precio: UF 4.326. A 318m de la estación de metro Los Leones. Excelente conectividad. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $850.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 318,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4326,
+        "price_clp": null,
+        "rent_monthly_clp": 850000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    }
+  ]
+}

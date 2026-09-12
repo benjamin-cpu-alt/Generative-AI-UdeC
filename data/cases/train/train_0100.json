@@ -1,0 +1,119 @@
+{
+  "id": "train_0100",
+  "uf_value": 39850,
+  "hard_constraints": {
+    "presupuesto_max_clp": 193500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 7,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-G13",
+      "text": "Depto en La Florida, 110m², 4D/1B. Precio: UF 4.610. A 585m de la estación de metro Irarrázaval. Se aceptan mascotas pequeñas y medianas hasta 2kg, previa autorización de la administración. Incluye 1 estacionamiento techado asignado. Entrega inmediata. Arriendo estimado: $1.200.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 585,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "asignado",
+        "price_uf": 4610,
+        "price_clp": null,
+        "rent_monthly_clp": 1200000,
+        "location": "La Florida"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 7kg"
+    },
+    {
+      "id": "PROP-B26",
+      "text": "Depto en La Florida, 95m², 3D/2B. Precio: UF 4.886 (precio negociable, el propietario está abierto a ofertas). A 539m de la estación de metro Príncipe de Gales. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.230.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 539,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4886,
+        "price_clp": null,
+        "rent_monthly_clp": 1230000,
+        "location": "La Florida"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-D98",
+      "text": "Depto en Macul, 75m², 2 dormitorios, 1 baño. Precio rebajado a UF 4.745. Luminoso y con vista despejada. A 2,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 813m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $890.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 813,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4745,
+        "price_clp": null,
+        "rent_monthly_clp": 890000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-H34",
+      "text": "Casa en Independencia, 79m², 3D/2B. Precio: 4.750 UF. A 381m de la estación de metro Cal y Canto. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo estimado: $1.170.000/mes. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 381,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4750,
+        "price_clp": null,
+        "rent_monthly_clp": 1170000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-N84",
+      "text": "Depto en Ñuñoa, 84m², 3 dormitorios, 1 baño. Precio: UF 4.956 (¡bajo el presupuesto del cliente según nuestro tasador!). A 656m de la estación de metro Plaza Egaña. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 656,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4956,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    }
+  ]
+}

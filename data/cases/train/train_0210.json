@@ -1,0 +1,121 @@
+{
+  "id": "train_0210",
+  "uf_value": 40100,
+  "hard_constraints": {
+    "presupuesto_max_clp": 205000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-C98",
+      "text": "Depto en Maipú, 112m², 4D/1B. Valor $188.400.000. A 547m de la estación de metro Ñuñoa. Pet friendly con límite de 6kg por mascota. Luminoso y con vista despejada. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.420.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 547,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 6
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 188400000,
+        "rent_monthly_clp": 1420000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-R62",
+      "text": "Depto en Independencia, 97m², 3 dormitorios, 2 baños. Valor $147.900.000. Piso alto, orientación norte. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 542m. Pet friendly con límite de 6kg por mascota. Incluye 1 estacionamiento. Arriendo estimado: $1.100.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 542,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 6
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 147900000,
+        "rent_monthly_clp": 1100000,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-F38",
+      "text": "Depto en San Miguel, 96m², 3 dormitorios, 1 baño. Precio: UF 5.204 (¡bajo el presupuesto del cliente según nuestro tasador!). A 1162m de la estación de metro Irarrázaval. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1162,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5204,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-J15",
+      "text": "Depto en San Miguel, 83m², 3 dormitorios, 2 baños. Precio: 3.753 UF. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 799m. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento. Precio rebajado. Arriendo referencial de la zona: $750.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 799,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3753,
+        "price_clp": null,
+        "rent_monthly_clp": 750000,
+        "location": "San Miguel"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-E56",
+      "text": "Casa en San Miguel, 89m², 3D/1B. Valor $213.500.000 (¡bajo el presupuesto del cliente según nuestro tasador!). A 730m de la estación de metro Escuela Militar. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $820.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 730,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 213500000,
+        "rent_monthly_clp": 820000,
+        "location": "San Miguel"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    }
+  ]
+}

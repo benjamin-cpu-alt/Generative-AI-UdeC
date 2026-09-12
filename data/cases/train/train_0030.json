@@ -1,0 +1,121 @@
+{
+  "id": "train_0030",
+  "uf_value": 40600,
+  "hard_constraints": {
+    "presupuesto_max_clp": 135000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 7,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-V25",
+      "text": "Depto en Ñuñoa, 90m², 3D/2B. Precio rebajado a 3103 UF. Ubicado a 2,6 km de la estación Los Leones, unos 33 minutos caminando. Ideal para inversionistas. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $910.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 2650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3103,
+        "price_clp": null,
+        "rent_monthly_clp": 910000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-P28",
+      "text": "Depto en La Cisterna, 48m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio: UF 2.837. A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 539m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Piso alto, orientación norte.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 539,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2837,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-J93",
+      "text": "Depto en Macul, 62m², 2 dormitorios, 2 baños. Excelente conectividad. Precio: 3.281 UF. A 339m de la estación de metro Plaza Egaña. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $730.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 339,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3281,
+        "price_clp": null,
+        "rent_monthly_clp": 730000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-M54",
+      "text": "Depto en Maipú, 96m², 4 dormitorios, 2 baños. Precio: $126.700.000. A 517m de la estación de metro Baquedano. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 517,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 126700000,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-A36",
+      "text": "Depto en Las Condes, 69m², 2 dormitorios, 1 baño. Precio: UF 3.069. Excelente conectividad. A 327m de la estación de metro Manquehue. Edificio sin mascotas por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $780.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 327,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3069,
+        "price_clp": null,
+        "rent_monthly_clp": 780000,
+        "location": "Las Condes"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    }
+  ]
+}

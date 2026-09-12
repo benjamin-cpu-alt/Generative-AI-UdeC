@@ -1,0 +1,121 @@
+{
+  "id": "train_0118",
+  "uf_value": 39350,
+  "hard_constraints": {
+    "presupuesto_max_clp": 135500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 12,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-T70",
+      "text": "Depto estudio en Recoleta, 50m², ambiente único + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio rebajado a $134.100.000. A 458m de la estación de metro Plaza Egaña. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Entrega inmediata. Arriendo estimado: $900.000/mes.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 458,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 134100000,
+        "rent_monthly_clp": 900000,
+        "location": "Recoleta"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-R46",
+      "text": "Depto en Vitacura, 45m², 1D/1B. Precio rebajado a UF 2.518. A 335m de la estación de metro Manquehue. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $480.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 335,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 2518,
+        "price_clp": null,
+        "rent_monthly_clp": 480000,
+        "location": "Vitacura"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-X59",
+      "text": "Depto en Providencia, 73m², 2 dormitorios, 1 baño. Precio rebajado a 3377 UF. A 568m de la estación de metro Ñuñoa. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. ¡Oportunidad única! Arriendo estimado: $770.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 568,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3377,
+        "price_clp": null,
+        "rent_monthly_clp": 770000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-H39",
+      "text": "Depto en Ñuñoa, 63m², 1D/1B. Precio: UF 2.818. A 172m de la estación de metro Plaza Egaña. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Luminoso y con vista despejada. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 172,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2818,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-K68",
+      "text": "Depto en La Cisterna, 67m², 2 dormitorios, 2 baños. Valor $124.600.000. A 640m de la estación de metro Bellas Artes. Piso alto, orientación norte. Pet friendly con límite de 4kg por mascota. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 640,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 124600000,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 4kg < mascota 12kg"
+    }
+  ]
+}

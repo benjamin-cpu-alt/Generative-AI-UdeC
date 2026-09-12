@@ -1,0 +1,119 @@
+{
+  "id": "train_0137",
+  "uf_value": 38850,
+  "hard_constraints": {
+    "presupuesto_max_clp": 193500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 20,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-P31",
+      "text": "Depto en La Cisterna, 64m², 2D/2B. Precio rebajado a 4.819 UF. A 461m de la estación de metro Escuela Militar. Aceptamos mascotas, gatos y perros hasta 20kg. Incluye estacionamiento propio. Ideal para inversionistas. Arriendo estimado: $840.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 461,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 20
+        },
+        "parking": "propio",
+        "price_uf": 4819,
+        "price_clp": null,
+        "rent_monthly_clp": 840000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-L21",
+      "text": "Depto en Santiago Centro, 46m², 1 dormitorios, 1 baño. Precio: 5.138 UF (precio negociable, el propietario está abierto a ofertas). A 258m de la estación de metro Tobalaba. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Luminoso y con vista despejada. Sin estacionamiento. Arriendo estimado: $720.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 258,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 5138,
+        "price_clp": null,
+        "rent_monthly_clp": 720000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "multi",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple; precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-D13",
+      "text": "Depto en La Cisterna, 62m², 1D/1B. Luminoso y con vista despejada. Precio: UF 3.869. A 548m de la estación de metro Bellas Artes. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 548,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3869,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-C17",
+      "text": "Depto en La Reina, 68m², 2 dormitorios, 2 baños. Precio: 5.225 UF (el mejor valor por m² del sector). A 393m de la estación de metro Irarrázaval. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $920.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 393,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5225,
+        "price_clp": null,
+        "rent_monthly_clp": 920000,
+        "location": "La Reina"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-N79",
+      "text": "Depto en Estación Central, 92m², 3D/2B. Valor $145.000.000. A 166m de paradero de buses troncal, y 1,2km del metro más cercano. Aceptamos mascotas, gatos y perros hasta 17kg. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.180.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 166,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 17
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 145000000,
+        "rent_monthly_clp": 1180000,
+        "location": "Estación Central"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 17kg < mascota 20kg"
+    }
+  ]
+}

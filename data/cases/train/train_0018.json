@@ -1,0 +1,119 @@
+{
+  "id": "train_0018",
+  "uf_value": 39750,
+  "hard_constraints": {
+    "presupuesto_max_clp": 105000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 3,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-V86",
+      "text": "Depto en Providencia, 72m², 2 dormitorios, 2 baños. Valor $82.600.000. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 441m. Edificio sin mascotas por reglamento de copropiedad. Excelente conectividad. Incluye 1 estacionamiento. Arriendo referencial de la zona: $380.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 441,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 82600000,
+        "rent_monthly_clp": 380000,
+        "location": "Providencia"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-R23",
+      "text": "Depto en Las Condes, 72m², 2 dormitorios, 2 baños. Precio: 2.282 UF. A 902m de la estación de metro Manquehue. Recién remodelado. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 902,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 2282,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-C78",
+      "text": "Casa en Recoleta, 82m², 3 dormitorios, 1 baño. Precio: 2.730 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 320m de la estación de metro Cal y Canto. ¡Oportunidad única! Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 320,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2730,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-D32",
+      "text": "Depto en Macul, 107m², 4D/2B. Precio: 2.486 UF. A 1350m del metro Franklin, muy bien conectado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $840.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1350,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2486,
+        "price_clp": null,
+        "rent_monthly_clp": 840000,
+        "location": "Macul"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-A45",
+      "text": "Depto en San Miguel, 108m², 4 dormitorios, 1 baño. Precio rebajado. Valor $87.500.000. A 976m de paradero de buses troncal, y 1,9km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $720.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 976,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 87500000,
+        "rent_monthly_clp": 720000,
+        "location": "San Miguel"
+      },
+      "scenario": "pass",
+      "trap": null
+    }
+  ]
+}

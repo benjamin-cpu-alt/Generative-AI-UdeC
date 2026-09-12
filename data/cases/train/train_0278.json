@@ -1,0 +1,140 @@
+{
+  "id": "train_0278",
+  "uf_value": 38200,
+  "hard_constraints": {
+    "presupuesto_max_clp": 201000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-U90",
+      "text": "Depto en Santiago Centro, 61m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Valor $161.200.000. A 2,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1337m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Recién remodelado.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1337,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 161200000,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-E17",
+      "text": "Depto en Independencia, 88m², 3D/2B. Excelente conectividad. Valor $183.800.000. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 398m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 398,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 183800000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-X69",
+      "text": "Depto en Santiago Centro, 72m², 2 dormitorios, 1 baño. Valor $159.400.000. A 295m de paradero de buses troncal, y 1,3km del metro más cercano. Pet friendly con límite de 5kg por mascota. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.150.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 295,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 159400000,
+        "rent_monthly_clp": 1150000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-J24",
+      "text": "Depto en Peñalolén, 97m², 3 dormitorios, 1 baño. Valor $203.000.000 (precio negociable, el propietario está abierto a ofertas). ¡Oportunidad única! A 672m de la estación de metro Lo Vial. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 672,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 203000000,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-Q92",
+      "text": "Depto en Recoleta, 59m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio: 3848 UF. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 714m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $970.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 714,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3848,
+        "price_clp": null,
+        "rent_monthly_clp": 970000,
+        "location": "Recoleta"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-N98",
+      "text": "Depto en Maipú, 97m², 3D/1B. Precio rebajado. Precio: 4.212 UF. A 1306m de paradero de buses troncal, y 2,1km del metro más cercano. Se aceptan mascotas pequeñas y medianas hasta 5kg, previa autorización de la administración. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.040.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1306,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "propio",
+        "price_uf": 4212,
+        "price_clp": null,
+        "rent_monthly_clp": 1040000,
+        "location": "Maipú"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    }
+  ]
+}

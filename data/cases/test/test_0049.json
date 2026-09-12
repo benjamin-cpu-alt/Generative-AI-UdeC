@@ -1,0 +1,163 @@
+{
+  "id": "test_0049",
+  "uf_value": 40350,
+  "hard_constraints": {
+    "presupuesto_max_clp": 154000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-J29",
+      "text": "Casa en Providencia, 90m², 3D/2B. Valor $145.100.000. A 1000m de la estación de metro Lo Vial. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.080.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 145100000,
+        "rent_monthly_clp": 1080000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-S83",
+      "text": "Depto en La Reina, 89m², 3 dormitorios, 2 baños. Precio rebajado a $114.900.000. Recién remodelado. A 281m de paradero de buses troncal, y 1,0km del metro más cercano. Aceptamos mascotas, gatos y perros hasta 4kg. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $940.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 281,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 114900000,
+        "rent_monthly_clp": 940000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-Z29",
+      "text": "Depto en Providencia, 72m², 2 dormitorios, 1 baño. Excelente conectividad. Valor $135.900.000. A 582m de paradero de buses troncal, y 1,8km del metro más cercano. Solo se admiten gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $940.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 582,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 135900000,
+        "rent_monthly_clp": 940000,
+        "location": "Providencia"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-A97",
+      "text": "Depto en La Cisterna, 62m², 2D/2B. Precio: 3.893 UF (precio negociable, el propietario está abierto a ofertas). Precio rebajado. A 449m de la estación de metro Tobalaba. Aceptamos mascotas, gatos y perros hasta 2kg. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 449,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 2
+        },
+        "parking": "asignado",
+        "price_uf": 3893,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "multi",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; límite de peso 2kg < mascota 4kg"
+    },
+    {
+      "id": "PROP-U82",
+      "text": "Depto en Providencia, 74m², 2D/1B. Precio rebajado a 3532 UF. Recién remodelado. A 1350m del metro Irarrázaval, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $760.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1350,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3532,
+        "price_clp": null,
+        "rent_monthly_clp": 760000,
+        "location": "Providencia"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-W34",
+      "text": "Depto en Las Condes, 64m², 2 dormitorios, 1 baño. Valor $156.500.000 (¡bajo el presupuesto del cliente según nuestro tasador!). A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 236m. ¡Oportunidad única! Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $800.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 236,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 156500000,
+        "rent_monthly_clp": 800000,
+        "location": "Las Condes"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+    },
+    {
+      "id": "PROP-G45",
+      "text": "Depto en San Miguel, 96m², 3 dormitorios, 2 baños. Precio: 3693 UF. A 263m de la estación de metro Irarrázaval. No se especifica política de mascotas. Entrega inmediata. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.250.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 263,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3693,
+        "price_clp": null,
+        "rent_monthly_clp": 1250000,
+        "location": "San Miguel"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    }
+  ]
+}
