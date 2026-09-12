@@ -34,11 +34,13 @@ src/matcher/
 ├── verifier.py   # parseo estricto + comparación -> 0/1 y motivo del fallo
 ├── evaluate.py   # runner sobre data/cases/test/*.json y results/<run>/*.txt -> CSV
 ├── prompt.py     # renderiza el prompt (mismo para baseline y solución) desde un caso
-└── generate.py   # generador de casos sintéticos auto-verificados
+├── generate.py   # generador de casos sintéticos auto-verificados
+└── run_model.py  # corre un modelo de Ollama sobre un split y guarda respuestas crudas
+results/<run>/    # <case_id>.txt (respuesta cruda) + <case_id>.meta.json (tokens, tiempo)
 data/cases/
 ├── test/         # 50 casos held-out + case_001_e1 (el de la E1). Solo evaluación.
 └── train/        # 300 casos para generar el dataset de destilación. Nunca se evalúan.
-tests/            # 24 tests (pytest): juez, generador y prompt
+tests/            # 27 tests (pytest): juez, generador y prompt
 ```
 
 Cada propiedad de un caso tiene `text` (lo que ve el modelo) y `truth` (campos
@@ -71,10 +73,18 @@ cd src && python -m matcher.verifier ../data/cases/test/case_001_e1.json respues
 # Prompt que ve el modelo para un caso:
 cd src && python -m matcher.prompt ../data/cases/test/test_0001.json
 
-# Evaluación sobre el split test. Las respuestas crudas van en results/<run>/<case_id>.txt
+# Baseline: prompting directo con Ollama sobre los 51 casos de test (temperatura 0, seed 0)
+cd src && python -m matcher.run_model --model phi4-mini:latest --run baseline_phi4
+
+# Evaluación sobre el split test. Lee results/<run>/<case_id>.txt
 cd src && python -m matcher.evaluate --runs baseline_phi4 distill_phi4
 # -> results/<run>.csv (por caso) y results/summary.csv (accuracy por run)
 ```
+
+`evaluate.py` reporta además una columna de **diagnóstico** `e1_if_format_ignored`:
+cuántas respuestas serían correctas si se ignoraran fences markdown o bloques
+`<think>`. No forma parte del criterio; separa los fallos de *formato* de los de
+*lógica/aritmética* para la sección de límites.
 
 ### Dataset sintético
 

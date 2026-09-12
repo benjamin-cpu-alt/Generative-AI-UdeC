@@ -168,3 +168,35 @@ def test_id_in_both_lists_is_schema_error():
     obj["rejected"].append({"id": "PROP-F61", "failed_constraints": ["x"]})
     v = verify(CASE, dumps(obj))
     assert v.reason == "schema_error" and "repetidos" in v.details[0]
+
+
+# ------------------------------------------------------------- diagnóstico
+
+def test_lenient_diagnostic_does_not_change_main_verdict():
+    raw = "```json\n" + dumps(PERFECT) + "\n```"
+    v = verify(CASE, raw)
+    assert not v.e1_correct and v.reason == "schema_error"       # criterio E1 intacto
+    assert v.lenient_e1 is True and v.lenient_reason == "ok"     # diagnóstico
+    assert v.exact_match is True
+
+
+def test_lenient_diagnostic_reports_logic_error_under_fences():
+    obj = json.loads(dumps(PERFECT))
+    obj["approved_matches"].append({"id": "PROP-A42", "price_clp": 150920000, "roi_pct": 7.79})
+    obj["rejected"] = [r for r in obj["rejected"] if r["id"] != "PROP-A42"]
+    v = verify(CASE, "```json\n" + dumps(obj) + "\n```")
+    assert v.reason == "schema_error"
+    assert v.lenient_e1 is False and v.lenient_reason == "false_approval"
+
+
+def test_no_lenient_when_response_is_clean():
+    v = verify(CASE, dumps(PERFECT))
+    assert v.lenient_e1 is None
+
+
+def test_ids_with_brackets_or_case_are_normalized():
+    obj = json.loads(dumps(PERFECT))
+    obj["approved_matches"][0]["id"] = "[PROP-F61]"
+    obj["rejected"][0]["id"] = " prop-a42 "
+    v = verify(CASE, dumps(obj))
+    assert v.e1_correct and v.exact_match

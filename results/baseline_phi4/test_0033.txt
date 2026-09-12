@@ -1,0 +1,38 @@
+```json
+{
+  "approved_matches": [
+    {
+      "id": "PROP-A24",
+      "price_clp": 314140,
+      "roi_pct": 42.99
+    },
+    {
+      "id": "PROP-B62",
+      "price_clp": 4128000,
+      "roi_pct": 56.44
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-G93",
+      "failed_constraints": ["Mascotas: 1 gato de 5kg no permitido"]
+    },
+    {
+      "id": "PROP-S64",
+      "failed_constraints": ["Estacionamiento: Estacionamiento de visitas no permitido"]
+    },
+    {
+      "id": "PROP-Y33",
+      "failed_constraints": ["Mascotas: No se aceptan mascotas"]
+    },
+    {
+      "id": "PROP-D26",
+      "failed_constraints": ["Mascotas: No se especifica política de mascotas"]
+    },
+    {
+      "id": "PROP-V67",
+      "failed_constraints": ["Estacionamiento: Estacionamiento de visitas no permitido"]
+    }
+  ]
+}
+```

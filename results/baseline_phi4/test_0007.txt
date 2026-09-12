@@ -1,0 +1,47 @@
+```json
+{
+  "approved_matches": [
+    {
+      "id": "PROP-C99",
+      "price_clp": 56358000,
+      "roi_pct": 6.44
+    },
+    {
+      "id": "PROP-M26",
+      "price_clp": 59664000,
+      "roi_pct": 8.62
+    },
+    {
+      "id": "PROP-A72",
+      "price_clp": 63518800,
+      "roi_pct": 12.94
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-H32",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    },
+    {
+      "id": "PROP-Q82",
+      "failed_constraints": ["Presupuesto Máximo de Compra", "Mascotas"]
+    },
+    {
+      "id": "PROP-J24",
+      "failed_constraints": ["Presupuesto Máximo de Compra", "Estacionamiento"]
+    },
+    {
+      "id": "PROP-L49",
+      "failed_constraints": ["Mascotas"]
+    },
+    {
+      "id": "PROP-E30",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    },
+    {
+      "id": "PROP-K30",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    }
+  ]
+}
+```

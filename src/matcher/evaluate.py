@@ -65,6 +65,8 @@ def summarize(run: str, verdicts: List[Verdict]) -> Dict:
         "schema_error": reasons.get("schema_error", 0),
         "false_approval": reasons.get("false_approval", 0),
         "arithmetic_error": reasons.get("arithmetic_error", 0),
+        # diagnóstico: correctas si se ignora el envoltorio (fences/<think>)
+        "e1_if_format_ignored": sum(v.e1_correct or bool(v.lenient_e1) for v in verdicts),
     }
 
 
@@ -93,7 +95,7 @@ def main(argv=None) -> int:
     write_csv(results_dir / "summary.csv", summaries)
 
     cols = ["run", "n", "e1_correct", "e1_accuracy", "exact_match", "exact_accuracy",
-            "schema_error", "false_approval", "arithmetic_error"]
+            "schema_error", "false_approval", "arithmetic_error", "e1_if_format_ignored"]
     widths = {c: max(len(c), *(len(str(s[c])) for s in summaries)) for c in cols}
     print("  ".join(c.ljust(widths[c]) for c in cols))
     for s in summaries:

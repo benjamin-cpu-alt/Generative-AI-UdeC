@@ -1,0 +1,41 @@
+```json
+{
+  "approved_matches": [
+    {
+      "id": "PROP-P22",
+      "price_clp": 483840,
+      "roi_pct": 21.05
+    },
+    {
+      "id": "PROP-M71",
+      "price_clp": 4390230,
+      "roi_pct": 83.33
+    },
+    {
+      "id": "PROP-N87",
+      "price_clp": 4518700,
+      "roi_pct": 66.67
+    },
+    {
+      "id": "PROP-G15",
+      "price_clp": 18452000,
+      "roi_pct": 98.05
+    },
+    {
+      "id": "PROP-W74",
+      "price_clp": 484080,
+      "roi_pct": 88.00
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-S27",
+      "failed_constraints": ["1. Presupuesto Máximo de Compra: $192.500.000 CLP (precio: $194.000.000 CLP)"]
+    },
+    {
+      "id": "PROP-C30",
+      "failed_constraints": ["1. Presupuesto Máximo de Compra: $192.500.000 CLP (precio: $160.200.000 CLP)", "4. Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado (incluye estacionamiento subterráneo, no propio o asignado)"]
+    }
+  ]
+}
+```

@@ -42,6 +42,9 @@ class Verdict:
     rejected_ids: List[str] = field(default_factory=list)
     expected_approved: List[str] = field(default_factory=list)
     expected_rejected: List[str] = field(default_factory=list)
+    # Diagnóstico (no forma parte del criterio): veredicto tras limpiar el formato.
+    lenient_e1: Optional[bool] = None
+    lenient_reason: Optional[str] = None
 
     def as_row(self) -> Dict[str, Any]:
         return {
@@ -50,6 +53,8 @@ class Verdict:
             "exact_match": int(self.exact_match),
             "reason": self.reason,
             "details": " | ".join(self.details),
+            "lenient_e1": "" if self.lenient_e1 is None else int(self.lenient_e1),
+            "lenient_reason": self.lenient_reason or "",
         }
 
 
@@ -89,6 +94,19 @@ def _diagnose_non_json(raw: str) -> str:
         return "JSON malformado"
 
 
+def lenient_clean(raw: str) -> str:
+    """SOLO para diagnóstico: quita <think> y fences, y recorta al objeto JSON exterior.
+    No se usa en la métrica principal (el criterio E1 exige JSON crudo)."""
+    text = _THINK_RE.sub("", raw)
+    m = _FENCE_RE.search(text)
+    if m:
+        text = m.group(1)
+    start, end = text.find("{"), text.rfind("}")
+    if start != -1 and end > start:
+        text = text[start:end + 1]
+    return text.strip()
+
+
 def validate_schema(obj: dict, valid_ids: set) -> Tuple[Optional[dict], Optional[str]]:
     """Comprueba claves y tipos. Devuelve una versión normalizada o un error."""
     for key in ("approved_matches", "rejected"):
@@ -110,7 +128,7 @@ def validate_schema(obj: dict, valid_ids: set) -> Tuple[Optional[dict], Optional
             return None, f"{item['id']}: price_clp no es numérico"
         if item[roi_key] is not None and not _is_number(item[roi_key]):
             return None, f"{item['id']}: {roi_key} no es numérico"
-        approved.append({"id": str(item["id"]), "price_clp": item["price_clp"], "roi": item[roi_key]})
+        approved.append({"id": _norm_id(item["id"]), "price_clp": item["price_clp"], "roi": item[roi_key]})
 
     rejected = []
     for i, item in enumerate(obj["rejected"]):
@@ -118,7 +136,7 @@ def validate_schema(obj: dict, valid_ids: set) -> Tuple[Optional[dict], Optional
             return None, f"rejected[{i}] sin 'id'"
         if "failed_constraints" not in item or not isinstance(item["failed_constraints"], list):
             return None, f"rejected[{i}] ({item['id']}) sin lista 'failed_constraints'"
-        rejected.append({"id": str(item["id"]), "failed_constraints": item["failed_constraints"]})
+        rejected.append({"id": _norm_id(item["id"]), "failed_constraints": item["failed_constraints"]})
 
     ids = [a["id"] for a in approved] + [r["id"] for r in rejected]
     unknown = [i for i in ids if i not in valid_ids]
@@ -129,6 +147,11 @@ def validate_schema(obj: dict, valid_ids: set) -> Tuple[Optional[dict], Optional
         return None, f"ids repetidos o en ambas listas: {sorted(dupes)}"
 
     return {"approved": approved, "rejected": rejected}, None
+
+
+def _norm_id(x: Any) -> str:
+    """'[PROP-A42]' / ' prop-a42 ' -> 'PROP-A42'. Formato distinto no es id distinto."""
+    return str(x).strip().strip("[]").strip().upper()
 
 
 def _is_number(x: Any) -> bool:
@@ -148,6 +171,7 @@ def verify(case: Case, raw_response: str, expected: Optional[Expected] = None) -
     obj, err = parse_strict(raw_response)
     if err:
         v.details.append(err)
+        _fill_lenient(v, case, raw_response, exp)
         return v
     norm, err = validate_schema(obj, set(exp.by_id))
     if err:
@@ -196,6 +220,19 @@ def verify(case: Case, raw_response: str, expected: Optional[Expected] = None) -
     v.reason = REASON_OK
     v.e1_correct = True
     return v
+
+
+def _fill_lenient(v: Verdict, case: Case, raw: str, exp: Expected) -> None:
+    cleaned = lenient_clean(raw)
+    if not cleaned or cleaned == raw.strip():
+        return
+    inner = verify(case, cleaned, exp)
+    v.lenient_e1 = inner.e1_correct
+    v.lenient_reason = inner.reason
+    v.exact_match = inner.exact_match  # el conjunto aprobado/rechazado sí es observable
+    v.approved_ids, v.rejected_ids = inner.approved_ids, inner.rejected_ids
+    if inner.details:
+        v.details.append("tras limpiar formato: " + " | ".join(inner.details))
 
 
 # ------------------------------------------------------------------- CLI ----

@@ -1,0 +1,29 @@
+```json
+{
+  "approved_matches": [
+    {
+      "id": "PROP-Z53",
+      "price_clp": 164300000,
+      "roi_pct": 10.99
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-G95",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    },
+    {
+      "id": "PROP-W37",
+      "failed_constraints": ["Presupuesto Máximo de Compra", "Distancia máxima a transporte público (metro O paradero de buses troncal)"]
+    },
+    {
+      "id": "PROP-N91",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    },
+    {
+      "id": "PROP-D31",
+      "failed_constraints": ["Presupuesto Máximo de Compra", "Distancia máxima a transporte público (metro O paradero de buses troncal)"]
+    }
+  ]
+}
+```

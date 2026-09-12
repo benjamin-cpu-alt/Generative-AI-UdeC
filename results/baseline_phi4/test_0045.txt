@@ -1,0 +1,39 @@
+```json
+{
+  "approved_matches": [
+    {
+      "id": "[PROP-V42]",
+      "price_clp": 1120000000,
+      "roi_pct": 6.79
+    },
+    {
+      "id": "[PROP-U44]",
+      "price_clp": 3293000,
+      "roi_pct": 12.97
+    },
+    {
+      "id": "[PROP-D32]",
+      "price_clp": 3813000,
+      "roi_pct": 9.84
+    }
+  ],
+  "rejected": [
+    {
+      "id": "[PROP-M75]",
+      "failed_constraints": ["Mascotas: 1 perro de 18kg no permitido"]
+    },
+    {
+      "id": "[PROP-H42]",
+      "failed_constraints": ["Mascotas: Sin mascotas", "Estacionamiento: Sin estacionamiento"]
+    },
+    {
+      "id": "[PROP-G53]",
+      "failed_constraints": ["Mascotas: Sin mascotas"]
+    },
+    {
+      "id": "[PROP-L75]",
+      "failed_constraints": ["Distancia máxima a transporte público: 1500m excedido", "Mascotas: Sin especificar"]
+    }
+  ]
+}
+```
