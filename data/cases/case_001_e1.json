@@ -1,0 +1,127 @@
+{
+  "id": "case_001_e1",
+  "description": "Caso original del Entregable 1 (data/prompt_base.txt). UF del día: 39.200 CLP.",
+  "uf_value": 39200,
+  "hard_constraints": {
+    "presupuesto_max_clp": 150000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "properties": [
+    {
+      "id": "PROP-A42",
+      "text": "Depto en Providencia, 65m², 2D/2B. Precio rebajado a 3.850 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 950m de la estación de metro Los Leones. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $980.000/mes.",
+      "truth": {
+        "location": "Providencia",
+        "price_uf": 3850,
+        "bedrooms": 2,
+        "distance_transport_m": 950,
+        "pets": {"explicit": true, "allowed": true, "species": [], "max_kg": null},
+        "parking": "asignado",
+        "rent_monthly_clp": 980000
+      },
+      "trap": "Frase de marketing '¡bajo el presupuesto!' — 3.850 UF = 150.920.000 CLP, excede por 920.000."
+    },
+    {
+      "id": "PROP-B19",
+      "text": "Depto en Ñuñoa, 80m², 3D/2B. Valor $148.500.000. Ubicado a 1,4 km de la estación Ñuñoa, unos 15 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "location": "Ñuñoa",
+        "price_clp": 148500000,
+        "bedrooms": 3,
+        "distance_transport_m": 1400,
+        "pets": {"explicit": true, "allowed": true, "species": ["perro", "gato"], "max_kg": null},
+        "parking": "propio",
+        "rent_monthly_clp": null
+      },
+      "trap": "'15 minutos caminando' minimiza los 1,4 km (> 1 km)."
+    },
+    {
+      "id": "PROP-C88",
+      "text": "Depto en San Miguel, 55m², 2D/1B. Precio: 3.500 UF. A 400m de paradero de buses troncal, y 1,2km del metro más cercano. Se aceptan mascotas pequeñas y medianas hasta 20kg, previa autorización de la administración. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+      "truth": {
+        "location": "San Miguel",
+        "price_uf": 3500,
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {"explicit": true, "allowed": true, "species": [], "max_kg": 20},
+        "parking": "visitas",
+        "rent_monthly_clp": null
+      },
+      "trap": "Menciona 'estacionamiento' pero es de visitas; la distancia al metro (1,2 km) distrae del paradero troncal a 400 m que sí cumple."
+    },
+    {
+      "id": "PROP-D05",
+      "text": "Depto en Providencia, 58m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 2B. Precio 3.600 UF. A 500m del metro. No se especifica política de mascotas. Incluye estacionamiento.",
+      "truth": {
+        "location": "Providencia",
+        "price_uf": 3600,
+        "bedrooms": 1,
+        "distance_transport_m": 500,
+        "pets": {"explicit": false, "allowed": false, "species": [], "max_kg": null},
+        "parking": "propio",
+        "rent_monthly_clp": null
+      },
+      "trap": "'Convertible en segundo dormitorio' no es un dormitorio real; política de mascotas ausente (debe ser explícita)."
+    },
+    {
+      "id": "PROP-E33",
+      "text": "Depto en Ñuñoa, 70m², 2D/2B. Precio $145.000.000. A 850m del metro Plaza Egaña. Aceptamos mascotas pequeñas, gatos y perros hasta 10kg. Incluye 1 estacionamiento.",
+      "truth": {
+        "location": "Ñuñoa",
+        "price_clp": 145000000,
+        "bedrooms": 2,
+        "distance_transport_m": 850,
+        "pets": {"explicit": true, "allowed": true, "species": ["perro", "gato"], "max_kg": 10},
+        "parking": "propio",
+        "rent_monthly_clp": null
+      },
+      "trap": "Todo cumple salvo el peso: perro de 18 kg > límite de 10 kg."
+    },
+    {
+      "id": "PROP-F61",
+      "text": "Depto en Providencia, 68m², 2D/2B. Precio: 3.700 UF. A 700m del metro Manquehue. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $920.000/mes.",
+      "truth": {
+        "location": "Providencia",
+        "price_uf": 3700,
+        "bedrooms": 2,
+        "distance_transport_m": 700,
+        "pets": {"explicit": true, "allowed": true, "species": [], "max_kg": null},
+        "parking": "asignado",
+        "rent_monthly_clp": 920000
+      },
+      "trap": null
+    },
+    {
+      "id": "PROP-G77",
+      "text": "Depto en Ñuñoa, 60m², 2D/1B. Precio $142.000.000. A 300m del metro Irarrázaval. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $880.000/mes.",
+      "truth": {
+        "location": "Ñuñoa",
+        "price_clp": 142000000,
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {"explicit": true, "allowed": true, "species": ["perro"], "max_kg": null},
+        "parking": "propio",
+        "rent_monthly_clp": 880000
+      },
+      "trap": "'Gatos no permitidos' puede leerse como restricción de mascotas, pero el comprador tiene perro."
+    },
+    {
+      "id": "PROP-H12",
+      "text": "Casa en La Reina, 3D/2B, con patio, ideal para mascotas grandes. Precio $151.000.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses a 200m. Incluye estacionamiento propio.",
+      "truth": {
+        "location": "La Reina",
+        "price_clp": 151000000,
+        "bedrooms": 3,
+        "distance_transport_m": 200,
+        "pets": {"explicit": true, "allowed": true, "species": [], "max_kg": null},
+        "parking": "propio",
+        "rent_monthly_clp": null
+      },
+      "trap": "'Negociable' invita a aprobar; 151.000.000 > 150.000.000 es una violación dura."
+    }
+  ]
+}

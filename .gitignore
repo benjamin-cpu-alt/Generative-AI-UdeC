@@ -9,3 +9,11 @@ Thumbs.db
 
 # Notebooks
 .ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# CSV regenerables con `python -m matcher.evaluate` (las respuestas crudas .txt sí se versionan)
+results/*.csv
