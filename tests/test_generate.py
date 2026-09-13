@@ -61,3 +61,15 @@ def test_prompt_contains_everything_the_model_needs():
     assert '"roi_pct"' in prompt and '"failed_constraints"' in prompt
     # el prompt nunca filtra la verdad estructurada
     assert "truth" not in prompt and "scenario" not in prompt
+
+
+def test_saved_prompt_file_is_in_sync():
+    """data/prompt_e2_case_001.txt es el prompt real; si cambia prompt.py hay que regenerarlo."""
+    case = Case.load(ROOT / "data" / "cases" / "test" / "case_001_e1.json")
+    saved = (ROOT / "data" / "prompt_e2_case_001.txt").read_text(encoding="utf-8")
+    assert saved.strip() == render_prompt(case).strip()
+
+
+def test_prompt_has_explicit_format_rule():
+    case = Case.load(ROOT / "data" / "cases" / "test" / "case_001_e1.json")
+    assert "empezar con el carácter {" in render_prompt(case)

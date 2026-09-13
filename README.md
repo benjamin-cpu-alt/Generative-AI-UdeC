@@ -18,12 +18,7 @@ El sistema actúa como un motor de validación basado en agentes que lee descrip
 * Ejecutado 100% de forma local (Edge AI) en un entorno híbrido: Workstation Windows (NVIDIA RTX 3050 6GB) y Apple Silicon (MacBook Air M4), utilizando Ollama con cuantización a 4-bits.
 * Los registros de evidencia empírica están disponibles en la carpeta `/experiments`, demostrando que los modelos de 3B a 8B fallan catastróficamente en tareas matemáticas y de retención lógica si no están apoyados por un sistema de agentes (Agentic Harness).
 
-## Entregable 2: Verificador determinista
-
-El verificador (`src/matcher/`) es el juez 0/1 del proyecto. Aplica el criterio de
-corrección del Entregable 1 sobre la salida de cualquier modelo, sin usar un LLM.
-Se usa tres veces: para filtrar el dataset de destilación, para evaluar el baseline
-y para evaluar la solución.
+## Entregable 2
 
 ### Estructura
 
@@ -31,75 +26,92 @@ y para evaluar la solución.
 src/matcher/
 ├── schema.py     # dataclasses del caso (perfil, propiedades con `text` + `truth`)
 ├── rules.py      # las 5 hard constraints + ROI -> salida esperada (ground truth)
-├── verifier.py   # parseo estricto + comparación -> 0/1 y motivo del fallo
-├── evaluate.py   # runner sobre data/cases/test/*.json y results/<run>/*.txt -> CSV
-├── prompt.py     # renderiza el prompt (mismo para baseline y solución) desde un caso
+├── verifier.py   # juez 0/1: parseo estricto + comparación, con motivo del fallo
+├── prompt.py     # el prompt (único, compartido por baseline y solución)
 ├── generate.py   # generador de casos sintéticos auto-verificados
-└── run_model.py  # corre un modelo de Ollama sobre un split y guarda respuestas crudas
+├── run_model.py  # corre un modelo de Ollama sobre un split y guarda respuestas crudas
+└── evaluate.py   # tabla comparativa: dos niveles de corrección + desglose + costo
+data/
+├── prompt_base.txt          # prompt de la E1 (histórico)
+├── prompt_e2_case_001.txt   # prompt de la E2 renderizado para el caso de la E1
+└── cases/
+    ├── test/     # 50 casos held-out + case_001_e1. Solo evaluación.
+    └── train/    # 300 casos para el dataset de destilación. Nunca se evalúan.
 results/<run>/    # <case_id>.txt (respuesta cruda) + <case_id>.meta.json (tokens, tiempo)
-data/cases/
-├── test/         # 50 casos held-out + case_001_e1 (el de la E1). Solo evaluación.
-└── train/        # 300 casos para generar el dataset de destilación. Nunca se evalúan.
-tests/            # 27 tests (pytest): juez, generador y prompt
+scripts/run_baselines.sh   # corre los 3 candidatos y produce la tabla
+docs/comparacion_modelos.md # plantilla para argumentar el compromiso de modelo
+tests/            # 32 tests (pytest)
 ```
 
-Cada propiedad de un caso tiene `text` (lo que ve el modelo) y `truth` (campos
-estructurados que solo usa el verificador), más `scenario`/`trap` que documentan
-qué distractor se construyó.
+### 1. Prompt y verificador determinista
 
-### Criterio de corrección
+**Prompt** (`src/matcher/prompt.py`): mismo texto para baseline y solución; la
+intervención cambia el modelo, no el prompt. Usa el esquema de salida del PDF de
+la E1 (`approved_matches[].{id, price_clp, roi_pct}`, `rejected[].{id,
+failed_constraints}`) e incluye una instrucción explícita de formato (sin ella
+phi4-mini envuelve el JSON en fences en 50/51 casos y el baseline falla por
+formato en vez de por lógica). Ver `data/prompt_e2_case_001.txt`.
 
-**Métrica principal (`e1_correct`)** — idéntica a las 3 condiciones del Entregable 1.
-Una respuesta es incorrecta (0) si:
+**Verificador** (`src/matcher/verifier.py`): juez 0/1 sin LLM. Cada propiedad
+tiene `text` (lo que ve el modelo) y `truth` (campos estructurados que solo usa
+el juez). Reporta dos niveles, siempre juntos:
 
-1. Aprueba una propiedad que viola cualquier hard constraint → `false_approval`
-2. Falla la aritmética: `price_clp` (±1 CLP) o ROI (±0,05 pp) → `arithmetic_error`
-3. Contiene texto fuera del JSON, fences markdown, bloques `<think>`, o no cumple
-   el esquema (claves faltantes, ids inexistentes o repetidos) → `schema_error`
+| Nivel | Qué mide |
+|---|---|
+| `e1_strict` | Las 3 condiciones de la E1 sobre la respuesta cruda: (1) aprueba una propiedad que viola una hard constraint → `false_approval`; (2) `price_clp` (±1 CLP) o ROI (±0,05 pp) mal → `arithmetic_error`; (3) texto fuera del JSON, fences, `<think>`, esquema incumplido, ids inexistentes/repetidos → `schema_error`. |
+| `e1_after_extract` | Mismas 3 condiciones tras un extractor determinista que quita fences/`<think>` y recorta al JSON. Separa fallos de formato de fallos de razonamiento. |
+| `exact_match` | Métrica secundaria: el conjunto aprobado y rechazado coincide exactamente con el esperado. Se reporta porque el criterio E1 no penaliza rechazos falsos. |
 
-**Métrica secundaria (`exact_match`)** — el conjunto aprobado y el rechazado
-coinciden exactamente con el esperado. Se reporta porque el criterio E1 no
-penaliza rechazos falsos (una respuesta que rechaza todo obtiene 1 en `e1_correct`).
+Ids se normalizan (`"[PROP-A42]"` ≡ `"PROP-A42"`); el nombre de la clave ROI
+acepta `roi_pct` (PDF E1) y `roi_calculado_pct` (prompt_base.txt).
 
-### Uso
-
-```bash
-pip install -r requirements.txt
-python -m pytest tests -q                       # verifica el juez
-
-# Un caso, una respuesta:
-cd src && python -m matcher.verifier ../data/cases/test/case_001_e1.json respuesta.txt
-
-# Prompt que ve el modelo para un caso:
-cd src && python -m matcher.prompt ../data/cases/test/test_0001.json
-
-# Baseline: prompting directo con Ollama sobre los 51 casos de test (temperatura 0, seed 0)
-cd src && python -m matcher.run_model --model phi4-mini:latest --run baseline_phi4
-
-# Evaluación sobre el split test. Lee results/<run>/<case_id>.txt
-cd src && python -m matcher.evaluate --runs baseline_phi4 distill_phi4
-# -> results/<run>.csv (por caso) y results/summary.csv (accuracy por run)
-```
-
-`evaluate.py` reporta además una columna de **diagnóstico** `e1_if_format_ignored`:
-cuántas respuestas serían correctas si se ignoraran fences markdown o bloques
-`<think>`. No forma parte del criterio; separa los fallos de *formato* de los de
-*lógica/aritmética* para la sección de límites.
-
-### Dataset sintético
-
-`data/cases/` se regenera de forma determinista con:
+### 2. Dataset sintético
 
 ```bash
-cd src && python -m matcher.generate --train 300 --test 50 --seed 2026
+cd src && python3 -m matcher.generate --train 300 --test 50 --seed 2026
 ```
 
 El generador construye primero el `truth` con un escenario intencionado por
-propiedad (≈30 % pasan todo, el resto falla por presupuesto en UF/CLP, distancia,
+propiedad (≈30 % pasan todo; el resto falla por presupuesto en UF/CLP, distancia,
 estacionamiento, dormitorios, mascotas por peso/especie/ausencia, o dos a la vez),
 luego renderiza el texto con plantillas en español y los mismos distractores que
-provocaron los fallos de la E1 (precio "bajo presupuesto" según el tasador,
+provocaron los fallos de la E1 (precio "bajo presupuesto según el tasador",
 "negociable", "15 minutos caminando", estacionamiento "de visitas", dormitorio
 "convertible", límite de peso 1 kg bajo la mascota). Cada caso se auto-verifica
-con `rules.py` antes de escribirse: si el juez no coincide con el escenario, la
-generación aborta.
+con `rules.py` antes de escribirse. `test/` incluye además `case_001_e1.json`,
+el caso original de la E1 anotado a mano.
+
+### 3. Correr los modelos candidatos
+
+```bash
+pip install -r requirements.txt
+python3 -m pytest tests -q
+
+ollama pull phi4-mini:latest granite4.1:8b deepseek-r1:7b
+bash scripts/run_baselines.sh            # los tres; o: bash scripts/run_baselines.sh phi4
+LIMIT=3 bash scripts/run_baselines.sh    # prueba rápida
+```
+
+Cada modelo corre con temperatura 0 y seed 0 sobre los 51 casos de `test/`.
+DeepSeek-R1 recibe `num_predict 8192` porque razona en `<think>` antes del JSON
+(con 2048 se trunca sin responder); eso lo hace ~10× más lento y queda reflejado
+en las columnas `truncated`, `mean_output_tokens` y `mean_wall_s`.
+
+Tiempos de referencia en MacBook Air M4: phi4-mini ≈ 10 s/caso, granite ≈ 25 s/caso,
+deepseek-r1 ≈ 2–5 min/caso.
+Las respuestas crudas quedan en `results/baseline_<modelo>/` (se versionan: son la
+evidencia trazable) y la tabla en `results/summary.csv`. Interrumpir y retomar es
+seguro: los casos ya respondidos se omiten.
+
+Para argumentar el compromiso de modelo, llenar `docs/comparacion_modelos.md`
+con `results/summary.csv` y `results/<run>_breakdown.csv`.
+
+Comandos individuales:
+
+```bash
+cd src
+python3 -m matcher.prompt ../data/cases/test/test_0001.json                 # ver el prompt de un caso
+python3 -m matcher.run_model --model phi4-mini:latest --run baseline_phi4   # un modelo
+python3 -m matcher.verifier ../data/cases/test/case_001_e1.json respuesta.txt   # un veredicto
+python3 -m matcher.evaluate --runs baseline_phi4 baseline_granite baseline_deepseek
+```

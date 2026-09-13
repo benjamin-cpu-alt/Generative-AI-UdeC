@@ -200,3 +200,18 @@ def test_ids_with_brackets_or_case_are_normalized():
     obj["rejected"][0]["id"] = " prop-a42 "
     v = verify(CASE, dumps(obj))
     assert v.e1_correct and v.exact_match
+
+
+def test_ids_without_prefix_are_normalized():
+    obj = json.loads(dumps(PERFECT))
+    obj["approved_matches"][0]["id"] = "F61"
+    obj["rejected"][0]["id"] = "a42"
+    v = verify(CASE, dumps(obj))
+    assert v.e1_correct and v.exact_match
+
+
+def test_truly_unknown_id_still_fails():
+    obj = json.loads(dumps(PERFECT))
+    obj["rejected"].append({"id": "Z99", "failed_constraints": ["x"]})
+    v = verify(CASE, dumps(obj))
+    assert v.reason == "schema_error" and "Z99" in v.details[0]

@@ -16,6 +16,14 @@ SYSTEM = (
     "en tu respuesta, solo el objeto JSON crudo."
 )
 
+# Instrucción explícita de formato. Sin ella, phi4-mini envuelve el JSON en fences
+# markdown en 50/51 casos y el baseline falla por formato en vez de por lógica.
+FORMAT_RULE = (
+    "IMPORTANTE: tu respuesta debe empezar con el carácter { y terminar con }. "
+    "No uses bloques de código markdown (```), ni explicaciones antes o después del JSON. "
+    "price_clp es un entero en pesos chilenos; roi_pct es un número con dos decimales."
+)
+
 OUTPUT_SCHEMA = """{
   "approved_matches": [
     { "id": "...", "price_clp": 0, "roi_pct": 0.0 }
@@ -73,6 +81,7 @@ def render_prompt(case: Case) -> str:
         "(precio en CLP, convirtiendo desde UF si corresponde) y roi_pct = "
         "(arriendo mensual × 12) / price_clp × 100, con dos decimales. "
         "Responde ÚNICAMENTE con el siguiente JSON, sin texto adicional:\n\n" + OUTPUT_SCHEMA,
+        FORMAT_RULE,
     ])
 
 

@@ -128,7 +128,7 @@ def validate_schema(obj: dict, valid_ids: set) -> Tuple[Optional[dict], Optional
             return None, f"{item['id']}: price_clp no es numérico"
         if item[roi_key] is not None and not _is_number(item[roi_key]):
             return None, f"{item['id']}: {roi_key} no es numérico"
-        approved.append({"id": _norm_id(item["id"]), "price_clp": item["price_clp"], "roi": item[roi_key]})
+        approved.append({"id": _norm_id(item["id"], valid_ids), "price_clp": item["price_clp"], "roi": item[roi_key]})
 
     rejected = []
     for i, item in enumerate(obj["rejected"]):
@@ -136,7 +136,7 @@ def validate_schema(obj: dict, valid_ids: set) -> Tuple[Optional[dict], Optional
             return None, f"rejected[{i}] sin 'id'"
         if "failed_constraints" not in item or not isinstance(item["failed_constraints"], list):
             return None, f"rejected[{i}] ({item['id']}) sin lista 'failed_constraints'"
-        rejected.append({"id": _norm_id(item["id"]), "failed_constraints": item["failed_constraints"]})
+        rejected.append({"id": _norm_id(item["id"], valid_ids), "failed_constraints": item["failed_constraints"]})
 
     ids = [a["id"] for a in approved] + [r["id"] for r in rejected]
     unknown = [i for i in ids if i not in valid_ids]
@@ -149,9 +149,14 @@ def validate_schema(obj: dict, valid_ids: set) -> Tuple[Optional[dict], Optional
     return {"approved": approved, "rejected": rejected}, None
 
 
-def _norm_id(x: Any) -> str:
-    """'[PROP-A42]' / ' prop-a42 ' -> 'PROP-A42'. Formato distinto no es id distinto."""
-    return str(x).strip().strip("[]").strip().upper()
+def _norm_id(x: Any, valid_ids: set) -> str:
+    """'[PROP-A42]' / ' prop-a42 ' / 'A42' -> 'PROP-A42'. Formato distinto no es id distinto.
+    Un id que no exista en el catálogo se devuelve tal cual y falla después como inexistente."""
+    s = str(x).strip().strip("[]").strip().upper()
+    if s in valid_ids:
+        return s
+    by_suffix = {v.split("-", 1)[-1]: v for v in valid_ids}
+    return by_suffix.get(s.split("-", 1)[-1], s)
 
 
 def _is_number(x: Any) -> bool:
