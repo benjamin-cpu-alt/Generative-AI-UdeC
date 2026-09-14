@@ -1,21 +1,26 @@
 {
   "id": "train_0262",
-  "uf_value": 38950,
+  "uf_value": 39650,
   "hard_constraints": {
-    "presupuesto_max_clp": 189000000,
-    "mascota_especie": "gato",
-    "mascota_kg": 5,
-    "distancia_max_transporte_m": 1000,
+    "presupuesto_max_clp": 153000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 25,
+    "distancia_max_transporte_m": 500,
     "dormitorios_min": 2,
     "estacionamiento_requerido": true
   },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Recoleta"
+    ]
+  },
   "properties": [
     {
-      "id": "PROP-Y85",
-      "text": "Casa en San Miguel, 94m², 3 dormitorios, 1 baño. Precio: 4811 UF. Excelente conectividad. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 371m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.050.000/mes.",
+      "id": "PROP-G54",
+      "text": "Depto en Recoleta, 87m², 3 dormitorios, 2 baños. Precio rebajado a 3.839 UF. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 167m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $600.000/mes.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 371,
+        "distance_transport_m": 167,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -23,97 +28,118 @@
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 4811,
+        "price_uf": 3839,
         "price_clp": null,
-        "rent_monthly_clp": 1050000,
-        "location": "San Miguel"
+        "rent_monthly_clp": 600000,
+        "location": "Recoleta"
       },
       "scenario": "pass",
       "trap": "precio en UF a <2.5% del presupuesto"
     },
     {
-      "id": "PROP-V85",
-      "text": "Depto en La Florida, 109m², 4 dormitorios, 1 baño. ¡Oportunidad única! Precio: UF 3.828. Ubicado a 1,4 km de la estación Franklin, unos 18 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.180.000/mes.",
+      "id": "PROP-F66",
+      "text": "Depto en Recoleta, 113m², 4 dormitorios, 2 baños. Ubicación premium, la más solicitada por sus clientes. Valor $135.200.000. A 477m de la estación de metro Vicente Valdés. No se especifica política de mascotas. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.100.000/mes.",
       "truth": {
         "bedrooms": 4,
-        "distance_transport_m": 1400,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "asignado",
-        "price_uf": 3828,
-        "price_clp": null,
-        "rent_monthly_clp": 1180000,
-        "location": "La Florida"
-      },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
-    },
-    {
-      "id": "PROP-S64",
-      "text": "Depto en La Florida, 66m², 2 dormitorios, 2 baños. Precio: 4755 UF. Ubicado a 1,2 km de la estación Manquehue, unos 15 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.420.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 1200,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 4755,
-        "price_clp": null,
-        "rent_monthly_clp": 1420000,
-        "location": "La Florida"
-      },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
-    },
-    {
-      "id": "PROP-R58",
-      "text": "Casa en Vitacura, 110m², 4D/2B. Precio rebajado a UF 4.793. A 666m de paradero de buses troncal, y 1,8km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $1.090.000/mes.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 666,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 4793,
-        "price_clp": null,
-        "rent_monthly_clp": 1090000,
-        "location": "Vitacura"
-      },
-      "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
-    },
-    {
-      "id": "PROP-A67",
-      "text": "Depto en Macul, 110m², 4D/2B. Valor $170.700.000. A 927m de la estación de metro Príncipe de Gales. Precio rebajado. No se especifica política de mascotas. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $990.000/mes.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 927,
+        "distance_transport_m": 477,
         "pets": {
           "explicit": false,
           "allowed": false,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
+        "parking": "asignado",
         "price_uf": null,
-        "price_clp": 170700000,
-        "rent_monthly_clp": 990000,
-        "location": "Macul"
+        "price_clp": 135200000,
+        "rent_monthly_clp": 1100000,
+        "location": "Recoleta"
       },
       "scenario": "pets_unspecified",
-      "trap": "política de mascotas ausente (debe ser explícita)"
+      "trap": "política de mascotas ausente (debe ser explícita); comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-A64",
+      "text": "Casa en Peñalolén, 104m², 4D/1B. Precio: UF 2.986. A 365m de la estación de metro Manquehue. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $1.000.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 365,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 2986,
+        "price_clp": null,
+        "rent_monthly_clp": 1000000,
+        "location": "Peñalolén"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-K95",
+      "text": "Depto en Recoleta, 91m², 3 dormitorios, 1 baño. Precio: UF 3.917 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 461m de la estación de metro Cal y Canto. ¡Oportunidad única! 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $800.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 461,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3917,
+        "price_clp": null,
+        "rent_monthly_clp": 800000,
+        "location": "Recoleta"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-C88",
+      "text": "Depto en Recoleta, 64m², 2 dormitorios, 2 baños. Precio: 3818 UF. A 1,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 174m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Ideal para inversionistas. Arriendo referencial de la zona: $980.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 174,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3818,
+        "price_clp": null,
+        "rent_monthly_clp": 980000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-J60",
+      "text": "Depto en Providencia, 82m², 3 dormitorios, 2 baños. Precio: 3.982 UF (el mejor valor por m² del sector). A 496m de paradero de buses troncal, y 1,6km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Entrega inmediata. Arriendo estimado: $1.050.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 496,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3982,
+        "price_clp": null,
+        "rent_monthly_clp": 1050000,
+        "location": "Providencia"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
     }
   ]
 }

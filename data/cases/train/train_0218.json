@@ -1,105 +1,92 @@
 {
   "id": "train_0218",
-  "uf_value": 38850,
+  "uf_value": 38450,
   "hard_constraints": {
-    "presupuesto_max_clp": 128000000,
-    "mascota_especie": "gato",
-    "mascota_kg": 5,
-    "distancia_max_transporte_m": 1000,
-    "dormitorios_min": 1,
+    "presupuesto_max_clp": 170000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
     "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Recoleta",
+      "La Reina"
+    ]
   },
   "properties": [
     {
-      "id": "PROP-B97",
-      "text": "Depto estudio en Estación Central, 55m², ambiente único + loggia cerrada, ideal como pieza extra, 1B. Excelente conectividad. Valor $111.600.000. A 680m de la estación de metro Vicente Valdés. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector.",
+      "id": "PROP-D36",
+      "text": "Depto en Estación Central, 81m², 3 dormitorios, 2 baños. Precio: UF 4.635 (precio negociable, el propietario está abierto a ofertas). A 606m de la estación de metro Ñuñoa. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. ¡Oportunidad única!",
       "truth": {
-        "bedrooms": 0,
-        "distance_transport_m": 680,
+        "bedrooms": 3,
+        "distance_transport_m": 606,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "calle",
-        "price_uf": null,
-        "price_clp": 111600000,
+        "parking": "asignado",
+        "price_uf": 4635,
+        "price_clp": null,
         "rent_monthly_clp": null,
         "location": "Estación Central"
       },
-      "scenario": "multi",
-      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple; dormitorio 'convertible' que no es real"
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
     },
     {
-      "id": "PROP-Y96",
-      "text": "Depto en Macul, 62m², 1 dormitorios, 1 baño. Ideal para inversionistas. Precio: 3248 UF. A 1,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 926m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $610.000/mes.",
-      "truth": {
-        "bedrooms": 1,
-        "distance_transport_m": 926,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 3248,
-        "price_clp": null,
-        "rent_monthly_clp": 610000,
-        "location": "Macul"
-      },
-      "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
-    },
-    {
-      "id": "PROP-E84",
-      "text": "Depto en Santiago Centro, 47m², 1 dormitorios, 1 baño. Entrega inmediata. Valor $126.900.000. A 1650m del metro Plaza Egaña, a pasos de todo. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento.",
-      "truth": {
-        "bedrooms": 1,
-        "distance_transport_m": 1650,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 126900000,
-        "rent_monthly_clp": null,
-        "location": "Santiago Centro"
-      },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
-    },
-    {
-      "id": "PROP-C80",
-      "text": "Depto en Providencia, 74m², 2 dormitorios, 2 baños. Precio: UF 3.411 (¡bajo el presupuesto del cliente según nuestro tasador!). A 691m de la estación de metro Lo Vial. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $870.000/mes.",
+      "id": "PROP-V19",
+      "text": "Depto en La Reina, 65m², 2 dormitorios, 1 baño. Ubicación premium, la más solicitada por sus clientes. Precio: UF 4.653 (¡bajo el presupuesto del cliente según nuestro tasador!). A 204m de la estación de metro Tobalaba. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.040.000/mes.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 691,
+        "distance_transport_m": 204,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "calle",
-        "price_uf": 3411,
+        "parking": "asignado",
+        "price_uf": 4653,
         "price_clp": null,
-        "rent_monthly_clp": 870000,
-        "location": "Providencia"
+        "rent_monthly_clp": 1040000,
+        "location": "La Reina"
       },
-      "scenario": "multi",
-      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple; precio en UF sobre presupuesto + frase de marketing"
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-L71",
-      "text": "Casa en La Florida, 90m², 3D/2B. Valor $120.400.000. A 458m de la estación de metro Baquedano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Recién remodelado. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $710.000/mes.",
+      "id": "PROP-N65",
+      "text": "Depto en La Florida, 74m², 2 dormitorios, 2 baños. Precio: 3.550 UF. A 728m de la estación de metro Manquehue. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento techado asignado. ¡Oportunidad única! Arriendo referencial de la zona: $1.040.000/mes.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 458,
+        "bedrooms": 2,
+        "distance_transport_m": 728,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3550,
+        "price_clp": null,
+        "rent_monthly_clp": 1040000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-R89",
+      "text": "Depto en La Reina, 50m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. ¡En la comuna favorita del cliente! Valor $129.100.000. A 267m de la estación de metro Escuela Militar. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $610.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 267,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -108,12 +95,75 @@
         },
         "parking": "asignado",
         "price_uf": null,
-        "price_clp": 120400000,
-        "rent_monthly_clp": 710000,
-        "location": "La Florida"
+        "price_clp": 129100000,
+        "rent_monthly_clp": 610000,
+        "location": "La Reina"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-S26",
+      "text": "Depto en Peñalolén, 94m², 3 dormitorios, 2 baños. Precio: UF 3.579. A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 724m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. ¡Oportunidad única! Arriendo referencial de la zona: $670.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 724,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3579,
+        "price_clp": null,
+        "rent_monthly_clp": 670000,
+        "location": "Peñalolén"
       },
       "scenario": "pass",
       "trap": null
+    },
+    {
+      "id": "PROP-P36",
+      "text": "Depto en Recoleta, 110m², 4D/2B. ¡En la comuna favorita del cliente! Precio: 4473 UF (precio negociable, el propietario está abierto a ofertas). A 1,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 302m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 302,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4473,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-K88",
+      "text": "Depto en La Florida, 89m², 3 dormitorios, 2 baños. Precio: 3865 UF. A 639m de paradero de buses troncal, y 1,8km del metro más cercano. Aceptamos mascotas, gatos y perros hasta 4kg. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $980.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 639,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "asignado",
+        "price_uf": 3865,
+        "price_clp": null,
+        "rent_monthly_clp": 980000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
     }
   ]
 }

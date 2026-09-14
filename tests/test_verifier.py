@@ -35,6 +35,9 @@ def dumps(obj):
 def test_expected_output_e1_case():
     exp = expected_output(CASE)
     assert exp.approved_ids == {"PROP-F61", "PROP-G77"}
+    # ambas en comuna preferida (Providencia, Ñuñoa): desempata el ROI
+    assert exp.by_id["PROP-F61"].preferred_location and exp.by_id["PROP-G77"].preferred_location
+    assert exp.ranking == [["PROP-F61"], ["PROP-G77"]]
     assert exp.rejected_ids == {"PROP-A42", "PROP-B19", "PROP-C88", "PROP-D05", "PROP-E33", "PROP-H12"}
 
     assert exp.by_id["PROP-A42"].price_clp == 150920000
@@ -54,7 +57,42 @@ def test_expected_output_e1_case():
 
 def test_perfect_response_is_correct():
     v = verify(CASE, dumps(PERFECT))
-    assert v.e1_correct and v.exact_match and v.reason == "ok"
+    assert v.e1_correct and v.exact_match and v.ranking_ok and v.full_correct and v.reason == "ok"
+
+
+# ------------------------------------------------------- soft constraints
+
+def test_wrong_ranking_keeps_e1_but_fails_full_correct():
+    obj = json.loads(dumps(PERFECT))
+    obj["approved_matches"].reverse()             # G77 (7.44%) antes que F61 (7.61%)
+    v = verify(CASE, dumps(obj))
+    assert v.e1_correct and v.exact_match         # el criterio E1 no cambia
+    assert not v.ranking_ok and not v.full_correct
+    assert any("ranking incorrecto" in d for d in v.details)
+
+
+def test_ranking_prefers_location_over_roi():
+    """Una aprobada en comuna no preferida con mayor ROI va después de las preferidas."""
+    d = json.loads((ROOT / "data" / "cases" / "test" / "case_001_e1.json").read_text(encoding="utf-8"))
+    d["soft_constraints"]["ubicaciones_preferidas"] = ["Ñuñoa"]   # F61 (Providencia) deja de ser preferida
+    exp = expected_output(Case.from_dict(d))
+    assert exp.ranked_ids == ["PROP-G77", "PROP-F61"]
+
+
+def test_ranking_ties_accept_any_order():
+    from matcher.verifier import ranking_matches
+    tiers = [["A"], ["B", "C"], ["D"]]
+    assert ranking_matches(["A", "B", "C", "D"], tiers)
+    assert ranking_matches(["A", "C", "B", "D"], tiers)
+    assert not ranking_matches(["B", "A", "C", "D"], tiers)
+    assert not ranking_matches(["A", "B", "C"], tiers)
+
+
+def test_ranking_not_judged_when_set_is_wrong():
+    obj = {"approved_matches": [{"id": "PROP-F61", "price_clp": 145040000, "roi_pct": 7.61}],
+           "rejected": [{"id": p.id, "failed_constraints": ["x"]} for p in CASE.properties if p.id != "PROP-F61"]}
+    v = verify(CASE, dumps(obj))
+    assert v.e1_correct and not v.exact_match and not v.ranking_ok
 
 
 def test_accepts_prompt_base_roi_key_name():

@@ -1,0 +1,41 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-A76",
+      "price_clp": 128730000,
+      "roi_pct": 49.02
+    },
+    {
+      "id": "PROP-E88",
+      "price_clp": 108300000,
+      "roi_pct": 82.35
+    },
+    {
+      "id": "PROP-L43",
+      "price_clp": 96370000,
+      "roi_pct": 65.57
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-M79",
+      "failed_constraints": ["Mascotas: mascotas permitidas hasta 7kg, pero el comprador tiene un perro de 12kg."]
+    },
+    {
+      "id": "PROP-U40",
+      "failed_constraints": ["Distancia máxima a transporte público: 1033m (OK), pero el edificio no garantiza mascotas de 12kg (perro de 12kg)."]
+    },
+    {
+      "id": "PROP-Q22",
+      "failed_constraints": ["Distancia máxima a transporte público: 855m (OK), pero el edificio no garantiza mascotas de 12kg (perro de 12kg)."]
+    },
+    {
+      "id": "PROP-J77",
+      "failed_constraints": ["Estacionamiento: no incluye estacionamiento propio o asignado."]
+    },
+    {
+      "id": "PROP-R62",
+      "failed_constraints": ["Distancia máxima a transporte público: 683m (OK), pero el edificio no garantiza mascotas de 12kg (perro de 12kg)."]
+    }
+  ]
+}

@@ -1,84 +1,26 @@
 {
   "id": "test_0016",
-  "uf_value": 38950,
+  "uf_value": 39500,
   "hard_constraints": {
-    "presupuesto_max_clp": 90000000,
-    "mascota_especie": "perro",
-    "mascota_kg": 15,
+    "presupuesto_max_clp": 152000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 3,
     "distancia_max_transporte_m": 1000,
     "dormitorios_min": 2,
     "estacionamiento_requerido": true
   },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "La Reina"
+    ]
+  },
   "properties": [
     {
-      "id": "PROP-W79",
-      "text": "Depto en Providencia, 79m², 3 dormitorios, 2 baños. Precio: $76.600.000. A 1000m de la estación de metro Bellas Artes. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo referencial de la zona: $560.000/mes.",
+      "id": "PROP-D78",
+      "text": "Casa en La Reina, 79m², 3D/2B. Precio: 3.818 UF. Precio rebajado. A 742m de paradero de buses troncal, y 1,2km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $970.000/mes.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 1000,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 76600000,
-        "rent_monthly_clp": 560000,
-        "location": "Providencia"
-      },
-      "scenario": "pass",
-      "trap": "distancia exactamente en el límite"
-    },
-    {
-      "id": "PROP-G24",
-      "text": "Depto en Maipú, 80m², 2D/1B. Valor $69.900.000. Precio rebajado. A 1,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 167m. Se aceptan mascotas pequeñas y medianas hasta 14kg, previa autorización de la administración. Incluye estacionamiento propio. Arriendo estimado: $420.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 167,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": 14
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 69900000,
-        "rent_monthly_clp": 420000,
-        "location": "Maipú"
-      },
-      "scenario": "pets_weight",
-      "trap": "límite de peso 14kg < mascota 15kg"
-    },
-    {
-      "id": "PROP-F30",
-      "text": "Depto en Ñuñoa, 77m², 2D/2B. Precio: UF 2.039. Ubicado a 1,7 km de la estación Tobalaba, unos 21 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Recién remodelado.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 1700,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 2039,
-        "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "Ñuñoa"
-      },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
-    },
-    {
-      "id": "PROP-D82",
-      "text": "Casa en Independencia, 95m², 3 dormitorios, 1 baño. Excelente conectividad. Precio: UF 2.277. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 508m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $570.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 508,
+        "distance_transport_m": 742,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -86,64 +28,106 @@
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 2277,
+        "price_uf": 3818,
         "price_clp": null,
-        "rent_monthly_clp": 570000,
-        "location": "Independencia"
+        "rent_monthly_clp": 970000,
+        "location": "La Reina"
       },
       "scenario": "pass",
       "trap": "precio en UF a <2.5% del presupuesto"
     },
     {
-      "id": "PROP-L77",
-      "text": "Depto en Vitacura, 103m², 4D/1B. Valor $72.300.000. A 674m de la estación de metro Irarrázaval. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento. Excelente conectividad. Arriendo referencial de la zona: $590.000/mes.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 674,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [
-            "perro"
-          ],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 72300000,
-        "rent_monthly_clp": 590000,
-        "location": "Vitacura"
-      },
-      "scenario": "pass",
-      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
-    },
-    {
-      "id": "PROP-M58",
-      "text": "Casa en La Florida, 86m², 3D/2B. Precio: 2429 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 691m de la estación de metro Tobalaba. 100% pet friendly, sin restricciones de tamaño ni especie. No incluye estacionamiento (posible arriendo en edificio vecino).",
+      "id": "PROP-C23",
+      "text": "Depto en La Reina, 91m², 3 dormitorios, 2 baños. Precio: 3752 UF. A 0,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 220m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $690.000/mes.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 691,
+        "distance_transport_m": 220,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "ninguno",
-        "price_uf": 2429,
+        "parking": "asignado",
+        "price_uf": 3752,
         "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "La Florida"
+        "rent_monthly_clp": 690000,
+        "location": "La Reina"
       },
-      "scenario": "multi",
-      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple; precio en UF sobre presupuesto + frase de marketing"
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
     },
     {
-      "id": "PROP-K10",
-      "text": "Casa en Las Condes, 107m², 4 dormitorios, 2 baños. Precio: $69.300.000. A 533m de la estación de metro Ñuñoa. 100% pet friendly, sin restricciones de tamaño ni especie. Luminoso y con vista despejada. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo estimado: $320.000/mes.",
+      "id": "PROP-Y21",
+      "text": "Depto en La Reina, 94m², 3 dormitorios, 1 baño. Justo en el sector que busca el comprador. Precio: UF 3.339. Ubicado a 1,4 km de la estación Baquedano, unos 18 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $650.000/mes.",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 533,
+        "bedrooms": 3,
+        "distance_transport_m": 1400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3339,
+        "price_clp": null,
+        "rent_monthly_clp": 650000,
+        "location": "La Reina"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-B37",
+      "text": "Depto en Independencia, 67m², 2D/1B. Valor $124.300.000. Luminoso y con vista despejada. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 746m. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 746,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 124300000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-X40",
+      "text": "Depto en Providencia, 58m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio: UF 3.863 (el mejor valor por m² del sector). A 829m de la estación de metro Ñuñoa. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 829,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3863,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "multi",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-Z82",
+      "text": "Depto en La Reina, 95m², 3 dormitorios, 1 baño. Ubicación premium, la más solicitada por sus clientes. Precio: 3.175 UF. Ubicado a 1,4 km de la estación Príncipe de Gales, unos 18 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $1.020.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1450,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -151,34 +135,55 @@
           "max_kg": null
         },
         "parking": "visitas",
-        "price_uf": null,
-        "price_clp": 69300000,
-        "rent_monthly_clp": 320000,
-        "location": "Las Condes"
+        "price_uf": 3175,
+        "price_clp": null,
+        "rent_monthly_clp": 1020000,
+        "location": "La Reina"
       },
-      "scenario": "parking",
-      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+      "scenario": "multi",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple; distancia excedida, minimizada en minutos caminando; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-Z86",
-      "text": "Casa en La Florida, 100m², 4 dormitorios, 1 baño. Precio: 2354 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 883m de la estación de metro Plaza Egaña. Excelente conectividad. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $550.000/mes.",
+      "id": "PROP-V29",
+      "text": "Casa en La Reina, 97m², 3D/2B. ¡En la comuna favorita del cliente! Precio: 3003 UF. A 732m de paradero de buses troncal, y 1,5km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. No incluye estacionamiento (posible arriendo en edificio vecino).",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 883,
+        "bedrooms": 3,
+        "distance_transport_m": 732,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": 2354,
+        "parking": "ninguno",
+        "price_uf": 3003,
         "price_clp": null,
-        "rent_monthly_clp": 550000,
-        "location": "La Florida"
+        "rent_monthly_clp": null,
+        "location": "La Reina"
       },
-      "scenario": "budget_uf",
-      "trap": "precio en UF sobre presupuesto + frase de marketing"
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-S77",
+      "text": "Casa en La Reina, 98m², 4D/2B. Ubicación premium, la más solicitada por sus clientes. Precio: $146.300.000. A 1550m del metro Franklin, a pasos de todo. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $850.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1550,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 146300000,
+        "rent_monthly_clp": 850000,
+        "location": "La Reina"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando; comuna preferida (soft) pero viola una hard constraint: no rescata"
     }
   ]
 }

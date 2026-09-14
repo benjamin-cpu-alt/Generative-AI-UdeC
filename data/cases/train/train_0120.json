@@ -1,21 +1,27 @@
 {
   "id": "train_0120",
-  "uf_value": 39250,
+  "uf_value": 40500,
   "hard_constraints": {
-    "presupuesto_max_clp": 217500000,
+    "presupuesto_max_clp": 125000000,
     "mascota_especie": "perro",
-    "mascota_kg": 6,
+    "mascota_kg": 25,
     "distancia_max_transporte_m": 500,
     "dormitorios_min": 2,
     "estacionamiento_requerido": true
   },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "La Florida",
+      "La Cisterna"
+    ]
+  },
   "properties": [
     {
-      "id": "PROP-K41",
-      "text": "Depto en Santiago Centro, 87m², 3D/1B. Precio: 4456 UF. ¡Oportunidad única! A 500m de la estación de metro Escuela Militar. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $1.290.000/mes.",
+      "id": "PROP-B85",
+      "text": "Casa en Vitacura, 97m², 3 dormitorios, 2 baños. Valor $131.000.000 (¡bajo el presupuesto del cliente según nuestro tasador!). A 481m de paradero de buses troncal, y 1,3km del metro más cercano. Entrega inmediata. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 500,
+        "distance_transport_m": 481,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -23,20 +29,20 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": 4456,
-        "price_clp": null,
-        "rent_monthly_clp": 1290000,
-        "location": "Santiago Centro"
+        "price_uf": null,
+        "price_clp": 131000000,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
       },
-      "scenario": "pass",
-      "trap": "distancia exactamente en el límite"
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
     },
     {
-      "id": "PROP-E74",
-      "text": "Depto en Independencia, 108m², 4D/1B. Precio rebajado. Precio: 5.457 UF. A 376m de la estación de metro Plaza Egaña. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.120.000/mes.",
+      "id": "PROP-V71",
+      "text": "Depto en Ñuñoa, 50m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Valor $106.900.000. Ubicado a 0,8 km de la estación Franklin, unos 9 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $760.000/mes.",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 376,
+        "bedrooms": 1,
+        "distance_transport_m": 750,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -44,62 +50,41 @@
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 5457,
-        "price_clp": null,
-        "rent_monthly_clp": 1120000,
-        "location": "Independencia"
+        "price_uf": null,
+        "price_clp": 106900000,
+        "rent_monthly_clp": 760000,
+        "location": "Ñuñoa"
       },
-      "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
+      "scenario": "multi",
+      "trap": "dormitorio 'convertible' que no es real; distancia excedida, minimizada en minutos caminando"
     },
     {
-      "id": "PROP-Q13",
-      "text": "Depto en Santiago Centro, 76m², 2D/2B. Precio: 4912 UF. A 1,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 388m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Excelente conectividad. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo estimado: $1.230.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 388,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "calle",
-        "price_uf": 4912,
-        "price_clp": null,
-        "rent_monthly_clp": 1230000,
-        "location": "Santiago Centro"
-      },
-      "scenario": "parking",
-      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
-    },
-    {
-      "id": "PROP-G72",
-      "text": "Depto en Vitacura, 80m², 3 dormitorios, 1 baño. Valor $157.300.000. A 498m de la estación de metro Ñuñoa. Aceptamos mascotas, gatos y perros hasta 4kg. Ideal para inversionistas. Incluye 1 estacionamiento.",
+      "id": "PROP-Z72",
+      "text": "Depto en La Florida, 86m², 3 dormitorios, 2 baños. Ubicación premium, la más solicitada por sus clientes. Valor $97.900.000. A 162m de la estación de metro Escuela Militar. Se aceptan mascotas pequeñas y medianas hasta 20kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $790.000/mes.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 498,
+        "distance_transport_m": 162,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
-          "max_kg": 4
+          "max_kg": 20
         },
-        "parking": "propio",
+        "parking": "asignado",
         "price_uf": null,
-        "price_clp": 157300000,
-        "rent_monthly_clp": null,
-        "location": "Vitacura"
+        "price_clp": 97900000,
+        "rent_monthly_clp": 790000,
+        "location": "La Florida"
       },
       "scenario": "pets_weight",
-      "trap": "límite de peso 4kg < mascota 6kg"
+      "trap": "límite de peso 20kg < mascota 25kg; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-C64",
-      "text": "Depto en La Reina, 80m², 2D/2B. Excelente conectividad. Precio rebajado a UF 5.055. A 277m de la estación de metro Lo Vial. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.460.000/mes.",
+      "id": "PROP-M51",
+      "text": "Depto en La Cisterna, 109m², 4D/2B. ¡En la comuna favorita del cliente! Precio: UF 2.244. A 439m de la estación de metro Escuela Militar. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $740.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 277,
+        "bedrooms": 4,
+        "distance_transport_m": 439,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -108,56 +93,58 @@
           ],
           "max_kg": null
         },
-        "parking": "asignado",
-        "price_uf": 5055,
+        "parking": "propio",
+        "price_uf": 2244,
         "price_clp": null,
-        "rent_monthly_clp": 1460000,
-        "location": "La Reina"
+        "rent_monthly_clp": 740000,
+        "location": "La Cisterna"
       },
       "scenario": "pets_species",
-      "trap": "acepta la otra especie, no la del comprador"
+      "trap": "acepta la otra especie, no la del comprador; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-P67",
-      "text": "Depto en Santiago Centro, 69m², 2D/1B. Excelente conectividad. Precio: UF 5.282. A 497m de paradero de buses troncal, y 1,5km del metro más cercano. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.680.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 497,
-        "pets": {
-          "explicit": false,
-          "allowed": false,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "asignado",
-        "price_uf": 5282,
-        "price_clp": null,
-        "rent_monthly_clp": 1680000,
-        "location": "Santiago Centro"
-      },
-      "scenario": "pets_unspecified",
-      "trap": "política de mascotas ausente (debe ser explícita)"
-    },
-    {
-      "id": "PROP-D53",
-      "text": "Casa en La Florida, 81m², 3D/2B. Precio: UF 4.339. A 154m de la estación de metro Franklin. No se aceptan mascotas. Incluye 1 estacionamiento subterráneo asignado.",
+      "id": "PROP-J34",
+      "text": "Depto en Vitacura, 82m², 3D/1B. Precio: 2985 UF. A 359m de la estación de metro Plaza Egaña. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $790.000/mes.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 154,
+        "distance_transport_m": 359,
         "pets": {
           "explicit": true,
-          "allowed": false,
-          "species": [],
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 4339,
+        "price_uf": 2985,
+        "price_clp": null,
+        "rent_monthly_clp": 790000,
+        "location": "Vitacura"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-W96",
+      "text": "Casa en La Cisterna, 95m², 3 dormitorios, 1 baño. Precio: 2.867 UF. A 215m de la estación de metro Cal y Canto. Se aceptan mascotas pequeñas y medianas hasta 25kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 215,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 25
+        },
+        "parking": "asignado",
+        "price_uf": 2867,
         "price_clp": null,
         "rent_monthly_clp": null,
-        "location": "La Florida"
+        "location": "La Cisterna"
       },
-      "scenario": "pets_none",
-      "trap": "no se aceptan mascotas"
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
     }
   ]
 }

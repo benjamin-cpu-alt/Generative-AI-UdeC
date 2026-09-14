@@ -1,21 +1,27 @@
 {
   "id": "train_0194",
-  "uf_value": 39800,
+  "uf_value": 38450,
   "hard_constraints": {
-    "presupuesto_max_clp": 147000000,
-    "mascota_especie": "perro",
-    "mascota_kg": 20,
-    "distancia_max_transporte_m": 600,
-    "dormitorios_min": 3,
+    "presupuesto_max_clp": 175500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
     "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Peñalolén",
+      "Macul"
+    ]
   },
   "properties": [
     {
-      "id": "PROP-K24",
-      "text": "Depto en La Florida, 90m², 3 dormitorios, 2 baños. Precio: 3.611 UF. Excelente conectividad. A 700m del metro Lo Vial, a pasos de todo. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "id": "PROP-E11",
+      "text": "Depto en Santiago Centro, 85m², 3D/2B. Valor $149.500.000. ¡Oportunidad única! A 796m de la estación de metro Bellas Artes. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $930.000/mes.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 700,
+        "distance_transport_m": 796,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -23,20 +29,41 @@
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 3611,
-        "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "La Florida"
+        "price_uf": null,
+        "price_clp": 149500000,
+        "rent_monthly_clp": 930000,
+        "location": "Santiago Centro"
       },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
+      "scenario": "pass",
+      "trap": null
     },
     {
-      "id": "PROP-E78",
-      "text": "Depto en Providencia, 90m², 3D/2B. Precio: UF 3.651. A 453m de la estación de metro Tobalaba. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $890.000/mes.",
+      "id": "PROP-D60",
+      "text": "Casa en Ñuñoa, 87m², 3D/1B. Precio: 3394 UF. A 201m de la estación de metro Bellas Artes. Excelente conectividad. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 453,
+        "distance_transport_m": 201,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 3394,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-F73",
+      "text": "Depto en Macul, 63m², 2D/1B. Valor $146.700.000. A 1400m del metro Ñuñoa, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Precio rebajado. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1400,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -44,41 +71,62 @@
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 3651,
+        "price_uf": null,
+        "price_clp": 146700000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-Q59",
+      "text": "Depto en Macul, 69m², 2D/2B. Ubicación premium, la más solicitada por sus clientes. Valor $149.200.000. A 795m de la estación de metro Ñuñoa. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $750.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 795,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 149200000,
+        "rent_monthly_clp": 750000,
+        "location": "Macul"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita); comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-V72",
+      "text": "Depto en Independencia, 49m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Precio: UF 3.813. A 895m de la estación de metro Bellas Artes. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $890.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 895,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3813,
         "price_clp": null,
         "rent_monthly_clp": 890000,
-        "location": "Providencia"
+        "location": "Independencia"
       },
-      "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
     },
     {
-      "id": "PROP-Q18",
-      "text": "Depto en La Reina, 99m², 4 dormitorios, 1 baño. Precio: 3.628 UF. A 387m de la estación de metro Príncipe de Gales. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.110.000/mes.",
+      "id": "PROP-Z93",
+      "text": "Depto en Peñalolén, 80m², 3D/1B. Precio: 4450 UF. A 974m de la estación de metro Tobalaba. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.400.000/mes.",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 387,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 3628,
-        "price_clp": null,
-        "rent_monthly_clp": 1110000,
-        "location": "La Reina"
-      },
-      "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
-    },
-    {
-      "id": "PROP-S54",
-      "text": "Depto en Peñalolén, 98m², 4 dormitorios, 2 baños. Precio: 3877 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 245m de la estación de metro Bellas Artes. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Piso alto, orientación norte.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 245,
+        "bedrooms": 3,
+        "distance_transport_m": 974,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -86,34 +134,13 @@
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 3877,
+        "price_uf": 4450,
         "price_clp": null,
-        "rent_monthly_clp": null,
+        "rent_monthly_clp": 1400000,
         "location": "Peñalolén"
       },
-      "scenario": "budget_uf",
-      "trap": "precio en UF sobre presupuesto + frase de marketing"
-    },
-    {
-      "id": "PROP-G79",
-      "text": "Depto en Estación Central, 112m², 4 dormitorios, 1 baño. Precio: $137.500.000. Recién remodelado. A 950m del metro Vicente Valdés, a pasos de todo. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.010.000/mes.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 950,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 137500000,
-        "rent_monthly_clp": 1010000,
-        "location": "Estación Central"
-      },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
     }
   ]
 }

@@ -1,86 +1,89 @@
 {
   "id": "train_0176",
-  "uf_value": 40350,
+  "uf_value": 40250,
   "hard_constraints": {
-    "presupuesto_max_clp": 123000000,
+    "presupuesto_max_clp": 206500000,
     "mascota_especie": "perro",
-    "mascota_kg": 20,
+    "mascota_kg": 12,
     "distancia_max_transporte_m": 800,
     "dormitorios_min": 2,
     "estacionamiento_requerido": true
   },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Recoleta"
+    ]
+  },
   "properties": [
     {
-      "id": "PROP-S42",
-      "text": "Depto en Peñalolén, 78m², 2 dormitorios, 2 baños. Precio rebajado a $103.900.000. A 374m de la estación de metro Irarrázaval. Incluye 1 estacionamiento. Arriendo estimado: $870.000/mes. Piso alto, orientación norte.",
+      "id": "PROP-N54",
+      "text": "Depto en Recoleta, 66m², 2 dormitorios, 1 baño. Precio: 4.360 UF. A 1350m del metro Los Leones, muy bien conectado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $1.090.000/mes.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 374,
-        "pets": {
-          "explicit": false,
-          "allowed": false,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 103900000,
-        "rent_monthly_clp": 870000,
-        "location": "Peñalolén"
-      },
-      "scenario": "pets_unspecified",
-      "trap": "política de mascotas ausente (debe ser explícita)"
-    },
-    {
-      "id": "PROP-T40",
-      "text": "Depto en Santiago Centro, 73m², 2 dormitorios, 2 baños. Precio: UF 2.984. A 1,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 579m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Luminoso y con vista despejada. Arriendo estimado: $680.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 579,
+        "distance_transport_m": 1350,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": 2984,
+        "parking": "visitas",
+        "price_uf": 4360,
         "price_clp": null,
-        "rent_monthly_clp": 680000,
-        "location": "Santiago Centro"
+        "rent_monthly_clp": 1090000,
+        "location": "Recoleta"
+      },
+      "scenario": "multi",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple; distancia excedida, minimizada en minutos caminando; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-C23",
+      "text": "Casa en Recoleta, 105m², 4D/1B. Precio: 5.063 UF. A 555m de la estación de metro Bellas Artes. Entrega inmediata. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $920.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 555,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5063,
+        "price_clp": null,
+        "rent_monthly_clp": 920000,
+        "location": "Recoleta"
       },
       "scenario": "pass",
       "trap": "precio en UF a <2.5% del presupuesto"
     },
     {
-      "id": "PROP-Y46",
-      "text": "Casa en San Miguel, 112m², 4 dormitorios, 1 baño. Valor $99.400.000. A 703m de la estación de metro Tobalaba. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento. Arriendo referencial de la zona: $560.000/mes.",
+      "id": "PROP-M39",
+      "text": "Depto en Santiago Centro, 72m², 2 dormitorios, 1 baño. Valor $181.300.000. A 470m de la estación de metro Príncipe de Gales. Piso alto, orientación norte. Se aceptan mascotas pequeñas y medianas hasta 9kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado.",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 703,
+        "bedrooms": 2,
+        "distance_transport_m": 470,
         "pets": {
           "explicit": true,
           "allowed": true,
-          "species": [
-            "gato"
-          ],
-          "max_kg": null
+          "species": [],
+          "max_kg": 9
         },
-        "parking": "propio",
+        "parking": "asignado",
         "price_uf": null,
-        "price_clp": 99400000,
-        "rent_monthly_clp": 560000,
-        "location": "San Miguel"
+        "price_clp": 181300000,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
       },
-      "scenario": "pets_species",
-      "trap": "acepta la otra especie, no la del comprador"
+      "scenario": "pets_weight",
+      "trap": "límite de peso 9kg < mascota 12kg"
     },
     {
-      "id": "PROP-Q95",
-      "text": "Depto en Peñalolén, 78m², 2 dormitorios, 1 baño. Valor $112.500.000. A 202m de la estación de metro Franklin. Se aceptan mascotas pequeñas y medianas hasta 12kg, previa autorización de la administración. Incluye estacionamiento propio. Arriendo estimado: $520.000/mes.",
+      "id": "PROP-X83",
+      "text": "Depto en Recoleta, 63m², 2D/2B. Valor $178.600.000. A 480m de la estación de metro Irarrázaval. Aceptamos mascotas, gatos y perros hasta 12kg. Incluye 1 estacionamiento. Arriendo estimado: $950.000/mes.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 202,
+        "distance_transport_m": 480,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -89,98 +92,33 @@
         },
         "parking": "propio",
         "price_uf": null,
-        "price_clp": 112500000,
-        "rent_monthly_clp": 520000,
-        "location": "Peñalolén"
-      },
-      "scenario": "pets_weight",
-      "trap": "límite de peso 12kg < mascota 20kg"
-    },
-    {
-      "id": "PROP-V13",
-      "text": "Depto en Santiago Centro, 73m², 2 dormitorios, 2 baños. Valor $116.100.000. A 531m de la estación de metro Tobalaba. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Excelente conectividad. Incluye 1 estacionamiento. Arriendo referencial de la zona: $530.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 531,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [
-            "gato"
-          ],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 116100000,
-        "rent_monthly_clp": 530000,
-        "location": "Santiago Centro"
-      },
-      "scenario": "pets_species",
-      "trap": "acepta la otra especie, no la del comprador"
-    },
-    {
-      "id": "PROP-E27",
-      "text": "Depto en Providencia, 54m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio: UF 2.959. A 197m de la estación de metro Vicente Valdés. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $940.000/mes.",
-      "truth": {
-        "bedrooms": 1,
-        "distance_transport_m": 197,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "asignado",
-        "price_uf": 2959,
-        "price_clp": null,
-        "rent_monthly_clp": 940000,
-        "location": "Providencia"
-      },
-      "scenario": "bedrooms",
-      "trap": "dormitorio 'convertible' que no es real"
-    },
-    {
-      "id": "PROP-Z22",
-      "text": "Depto en Maipú, 72m², 2 dormitorios, 2 baños. Valor $90.400.000. A 251m de paradero de buses troncal, y 1,1km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Piso alto, orientación norte. Sin estacionamiento. Arriendo estimado: $740.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 251,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "ninguno",
-        "price_uf": null,
-        "price_clp": 90400000,
-        "rent_monthly_clp": 740000,
-        "location": "Maipú"
-      },
-      "scenario": "parking",
-      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
-    },
-    {
-      "id": "PROP-K57",
-      "text": "Depto en La Cisterna, 62m², 2D/2B. Precio: 2.989 UF. Piso alto, orientación norte. A 260m de la estación de metro Bellas Artes. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $470.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 260,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 2989,
-        "price_clp": null,
-        "rent_monthly_clp": 470000,
-        "location": "La Cisterna"
+        "price_clp": 178600000,
+        "rent_monthly_clp": 950000,
+        "location": "Recoleta"
       },
       "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-U96",
+      "text": "Depto en Recoleta, 72m², 2 dormitorios, 1 baño. Ubicación premium, la más solicitada por sus clientes. Valor $152.500.000. Ubicado a 1,2 km de la estación Bellas Artes, unos 15 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $900.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 152500000,
+        "rent_monthly_clp": 900000,
+        "location": "Recoleta"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando; comuna preferida (soft) pero viola una hard constraint: no rescata"
     }
   ]
 }

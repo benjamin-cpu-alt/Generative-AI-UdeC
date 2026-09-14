@@ -2,20 +2,26 @@
   "id": "train_0154",
   "uf_value": 39550,
   "hard_constraints": {
-    "presupuesto_max_clp": 172000000,
-    "mascota_especie": "gato",
-    "mascota_kg": 6,
+    "presupuesto_max_clp": 229500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 8,
     "distancia_max_transporte_m": 800,
-    "dormitorios_min": 3,
+    "dormitorios_min": 1,
     "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Independencia",
+      "San Miguel"
+    ]
   },
   "properties": [
     {
-      "id": "PROP-M75",
-      "text": "Depto en Providencia, 73m², 2 dormitorios + sala de estar amplia que puede usarse como dormitorio adicional, 2B. Precio: 4281 UF. A 1500m del metro Bellas Artes, muy bien conectado. Entrega inmediata. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento.",
+      "id": "PROP-K51",
+      "text": "Casa en Independencia, 87m², 3D/2B. Ubicación premium, la más solicitada por sus clientes. Precio: UF 5.133. A 1300m del metro Tobalaba, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.010.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 1500,
+        "bedrooms": 3,
+        "distance_transport_m": 1300,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -23,104 +29,62 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": 4281,
+        "price_uf": 5133,
         "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "Providencia"
+        "rent_monthly_clp": 1010000,
+        "location": "Independencia"
       },
-      "scenario": "multi",
-      "trap": "dormitorio 'convertible' que no es real; distancia excedida, minimizada en minutos caminando"
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-Y81",
-      "text": "Depto en La Reina, 96m², 3 dormitorios, 1 baño. Precio: UF 4.316. Luminoso y con vista despejada. A 543m de la estación de metro Vicente Valdés. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.080.000/mes.",
+      "id": "PROP-U16",
+      "text": "Depto en La Cisterna, 50m², 1D/1B. Valor $194.400.000. A 1,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 236m. Pet friendly con límite de 8kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.140.000/mes.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 543,
+        "bedrooms": 1,
+        "distance_transport_m": 236,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
-          "max_kg": null
-        },
-        "parking": "asignado",
-        "price_uf": 4316,
-        "price_clp": null,
-        "rent_monthly_clp": 1080000,
-        "location": "La Reina"
-      },
-      "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
-    },
-    {
-      "id": "PROP-Q45",
-      "text": "Depto en Macul, 111m², 4D/1B. Valor $173.500.000 (precio negociable, el propietario está abierto a ofertas). Recién remodelado. A 461m de la estación de metro Príncipe de Gales. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.100.000/mes.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 461,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
+          "max_kg": 8
         },
         "parking": "asignado",
         "price_uf": null,
-        "price_clp": 173500000,
-        "rent_monthly_clp": 1100000,
-        "location": "Macul"
-      },
-      "scenario": "budget_clp",
-      "trap": "precio en CLP sobre presupuesto, 'negociable'"
-    },
-    {
-      "id": "PROP-D82",
-      "text": "Casa en San Miguel, 114m², 4D/1B. Precio: 3.477 UF. Ideal para inversionistas. A 526m de la estación de metro Tobalaba. Pet friendly con límite de 6kg por mascota. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $850.000/mes.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 526,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": 6
-        },
-        "parking": "propio",
-        "price_uf": 3477,
-        "price_clp": null,
-        "rent_monthly_clp": 850000,
-        "location": "San Miguel"
+        "price_clp": 194400000,
+        "rent_monthly_clp": 1140000,
+        "location": "La Cisterna"
       },
       "scenario": "pass",
       "trap": "límite de peso igual al de la mascota"
     },
     {
-      "id": "PROP-R85",
-      "text": "Depto en Estación Central, 99m², 4 dormitorios, 2 baños. Precio: UF 3.158. Excelente conectividad. A 592m de la estación de metro Príncipe de Gales. No se especifica política de mascotas. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $850.000/mes.",
+      "id": "PROP-T72",
+      "text": "Depto en Maipú, 91m², 3D/2B. Precio: 5.717 UF. A 1,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 792m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Entrega inmediata. Arriendo estimado: $1.520.000/mes.",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 592,
+        "bedrooms": 3,
+        "distance_transport_m": 792,
         "pets": {
-          "explicit": false,
-          "allowed": false,
+          "explicit": true,
+          "allowed": true,
           "species": [],
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 3158,
+        "price_uf": 5717,
         "price_clp": null,
-        "rent_monthly_clp": 850000,
-        "location": "Estación Central"
+        "rent_monthly_clp": 1520000,
+        "location": "Maipú"
       },
-      "scenario": "pets_unspecified",
-      "trap": "política de mascotas ausente (debe ser explícita)"
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
     },
     {
-      "id": "PROP-P94",
-      "text": "Casa en La Florida, 90m², 3D/2B. Precio: 3.843 UF. A 2,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 800m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.050.000/mes.",
+      "id": "PROP-W46",
+      "text": "Depto en San Miguel, 49m², 1D/1B. Justo en el sector que busca el comprador. Valor $234.500.000 (¡bajo el presupuesto del cliente según nuestro tasador!). A 298m de la estación de metro Cal y Canto. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.000.000/mes.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 800,
+        "bedrooms": 1,
+        "distance_transport_m": 298,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -128,13 +92,34 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": 3843,
-        "price_clp": null,
-        "rent_monthly_clp": 1050000,
-        "location": "La Florida"
+        "price_uf": null,
+        "price_clp": 234500000,
+        "rent_monthly_clp": 1000000,
+        "location": "San Miguel"
       },
-      "scenario": "pass",
-      "trap": "distancia exactamente en el límite"
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-F65",
+      "text": "Depto en San Miguel, 50m², 1 dormitorios, 1 baño. ¡En la comuna favorita del cliente! Valor $240.000.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 368m de la estación de metro Bellas Artes. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.300.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 368,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 240000000,
+        "rent_monthly_clp": 1300000,
+        "location": "San Miguel"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'; comuna preferida (soft) pero viola una hard constraint: no rescata"
     }
   ]
 }

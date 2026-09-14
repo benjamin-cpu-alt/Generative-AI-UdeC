@@ -1,0 +1,62 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-Z17",
+      "price_clp": 152300000,
+      "roi_pct": 6.21
+    },
+    {
+      "id": "PROP-G39",
+      "price_clp": 53160000,
+      "roi_pct": 8.38
+    },
+    {
+      "id": "PROP-X10",
+      "price_clp": 190200000,
+      "roi_pct": 7.97
+    },
+    {
+      "id": "PROP-W78",
+      "price_clp": 178100000,
+      "roi_pct": 8.38
+    },
+    {
+      "id": "PROP-V24",
+      "price_clp": 49910,
+      "roi_pct": 7.97
+    },
+    {
+      "id": "PROP-H43",
+      "price_clp": 42920,
+      "roi_pct": 8.38
+    },
+    {
+      "id": "PROP-K29",
+      "price_clp": 444120,
+      "roi_pct": 6.21
+    },
+    {
+      "id": "PROP-U50",
+      "price_clp": 53160000,
+      "roi_pct": 8.38
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-G39",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    },
+    {
+      "id": "PROP-X10",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal)"]
+    },
+    {
+      "id": "PROP-W78",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal)", "Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado (no sirve estacionamiento de visitas ni en la calle)"]
+    },
+    {
+      "id": "PROP-U50",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    }
+  }
+}

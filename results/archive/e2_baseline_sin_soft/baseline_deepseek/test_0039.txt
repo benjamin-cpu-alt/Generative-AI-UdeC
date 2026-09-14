@@ -1,0 +1,43 @@
+```json
+{
+  "approved_matches": [
+    {
+      "id": "B68",
+      "price_clp": 180300000,
+      "roi_pct": 9.31
+    },
+    {
+      "id": "H45",
+      "price_clp": 198000000,
+      "roi_pct": 6.31
+    },
+    {
+      "id": "J43",
+      "price_clp": 147280000,
+      "roi_pct": 7.50
+    }
+  ],
+  "rejected": [
+    {
+      "id": "F43",
+      "failed_constraints": ["budget"]
+    },
+    {
+      "id": "C11",
+      "failed_constraints": ["dog_size"]
+    },
+    {
+      "id": "Q96",
+      "failed_constraints": ["bedrooms", "dog_size"]
+    },
+    {
+      "id": "T39",
+      "failed_constraints": ["dog"]
+    },
+    {
+      "id": "X28",
+      "failed_constraints": ["distance"]
+    }
+  ]
+}
+```

@@ -1,0 +1,41 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-P69",
+      "price_clp": 109100000,
+      "roi_pct": null
+    },
+    {
+      "id": "PROP-H28",
+      "price_clp": 111000000,
+      "roi_pct": null
+    },
+    {
+      "id": "PROP-E64",
+      "price_clp": 115606000,
+      "roi_pct": 62.50
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-C10",
+      "failed_constraints": ["Mascotas (mascota de 7kg no permitida)"]
+    },
+    {
+      "id": "PROP-X35",
+      "failed_constraints": ["Estacionamiento (no asignado de forma permanente)"]
+    },
+    {
+      "id": "PROP-M43",
+      "failed_constraints": ["Mascotas (mascotas hasta 5kg, mascota de 7kg no permitida)"]
+    },
+    {
+      "id": "PROP-J30",
+      "failed_constraints": ["Distancia máxima a transporte público (1,6km > 1000m)"]
+    },
+    {
+      "id": "PROP-W84",
+      "failed_constraints": ["Distancia máxima a transporte público (no se menciona paradero de buses troncal)"]
+    }
+  ]
+}

@@ -1,42 +1,41 @@
 {
   "approved_matches": [
     {
-      "id": "PROP-A42",
-      "price_clp": 15540000,
-      "roi_pct": 7.45
-    },
-    {
-      "id": "PROP-C88",
-      "price_clp": 1850000,
-      "roi_pct": 14.11
-    },
-    {
       "id": "PROP-E33",
-      "price_clp": 1450000000,
-      "roi_pct": 11.52
+      "price_clp": 42300000,
+      "roi_pct": 12.60
     },
     {
       "id": "PROP-F61",
-      "price_clp": 18500000,
-      "roi_pct": 12.21
+      "price_clp": 26540000,
+      "roi_pct": 12.35
+    },
+    {
+      "id": "PROP-D05",
+      "price_clp": 20880000,
+      "roi_pct": 12.00
     }
   ],
   "rejected": [
     {
-      "id": "PROP-B19",
-      "failed_constraints": ["Presupuesto Máximo de Compra", "Distancia máxima a transporte público (metro O paradero de buses troncal)"]
+      "id": "PROP-A42",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 950m es superior al límite de 1000m. Dormitorios: Mínimo 2 dormitorios reales: La propiedad tiene 2D/2B, lo que no cumple con el requisito de 2D/2B. Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado: La propiedad incluye 1 estacionamiento subterráneo asignado, lo cual cumple con el requisito."]
     },
     {
-      "id": "PROP-D05",
-      "failed_constraints": ["Mascotas", "Dormitorios: Mínimo 2 dormitorios reales"]
+      "id": "PROP-B19",
+      "failed_constraints": ["Presupuesto Máximo de Compra: $148.500.000 CLP (superior al límite de $150.000.000 CLP). Dormitorios: Mínimo 2 dormitorios reales: La propiedad tiene 3D/2B, lo que no cumple con el requisito de 2D/2B. Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado: La propiedad incluye 1 estacionamiento, lo cual cumple con el requisito."]
+    },
+    {
+      "id": "PROP-C88",
+      "failed_constraints": ["Presupuesto Máximo de Compra: $3.500 UF (superior al límite de $150.000.000 CLP). Dormitorios: Mínimo 2 dormitorios reales: La propiedad tiene 2D/1B, lo que no cumple con el requisito de 2D/2B. Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado: La propiedad incluye estacionamiento de visitas disponible, no asignado de forma permanente, lo cual no cumple con el requisito de estacionamiento propio o asignado."]
     },
     {
       "id": "PROP-G77",
-      "failed_constraints": ["Mascotas", "Distancia máxima a transporte público (metro O paradero de buses troncal)"]
+      "failed_constraints": ["Presupuesto Máximo de Compra: $142.000.000 CLP (superior al límite de $150.000.000 CLP). Dormitorios: Mínimo 2 dormitorios reales: La propiedad tiene 2D/1B, lo que no cumple con el requisito de 2D/2B. Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado: La propiedad incluye 1 estacionamiento en subterráneo, lo cual cumple con el requisito."]
     },
     {
       "id": "PROP-H12",
-      "failed_constraints": ["Presupuesto Máximo de Compra"]
+      "failed_constraints": ["Presupuesto Máximo de Compra: $151.000.000 CLP (superior al límite de $150.000.000 CLP). Dormitorios: Mínimo 2 dormitorios reales: La propiedad tiene 3D/2B, lo que no cumple con el requisito de 2D/2B. Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado: La propiedad incluye estacionamiento propio, lo cual cumple con el requisito."]
     }
   ]
 }

@@ -1,0 +1,41 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-N44",
+      "price_clp": 190300000,
+      "roi_pct": 92.37
+    },
+    {
+      "id": "PROP-C72",
+      "price_clp": 191000000,
+      "roi_pct": 91.89
+    },
+    {
+      "id": "PROP-Q93",
+      "price_clp": 234500000,
+      "roi_pct": 53.85
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-L59",
+      "failed_constraints": ["Mascotas: solo se admiten gatos, el cliente tiene un perro"]
+    },
+    {
+      "id": "PROP-D81",
+      "failed_constraints": ["Mascotas: edificio sin mascotas por reglamento de copropiedad"]
+    },
+    {
+      "id": "PROP-M69",
+      "failed_constraints": ["Estacionamiento: estacionamiento de visitas, no asignado de forma permanente"]
+    },
+    {
+      "id": "PROP-G38",
+      "failed_constraints": ["Mascotas: mascotas hasta 9kg, el cliente tiene un perro de 10kg"]
+    },
+    {
+      "id": "PROP-K21",
+      "failed_constraints": ["Distancia máxima a transporte público: 1,1km de la estación de metro más cercana, supera los 1000 m"]
+    }
+  ]
+}

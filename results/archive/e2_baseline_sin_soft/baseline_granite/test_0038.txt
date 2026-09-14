@@ -1,0 +1,44 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-G39",
+      "price_clp": 164172000,
+      "roi_pct": 9.09
+    },
+    {
+      "id": "PROP-U50",
+      "price_clp": 154500000,
+      "roi_pct": 9.84
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-Z17",
+      "failed_constraints": ["Mascotas: mascota de 15kg no permitida (límite 7kg)"]
+    },
+    {
+      "id": "PROP-X10",
+      "failed_constraints": ["Mascotas: autorización previa requerida"]
+    },
+    {
+      "id": "PROP-W78",
+      "failed_constraints": ["Estacionamiento: solo en la calle (no propio/asesorado)"]
+    },
+    {
+      "id": "PROP-V24",
+      "failed_constraints": ["Mascotas: autorización previa requerida"]
+    },
+    {
+      "id": "PROP-K29",
+      "failed_constraints": ["Mascotas: límite de 13kg (mascota de 15kg supera límite)"]
+    },
+    {
+      "id": "PROP-H43",
+      "failed_constraints": ["Estacionamiento: solo en la calle (no propio/asesorado)"]
+    },
+    {
+      "id": "PROP-U50",
+      "failed_constraints": ["Presupuesto Máximo de Compra: precio ligeramente sobre el techo del cliente (negociable pero no garantizado)"]
+    }
+  ]
+}

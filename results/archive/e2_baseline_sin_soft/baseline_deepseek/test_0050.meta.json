@@ -1,0 +1,17 @@
+{
+  "case_id": "test_0050",
+  "model": "deepseek-r1:7b",
+  "run": "baseline_deepseek",
+  "options": {
+    "temperature": 0.0,
+    "num_ctx": 12288,
+    "num_predict": 8192,
+    "seed": 0
+  },
+  "prompt_tokens": 1380,
+  "output_tokens": 8192,
+  "total_duration_s": 558.23,
+  "wall_s": 558.25,
+  "done_reason": "length",
+  "timestamp": "2026-09-13T13:38:35"
+}

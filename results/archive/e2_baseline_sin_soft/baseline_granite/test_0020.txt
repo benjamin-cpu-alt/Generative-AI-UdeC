@@ -1,0 +1,42 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-S27",
+      "price_clp": 194000000,
+      "roi_pct": 26.04
+    },
+    {
+      "id": "PROP-M71",
+      "price_clp": 198000000,
+      "roi_pct": 36.36
+    },
+    {
+      "id": "PROP-G15",
+      "price_clp": 160300000,
+      "roi_pct": 50.00
+    },
+    {
+      "id": "PROP-W74",
+      "price_clp": 4804000,
+      "roi_pct": 100.00
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-C30",
+      "failed_constraints": ["Dormitorios: Mínimo 3 dormitorios reales"]
+    },
+    {
+      "id": "PROP-P22",
+      "failed_constraints": ["Presupuesto Máximo de Compra: $192.500.000 CLP"]
+    },
+    {
+      "id": "PROP-N87",
+      "failed_constraints": ["Mascotas: Tiene 1 perro de 22kg (la propiedad debe permitir explícitamente mascotas de ese tamaño y especie)"]
+    },
+    {
+      "id": "PROP-T79",
+      "failed_constraints": ["Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado (no sirve estacionamiento de visitas ni en la calle)"]
+    }
+  ]
+}

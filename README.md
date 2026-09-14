@@ -24,9 +24,9 @@ El sistema actúa como un motor de validación basado en agentes que lee descrip
 
 ```
 src/matcher/
-├── schema.py     # dataclasses del caso (perfil, propiedades con `text` + `truth`)
-├── rules.py      # las 5 hard constraints + ROI -> salida esperada (ground truth)
-├── verifier.py   # juez 0/1: parseo estricto + comparación, con motivo del fallo
+├── schema.py     # dataclasses del caso (hard + soft constraints, propiedades con `text` + `truth`)
+├── rules.py      # las 5 hard constraints + ROI + ranking por soft constraints -> salida esperada
+├── verifier.py   # juez 0/1: parseo estricto + comparación, con motivo del fallo (+ ranking_ok)
 ├── prompt.py     # el prompt (único, compartido por baseline y solución)
 ├── generate.py   # generador de casos sintéticos auto-verificados
 ├── run_model.py  # corre un modelo de Ollama sobre un split y guarda respuestas crudas
@@ -38,6 +38,7 @@ data/
     ├── test/     # 50 casos held-out + case_001_e1. Solo evaluación.
     └── train/    # 300 casos para el dataset de destilación. Nunca se evalúan.
 results/<run>/    # <case_id>.txt (respuesta cruda) + <case_id>.meta.json (tokens, tiempo)
+results/archive/  # runs anteriores no comparables (p.ej. baselines sin soft constraints)
 scripts/run_baselines.sh   # corre los 3 candidatos y produce la tabla
 docs/comparacion_modelos.md # plantilla para argumentar el compromiso de modelo
 tests/            # 32 tests (pytest)
@@ -48,9 +49,17 @@ tests/            # 32 tests (pytest)
 **Prompt** (`src/matcher/prompt.py`): mismo texto para baseline y solución; la
 intervención cambia el modelo, no el prompt. Usa el esquema de salida del PDF de
 la E1 (`approved_matches[].{id, price_clp, roi_pct}`, `rejected[].{id,
-failed_constraints}`) e incluye una instrucción explícita de formato (sin ella
-phi4-mini envuelve el JSON en fences en 50/51 casos y el baseline falla por
+failed_constraints}`) y conserva las **soft constraints** del prompt de la E1
+(`data/prompt_base.txt`): ubicación preferida y ROI no descalifican, pero fijan
+el orden de `approved_matches` (comuna preferida primero, luego ROI descendente;
+las primeras 3 son el Top 3). Incluye una instrucción explícita de formato (sin
+ella phi4-mini envuelve el JSON en fences en 50/51 casos y el baseline falla por
 formato en vez de por lógica). Ver `data/prompt_e2_case_001.txt`.
+
+Desviaciones declaradas respecto a `prompt_base.txt`: se quitan los campos
+`distance_to_transport_m` y `ranking_score_justificacion` (no verificables, no
+están en el esquema del PDF) y el ranking se expresa por el **orden** de la lista,
+que sí es verificable.
 
 **Verificador** (`src/matcher/verifier.py`): juez 0/1 sin LLM. Cada propiedad
 tiene `text` (lo que ve el modelo) y `truth` (campos estructurados que solo usa
@@ -61,6 +70,8 @@ el juez). Reporta dos niveles, siempre juntos:
 | `e1_strict` | Las 3 condiciones de la E1 sobre la respuesta cruda: (1) aprueba una propiedad que viola una hard constraint → `false_approval`; (2) `price_clp` (±1 CLP) o ROI (±0,05 pp) mal → `arithmetic_error`; (3) texto fuera del JSON, fences, `<think>`, esquema incumplido, ids inexistentes/repetidos → `schema_error`. |
 | `e1_after_extract` | Mismas 3 condiciones tras un extractor determinista que quita fences/`<think>` y recorta al JSON. Separa fallos de formato de fallos de razonamiento. |
 | `exact_match` | Métrica secundaria: el conjunto aprobado y rechazado coincide exactamente con el esperado. Se reporta porque el criterio E1 no penaliza rechazos falsos. |
+| `ranking_ok` | Métrica secundaria (soft constraints): `exact_match` y `approved_matches` en el orden esperado (comuna preferida → ROI desc; empates en cualquier orden). |
+| `full_correct` | `e1_strict` ∧ `exact_match` ∧ `ranking_ok`: la salida completa es la esperada. Es la métrica más exigente y la que debe mostrar la mejora E2→E4. |
 
 Ids se normalizan (`"[PROP-A42]"` ≡ `"PROP-A42"`); el nombre de la clave ROI
 acepta `roi_pct` (PDF E1) y `roi_calculado_pct` (prompt_base.txt).
@@ -77,8 +88,11 @@ estacionamiento, dormitorios, mascotas por peso/especie/ausencia, o dos a la vez
 luego renderiza el texto con plantillas en español y los mismos distractores que
 provocaron los fallos de la E1 (precio "bajo presupuesto según el tasador",
 "negociable", "15 minutos caminando", estacionamiento "de visitas", dormitorio
-"convertible", límite de peso 1 kg bajo la mascota). Cada caso se auto-verifica
-con `rules.py` antes de escribirse. `test/` incluye además `case_001_e1.json`,
+"convertible", límite de peso 1 kg bajo la mascota). Cada perfil tiene 1–2
+comunas preferidas; ≈45 % de las propiedades caen en ellas, y las que además
+violan una hard constraint llevan la trampa "¡En la comuna favorita del cliente!"
+(la soft constraint no rescata). Cada caso se auto-verifica con `rules.py` antes
+de escribirse. `test/` incluye además `case_001_e1.json`,
 el caso original de la E1 anotado a mano.
 
 ### 3. Correr los modelos candidatos

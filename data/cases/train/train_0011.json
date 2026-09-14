@@ -1,42 +1,90 @@
 {
   "id": "train_0011",
-  "uf_value": 38700,
+  "uf_value": 40500,
   "hard_constraints": {
-    "presupuesto_max_clp": 115500000,
+    "presupuesto_max_clp": 216000000,
     "mascota_especie": "perro",
-    "mascota_kg": 10,
-    "distancia_max_transporte_m": 1200,
+    "mascota_kg": 30,
+    "distancia_max_transporte_m": 800,
     "dormitorios_min": 2,
     "estacionamiento_requerido": true
   },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Macul",
+      "Ñuñoa"
+    ]
+  },
   "properties": [
     {
-      "id": "PROP-P66",
-      "text": "Depto en Maipú, 75m², 2 dormitorios, 2 baños. Precio rebajado a 2915 UF. A 279m de la estación de metro Manquehue. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $670.000/mes.",
+      "id": "PROP-D41",
+      "text": "Depto en Independencia, 80m², 2D/2B. Precio: UF 5.415 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 376m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.460.000/mes.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 279,
+        "distance_transport_m": 376,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": 2915,
+        "parking": "asignado",
+        "price_uf": 5415,
         "price_clp": null,
-        "rent_monthly_clp": 670000,
-        "location": "Maipú"
+        "rent_monthly_clp": 1460000,
+        "location": "Independencia"
       },
-      "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
     },
     {
-      "id": "PROP-Y44",
-      "text": "Casa en Independencia, 94m², 3D/2B. Valor $120.000.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 206m de la estación de metro Tobalaba. 100% pet friendly, sin restricciones de tamaño ni especie. Excelente conectividad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $750.000/mes.",
+      "id": "PROP-M75",
+      "text": "Depto en La Reina, 100m², 4D/2B. Valor $156.200.000. A 663m de la estación de metro Escuela Militar. Entrega inmediata. No se especifica política de mascotas. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.160.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 663,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 156200000,
+        "rent_monthly_clp": 1160000,
+        "location": "La Reina"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-R20",
+      "text": "Depto en Macul, 85m², 3D/1B. Ubicación premium, la más solicitada por sus clientes. Precio: UF 4.158. Ubicado a 1,1 km de la estación Manquehue, unos 14 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.150.000/mes.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 206,
+        "distance_transport_m": 1100,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4158,
+        "price_clp": null,
+        "rent_monthly_clp": 1150000,
+        "location": "Macul"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-Y81",
+      "text": "Depto en Ñuñoa, 103m², 4D/2B. Ubicación premium, la más solicitada por sus clientes. Valor $224.500.000 (el mejor valor por m² del sector). A 224m de paradero de buses troncal, y 0,9km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 224,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -45,61 +93,61 @@
         },
         "parking": "propio",
         "price_uf": null,
-        "price_clp": 120000000,
-        "rent_monthly_clp": 750000,
-        "location": "Independencia"
+        "price_clp": 224500000,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
       },
       "scenario": "budget_clp",
-      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+      "trap": "precio en CLP sobre presupuesto, 'negociable'; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-R47",
-      "text": "Depto en La Florida, 71m², 2D/2B. Precio: 2416 UF. A 1024m de la estación de metro Vicente Valdés. Recién remodelado. Pet friendly con límite de 9kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $540.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 1024,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": 9
-        },
-        "parking": "asignado",
-        "price_uf": 2416,
-        "price_clp": null,
-        "rent_monthly_clp": 540000,
-        "location": "La Florida"
-      },
-      "scenario": "pets_weight",
-      "trap": "límite de peso 9kg < mascota 10kg"
-    },
-    {
-      "id": "PROP-Q24",
-      "text": "Depto en Providencia, 79m², 2 dormitorios, 1 baño. Precio: 3067 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 378m de paradero de buses troncal, y 1,4km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 378,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "calle",
-        "price_uf": 3067,
-        "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "Providencia"
-      },
-      "scenario": "multi",
-      "trap": "precio en UF sobre presupuesto + frase de marketing; estacionamiento 'calle' menciona la palabra pero no cumple"
-    },
-    {
-      "id": "PROP-V11",
-      "text": "Depto en Ñuñoa, 94m², 3D/2B. Precio: 2207 UF. A 735m de la estación de metro Manquehue. No se especifica política de mascotas. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $490.000/mes.",
+      "id": "PROP-H97",
+      "text": "Depto en Ñuñoa, 94m², 3 dormitorios, 1 baño. ¡En la comuna favorita del cliente! Precio: 5094 UF. A 562m de la estación de metro Plaza Egaña. Se aceptan mascotas pequeñas y medianas hasta 25kg, previa autorización de la administración. Incluye 1 estacionamiento.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 735,
+        "distance_transport_m": 562,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 25
+        },
+        "parking": "propio",
+        "price_uf": 5094,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 25kg < mascota 30kg; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-E95",
+      "text": "Depto en Recoleta, 64m², 2 dormitorios, 2 baños. Valor $214.000.000. A 310m de la estación de metro Ñuñoa. Pet friendly con límite de 30kg por mascota. Incluye 1 estacionamiento techado asignado. Recién remodelado. Arriendo referencial de la zona: $1.730.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 310,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 30
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 214000000,
+        "rent_monthly_clp": 1730000,
+        "location": "Recoleta"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-C50",
+      "text": "Depto en Estación Central, 75m², 2D/2B. Precio: 4558 UF. A 531m de la estación de metro Tobalaba. No se especifica política de mascotas. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.540.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 531,
         "pets": {
           "explicit": false,
           "allowed": false,
@@ -107,10 +155,10 @@
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 2207,
+        "price_uf": 4558,
         "price_clp": null,
-        "rent_monthly_clp": 490000,
-        "location": "Ñuñoa"
+        "rent_monthly_clp": 1540000,
+        "location": "Estación Central"
       },
       "scenario": "pets_unspecified",
       "trap": "política de mascotas ausente (debe ser explícita)"

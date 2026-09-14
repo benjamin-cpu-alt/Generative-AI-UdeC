@@ -1,0 +1,42 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-M12",
+      "price_clp": 155000000,
+      "roi_pct": 7.44
+    },
+    {
+      "id": "PROP-X61",
+      "price_clp": 188000000,
+      "roi_pct": 7.20
+    },
+    {
+      "id": "PROP-R26",
+      "price_clp": 189000000,
+      "roi_pct": 7.20
+    },
+    {
+      "id": "PROP-G51",
+      "price_clp": 143000000,
+      "roi_pct": 14.62
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-W97",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 1200 m"]
+    },
+    {
+      "id": "PROP-A73",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 1200 m", "Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado (no sirve estacionamiento de visitas ni en la calle)"]
+    },
+    {
+      "id": "PROP-E75",
+      "failed_constraints": ["Mascotas: Tiene 1 perro de 8kg (la propiedad debe permitir explícitamente mascotas de ese tamaño y especie)"]
+    },
+    {
+      "id": "PROP-F46",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 1200 m"]
+    }
+  ]
+}

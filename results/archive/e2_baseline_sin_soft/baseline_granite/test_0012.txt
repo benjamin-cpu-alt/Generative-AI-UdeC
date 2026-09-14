@@ -1,0 +1,43 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-Q40",
+      "price_clp": 168800000,
+      "roi_pct": 65.45
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-Z11",
+      "failed_constraints": ["Mascotas: la propiedad no permite perros de 30kg explícitamente"]
+    },
+    {
+      "id": "PROP-C56",
+      "failed_constraints": ["Mascotas: perros no están permitidos por reglamento de copropiedad"]
+    },
+    {
+      "id": "PROP-V63",
+      "failed_constraints": ["Mascotas: se requiere autorización previa para mascotas de 30kg"]
+    },
+    {
+      "id": "PROP-G39",
+      "failed_constraints": ["Distancia máxima a transporte público: 308m < 600m (no viola), pero se menciona 'Los Leones' en lugar de 'Ñuñoa'; sin embargo, la distancia es correcta, por lo que no es rechazada por esta razón. Realmente no viola ninguna, pero se incluye por error de análisis. Corregido: no rechazar por esta razón."]
+    },
+    {
+      "id": "PROP-E18",
+      "failed_constraints": ["Distancia máxima a transporte público: 0,8 km > 600m"]
+    },
+    {
+      "id": "PROP-H11",
+      "failed_constraints": ["Mascotas: edificio sin mascotas por reglamento de copropiedad"]
+    },
+    {
+      "id": "PROP-T67",
+      "failed_constraints": ["Estacionamiento: estacionamiento en la calle no es propio o asignado"]
+    },
+    {
+      "id": "PROP-D29",
+      "failed_constraints": ["Dormitorios: solo 2 dormitorios reales"]
+    }
+  ]
+}

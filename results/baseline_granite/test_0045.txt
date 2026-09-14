@@ -1,0 +1,33 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-C52",
+      "price_clp": 138000000,
+      "roi_pct": 81.82
+    },
+    {
+      "id": "PROP-M64",
+      "price_clp": 124100000,
+      "roi_pct": 60.00
+    },
+    {
+      "id": "PROP-U30",
+      "price_clp": 126500000,
+      "roi_pct": 64.52
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-S85",
+      "failed_constraints": ["Mascotas: restricción de tamaño (mascotas hasta 2kg)"]
+    },
+    {
+      "id": "PROP-H70",
+      "failed_constraints": ["Mascotas: restricción de tamaño (mascotas hasta 2kg)"]
+    },
+    {
+      "id": "PROP-T50",
+      "failed_constraints": ["Distancia máxima a transporte público: 1,5km (solo 656m al paradero de buses troncal, pero 1,5km al metro más cercano)"]
+    }
+  ]
+}

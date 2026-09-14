@@ -1,21 +1,26 @@
 {
   "id": "train_0281",
-  "uf_value": 38100,
+  "uf_value": 39350,
   "hard_constraints": {
-    "presupuesto_max_clp": 196500000,
-    "mascota_especie": "perro",
-    "mascota_kg": 15,
-    "distancia_max_transporte_m": 1000,
-    "dormitorios_min": 1,
+    "presupuesto_max_clp": 192500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 2,
     "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Macul"
+    ]
   },
   "properties": [
     {
-      "id": "PROP-M66",
-      "text": "Depto en Las Condes, 63m², 2 dormitorios, 2 baños. Valor $155.400.000. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 907m. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.030.000/mes. Luminoso y con vista despejada.",
+      "id": "PROP-H95",
+      "text": "Depto en Estación Central, 95m², 3 dormitorios, 1 baño. Valor $185.800.000. A 494m de paradero de buses troncal, y 1,3km del metro más cercano. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento. Arriendo estimado: $1.090.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 907,
+        "bedrooms": 3,
+        "distance_transport_m": 494,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -24,21 +29,21 @@
           ],
           "max_kg": null
         },
-        "parking": "asignado",
+        "parking": "propio",
         "price_uf": null,
-        "price_clp": 155400000,
-        "rent_monthly_clp": 1030000,
-        "location": "Las Condes"
+        "price_clp": 185800000,
+        "rent_monthly_clp": 1090000,
+        "location": "Estación Central"
       },
-      "scenario": "pets_species",
-      "trap": "acepta la otra especie, no la del comprador"
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
     },
     {
-      "id": "PROP-Q53",
-      "text": "Depto en Recoleta, 71m², 2D/2B. Precio: UF 5.018. Ubicado a 1,6 km de la estación Los Leones, unos 20 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Excelente conectividad. Incluye estacionamiento propio.",
+      "id": "PROP-L72",
+      "text": "Depto en Peñalolén, 66m², 2D/2B. Precio: 4.811 UF. A 191m de paradero de buses troncal, y 1,1km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $940.000/mes.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 1600,
+        "distance_transport_m": 191,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -46,62 +51,41 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": 5018,
+        "price_uf": 4811,
         "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "Recoleta"
+        "rent_monthly_clp": 940000,
+        "location": "Peñalolén"
       },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
     },
     {
-      "id": "PROP-B53",
-      "text": "Depto en Maipú, 62m², 2D/1B. Valor $190.900.000. A 965m de paradero de buses troncal, y 1,8km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Precio rebajado. Estacionamiento en la calle, sin problemas para aparcar en el sector.",
+      "id": "PROP-J72",
+      "text": "Depto en Macul, 66m², 2 dormitorios, 2 baños. ¡En la comuna favorita del cliente! Valor $165.800.000. A 153m de la estación de metro Franklin. Se aceptan mascotas pequeñas y medianas hasta 3kg, previa autorización de la administración. Incluye estacionamiento propio.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 965,
+        "distance_transport_m": 153,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
-          "max_kg": null
+          "max_kg": 3
         },
-        "parking": "calle",
+        "parking": "propio",
         "price_uf": null,
-        "price_clp": 190900000,
+        "price_clp": 165800000,
         "rent_monthly_clp": null,
-        "location": "Maipú"
+        "location": "Macul"
       },
-      "scenario": "parking",
-      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
+      "scenario": "pets_weight",
+      "trap": "límite de peso 3kg < mascota 5kg; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-S17",
-      "text": "Depto en Estación Central, 64m², 2D/2B. Precio: UF 3.942. A 298m de paradero de buses troncal, y 1,3km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Luminoso y con vista despejada. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $1.180.000/mes.",
+      "id": "PROP-M79",
+      "text": "Depto en Macul, 68m², 2D/2B. ¡En la comuna favorita del cliente! Precio: 4348 UF. A 152m de la estación de metro Ñuñoa. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. No incluye estacionamiento (posible arriendo en edificio vecino). Arriendo referencial de la zona: $1.110.000/mes.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 298,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "calle",
-        "price_uf": 3942,
-        "price_clp": null,
-        "rent_monthly_clp": 1180000,
-        "location": "Estación Central"
-      },
-      "scenario": "parking",
-      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
-    },
-    {
-      "id": "PROP-Z49",
-      "text": "Depto en Recoleta, 52m², 1D/1B. Valor $146.000.000. A 807m de la estación de metro Ñuñoa. 100% pet friendly, sin restricciones de tamaño ni especie. No incluye estacionamiento (posible arriendo en edificio vecino). Arriendo referencial de la zona: $1.070.000/mes.",
-      "truth": {
-        "bedrooms": 1,
-        "distance_transport_m": 807,
+        "distance_transport_m": 152,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -109,62 +93,62 @@
           "max_kg": null
         },
         "parking": "ninguno",
-        "price_uf": null,
-        "price_clp": 146000000,
-        "rent_monthly_clp": 1070000,
-        "location": "Recoleta"
+        "price_uf": 4348,
+        "price_clp": null,
+        "rent_monthly_clp": 1110000,
+        "location": "Macul"
       },
       "scenario": "parking",
-      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-G27",
-      "text": "Depto en Las Condes, 49m², 1D/1B. Precio: 5383 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). Luminoso y con vista despejada. A 277m de la estación de metro Los Leones. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.270.000/mes.",
+      "id": "PROP-Z38",
+      "text": "Depto en Macul, 72m², 2D/2B. Ubicación premium, la más solicitada por sus clientes. Precio: 5146 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 290m de la estación de metro Tobalaba. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $930.000/mes.",
       "truth": {
-        "bedrooms": 1,
-        "distance_transport_m": 277,
+        "bedrooms": 2,
+        "distance_transport_m": 290,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": 5383,
+        "parking": "asignado",
+        "price_uf": 5146,
         "price_clp": null,
-        "rent_monthly_clp": 1270000,
-        "location": "Las Condes"
+        "rent_monthly_clp": 930000,
+        "location": "Macul"
       },
       "scenario": "budget_uf",
-      "trap": "precio en UF sobre presupuesto + frase de marketing"
+      "trap": "precio en UF sobre presupuesto + frase de marketing; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-D87",
-      "text": "Depto en Maipú, 70m², 2D/2B. Valor $180.700.000. Luminoso y con vista despejada. A 272m de la estación de metro Manquehue. Pet friendly con límite de 7kg por mascota. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "id": "PROP-R68",
+      "text": "Depto en Macul, 53m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Ubicación premium, la más solicitada por sus clientes. Precio: 4.435 UF. A 249m de la estación de metro Lo Vial. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.100.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 272,
+        "bedrooms": 1,
+        "distance_transport_m": 249,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
-          "max_kg": 7
+          "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 180700000,
-        "rent_monthly_clp": null,
-        "location": "Maipú"
+        "parking": "asignado",
+        "price_uf": 4435,
+        "price_clp": null,
+        "rent_monthly_clp": 1100000,
+        "location": "Macul"
       },
-      "scenario": "pets_weight",
-      "trap": "límite de peso 7kg < mascota 15kg"
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-J27",
-      "text": "Depto en Ñuñoa, 85m², 3 dormitorios, 1 baño. Valor $178.400.000. A 843m de paradero de buses troncal, y 1,4km del metro más cercano. Solo se admiten gatos de cualquier tamaño. Excelente conectividad. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.130.000/mes.",
+      "id": "PROP-D57",
+      "text": "Casa en Vitacura, 86m², 3D/2B. Precio: UF 3.715. A 393m de paradero de buses troncal, y 1,5km del metro más cercano. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye estacionamiento propio. Recién remodelado.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 843,
+        "distance_transport_m": 393,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -173,21 +157,42 @@
           ],
           "max_kg": null
         },
-        "parking": "asignado",
-        "price_uf": null,
-        "price_clp": 178400000,
-        "rent_monthly_clp": 1130000,
-        "location": "Ñuñoa"
+        "parking": "propio",
+        "price_uf": 3715,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
       },
-      "scenario": "pets_species",
-      "trap": "acepta la otra especie, no la del comprador"
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
     },
     {
-      "id": "PROP-X57",
-      "text": "Depto en Providencia, 83m², 3 dormitorios, 2 baños. Valor $202.500.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 708m de la estación de metro Príncipe de Gales. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $1.110.000/mes.",
+      "id": "PROP-P96",
+      "text": "Depto en Macul, 98m², 4D/1B. Ubicación premium, la más solicitada por sus clientes. Precio: $169.000.000. A 1,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 325m. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.350.000/mes.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 708,
+        "bedrooms": 4,
+        "distance_transport_m": 325,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 169000000,
+        "rent_monthly_clp": 1350000,
+        "location": "Macul"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita); comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-E95",
+      "text": "Depto en Macul, 80m², 2D/1B. Precio: UF 4.793. A 178m de la estación de metro Ñuñoa. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $760.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 178,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -195,13 +200,13 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": null,
-        "price_clp": 202500000,
-        "rent_monthly_clp": 1110000,
-        "location": "Providencia"
+        "price_uf": 4793,
+        "price_clp": null,
+        "rent_monthly_clp": 760000,
+        "location": "Macul"
       },
-      "scenario": "budget_clp",
-      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
     }
   ]
 }

@@ -1,21 +1,47 @@
 {
   "id": "train_0170",
-  "uf_value": 40300,
+  "uf_value": 38100,
   "hard_constraints": {
-    "presupuesto_max_clp": 201000000,
-    "mascota_especie": "perro",
-    "mascota_kg": 20,
+    "presupuesto_max_clp": 181500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 7,
     "distancia_max_transporte_m": 1000,
     "dormitorios_min": 2,
     "estacionamiento_requerido": true
   },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "La Florida"
+    ]
+  },
   "properties": [
     {
-      "id": "PROP-T94",
-      "text": "Depto en Macul, 54m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio: 4.772 UF. A 869m de la estación de metro Príncipe de Gales. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. ¡Oportunidad única! Incluye 1 estacionamiento. Arriendo estimado: $1.500.000/mes.",
+      "id": "PROP-D81",
+      "text": "Depto en La Florida, 80m², 2 dormitorios, 2 baños. ¡En la comuna favorita del cliente! Valor $171.000.000. Ubicado a 1,6 km de la estación Lo Vial, unos 19 minutos caminando. Aceptamos mascotas, gatos y perros hasta 4kg. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
       "truth": {
-        "bedrooms": 1,
-        "distance_transport_m": 869,
+        "bedrooms": 2,
+        "distance_transport_m": 1550,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 171000000,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      },
+      "scenario": "multi",
+      "trap": "distancia excedida, minimizada en minutos caminando; límite de peso 4kg < mascota 7kg; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-J99",
+      "text": "Depto en La Florida, 80m², 3D/2B. Ubicación premium, la más solicitada por sus clientes. Valor $146.100.000. A 1650m del metro Plaza Egaña, a pasos de todo. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo referencial de la zona: $990.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1650,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -23,41 +49,125 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": 4772,
-        "price_clp": null,
-        "rent_monthly_clp": 1500000,
-        "location": "Macul"
+        "price_uf": null,
+        "price_clp": 146100000,
+        "rent_monthly_clp": 990000,
+        "location": "La Florida"
       },
-      "scenario": "bedrooms",
-      "trap": "dormitorio 'convertible' que no es real"
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-P98",
-      "text": "Depto en Macul, 65m², 2D/1B. Valor $194.200.000. A 507m de la estación de metro Franklin. Pet friendly con límite de 20kg por mascota. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.230.000/mes. Excelente conectividad.",
+      "id": "PROP-R76",
+      "text": "Depto en Peñalolén, 81m², 3D/1B. Precio rebajado a UF 4.730. A 245m de la estación de metro Escuela Militar. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $910.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 507,
+        "bedrooms": 3,
+        "distance_transport_m": 245,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
-          "max_kg": 20
+          "max_kg": null
         },
-        "parking": "asignado",
-        "price_uf": null,
-        "price_clp": 194200000,
-        "rent_monthly_clp": 1230000,
-        "location": "Macul"
+        "parking": "propio",
+        "price_uf": 4730,
+        "price_clp": null,
+        "rent_monthly_clp": 910000,
+        "location": "Peñalolén"
       },
       "scenario": "pass",
-      "trap": "límite de peso igual al de la mascota"
+      "trap": "precio en UF a <2.5% del presupuesto"
     },
     {
-      "id": "PROP-J83",
-      "text": "Depto en Santiago Centro, 65m², 2D/1B. Precio rebajado a 3603 UF. A 272m de la estación de metro Bellas Artes. No se especifica política de mascotas. Incluye 1 estacionamiento techado asignado. Recién remodelado.",
+      "id": "PROP-T87",
+      "text": "Casa en La Reina, 108m², 4D/1B. Ideal para inversionistas. Precio: 4727 UF. A 508m de la estación de metro Tobalaba. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Sin estacionamiento.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 508,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 4727,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-L41",
+      "text": "Depto en La Florida, 75m², 2D/2B. Recién remodelado. Precio: UF 3.493. A 1000m de la estación de metro Lo Vial. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.110.000/mes.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 272,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3493,
+        "price_clp": null,
+        "rent_monthly_clp": 1110000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
+    },
+    {
+      "id": "PROP-P49",
+      "text": "Casa en La Florida, 102m², 4D/1B. ¡En la comuna favorita del cliente! Precio: 4971 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 617m de paradero de buses troncal, y 1,6km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.080.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 617,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4971,
+        "price_clp": null,
+        "rent_monthly_clp": 1080000,
+        "location": "La Florida"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-B22",
+      "text": "Depto en Las Condes, 103m², 4D/2B. Precio: $168.100.000. A 1300m del metro Cal y Canto, muy bien conectado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Ideal para inversionistas. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.120.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 168100000,
+        "rent_monthly_clp": 1120000,
+        "location": "Las Condes"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-V42",
+      "text": "Depto en Providencia, 82m², 3D/1B. Valor $165.500.000. A 2,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 946m. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $810.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 946,
         "pets": {
           "explicit": false,
           "allowed": false,
@@ -65,55 +175,13 @@
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 3603,
-        "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "Santiago Centro"
+        "price_uf": null,
+        "price_clp": 165500000,
+        "rent_monthly_clp": 810000,
+        "location": "Providencia"
       },
       "scenario": "pets_unspecified",
       "trap": "política de mascotas ausente (debe ser explícita)"
-    },
-    {
-      "id": "PROP-Q64",
-      "text": "Depto en Macul, 62m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Valor $166.800.000. A 612m de la estación de metro Cal y Canto. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.150.000/mes.",
-      "truth": {
-        "bedrooms": 1,
-        "distance_transport_m": 612,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "asignado",
-        "price_uf": null,
-        "price_clp": 166800000,
-        "rent_monthly_clp": 1150000,
-        "location": "Macul"
-      },
-      "scenario": "bedrooms",
-      "trap": "dormitorio 'convertible' que no es real"
-    },
-    {
-      "id": "PROP-U53",
-      "text": "Depto en La Florida, 69m², 2 dormitorios, 2 baños. Precio: 4935 UF. A 434m de la estación de metro Escuela Militar. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.400.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 434,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 4935,
-        "price_clp": null,
-        "rent_monthly_clp": 1400000,
-        "location": "La Florida"
-      },
-      "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
     }
   ]
 }

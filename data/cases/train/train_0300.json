@@ -1,21 +1,27 @@
 {
   "id": "train_0300",
-  "uf_value": 38050,
+  "uf_value": 39450,
   "hard_constraints": {
-    "presupuesto_max_clp": 90000000,
+    "presupuesto_max_clp": 122000000,
     "mascota_especie": "perro",
-    "mascota_kg": 12,
+    "mascota_kg": 30,
     "distancia_max_transporte_m": 1000,
     "dormitorios_min": 2,
     "estacionamiento_requerido": true
   },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Recoleta",
+      "San Miguel"
+    ]
+  },
   "properties": [
     {
-      "id": "PROP-V27",
-      "text": "Depto en Las Condes, 98m², 4 dormitorios, 2 baños. Precio: $86.600.000. Ubicado a 1,2 km de la estación Los Leones, unos 16 minutos caminando. ¡Oportunidad única! Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $470.000/mes.",
+      "id": "PROP-B64",
+      "text": "Depto en La Reina, 94m², 3D/2B. Precio rebajado a 3039 UF. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 408m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Recién remodelado. Incluye 1 estacionamiento. Arriendo estimado: $530.000/mes.",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 1250,
+        "bedrooms": 3,
+        "distance_transport_m": 408,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -23,160 +29,97 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": null,
-        "price_clp": 86600000,
-        "rent_monthly_clp": 470000,
-        "location": "Las Condes"
+        "price_uf": 3039,
+        "price_clp": null,
+        "rent_monthly_clp": 530000,
+        "location": "La Reina"
       },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
     },
     {
-      "id": "PROP-Z66",
-      "text": "Depto en Estación Central, 64m², 2D/2B. Precio: UF 2.384 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 316m. Se aceptan mascotas pequeñas y medianas hasta 9kg, previa autorización de la administración. Ideal para inversionistas. Incluye 1 estacionamiento subterráneo asignado.",
+      "id": "PROP-H69",
+      "text": "Depto en Recoleta, 72m², 2 dormitorios, 1 baño. Precio: UF 3.125 (precio negociable, el propietario está abierto a ofertas). A 1350m del metro Tobalaba, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Ideal para inversionistas. Arriendo referencial de la zona: $690.000/mes.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 316,
+        "distance_transport_m": 1350,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
-          "max_kg": 9
+          "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 2384,
+        "price_uf": 3125,
         "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "Estación Central"
+        "rent_monthly_clp": 690000,
+        "location": "Recoleta"
       },
       "scenario": "multi",
-      "trap": "límite de peso 9kg < mascota 12kg; precio en UF sobre presupuesto + frase de marketing"
+      "trap": "distancia excedida, minimizada en minutos caminando; precio en UF sobre presupuesto + frase de marketing; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-K30",
-      "text": "Depto en Providencia, 97m², 3D/2B. Precio: UF 1.792. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 403m. Entrega inmediata. Pet friendly con límite de 4kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $530.000/mes.",
+      "id": "PROP-C44",
+      "text": "Depto en La Cisterna, 107m², 4D/1B. Precio: UF 2.966. A 735m de la estación de metro Baquedano. Aceptamos mascotas, gatos y perros hasta 30kg. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $820.000/mes.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 403,
+        "bedrooms": 4,
+        "distance_transport_m": 735,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
-          "max_kg": 4
+          "max_kg": 30
         },
         "parking": "asignado",
-        "price_uf": 1792,
+        "price_uf": 2966,
         "price_clp": null,
-        "rent_monthly_clp": 530000,
-        "location": "Providencia"
-      },
-      "scenario": "pets_weight",
-      "trap": "límite de peso 4kg < mascota 12kg"
-    },
-    {
-      "id": "PROP-P18",
-      "text": "Depto en Independencia, 75m², 2D/1B. Valor $75.500.000. A 624m de la estación de metro Baquedano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Recién remodelado. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $410.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 624,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "calle",
-        "price_uf": null,
-        "price_clp": 75500000,
-        "rent_monthly_clp": 410000,
-        "location": "Independencia"
-      },
-      "scenario": "parking",
-      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
-    },
-    {
-      "id": "PROP-G46",
-      "text": "Depto en Ñuñoa, 79m², 2D/2B. Precio: UF 2.329. A 555m de la estación de metro Cal y Canto. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $400.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 555,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 2329,
-        "price_clp": null,
-        "rent_monthly_clp": 400000,
-        "location": "Ñuñoa"
+        "rent_monthly_clp": 820000,
+        "location": "La Cisterna"
       },
       "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
+      "trap": "límite de peso igual al de la mascota"
     },
     {
-      "id": "PROP-J81",
-      "text": "Depto en Vitacura, 95m², 3 dormitorios, 1 baño. Precio: 1913 UF. A 2,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 838m. Pet friendly con límite de 11kg por mascota. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "id": "PROP-Y40",
+      "text": "Depto en Maipú, 62m², 2 dormitorios, 1 baño. Precio: UF 2.961. A 270m de la estación de metro Plaza Egaña. Incluye estacionamiento propio. Arriendo referencial de la zona: $790.000/mes.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 838,
+        "bedrooms": 2,
+        "distance_transport_m": 270,
         "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": 11
-        },
-        "parking": "propio",
-        "price_uf": 1913,
-        "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "Vitacura"
-      },
-      "scenario": "pets_weight",
-      "trap": "límite de peso 11kg < mascota 12kg"
-    },
-    {
-      "id": "PROP-W27",
-      "text": "Casa en Macul, 83m², 3D/2B. Precio: 2.313 UF. A 310m de paradero de buses troncal, y 1,2km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $370.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 310,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
+          "explicit": false,
+          "allowed": false,
           "species": [],
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": 2313,
+        "price_uf": 2961,
         "price_clp": null,
-        "rent_monthly_clp": 370000,
-        "location": "Macul"
+        "rent_monthly_clp": 790000,
+        "location": "Maipú"
       },
-      "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
     },
     {
-      "id": "PROP-A72",
-      "text": "Depto en Las Condes, 67m², 2D/2B. Precio: $77.500.000. A 157m de la estación de metro Ñuñoa. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo estimado: $530.000/mes.",
+      "id": "PROP-D89",
+      "text": "Casa en Recoleta, 81m², 3 dormitorios, 1 baño. Excelente conectividad. Valor $90.000.000. A 615m de la estación de metro Príncipe de Gales. Incluye estacionamiento propio. Arriendo estimado: $600.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 157,
+        "bedrooms": 3,
+        "distance_transport_m": 615,
         "pets": {
-          "explicit": true,
-          "allowed": true,
+          "explicit": false,
+          "allowed": false,
           "species": [],
           "max_kg": null
         },
         "parking": "propio",
         "price_uf": null,
-        "price_clp": 77500000,
-        "rent_monthly_clp": 530000,
-        "location": "Las Condes"
+        "price_clp": 90000000,
+        "rent_monthly_clp": 600000,
+        "location": "Recoleta"
       },
-      "scenario": "pass",
-      "trap": null
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita); comuna preferida (soft) pero viola una hard constraint: no rescata"
     }
   ]
 }

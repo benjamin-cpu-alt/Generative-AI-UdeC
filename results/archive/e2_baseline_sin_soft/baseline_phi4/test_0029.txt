@@ -1,0 +1,31 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-E93",
+      "price_clp": 428160000,
+      "roi_pct": 9.52
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-Q84",
+      "failed_constraints": ["2. Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado (no sirve estacionamiento de visitas ni en la calle)."]
+    },
+    {
+      "id": "PROP-T35",
+      "failed_constraints": ["1. Presupuesto Máximo de Compra: $173.500.000 CLP (precio en UF: $3606 UF = $87.837.636 CLP, excediendo el presupuesto)."]
+    },
+    {
+      "id": "PROP-A24",
+      "failed_constraints": ["1. Presupuesto Máximo de Compra: $173.500.000 CLP (precio en UF: 3.647 UF = $41.311.818 CLP, dentro del presupuesto pero no se menciona el presupuesto máximo en CLP)."]
+    },
+    {
+      "id": "PROP-W85",
+      "failed_constraints": ["1. Presupuesto Máximo de Compra: $173.500.000 CLP (precio en CLP: $144.200.000, dentro del presupuesto)."]
+    },
+    {
+      "id": "PROP-J90",
+      "failed_constraints": ["1. Presupuesto Máximo de Compra: $173.500.000 CLP (precio en CLP: $129.100.000, dentro del presupuesto).", "2. Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado (incluye estacionamiento en la calle, pero no se especifica si es asignado o propio)."]
+    }
+  ]
+}

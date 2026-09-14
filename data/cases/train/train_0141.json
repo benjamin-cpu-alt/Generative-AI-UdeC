@@ -1,142 +1,146 @@
 {
   "id": "train_0141",
-  "uf_value": 39900,
+  "uf_value": 38050,
   "hard_constraints": {
-    "presupuesto_max_clp": 191500000,
+    "presupuesto_max_clp": 132500000,
     "mascota_especie": "perro",
-    "mascota_kg": 4,
-    "distancia_max_transporte_m": 1000,
+    "mascota_kg": 20,
+    "distancia_max_transporte_m": 1500,
     "dormitorios_min": 3,
     "estacionamiento_requerido": true
   },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Vitacura",
+      "Santiago Centro"
+    ]
+  },
   "properties": [
     {
-      "id": "PROP-P49",
-      "text": "Casa en Las Condes, 89m², 3 dormitorios, 2 baños. Valor $144.700.000. A 479m de la estación de metro Plaza Egaña. Ideal para inversionistas. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.080.000/mes.",
+      "id": "PROP-W44",
+      "text": "Depto en Santiago Centro, 98m², 4 dormitorios, 2 baños. Ubicación premium, la más solicitada por sus clientes. Precio: 2.833 UF. A 268m de paradero de buses troncal, y 0,8km del metro más cercano. No se aceptan mascotas. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $580.000/mes.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 479,
+        "bedrooms": 4,
+        "distance_transport_m": 268,
         "pets": {
           "explicit": true,
-          "allowed": true,
-          "species": [
-            "gato"
-          ],
-          "max_kg": null
-        },
-        "parking": "asignado",
-        "price_uf": null,
-        "price_clp": 144700000,
-        "rent_monthly_clp": 1080000,
-        "location": "Las Condes"
-      },
-      "scenario": "pets_species",
-      "trap": "acepta la otra especie, no la del comprador"
-    },
-    {
-      "id": "PROP-K60",
-      "text": "Depto en La Florida, 95m², 3 dormitorios, 2 baños. Precio: UF 4.774. Entrega inmediata. A 818m de paradero de buses troncal, y 1,9km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.040.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 818,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 4774,
-        "price_clp": null,
-        "rent_monthly_clp": 1040000,
-        "location": "La Florida"
-      },
-      "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
-    },
-    {
-      "id": "PROP-F23",
-      "text": "Depto en Independencia, 88m², 3 dormitorios, 1 baño. Precio: 3.511 UF. A 661m de paradero de buses troncal, y 1,7km del metro más cercano. No se especifica política de mascotas. Piso alto, orientación norte. Incluye estacionamiento propio. Arriendo referencial de la zona: $710.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 661,
-        "pets": {
-          "explicit": false,
           "allowed": false,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": 3511,
+        "parking": "asignado",
+        "price_uf": 2833,
         "price_clp": null,
-        "rent_monthly_clp": 710000,
-        "location": "Independencia"
+        "rent_monthly_clp": 580000,
+        "location": "Santiago Centro"
       },
-      "scenario": "pets_unspecified",
-      "trap": "política de mascotas ausente (debe ser explícita)"
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-Y86",
-      "text": "Casa en Independencia, 114m², 4 dormitorios, 1 baño. Valor $186.700.000. Recién remodelado. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 463m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $1.470.000/mes.",
+      "id": "PROP-B61",
+      "text": "Depto en Las Condes, 91m², 3D/2B. Precio: UF 3.206. Ubicado a 2,4 km de la estación Bellas Artes, unos 30 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.030.000/mes.",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 463,
+        "bedrooms": 3,
+        "distance_transport_m": 2400,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
-        },
-        "parking": "calle",
-        "price_uf": null,
-        "price_clp": 186700000,
-        "rent_monthly_clp": 1470000,
-        "location": "Independencia"
-      },
-      "scenario": "parking",
-      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
-    },
-    {
-      "id": "PROP-T40",
-      "text": "Casa en Maipú, 98m², 4 dormitorios, 2 baños. Precio: 4424 UF. A 524m de paradero de buses troncal, y 1,6km del metro más cercano. Pet friendly con límite de 2kg por mascota. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.400.000/mes.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 524,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": 2
         },
         "parking": "asignado",
-        "price_uf": 4424,
+        "price_uf": 3206,
         "price_clp": null,
-        "rent_monthly_clp": 1400000,
-        "location": "Maipú"
+        "rent_monthly_clp": 1030000,
+        "location": "Las Condes"
       },
-      "scenario": "pets_weight",
-      "trap": "límite de peso 2kg < mascota 4kg"
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
     },
     {
-      "id": "PROP-A76",
-      "text": "Depto en Vitacura, 105m², 4D/1B. Precio: 4875 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 983m de la estación de metro Plaza Egaña. Piso alto, orientación norte. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento.",
+      "id": "PROP-L40",
+      "text": "Depto en Vitacura, 87m², 3 dormitorios, 1 baño. Justo en el sector que busca el comprador. Precio: 2941 UF. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 639m. Pet friendly con límite de 17kg por mascota. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo referencial de la zona: $850.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 639,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 17
+        },
+        "parking": "calle",
+        "price_uf": 2941,
+        "price_clp": null,
+        "rent_monthly_clp": 850000,
+        "location": "Vitacura"
+      },
+      "scenario": "multi",
+      "trap": "límite de peso 17kg < mascota 20kg; estacionamiento 'calle' menciona la palabra pero no cumple; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-Y22",
+      "text": "Depto en Estación Central, 103m², 4D/1B. Precio: UF 2.786. Piso alto, orientación norte. A 1185m de la estación de metro Vicente Valdés. Aceptamos mascotas, gatos y perros hasta 15kg. Estacionamiento en la calle, sin problemas para aparcar en el sector.",
       "truth": {
         "bedrooms": 4,
-        "distance_transport_m": 983,
+        "distance_transport_m": 1185,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "calle",
+        "price_uf": 2786,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "multi",
+      "trap": "límite de peso 15kg < mascota 20kg; estacionamiento 'calle' menciona la palabra pero no cumple"
+    },
+    {
+      "id": "PROP-P89",
+      "text": "Casa en Vitacura, 81m², 3D/2B. Valor $116.500.000. ¡Oportunidad única! A 2,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1493m. Se aceptan mascotas pequeñas y medianas hasta 17kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $760.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1493,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 17
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 116500000,
+        "rent_monthly_clp": 760000,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 17kg < mascota 20kg; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-Z72",
+      "text": "Depto en La Reina, 70m², 2 dormitorios + loggia cerrada, ideal como pieza extra, 2B. Precio: UF 3.332. A 749m de la estación de metro Plaza Egaña. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 749,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": 4875,
+        "parking": "asignado",
+        "price_uf": 3332,
         "price_clp": null,
         "rent_monthly_clp": null,
-        "location": "Vitacura"
+        "location": "La Reina"
       },
-      "scenario": "budget_uf",
-      "trap": "precio en UF sobre presupuesto + frase de marketing"
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
     }
   ]
 }

@@ -1,149 +1,68 @@
 {
   "id": "test_0029",
-  "uf_value": 39350,
+  "uf_value": 40350,
   "hard_constraints": {
-    "presupuesto_max_clp": 173500000,
-    "mascota_especie": "perro",
-    "mascota_kg": 20,
-    "distancia_max_transporte_m": 600,
-    "dormitorios_min": 1,
+    "presupuesto_max_clp": 95500000,
+    "mascota_especie": "gato",
+    "mascota_kg": 7,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
     "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "San Miguel"
+    ]
   },
   "properties": [
     {
-      "id": "PROP-Q84",
-      "text": "Depto en Macul, 72m², 2D/2B. Valor $169.100.000. A 332m de paradero de buses troncal, y 1,4km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Piso alto, orientación norte. Arriendo referencial de la zona: $1.400.000/mes.",
+      "id": "PROP-Z74",
+      "text": "Depto en Vitacura, 96m², 4D/1B. Precio: UF 1.933. A 373m de la estación de metro Franklin. Pet friendly con límite de 7kg por mascota. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $490.000/mes. Ideal para inversionistas.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 332,
+        "bedrooms": 4,
+        "distance_transport_m": 373,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
-          "max_kg": null
-        },
-        "parking": "visitas",
-        "price_uf": null,
-        "price_clp": 169100000,
-        "rent_monthly_clp": 1400000,
-        "location": "Macul"
-      },
-      "scenario": "parking",
-      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
-    },
-    {
-      "id": "PROP-T35",
-      "text": "Depto en Macul, 78m², 2 dormitorios, 1 baño. Precio: 3606 UF. A 850m del metro Los Leones, a pasos de todo. ¡Oportunidad única! Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 850,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
+          "max_kg": 7
         },
         "parking": "propio",
-        "price_uf": 3606,
+        "price_uf": 1933,
         "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "Macul"
-      },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
-    },
-    {
-      "id": "PROP-E93",
-      "text": "Depto en La Florida, 74m², 2D/2B. Precio rebajado. Precio rebajado a UF 4.216. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 188m. Pet friendly con límite de 20kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.370.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 188,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": 20
-        },
-        "parking": "asignado",
-        "price_uf": 4216,
-        "price_clp": null,
-        "rent_monthly_clp": 1370000,
-        "location": "La Florida"
+        "rent_monthly_clp": 490000,
+        "location": "Vitacura"
       },
       "scenario": "pass",
       "trap": "límite de peso igual al de la mascota"
     },
     {
-      "id": "PROP-A24",
-      "text": "Depto en Recoleta, 66m², 2D/2B. Ideal para inversionistas. Precio rebajado a 3.647 UF. A 900m del metro Baquedano, a pasos de todo. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado.",
+      "id": "PROP-J38",
+      "text": "Depto en Recoleta, 113m², 4 dormitorios, 2 baños. ¡Oportunidad única! Precio: 2.416 UF (el mejor valor por m² del sector). A 781m de paradero de buses troncal, y 1,8km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $460.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 900,
+        "bedrooms": 4,
+        "distance_transport_m": 781,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
-          "max_kg": null
-        },
-        "parking": "asignado",
-        "price_uf": 3647,
-        "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "Recoleta"
-      },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
-    },
-    {
-      "id": "PROP-W85",
-      "text": "Depto en Santiago Centro, 51m², 1D/1B. Precio: $144.200.000. A 305m de paradero de buses troncal, y 1,3km del metro más cercano. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $870.000/mes.",
-      "truth": {
-        "bedrooms": 1,
-        "distance_transport_m": 305,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [
-            "perro"
-          ],
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": null,
-        "price_clp": 144200000,
-        "rent_monthly_clp": 870000,
-        "location": "Santiago Centro"
+        "price_uf": 2416,
+        "price_clp": null,
+        "rent_monthly_clp": 460000,
+        "location": "Recoleta"
       },
-      "scenario": "pass",
-      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
     },
     {
-      "id": "PROP-J90",
-      "text": "Depto en La Cisterna, 68m², 2 dormitorios, 2 baños. Valor $129.100.000. A 190m de la estación de metro Tobalaba. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. ¡Oportunidad única! Arriendo referencial de la zona: $1.030.000/mes.",
+      "id": "PROP-N39",
+      "text": "Casa en Recoleta, 97m², 3 dormitorios, 2 baños. Precio: 2.426 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 321m de paradero de buses troncal, y 1,5km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Recién remodelado. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $590.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 190,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "calle",
-        "price_uf": null,
-        "price_clp": 129100000,
-        "rent_monthly_clp": 1030000,
-        "location": "La Cisterna"
-      },
-      "scenario": "parking",
-      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
-    },
-    {
-      "id": "PROP-K27",
-      "text": "Depto estudio en Estación Central, 50m², ambiente único + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio: 4262 UF. A 275m de la estación de metro Bellas Artes. Luminoso y con vista despejada. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $960.000/mes.",
-      "truth": {
-        "bedrooms": 0,
-        "distance_transport_m": 275,
+        "bedrooms": 3,
+        "distance_transport_m": 321,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -151,10 +70,52 @@
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 4262,
+        "price_uf": 2426,
         "price_clp": null,
-        "rent_monthly_clp": 960000,
-        "location": "Estación Central"
+        "rent_monthly_clp": 590000,
+        "location": "Recoleta"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-X51",
+      "text": "Depto en San Miguel, 104m², 4D/2B. Ubicación premium, la más solicitada por sus clientes. Precio: UF 2.458 (precio negociable, el propietario está abierto a ofertas). A 501m de la estación de metro Bellas Artes. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 501,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2458,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-M87",
+      "text": "Depto en Macul, 71m², 2 dormitorios + loggia cerrada, ideal como pieza extra, 1B. Valor $73.200.000. A 873m de la estación de metro Irarrázaval. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 873,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 73200000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
       },
       "scenario": "bedrooms",
       "trap": "dormitorio 'convertible' que no es real"

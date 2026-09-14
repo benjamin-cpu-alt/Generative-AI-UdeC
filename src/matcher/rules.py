@@ -1,7 +1,7 @@
-"""Las 5 hard constraints + ROI, implementadas de forma determinista.
+"""Las 5 hard constraints + ROI + ranking por soft constraints, de forma determinista.
 
 Produce la salida esperada (ground truth) para un caso. Es la única fuente de
-verdad sobre qué propiedades deben aprobarse: el modelo nunca la ve.
+verdad sobre qué propiedades deben aprobarse y en qué orden: el modelo nunca la ve.
 """
 from __future__ import annotations
 
@@ -26,10 +26,16 @@ class ExpectedProperty:
     price_clp: int
     roi_pct: Optional[float]            # None si el texto no da arriendo
     failed_constraints: List[str] = field(default_factory=list)
+    preferred_location: bool = False    # soft constraint: comuna preferida del comprador
 
     @property
     def approved(self) -> bool:
         return not self.failed_constraints
+
+    @property
+    def rank_key(self) -> tuple:
+        """Mayor = mejor. Comuna preferida primero; luego ROI (sin arriendo = último)."""
+        return (self.preferred_location, self.roi_pct is not None, self.roi_pct or 0.0)
 
 
 @dataclass
@@ -43,6 +49,24 @@ class Expected:
     @property
     def rejected_ids(self) -> set:
         return {k for k, v in self.by_id.items() if not v.approved}
+
+    @property
+    def ranking(self) -> List[List[str]]:
+        """Aprobadas ordenadas de mejor a peor, agrupadas en niveles de empate
+        (misma preferencia y mismo ROI): dentro de un nivel cualquier orden vale."""
+        approved = sorted((v for v in self.by_id.values() if v.approved),
+                          key=lambda e: e.rank_key, reverse=True)
+        tiers: List[List[str]] = []
+        for e in approved:
+            if tiers and self.by_id[tiers[-1][0]].rank_key == e.rank_key:
+                tiers[-1].append(e.id)
+            else:
+                tiers.append([e.id])
+        return tiers
+
+    @property
+    def ranked_ids(self) -> List[str]:
+        return [pid for tier in self.ranking for pid in tier]
 
 
 def price_in_clp(prop: Property, uf_value: float) -> int:
@@ -93,7 +117,13 @@ def evaluate_property(prop: Property, case: Case) -> ExpectedProperty:
         price_clp=clp,
         roi_pct=roi_pct(t.rent_monthly_clp, clp),
         failed_constraints=failed,
+        preferred_location=is_preferred_location(t.location, case),
     )
+
+
+def is_preferred_location(location: Optional[str], case: Case) -> bool:
+    prefs = {x.strip().casefold() for x in case.soft_constraints.ubicaciones_preferidas}
+    return bool(location) and location.strip().casefold() in prefs
 
 
 def expected_output(case: Case) -> Expected:

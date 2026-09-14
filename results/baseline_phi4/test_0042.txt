@@ -1,0 +1,32 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-T11",
+      "price_clp": 39960,
+      "roi_pct": 99.94
+    },
+    {
+      "id": "PROP-R48",
+      "price_clp": 130000000,
+      "roi_pct": 44.52
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-Z71",
+      "failed_constraints": ["Mascotas: 1 perro de 15kg no permitido (perro permitido, pero no 15kg)."]
+    },
+    {
+      "id": "PROP-M20",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 18 minutos caminando (más de 800m)."]
+    },
+    {
+      "id": "PROP-P43",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 1.6km del metro más cercano (más de 800m)."]
+    },
+    {
+      "id": "PROP-J19",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 596m del metro más cercano (mejor, pero no preferencia de ubicación)."]
+    }
+  ]
+}

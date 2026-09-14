@@ -1,121 +1,124 @@
 {
   "id": "train_0282",
-  "uf_value": 38650,
+  "uf_value": 39850,
   "hard_constraints": {
-    "presupuesto_max_clp": 104500000,
+    "presupuesto_max_clp": 118000000,
     "mascota_especie": "perro",
-    "mascota_kg": 30,
+    "mascota_kg": 22,
     "distancia_max_transporte_m": 1200,
-    "dormitorios_min": 2,
+    "dormitorios_min": 3,
     "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "La Cisterna"
+    ]
   },
   "properties": [
     {
-      "id": "PROP-L38",
-      "text": "Depto en La Florida, 98m², 4 dormitorios, 2 baños. Precio: 1977 UF. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 781m. Aceptamos mascotas, gatos y perros hasta 29kg. Incluye 1 estacionamiento subterráneo asignado. Ideal para inversionistas. Arriendo referencial de la zona: $620.000/mes.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 781,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": 29
-        },
-        "parking": "asignado",
-        "price_uf": 1977,
-        "price_clp": null,
-        "rent_monthly_clp": 620000,
-        "location": "La Florida"
-      },
-      "scenario": "pets_weight",
-      "trap": "límite de peso 29kg < mascota 30kg"
-    },
-    {
-      "id": "PROP-N60",
-      "text": "Depto en La Reina, 94m², 3D/2B. Valor $98.000.000. A 1053m de la estación de metro Plaza Egaña. Aceptamos mascotas, gatos y perros hasta 30kg. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Entrega inmediata. Arriendo referencial de la zona: $640.000/mes.",
+      "id": "PROP-K86",
+      "text": "Depto en San Miguel, 93m², 3D/1B. Precio: 2.936 UF. A 696m de la estación de metro Escuela Militar. No se especifica política de mascotas. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Excelente conectividad. Arriendo referencial de la zona: $940.000/mes.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 1053,
+        "distance_transport_m": 696,
         "pets": {
-          "explicit": true,
-          "allowed": true,
+          "explicit": false,
+          "allowed": false,
           "species": [],
-          "max_kg": 30
+          "max_kg": null
         },
         "parking": "propio",
-        "price_uf": null,
-        "price_clp": 98000000,
-        "rent_monthly_clp": 640000,
-        "location": "La Reina"
-      },
-      "scenario": "pass",
-      "trap": "límite de peso igual al de la mascota"
-    },
-    {
-      "id": "PROP-J87",
-      "text": "Depto en San Miguel, 88m², 3 dormitorios, 1 baño. Precio rebajado a $78.900.000. A 226m de la estación de metro Lo Vial. Ideal para inversionistas. Pet friendly con límite de 30kg por mascota. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $370.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 226,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": 30
-        },
-        "parking": "asignado",
-        "price_uf": null,
-        "price_clp": 78900000,
-        "rent_monthly_clp": 370000,
+        "price_uf": 2936,
+        "price_clp": null,
+        "rent_monthly_clp": 940000,
         "location": "San Miguel"
       },
-      "scenario": "pass",
-      "trap": "límite de peso igual al de la mascota"
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
     },
     {
-      "id": "PROP-S19",
-      "text": "Depto en Recoleta, 64m², 2D/1B. Precio: UF 2.592. A 850m de paradero de buses troncal, y 1,8km del metro más cercano. Piso alto, orientación norte. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado.",
+      "id": "PROP-Q45",
+      "text": "Depto en La Cisterna, 86m², 3D/1B. ¡En la comuna favorita del cliente! Precio: UF 2.881. A 376m de paradero de buses troncal, y 1,4km del metro más cercano. Aceptamos mascotas, gatos y perros hasta 17kg. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $560.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 850,
+        "bedrooms": 3,
+        "distance_transport_m": 376,
         "pets": {
           "explicit": true,
           "allowed": true,
-          "species": [
-            "gato"
-          ],
-          "max_kg": null
+          "species": [],
+          "max_kg": 17
         },
         "parking": "asignado",
-        "price_uf": 2592,
+        "price_uf": 2881,
         "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "Recoleta"
+        "rent_monthly_clp": 560000,
+        "location": "La Cisterna"
       },
-      "scenario": "pets_species",
-      "trap": "acepta la otra especie, no la del comprador"
+      "scenario": "pets_weight",
+      "trap": "límite de peso 17kg < mascota 22kg; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-K30",
-      "text": "Depto en Las Condes, 75m², 2D/1B. Precio: 2.129 UF. Luminoso y con vista despejada. Ubicado a 1,4 km de la estación Los Leones, unos 18 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $690.000/mes.",
+      "id": "PROP-V32",
+      "text": "Casa en Peñalolén, 85m², 3D/1B. Recién remodelado. Precio: 2826 UF. Ubicado a 2,2 km de la estación Tobalaba, unos 28 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $870.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 1450,
+        "bedrooms": 3,
+        "distance_transport_m": 2200,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": 2129,
+        "parking": "asignado",
+        "price_uf": 2826,
         "price_clp": null,
-        "rent_monthly_clp": 690000,
-        "location": "Las Condes"
+        "rent_monthly_clp": 870000,
+        "location": "Peñalolén"
       },
       "scenario": "distance",
       "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-N19",
+      "text": "Depto en Estación Central, 114m², 4D/1B. Valor $95.700.000. Ubicado a 1,8 km de la estación Príncipe de Gales, unos 22 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 95700000,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
+    },
+    {
+      "id": "PROP-F15",
+      "text": "Depto en La Cisterna, 101m², 4 dormitorios, 1 baño. Precio: UF 2.906. A 911m de paradero de buses troncal, y 1,8km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Recién remodelado. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $710.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 911,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2906,
+        "price_clp": null,
+        "rent_monthly_clp": 710000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
     }
   ]
 }

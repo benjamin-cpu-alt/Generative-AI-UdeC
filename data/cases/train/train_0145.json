@@ -1,182 +1,169 @@
 {
   "id": "train_0145",
-  "uf_value": 39650,
+  "uf_value": 39000,
   "hard_constraints": {
-    "presupuesto_max_clp": 218000000,
-    "mascota_especie": "perro",
-    "mascota_kg": 6,
-    "distancia_max_transporte_m": 1500,
-    "dormitorios_min": 2,
+    "presupuesto_max_clp": 192000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 3,
     "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Macul",
+      "San Miguel"
+    ]
   },
   "properties": [
     {
-      "id": "PROP-B38",
-      "text": "Depto en Independencia, 58m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Ideal para inversionistas. Precio: UF 4.058. A 1384m de la estación de metro Baquedano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $790.000/mes.",
-      "truth": {
-        "bedrooms": 1,
-        "distance_transport_m": 1384,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "asignado",
-        "price_uf": 4058,
-        "price_clp": null,
-        "rent_monthly_clp": 790000,
-        "location": "Independencia"
-      },
-      "scenario": "bedrooms",
-      "trap": "dormitorio 'convertible' que no es real"
-    },
-    {
-      "id": "PROP-M54",
-      "text": "Depto en Estación Central, 90m², 3D/1B. Precio rebajado a $206.900.000. Piso alto, orientación norte. A 1361m de paradero de buses troncal, y 1,9km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 1361,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "visitas",
-        "price_uf": null,
-        "price_clp": 206900000,
-        "rent_monthly_clp": null,
-        "location": "Estación Central"
-      },
-      "scenario": "parking",
-      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
-    },
-    {
-      "id": "PROP-V48",
-      "text": "Casa en La Cisterna, 87m², 3D/1B. Valor $223.500.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 1,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 344m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Ideal para inversionistas. Arriendo estimado: $1.250.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 344,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "asignado",
-        "price_uf": null,
-        "price_clp": 223500000,
-        "rent_monthly_clp": 1250000,
-        "location": "La Cisterna"
-      },
-      "scenario": "budget_clp",
-      "trap": "precio en CLP sobre presupuesto, 'negociable'"
-    },
-    {
-      "id": "PROP-E26",
-      "text": "Casa en Las Condes, 106m², 4D/1B. Valor $185.000.000. A 1192m de la estación de metro Príncipe de Gales. Se aceptan mascotas pequeñas y medianas hasta 6kg, previa autorización de la administración. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.090.000/mes.",
+      "id": "PROP-T28",
+      "text": "Depto en Macul, 108m², 4D/2B. Precio: 4803 UF. ¡Oportunidad única! A 175m de paradero de buses troncal, y 0,6km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
       "truth": {
         "bedrooms": 4,
-        "distance_transport_m": 1192,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": 6
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 185000000,
-        "rent_monthly_clp": 1090000,
-        "location": "Las Condes"
-      },
-      "scenario": "pass",
-      "trap": "límite de peso igual al de la mascota"
-    },
-    {
-      "id": "PROP-R17",
-      "text": "Depto en Estación Central, 63m², 2D/2B. Precio: 5.188 UF. A 2150m del metro Manquehue, muy bien conectado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 2150,
+        "distance_transport_m": 175,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": 5188,
+        "parking": "asignado",
+        "price_uf": 4803,
         "price_clp": null,
         "rent_monthly_clp": null,
-        "location": "Estación Central"
-      },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
-    },
-    {
-      "id": "PROP-Q86",
-      "text": "Casa en Macul, 83m², 3 dormitorios, 1 baño. Valor $201.900.000. A 1238m de paradero de buses troncal, y 2,0km del metro más cercano. Pet friendly con límite de 6kg por mascota. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.420.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 1238,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": 6
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 201900000,
-        "rent_monthly_clp": 1420000,
         "location": "Macul"
-      },
-      "scenario": "pass",
-      "trap": "límite de peso igual al de la mascota"
-    },
-    {
-      "id": "PROP-T52",
-      "text": "Depto en Maipú, 65m², 2D/1B. Precio: 5435 UF. A 900m de la estación de metro Irarrázaval. Piso alto, orientación norte. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.160.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 900,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 5435,
-        "price_clp": null,
-        "rent_monthly_clp": 1160000,
-        "location": "Maipú"
       },
       "scenario": "pass",
       "trap": "precio en UF a <2.5% del presupuesto"
     },
     {
-      "id": "PROP-L48",
-      "text": "Depto en Independencia, 110m², 4 dormitorios, 1 baño. Valor $207.100.000. A 1385m de la estación de metro Baquedano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Sin estacionamiento.",
+      "id": "PROP-D27",
+      "text": "Depto en La Cisterna, 85m², 3D/2B. Valor $165.800.000. A 1,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 286m. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.350.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 286,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 165800000,
+        "rent_monthly_clp": 1350000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-J67",
+      "text": "Casa en Independencia, 102m², 4D/2B. Precio: 5.213 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 172m de la estación de metro Cal y Canto. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado.",
       "truth": {
         "bedrooms": 4,
-        "distance_transport_m": 1385,
+        "distance_transport_m": 172,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "ninguno",
-        "price_uf": null,
-        "price_clp": 207100000,
+        "parking": "asignado",
+        "price_uf": 5213,
+        "price_clp": null,
         "rent_monthly_clp": null,
         "location": "Independencia"
       },
-      "scenario": "parking",
-      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-P64",
+      "text": "Depto en Maipú, 76m², 2 dormitorios + loggia cerrada, ideal como pieza extra, 1B. Precio: UF 4.090. A 170m de la estación de metro Plaza Egaña. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.360.000/mes. Entrega inmediata.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 170,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4090,
+        "price_clp": null,
+        "rent_monthly_clp": 1360000,
+        "location": "Maipú"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-H15",
+      "text": "Casa en La Cisterna, 98m², 4D/2B. Valor $169.800.000. A 582m de la estación de metro Lo Vial. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.010.000/mes. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 582,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 169800000,
+        "rent_monthly_clp": 1010000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-A34",
+      "text": "Casa en Peñalolén, 114m², 4D/2B. Precio: 4.849 UF. A 319m de la estación de metro Irarrázaval. ¡Oportunidad única! Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo estimado: $1.270.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 319,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4849,
+        "price_clp": null,
+        "rent_monthly_clp": 1270000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-Y11",
+      "text": "Depto en La Cisterna, 102m², 4D/1B. Valor $200.500.000 (el mejor valor por m² del sector). A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 480m. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 480,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 200500000,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
     }
   ]
 }

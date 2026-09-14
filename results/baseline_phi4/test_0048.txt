@@ -1,0 +1,45 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-N44",
+      "price_clp": 19100000000,
+      "roi_pct": 78.57
+    },
+    {
+      "id": "PROP-Q93",
+      "price_clp": 23450000000,
+      "roi_pct": 54.00
+    },
+    {
+      "id": "PROP-L59",
+      "price_clp": 19984000000,
+      "roi_pct": 79.85
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-C72",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    },
+    {
+      "id": "PROP-K21",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    },
+    {
+      "id": "PROP-D81",
+      "failed_constraints": ["Presupuesto Máximo de Compra", "Distancia máxima a transporte público (metro O paradero de buses troncal)"]
+    },
+    {
+      "id": "PROP-M69",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal)"]
+    },
+    {
+      "id": "PROP-G38",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal)"]
+    },
+    {
+      "id": "PROP-L59",
+      "failed_constraints": ["Mascotas: Tiene 1 perro de 10kg (la propiedad debe permitir explícitamente mascotas de ese tamaño y especie)"]
+    }
+  ]
+}

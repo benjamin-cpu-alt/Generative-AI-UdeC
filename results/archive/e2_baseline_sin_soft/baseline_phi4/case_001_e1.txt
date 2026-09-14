@@ -1,0 +1,42 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-A42",
+      "price_clp": 15540000,
+      "roi_pct": 7.45
+    },
+    {
+      "id": "PROP-C88",
+      "price_clp": 1850000,
+      "roi_pct": 14.11
+    },
+    {
+      "id": "PROP-E33",
+      "price_clp": 1450000000,
+      "roi_pct": 11.52
+    },
+    {
+      "id": "PROP-F61",
+      "price_clp": 18500000,
+      "roi_pct": 12.21
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-B19",
+      "failed_constraints": ["Presupuesto Máximo de Compra", "Distancia máxima a transporte público (metro O paradero de buses troncal)"]
+    },
+    {
+      "id": "PROP-D05",
+      "failed_constraints": ["Mascotas", "Dormitorios: Mínimo 2 dormitorios reales"]
+    },
+    {
+      "id": "PROP-G77",
+      "failed_constraints": ["Mascotas", "Distancia máxima a transporte público (metro O paradero de buses troncal)"]
+    },
+    {
+      "id": "PROP-H12",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    }
+  ]
+}

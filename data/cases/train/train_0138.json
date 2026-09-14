@@ -1,105 +1,48 @@
 {
   "id": "train_0138",
-  "uf_value": 39200,
+  "uf_value": 38300,
   "hard_constraints": {
-    "presupuesto_max_clp": 91000000,
+    "presupuesto_max_clp": 96000000,
     "mascota_especie": "perro",
-    "mascota_kg": 15,
-    "distancia_max_transporte_m": 1200,
-    "dormitorios_min": 2,
+    "mascota_kg": 20,
+    "distancia_max_transporte_m": 500,
+    "dormitorios_min": 3,
     "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "La Reina",
+      "Peñalolén"
+    ]
   },
   "properties": [
     {
-      "id": "PROP-K60",
-      "text": "Casa en Macul, 112m², 4 dormitorios, 2 baños. Valor $89.400.000. ¡Oportunidad única! A 344m de la estación de metro Vicente Valdés. No se aceptan mascotas. Incluye estacionamiento propio.",
+      "id": "PROP-J47",
+      "text": "Depto en Maipú, 91m², 3 dormitorios, 1 baño. Piso alto, orientación norte. Precio: UF 2.384. A 259m de la estación de metro Ñuñoa. No se especifica política de mascotas. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $410.000/mes.",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 344,
+        "bedrooms": 3,
+        "distance_transport_m": 259,
         "pets": {
-          "explicit": true,
+          "explicit": false,
           "allowed": false,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 89400000,
-        "rent_monthly_clp": null,
-        "location": "Macul"
-      },
-      "scenario": "pets_none",
-      "trap": "no se aceptan mascotas"
-    },
-    {
-      "id": "PROP-U99",
-      "text": "Depto en Las Condes, 91m², 3 dormitorios, 2 baños. Valor $91.500.000 (¡bajo el presupuesto del cliente según nuestro tasador!). A 253m de la estación de metro Manquehue. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $540.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 253,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 91500000,
-        "rent_monthly_clp": 540000,
-        "location": "Las Condes"
-      },
-      "scenario": "budget_clp",
-      "trap": "precio en CLP sobre presupuesto, 'negociable'"
-    },
-    {
-      "id": "PROP-S51",
-      "text": "Depto en Peñalolén, 93m², 3 dormitorios, 1 baño. Valor $90.400.000. A 321m de la estación de metro Lo Vial. Excelente conectividad. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $690.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 321,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
         "parking": "asignado",
-        "price_uf": null,
-        "price_clp": 90400000,
-        "rent_monthly_clp": 690000,
-        "location": "Peñalolén"
-      },
-      "scenario": "pass",
-      "trap": null
-    },
-    {
-      "id": "PROP-G69",
-      "text": "Depto en Maipú, 90m², 3 dormitorios, 2 baños. Precio rebajado a 2.110 UF. Ubicado a 2,1 km de la estación Manquehue, unos 27 minutos caminando. Se aceptan mascotas pequeñas y medianas hasta 12kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 2150,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": 12
-        },
-        "parking": "asignado",
-        "price_uf": 2110,
+        "price_uf": 2384,
         "price_clp": null,
-        "rent_monthly_clp": null,
+        "rent_monthly_clp": 410000,
         "location": "Maipú"
       },
-      "scenario": "multi",
-      "trap": "límite de peso 12kg < mascota 15kg; distancia excedida, minimizada en minutos caminando"
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
     },
     {
-      "id": "PROP-H72",
-      "text": "Depto en Las Condes, 93m², 3D/1B. Valor $93.000.000 (el mejor valor por m² del sector). A 927m de la estación de metro Príncipe de Gales. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "id": "PROP-N36",
+      "text": "Depto en Peñalolén, 74m², 2 dormitorios + loggia cerrada, ideal como pieza extra, 2B. ¡En la comuna favorita del cliente! Valor $79.600.000. A 463m de paradero de buses troncal, y 1,2km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $530.000/mes.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 927,
+        "bedrooms": 2,
+        "distance_transport_m": 463,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -108,54 +51,142 @@
         },
         "parking": "asignado",
         "price_uf": null,
-        "price_clp": 93000000,
-        "rent_monthly_clp": null,
-        "location": "Las Condes"
+        "price_clp": 79600000,
+        "rent_monthly_clp": 530000,
+        "location": "Peñalolén"
       },
-      "scenario": "budget_clp",
-      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-R33",
-      "text": "Depto en Providencia, 63m², 2D/2B. Valor $76.800.000. A 570m de la estación de metro Príncipe de Gales. Ideal para inversionistas. Se aceptan mascotas pequeñas y medianas hasta 15kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $600.000/mes.",
+      "id": "PROP-H81",
+      "text": "Depto en La Cisterna, 78m², 2 dormitorios + loggia cerrada, ideal como pieza extra, 2B. Valor $89.300.000. A 496m de paradero de buses troncal, y 1,4km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 570,
+        "distance_transport_m": 496,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
-          "max_kg": 15
+          "max_kg": null
         },
-        "parking": "asignado",
+        "parking": "propio",
         "price_uf": null,
-        "price_clp": 76800000,
-        "rent_monthly_clp": 600000,
-        "location": "Providencia"
+        "price_clp": 89300000,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-W58",
+      "text": "Depto en Peñalolén, 103m², 4D/1B. Ubicación premium, la más solicitada por sus clientes. Precio: UF 1.828. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 346m. Se aceptan mascotas pequeñas y medianas hasta 18kg, previa autorización de la administración. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 346,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 18
+        },
+        "parking": "propio",
+        "price_uf": 1828,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 18kg < mascota 20kg; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-S99",
+      "text": "Depto en San Miguel, 110m², 4 dormitorios, 1 baño. Precio: UF 2.480. A 271m de la estación de metro Vicente Valdés. Excelente conectividad. Solo se admiten perros de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 271,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2480,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
       },
       "scenario": "pass",
-      "trap": "límite de peso igual al de la mascota"
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
     },
     {
-      "id": "PROP-N93",
-      "text": "Depto en Ñuñoa, 64m², 2D/2B. Precio: 2048 UF. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 603m. 100% pet friendly, sin restricciones de tamaño ni especie. Sin estacionamiento. Arriendo estimado: $530.000/mes.",
+      "id": "PROP-Q42",
+      "text": "Depto en La Reina, 107m², 4 dormitorios, 2 baños. Valor $82.800.000. A 458m de la estación de metro Irarrázaval. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento. Arriendo referencial de la zona: $670.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 458,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 82800000,
+        "rent_monthly_clp": 670000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-M14",
+      "text": "Casa en La Reina, 98m², 4D/1B. ¡En la comuna favorita del cliente! Precio: 2428 UF. A 453m de la estación de metro Los Leones. Aceptamos mascotas, gatos y perros hasta 19kg. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $760.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 453,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 19
+        },
+        "parking": "asignado",
+        "price_uf": 2428,
+        "price_clp": null,
+        "rent_monthly_clp": 760000,
+        "location": "La Reina"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 19kg < mascota 20kg; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-L10",
+      "text": "Depto en La Reina, 76m², 2 dormitorios + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Ubicación premium, la más solicitada por sus clientes. Valor $92.200.000. A 353m de la estación de metro Bellas Artes. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $680.000/mes.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 603,
+        "distance_transport_m": 353,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "ninguno",
-        "price_uf": 2048,
-        "price_clp": null,
-        "rent_monthly_clp": 530000,
-        "location": "Ñuñoa"
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 92200000,
+        "rent_monthly_clp": 680000,
+        "location": "La Reina"
       },
-      "scenario": "parking",
-      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real; comuna preferida (soft) pero viola una hard constraint: no rescata"
     }
   ]
 }

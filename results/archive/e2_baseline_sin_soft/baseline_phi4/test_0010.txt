@@ -1,0 +1,33 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-U85",
+      "price_clp": 102550000,
+      "roi_pct": 8.51
+    },
+    {
+      "id": "PROP-V65",
+      "price_clp": 1094400000,
+      "roi_pct": 6.21
+    },
+    {
+      "id": "PROP-D18",
+      "price_clp": 2487600,
+      "roi_pct": 27.27
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-H61",
+      "failed_constraints": ["Mascotas: Limitado a gatos, no cumple con la mascota de 6kg"]
+    },
+    {
+      "id": "PROP-N82",
+      "failed_constraints": ["Distancia máxima a transporte público: 564m, excede la distancia máxima permitida de 600m"]
+    },
+    {
+      "id": "PROP-R96",
+      "failed_constraints": ["Estacionamiento: Estacionamiento en la calle, no es asignado"]
+    }
+  ]
+}

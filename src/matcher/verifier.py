@@ -5,9 +5,12 @@ Criterio principal = las 3 condiciones del Entregable 1, en este orden:
   1. Aprueba una propiedad que viola una hard constraint -> false_approval
   2. Error aritmético (UF->CLP o ROI)                     -> arithmetic_error
 
-Métrica secundaria (exact_match): el conjunto aprobado y el rechazado coinciden
-exactamente con el esperado. Se calcula siempre, pero no forma parte del
-criterio principal para mantener la definición de la E1.
+Métricas secundarias (no forman parte del criterio principal, que mantiene la
+definición de la E1):
+  exact_match   el conjunto aprobado y el rechazado coinciden exactamente con el esperado.
+  ranking_ok    exact_match y `approved_matches` viene en el orden que dictan las
+                soft constraints (comuna preferida, luego ROI desc; empates libres).
+  full_correct  e1_correct y exact_match y ranking_ok: la salida completa es la esperada.
 """
 from __future__ import annotations
 
@@ -37,20 +40,28 @@ class Verdict:
     e1_correct: bool                  # criterio principal (E1)
     exact_match: bool                 # métrica secundaria
     reason: str                       # ok | schema_error | false_approval | arithmetic_error
+    ranking_ok: bool = False          # métrica secundaria (soft constraints)
     details: List[str] = field(default_factory=list)
-    approved_ids: List[str] = field(default_factory=list)
+    approved_ids: List[str] = field(default_factory=list)   # en el orden del modelo
     rejected_ids: List[str] = field(default_factory=list)
     expected_approved: List[str] = field(default_factory=list)
     expected_rejected: List[str] = field(default_factory=list)
+    expected_ranking: List[List[str]] = field(default_factory=list)
     # Diagnóstico (no forma parte del criterio): veredicto tras limpiar el formato.
     lenient_e1: Optional[bool] = None
     lenient_reason: Optional[str] = None
+
+    @property
+    def full_correct(self) -> bool:
+        return self.e1_correct and self.exact_match and self.ranking_ok
 
     def as_row(self) -> Dict[str, Any]:
         return {
             "case_id": self.case_id,
             "e1_correct": int(self.e1_correct),
             "exact_match": int(self.exact_match),
+            "ranking_ok": int(self.ranking_ok),
+            "full_correct": int(self.full_correct),
             "reason": self.reason,
             "details": " | ".join(self.details),
             "lenient_e1": "" if self.lenient_e1 is None else int(self.lenient_e1),
@@ -163,6 +174,19 @@ def _is_number(x: Any) -> bool:
     return isinstance(x, (int, float)) and not isinstance(x, bool)
 
 
+def ranking_matches(order: List[str], tiers: List[List[str]]) -> bool:
+    """`order` respeta los niveles esperados: mismos ids y, nivel a nivel, el mismo
+    conjunto (dentro de un nivel el orden es libre porque son empates)."""
+    if sorted(order) != sorted(pid for t in tiers for pid in t):
+        return False
+    i = 0
+    for tier in tiers:
+        if set(order[i:i + len(tier)]) != set(tier):
+            return False
+        i += len(tier)
+    return True
+
+
 # ------------------------------------------------------------- veredicto ----
 
 def verify(case: Case, raw_response: str, expected: Optional[Expected] = None) -> Verdict:
@@ -171,6 +195,7 @@ def verify(case: Case, raw_response: str, expected: Optional[Expected] = None) -
         case_id=case.id, e1_correct=False, exact_match=False, reason=REASON_SCHEMA,
         expected_approved=sorted(exp.approved_ids),
         expected_rejected=sorted(exp.rejected_ids),
+        expected_ranking=exp.ranking,
     )
 
     obj, err = parse_strict(raw_response)
@@ -183,7 +208,7 @@ def verify(case: Case, raw_response: str, expected: Optional[Expected] = None) -
         v.details.append(err)
         return v
 
-    v.approved_ids = sorted(a["id"] for a in norm["approved"])
+    v.approved_ids = [a["id"] for a in norm["approved"]]   # se conserva el orden: es el ranking
     v.rejected_ids = sorted(r["id"] for r in norm["rejected"])
 
     # Condición 1: aprobación de una propiedad que viola una hard constraint.
@@ -205,6 +230,10 @@ def verify(case: Case, raw_response: str, expected: Optional[Expected] = None) -
     v.exact_match = (
         set(v.approved_ids) == exp.approved_ids and set(v.rejected_ids) == exp.rejected_ids
     )
+    # Soft constraints: solo tiene sentido juzgar el orden si el conjunto es el correcto.
+    v.ranking_ok = v.exact_match and ranking_matches(v.approved_ids, exp.ranking)
+    if v.exact_match and not v.ranking_ok:
+        v.details.append(f"ranking incorrecto: {v.approved_ids} esperado {exp.ranked_ids}")
     if not v.exact_match:
         missing_ok = sorted(exp.approved_ids - set(v.approved_ids))
         if missing_ok:
@@ -235,6 +264,7 @@ def _fill_lenient(v: Verdict, case: Case, raw: str, exp: Expected) -> None:
     v.lenient_e1 = inner.e1_correct
     v.lenient_reason = inner.reason
     v.exact_match = inner.exact_match  # el conjunto aprobado/rechazado sí es observable
+    v.ranking_ok = inner.ranking_ok
     v.approved_ids, v.rejected_ids = inner.approved_ids, inner.rejected_ids
     if inner.details:
         v.details.append("tras limpiar formato: " + " | ".join(inner.details))

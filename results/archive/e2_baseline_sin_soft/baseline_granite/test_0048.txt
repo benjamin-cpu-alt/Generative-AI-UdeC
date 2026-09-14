@@ -1,0 +1,47 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-F50",
+      "price_clp": 84204000,
+      "roi_pct": 9.23
+    },
+    {
+      "id": "PROP-R67",
+      "price_clp": 86400000,
+      "roi_pct": 7.14
+    },
+    {
+      "id": "PROP-P29",
+      "price_clp": 96420000,
+      "roi_pct": 8.18
+    },
+    {
+      "id": "PROP-A93",
+      "price_clp": 79600000,
+      "roi_pct": 7.14
+    },
+    {
+      "id": "PROP-Y52",
+      "price_clp": 78700000,
+      "roi_pct": 7.31
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-E98",
+      "failed_constraints": ["Mascotas: Perros no permitidos"]
+    },
+    {
+      "id": "PROP-T66",
+      "failed_constraints": ["Mascotas: Límite de 18kg por mascota"]
+    },
+    {
+      "id": "PROP-H71",
+      "failed_constraints": ["Distancia máxima a transporte público: 700 m (más de 500 m permitidos)"]
+    },
+    {
+      "id": "PROP-L86",
+      "failed_constraints": ["Presupuesto Máximo de Compra: $93.000.000 CLP (precio en UF supera el presupuesto al convertirse a CLP)"]
+    }
+  ]
+}

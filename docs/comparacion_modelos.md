@@ -14,15 +14,20 @@ python3 -m matcher.evaluate --runs baseline_phi4 baseline_granite baseline_deeps
 
 ## 1. Tabla de resultados (copiar de `results/summary.csv`)
 
-| Modelo | Params | e1_strict | e1_after_extract | exact_match | fail_schema | fail_false_approval | fail_arithmetic | tokens/resp | s/resp |
-|---|---|---|---|---|---|---|---|---|---|
-| phi4-mini | 3.8B | /51 | /51 | /51 | | | | | |
-| granite4.1 | 8.0B | /51 | /51 | /51 | | | | | |
-| deepseek-r1-distill-qwen | 7.0B | /51 | /51 | /51 | | | | | |
+| Modelo | Params | e1_strict | e1_after_extract | exact_match | ranking_ok | full_correct | fail_schema | fail_false_approval | fail_arithmetic | tokens/resp | s/resp |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| phi4-mini | 3.8B | /51 | /51 | /51 | /51 | /51 | | | | | |
+| granite4.1 | 8.0B | /51 | /51 | /51 | /51 | /51 | | | | | |
+| deepseek-r1-distill-qwen | 7.0B | /51 | /51 | /51 | /51 | /51 | | | | | |
+
+> Resultados de la primera pasada (prompt sin soft constraints, no comparable):
+> `results/archive/e2_baseline_sin_soft/README.md`.
 
 - `e1_strict`: criterio E1 literal sobre la respuesta cruda.
 - `e1_after_extract`: mismo criterio tras un extractor determinista que quita fences/`<think>`.
   Separa fallos de **formato** de fallos de **razonamiento**.
+- `ranking_ok` / `full_correct`: soft constraints (orden por comuna preferida y ROI). No forman
+  parte del criterio E1; `full_correct` es la métrica más exigente y la que debe crecer hasta la E4.
 - `fail_*`: motivo del fallo tras extractor. Es la columna que dice *por qué* falla cada modelo.
 
 ## 2. Aprobaciones indebidas por restricción (copiar de `results/<run>_breakdown.csv`)

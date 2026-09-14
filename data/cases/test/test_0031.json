@@ -1,21 +1,27 @@
 {
   "id": "test_0031",
-  "uf_value": 38850,
+  "uf_value": 38150,
   "hard_constraints": {
-    "presupuesto_max_clp": 125500000,
+    "presupuesto_max_clp": 218500000,
     "mascota_especie": "gato",
-    "mascota_kg": 5,
+    "mascota_kg": 6,
     "distancia_max_transporte_m": 600,
     "dormitorios_min": 2,
     "estacionamiento_requerido": true
   },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Macul",
+      "La Reina"
+    ]
+  },
   "properties": [
     {
-      "id": "PROP-W15",
-      "text": "Depto en La Florida, 92m², 3 dormitorios, 1 baño. Precio: UF 3.318 (¡bajo el presupuesto del cliente según nuestro tasador!). A 228m de la estación de metro Plaza Egaña. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $890.000/mes.",
+      "id": "PROP-H61",
+      "text": "Depto en La Reina, 69m², 2D/1B. Precio: $205.400.000. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 600m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.220.000/mes.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 228,
+        "bedrooms": 2,
+        "distance_transport_m": 600,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -23,17 +29,59 @@
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 3318,
-        "price_clp": null,
-        "rent_monthly_clp": 890000,
-        "location": "La Florida"
+        "price_uf": null,
+        "price_clp": 205400000,
+        "rent_monthly_clp": 1220000,
+        "location": "La Reina"
       },
-      "scenario": "budget_uf",
-      "trap": "precio en UF sobre presupuesto + frase de marketing"
+      "scenario": "pass",
+      "trap": "distancia exactamente en el límite"
     },
     {
-      "id": "PROP-X93",
-      "text": "Depto en Estación Central, 61m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Precio: UF 3.030. A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 594m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo estimado: $990.000/mes.",
+      "id": "PROP-S38",
+      "text": "Depto en Las Condes, 52m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio: UF 5.649. Ideal para inversionistas. A 366m de paradero de buses troncal, y 1,5km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 366,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5649,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-G81",
+      "text": "Depto en La Cisterna, 48m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Valor $190.800.000. A 349m de la estación de metro Tobalaba. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Excelente conectividad. Arriendo referencial de la zona: $940.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 349,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 190800000,
+        "rent_monthly_clp": 940000,
+        "location": "La Cisterna"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-Q84",
+      "text": "Depto en La Reina, 50m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Justo en el sector que busca el comprador. Precio: 4236 UF. A 594m de la estación de metro Ñuñoa. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $1.270.000/mes.",
       "truth": {
         "bedrooms": 1,
         "distance_transport_m": 594,
@@ -43,65 +91,21 @@
           "species": [],
           "max_kg": null
         },
-        "parking": "calle",
-        "price_uf": 3030,
+        "parking": "propio",
+        "price_uf": 4236,
         "price_clp": null,
-        "rent_monthly_clp": 990000,
-        "location": "Estación Central"
+        "rent_monthly_clp": 1270000,
+        "location": "La Reina"
       },
-      "scenario": "multi",
-      "trap": "dormitorio 'convertible' que no es real; estacionamiento 'calle' menciona la palabra pero no cumple"
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-Y25",
-      "text": "Depto en Recoleta, 79m², 3 dormitorios, 1 baño. Valor $96.700.000. A 559m de la estación de metro Lo Vial. ¡Oportunidad única! Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento.",
+      "id": "PROP-V30",
+      "text": "Depto en La Florida, 66m², 2 dormitorios, 2 baños. Valor $223.000.000 (el mejor valor por m² del sector). A 492m de paradero de buses troncal, y 1,2km del metro más cercano. Recién remodelado. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 559,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [
-            "perro"
-          ],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 96700000,
-        "rent_monthly_clp": null,
-        "location": "Recoleta"
-      },
-      "scenario": "pets_species",
-      "trap": "acepta la otra especie, no la del comprador"
-    },
-    {
-      "id": "PROP-D95",
-      "text": "Depto en Estación Central, 91m², 3 dormitorios, 2 baños. Valor $94.800.000. A 600m de la estación de metro Lo Vial. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $660.000/mes. Piso alto, orientación norte.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 600,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 94800000,
-        "rent_monthly_clp": 660000,
-        "location": "Estación Central"
-      },
-      "scenario": "pass",
-      "trap": "distancia exactamente en el límite"
-    },
-    {
-      "id": "PROP-E10",
-      "text": "Casa en Recoleta, 111m², 4 dormitorios, 2 baños. Precio: UF 3.300 (el mejor valor por m² del sector). A 580m de la estación de metro Escuela Militar. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 580,
+        "bedrooms": 2,
+        "distance_transport_m": 492,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -109,13 +113,13 @@
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 3300,
-        "price_clp": null,
+        "price_uf": null,
+        "price_clp": 223000000,
         "rent_monthly_clp": null,
-        "location": "Recoleta"
+        "location": "La Florida"
       },
-      "scenario": "budget_uf",
-      "trap": "precio en UF sobre presupuesto + frase de marketing"
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
     }
   ]
 }

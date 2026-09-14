@@ -1,0 +1,33 @@
+```json
+{
+  "approved_matches": [
+    {
+      "id": "T14",
+      "price_clp": 90600000,
+      "roi_pct": ((550000 * 12) / 90600000) * 100
+    }
+  ],
+  "rejected": [
+    {
+      "id": "Q59",
+      "failed_constraints": ["Distance máxima a transporte público excedente"]
+    },
+    {
+      "id": "A24",
+      "failed_constraints": ["Distancia a transportinge público supera 1000 m"]
+    },
+    {
+      "id": "S41",
+      "failed_constraints": ["Precio excedente"]
+    },
+    {
+      "id": "N46",
+      "failed_constraints": ["Precio excedente"]
+    },
+    {
+      "id": "C76",
+      "failed_constraints": ["Precio excedente"]
+    }
+  ]
+}
+```

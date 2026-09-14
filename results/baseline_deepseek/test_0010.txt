@@ -1,0 +1,38 @@
+```json
+{
+  "approved_matches": [
+    {
+      "id": "S88",
+      "price_clp": 148994100,
+      "roi_pct": 7.01
+    },
+    {
+      "id": "N35",
+      "price_clp": 159713100,
+      "roi_pct": 4.73
+    }
+  ],
+  "rejected": [
+    {
+      "id": "T51",
+      "failed_constraints": ["Distance"]
+    },
+    {
+      "id": "L22",
+      "failed_constraints": ["Location", "Pet policy"]
+    },
+    {
+      "id": "G69",
+      "failed_constraints": ["Distance"]
+    },
+    {
+      "id": "J80",
+      "failed_constraints": ["Location"]
+    },
+    {
+      "id": "Y22",
+      "failed_constraints": ["Estacionamiento"]
+    }
+  ]
+}
+```

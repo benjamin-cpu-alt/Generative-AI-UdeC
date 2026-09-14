@@ -1,0 +1,41 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-D60",
+      "price_clp": 589689000,
+      "roi_pct": 10.47
+    },
+    {
+      "id": "PROP-C45",
+      "price_clp": 308700000,
+      "roi_pct": 6.31
+    },
+    {
+      "id": "PROP-A93",
+      "price_clp": 424920000,
+      "roi_pct": 6.58
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-U42",
+      "failed_constraints": ["Mascotas: 1 gato de 4kg (la propiedad debe permitir explícitamente mascotas de ese tamaño y especie)"]
+    },
+    {
+      "id": "PROP-P91",
+      "failed_constraints": ["Mascotas: No se aceptan mascotas"]
+    },
+    {
+      "id": "PROP-G43",
+      "failed_constraints": ["Estacionamiento: No incluye estacionamiento (posible arriendo en edificio vecino)"]
+    },
+    {
+      "id": "PROP-Z41",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 685m (más de 1000m)"]
+    },
+    {
+      "id": "PROP-H81",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 317m (más de 1000m)"]
+    }
+  ]
+}

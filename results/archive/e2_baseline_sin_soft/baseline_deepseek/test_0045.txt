@@ -1,0 +1,46 @@
+```json
+{
+  "approved_matches": [
+    {
+      "id": "U44",
+      "price_clp": 125244650,
+      "roi_pct": 9.75
+    },
+    {
+      "id": "D32",
+      "price_clp": 121000000,
+      "roi_pct": 7.00
+    }
+  ],
+  "rejected": [
+    {
+      "id": "V42",
+      "failed_constraints": ["Budget"]
+    },
+    {
+      "id": "M75",
+      "failed_constraints": ["Budget"]
+    },
+    {
+      "id": "H42",
+      "failed_constraints": ["Parking"]
+    },
+    {
+      "id": "U44",
+      "failed_constraints": ["Estacionamiento"]  // Note: U44 was approved, so this is a mistake in the example. It should be rejected because it doesn't have assigned parking.
+    },
+    {
+      "id": "G53",
+      "failed_constraints": ["Mascota"]
+    },
+    {
+      "id": "L75",
+      "failed_constraints": ["Mascota"]
+    },
+    {
+      "id": "A57",
+      "failed_constraints": ["Budget"]
+    }
+  ]
+}
+```

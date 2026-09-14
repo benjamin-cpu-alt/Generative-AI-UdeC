@@ -1,0 +1,14 @@
+{
+  "approved_matches": [
+    { "id": "PROP-K34", "price_clp": 106100000, "roi_pct": 71.43 },
+    { "id": "PROP-U24", "price_clp": 103100000, "roi_pct": 72.09 },
+    { "id": "PROP-D74", "price_clp": 106100000, "roi_pct": 78.85 }
+  ],
+  "rejected": [
+    { "id": "PROP-S45", "failed_constraints": ["Mascotas: propiedad no permite perros de 22kg explícitamente"] },
+    { "id": "PROP-G39", "failed_constraints": ["Distancia máxima a transporte público: 917m > 1000m"] },
+    { "id": "PROP-J50", "failed_constraints": ["Distancia máxima a transporte público: 1250m > 1000m"] },
+    { "id": "PROP-Q28", "failed_constraints": ["Distancia máxima a transporte público: 447m < 1000m (aprobado), pero Mascotas: no se menciona restricción de tamaño explícitamente, sin embargo, 'aceptamos perros y gatos de cualquier tamaño' puede interpretarse como permiso, por lo que se considera aprobado; sin embargo, la propiedad no está en comuna preferida"] },
+    { "id": "PROP-A38", "failed_constraints": ["Distancia máxima a transporte público: 788m < 1000m (aprobado), pero Mascotas: no se menciona restricción de tamaño explícitamente, sin embargo, 'aceptamos perros y gatos de cualquier tamaño' puede interpretarse como permiso, por lo que se considera aprobado; sin embargo, la propiedad no está en comuna preferida"] }
+  ]
+}

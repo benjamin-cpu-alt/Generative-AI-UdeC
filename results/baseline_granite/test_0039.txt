@@ -1,0 +1,45 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-H59",
+      "price_clp": 111234300,
+      "roi_pct": 95.71
+    },
+    {
+      "id": "PROP-L82",
+      "price_clp": 143500000,
+      "roi_pct": 91.89
+    },
+    {
+      "id": "PROP-R87",
+      "price_clp": 110000000,
+      "roi_pct": 95.65
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-X54",
+      "failed_constraints": ["Mascotas: solo se admiten gatos, el comprador tiene un perro"]
+    },
+    {
+      "id": "PROP-M69",
+      "failed_constraints": ["Mascotas: límite de 12kg por mascota, el comprador tiene un perro de 15kg"]
+    },
+    {
+      "id": "PROP-Y19",
+      "failed_constraints": ["Distancia máxima a transporte público: 736m (excede 1000m)"]
+    },
+    {
+      "id": "PROP-W64",
+      "failed_constraints": ["Presupuesto Máximo de Compra: 4284 UF = $171.072.000 CLP (excede $165.000.000 CLP)"]
+    },
+    {
+      "id": "PROP-Q61",
+      "failed_constraints": ["Distancia máxima a transporte público: 901m (excede 1000m)"]
+    },
+    {
+      "id": "PROP-J31",
+      "failed_constraints": ["Distancia máxima a transporte público: 1,4km (excede 1000m)"]
+    }
+  ]
+}

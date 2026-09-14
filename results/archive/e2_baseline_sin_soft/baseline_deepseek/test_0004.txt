@@ -1,0 +1,43 @@
+```json
+{
+  "approved_matches": [
+    {
+      "id": "PROP-Q92",
+      "price_clp": 4924800,
+      "roi_pct": 221.6
+    },
+    {
+      "id": "PROP-D76",
+      "price_clp": 143626500,
+      "roi_pct": 6.35
+    },
+    {
+      "id": "PROP-F33",
+      "price_clp": 122622000,
+      "roi_pct": 8.89
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-R57",
+      "failed_constraints": ["Distance"]
+    },
+    {
+      "id": "PROP-C12",
+      "failed_constraints": ["Pet size", "Distance"]
+    },
+    {
+      "id": "PROP-Z46",
+      "failed_constraints": ["Distance"]
+    },
+    {
+      "id": "PROP-H82",
+      "failed_constraints": ["Budget", "Distance"]
+    },
+    {
+      "id": "PROP-G60",
+      "failed_constraints": ["Pet size", "Distance"]
+    }
+  ]
+}
+```

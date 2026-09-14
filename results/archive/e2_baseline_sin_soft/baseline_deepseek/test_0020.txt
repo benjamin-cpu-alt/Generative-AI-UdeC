@@ -1,0 +1,40 @@
+```json
+{
+  "approved_matches": [
+    {
+      "id": "C30",
+      "price_clp": 160200000,
+      "roi_pct": 12.00
+    },
+    {
+      "id": "N87",
+      "price_clp": 169000000,
+      "roi_pct": 7.51
+    },
+    {
+      "id": "G15",
+      "price_clp": 160300000,
+      "roi_pct": 6.11
+    },
+    {
+      "id": "W74",
+      "price_clp": 191000000,
+      "roi_pct": 9.16
+    }
+  ],
+  "rejected": [
+    {
+      "id": "S27",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    },
+    {
+      "id": "P22",
+      "failed_constraints": ["Distancia máxima a transporte público"]
+    },
+    {
+      "id": "T79",
+      "failed_constraints": ["Estacionamiento"]
+    }
+  ]
+}
+```

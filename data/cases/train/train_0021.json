@@ -1,42 +1,89 @@
 {
   "id": "train_0021",
-  "uf_value": 40300,
+  "uf_value": 39500,
   "hard_constraints": {
-    "presupuesto_max_clp": 122000000,
+    "presupuesto_max_clp": 170500000,
     "mascota_especie": "perro",
-    "mascota_kg": 15,
-    "distancia_max_transporte_m": 1500,
+    "mascota_kg": 8,
+    "distancia_max_transporte_m": 600,
     "dormitorios_min": 2,
     "estacionamiento_requerido": true
   },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Providencia"
+    ]
+  },
   "properties": [
     {
-      "id": "PROP-F25",
-      "text": "Depto en Peñalolén, 64m², 2 dormitorios, 2 baños. Precio: 3089 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). Ubicado a 2,5 km de la estación Manquehue, unos 31 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Precio rebajado.",
+      "id": "PROP-X18",
+      "text": "Depto en San Miguel, 96m², 3 dormitorios, 2 baños. Excelente conectividad. Valor $176.500.000 (precio negociable, el propietario está abierto a ofertas). A 216m de la estación de metro Los Leones. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $780.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 2500,
+        "bedrooms": 3,
+        "distance_transport_m": 216,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": 3089,
-        "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "Peñalolén"
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 176500000,
+        "rent_monthly_clp": 780000,
+        "location": "San Miguel"
       },
-      "scenario": "multi",
-      "trap": "distancia excedida, minimizada en minutos caminando; precio en UF sobre presupuesto + frase de marketing"
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
     },
     {
-      "id": "PROP-U65",
-      "text": "Depto en San Miguel, 60m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. ¡Oportunidad única! Precio: 2.427 UF. A 499m de la estación de metro Bellas Artes. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $700.000/mes.",
+      "id": "PROP-D18",
+      "text": "Depto en San Miguel, 63m², 2 dormitorios, 2 baños. Valor $133.000.000. A 1,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 300m. No se especifica política de mascotas. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 133000000,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      },
+      "scenario": "pets_unspecified",
+      "trap": "política de mascotas ausente (debe ser explícita)"
+    },
+    {
+      "id": "PROP-Q79",
+      "text": "Depto en Providencia, 78m², 2 dormitorios, 1 baño. ¡En la comuna favorita del cliente! Precio: 4.122 UF. Ubicado a 0,8 km de la estación Franklin, unos 9 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4122,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-L66",
+      "text": "Depto en Estación Central, 53m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Excelente conectividad. Precio rebajado a 3.706 UF. A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 297m. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $880.000/mes.",
       "truth": {
         "bedrooms": 1,
-        "distance_transport_m": 499,
+        "distance_transport_m": 297,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -44,97 +91,34 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": 2427,
+        "price_uf": 3706,
         "price_clp": null,
-        "rent_monthly_clp": 700000,
-        "location": "San Miguel"
+        "rent_monthly_clp": 880000,
+        "location": "Estación Central"
       },
       "scenario": "bedrooms",
       "trap": "dormitorio 'convertible' que no es real"
     },
     {
-      "id": "PROP-K30",
-      "text": "Depto en Las Condes, 100m², 4 dormitorios, 2 baños. Valor $117.800.000. A 849m de paradero de buses troncal, y 1,9km del metro más cercano. Se aceptan mascotas pequeñas y medianas hasta 15kg, previa autorización de la administración. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $570.000/mes. Recién remodelado.",
+      "id": "PROP-T84",
+      "text": "Depto en Providencia, 92m², 3D/2B. Precio: 4.210 UF. A 549m de la estación de metro Plaza Egaña. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Excelente conectividad. Arriendo referencial de la zona: $1.220.000/mes.",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 849,
+        "bedrooms": 3,
+        "distance_transport_m": 549,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
-          "max_kg": 15
+          "max_kg": null
         },
-        "parking": "asignado",
-        "price_uf": null,
-        "price_clp": 117800000,
-        "rent_monthly_clp": 570000,
-        "location": "Las Condes"
+        "parking": "propio",
+        "price_uf": 4210,
+        "price_clp": null,
+        "rent_monthly_clp": 1220000,
+        "location": "Providencia"
       },
       "scenario": "pass",
-      "trap": "límite de peso igual al de la mascota"
-    },
-    {
-      "id": "PROP-H28",
-      "text": "Depto en Vitacura, 71m², 2 dormitorios, 2 baños. Precio: 2457 UF. A 664m de la estación de metro Plaza Egaña. Edificio sin mascotas por reglamento de copropiedad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $770.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 664,
-        "pets": {
-          "explicit": true,
-          "allowed": false,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 2457,
-        "price_clp": null,
-        "rent_monthly_clp": 770000,
-        "location": "Vitacura"
-      },
-      "scenario": "pets_none",
-      "trap": "no se aceptan mascotas"
-    },
-    {
-      "id": "PROP-A18",
-      "text": "Depto en Ñuñoa, 88m², 3 dormitorios, 1 baño. Valor $120.100.000. A 608m de la estación de metro Lo Vial. No se especifica política de mascotas. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.000.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 608,
-        "pets": {
-          "explicit": false,
-          "allowed": false,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "asignado",
-        "price_uf": null,
-        "price_clp": 120100000,
-        "rent_monthly_clp": 1000000,
-        "location": "Ñuñoa"
-      },
-      "scenario": "pets_unspecified",
-      "trap": "política de mascotas ausente (debe ser explícita)"
-    },
-    {
-      "id": "PROP-W63",
-      "text": "Casa en Independencia, 92m², 3D/1B. Valor $94.000.000. A 568m de la estación de metro Plaza Egaña. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $590.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 568,
-        "pets": {
-          "explicit": false,
-          "allowed": false,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 94000000,
-        "rent_monthly_clp": 590000,
-        "location": "Independencia"
-      },
-      "scenario": "pets_unspecified",
-      "trap": "política de mascotas ausente (debe ser explícita)"
+      "trap": "precio en UF a <2.5% del presupuesto"
     }
   ]
 }

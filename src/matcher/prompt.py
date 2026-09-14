@@ -3,6 +3,10 @@
 Es el MISMO prompt para el baseline y para la solución: la intervención de la
 E2 no cambia el prompt, cambia el modelo (destilado). El esquema de salida es el
 del PDF del Entregable 1 (id, price_clp, roi_pct / id, failed_constraints).
+
+Mantiene las SOFT CONSTRAINTS de la E1 (data/prompt_base.txt): ubicación preferida
+y ROI no descalifican, pero fijan el orden de `approved_matches` (mejor primero).
+El orden es verificable de forma determinista (rules.Expected.ranking).
 """
 from __future__ import annotations
 
@@ -11,7 +15,8 @@ from .schema import Case
 SYSTEM = (
     "Eres el motor de validación de una plataforma B2B de matching inmobiliario. "
     "Tu tarea es procesar el texto no estructurado de corredores de propiedades y "
-    "cruzarlo contra los criterios estrictos (Hard Constraints) de un comprador. "
+    "cruzarlo contra los criterios estrictos (Hard Constraints) de un comprador, "
+    "además de ordenar las aprobadas según sus preferencias (Soft Constraints). "
     "No puedes cometer errores aritméticos. No puedes incluir texto conversacional "
     "en tu respuesta, solo el objeto JSON crudo."
 )
@@ -21,7 +26,8 @@ SYSTEM = (
 FORMAT_RULE = (
     "IMPORTANTE: tu respuesta debe empezar con el carácter { y terminar con }. "
     "No uses bloques de código markdown (```), ni explicaciones antes o después del JSON. "
-    "price_clp es un entero en pesos chilenos; roi_pct es un número con dos decimales."
+    "price_clp es un entero en pesos chilenos; roi_pct es un número con dos decimales "
+    "(null si el texto no publica arriendo). approved_matches va ordenada de mejor a peor."
 )
 
 OUTPUT_SCHEMA = """{
@@ -65,6 +71,20 @@ def render_profile(case: Case) -> str:
     return "\n".join(lines)
 
 
+def render_soft(case: Case) -> str:
+    prefs = case.soft_constraints.ubicaciones_preferidas
+    ubic = " o ".join(prefs) if prefs else "sin preferencia"
+    return "\n".join([
+        "SOFT CONSTRAINTS (no descalifican, pero determinan el ranking de las aprobadas):",
+        f"- Ubicación preferida: {ubic} (mayor preferencia). Una propiedad en comuna "
+        "preferida NO se aprueba si viola una Hard Constraint.",
+        "- ROI esperado: (arriendo mensual estimado × 12) / precio de la propiedad × 100. "
+        "Mayor ROI = mejor score.",
+        "- Orden del ranking: primero las de comuna preferida, luego el resto; dentro de "
+        "cada grupo, de mayor a menor roi_pct (las sin arriendo publicado al final del grupo).",
+    ])
+
+
 def render_catalog(case: Case) -> str:
     return "\n\n".join(f'[{p.id}] "{p.text}"' for p in case.properties)
 
@@ -75,12 +95,15 @@ def render_prompt(case: Case) -> str:
         SYSTEM,
         f"VALOR UF HOY: ${uf} CLP",
         render_profile(case),
+        render_soft(case),
         "CATÁLOGO RAW DE PROPIEDADES (datos extraídos con OCR/Scraping):\n\n" + render_catalog(case),
         "TAREA: Evalúa cada propiedad contra las 5 Hard Constraints. Las que violen INCLUSO UNA "
         "deben ir a \"rejected\" con la razón exacta. Para las aprobadas, calcula price_clp "
         "(precio en CLP, convirtiendo desde UF si corresponde) y roi_pct = "
-        "(arriendo mensual × 12) / price_clp × 100, con dos decimales. "
-        "Responde ÚNICAMENTE con el siguiente JSON, sin texto adicional:\n\n" + OUTPUT_SCHEMA,
+        "(arriendo mensual × 12) / price_clp × 100, con dos decimales, y ordénalas en "
+        "\"approved_matches\" según las Soft Constraints, de mejor a peor (las primeras 3 "
+        "son el Top 3). Responde ÚNICAMENTE con el siguiente JSON, sin texto adicional:\n\n"
+        + OUTPUT_SCHEMA,
         FORMAT_RULE,
     ])
 

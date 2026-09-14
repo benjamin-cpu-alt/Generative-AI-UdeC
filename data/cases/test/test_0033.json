@@ -1,21 +1,91 @@
 {
   "id": "test_0033",
-  "uf_value": 40350,
+  "uf_value": 38050,
   "hard_constraints": {
-    "presupuesto_max_clp": 138500000,
-    "mascota_especie": "gato",
-    "mascota_kg": 5,
+    "presupuesto_max_clp": 206500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 4,
     "distancia_max_transporte_m": 1000,
-    "dormitorios_min": 3,
+    "dormitorios_min": 2,
     "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "La Florida"
+    ]
   },
   "properties": [
     {
-      "id": "PROP-G93",
-      "text": "Depto en La Florida, 112m², 4 dormitorios, 1 baño. Precio: $134.300.000. A 764m de paradero de buses troncal, y 1,9km del metro más cercano. Solo se admiten gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.100.000/mes. Recién remodelado.",
+      "id": "PROP-G20",
+      "text": "Depto en La Florida, 72m², 2D/2B. Precio: UF 4.481. A 213m de paradero de buses troncal, y 1,3km del metro más cercano. Se aceptan mascotas pequeñas y medianas hasta 4kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $830.000/mes.",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 764,
+        "bedrooms": 2,
+        "distance_transport_m": 213,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 4
+        },
+        "parking": "asignado",
+        "price_uf": 4481,
+        "price_clp": null,
+        "rent_monthly_clp": 830000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
+    },
+    {
+      "id": "PROP-F13",
+      "text": "Depto en La Florida, 86m², 3 dormitorios, 1 baño. Valor $207.500.000 (el mejor valor por m² del sector). A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 249m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 249,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 207500000,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      },
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-L68",
+      "text": "Depto en La Florida, 75m², 2D/1B. Precio: $176.500.000. A 411m de paradero de buses troncal, y 1,3km del metro más cercano. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.410.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 411,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 176500000,
+        "rent_monthly_clp": 1410000,
+        "location": "La Florida"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-S26",
+      "text": "Depto en La Florida, 79m², 3 dormitorios, 1 baño. Ubicación premium, la más solicitada por sus clientes. Precio: UF 4.024. A 842m de paradero de buses troncal, y 1,6km del metro más cercano. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 842,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -25,139 +95,34 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": null,
-        "price_clp": 134300000,
-        "rent_monthly_clp": 1100000,
+        "price_uf": 4024,
+        "price_clp": null,
+        "rent_monthly_clp": null,
         "location": "La Florida"
       },
-      "scenario": "pass",
-      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-S64",
-      "text": "Depto en Independencia, 70m², 2 dormitorios + loggia cerrada, ideal como pieza extra, 1B. Valor $107.000.000. A 945m de paradero de buses troncal, y 1,4km del metro más cercano. Ideal para inversionistas. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo estimado: $810.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 945,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "visitas",
-        "price_uf": null,
-        "price_clp": 107000000,
-        "rent_monthly_clp": 810000,
-        "location": "Independencia"
-      },
-      "scenario": "multi",
-      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple; dormitorio 'convertible' que no es real"
-    },
-    {
-      "id": "PROP-A24",
-      "text": "Depto en Vitacura, 62m², 2 dormitorios + loggia cerrada, ideal como pieza extra, 1B. Precio rebajado a UF 3.214. A 849m de la estación de metro Vicente Valdés. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 849,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 3214,
-        "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "Vitacura"
-      },
-      "scenario": "bedrooms",
-      "trap": "dormitorio 'convertible' que no es real"
-    },
-    {
-      "id": "PROP-B62",
-      "text": "Casa en Macul, 97m², 3D/2B. Precio: 3.380 UF. A 1,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 660m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Ideal para inversionistas. Arriendo referencial de la zona: $610.000/mes.",
+      "id": "PROP-M65",
+      "text": "Depto en La Florida, 94m², 3 dormitorios, 1 baño. Precio: $173.400.000. A 792m de paradero de buses troncal, y 1,3km del metro más cercano. Precio rebajado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Sin estacionamiento.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 660,
+        "distance_transport_m": 792,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": 3380,
-        "price_clp": null,
-        "rent_monthly_clp": 610000,
-        "location": "Macul"
-      },
-      "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
-    },
-    {
-      "id": "PROP-Y33",
-      "text": "Depto en La Reina, 114m², 4 dormitorios, 1 baño. Precio rebajado. Precio: 2895 UF. A 337m de la estación de metro Escuela Militar. No se aceptan mascotas. Incluye estacionamiento propio.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 337,
-        "pets": {
-          "explicit": true,
-          "allowed": false,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 2895,
-        "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "La Reina"
-      },
-      "scenario": "pets_none",
-      "trap": "no se aceptan mascotas"
-    },
-    {
-      "id": "PROP-D26",
-      "text": "Casa en Independencia, 92m², 3D/1B. Valor $104.300.000. A 478m de la estación de metro Bellas Artes. No se especifica política de mascotas. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $830.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 478,
-        "pets": {
-          "explicit": false,
-          "allowed": false,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
+        "parking": "ninguno",
         "price_uf": null,
-        "price_clp": 104300000,
-        "rent_monthly_clp": 830000,
-        "location": "Independencia"
-      },
-      "scenario": "pets_unspecified",
-      "trap": "política de mascotas ausente (debe ser explícita)"
-    },
-    {
-      "id": "PROP-V67",
-      "text": "Depto en Las Condes, 114m², 4D/2B. Precio: UF 3.579 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 781m de la estación de metro Bellas Artes. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Excelente conectividad.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 781,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "visitas",
-        "price_uf": 3579,
-        "price_clp": null,
+        "price_clp": 173400000,
         "rent_monthly_clp": null,
-        "location": "Las Condes"
+        "location": "La Florida"
       },
-      "scenario": "multi",
-      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple; precio en UF sobre presupuesto + frase de marketing"
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple; comuna preferida (soft) pero viola una hard constraint: no rescata"
     }
   ]
 }

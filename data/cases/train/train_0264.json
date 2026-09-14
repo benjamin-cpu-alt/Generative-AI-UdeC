@@ -1,184 +1,125 @@
 {
   "id": "train_0264",
-  "uf_value": 39900,
+  "uf_value": 39400,
   "hard_constraints": {
-    "presupuesto_max_clp": 115000000,
+    "presupuesto_max_clp": 212500000,
     "mascota_especie": "perro",
-    "mascota_kg": 4,
-    "distancia_max_transporte_m": 1500,
-    "dormitorios_min": 2,
+    "mascota_kg": 25,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
     "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Estación Central",
+      "La Cisterna"
+    ]
   },
   "properties": [
     {
-      "id": "PROP-R94",
-      "text": "Casa en Estación Central, 82m², 3 dormitorios, 2 baños. Precio: 2.825 UF. A 1208m de la estación de metro Los Leones. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $550.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 1208,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 2825,
-        "price_clp": null,
-        "rent_monthly_clp": 550000,
-        "location": "Estación Central"
-      },
-      "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
-    },
-    {
-      "id": "PROP-G99",
-      "text": "Casa en Estación Central, 104m², 4D/2B. Precio: 2.667 UF. A 233m de paradero de buses troncal, y 0,9km del metro más cercano. Entrega inmediata. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $600.000/mes.",
+      "id": "PROP-U28",
+      "text": "Depto en Vitacura, 111m², 4D/1B. Valor $160.500.000. A 2,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 836m. Pet friendly con límite de 23kg por mascota. Incluye 1 estacionamiento.",
       "truth": {
         "bedrooms": 4,
-        "distance_transport_m": 233,
+        "distance_transport_m": 836,
         "pets": {
           "explicit": true,
           "allowed": true,
-          "species": [
-            "perro"
-          ],
-          "max_kg": null
+          "species": [],
+          "max_kg": 23
         },
         "parking": "propio",
-        "price_uf": 2667,
-        "price_clp": null,
-        "rent_monthly_clp": 600000,
-        "location": "Estación Central"
+        "price_uf": null,
+        "price_clp": 160500000,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
       },
-      "scenario": "pass",
-      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+      "scenario": "pets_weight",
+      "trap": "límite de peso 23kg < mascota 25kg"
     },
     {
-      "id": "PROP-H62",
-      "text": "Casa en Ñuñoa, 79m², 3 dormitorios, 1 baño. Precio: 2.429 UF. A 1273m de la estación de metro Ñuñoa. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Excelente conectividad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $540.000/mes.",
+      "id": "PROP-E51",
+      "text": "Depto en La Florida, 93m², 3D/1B. Excelente conectividad. Valor $161.900.000. A 168m de paradero de buses troncal, y 1,1km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. No incluye estacionamiento (posible arriendo en edificio vecino). Arriendo estimado: $990.000/mes.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 1273,
+        "distance_transport_m": 168,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": 2429,
-        "price_clp": null,
-        "rent_monthly_clp": 540000,
-        "location": "Ñuñoa"
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 161900000,
+        "rent_monthly_clp": 990000,
+        "location": "La Florida"
       },
-      "scenario": "pass",
-      "trap": null
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
     },
     {
-      "id": "PROP-B45",
-      "text": "Depto en Independencia, 98m², 4D/2B. Precio rebajado a 2526 UF. Ubicado a 1,9 km de la estación Manquehue, unos 24 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo estimado: $580.000/mes. ¡Oportunidad única!",
+      "id": "PROP-F56",
+      "text": "Depto en La Florida, 102m², 4 dormitorios, 2 baños. Precio rebajado a UF 4.848. Entrega inmediata. A 609m de paradero de buses troncal, y 1,1km del metro más cercano. Incluye 1 estacionamiento. Arriendo referencial de la zona: $960.000/mes.",
       "truth": {
         "bedrooms": 4,
-        "distance_transport_m": 1950,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 2526,
-        "price_clp": null,
-        "rent_monthly_clp": 580000,
-        "location": "Independencia"
-      },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
-    },
-    {
-      "id": "PROP-L20",
-      "text": "Casa en Maipú, 84m², 3 dormitorios, 1 baño. Precio: 2286 UF. A 1010m de paradero de buses troncal, y 1,5km del metro más cercano. No se especifica política de mascotas. Incluye 1 estacionamiento subterráneo asignado.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 1010,
+        "distance_transport_m": 609,
         "pets": {
           "explicit": false,
           "allowed": false,
           "species": [],
           "max_kg": null
         },
-        "parking": "asignado",
-        "price_uf": 2286,
+        "parking": "propio",
+        "price_uf": 4848,
         "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "Maipú"
+        "rent_monthly_clp": 960000,
+        "location": "La Florida"
       },
       "scenario": "pets_unspecified",
       "trap": "política de mascotas ausente (debe ser explícita)"
     },
     {
-      "id": "PROP-U54",
-      "text": "Depto en Ñuñoa, 67m², 2D/1B. Precio: 2.845 UF. A 1198m de paradero de buses troncal, y 2,3km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $520.000/mes. Recién remodelado.",
+      "id": "PROP-X26",
+      "text": "Depto en La Cisterna, 63m², 2 dormitorios + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. ¡En la comuna favorita del cliente! Valor $198.400.000. A 896m de la estación de metro Franklin. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 1198,
+        "distance_transport_m": 896,
         "pets": {
           "explicit": true,
           "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 2845,
-        "price_clp": null,
-        "rent_monthly_clp": 520000,
-        "location": "Ñuñoa"
-      },
-      "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
-    },
-    {
-      "id": "PROP-N91",
-      "text": "Depto en La Reina, 45m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Ideal para inversionistas. Precio rebajado a 2479 UF. A 422m de la estación de metro Cal y Canto. Aceptamos mascotas, gatos y perros hasta 2kg. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
-      "truth": {
-        "bedrooms": 1,
-        "distance_transport_m": 422,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": 2
-        },
-        "parking": "propio",
-        "price_uf": 2479,
-        "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "La Reina"
-      },
-      "scenario": "multi",
-      "trap": "dormitorio 'convertible' que no es real; límite de peso 2kg < mascota 4kg"
-    },
-    {
-      "id": "PROP-Q79",
-      "text": "Casa en Maipú, 107m², 4D/1B. Precio rebajado a 2221 UF. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 422m. Edificio sin mascotas por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 422,
-        "pets": {
-          "explicit": true,
-          "allowed": false,
           "species": [],
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 2221,
-        "price_clp": null,
+        "price_uf": null,
+        "price_clp": 198400000,
         "rent_monthly_clp": null,
-        "location": "Maipú"
+        "location": "La Cisterna"
       },
-      "scenario": "pets_none",
-      "trap": "no se aceptan mascotas"
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-H62",
+      "text": "Depto en Estación Central, 97m², 4 dormitorios, 2 baños. Precio: 5310 UF. A 839m de la estación de metro Príncipe de Gales. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. ¡Oportunidad única! Incluye estacionamiento propio. Arriendo referencial de la zona: $1.550.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 839,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5310,
+        "price_clp": null,
+        "rent_monthly_clp": 1550000,
+        "location": "Estación Central"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
     }
   ]
 }

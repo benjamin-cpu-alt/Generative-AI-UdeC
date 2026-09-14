@@ -1,0 +1,51 @@
+run,case_id,e1_correct,exact_match,reason,details,lenient_e1,lenient_reason
+baseline_deepseek,case_001_e1,0,0,schema_error,respuesta vacía,,
+baseline_deepseek,test_0001,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: rechazo falso u omisión de aprobadas: ['PROP-K38', 'PROP-U19']",1,ok
+baseline_deepseek,test_0002,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: PROP-W46 aprobada pero viola ['mascotas'] | rechazo falso u omisión de aprobadas: ['PROP-X47', 'PROP-Z59']",0,false_approval
+baseline_deepseek,test_0003,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: JSON malformado,0,schema_error
+baseline_deepseek,test_0004,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: PROP-Q92 aprobada pero viola ['dormitorios'] | PROP-F33 aprobada pero viola ['mascotas'] | rechazo falso u omisión de aprobadas: ['PROP-Z46'],0,false_approval
+baseline_deepseek,test_0005,0,1,schema_error,JSON envuelto en fences markdown | tras limpiar formato: PROP-U40: price_clp=5767635000000 esperado=150900000 | PROP-U40: roi=0.0002101 esperado=8.03 | PROP-D72: price_clp=6600950000000 esperado=173000000 | PROP-D72: roi=0.0002236 esperado=8.53,0,arithmetic_error
+baseline_deepseek,test_0006,0,0,schema_error,respuesta vacía,,
+baseline_deepseek,test_0007,0,0,schema_error,respuesta vacía,,
+baseline_deepseek,test_0008,0,1,schema_error,JSON envuelto en fences markdown | tras limpiar formato: PROP-B87: price_clp=114408350 esperado=114416350 | PROP-K59: price_clp=113649300 esperado=113617300,0,arithmetic_error
+baseline_deepseek,test_0009,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: PROP-M12: price_clp=186224650 esperado=186086150 | rechazo falso u omisión de aprobadas: ['PROP-F46'] | propiedades sin clasificar: ['PROP-F46'],0,arithmetic_error
+baseline_deepseek,test_0010,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: PROP-U85 aprobada pero viola ['dormitorios'] | PROP-H61 aprobada pero viola ['mascotas'] | PROP-R96 aprobada pero viola ['estacionamiento'] | propiedades sin clasificar: ['PROP-N82'],0,false_approval
+baseline_deepseek,test_0011,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: PROP-M72 aprobada pero viola ['mascotas'] | rechazo falso u omisión de aprobadas: ['PROP-A39', 'PROP-W70']",0,false_approval
+baseline_deepseek,test_0012,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: PROP-Z11 aprobada pero viola ['estacionamiento'] | PROP-G39 aprobada pero viola ['dormitorios'] | PROP-D29 aprobada pero viola ['dormitorios'] | rechazo falso u omisión de aprobadas: ['PROP-Q40', 'PROP-V63'] | propiedades sin clasificar: ['PROP-Q40']",0,false_approval
+baseline_deepseek,test_0013,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: PROP-V11 aprobada pero viola ['mascotas'],0,false_approval
+baseline_deepseek,test_0014,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: PROP-N91 aprobada pero viola ['mascotas'] | PROP-Z53 aprobada pero viola ['mascotas'],0,false_approval
+baseline_deepseek,test_0015,0,0,schema_error,respuesta vacía,,
+baseline_deepseek,test_0016,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: PROP-G24 aprobada pero viola ['mascotas'] | PROP-K10 aprobada pero viola ['estacionamiento'] | rechazo falso u omisión de aprobadas: ['PROP-D82', 'PROP-L77']",0,false_approval
+baseline_deepseek,test_0017,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: PROP-D26 aprobada pero viola ['dormitorios'] | rechazo falso u omisión de aprobadas: ['PROP-E47', 'PROP-J83']",0,false_approval
+baseline_deepseek,test_0018,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: PROP-U78 aprobada pero viola ['dormitorios'] | rechazo falso u omisión de aprobadas: ['PROP-E19', 'PROP-Q62', 'PROP-T22'] | propiedades sin clasificar: ['PROP-E19']",0,false_approval
+baseline_deepseek,test_0019,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: JSON malformado,0,schema_error
+baseline_deepseek,test_0020,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: PROP-C30 aprobada pero viola ['dormitorios'] | PROP-N87 aprobada pero viola ['mascotas'] | propiedades sin clasificar: ['PROP-M71'],0,false_approval
+baseline_deepseek,test_0021,0,1,schema_error,JSON envuelto en fences markdown | tras limpiar formato: PROP-Z56: price_clp=176362200 esperado=176380200 | PROP-Z56: roi=8.45 esperado=8.37 | PROP-J93: price_clp=222767900 esperado=222597900 | PROP-J93: roi=6.52 esperado=6.74,0,arithmetic_error
+baseline_deepseek,test_0022,1,1,ok,,,
+baseline_deepseek,test_0023,0,0,schema_error,respuesta vacía,,
+baseline_deepseek,test_0024,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: rechazo falso u omisión de aprobadas: ['PROP-P83', 'PROP-W76', 'PROP-Y45']",1,ok
+baseline_deepseek,test_0025,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: PROP-Y60 aprobada pero viola ['presupuesto'] | rechazo falso u omisión de aprobadas: ['PROP-G95', 'PROP-W51']",0,false_approval
+baseline_deepseek,test_0026,0,0,schema_error,respuesta vacía,,
+baseline_deepseek,test_0027,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: PROP-L91 aprobada pero viola ['mascotas'] | rechazo falso u omisión de aprobadas: ['PROP-M24', 'PROP-Q28']",0,false_approval
+baseline_deepseek,test_0028,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: PROP-K46 aprobada pero viola ['estacionamiento'] | rechazo falso u omisión de aprobadas: ['PROP-M97', 'PROP-Q14']",0,false_approval
+baseline_deepseek,test_0029,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: JSON malformado,0,schema_error
+baseline_deepseek,test_0030,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: rechazo falso u omisión de aprobadas: ['PROP-P41', 'PROP-Q85', 'PROP-Y33']",1,ok
+baseline_deepseek,test_0031,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: rechazo falso u omisión de aprobadas: ['PROP-D95'],1,ok
+baseline_deepseek,test_0032,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: PROP-S39 aprobada pero viola ['mascotas'] | PROP-B34 aprobada pero viola ['dormitorios'],0,false_approval
+baseline_deepseek,test_0033,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: PROP-A24 aprobada pero viola ['dormitorios'] | rechazo falso u omisión de aprobadas: ['PROP-B62'],0,false_approval
+baseline_deepseek,test_0034,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: JSON malformado,0,schema_error
+baseline_deepseek,test_0035,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: ids repetidos o en ambas listas: ['PROP-Z96'],0,schema_error
+baseline_deepseek,test_0036,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: ids repetidos o en ambas listas: ['PROP-D66'],0,schema_error
+baseline_deepseek,test_0037,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: PROP-W11: price_clp=172001100 esperado=172517100 | PROP-W11: roi=6.92 esperado=5.01 | rechazo falso u omisión de aprobadas: ['PROP-N88', 'PROP-S87']",0,arithmetic_error
+baseline_deepseek,test_0038,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: PROP-G39 aprobada pero viola ['presupuesto'] | PROP-U50 aprobada pero viola ['presupuesto'] | rechazo falso u omisión de aprobadas: ['PROP-V24', 'PROP-X10']",0,false_approval
+baseline_deepseek,test_0039,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: PROP-B68 aprobada pero viola ['mascotas'] | PROP-J43 aprobada pero viola ['mascotas'] | rechazo falso u omisión de aprobadas: ['PROP-X28'],0,false_approval
+baseline_deepseek,test_0040,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: PROP-V93 aprobada pero viola ['distancia_transporte'] | PROP-P63 aprobada pero viola ['dormitorios', 'estacionamiento']",0,false_approval
+baseline_deepseek,test_0041,0,0,schema_error,respuesta vacía,,
+baseline_deepseek,test_0042,0,0,schema_error,respuesta vacía,,
+baseline_deepseek,test_0043,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: PROP-J39: price_clp=148083000 esperado=148413000 | rechazo falso u omisión de aprobadas: ['PROP-R24'],0,arithmetic_error
+baseline_deepseek,test_0044,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: JSON malformado,0,schema_error
+baseline_deepseek,test_0045,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: JSON malformado,0,schema_error
+baseline_deepseek,test_0046,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: rechazo falso u omisión de aprobadas: ['PROP-M31', 'PROP-X54']",1,ok
+baseline_deepseek,test_0048,0,0,schema_error,JSON envuelto en fences markdown | tras limpiar formato: PROP-P29 aprobada pero viola ['presupuesto'] | PROP-T66 aprobada pero viola ['mascotas'] | rechazo falso u omisión de aprobadas: ['PROP-A93'],0,false_approval
+baseline_deepseek,test_0049,0,0,schema_error,"JSON envuelto en fences markdown | tras limpiar formato: rechazo falso u omisión de aprobadas: ['PROP-J29', 'PROP-S83', 'PROP-Z29']",1,ok
+baseline_deepseek,test_0050,0,0,schema_error,respuesta vacía,,

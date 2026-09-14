@@ -1,119 +1,147 @@
 {
   "id": "train_0260",
-  "uf_value": 39300,
+  "uf_value": 38500,
   "hard_constraints": {
-    "presupuesto_max_clp": 143500000,
-    "mascota_especie": "perro",
-    "mascota_kg": 30,
-    "distancia_max_transporte_m": 800,
+    "presupuesto_max_clp": 195000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 1200,
     "dormitorios_min": 2,
     "estacionamiento_requerido": true
   },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "San Miguel"
+    ]
+  },
   "properties": [
     {
-      "id": "PROP-T47",
-      "text": "Casa en Santiago Centro, 79m², 3 dormitorios, 2 baños. Precio: 3865 UF (precio negociable, el propietario está abierto a ofertas). Luminoso y con vista despejada. A 152m de la estación de metro Vicente Valdés. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $920.000/mes.",
+      "id": "PROP-A89",
+      "text": "Depto en San Miguel, 94m², 3D/1B. Precio: 5005 UF. A 960m de la estación de metro Escuela Militar. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $950.000/mes.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 152,
+        "distance_transport_m": 960,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "asignado",
-        "price_uf": 3865,
+        "parking": "propio",
+        "price_uf": 5005,
         "price_clp": null,
-        "rent_monthly_clp": 920000,
-        "location": "Santiago Centro"
-      },
-      "scenario": "budget_uf",
-      "trap": "precio en UF sobre presupuesto + frase de marketing"
-    },
-    {
-      "id": "PROP-S27",
-      "text": "Depto en Estación Central, 68m², 2 dormitorios, 1 baño. Precio: 3.598 UF. A 644m de la estación de metro Plaza Egaña. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Precio rebajado. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $670.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 644,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "asignado",
-        "price_uf": 3598,
-        "price_clp": null,
-        "rent_monthly_clp": 670000,
-        "location": "Estación Central"
+        "rent_monthly_clp": 950000,
+        "location": "San Miguel"
       },
       "scenario": "pass",
       "trap": "precio en UF a <2.5% del presupuesto"
     },
     {
-      "id": "PROP-Q46",
-      "text": "Depto en Independencia, 66m², 2D/2B. Precio: 2.835 UF. A 219m de la estación de metro Escuela Militar. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+      "id": "PROP-J32",
+      "text": "Depto en San Miguel, 54m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Justo en el sector que busca el comprador. Precio rebajado a 4.940 UF. A 172m de la estación de metro Lo Vial. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 219,
+        "bedrooms": 1,
+        "distance_transport_m": 172,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "visitas",
-        "price_uf": 2835,
+        "parking": "propio",
+        "price_uf": 4940,
         "price_clp": null,
         "rent_monthly_clp": null,
-        "location": "Independencia"
+        "location": "San Miguel"
       },
-      "scenario": "parking",
-      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-E91",
-      "text": "Depto en Ñuñoa, 74m², 2D/1B. Precio rebajado a 3013 UF. A 720m de la estación de metro Plaza Egaña. Pet friendly con límite de 30kg por mascota. Incluye estacionamiento propio. Arriendo referencial de la zona: $690.000/mes. Luminoso y con vista despejada.",
+      "id": "PROP-R33",
+      "text": "Casa en Ñuñoa, 106m², 4D/2B. Ideal para inversionistas. Valor $179.100.000. A 1,6km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 393m. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 393,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 179100000,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
+    },
+    {
+      "id": "PROP-K20",
+      "text": "Depto en San Miguel, 78m², 2D/2B. Ideal para inversionistas. Precio: UF 4.738. A 150m de la estación de metro Plaza Egaña. Pet friendly con límite de 6kg por mascota. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.080.000/mes.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 720,
+        "distance_transport_m": 150,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
-          "max_kg": 30
+          "max_kg": 6
         },
         "parking": "propio",
-        "price_uf": 3013,
+        "price_uf": 4738,
         "price_clp": null,
-        "rent_monthly_clp": 690000,
-        "location": "Ñuñoa"
+        "rent_monthly_clp": 1080000,
+        "location": "San Miguel"
       },
       "scenario": "pass",
       "trap": "límite de peso igual al de la mascota"
     },
     {
-      "id": "PROP-A26",
-      "text": "Depto en Vitacura, 93m², 3 dormitorios, 1 baño. Valor $131.300.000. A 160m de la estación de metro Baquedano. Edificio sin mascotas por reglamento de copropiedad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Excelente conectividad. Arriendo estimado: $640.000/mes.",
+      "id": "PROP-D71",
+      "text": "Depto en Independencia, 93m², 3 dormitorios, 2 baños. Precio: 5158 UF (el mejor valor por m² del sector). A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1016m. Excelente conectividad. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.120.000/mes.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 160,
+        "distance_transport_m": 1016,
         "pets": {
           "explicit": true,
-          "allowed": false,
+          "allowed": true,
           "species": [],
           "max_kg": null
         },
+        "parking": "asignado",
+        "price_uf": 5158,
+        "price_clp": null,
+        "rent_monthly_clp": 1120000,
+        "location": "Independencia"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-L19",
+      "text": "Casa en Estación Central, 97m², 3 dormitorios, 1 baño. Valor $152.200.000. A 575m de la estación de metro Príncipe de Gales. Aceptamos mascotas, gatos y perros hasta 6kg. Incluye 1 estacionamiento. Arriendo estimado: $710.000/mes. Ideal para inversionistas.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 575,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 6
+        },
         "parking": "propio",
         "price_uf": null,
-        "price_clp": 131300000,
-        "rent_monthly_clp": 640000,
-        "location": "Vitacura"
+        "price_clp": 152200000,
+        "rent_monthly_clp": 710000,
+        "location": "Estación Central"
       },
-      "scenario": "pets_none",
-      "trap": "no se aceptan mascotas"
+      "scenario": "pass",
+      "trap": "límite de peso igual al de la mascota"
     }
   ]
 }

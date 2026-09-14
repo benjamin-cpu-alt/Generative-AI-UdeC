@@ -50,15 +50,24 @@ class HardConstraints:
 
 
 @dataclass
+class SoftConstraints:
+    """No descalifican: determinan el ranking de las aprobadas (E1, prompt_base.txt).
+    Ubicación preferida primero; dentro de cada grupo, mayor ROI = mejor."""
+    ubicaciones_preferidas: List[str] = field(default_factory=list)
+
+
+@dataclass
 class Case:
     id: str
     uf_value: float
     hard_constraints: HardConstraints
     properties: List[Property]
+    soft_constraints: SoftConstraints = field(default_factory=SoftConstraints)
 
     @staticmethod
     def from_dict(d: dict) -> "Case":
         hc = d["hard_constraints"]
+        sc = d.get("soft_constraints") or {}
         props = []
         for p in d["properties"]:
             t = p["truth"]
@@ -79,6 +88,7 @@ class Case:
             uf_value=d["uf_value"],
             hard_constraints=HardConstraints(**hc),
             properties=props,
+            soft_constraints=SoftConstraints(**sc),
         )
 
     @staticmethod

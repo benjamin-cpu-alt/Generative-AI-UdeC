@@ -1,0 +1,37 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-M64",
+      "price_clp": 962400000,
+      "roi_pct": 79.37
+    },
+    {
+      "id": "PROP-V41",
+      "price_clp": 902790000,
+      "roi_pct": 71.11
+    },
+    {
+      "id": "PROP-Q83",
+      "price_clp": 793860000,
+      "roi_pct": 63.33
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-U40",
+      "failed_constraints": ["Mascotas: Mascota de 22kg no permitida explícitamente"]
+    },
+    {
+      "id": "PROP-G38",
+      "failed_constraints": ["Distancia máxima a transporte público: 1,4km > 600m"]
+    },
+    {
+      "id": "PROP-E54",
+      "failed_constraints": ["Mascotas: Mascota de 22kg no permitida (solo hasta 14kg)"]
+    },
+    {
+      "id": "PROP-A47",
+      "failed_constraints": ["Mascotas: Perros no permitidos por reglamento de copropiedad"]
+    }
+  ]
+}

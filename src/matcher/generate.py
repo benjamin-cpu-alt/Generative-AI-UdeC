@@ -3,7 +3,8 @@
 Orden de construcción (inverso al caso E1 anotado a mano):
   1. Se elige un ESCENARIO por propiedad (pasa todo / falla por X con trampa Y).
   2. Se genera el `truth` estructurado que realiza ese escenario.
-  3. Se renderiza el `text` con plantillas en español y distractores de marketing.
+  3. Se renderiza el `text` con plantillas en español y distractores de marketing
+     (incluida la trampa "comuna preferida" sobre propiedades que violan una hard).
   4. Se AUTO-VERIFICA con rules.py que el juez llega al mismo veredicto que el
      escenario intencionado. Un caso mal etiquetado aborta la generación.
 
@@ -20,8 +21,9 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 from .rules import (C_BEDROOMS, C_BUDGET, C_DISTANCE, C_PARKING, C_PETS,
-                    evaluate_property)
-from .schema import Case, HardConstraints, PetsPolicy, Property, Truth
+                    evaluate_property, expected_output)
+from .schema import (Case, HardConstraints, PetsPolicy, Property, SoftConstraints,
+                     Truth)
 
 ROOT = Path(__file__).resolve().parents[2]
 CASES_DIR = ROOT / "data" / "cases"
@@ -48,6 +50,11 @@ BUDGET_TRAPS = [
     "(el mejor valor por m² del sector)",
 ]
 DISTANCE_TRAPS = ["unos {min} minutos caminando", "muy bien conectado", "a pasos de todo"]
+# Frases que explotan la soft constraint de ubicación para colar una propiedad inválida.
+LOCATION_TRAPS = ["¡En la comuna favorita del cliente!", "Justo en el sector que busca el comprador.",
+                  "Ubicación premium, la más solicitada por sus clientes."]
+# Probabilidad de que una propiedad esté en una comuna preferida (para que el ranking importe).
+P_PREFERRED = 0.45
 
 FAIL_WEIGHTS = {
     "budget_uf": 4, "budget_clp": 2, "distance": 3, "parking": 3,
@@ -73,11 +80,11 @@ def _minutes(m: int) -> int:
 
 # ----------------------------------------------------------- generación truth
 
-def gen_profile(rng: random.Random) -> HardConstraints:
+def gen_profile(rng: random.Random) -> Tuple[HardConstraints, SoftConstraints]:
     especie = rng.choice(["perro", "perro", "gato"])
     kg = rng.choice([4, 5, 6, 8, 10, 12, 15, 18, 20, 22, 25, 30]) if especie == "perro" \
         else rng.choice([3, 4, 5, 6, 7])
-    return HardConstraints(
+    hc = HardConstraints(
         presupuesto_max_clp=_round_to(rng.uniform(85e6, 230e6), 500_000),
         mascota_especie=especie,
         mascota_kg=kg,
@@ -85,10 +92,12 @@ def gen_profile(rng: random.Random) -> HardConstraints:
         dormitorios_min=rng.choice([1, 2, 2, 2, 3]),
         estacionamiento_requerido=True,
     )
+    sc = SoftConstraints(ubicaciones_preferidas=rng.sample(COMUNAS, rng.choice([1, 2, 2])))
+    return hc, sc
 
 
-def gen_property(rng: random.Random, hc: HardConstraints, uf: float, scenario: str,
-                 pid: str) -> Tuple[Property, List[str]]:
+def gen_property(rng: random.Random, hc: HardConstraints, sc: SoftConstraints, uf: float,
+                 scenario: str, pid: str) -> Tuple[Property, List[str]]:
     """Devuelve (propiedad, restricciones que DEBEN fallar según el escenario)."""
     fails: List[str] = []
     notes: List[str] = []
@@ -184,14 +193,20 @@ def gen_property(rng: random.Random, hc: HardConstraints, uf: float, scenario: s
     if C_BUDGET not in fails and price_clp > hc.presupuesto_max_clp:
         price_clp = hc.presupuesto_max_clp  # clamp defensivo tras redondeos
 
-    has_rent = (not fails) or rng.random() < 0.6
+    # Aprobadas: 85 % con arriendo (el resto queda con roi_pct null, al final del ranking).
+    has_rent = rng.random() < (0.85 if not fails else 0.6)
+    preferred = rng.random() < P_PREFERRED
+    location = rng.choice(sc.ubicaciones_preferidas) if preferred else \
+        rng.choice([c for c in COMUNAS if c not in sc.ubicaciones_preferidas])
+    if preferred and fails:
+        notes.append("comuna preferida (soft) pero viola una hard constraint: no rescata")
     truth = Truth(
         bedrooms=bedrooms, distance_transport_m=distance, pets=pets, parking=parking,
         price_uf=price_uf, price_clp=None if in_uf else price_clp,
         rent_monthly_clp=rent if has_rent else None,
-        location=rng.choice(COMUNAS),
+        location=location,
     )
-    text = render_text(rng, truth, hc, scenario, active)
+    text = render_text(rng, truth, hc, scenario, active, location_trap=preferred and bool(fails))
     prop = Property(id=pid, text=text, truth=truth)
     return prop, sorted(set(fails)), notes
 
@@ -207,7 +222,7 @@ def _fmt_uf(rng: random.Random, n: int) -> str:
 
 
 def render_text(rng: random.Random, t: Truth, hc: HardConstraints, scenario: str,
-                active: List[str]) -> str:
+                active: List[str], location_trap: bool = False) -> str:
     kind = "Casa" if t.bedrooms >= 3 and rng.random() < 0.3 else "Depto"
     m2 = 28 + 17 * max(1, t.bedrooms) + rng.randint(0, 18)
     banos = max(1, min(t.bedrooms, rng.randint(1, 2)))
@@ -302,7 +317,9 @@ def render_text(rng: random.Random, t: Truth, hc: HardConstraints, scenario: str
                                  f"Arriendo referencial de la zona: {_fmt_clp(t.rent_monthly_clp)}/mes."]))
 
     # Marketing
-    if rng.random() < 0.6:
+    if location_trap and rng.random() < 0.7:
+        parts.insert(1, rng.choice(LOCATION_TRAPS))
+    elif rng.random() < 0.6:
         parts.insert(rng.randint(1, len(parts)), rng.choice(MARKETING))
 
     return " ".join(parts)
@@ -327,16 +344,17 @@ def _pick_scenarios(rng: random.Random, n: int) -> List[str]:
 
 def gen_case(rng: random.Random, case_id: str) -> Tuple[Case, Dict]:
     uf = _round_to(rng.uniform(38000, 40600), 50)
-    hc = gen_profile(rng)
+    hc, sc = gen_profile(rng)
     n = rng.randint(5, 9)
     props, meta = [], []
     letters = rng.sample("ABCDEFGHJKLMNPQRSTUVWXYZ", n)
     for letter, scenario in zip(letters, _pick_scenarios(rng, n)):
         pid = f"PROP-{letter}{rng.randint(10, 99)}"
-        prop, must_fail, notes = gen_property(rng, hc, uf, scenario, pid)
+        prop, must_fail, notes = gen_property(rng, hc, sc, uf, scenario, pid)
         props.append(prop)
         meta.append({"id": pid, "scenario": scenario, "expected_fail": must_fail, "notes": notes})
-    case = Case(id=case_id, uf_value=uf, hard_constraints=hc, properties=props)
+    case = Case(id=case_id, uf_value=uf, hard_constraints=hc, properties=props,
+                soft_constraints=sc)
 
     # Auto-verificación: el juez debe coincidir con el escenario intencionado.
     for prop, m in zip(props, meta):
@@ -352,6 +370,7 @@ def case_to_dict(case: Case, meta: Dict) -> Dict:
         "id": case.id,
         "uf_value": case.uf_value,
         "hard_constraints": asdict(case.hard_constraints),
+        "soft_constraints": asdict(case.soft_constraints),
         "properties": [],
     }
     for p, m in zip(case.properties, meta["properties"]):
@@ -364,7 +383,8 @@ def case_to_dict(case: Case, meta: Dict) -> Dict:
 
 def generate(n_train: int, n_test: int, seed: int, out_dir: Path = CASES_DIR) -> Dict:
     rng = random.Random(seed)
-    stats = {"train": 0, "test": 0, "properties": 0, "approved": 0, "scenarios": {}}
+    stats = {"train": 0, "test": 0, "properties": 0, "approved": 0, "preferred_location": 0,
+             "cases_with_nontrivial_ranking": 0, "scenarios": {}}
     for split, n in (("train", n_train), ("test", n_test)):
         d = out_dir / split
         d.mkdir(parents=True, exist_ok=True)
@@ -374,6 +394,9 @@ def generate(n_train: int, n_test: int, seed: int, out_dir: Path = CASES_DIR) ->
             (d / f"{cid}.json").write_text(
                 json.dumps(case_to_dict(case, meta), ensure_ascii=False, indent=2), encoding="utf-8")
             stats[split] += 1
+            exp = expected_output(case)
+            stats["preferred_location"] += sum(e.preferred_location for e in exp.by_id.values())
+            stats["cases_with_nontrivial_ranking"] += len(exp.ranked_ids) >= 2
             for m in meta["properties"]:
                 stats["properties"] += 1
                 stats["approved"] += m["scenario"] == "pass"

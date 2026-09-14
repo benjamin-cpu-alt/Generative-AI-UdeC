@@ -14,6 +14,8 @@ Uso:
 Dos niveles de corrección, siempre reportados juntos:
   e1_strict         criterio E1 literal sobre la respuesta cruda
   e1_after_extract  mismo criterio tras quitar fences/<think> (extractor determinista)
+Métricas secundarias: exact_match (conjunto exacto), ranking_ok (orden por soft
+constraints) y full_correct (E1 + exact_match + ranking_ok).
 """
 from __future__ import annotations
 
@@ -113,6 +115,8 @@ def summarize(run: str, verdicts: List[Verdict], results_dir: Path) -> Dict:
            "e1_strict": strict, "e1_strict_acc": round(strict / n, 3) if n else 0.0,
            "e1_after_extract": extracted, "e1_after_extract_acc": round(extracted / n, 3) if n else 0.0,
            "exact_match": sum(v.exact_match for v in verdicts),
+           "ranking_ok": sum(v.ranking_ok for v in verdicts),
+           "full_correct": sum(v.full_correct for v in verdicts),
            "fail_schema": reasons.get("schema_error", 0),
            "fail_false_approval": reasons.get("false_approval", 0),
            "fail_arithmetic": reasons.get("arithmetic_error", 0),
@@ -156,7 +160,7 @@ def main(argv=None) -> int:
 
     print("== Resumen por modelo ==")
     print_table(summaries, ["run", "model", "n", "e1_strict", "e1_after_extract", "exact_match",
-                            "fail_schema", "fail_false_approval", "fail_arithmetic", "raw_wrapped",
+                            "ranking_ok", "full_correct", "fail_schema", "fail_false_approval", "fail_arithmetic", "raw_wrapped",
                             "truncated", "mean_output_tokens", "mean_wall_s"])
     print("\n== Aprobaciones indebidas por restricción (tras extractor) ==")
     print_table(breakdowns, ["run", "constraint", "invalid_in_test", "approved_anyway", "false_approval_rate"])

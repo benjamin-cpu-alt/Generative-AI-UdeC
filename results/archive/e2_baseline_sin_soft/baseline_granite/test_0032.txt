@@ -1,0 +1,42 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-R34",
+      "price_clp": 125500000,
+      "roi_pct": 41.92
+    },
+    {
+      "id": "PROP-G98",
+      "price_clp": 114544000,
+      "roi_pct": 56.92
+    },
+    {
+      "id": "PROP-P86",
+      "price_clp": 101676000,
+      "roi_pct": 55.11
+    },
+    {
+      "id": "PROP-C76",
+      "price_clp": 116376000,
+      "roi_pct": 55.00
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-Q58",
+      "failed_constraints": ["Mascotas: mascotas permitidas hasta 2kg, pero el comprador tiene un perro de 4kg"]
+    },
+    {
+      "id": "PROP-S39",
+      "failed_constraints": ["Mascotas: solo se admiten gatos, pero el comprador tiene un perro"]
+    },
+    {
+      "id": "PROP-B34",
+      "failed_constraints": ["Distancia máxima a transporte público: 1,1km > 800m"]
+    },
+    {
+      "id": "PROP-X54",
+      "failed_constraints": ["Distancia máxima a transporte público: 1000m > 800m"]
+    }
+  ]
+}

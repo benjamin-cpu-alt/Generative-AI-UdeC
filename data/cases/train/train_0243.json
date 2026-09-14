@@ -1,42 +1,49 @@
 {
   "id": "train_0243",
-  "uf_value": 38900,
+  "uf_value": 40300,
   "hard_constraints": {
     "presupuesto_max_clp": 143500000,
     "mascota_especie": "perro",
-    "mascota_kg": 15,
-    "distancia_max_transporte_m": 1000,
-    "dormitorios_min": 1,
+    "mascota_kg": 30,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
     "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Peñalolén"
+    ]
   },
   "properties": [
     {
-      "id": "PROP-B53",
-      "text": "Depto en Peñalolén, 69m², 2 dormitorios, 2 baños. Valor $133.700.000. A 1450m del metro Franklin, muy bien conectado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $860.000/mes. Entrega inmediata.",
+      "id": "PROP-S88",
+      "text": "Depto en Peñalolén, 70m², 2D/1B. Ubicación premium, la más solicitada por sus clientes. Precio: 3.161 UF. A 409m de la estación de metro Bellas Artes. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 1450,
+        "distance_transport_m": 409,
         "pets": {
           "explicit": true,
           "allowed": true,
-          "species": [],
+          "species": [
+            "gato"
+          ],
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": null,
-        "price_clp": 133700000,
-        "rent_monthly_clp": 860000,
+        "price_uf": 3161,
+        "price_clp": null,
+        "rent_monthly_clp": null,
         "location": "Peñalolén"
       },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-M48",
-      "text": "Depto en San Miguel, 73m², 2 dormitorios, 2 baños. Valor $145.500.000 (precio negociable, el propietario está abierto a ofertas). A 569m de la estación de metro Ñuñoa. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado.",
+      "id": "PROP-Q80",
+      "text": "Casa en Peñalolén, 90m², 3 dormitorios, 1 baño. Ubicación premium, la más solicitada por sus clientes. Precio: 3620 UF (precio negociable, el propietario está abierto a ofertas). A 287m de la estación de metro Lo Vial. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $560.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 569,
+        "bedrooms": 3,
+        "distance_transport_m": 287,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -44,41 +51,41 @@
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": null,
-        "price_clp": 145500000,
-        "rent_monthly_clp": null,
-        "location": "San Miguel"
+        "price_uf": 3620,
+        "price_clp": null,
+        "rent_monthly_clp": 560000,
+        "location": "Peñalolén"
       },
-      "scenario": "budget_clp",
-      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-H18",
-      "text": "Depto en Independencia, 95m², 3D/1B. Precio: $108.500.000. A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 405m. Excelente conectividad. Incluye 1 estacionamiento.",
+      "id": "PROP-E92",
+      "text": "Casa en Estación Central, 95m², 3 dormitorios, 2 baños. Precio: 3.020 UF. A 724m de paradero de buses troncal, y 1,3km del metro más cercano. No se especifica política de mascotas. Incluye 1 estacionamiento subterráneo asignado. Luminoso y con vista despejada.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 405,
+        "distance_transport_m": 724,
         "pets": {
           "explicit": false,
           "allowed": false,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 108500000,
+        "parking": "asignado",
+        "price_uf": 3020,
+        "price_clp": null,
         "rent_monthly_clp": null,
-        "location": "Independencia"
+        "location": "Estación Central"
       },
       "scenario": "pets_unspecified",
       "trap": "política de mascotas ausente (debe ser explícita)"
     },
     {
-      "id": "PROP-G55",
-      "text": "Depto en Macul, 96m², 3D/2B. Excelente conectividad. Valor $129.300.000. A 1600m del metro Irarrázaval, a pasos de todo. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.030.000/mes.",
+      "id": "PROP-A67",
+      "text": "Depto en Providencia, 83m², 3D/1B. Valor $148.500.000 (¡bajo el presupuesto del cliente según nuestro tasador!). A 772m de la estación de metro Vicente Valdés. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $710.000/mes. ¡Oportunidad única!",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 1600,
+        "distance_transport_m": 772,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -87,19 +94,19 @@
         },
         "parking": "asignado",
         "price_uf": null,
-        "price_clp": 129300000,
-        "rent_monthly_clp": 1030000,
-        "location": "Macul"
+        "price_clp": 148500000,
+        "rent_monthly_clp": 710000,
+        "location": "Providencia"
       },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
     },
     {
-      "id": "PROP-R96",
-      "text": "Depto en Ñuñoa, 62m², 2 dormitorios, 2 baños. Valor $138.700.000. ¡Oportunidad única! A 1000m de la estación de metro Baquedano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo estimado: $1.080.000/mes.",
+      "id": "PROP-L70",
+      "text": "Depto en Peñalolén, 85m², 3D/1B. Precio: 3228 UF. A 770m de la estación de metro Tobalaba. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Ideal para inversionistas. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $610.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 1000,
+        "bedrooms": 3,
+        "distance_transport_m": 770,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -107,34 +114,97 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": null,
-        "price_clp": 138700000,
-        "rent_monthly_clp": 1080000,
-        "location": "Ñuñoa"
-      },
-      "scenario": "pass",
-      "trap": "distancia exactamente en el límite"
-    },
-    {
-      "id": "PROP-P45",
-      "text": "Depto en Peñalolén, 69m², 2 dormitorios, 1 baño. Valor $123.900.000. A 451m de la estación de metro Vicente Valdés. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $940.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 451,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 123900000,
-        "rent_monthly_clp": 940000,
+        "price_uf": 3228,
+        "price_clp": null,
+        "rent_monthly_clp": 610000,
         "location": "Peñalolén"
       },
       "scenario": "pass",
       "trap": null
+    },
+    {
+      "id": "PROP-B97",
+      "text": "Depto en Peñalolén, 63m², 2D/1B. Ubicación premium, la más solicitada por sus clientes. Precio rebajado a $104.000.000. A 308m de la estación de metro Tobalaba. Pet friendly con límite de 27kg por mascota. Incluye 1 estacionamiento. Arriendo estimado: $540.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 308,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 27
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 104000000,
+        "rent_monthly_clp": 540000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 27kg < mascota 30kg; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-P18",
+      "text": "Depto en Peñalolén, 94m², 3 dormitorios, 2 baños. Ubicación premium, la más solicitada por sus clientes. Precio: 3767 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 189m de la estación de metro Lo Vial. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 189,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3767,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-G58",
+      "text": "Casa en Peñalolén, 108m², 4 dormitorios, 2 baños. Justo en el sector que busca el comprador. Precio: 2734 UF. A 1100m del metro Bellas Artes, a pasos de todo. Se aceptan mascotas pequeñas y medianas hasta 25kg, previa autorización de la administración. Incluye estacionamiento propio. Arriendo estimado: $520.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1100,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 25
+        },
+        "parking": "propio",
+        "price_uf": 2734,
+        "price_clp": null,
+        "rent_monthly_clp": 520000,
+        "location": "Peñalolén"
+      },
+      "scenario": "multi",
+      "trap": "distancia excedida, minimizada en minutos caminando; límite de peso 25kg < mascota 30kg; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-J24",
+      "text": "Depto en Macul, 109m², 4D/1B. Precio: 3.529 UF. A 1,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 372m. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo estimado: $800.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 372,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3529,
+        "price_clp": null,
+        "rent_monthly_clp": 800000,
+        "location": "Macul"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
     }
   ]
 }

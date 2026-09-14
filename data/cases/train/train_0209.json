@@ -1,84 +1,114 @@
 {
   "id": "train_0209",
-  "uf_value": 38050,
+  "uf_value": 39600,
   "hard_constraints": {
-    "presupuesto_max_clp": 121000000,
-    "mascota_especie": "perro",
-    "mascota_kg": 30,
-    "distancia_max_transporte_m": 600,
-    "dormitorios_min": 3,
+    "presupuesto_max_clp": 185000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
     "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Ñuñoa"
+    ]
   },
   "properties": [
     {
-      "id": "PROP-Y79",
-      "text": "Depto en Providencia, 105m², 4D/1B. Valor $117.700.000. A 170m de la estación de metro Cal y Canto. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Piso alto, orientación norte. Arriendo referencial de la zona: $530.000/mes.",
+      "id": "PROP-S24",
+      "text": "Depto en Providencia, 84m², 3D/2B. Precio: 3.369 UF. A 352m de la estación de metro Los Leones. Edificio sin mascotas por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado.",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 170,
+        "bedrooms": 3,
+        "distance_transport_m": 352,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3369,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-Y29",
+      "text": "Casa en Ñuñoa, 82m², 3 dormitorios, 2 baños. Precio: 4.182 UF. A 517m de la estación de metro Tobalaba. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.240.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 517,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "asignado",
-        "price_uf": null,
-        "price_clp": 117700000,
-        "rent_monthly_clp": 530000,
-        "location": "Providencia"
+        "parking": "propio",
+        "price_uf": 4182,
+        "price_clp": null,
+        "rent_monthly_clp": 1240000,
+        "location": "Ñuñoa"
       },
       "scenario": "pass",
       "trap": null
     },
     {
-      "id": "PROP-T19",
-      "text": "Depto en La Cisterna, 104m², 4 dormitorios, 2 baños. Precio: 3059 UF. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 582m. Recién remodelado. Pet friendly con límite de 27kg por mascota. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $690.000/mes.",
+      "id": "PROP-K43",
+      "text": "Casa en Providencia, 102m², 4 dormitorios, 2 baños. Precio: 4563 UF. A 814m de paradero de buses troncal, y 1,7km del metro más cercano. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $830.000/mes. Precio rebajado.",
       "truth": {
         "bedrooms": 4,
-        "distance_transport_m": 582,
+        "distance_transport_m": 814,
         "pets": {
           "explicit": true,
           "allowed": true,
-          "species": [],
-          "max_kg": 27
-        },
-        "parking": "asignado",
-        "price_uf": 3059,
-        "price_clp": null,
-        "rent_monthly_clp": 690000,
-        "location": "La Cisterna"
-      },
-      "scenario": "pets_weight",
-      "trap": "límite de peso 27kg < mascota 30kg"
-    },
-    {
-      "id": "PROP-W31",
-      "text": "Casa en Macul, 105m², 4 dormitorios, 1 baño. Precio: 3.240 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 419m de la estación de metro Lo Vial. 100% pet friendly, sin restricciones de tamaño ni especie. Excelente conectividad. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $560.000/mes.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 419,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
+          "species": [
+            "perro"
+          ],
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 3240,
+        "price_uf": 4563,
         "price_clp": null,
-        "rent_monthly_clp": 560000,
-        "location": "Macul"
+        "rent_monthly_clp": 830000,
+        "location": "Providencia"
       },
-      "scenario": "budget_uf",
-      "trap": "precio en UF sobre presupuesto + frase de marketing"
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador"
     },
     {
-      "id": "PROP-R67",
-      "text": "Casa en La Florida, 99m², 4 dormitorios, 2 baños. Precio: 3.332 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 227m de paradero de buses troncal, y 1,3km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "id": "PROP-B56",
+      "text": "Depto en Ñuñoa, 112m², 4D/1B. Valor $139.200.000. A 504m de paradero de buses troncal, y 1,6km del metro más cercano. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Entrega inmediata. Arriendo referencial de la zona: $1.040.000/mes.",
       "truth": {
         "bedrooms": 4,
-        "distance_transport_m": 227,
+        "distance_transport_m": 504,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 139200000,
+        "rent_monthly_clp": 1040000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+    },
+    {
+      "id": "PROP-C32",
+      "text": "Depto en La Florida, 60m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio: UF 4.088. A 454m de la estación de metro Lo Vial. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Excelente conectividad. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 454,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -86,34 +116,13 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": 3332,
+        "price_uf": 4088,
         "price_clp": null,
         "rent_monthly_clp": null,
         "location": "La Florida"
       },
-      "scenario": "budget_uf",
-      "trap": "precio en UF sobre presupuesto + frase de marketing"
-    },
-    {
-      "id": "PROP-J28",
-      "text": "Depto en Estación Central, 108m², 4 dormitorios, 1 baño. Recién remodelado. Precio: 3114 UF. A 385m de la estación de metro Bellas Artes. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $770.000/mes.",
-      "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 385,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 3114,
-        "price_clp": null,
-        "rent_monthly_clp": 770000,
-        "location": "Estación Central"
-      },
-      "scenario": "pass",
-      "trap": "precio en UF a <2.5% del presupuesto"
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
     }
   ]
 }

@@ -1,21 +1,48 @@
 {
   "id": "test_0005",
-  "uf_value": 38150,
+  "uf_value": 38500,
   "hard_constraints": {
-    "presupuesto_max_clp": 203000000,
+    "presupuesto_max_clp": 183000000,
     "mascota_especie": "perro",
     "mascota_kg": 18,
-    "distancia_max_transporte_m": 1000,
+    "distancia_max_transporte_m": 1500,
     "dormitorios_min": 2,
     "estacionamiento_requerido": true
   },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "La Reina",
+      "Macul"
+    ]
+  },
   "properties": [
     {
-      "id": "PROP-V24",
-      "text": "Depto en La Florida, 92m², 3 dormitorios, 2 baños. Valor $158.300.000. A 1150m del metro Ñuñoa, muy bien conectado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.280.000/mes.",
+      "id": "PROP-S53",
+      "text": "Depto en Macul, 79m², 2 dormitorios, 2 baños. Justo en el sector que busca el comprador. Precio: 4.818 UF (¡bajo el presupuesto del cliente según nuestro tasador!). A 865m de paradero de buses troncal, y 1,7km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.040.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 865,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4818,
+        "price_clp": null,
+        "rent_monthly_clp": 1040000,
+        "location": "Macul"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-L94",
+      "text": "Casa en La Florida, 89m², 3D/2B. Precio: 4405 UF. A 2500m del metro Ñuñoa, a pasos de todo. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Piso alto, orientación norte. Incluye 1 estacionamiento techado asignado.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 1150,
+        "distance_transport_m": 2500,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -23,41 +50,20 @@
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": null,
-        "price_clp": 158300000,
-        "rent_monthly_clp": 1280000,
+        "price_uf": 4405,
+        "price_clp": null,
+        "rent_monthly_clp": null,
         "location": "La Florida"
       },
       "scenario": "distance",
       "trap": "distancia excedida, minimizada en minutos caminando"
     },
     {
-      "id": "PROP-Y43",
-      "text": "Depto en La Reina, 103m², 4 dormitorios, 1 baño. Valor $154.200.000. Ubicado a 1,4 km de la estación Irarrázaval, unos 18 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento.",
+      "id": "PROP-T83",
+      "text": "Depto en Vitacura, 79m², 2 dormitorios, 1 baño. Valor $185.000.000 (¡bajo el presupuesto del cliente según nuestro tasador!). A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 583m. Entrega inmediata. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado.",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 1400,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 154200000,
-        "rent_monthly_clp": null,
-        "location": "La Reina"
-      },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
-    },
-    {
-      "id": "PROP-C34",
-      "text": "Depto en Providencia, 80m², 3 dormitorios, 1 baño. Valor $210.000.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 480m de la estación de metro Baquedano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 480,
+        "bedrooms": 2,
+        "distance_transport_m": 583,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -66,19 +72,19 @@
         },
         "parking": "asignado",
         "price_uf": null,
-        "price_clp": 210000000,
+        "price_clp": 185000000,
         "rent_monthly_clp": null,
-        "location": "Providencia"
+        "location": "Vitacura"
       },
       "scenario": "budget_clp",
       "trap": "precio en CLP sobre presupuesto, 'negociable'"
     },
     {
-      "id": "PROP-U40",
-      "text": "Casa en La Cisterna, 100m², 4 dormitorios, 2 baños. Precio rebajado a $150.900.000. A 1000m de paradero de buses troncal, y 1,4km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.010.000/mes. ¡Oportunidad única!",
+      "id": "PROP-Y64",
+      "text": "Casa en Peñalolén, 92m², 3D/1B. Precio rebajado a 4.691 UF. A 1181m de paradero de buses troncal, y 1,8km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Entrega inmediata. Arriendo referencial de la zona: $1.270.000/mes.",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 1000,
+        "bedrooms": 3,
+        "distance_transport_m": 1181,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -86,34 +92,55 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": null,
-        "price_clp": 150900000,
-        "rent_monthly_clp": 1010000,
-        "location": "La Cisterna"
+        "price_uf": 4691,
+        "price_clp": null,
+        "rent_monthly_clp": 1270000,
+        "location": "Peñalolén"
       },
       "scenario": "pass",
-      "trap": "distancia exactamente en el límite"
+      "trap": "precio en UF a <2.5% del presupuesto"
     },
     {
-      "id": "PROP-D72",
-      "text": "Depto en Recoleta, 64m², 2D/2B. Entrega inmediata. Precio rebajado a $173.000.000. A 856m de la estación de metro Escuela Militar. Se aceptan mascotas pequeñas y medianas hasta 18kg, previa autorización de la administración. Incluye 1 estacionamiento. Arriendo estimado: $1.230.000/mes.",
+      "id": "PROP-Q57",
+      "text": "Depto en Las Condes, 71m², 2D/2B. Precio: $134.900.000. A 176m de la estación de metro Escuela Militar. Edificio sin mascotas por reglamento de copropiedad. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.040.000/mes.",
       "truth": {
         "bedrooms": 2,
-        "distance_transport_m": 856,
+        "distance_transport_m": 176,
         "pets": {
           "explicit": true,
-          "allowed": true,
+          "allowed": false,
           "species": [],
-          "max_kg": 18
+          "max_kg": null
         },
         "parking": "propio",
         "price_uf": null,
-        "price_clp": 173000000,
-        "rent_monthly_clp": 1230000,
+        "price_clp": 134900000,
+        "rent_monthly_clp": 1040000,
+        "location": "Las Condes"
+      },
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
+    },
+    {
+      "id": "PROP-W72",
+      "text": "Depto en Recoleta, 82m², 3 dormitorios, 2 baños. Precio: 3.494 UF. A 1217m de la estación de metro Bellas Artes. Edificio sin mascotas por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1217,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3494,
+        "price_clp": null,
+        "rent_monthly_clp": null,
         "location": "Recoleta"
       },
-      "scenario": "pass",
-      "trap": "límite de peso igual al de la mascota"
+      "scenario": "pets_none",
+      "trap": "no se aceptan mascotas"
     }
   ]
 }

@@ -1,128 +1,110 @@
 {
   "id": "train_0204",
-  "uf_value": 39850,
+  "uf_value": 38350,
   "hard_constraints": {
-    "presupuesto_max_clp": 192000000,
+    "presupuesto_max_clp": 207000000,
     "mascota_especie": "perro",
     "mascota_kg": 6,
-    "distancia_max_transporte_m": 600,
-    "dormitorios_min": 2,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
     "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Macul"
+    ]
   },
   "properties": [
     {
-      "id": "PROP-K77",
-      "text": "Depto en Vitacura, 97m², 3D/2B. Precio: 4612 UF. Ubicado a 0,8 km de la estación Irarrázaval, unos 11 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio.",
+      "id": "PROP-W58",
+      "text": "Depto en Macul, 89m², 3D/1B. Precio: 5.272 UF. A 976m de la estación de metro Ñuñoa. Recién remodelado. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $780.000/mes.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 850,
+        "distance_transport_m": 976,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": 4612,
+        "parking": "asignado",
+        "price_uf": 5272,
         "price_clp": null,
-        "rent_monthly_clp": null,
-        "location": "Vitacura"
-      },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
-    },
-    {
-      "id": "PROP-E81",
-      "text": "Depto en Las Condes, 72m², 2D/2B. Precio: 4.708 UF. A 524m de la estación de metro Plaza Egaña. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $800.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 524,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 4708,
-        "price_clp": null,
-        "rent_monthly_clp": 800000,
-        "location": "Las Condes"
+        "rent_monthly_clp": 780000,
+        "location": "Macul"
       },
       "scenario": "pass",
       "trap": "precio en UF a <2.5% del presupuesto"
     },
     {
-      "id": "PROP-N72",
-      "text": "Depto en La Florida, 82m², 3D/2B. Precio rebajado. Precio: 4284 UF. A 590m de la estación de metro Plaza Egaña. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+      "id": "PROP-V63",
+      "text": "Depto en La Florida, 99m², 4D/1B. Precio rebajado a 5194 UF. A 1750m del metro Bellas Artes, a pasos de todo. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.050.000/mes.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 590,
+        "bedrooms": 4,
+        "distance_transport_m": 1750,
         "pets": {
-          "explicit": false,
-          "allowed": false,
+          "explicit": true,
+          "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": 4284,
+        "parking": "asignado",
+        "price_uf": 5194,
         "price_clp": null,
-        "rent_monthly_clp": null,
+        "rent_monthly_clp": 1050000,
         "location": "La Florida"
       },
-      "scenario": "pets_unspecified",
-      "trap": "política de mascotas ausente (debe ser explícita)"
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
     },
     {
-      "id": "PROP-D30",
-      "text": "Depto en La Florida, 62m², 2 dormitorios, 1 baño. Valor $189.600.000. A 575m de la estación de metro Los Leones. Pet friendly con límite de 2kg por mascota. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Excelente conectividad.",
+      "id": "PROP-S58",
+      "text": "Depto en Peñalolén, 99m², 4 dormitorios, 2 baños. Valor $184.400.000. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 852m. Aceptamos mascotas, gatos y perros hasta 2kg. Incluye 1 estacionamiento. Arriendo referencial de la zona: $950.000/mes. Piso alto, orientación norte.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 575,
+        "bedrooms": 4,
+        "distance_transport_m": 852,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": 2
         },
-        "parking": "visitas",
+        "parking": "propio",
         "price_uf": null,
-        "price_clp": 189600000,
-        "rent_monthly_clp": null,
-        "location": "La Florida"
+        "price_clp": 184400000,
+        "rent_monthly_clp": 950000,
+        "location": "Peñalolén"
       },
-      "scenario": "multi",
-      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple; límite de peso 2kg < mascota 6kg"
+      "scenario": "pets_weight",
+      "trap": "límite de peso 2kg < mascota 6kg"
     },
     {
-      "id": "PROP-H53",
-      "text": "Depto en La Florida, 104m², 4 dormitorios, 2 baños. Valor $147.200.000. ¡Oportunidad única! A 409m de paradero de buses troncal, y 1,0km del metro más cercano. Solo se admiten perros de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $720.000/mes.",
+      "id": "PROP-E83",
+      "text": "Depto en Estación Central, 86m², 3 dormitorios, 2 baños. Precio: $178.900.000. A 392m de la estación de metro Los Leones. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Arriendo estimado: $830.000/mes. Precio rebajado.",
       "truth": {
-        "bedrooms": 4,
-        "distance_transport_m": 409,
+        "bedrooms": 3,
+        "distance_transport_m": 392,
         "pets": {
           "explicit": true,
           "allowed": true,
-          "species": [
-            "perro"
-          ],
+          "species": [],
           "max_kg": null
         },
-        "parking": "propio",
+        "parking": "calle",
         "price_uf": null,
-        "price_clp": 147200000,
-        "rent_monthly_clp": 720000,
-        "location": "La Florida"
+        "price_clp": 178900000,
+        "rent_monthly_clp": 830000,
+        "location": "Estación Central"
       },
-      "scenario": "pass",
-      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+      "scenario": "parking",
+      "trap": "estacionamiento 'calle' menciona la palabra pero no cumple"
     },
     {
-      "id": "PROP-L46",
-      "text": "Depto en La Reina, 109m², 4 dormitorios, 1 baño. Valor $196.500.000 (precio negociable, el propietario está abierto a ofertas). A 318m de la estación de metro Los Leones. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.530.000/mes.",
+      "id": "PROP-Q45",
+      "text": "Depto en Macul, 114m², 4 dormitorios, 2 baños. Precio: 5327 UF. A 610m de la estación de metro Manquehue. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $960.000/mes.",
       "truth": {
         "bedrooms": 4,
-        "distance_transport_m": 318,
+        "distance_transport_m": 610,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -130,13 +112,34 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": null,
-        "price_clp": 196500000,
-        "rent_monthly_clp": 1530000,
-        "location": "La Reina"
+        "price_uf": 5327,
+        "price_clp": null,
+        "rent_monthly_clp": 960000,
+        "location": "Macul"
       },
-      "scenario": "budget_clp",
-      "trap": "precio en CLP sobre presupuesto, 'negociable'"
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-L63",
+      "text": "Depto en Macul, 100m², 4 dormitorios, 1 baño. Precio rebajado. Valor $184.000.000. A 275m de la estación de metro Lo Vial. 100% pet friendly, sin restricciones de tamaño ni especie. No incluye estacionamiento (posible arriendo en edificio vecino). Arriendo estimado: $1.470.000/mes.",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 275,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 184000000,
+        "rent_monthly_clp": 1470000,
+        "location": "Macul"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple; comuna preferida (soft) pero viola una hard constraint: no rescata"
     }
   ]
 }

@@ -1,21 +1,27 @@
 {
   "id": "train_0020",
-  "uf_value": 38650,
+  "uf_value": 39300,
   "hard_constraints": {
-    "presupuesto_max_clp": 161500000,
+    "presupuesto_max_clp": 142000000,
     "mascota_especie": "perro",
-    "mascota_kg": 10,
-    "distancia_max_transporte_m": 1000,
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1200,
     "dormitorios_min": 2,
     "estacionamiento_requerido": true
   },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "La Reina",
+      "La Cisterna"
+    ]
+  },
   "properties": [
     {
-      "id": "PROP-R34",
-      "text": "Depto en Ñuñoa, 89m², 3 dormitorios, 1 baño. Precio rebajado a 3.408 UF. Ubicado a 1,8 km de la estación Irarrázaval, unos 22 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo referencial de la zona: $990.000/mes.",
+      "id": "PROP-H45",
+      "text": "Depto en La Reina, 77m², 2 dormitorios, 1 baño. Precio: UF 3.542. A 754m de paradero de buses troncal, y 1,2km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 1800,
+        "bedrooms": 2,
+        "distance_transport_m": 754,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -23,41 +29,20 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": 3408,
+        "price_uf": 3542,
         "price_clp": null,
-        "rent_monthly_clp": 990000,
-        "location": "Ñuñoa"
-      },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
-    },
-    {
-      "id": "PROP-T86",
-      "text": "Depto en Vitacura, 74m², 2D/2B. ¡Oportunidad única! Precio: 4.075 UF. A 595m de la estación de metro Ñuñoa. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $920.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 595,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "asignado",
-        "price_uf": 4075,
-        "price_clp": null,
-        "rent_monthly_clp": 920000,
-        "location": "Vitacura"
+        "rent_monthly_clp": null,
+        "location": "La Reina"
       },
       "scenario": "pass",
       "trap": "precio en UF a <2.5% del presupuesto"
     },
     {
-      "id": "PROP-J58",
-      "text": "Depto en Recoleta, 73m², 2D/1B. Precio: 4223 UF (el mejor valor por m² del sector). A 1,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 360m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $710.000/mes.",
+      "id": "PROP-J37",
+      "text": "Casa en Estación Central, 95m², 3 dormitorios, 2 baños. Valor $147.000.000 (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). Entrega inmediata. A 153m de la estación de metro Tobalaba. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $890.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 360,
+        "bedrooms": 3,
+        "distance_transport_m": 153,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -65,57 +50,141 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": 4223,
-        "price_clp": null,
-        "rent_monthly_clp": 710000,
-        "location": "Recoleta"
+        "price_uf": null,
+        "price_clp": 147000000,
+        "rent_monthly_clp": 890000,
+        "location": "Estación Central"
       },
-      "scenario": "budget_uf",
-      "trap": "precio en UF sobre presupuesto + frase de marketing"
+      "scenario": "budget_clp",
+      "trap": "precio en CLP sobre presupuesto, 'negociable'"
     },
     {
-      "id": "PROP-B61",
-      "text": "Casa en Estación Central, 91m², 3D/1B. Precio: UF 3.648. A 2,2km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 915m. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Recién remodelado. Arriendo referencial de la zona: $1.110.000/mes.",
+      "id": "PROP-Y48",
+      "text": "Depto en Vitacura, 83m², 3 dormitorios, 2 baños. Precio: UF 2.636. A 499m de la estación de metro Manquehue. Se aceptan mascotas pequeñas y medianas hasta 15kg, previa autorización de la administración. Incluye 1 estacionamiento.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 915,
+        "distance_transport_m": 499,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "propio",
+        "price_uf": 2636,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 15kg < mascota 18kg"
+    },
+    {
+      "id": "PROP-S78",
+      "text": "Depto en La Cisterna, 87m², 3 dormitorios, 1 baño. ¡En la comuna favorita del cliente! Precio: UF 3.557. A 328m de la estación de metro Vicente Valdés. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $920.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 328,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [
-            "perro"
+            "gato"
           ],
           "max_kg": null
         },
-        "parking": "asignado",
-        "price_uf": 3648,
+        "parking": "propio",
+        "price_uf": 3557,
         "price_clp": null,
-        "rent_monthly_clp": 1110000,
-        "location": "Estación Central"
+        "rent_monthly_clp": 920000,
+        "location": "La Cisterna"
       },
-      "scenario": "pass",
-      "trap": "solo se acepta la especie del comprador (la otra está prohibida)"
+      "scenario": "pets_species",
+      "trap": "acepta la otra especie, no la del comprador; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-C45",
-      "text": "Casa en La Cisterna, 96m², 3D/1B. Precio rebajado a $137.500.000. A 811m de la estación de metro Irarrázaval. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo estimado: $860.000/mes.",
+      "id": "PROP-T65",
+      "text": "Depto en La Reina, 95m², 3D/1B. ¡En la comuna favorita del cliente! Valor $110.900.000. A 2,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1118m. Aceptamos mascotas, gatos y perros hasta 10kg. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $790.000/mes.",
       "truth": {
         "bedrooms": 3,
-        "distance_transport_m": 811,
+        "distance_transport_m": 1118,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 10
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 110900000,
+        "rent_monthly_clp": 790000,
+        "location": "La Reina"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 10kg < mascota 18kg; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-D89",
+      "text": "Depto en La Cisterna, 73m², 2 dormitorios, 2 baños. Precio: $129.900.000. A 2,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 906m. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.010.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 906,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "visitas",
+        "parking": "asignado",
         "price_uf": null,
-        "price_clp": 137500000,
-        "rent_monthly_clp": 860000,
+        "price_clp": 129900000,
+        "rent_monthly_clp": 1010000,
         "location": "La Cisterna"
       },
-      "scenario": "parking",
-      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+      "scenario": "pass",
+      "trap": null
+    },
+    {
+      "id": "PROP-A17",
+      "text": "Depto en La Reina, 78m², 2 dormitorios, 2 baños. Precio: 3588 UF. Excelente conectividad. A 844m de paradero de buses troncal, y 1,4km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $720.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 844,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3588,
+        "price_clp": null,
+        "rent_monthly_clp": 720000,
+        "location": "La Reina"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-F65",
+      "text": "Depto en La Cisterna, 79m², 2 dormitorios, 1 baño. Valor $118.800.000. A 486m de la estación de metro Los Leones. Pet friendly con límite de 17kg por mascota. Recién remodelado. Incluye estacionamiento propio. Arriendo estimado: $830.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 486,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 17
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 118800000,
+        "rent_monthly_clp": 830000,
+        "location": "La Cisterna"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 17kg < mascota 18kg; comuna preferida (soft) pero viola una hard constraint: no rescata"
     }
   ]
 }

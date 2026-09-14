@@ -1,0 +1,37 @@
+```json
+{
+  "approved_matches": [
+    {
+      "id": "M12",
+      "price_clp": 186224650,
+      "roi_pct": 6.48
+    }
+  ],
+  "rejected": [
+    {
+      "id": "X61",
+      "failed_constraints": ["budget"]
+    },
+    {
+      "id": "R26",
+      "failed_constraints": ["budget"]
+    },
+    {
+      "id": "W97",
+      "failed_constraints": ["pets"]
+    },
+    {
+      "id": "A73",
+      "failed_constraints": ["budget", "distance", "parking"]
+    },
+    {
+      "id": "G51",
+      "failed_constraints": ["distance", "bedrooms"]
+    },
+    {
+      "id": "E75",
+      "failed_constraints": ["pets"]
+    }
+  ]
+}
+```

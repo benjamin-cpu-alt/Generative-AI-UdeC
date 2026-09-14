@@ -1,149 +1,68 @@
 {
   "id": "train_0024",
-  "uf_value": 38800,
+  "uf_value": 38100,
   "hard_constraints": {
-    "presupuesto_max_clp": 218500000,
-    "mascota_especie": "gato",
-    "mascota_kg": 6,
-    "distancia_max_transporte_m": 1500,
+    "presupuesto_max_clp": 126500000,
+    "mascota_especie": "perro",
+    "mascota_kg": 22,
+    "distancia_max_transporte_m": 500,
     "dormitorios_min": 2,
     "estacionamiento_requerido": true
   },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Vitacura"
+    ]
+  },
   "properties": [
     {
-      "id": "PROP-P70",
-      "text": "Depto en La Reina, 79m², 3 dormitorios, 1 baño. Precio: 5.804 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 505m de paradero de buses troncal, y 1,3km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye estacionamiento propio. Recién remodelado. Arriendo estimado: $740.000/mes.",
+      "id": "PROP-J89",
+      "text": "Depto en Vitacura, 46m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Justo en el sector que busca el comprador. Valor $101.300.000. A 1,7km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 382m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $610.000/mes.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 505,
+        "bedrooms": 1,
+        "distance_transport_m": 382,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": 5804,
-        "price_clp": null,
-        "rent_monthly_clp": 740000,
-        "location": "La Reina"
-      },
-      "scenario": "budget_uf",
-      "trap": "precio en UF sobre presupuesto + frase de marketing"
-    },
-    {
-      "id": "PROP-W37",
-      "text": "Casa en Las Condes, 92m², 3D/2B. Valor $158.500.000. A 1123m de la estación de metro Tobalaba. Entrega inmediata. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. No incluye estacionamiento (posible arriendo en edificio vecino).",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 1123,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "ninguno",
-        "price_uf": null,
-        "price_clp": 158500000,
-        "rent_monthly_clp": null,
-        "location": "Las Condes"
-      },
-      "scenario": "parking",
-      "trap": "estacionamiento 'ninguno' menciona la palabra pero no cumple"
-    },
-    {
-      "id": "PROP-V74",
-      "text": "Depto en Recoleta, 66m², 2D/2B. Valor $171.500.000. Ubicado a 2,6 km de la estación Baquedano, unos 33 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Luminoso y con vista despejada. Incluye 1 estacionamiento.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 2650,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 171500000,
-        "rent_monthly_clp": null,
-        "location": "Recoleta"
-      },
-      "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
-    },
-    {
-      "id": "PROP-D27",
-      "text": "Depto en Las Condes, 69m², 2D/1B. Entrega inmediata. Valor $226.500.000 (el mejor valor por m² del sector). A 967m de la estación de metro Franklin. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento. Arriendo referencial de la zona: $1.270.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 967,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 226500000,
-        "rent_monthly_clp": 1270000,
-        "location": "Las Condes"
-      },
-      "scenario": "budget_clp",
-      "trap": "precio en CLP sobre presupuesto, 'negociable'"
-    },
-    {
-      "id": "PROP-M22",
-      "text": "Depto en La Reina, 87m², 3D/1B. Precio rebajado. Precio: UF 4.732. A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 524m. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.240.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 524,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [
-            "perro"
-          ],
           "max_kg": null
         },
         "parking": "asignado",
-        "price_uf": 4732,
-        "price_clp": null,
-        "rent_monthly_clp": 1240000,
-        "location": "La Reina"
+        "price_uf": null,
+        "price_clp": 101300000,
+        "rent_monthly_clp": 610000,
+        "location": "Vitacura"
       },
-      "scenario": "pets_species",
-      "trap": "acepta la otra especie, no la del comprador"
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real; comuna preferida (soft) pero viola una hard constraint: no rescata"
     },
     {
-      "id": "PROP-Y58",
-      "text": "Depto en La Reina, 90m², 3D/1B. Valor $166.700.000. A 984m de la estación de metro Bellas Artes. 100% pet friendly, sin restricciones de tamaño ni especie. Precio rebajado. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $1.260.000/mes.",
+      "id": "PROP-W77",
+      "text": "Depto en San Miguel, 97m², 4 dormitorios, 1 baño. Precio: 3247 UF. A 336m de paradero de buses troncal, y 1,0km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Recién remodelado. Arriendo estimado: $550.000/mes.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 984,
+        "bedrooms": 4,
+        "distance_transport_m": 336,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
         },
-        "parking": "visitas",
-        "price_uf": null,
-        "price_clp": 166700000,
-        "rent_monthly_clp": 1260000,
-        "location": "La Reina"
+        "parking": "asignado",
+        "price_uf": 3247,
+        "price_clp": null,
+        "rent_monthly_clp": 550000,
+        "location": "San Miguel"
       },
-      "scenario": "parking",
-      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple"
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
     },
     {
-      "id": "PROP-R14",
-      "text": "Depto en La Florida, 86m², 3D/2B. Precio: UF 4.575. A 1850m del metro Escuela Militar, a pasos de todo. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo estimado: $1.280.000/mes.",
+      "id": "PROP-C10",
+      "text": "Depto en Santiago Centro, 50m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Precio: UF 3.291. A 260m de la estación de metro Lo Vial. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio. Arriendo estimado: $690.000/mes. Ideal para inversionistas.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 1850,
+        "bedrooms": 1,
+        "distance_transport_m": 260,
         "pets": {
           "explicit": true,
           "allowed": true,
@@ -151,13 +70,55 @@
           "max_kg": null
         },
         "parking": "propio",
-        "price_uf": 4575,
+        "price_uf": 3291,
         "price_clp": null,
-        "rent_monthly_clp": 1280000,
-        "location": "La Florida"
+        "rent_monthly_clp": 690000,
+        "location": "Santiago Centro"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real"
+    },
+    {
+      "id": "PROP-U24",
+      "text": "Depto en Vitacura, 70m², 2 dormitorios, 2 baños. Valor $95.800.000. Ubicado a 0,9 km de la estación Tobalaba, unos 11 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Precio rebajado.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 95800000,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
       },
       "scenario": "distance",
-      "trap": "distancia excedida, minimizada en minutos caminando"
+      "trap": "distancia excedida, minimizada en minutos caminando; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-H26",
+      "text": "Depto en Vitacura, 46m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Justo en el sector que busca el comprador. Precio rebajado a $120.900.000. A 165m de la estación de metro Escuela Militar. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $600.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 165,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 120900000,
+        "rent_monthly_clp": 600000,
+        "location": "Vitacura"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real; comuna preferida (soft) pero viola una hard constraint: no rescata"
     }
   ]
 }

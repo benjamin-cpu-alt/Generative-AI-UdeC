@@ -1,119 +1,209 @@
 {
   "id": "train_0254",
-  "uf_value": 39000,
+  "uf_value": 38650,
   "hard_constraints": {
-    "presupuesto_max_clp": 194000000,
+    "presupuesto_max_clp": 221500000,
     "mascota_especie": "perro",
-    "mascota_kg": 10,
+    "mascota_kg": 30,
     "distancia_max_transporte_m": 1500,
-    "dormitorios_min": 2,
+    "dormitorios_min": 1,
     "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "La Florida",
+      "Peñalolén"
+    ]
   },
   "properties": [
     {
-      "id": "PROP-L46",
-      "text": "Depto en Ñuñoa, 63m², 2 dormitorios, 1 baño. Valor $158.900.000. A 1,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 315m. Se aceptan mascotas pequeñas y medianas hasta 2kg, previa autorización de la administración. Luminoso y con vista despejada. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo referencial de la zona: $780.000/mes.",
+      "id": "PROP-S22",
+      "text": "Depto en La Cisterna, 45m², 1 dormitorios, 1 baño. Entrega inmediata. Precio: 4.781 UF. Ubicado a 2,0 km de la estación Vicente Valdés, unos 26 minutos caminando. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.440.000/mes.",
       "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 315,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": 2
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 158900000,
-        "rent_monthly_clp": 780000,
-        "location": "Ñuñoa"
-      },
-      "scenario": "pets_weight",
-      "trap": "límite de peso 2kg < mascota 10kg"
-    },
-    {
-      "id": "PROP-A15",
-      "text": "Depto en La Cisterna, 80m², 2 dormitorios, 1 baño. Valor $200.000.000 (el mejor valor por m² del sector). A 497m de la estación de metro Irarrázaval. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Ideal para inversionistas. Incluye estacionamiento propio. Arriendo estimado: $980.000/mes.",
-      "truth": {
-        "bedrooms": 2,
-        "distance_transport_m": 497,
+        "bedrooms": 1,
+        "distance_transport_m": 2050,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
           "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 200000000,
-        "rent_monthly_clp": 980000,
-        "location": "La Cisterna"
-      },
-      "scenario": "budget_clp",
-      "trap": "precio en CLP sobre presupuesto, 'negociable'"
-    },
-    {
-      "id": "PROP-Y78",
-      "text": "Casa en La Cisterna, 96m², 3D/2B. Valor $177.400.000. A 806m de la estación de metro Ñuñoa. Incluye 1 estacionamiento. Piso alto, orientación norte. Arriendo referencial de la zona: $1.290.000/mes.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 806,
-        "pets": {
-          "explicit": false,
-          "allowed": false,
-          "species": [],
-          "max_kg": null
-        },
-        "parking": "propio",
-        "price_uf": null,
-        "price_clp": 177400000,
-        "rent_monthly_clp": 1290000,
-        "location": "La Cisterna"
-      },
-      "scenario": "pets_unspecified",
-      "trap": "política de mascotas ausente (debe ser explícita)"
-    },
-    {
-      "id": "PROP-S94",
-      "text": "Depto en Providencia, 91m², 3 dormitorios, 2 baños. Valor $143.100.000. A 479m de la estación de metro Franklin. ¡Oportunidad única! Aceptamos mascotas, gatos y perros hasta 9kg. Incluye 1 estacionamiento techado asignado.",
-      "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 479,
-        "pets": {
-          "explicit": true,
-          "allowed": true,
-          "species": [],
-          "max_kg": 9
         },
         "parking": "asignado",
-        "price_uf": null,
-        "price_clp": 143100000,
-        "rent_monthly_clp": null,
-        "location": "Providencia"
+        "price_uf": 4781,
+        "price_clp": null,
+        "rent_monthly_clp": 1440000,
+        "location": "La Cisterna"
       },
-      "scenario": "pets_weight",
-      "trap": "límite de peso 9kg < mascota 10kg"
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando"
     },
     {
-      "id": "PROP-C30",
-      "text": "Casa en La Reina, 87m², 3D/2B. Precio: UF 4.508. Ideal para inversionistas. A 637m de la estación de metro Vicente Valdés. Pet friendly con límite de 10kg por mascota. Incluye 1 estacionamiento. Arriendo referencial de la zona: $820.000/mes.",
+      "id": "PROP-R86",
+      "text": "Depto en La Florida, 50m², 1 dormitorios, 1 baño. Precio rebajado a UF 5.635. A 1455m de la estación de metro Baquedano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Ideal para inversionistas.",
       "truth": {
-        "bedrooms": 3,
-        "distance_transport_m": 637,
+        "bedrooms": 1,
+        "distance_transport_m": 1455,
         "pets": {
           "explicit": true,
           "allowed": true,
           "species": [],
-          "max_kg": 10
+          "max_kg": null
         },
-        "parking": "propio",
-        "price_uf": 4508,
+        "parking": "asignado",
+        "price_uf": 5635,
         "price_clp": null,
-        "rent_monthly_clp": 820000,
-        "location": "La Reina"
+        "rent_monthly_clp": null,
+        "location": "La Florida"
       },
       "scenario": "pass",
-      "trap": "límite de peso igual al de la mascota"
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-P68",
+      "text": "Depto en Ñuñoa, 70m², 2 dormitorios, 2 baños. Precio: 5700 UF. A 480m de paradero de buses troncal, y 1,1km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.360.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 480,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5700,
+        "price_clp": null,
+        "rent_monthly_clp": 1360000,
+        "location": "Ñuñoa"
+      },
+      "scenario": "pass",
+      "trap": "precio en UF a <2.5% del presupuesto"
+    },
+    {
+      "id": "PROP-X34",
+      "text": "Depto en Peñalolén, 80m², 2 dormitorios, 1 baño. ¡En la comuna favorita del cliente! Valor $190.600.000. A 1950m del metro Los Leones, muy bien conectado. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.520.000/mes.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1950,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 190600000,
+        "rent_monthly_clp": 1520000,
+        "location": "Peñalolén"
+      },
+      "scenario": "distance",
+      "trap": "distancia excedida, minimizada en minutos caminando; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-F54",
+      "text": "Depto en Peñalolén, 55m², 1D/1B. Justo en el sector que busca el comprador. Precio: 4.952 UF. A 418m de la estación de metro Irarrázaval. Pet friendly con límite de 25kg por mascota. Incluye estacionamiento propio. Arriendo referencial de la zona: $1.330.000/mes.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 418,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 25
+        },
+        "parking": "propio",
+        "price_uf": 4952,
+        "price_clp": null,
+        "rent_monthly_clp": 1330000,
+        "location": "Peñalolén"
+      },
+      "scenario": "pets_weight",
+      "trap": "límite de peso 25kg < mascota 30kg; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-L57",
+      "text": "Depto en Santiago Centro, 60m², 1D/1B. Precio: 5925 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 475m de la estación de metro Plaza Egaña. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 475,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5925,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      },
+      "scenario": "budget_uf",
+      "trap": "precio en UF sobre presupuesto + frase de marketing"
+    },
+    {
+      "id": "PROP-H85",
+      "text": "Casa en La Florida, 79m², 3D/1B. Justo en el sector que busca el comprador. Precio rebajado a $191.100.000. A 813m de la estación de metro Franklin. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo estimado: $870.000/mes.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 813,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": null,
+        "price_clp": 191100000,
+        "rent_monthly_clp": 870000,
+        "location": "La Florida"
+      },
+      "scenario": "parking",
+      "trap": "estacionamiento 'visitas' menciona la palabra pero no cumple; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-K12",
+      "text": "Depto estudio en La Florida, 49m², ambiente único + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Precio rebajado a UF 5.131. A 166m de la estación de metro Lo Vial. Entrega inmediata. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 166,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5131,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      },
+      "scenario": "bedrooms",
+      "trap": "dormitorio 'convertible' que no es real; comuna preferida (soft) pero viola una hard constraint: no rescata"
+    },
+    {
+      "id": "PROP-B17",
+      "text": "Depto estudio en La Florida, 48m², ambiente único + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. ¡En la comuna favorita del cliente! Precio: 5855 UF (el mejor valor por m² del sector). A 1240m de la estación de metro Ñuñoa. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 1240,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5855,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      },
+      "scenario": "multi",
+      "trap": "precio en UF sobre presupuesto + frase de marketing; dormitorio 'convertible' que no es real; comuna preferida (soft) pero viola una hard constraint: no rescata"
     }
   ]
 }
