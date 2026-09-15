@@ -16,9 +16,13 @@ python3 -m matcher.evaluate --runs baseline_phi4 baseline_granite baseline_deeps
 
 | Modelo | Params | e1_strict | e1_after_extract | exact_match | ranking_ok | full_correct | fail_schema | fail_false_approval | fail_arithmetic | tokens/resp | s/resp |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| phi4-mini | 3.8B | /51 | /51 | /51 | /51 | /51 | | | | | |
-| granite4.1 | 8.0B | /51 | /51 | /51 | /51 | /51 | | | | | |
-| deepseek-r1-distill-qwen | 7.0B | /51 | /51 | /51 | /51 | /51 | | | | | |
+| phi4-mini | 3.8B | 0/51 | 0/51 | 1/51 | 1/51 | 0/51 | 5 | 40 | 6 | 346 | 15.8 |
+| granite4.1 | 8.0B | 0/51 | 0/51 | 0/51 | 0/51 | 0/51 | 8 | 42 | 1 | 265 | 31.8 |
+| deepseek-r1-distill-qwen | 7.0B | 0/51 | 2/51 | 2/51 | 1/51 | 0/51 | 26 | 18 | 5 | 4996 | 323.3 |
+
+Corrida del 15-sep-2026 (`results/summary_baselines.csv`), timeout 900 s/caso. DeepSeek queda
+truncado en 22/51 casos aun con `num_predict 8192` (de ahí sus 26 `fail_schema`): el `<think>`
+consume el presupuesto antes de emitir el JSON.
 
 > Resultados de la primera pasada (prompt sin soft constraints, no comparable):
 > `results/archive/e2_baseline_sin_soft/README.md`.
@@ -34,11 +38,11 @@ python3 -m matcher.evaluate --runs baseline_phi4 baseline_granite baseline_deeps
 
 | Restricción | Inválidas en test | phi4 aprueba | granite aprueba | deepseek aprueba |
 |---|---|---|---|---|
-| presupuesto | | | | |
-| mascotas | | | | |
-| distancia_transporte | | | | |
-| dormitorios | | | | |
-| estacionamiento | | | | |
+| presupuesto | 69 | 23 (33%) | 35 (51%) | 10 (14%) |
+| mascotas | 83 | 16 (19%) | 10 (12%) | 9 (11%) |
+| distancia_transporte | 37 | 5 (14%) | 14 (38%) | 1 (3%) |
+| dormitorios | 41 | 11 (27%) | 11 (27%) | 12 (29%) |
+| estacionamiento | 34 | 1 (3%) | 2 (6%) | 3 (9%) |
 
 Mapea directo al diagnóstico de la E1: presupuesto/distancia ↔ atención selectiva
 (frases de marketing), dormitorios/mascotas ↔ colapso lógico, `fail_arithmetic` ↔
