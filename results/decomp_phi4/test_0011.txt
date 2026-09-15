@@ -1,0 +1,44 @@
+{
+ "approved_matches": [
+  {
+   "id": "PROP-R74",
+   "price_clp": 83985000,
+   "roi_pct": 19.86
+  },
+  {
+   "id": "PROP-T92",
+   "price_clp": 21470000,
+   "roi_pct": 28.99
+  },
+  {
+   "id": "PROP-N37",
+   "price_clp": 22993600,
+   "roi_pct": 0.00
+  }
+ ],
+ "rejected": [
+  {
+   "id": "PROP-U67",
+   "failed_constraints": [
+    "distancia_metro_text: 251m mayor que 800m",
+    "bedrooms: 2 menor que 3",
+    "parking: calle"
+   ]
+  },
+  {
+   "id": "PROP-W73",
+   "failed_constraints": [
+    "distancia_metro_text: 0,9km mayor que 800m",
+    "pets_policy: no_mencionada",
+    "parking: calle"
+   ]
+  },
+  {
+   "id": "PROP-D21",
+   "failed_constraints": [
+    "distancia_metro_text: 763m mayor que 800m",
+    "parking: asignado"
+   ]
+  }
+ ]
+}

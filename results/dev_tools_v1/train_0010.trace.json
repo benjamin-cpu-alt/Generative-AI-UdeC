@@ -1,0 +1,168 @@
+{
+  "facts": {
+    "PROP-R29": {
+      "location": "Ñuñoa",
+      "bedrooms": 2,
+      "price_text": "UF 3.904",
+      "rent_text": "$870.000/mes",
+      "distance_metro_text": "1106m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 2,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Ñuñoa\",\n  \"bedrooms\": 2,\n  \"price_text\": \"UF 3.904\",\n  \"rent_text\": \"$870.000/mes\",\n  \"distance_metro_text\": \"1106m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": 2,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 679,
+      "output_tokens": 99,
+      "wall_s": 3.9,
+      "error": null
+    },
+    "PROP-A87": {
+      "location": "Peñalolén",
+      "bedrooms": 2,
+      "price_text": "196.000.000",
+      "rent_text": null,
+      "distance_metro_text": "1463m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro",
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Peñalolén\",\n  \"bedrooms\": 2,\n  \"price_text\": \"196.000.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1463m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 659,
+      "output_tokens": 101,
+      "wall_s": 3.93,
+      "error": null
+    },
+    "PROP-C31": {
+      "location": "La Florida",
+      "bedrooms": 4,
+      "price_text": "4161 UF",
+      "rent_text": "860.000/mes",
+      "distance_metro_text": "1500m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"La Florida\",\n  \"bedrooms\": 4,\n  \"price_text\": \"4161 UF\",\n  \"rent_text\": \"860.000/mes\",\n  \"distance_metro_text\": \"1500m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 656,
+      "output_tokens": 93,
+      "wall_s": 3.52,
+      "error": null
+    },
+    "PROP-W37": {
+      "location": "Estación Central",
+      "bedrooms": 2,
+      "price_text": "UF 3.932",
+      "rent_text": "$900.000/mes",
+      "distance_metro_text": "1024m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro",
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Estación Central\",\n  \"bedrooms\": 2,\n  \"price_text\": \"UF 3.932\",\n  \"rent_text\": \"$900.000/mes\",\n  \"distance_metro_text\": \"1024m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 662,
+      "output_tokens": 104,
+      "wall_s": 3.93,
+      "error": null
+    },
+    "PROP-P51": {
+      "location": "Estación Central",
+      "bedrooms": 2,
+      "price_text": "UF 3.688",
+      "rent_text": null,
+      "distance_metro_text": "2000m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Estación Central\",\n  \"bedrooms\": 2,\n  \"price_text\": \"UF 3.688\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"2000m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 656,
+      "output_tokens": 91,
+      "wall_s": 3.46,
+      "error": null
+    }
+  },
+  "decisions": {
+    "PROP-R29": {
+      "price_clp": 155184000,
+      "roi_pct": 6.73,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio 'UF 3.904' = 3904 UF -> 155,184,000 CLP <= 195,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=2 vs perro 6kg -> FALLA",
+        "distancia: metro='1106m' bus=None -> min=1106 vs max 1500",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-A87": {
+      "price_clp": 196000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '196.000.000' = 1.96e+08 CLP -> 196,000,000 CLP > 195,000,000",
+        "mascotas: politica=permitidas especies=['perro', 'gato'] max_kg=None vs perro 6kg -> ok",
+        "distancia: metro='1463m' bus=None -> min=1463 vs max 1500",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-C31": {
+      "price_clp": 165399750,
+      "roi_pct": 6.24,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '4161 UF' = 4161 UF -> 165,399,750 CLP <= 195,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 6kg -> ok",
+        "distancia: metro='1500m' bus=None -> min=1500 vs max 1500",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-W37": {
+      "price_clp": 156297000,
+      "roi_pct": 6.91,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio 'UF 3.932' = 3932 UF -> 156,297,000 CLP <= 195,000,000",
+        "mascotas: politica=permitidas especies=['perro', 'gato'] max_kg=None vs perro 6kg -> ok",
+        "distancia: metro='1024m' bus=None -> min=1024 vs max 1500",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-P51": {
+      "price_clp": 146598000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio 'UF 3.688' = 3688 UF -> 146,598,000 CLP <= 195,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 6kg -> ok",
+        "distancia: metro='2000m' bus=None -> min=2000 vs max 1500",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

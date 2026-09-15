@@ -6,6 +6,7 @@
 # Uso:  bash scripts/run_baselines.sh              # los tres
 #       bash scripts/run_baselines.sh phi4         # solo uno (phi4|granite|deepseek)
 #       LIMIT=3 bash scripts/run_baselines.sh phi4 # prueba rápida con 3 casos
+#       TIMEOUT=900 FORCE=1 bash scripts/run_baselines.sh deepseek  # re-corre todo con 900 s/caso
 #
 # Cada ejecución se puede interrumpir y retomar: los casos ya respondidos se omiten.
 # Compatible con bash 3.2 (macOS) y Git Bash (Windows).
@@ -31,13 +32,15 @@ extra_of() {
 
 TARGETS=("$@"); [ ${#TARGETS[@]} -eq 0 ] && TARGETS=(phi4 granite deepseek)
 LIMIT_ARG=""; [ -n "${LIMIT:-}" ] && LIMIT_ARG="--limit $LIMIT"
+TIMEOUT_ARG="--timeout ${TIMEOUT:-600}"   # segundos máximos por caso
+FORCE_ARG=""; [ -n "${FORCE:-}" ] && FORCE_ARG="--force"   # re-genera casos ya respondidos
 
 RUNS=()
 for t in "${TARGETS[@]}"; do
   model="$(model_of "$t")"
   echo "================ $model ================"
   # shellcheck disable=SC2086
-  python3 -m matcher.run_model --model "$model" --run "baseline_$t" $(extra_of "$t") $LIMIT_ARG \
+  python3 -m matcher.run_model --model "$model" --run "baseline_$t" $(extra_of "$t") $LIMIT_ARG $TIMEOUT_ARG $FORCE_ARG \
     2>&1 | tee -a "../results/baseline_$t.log"
   RUNS+=("baseline_$t")
 done

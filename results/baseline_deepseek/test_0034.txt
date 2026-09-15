@@ -1,0 +1,29 @@
+```json
+{
+  "approved_matches": [
+    {
+      "id": "E58",
+      "price_clp": 149100000,
+      "roi_pct": 8.53
+    }
+  ],
+  "rejected": [
+    {
+      "id": "T63",
+      "failed_constraints": ["Distance a transportación pública (metro O paradero de buses troncal): 1800 m"]
+    },
+    {
+      "id": "D67",
+      "failed_constraints": ["Mascotas: Tiene 4kg de gatos", "Distancia máxima a transporte público (metro O paradero de buses troncal): 2000 m"]
+    },
+    {
+      "id": "Q98",
+      "failed_constraints": ["Mascotas: No se allowen perros y gatos de cualquier tamaño"]
+    },
+    {
+      "id": "V49",
+      "failed_constraints": ["Mascotas: Solo se admiten gatos de cualquier tamaño"]
+    }
+  ]
+}
+```

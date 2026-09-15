@@ -1,0 +1,78 @@
+{
+ "approved_matches": [
+  {
+    "id": "PROP-H11",
+    "price_clp": 21000000,
+    "roi_pct": 7.32
+  },
+  {
+    "id": "PROP-J21",
+    "price_clp": 21500000,
+    "roi_pct": 11.88
+  },
+  {
+    "id": "PROP-B95",
+    "price_clp": 2536800,
+    "roi_pct": 56.84
+  },
+  {
+    "id": "PROP-H11",
+    "price_clp": 21000000,
+    "roi_pct": 7.32
+  },
+  {
+    "id": "PROP-J21",
+    "price_clp": 21500000,
+    "roi_pct": 11.88
+  }
+ ],"rejected": [
+  {
+    "id": "PROP-P27",
+    "failed_constraints": [
+      "distancia_metro_text: 850m mayor que 500m",
+      "pets_policy: permitido, pero especies no especificadas",
+      "parking: calle, no propio ni asignado"
+    ]
+  },
+  {
+    "id": "PROP-A58",
+    "failed_constraints": [
+      "location: La Cisterna, no preferida",
+      "pets_policy: no permitidas",
+      "parking: asignado, pero no especificado"
+    ]
+  },
+  {
+    "id": "PROP-W43",
+    "failed_constraints": [
+      "location: Macul, no preferida",
+      "pets_policy: no especificado",
+      "parking: asignado, pero no especificado"
+    ]
+  },
+  {
+    "id": "PROP-Z41",
+    "failed_constraints": [
+      "location: Santiago Centro, no preferida",
+      "pets_policy: permitido, pero especies no especificadas",
+      "parking: propio, pero no especificado"
+    ]
+  },
+  {
+    "id": "PROP-Q66",
+    "failed_constraints": [
+      "location: Maipú, preferida, pero no cumple con la distancia_metro_text: 1400m mayor que 500m",
+      "pets_policy: permitido, pero especies no especificadas",
+      "parking: no mencionado, no cumple con el estacionamiento"
+    ]
+  },
+  {
+    "id": "PROP-G30",
+    "failed_constraints": [
+      "location: Independencia, no preferida",
+      "pets_policy: permitido, pero especies no especificadas",
+      "parking: propio, pero no especificado"
+    ]
+  }
+ ]
+}

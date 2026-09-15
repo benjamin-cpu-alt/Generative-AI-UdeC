@@ -1,0 +1,168 @@
+{
+  "facts": {
+    "PROP-Z74": {
+      "location": "Vitacura",
+      "bedrooms": 4,
+      "price_text": "UF 1.933",
+      "rent_text": "$490.000/mes",
+      "distance_metro_text": "373m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 7,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Vitacura\",\n  \"bedrooms\": 4,\n  \"price_text\": \"UF 1.933\",\n  \"rent_text\": \"$490.000/mes\",\n  \"distance_metro_text\": \"373m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": 7,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 666,
+      "output_tokens": 96,
+      "wall_s": 5.1,
+      "error": null
+    },
+    "PROP-J38": {
+      "location": "Recoleta",
+      "bedrooms": 4,
+      "price_text": "2.416 UF",
+      "rent_text": "460.000/mes",
+      "distance_metro_text": "1,8km",
+      "distance_bus_text": "781m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Recoleta\",\n  \"bedrooms\": 4,\n  \"price_text\": \"2.416 UF\",\n  \"rent_text\": \"460.000/mes\",\n  \"distance_metro_text\": \"1,8km\",\n  \"distance_bus_text\": \"781m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 681,
+      "output_tokens": 97,
+      "wall_s": 4.79,
+      "error": null
+    },
+    "PROP-N39": {
+      "location": "Recoleta",
+      "bedrooms": 3,
+      "price_text": "2.426 UF",
+      "rent_text": "590.000/mes",
+      "distance_metro_text": "1,5km",
+      "distance_bus_text": "321m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Recoleta\",\n  \"bedrooms\": 3,\n  \"price_text\": \"2.426 UF\",\n  \"rent_text\": \"590.000/mes\",\n  \"distance_metro_text\": \"1,5km\",\n  \"distance_bus_text\": \"321m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 689,
+      "output_tokens": 98,
+      "wall_s": 6.41,
+      "error": null
+    },
+    "PROP-X51": {
+      "location": "San Miguel",
+      "bedrooms": 2,
+      "price_text": "UF 2.458",
+      "rent_text": null,
+      "distance_metro_text": "501m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro",
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"San Miguel\",\n  \"bedrooms\": 2,\n  \"price_text\": \"UF 2.458\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"501m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 667,
+      "output_tokens": 97,
+      "wall_s": 4.77,
+      "error": null
+    },
+    "PROP-M87": {
+      "location": "Macul",
+      "bedrooms": 2,
+      "price_text": "$73.200.000",
+      "rent_text": null,
+      "distance_metro_text": "873m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Macul\",\n  \"bedrooms\": 2,\n  \"price_text\": \"$73.200.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"873m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 654,
+      "output_tokens": 90,
+      "wall_s": 3.96,
+      "error": null
+    }
+  },
+  "decisions": {
+    "PROP-Z74": {
+      "price_clp": 77996550,
+      "roi_pct": 7.54,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio 'UF 1.933' = 1933 UF -> 77,996,550 CLP <= 95,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=7 vs gato 7kg -> ok",
+        "distancia: metro='373m' bus=None -> min=373 vs max 1000",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-J38": {
+      "price_clp": 97485600,
+      "roi_pct": 5.66,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '2.416 UF' = 2416 UF -> 97,485,600 CLP > 95,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 7kg -> ok",
+        "distancia: metro='1,8km' bus='781m' -> min=781 vs max 1000",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-N39": {
+      "price_clp": 97889100,
+      "roi_pct": 7.23,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '2.426 UF' = 2426 UF -> 97,889,100 CLP > 95,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 7kg -> ok",
+        "distancia: metro='1,5km' bus='321m' -> min=321 vs max 1000",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-X51": {
+      "price_clp": 99180300,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio 'UF 2.458' = 2458 UF -> 99,180,300 CLP > 95,500,000",
+        "mascotas: politica=permitidas especies=['perro', 'gato'] max_kg=None vs gato 7kg -> ok",
+        "distancia: metro='501m' bus=None -> min=501 vs max 1000",
+        "dormitorios: 2 vs min 3",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-M87": {
+      "price_clp": 73200000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$73.200.000' = 7.32e+07 CLP -> 73,200,000 CLP <= 95,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 7kg -> ok",
+        "distancia: metro='873m' bus=None -> min=873 vs max 1000",
+        "dormitorios: 2 vs min 3",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}

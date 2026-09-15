@@ -1,0 +1,167 @@
+{
+  "facts": {
+    "PROP-J89": {
+      "location": "Vitacura",
+      "bedrooms": 1,
+      "price_text": "$101.300.000",
+      "rent_text": "610.000/mes",
+      "distance_metro_text": "1,7km",
+      "distance_bus_text": "382m",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato",
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Vitacura\",\n  \"bedrooms\": 1,\n  \"price_text\": \"$101.300.000\",\n  \"rent_text\": \"610.000/mes\",\n  \"distance_metro_text\": \"1,7km\",\n  \"distance_bus_text\": \"382m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"gato\", \"perro\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 806,
+      "output_tokens": 107,
+      "wall_s": 5.69,
+      "error": null
+    },
+    "PROP-W77": {
+      "location": "San Miguel",
+      "bedrooms": 4,
+      "price_text": "3247 UF",
+      "rent_text": "550.000/mes",
+      "distance_metro_text": "336m",
+      "distance_bus_text": "100m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"San Miguel\",\n  \"bedrooms\": 4,\n  \"price_text\": \"3247 UF\",\n  \"rent_text\": \"550.000/mes\",\n  \"distance_metro_text\": \"336m\",\n  \"distance_bus_text\": \"100m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 778,
+      "output_tokens": 95,
+      "wall_s": 5.15,
+      "error": null
+    },
+    "PROP-C10": {
+      "location": "Santiago Centro",
+      "bedrooms": 1,
+      "price_text": "UF 3.291",
+      "rent_text": "690.000/mes",
+      "distance_metro_text": "100m de la estación de metro Lo Vial",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Santiago Centro\",\n  \"bedrooms\": 1,\n  \"price_text\": \"UF 3.291\",\n  \"rent_text\": \"690.000/mes\",\n  \"distance_metro_text\": \"100m de la estación de metro Lo Vial\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 775,
+      "output_tokens": 103,
+      "wall_s": 4.8,
+      "error": null
+    },
+    "PROP-U24": {
+      "location": "Vitacura",
+      "bedrooms": 2,
+      "price_text": "$95.800.000",
+      "rent_text": null,
+      "distance_metro_text": "0,9 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Vitacura\",\n  \"bedrooms\": 2,\n  \"price_text\": \"$95.800.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"0,9 km\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 768,
+      "output_tokens": 93,
+      "wall_s": 4.31,
+      "error": null
+    },
+    "PROP-H26": {
+      "location": "Vitacura",
+      "bedrooms": 1,
+      "price_text": "$120.900.000",
+      "rent_text": "US$ 600.000/mes",
+      "distance_metro_text": "165m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Vitacura\",\n  \"bedrooms\": 1,\n  \"price_text\": \"$120.900.000\",\n  \"rent_text\": \"US$ 600.000/mes\",\n  \"distance_metro_text\": \"165m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 794,
+      "output_tokens": 99,
+      "wall_s": 4.68,
+      "error": null
+    }
+  },
+  "decisions": {
+    "PROP-J89": {
+      "price_clp": 101300000,
+      "roi_pct": 7.23,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$101.300.000' = 1.013e+08 CLP -> 101,300,000 CLP <= 126,500,000",
+        "mascotas: politica=permitidas especies=['gato', 'perro'] max_kg=None vs perro 22kg -> ok",
+        "distancia: metro='1,7km' bus='382m' -> min=382 vs max 500",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-W77": {
+      "price_clp": 123710700,
+      "roi_pct": 5.34,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3247 UF' = 3247 UF -> 123,710,700 CLP <= 126,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 22kg -> ok",
+        "distancia: metro='336m' bus='100m' -> min=100 vs max 500",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-C10": {
+      "price_clp": 125387100,
+      "roi_pct": 6.6,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio 'UF 3.291' = 3291 UF -> 125,387,100 CLP <= 126,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 22kg -> ok",
+        "distancia: metro='100m de la estación de metro Lo Vial' bus=None -> min=100 vs max 500",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-U24": {
+      "price_clp": 95800000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$95.800.000' = 9.58e+07 CLP -> 95,800,000 CLP <= 126,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 22kg -> ok",
+        "distancia: metro='0,9 km' bus=None -> min=900 vs max 500",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-H26": {
+      "price_clp": 120900000,
+      "roi_pct": 5.96,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$120.900.000' = 1.209e+08 CLP -> 120,900,000 CLP <= 126,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 22kg -> ok",
+        "distancia: metro='165m' bus=None -> min=165 vs max 500",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}

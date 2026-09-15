@@ -1,0 +1,36 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-S52",
+      "price_clp": 93100000,
+      "roi_pct": 10.18
+    },
+    {
+      "id": "PROP-P14",
+      "price_clp": 110687000,
+      "roi_pct": 5.2
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-C64",
+      "failed_constraints": [
+        "mascotas",
+        "estacionamiento"
+      ]
+    },
+    {
+      "id": "PROP-D13",
+      "failed_constraints": [
+        "distancia_transporte",
+        "estacionamiento"
+      ]
+    },
+    {
+      "id": "PROP-R11",
+      "failed_constraints": [
+        "presupuesto"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-B33",
+      "price_clp": 155000000,
+      "roi_pct": 8.23
+    },
+    {
+      "id": "PROP-H16",
+      "price_clp": 503620,
+      "roi_pct": 0.00
+    },
+    {
+      "id": "PROP-W68",
+      "price_clp": 1394000,
+      "roi_pct": 6.59
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-S66",
+      "failed_constraints": [
+        "price exceeds budget",
+        "parking is street parking"
+      ]
+    },
+    {
+      "id": "PROP-K27",
+      "failed_constraints": [
+        "price exceeds budget",
+        "distance to metro exceeds limit"
+      ]
+    },
+    {
+      "id": "PROP-X97",
+      "failed_constraints": [
+        "insufficient bedrooms"
+      ]
+    },
+    {
+      "id": "PROP-C32",
+      "failed_constraints": [
+        "parking not specified"
+      ]
+    }
+  ]
+}

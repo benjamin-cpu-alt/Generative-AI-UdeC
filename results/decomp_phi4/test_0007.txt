@@ -1,0 +1,41 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-V37",
+      "price_clp": 5572300,
+      "roi_pct": 25.85
+    },
+    {
+      "id": "PROP-C38",
+      "price_clp": 95500000,
+      "roi_pct": 5.67
+    },
+    {
+      "id": "PROP-G11",
+      "price_clp": 95500000,
+      "roi_pct": 5.67
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-T20",
+      "failed_constraints": ["price_clp"]
+    },
+    {
+      "id": "PROP-L69",
+      "failed_constraints": ["price_clp"]
+    },
+    {
+      "id": "PROP-Q62",
+      "failed_constraints": ["distance_metro_text", "pets_policy", "pets_species", "pets_max_kg", "parking"]
+    },
+    {
+      "id": "PROP-F88",
+      "failed_constraints": ["distance_metro_text", "pets_policy", "pets_species", "pets_max_kg", "parking"]
+    },
+    {
+      "id": "PROP-R16",
+      "failed_constraints": ["price_clp", "pets_policy"]
+    }
+  ]
+}

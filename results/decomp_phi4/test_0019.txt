@@ -1,0 +1,43 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-A24",
+      "price_clp": 56160000,
+      "roi_pct": 21.11
+    },
+    {
+      "id": "PROP-V99",
+      "price_clp": 56120000,
+      "roi_pct": 21.99
+    },
+    {
+      "id": "PROP-D72",
+      "price_clp": 56171900,
+      "roi_pct": 21.23
+    },
+    {
+      "id": "PROP-G34",
+      "price_clp": 56168000,
+      "roi_pct": 22.67
+    },
+    {
+      "id": "PROP-R83",
+      "price_clp": 217300000,
+      "roi_pct": 5.88
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-U46",
+      "failed_constraints": ["pets_policy"]
+    },
+    {
+      "id": "PROP-W98",
+      "failed_constraints": ["parking", "pets_policy"]
+    },
+    {
+      "id": "PROP-N72",
+      "failed_constraints": ["location", "pets_policy"]
+    }
+  ]
+}

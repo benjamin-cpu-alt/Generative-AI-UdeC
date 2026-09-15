@@ -1,0 +1,55 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-P97",
+      "price_clp": 7887600,
+      "roi_pct": 14.99
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-J32",
+      "failed_constraints": [
+         "price_clp: 81434000 > 133500000",
+        "bedrooms: 1 < 2",
+        "pets_policy: 'permitidas' no compatible con 'gato'",
+        "pets_max_kg: 2 < 3"
+      ]
+    },
+    {
+      "id": "PROP-H73",
+      "failed_constraints": [
+        "price_clp: 419802000 > 133500000",
+        "bedrooms: 4 >= 2"
+      ]
+    },
+    {
+      "id": "PROP-C54",
+      "failed_constraints": [
+        "location: 'Vitacura' no en 'Ñuñoa'",
+        "pets_policy: 'no_permitidas'"
+      ]
+    },
+    {
+      "id": "PROP-U61",
+      "failed_constraints": [
+        "price_clp: 1140480000 > 133500000",
+        "distance_metro_text: 1300 > 800"
+      ]
+    },
+    {
+      "id": "PROP-S85",
+      "failed_constraints": [
+        "pets_max_kg: null no compatible con 'gato'",
+        "parking: 'calle' no es propio o asignado"
+      ]
+    },
+    {
+      "id": "PROP-F39",
+      "failed_constraints": [
+        "price_clp: 10307000 > 133500000",
+        "distance_metro_text: 1300 > 800"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-V41",
+      "price_clp": 98000,
+      "roi_pct": 10.93
+    },
+    {
+      "id": "PROP-E93",
+      "price_clp": 329400,
+      "roi_pct": 10.93
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-U78",
+      "failed_constraints": [
+        "pets_policy",
+        "bedrooms"
+      ]
+    },
+    {
+      "id": "PROP-A41",
+      "failed_constraints": [
+        "location"
+      ]
+    },
+    {
+      "id": "PROP-R94",
+      "failed_constraints": [
+        "pets_max_kg"
+      ]
+    }
+  ]
+}

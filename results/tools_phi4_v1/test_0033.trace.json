@@ -1,0 +1,168 @@
+{
+  "facts": {
+    "PROP-G20": {
+      "location": "La Florida",
+      "bedrooms": 2,
+      "price_text": "UF 4.481",
+      "rent_text": "UF 830.000/mes",
+      "distance_metro_text": "1,3km",
+      "distance_bus_text": "213m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 4,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"La Florida\",\n  \"bedrooms\": 2,\n  \"price_text\": \"UF 4.481\",\n  \"rent_text\": \"UF 830.000/mes\",\n  \"distance_metro_text\": \"1,3km\",\n  \"distance_bus_text\": \"213m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": 4,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 672,
+      "output_tokens": 102,
+      "wall_s": 4.57,
+      "error": null
+    },
+    "PROP-F13": {
+      "location": "La Florida",
+      "bedrooms": 3,
+      "price_text": "$207.500.000",
+      "rent_text": null,
+      "distance_metro_text": "1,6km",
+      "distance_bus_text": "249m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"La Florida\",\n  \"bedrooms\": 3,\n  \"price_text\": \"$207.500.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,6km\",\n  \"distance_bus_text\": \"249m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 669,
+      "output_tokens": 94,
+      "wall_s": 4.1,
+      "error": null
+    },
+    "PROP-L68": {
+      "location": "La Florida",
+      "bedrooms": 2,
+      "price_text": "$176.500.000",
+      "rent_text": "$1.410.000/mes",
+      "distance_metro_text": "1,3km",
+      "distance_bus_text": "411m",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"La Florida\",\n  \"bedrooms\": 2,\n  \"price_text\": \"$176.500.000\",\n  \"rent_text\": \"$1.410.000/mes\",\n  \"distance_metro_text\": \"1,3km\",\n  \"distance_bus_text\": \"411m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 662,
+      "output_tokens": 103,
+      "wall_s": 4.47,
+      "error": null
+    },
+    "PROP-S26": {
+      "location": "La Florida",
+      "bedrooms": 3,
+      "price_text": "UF 4.024",
+      "rent_text": null,
+      "distance_metro_text": "1,6km",
+      "distance_bus_text": "842m",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro",
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"La Florida\",\n  \"bedrooms\": 3,\n  \"price_text\": \"UF 4.024\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,6km\",\n  \"distance_bus_text\": \"842m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 676,
+      "output_tokens": 100,
+      "wall_s": 4.22,
+      "error": null
+    },
+    "PROP-M65": {
+      "location": "La Florida",
+      "bedrooms": 3,
+      "price_text": "$173.400.000",
+      "rent_text": null,
+      "distance_metro_text": "1,3km",
+      "distance_bus_text": "792m",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro",
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "ninguno",
+      "raw": "{\n  \"location\": \"La Florida\",\n  \"bedrooms\": 3,\n  \"price_text\": \"$173.400.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,3km\",\n  \"distance_bus_text\": \"792m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"ninguno\"\n}",
+      "prompt_tokens": 652,
+      "output_tokens": 100,
+      "wall_s": 4.15,
+      "error": null
+    }
+  },
+  "decisions": {
+    "PROP-G20": {
+      "price_clp": 170502050,
+      "roi_pct": 5.84,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio 'UF 4.481' = 4481 UF -> 170,502,050 CLP <= 206,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=4 vs perro 4kg -> ok",
+        "distancia: metro='1,3km' bus='213m' -> min=213 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-F13": {
+      "price_clp": 207500000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$207.500.000' = 2.075e+08 CLP -> 207,500,000 CLP > 206,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='1,6km' bus='249m' -> min=249 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-L68": {
+      "price_clp": 176500000,
+      "roi_pct": 9.59,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '$176.500.000' = 1.765e+08 CLP -> 176,500,000 CLP <= 206,500,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='1,3km' bus='411m' -> min=411 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-S26": {
+      "price_clp": 153113200,
+      "roi_pct": null,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio 'UF 4.024' = 4024 UF -> 153,113,200 CLP <= 206,500,000",
+        "mascotas: politica=permitidas especies=['perro', 'gato'] max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='1,6km' bus='842m' -> min=842 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-M65": {
+      "price_clp": 173400000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$173.400.000' = 1.734e+08 CLP -> 173,400,000 CLP <= 206,500,000",
+        "mascotas: politica=permitidas especies=['perro', 'gato'] max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='1,3km' bus='792m' -> min=792 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: ninguno (requerido=True)"
+      ]
+    }
+  }
+}

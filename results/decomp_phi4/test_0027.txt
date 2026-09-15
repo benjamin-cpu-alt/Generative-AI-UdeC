@@ -1,0 +1,36 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-W66",
+      "price_clp": 8082800,
+      "roi_pct": 11.09
+    },
+    {
+      "id": "PROP-N27",
+      "price_clp": 9423000,
+      "roi_pct": 15.79
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-X11",
+      "failed_constraints": [
+         "Hard Constraint 1: Presupuesto Máximo de Compra",
+        "Hard Constraint 4: Dormitorios: Mínimo 3 dormitorios reales",
+        "Hard Constraint 5: Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado"
+      ]
+    },
+    {
+      "id": "PROP-B65",
+      "failed_constraints": [
+        "Hard Constraint 1: Presupuesto Máximo de Compra"
+      ]
+    },
+    {
+      "id": "PROP-V89",
+      "failed_constraints": [
+        "Hard Constraint 1: Presupuesto Máximo de Compra"
+      ]
+    }
+  ]
+}

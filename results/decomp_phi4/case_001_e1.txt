@@ -1,0 +1,41 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-D05",
+      "price_clp": 13800000,
+      "roi_pct": 86.67
+    },
+    {
+      "id": "PROP-F61",
+      "price_clp": 13900000,
+      "roi_pct": 79.66
+    },
+    {
+      "id": "PROP-G77",
+      "price_clp": 142000000,
+      "roi_pct": 67.57
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-A42",
+      "failed_constraints": ["distance_metro_text"]
+    },
+    {
+      "id": "PROP-B19",
+      "failed_constraints": ["pets_max_kg"]
+    },
+    {
+      "id": "PROP-C88",
+      "failed_constraints": ["parking"]
+    },
+    {
+      "id": "PROP-E33",
+      "failed_constraints": ["parking"]
+    },
+    {
+      "id": "PROP-H12",
+      "failed_constraints": ["budget", "distance_metro_text"]
+    }
+  ]
+}

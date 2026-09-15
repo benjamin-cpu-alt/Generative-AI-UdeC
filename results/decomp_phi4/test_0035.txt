@@ -1,0 +1,44 @@
+{
+  "approved_matches": [
+  {
+    "id": "PROP-K42",
+    "price_clp": 2237800,
+    "roi_pct": 11.99
+  },
+  {
+    "id": "PROP-M78",
+    "price_clp": 2358260,
+    "roi_pct": 11.89
+  }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-B38",
+      "failed_constraints": [
+        "distancia_metro_text: 2450m mayor que 1500m"
+      ]
+    },
+    {
+      "id": "PROP-T83",
+      "failed_constraints": [
+        "distancia_metro_text: 1474m mayor que 1500m"
+      ]
+    },
+    {
+      "id": "PROP-F96",
+      "failed_constraints": [
+        "location: La Florida NO es una de las comunas preferidas",
+        "pets_policy: no_mencionada NO es permitida"
+      ]
+    },
+    {
+      "id": "PROP-N60",
+      "failed_constraints": [
+        "bedrooms: 1 MENOR que 2",
+        "price_text: UF no convertible a CLP",
+        "distance_metro_text: 429m NO es mayor que 1500m",
+        "parking: asignado NO es propio"
+      ]
+    }
+  ]
+}

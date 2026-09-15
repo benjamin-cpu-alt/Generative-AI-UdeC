@@ -1,0 +1,34 @@
+{
+  "approved_matches": [
+  {
+    "id": "PROP-N61",
+    "price_clp": 44760000,
+    "roi_pct": 25.00
+  },
+  {
+    "id": "PROP-A45",
+    "price_clp": 44714000,
+    "roi_pct": 20.00
+  },
+  {
+    "id": "PROP-X29",
+    "price_clp": 55000000,
+    "roi_pct": 10.00
+  }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-E44",
+      "failed_constraints": [
+        "bedrooms",
+        "price_clp"
+      ]
+    },
+    {
+      "id": "PROP-Q40",
+      "failed_constraints": [
+        "price_clp"
+      ]
+    }
+  ]
+}

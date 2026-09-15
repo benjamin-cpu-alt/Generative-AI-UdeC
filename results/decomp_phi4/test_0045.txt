@@ -1,0 +1,37 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-M64",
+      "price_clp": 124100000,
+      "roi_pct": 52.99
+    },
+    {
+      "id": "PROP-C52",
+      "price_clp": 138000000,
+      "roi_pct": 54.65
+    },
+    {
+      "id": "PROP-T50",
+      "price_clp": 3598500,
+      "roi_pct": 41.14
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-U30",
+      "failed_constraints": ["distance_metro_text"]
+    },
+    {
+      "id": "PROP-Q61",
+      "failed_constraints": ["price_text"]
+    },
+    {
+      "id": "PROP-S85",
+      "failed_constraints": ["parking"]
+    },
+    {
+      "id": "PROP-H70",
+      "failed_constraints": ["pets_max_kg"]
+    }
+  ]
+}

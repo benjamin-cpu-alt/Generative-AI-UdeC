@@ -1,0 +1,34 @@
+{
+  "approved_matches": [
+  {
+    "id": "PROP-L68",
+    "price_clp": 176500000,
+    "roi_pct": 8.24
+  },
+  {
+    "id": "PROP-M65",
+    "price_clp": 173400000,
+    "roi_pct": 8.64
+  }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-G20",
+      "failed_constraints": [
+        "distancia_metro_text: 1300m mayor que 1000m"
+      ]
+    },
+    {
+      "id": "PROP-F13",
+      "failed_constraints": [
+        "price_text: 207.500.000 CLP mayor que 206.500.000 CLP"
+      ]
+    },
+    {
+      "id": "PROP-S26",
+      "failed_constraints": [
+        "pets_policy: no_permitidas"
+      ]
+    }
+  ]
+}

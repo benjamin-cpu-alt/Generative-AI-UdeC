@@ -1,0 +1,172 @@
+{
+  "facts": {
+    "PROP-L27": {
+      "location": "Estación Central",
+      "bedrooms": 3,
+      "price_text": "UF 2.909",
+      "rent_text": "USD 520.000/mes",
+      "distance_metro_text": "1,7km",
+      "distance_bus_text": "264m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Estación Central\",\n  \"bedrooms\": 3,\n  \"price_text\": \"UF 2.909\",\n  \"rent_text\": \"USD 520.000/mes\",\n  \"distance_metro_text\": \"1,7km\",\n  \"distance_bus_text\": \"264m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 689,
+      "output_tokens": 101,
+      "wall_s": 4.73,
+      "error": null
+    },
+    "PROP-Y68": {
+      "location": "La Florida",
+      "bedrooms": 2,
+      "price_text": "$115.500.000",
+      "rent_text": "$540.000/mes",
+      "distance_metro_text": "735m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro",
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"La Florida\",\n  \"bedrooms\": 2,\n  \"price_text\": \"$115.500.000\",\n  \"rent_text\": \"$540.000/mes\",\n  \"distance_metro_text\": \"735m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 672,
+      "output_tokens": 101,
+      "wall_s": 5.02,
+      "error": null
+    },
+    "PROP-D59": {
+      "location": "San Miguel",
+      "bedrooms": 4,
+      "price_text": "105.100.000 UF",
+      "rent_text": "750.000/mes",
+      "distance_metro_text": "2,1km",
+      "distance_bus_text": "778m",
+      "pets_policy": "no_permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"San Miguel\",\n  \"bedrooms\": 4,\n  \"price_text\": \"105.100.000 UF\",\n  \"rent_text\": \"750.000/mes\",\n  \"distance_metro_text\": \"2,1km\",\n  \"distance_bus_text\": \"778m\",\n  \"pets_policy\": \"no_permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 666,
+      "output_tokens": 101,
+      "wall_s": 4.69,
+      "error": null
+    },
+    "PROP-V28": {
+      "location": "Estación Central",
+      "bedrooms": 2,
+      "price_text": "$114.000.000",
+      "rent_text": "$670.000/mes",
+      "distance_metro_text": "265m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro",
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Estación Central\",\n  \"bedrooms\": 2,\n  \"price_text\": \"$114.000.000\",\n  \"rent_text\": \"$670.000/mes\",\n  \"distance_metro_text\": \"265m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 678,
+      "output_tokens": 103,
+      "wall_s": 4.84,
+      "error": null
+    },
+    "PROP-Q51": {
+      "location": "Las Condes",
+      "bedrooms": 1,
+      "price_text": "91.600.000",
+      "rent_text": null,
+      "distance_metro_text": "379m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Las Condes\",\n  \"bedrooms\": 1,\n  \"price_text\": \"91.600.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"379m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"no_mencionada\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 650,
+      "output_tokens": 93,
+      "wall_s": 4.6,
+      "error": null
+    }
+  },
+  "decisions": {
+    "PROP-L27": {
+      "price_clp": 111414700,
+      "roi_pct": 5.6,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio 'UF 2.909' = 2909 UF -> 111,414,700 CLP <= 112,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 6kg -> ok",
+        "distancia: metro='1,7km' bus='264m' -> min=264 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-Y68": {
+      "price_clp": 115500000,
+      "roi_pct": 5.61,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$115.500.000' = 1.155e+08 CLP -> 115,500,000 CLP > 112,000,000",
+        "mascotas: politica=permitidas especies=['perro', 'gato'] max_kg=None vs perro 6kg -> ok",
+        "distancia: metro='735m' bus=None -> min=735 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-D59": {
+      "price_clp": 4025330000000,
+      "roi_pct": 0.0,
+      "failed_constraints": [
+        "presupuesto",
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '105.100.000 UF' = 1.051e+08 UF -> 4,025,330,000,000 CLP > 112,000,000",
+        "mascotas: politica=no_permitidas especies=cualquiera max_kg=None vs perro 6kg -> FALLA",
+        "distancia: metro='2,1km' bus='778m' -> min=778 vs max 1000",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-V28": {
+      "price_clp": 114000000,
+      "roi_pct": 7.05,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$114.000.000' = 1.14e+08 CLP -> 114,000,000 CLP > 112,000,000",
+        "mascotas: politica=permitidas especies=['perro', 'gato'] max_kg=None vs perro 6kg -> ok",
+        "distancia: metro='265m' bus=None -> min=265 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-Q51": {
+      "price_clp": 91600000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '91.600.000' = 9.16e+07 CLP -> 91,600,000 CLP <= 112,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 6kg -> FALLA",
+        "distancia: metro='379m' bus=None -> min=379 vs max 1000",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}

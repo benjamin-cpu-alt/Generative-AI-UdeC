@@ -1,0 +1,47 @@
+{
+  "approved_matches": [
+  {
+    "id": "PROP-V15",
+    "price_clp": 39400,
+    "roi_pct": null
+  },
+  {
+    "id": "PROP-R84",
+    "price_clp": 504450,
+    "roi_pct": 0.94
+  }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-M17",
+      "failed_constraints": [
+         "pets_policy",
+        "bedrooms"
+      ]
+    },
+    {
+      "id": "PROP-T91",
+      "failed_constraints": [
+        "price_clp"
+      ]
+    },
+    {
+      "id": "PROP-X46",
+      "failed_constraints": [
+        "bedrooms"
+      ]
+    },
+    {
+      "id": "PROP-V15",
+      "failed_constraints": [
+        "distance_metro_text"
+      ]
+    },
+    {
+      "id": "PROP-R84",
+      "failed_constraints": [
+        "distance_metro_text"
+      ]
+    }
+  ]
+}

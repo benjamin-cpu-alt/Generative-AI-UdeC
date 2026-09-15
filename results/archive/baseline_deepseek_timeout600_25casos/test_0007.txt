@@ -1,0 +1,43 @@
+```json
+{
+  "approved_matches": [
+    {
+      "id": "PROP-C38",
+      "price_clp": 217500000,
+      "roi_pct": 11.96
+    },
+    {
+      "id": "PROP-V37",
+      "price_clp": 178500000,
+      "roi_pct": 7.23
+    },
+    {
+      "id": "PROP-Y58",
+      "price_clp": 158000000,
+      "roi_pct": 6.31
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-T20",
+      "failed_constraints": ["Maximum budget exceeded"]
+    },
+    {
+      "id": "PROP-Q62",
+      "failed_constraints": ["No estacionamiento provided"]
+    },
+    {
+      "id": "PROP-R16",
+      "failed_constraints": ["Violates pet restrictions"]
+    },
+    {
+      "id": "PROP-G11",
+      "failed_constraints": ["Exceeds maximum budget"]
+    },
+    {
+      "id": "PROP-F88",
+      "failed_constraints": ["Distance exceeds 1500m"]
+    }
+  ]
+}
+```
