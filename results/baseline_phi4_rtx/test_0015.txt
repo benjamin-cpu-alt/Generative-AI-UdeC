@@ -1,0 +1,33 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-P70",
+      "price_clp": 1096200000,
+      "roi_pct": 49.23
+    },
+    {
+      "id": "PROP-E52",
+      "price_clp": 46586000,
+      "roi_pct": 2.89
+    },
+    {
+      "id": "PROP-J16",
+      "price_clp": 151020000,
+      "roi_pct": 7.85
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-T49",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    },
+    {
+      "id": "PROP-A80",
+      "failed_constraints": ["Distancia máxima a transporte público", "Mascotas"]
+    },
+    {
+      "id": "PROP-H49",
+      "failed_constraints": ["Distancia máxima a transporte público"]
+    }
+  ]
+}

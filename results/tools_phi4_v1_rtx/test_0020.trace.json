@@ -1,0 +1,174 @@
+{
+  "facts": {
+    "PROP-H18": {
+      "location": "Estación Central",
+      "bedrooms": 4,
+      "price_text": "UF 3.287",
+      "rent_text": "USD 490.000/mes",
+      "distance_metro_text": "1,1 km",
+      "distance_bus_text": "222m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Estación Central\",\n  \"bedrooms\": 4,\n  \"price_text\": \"UF 3.287\",\n  \"rent_text\": \"USD 490.000/mes\",\n  \"distance_metro_text\": \"1,1 km\",\n  \"distance_bus_text\": \"222m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 677,
+      "output_tokens": 102,
+      "wall_s": 4.55,
+      "error": null
+    },
+    "PROP-T57": {
+      "location": "Peñalolén",
+      "bedrooms": 3,
+      "price_text": "$112.400.000",
+      "rent_text": "$700.000/mes",
+      "distance_metro_text": "1,4km",
+      "distance_bus_text": "236m",
+      "pets_policy": "no_permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Peñalolén\",\n  \"bedrooms\": 3,\n  \"price_text\": \"$112.400.000\",\n  \"rent_text\": \"$700.000/mes\",\n  \"distance_metro_text\": \"1,4km\",\n  \"distance_bus_text\": \"236m\",\n  \"pets_policy\": \"no_permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 686,
+      "output_tokens": 103,
+      "wall_s": 4.6,
+      "error": null
+    },
+    "PROP-E13": {
+      "location": "Independencia",
+      "bedrooms": 1,
+      "price_text": "129.300.000 UF",
+      "rent_text": "1.090.000/mes",
+      "distance_metro_text": "373m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro",
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Independencia\",\n  \"bedrooms\": 1,\n  \"price_text\": \"129.300.000 UF\",\n  \"rent_text\": \"1.090.000/mes\",\n  \"distance_metro_text\": \"373m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 680,
+      "output_tokens": 106,
+      "wall_s": 4.7,
+      "error": null
+    },
+    "PROP-Z45": {
+      "location": "Independencia",
+      "bedrooms": 2,
+      "price_text": "140.000.000",
+      "rent_text": null,
+      "distance_metro_text": "477m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro",
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Independencia\",\n  \"bedrooms\": 2,\n  \"price_text\": \"140.000.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"477m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 669,
+      "output_tokens": 97,
+      "wall_s": 4.44,
+      "error": null
+    },
+    "PROP-X26": {
+      "location": "Independencia",
+      "bedrooms": 4,
+      "price_text": "137.000.000",
+      "rent_text": null,
+      "distance_metro_text": "450m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro",
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Independencia\",\n  \"bedrooms\": 4,\n  \"price_text\": \"137.000.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"450m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 669,
+      "output_tokens": 98,
+      "wall_s": 4.44,
+      "error": null
+    }
+  },
+  "decisions": {
+    "PROP-H18": {
+      "price_clp": 133287850,
+      "roi_pct": 4.41,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio 'UF 3.287' = 3287 UF -> 133,287,850 CLP <= 135,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='1,1 km' bus='222m' -> min=222 vs max 500",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-T57": {
+      "price_clp": 112400000,
+      "roi_pct": 7.47,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$112.400.000' = 1.124e+08 CLP -> 112,400,000 CLP <= 135,500,000",
+        "mascotas: politica=no_permitidas especies=cualquiera max_kg=None vs perro 30kg -> FALLA",
+        "distancia: metro='1,4km' bus='236m' -> min=236 vs max 500",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-E13": {
+      "price_clp": 5243115000000,
+      "roi_pct": 0.0,
+      "failed_constraints": [
+        "presupuesto",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '129.300.000 UF' = 1.293e+08 UF -> 5,243,115,000,000 CLP > 135,500,000",
+        "mascotas: politica=permitidas especies=['perro', 'gato'] max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='373m' bus=None -> min=373 vs max 500",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-Z45": {
+      "price_clp": 140000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '140.000.000' = 1.4e+08 CLP -> 140,000,000 CLP > 135,500,000",
+        "mascotas: politica=permitidas especies=['perro', 'gato'] max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='477m' bus=None -> min=477 vs max 500",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-X26": {
+      "price_clp": 137000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '137.000.000' = 1.37e+08 CLP -> 137,000,000 CLP > 135,500,000",
+        "mascotas: politica=permitidas especies=['perro', 'gato'] max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='450m' bus=None -> min=450 vs max 500",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}

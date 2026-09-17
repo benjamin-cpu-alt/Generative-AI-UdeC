@@ -1,0 +1,17 @@
+{
+  "case_id": "test_0019",
+  "model": "phi4-mini:latest",
+  "run": "baseline_phi4_rtx",
+  "options": {
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "num_predict": 2048,
+    "seed": 0
+  },
+  "prompt_tokens": 1431,
+  "output_tokens": 238,
+  "total_duration_s": 6.5,
+  "wall_s": 8.55,
+  "done_reason": "stop",
+  "timestamp": "2026-09-15T10:34:29"
+}

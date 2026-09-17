@@ -1,0 +1,32 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-V88",
+      "price_clp": 20376000,
+      "roi_pct": 55.42
+    },
+    {
+      "id": "PROP-E41",
+      "price_clp": 81370000,
+      "roi_pct": 49.38
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-R51",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 235m excede la distancia máxima permitida de 600m."]
+    },
+    {
+      "id": "PROP-B67",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 465m excede la distancia máxima permitida de 600m.", "No se especifica política de mascotas."]
+    },
+    {
+      "id": "PROP-N71",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 438m excede la distancia máxima permitida de 600m.", "Ubicación preferida: Peñalolén (no Macul ni Providencia)."]
+    },
+    {
+      "id": "PROP-A76",
+      "failed_constraints": ["Presupuesto Máximo de Compra: $103.500.000 CLP (precio negociable, el propietario está abierto a ofertas)"]
+    }
+  ]
+}

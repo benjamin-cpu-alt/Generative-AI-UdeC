@@ -1,0 +1,37 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-N44",
+      "price_clp": 19030000000,
+      "roi_pct": 78.57
+    },
+    {
+      "id": "PROP-Q93",
+      "price_clp": 23450000000,
+      "roi_pct": 54.00
+    },
+    {
+      "id": "PROP-C72",
+      "price_clp": 19100000000,
+      "roi_pct": 79.66
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-L59",
+      "failed_constraints": ["Mascotas: Tiene 1 perro de 10kg (la propiedad debe permitir explícitamente mascotas de ese tamaño y especie)."]
+    },
+    {
+      "id": "PROP-K21",
+      "failed_constraints": ["Mascotas: Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.450.000/mes."]
+    },
+    {
+      "id": "PROP-D81",
+      "failed_constraints": ["Mascotas: Edificio sin mascotas por reglamento de copropiedad.", "Distancia máxima a transporte público (metro O paradero de buses troncal): 1000 m."]
+    },
+    {
+      "id": "PROP-M69",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 664 m."]
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "facts": {
+    "PROP-D49": {
+      "location": "San Miguel",
+      "bedrooms": 2,
+      "price_text": "2175 UF",
+      "rent_text": "450.000/mes",
+      "distance_metro_text": "1,2km",
+      "distance_bus_text": "434m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"San Miguel\",\n  \"bedrooms\": 2,\n  \"price_text\": \"2175 UF\",\n  \"rent_text\": \"450.000/mes\",\n  \"distance_metro_text\": \"1,2km\",\n  \"distance_bus_text\": \"434m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 682,
+      "output_tokens": 97,
+      "wall_s": 4.47,
+      "error": null
+    },
+    "PROP-C28": {
+      "location": "Santiago Centro",
+      "bedrooms": 1,
+      "price_text": "UF 2.185",
+      "rent_text": null,
+      "distance_metro_text": "251m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Santiago Centro\",\n  \"bedrooms\": 1,\n  \"price_text\": \"UF 2.185\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"251m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 669,
+      "output_tokens": 91,
+      "wall_s": 4.3,
+      "error": null
+    },
+    "PROP-F58": {
+      "location": "Macul",
+      "bedrooms": 3,
+      "price_text": "$86.600.000",
+      "rent_text": "$490.000/mes",
+      "distance_metro_text": "1250m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Macul\",\n  \"bedrooms\": 3,\n  \"price_text\": \"$86.600.000\",\n  \"rent_text\": \"$490.000/mes\",\n  \"distance_metro_text\": \"1250m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 661,
+      "output_tokens": 95,
+      "wall_s": 4.38,
+      "error": null
+    },
+    "PROP-W72": {
+      "location": "Vitacura",
+      "bedrooms": 2,
+      "price_text": "114.000.000",
+      "rent_text": null,
+      "distance_metro_text": "633m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Vitacura\",\n  \"bedrooms\": 2,\n  \"price_text\": \"114.000.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"633m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 665,
+      "output_tokens": 90,
+      "wall_s": 4.27,
+      "error": null
+    },
+    "PROP-M88": {
+      "location": "San Miguel",
+      "bedrooms": 1,
+      "price_text": "104.400.000 UF",
+      "rent_text": "570.000/mes",
+      "distance_metro_text": "464m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"San Miguel\",\n  \"bedrooms\": 1,\n  \"price_text\": \"104.400.000 UF\",\n  \"rent_text\": \"570.000/mes\",\n  \"distance_metro_text\": \"464m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 674,
+      "output_tokens": 96,
+      "wall_s": 4.44,
+      "error": null
+    }
+  },
+  "decisions": {
+    "PROP-D49": {
+      "price_clp": 84498750,
+      "roi_pct": 6.39,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '2175 UF' = 2175 UF -> 84,498,750 CLP <= 112,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 18kg -> ok",
+        "distancia: metro='1,2km' bus='434m' -> min=434 vs max 800",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-C28": {
+      "price_clp": 84887250,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio 'UF 2.185' = 2185 UF -> 84,887,250 CLP <= 112,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 18kg -> ok",
+        "distancia: metro='251m' bus=None -> min=251 vs max 800",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-F58": {
+      "price_clp": 86600000,
+      "roi_pct": 6.79,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$86.600.000' = 8.66e+07 CLP -> 86,600,000 CLP <= 112,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 18kg -> ok",
+        "distancia: metro='1250m' bus=None -> min=1250 vs max 800",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-W72": {
+      "price_clp": 114000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '114.000.000' = 1.14e+08 CLP -> 114,000,000 CLP > 112,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 18kg -> ok",
+        "distancia: metro='633m' bus=None -> min=633 vs max 800",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-M88": {
+      "price_clp": 4055940000000,
+      "roi_pct": 0.0,
+      "failed_constraints": [
+        "presupuesto",
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '104.400.000 UF' = 1.044e+08 UF -> 4,055,940,000,000 CLP > 112,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 18kg -> ok",
+        "distancia: metro='464m' bus=None -> min=464 vs max 800",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}

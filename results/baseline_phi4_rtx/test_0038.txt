@@ -1,0 +1,28 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-N61",
+      "price_clp": 56808000,
+      "roi_pct": 24.56
+    },
+    {
+      "id": "PROP-A45",
+      "price_clp": 4556400,
+      "roi_pct": 6.21
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-E44",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    },
+    {
+      "id": "PROP-Q40",
+      "failed_constraints": ["Presupuesto Máximo de Compra", "Distancia máxima a transporte público (metro O paradero de buses troncal)"]
+    },
+    {
+      "id": "PROP-X29",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    }
+  ]
+}

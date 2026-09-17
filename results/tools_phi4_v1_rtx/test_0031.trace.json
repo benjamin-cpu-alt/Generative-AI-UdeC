@@ -1,0 +1,163 @@
+{
+  "facts": {
+    "PROP-H61": {
+      "location": "La Reina",
+      "bedrooms": 2,
+      "price_text": "$205.400.000",
+      "rent_text": "$1.220.000/mes",
+      "distance_metro_text": "1,5km",
+      "distance_bus_text": "600m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"La Reina\",\n  \"bedrooms\": 2,\n  \"price_text\": \"$205.400.000\",\n  \"rent_text\": \"$1.220.000/mes\",\n  \"distance_metro_text\": \"1,5km\",\n  \"distance_bus_text\": \"600m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 679,
+      "output_tokens": 101,
+      "wall_s": 4.55,
+      "error": null
+    },
+    "PROP-S38": {
+      "location": "Las Condes",
+      "bedrooms": 1,
+      "price_text": "UF 5.649",
+      "rent_text": null,
+      "distance_metro_text": "1,5km",
+      "distance_bus_text": "366m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Las Condes\",\n  \"bedrooms\": 1,\n  \"price_text\": \"UF 5.649\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,5km\",\n  \"distance_bus_text\": \"366m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 669,
+      "output_tokens": 95,
+      "wall_s": 4.37,
+      "error": null
+    },
+    "PROP-G81": {
+      "location": "La Cisterna",
+      "bedrooms": 2,
+      "price_text": "$190.800.000",
+      "rent_text": "$940.000/mes",
+      "distance_metro_text": "349m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro",
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"La Cisterna\",\n  \"bedrooms\": 2,\n  \"price_text\": \"$190.800.000\",\n  \"rent_text\": \"$940.000/mes\",\n  \"distance_metro_text\": \"349m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 671,
+      "output_tokens": 102,
+      "wall_s": 4.57,
+      "error": null
+    },
+    "PROP-Q84": {
+      "location": "La Reina",
+      "bedrooms": 2,
+      "price_text": "4236 UF",
+      "rent_text": "1.270.000/mes",
+      "distance_metro_text": "594m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"La Reina\",\n  \"bedrooms\": 2,\n  \"price_text\": \"4236 UF\",\n  \"rent_text\": \"1.270.000/mes\",\n  \"distance_metro_text\": \"594m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 691,
+      "output_tokens": 94,
+      "wall_s": 4.41,
+      "error": null
+    },
+    "PROP-V30": {
+      "location": "La Florida",
+      "bedrooms": 2,
+      "price_text": "$223.000.000",
+      "rent_text": null,
+      "distance_metro_text": "1,2km",
+      "distance_bus_text": "492m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"La Florida\",\n  \"bedrooms\": 2,\n  \"price_text\": \"$223.000.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,2km\",\n  \"distance_bus_text\": \"492m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 668,
+      "output_tokens": 94,
+      "wall_s": 4.37,
+      "error": null
+    }
+  },
+  "decisions": {
+    "PROP-H61": {
+      "price_clp": 205400000,
+      "roi_pct": 7.13,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '$205.400.000' = 2.054e+08 CLP -> 205,400,000 CLP <= 218,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='1,5km' bus='600m' -> min=600 vs max 600",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-S38": {
+      "price_clp": 215509350,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio 'UF 5.649' = 5649 UF -> 215,509,350 CLP <= 218,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='1,5km' bus='366m' -> min=366 vs max 600",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-G81": {
+      "price_clp": 190800000,
+      "roi_pct": 5.91,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$190.800.000' = 1.908e+08 CLP -> 190,800,000 CLP <= 218,500,000",
+        "mascotas: politica=permitidas especies=['perro', 'gato'] max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='349m' bus=None -> min=349 vs max 600",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-Q84": {
+      "price_clp": 161603400,
+      "roi_pct": 9.43,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '4236 UF' = 4236 UF -> 161,603,400 CLP <= 218,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='594m' bus=None -> min=594 vs max 600",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-V30": {
+      "price_clp": 223000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$223.000.000' = 2.23e+08 CLP -> 223,000,000 CLP > 218,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='1,2km' bus='492m' -> min=492 vs max 600",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}
