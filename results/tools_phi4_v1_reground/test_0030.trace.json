@@ -1,0 +1,328 @@
+{
+  "facts": {
+    "PROP-U40": {
+      "location": "Santiago Centro",
+      "bedrooms": 2,
+      "price_text": "2.496 UF",
+      "rent_text": "$650.000",
+      "distance_metro_text": "310 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 22.0,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Santiago Centro\",\n  \"bedrooms\": 2,\n  \"price_text\": \"UF 2.496\",\n  \"rent_text\": \"USD 650.000/mes\",\n  \"distance_metro_text\": \"310m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": 22,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Santiago Centro",
+        "bedrooms_text": "Depto en Santiago Centro, 73m², 2 dormitorios, 1 baño. Precio: UF 2.496. A 310m de la estación de metro Vicente Valdés. Pet friendly con límite de 22kg por mascota. Incluye 1 estacionamiento. Arriendo referencial de la zona: $650.000/mes.",
+        "price_text": "UF 2.496",
+        "rent_text": "USD 650.000/mes",
+        "distance_metro_text": "310m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento.",
+        "pets_text": "Pet friendly con límite de 22kg por mascota.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "rent_text: no es literal del aviso: 'USD 650.000/mes'"
+      ]
+    },
+    "PROP-G38": {
+      "location": "Santiago Centro",
+      "bedrooms": 1,
+      "price_text": "2.267 UF",
+      "rent_text": null,
+      "distance_metro_text": "1,4 km",
+      "distance_bus_text": "423 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Santiago Centro\",\n  \"bedrooms\": 1,\n  \"price_text\": \"2.267 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,4km\",\n  \"distance_bus_text\": \"423m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Santiago Centro",
+        "bedrooms_text": "Depto en Santiago Centro, 53m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Precio: 2.267 UF. A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 423m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Excelente conectividad. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "price_text": "2.267 UF",
+        "rent_text": null,
+        "distance_metro_text": "1,4km",
+        "distance_bus_text": "423m",
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-E54": {
+      "location": "Peñalolén",
+      "bedrooms": 4,
+      "price_text": "2.878 UF",
+      "rent_text": null,
+      "distance_metro_text": "330 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 14.0,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Peñalolén\",\n  \"bedrooms\": 4,\n  \"price_text\": \"2.878 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"330m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": 14,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Peñalolén",
+        "bedrooms_text": "Casa en Peñalolén, 102m², 4 dormitorios, 1 baño. Ubicación premium, la más solicitada por sus clientes. Precio: 2.878 UF. A 330m de la estación de metro Franklin. Se aceptan mascotas pequeñas y medianas hasta 14kg, previa autorización de la administración. Incluye estacionamiento propio.",
+        "price_text": "2.878 UF",
+        "rent_text": null,
+        "distance_metro_text": "330m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "Se aceptan mascotas pequeñas y medianas hasta 14kg, previa autorización de la administración.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-M64": {
+      "location": "Santiago Centro",
+      "bedrooms": 3,
+      "price_text": "$96.000.000",
+      "rent_text": "$640.000",
+      "distance_metro_text": "332 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Santiago Centro\",\n  \"bedrooms\": 3,\n  \"price_text\": \"$96.000.000\",\n  \"rent_text\": \"$640.000/mes\",\n  \"distance_metro_text\": \"332m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"no_mencionada\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Santiago Centro",
+        "bedrooms_text": "Depto en Santiago Centro, 85m², 3 dormitorios, 1 baño. ¡En la comuna favorita del cliente! Valor $96.000.000. A 332m de la estación de metro Vicente Valdés. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $640.000/mes.",
+        "price_text": "$96.000.000",
+        "rent_text": "$640.000/mes",
+        "distance_metro_text": "332m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": null,
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-V41": {
+      "location": "Peñalolén",
+      "bedrooms": 3,
+      "price_text": "2.303 UF",
+      "rent_text": null,
+      "distance_metro_text": "0,9 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Peñalolén\",\n  \"bedrooms\": 3,\n  \"price_text\": \"2.303 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"0,9 km\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Peñalolén",
+        "bedrooms_text": "Depto en Peñalolén, 95m², 3 dormitorios, 2 baños. Precio: 2.303 UF. Ubicado a 0,9 km de la estación Plaza Egaña, unos 11 minutos caminando. Entrega inmediata. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado.",
+        "price_text": "2.303 UF",
+        "rent_text": null,
+        "distance_metro_text": "0,9 km",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-A47": {
+      "location": "San Miguel",
+      "bedrooms": 2,
+      "price_text": "2.377 UF",
+      "rent_text": null,
+      "distance_metro_text": "1,5 km",
+      "distance_bus_text": "510 m",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"San Miguel\",\n  \"bedrooms\": 2,\n  \"price_text\": \"UF 2.377\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,5km\",\n  \"distance_bus_text\": \"510m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "San Miguel",
+        "bedrooms_text": "Depto en San Miguel, 76m², 2 dormitorios, 1 baño. Precio: UF 2.377. A 510m de paradero de buses troncal, y 1,5km del metro más cercano. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. ¡Oportunidad única! Incluye estacionamiento propio.",
+        "price_text": "UF 2.377",
+        "rent_text": null,
+        "distance_metro_text": "1,5km",
+        "distance_bus_text": "510m",
+        "parking_text": "¡Oportunidad única! Incluye estacionamiento propio.",
+        "pets_text": "Se aceptan gatos, perros no permitidos por reglamento de copropiedad.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-Q83": {
+      "location": "Peñalolén",
+      "bedrooms": 2,
+      "price_text": "2547 UF",
+      "rent_text": "$530.000",
+      "distance_metro_text": "0,8 km",
+      "distance_bus_text": "184 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Peñalolén\",\n  \"bedrooms\": 2,\n  \"price_text\": \"2547 UF\",\n  \"rent_text\": \"530.000/mes\",\n  \"distance_metro_text\": \"0,8km\",\n  \"distance_bus_text\": \"184m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Peñalolén",
+        "bedrooms_text": "Depto en Peñalolén, 64m², 2 dormitorios, 1 baño. Precio: 2547 UF. A 184m de paradero de buses troncal, y 0,8km del metro más cercano. Entrega inmediata. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $530.000/mes.",
+        "price_text": "2547 UF",
+        "rent_text": "530.000/mes",
+        "distance_metro_text": "0,8km",
+        "distance_bus_text": "184m",
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-U40": {
+      "price_clp": 98092800,
+      "roi_pct": 7.95,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.496 UF' = 2496 UF -> 98,092,800 CLP <= 115,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=22.0 vs perro 22kg -> ok",
+        "distancia: metro='310 m' bus=None -> min=310 vs max 600",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-G38": {
+      "price_clp": 89093100,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.267 UF' = 2267 UF -> 89,093,100 CLP <= 115,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 22kg -> ok",
+        "distancia: metro='1,4 km' bus='423 m' -> min=423 vs max 600",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-E54": {
+      "price_clp": 113105400,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.878 UF' = 2878 UF -> 113,105,400 CLP <= 115,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=14.0 vs perro 22kg -> FALLA",
+        "distancia: metro='330 m' bus=None -> min=330 vs max 600",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-M64": {
+      "price_clp": 96000000,
+      "roi_pct": 8.0,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$96.000.000' = 9.6e+07 CLP -> 96,000,000 CLP <= 115,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 22kg -> FALLA",
+        "distancia: metro='332 m' bus=None -> min=332 vs max 600",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-V41": {
+      "price_clp": 90507900,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.303 UF' = 2303 UF -> 90,507,900 CLP <= 115,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 22kg -> ok",
+        "distancia: metro='0,9 km' bus=None -> min=900 vs max 600",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-A47": {
+      "price_clp": 93416100,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '2.377 UF' = 2377 UF -> 93,416,100 CLP <= 115,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs perro 22kg -> FALLA",
+        "distancia: metro='1,5 km' bus='510 m' -> min=510 vs max 600",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-Q83": {
+      "price_clp": 100097100,
+      "roi_pct": 6.35,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '2547 UF' = 2547 UF -> 100,097,100 CLP <= 115,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 22kg -> ok",
+        "distancia: metro='0,8 km' bus='184 m' -> min=184 vs max 600",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}

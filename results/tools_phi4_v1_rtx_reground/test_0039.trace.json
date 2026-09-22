@@ -1,0 +1,422 @@
+{
+  "facts": {
+    "PROP-W64": {
+      "location": "Recoleta",
+      "bedrooms": 2,
+      "price_text": "4284 UF",
+      "rent_text": "$790.000",
+      "distance_metro_text": "439 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Recoleta\",\n  \"bedrooms\": 2,\n  \"price_text\": \"4284 UF\",\n  \"rent_text\": \"790.000/mes\",\n  \"distance_metro_text\": \"439m\",\n  \"distance_bus_text\": \"\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Recoleta",
+        "bedrooms_text": "Depto en Recoleta, 64m², 2 dormitorios, 1 baño. Ubicación premium, la más solicitada por sus clientes. Precio: 4284 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 439m de paradero de buses troncal, y 1,1km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $790.000/mes.",
+        "price_text": "4284 UF",
+        "rent_text": "790.000/mes",
+        "distance_metro_text": "439m",
+        "distance_bus_text": "",
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-Q61": {
+      "location": "Macul",
+      "bedrooms": 1,
+      "price_text": "$126.100.000",
+      "rent_text": "$980.000",
+      "distance_metro_text": "2,3 km",
+      "distance_bus_text": "901 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Macul\",\n  \"bedrooms\": 2,\n  \"price_text\": \"$126.100.000\",\n  \"rent_text\": \"$980.000/mes\",\n  \"distance_metro_text\": \"2,3km\",\n  \"distance_bus_text\": \"901m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Macul",
+        "bedrooms_text": "Depto en Macul, 55m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Valor $126.100.000. A 2,3km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 901m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $980.000/mes.",
+        "price_text": "$126.100.000",
+        "rent_text": "$980.000/mes",
+        "distance_metro_text": "2,3km",
+        "distance_bus_text": "901m",
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-H59": {
+      "location": "Recoleta",
+      "bedrooms": 3,
+      "price_text": "3.513 UF",
+      "rent_text": "$880.000",
+      "distance_metro_text": "1,3 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Recoleta\",\n  \"bedrooms\": 1,\n  \"price_text\": \"UF 3.513\",\n  \"rent_text\": \"USD 880.000/mes\",\n  \"distance_metro_text\": \"1,3 km\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Recoleta",
+        "bedrooms_text": "Depto en Recoleta, 85m², 3D/1B. ¡En la comuna favorita del cliente! Precio: UF 3.513. Ubicado a 1,3 km de la estación Irarrázaval, unos 16 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $880.000/mes.",
+        "price_text": "UF 3.513",
+        "rent_text": "USD 880.000/mes",
+        "distance_metro_text": "1,3 km",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "rent_text: no es literal del aviso: 'USD 880.000/mes'"
+      ]
+    },
+    "PROP-X54": {
+      "location": "La Florida",
+      "bedrooms": 2,
+      "price_text": "$121.100.000",
+      "rent_text": null,
+      "distance_metro_text": "360 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"La Florida\",\n  \"bedrooms\": 2,\n  \"price_text\": \"$121.100.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"360m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "La Florida",
+        "bedrooms_text": "Depto en La Florida, 66m², 2 dormitorios, 2 baños. Valor $121.100.000. A 360m de la estación de metro Baquedano. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento.",
+        "price_text": "$121.100.000",
+        "rent_text": null,
+        "distance_metro_text": "360m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento.",
+        "pets_text": "Solo se admiten gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-M69": {
+      "location": "Recoleta",
+      "bedrooms": 2,
+      "price_text": "3.910 UF",
+      "rent_text": null,
+      "distance_metro_text": "631 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 12.0,
+      "parking": "visitas",
+      "raw": "{\n  \"location\": \"Recoleta\",\n  \"bedrooms\": 2,\n  \"price_text\": \"3.910 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"631m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": 12,\n  \"parking\": \"visitas\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Recoleta",
+        "bedrooms_text": "Depto en Recoleta, 79m², 2 dormitorios, 2 baños. Precio: 3.910 UF. A 631m de la estación de metro Príncipe de Gales. Pet friendly con límite de 12kg por mascota. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+        "price_text": "3.910 UF",
+        "rent_text": null,
+        "distance_metro_text": "631m",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+        "pets_text": "Pet friendly con límite de 12kg por mascota.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-L82": {
+      "location": "Recoleta",
+      "bedrooms": 2,
+      "price_text": "$143.500.000",
+      "rent_text": "$870.000",
+      "distance_metro_text": "521 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 15.0,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Recoleta\",\n  \"bedrooms\": 2,\n  \"price_text\": \"143.500.000 UF\",\n  \"rent_text\": \"870.000/mes\",\n  \"distance_metro_text\": \"521m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Recoleta",
+        "bedrooms_text": "Depto en Recoleta, 62m², 2 dormitorios, 2 baños. Precio rebajado a $143.500.000. A 521m de la estación de metro Escuela Militar. Se aceptan mascotas pequeñas y medianas hasta 15kg, previa autorización de la administración. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. ¡Oportunidad única! Arriendo estimado: $870.000/mes.",
+        "price_text": "143.500.000 UF",
+        "rent_text": "870.000/mes",
+        "distance_metro_text": "521m",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "pets_text": "Se aceptan mascotas pequeñas y medianas hasta 15kg, previa autorización de la administración.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "price_text: no es literal del aviso: '143.500.000 UF'"
+      ]
+    },
+    "PROP-Y19": {
+      "location": "Maipú",
+      "bedrooms": 3,
+      "price_text": "4095 UF",
+      "rent_text": "$1.250.000",
+      "distance_metro_text": "736 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Maipú\",\n  \"bedrooms\": 3,\n  \"price_text\": \"4095 UF\",\n  \"rent_text\": \"1.250.000/mes\",\n  \"distance_metro_text\": \"736m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Maipú",
+        "bedrooms_text": "Depto en Maipú, 85m², 3D/2B. Precio: 4095 UF. A 736m de la estación de metro Irarrázaval. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $1.250.000/mes.",
+        "price_text": "4095 UF",
+        "rent_text": "1.250.000/mes",
+        "distance_metro_text": "736m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-R87": {
+      "location": "La Florida",
+      "bedrooms": 2,
+      "price_text": "3.490 UF",
+      "rent_text": null,
+      "distance_metro_text": "2,1 km",
+      "distance_bus_text": "1000 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"La Florida\",\n  \"bedrooms\": 2,\n  \"price_text\": \"UF 3.490\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"2,1km\",\n  \"distance_bus_text\": \"1000m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "La Florida",
+        "bedrooms_text": "Depto en La Florida, 71m², 2 dormitorios, 2 baños. Precio rebajado a UF 3.490. A 1000m de paradero de buses troncal, y 2,1km del metro más cercano. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado.",
+        "price_text": "UF 3.490",
+        "rent_text": null,
+        "distance_metro_text": "2,1km",
+        "distance_bus_text": "1000m",
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-J31": {
+      "location": "Santiago Centro",
+      "bedrooms": 1,
+      "price_text": "4.020 UF",
+      "rent_text": null,
+      "distance_metro_text": "1,4 km",
+      "distance_bus_text": "246 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "visitas",
+      "raw": "{\n  \"location\": \"Santiago Centro\",\n  \"bedrooms\": 1,\n  \"price_text\": \"UF 4.020\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,4km\",\n  \"distance_bus_text\": \"246m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"visitas\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Santiago Centro",
+        "bedrooms_text": "Depto en Santiago Centro, 52m², 1 dormitorio + loggia cerrada, ideal como pieza extra, 1B. Precio: UF 4.020. A 1,4km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 246m. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Recién remodelado.",
+        "price_text": "UF 4.020",
+        "rent_text": null,
+        "distance_metro_text": "1,4km",
+        "distance_bus_text": "246m",
+        "parking_text": "Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-W64": {
+      "price_clp": 170503200,
+      "roi_pct": 5.56,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4284 UF' = 4284 UF -> 170,503,200 CLP > 165,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='439 m' bus=None -> min=439 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-Q61": {
+      "price_clp": 126100000,
+      "roi_pct": 9.33,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$126.100.000' = 1.261e+08 CLP -> 126,100,000 CLP <= 165,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='2,3 km' bus='901 m' -> min=901 vs max 1000",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-H59": {
+      "price_clp": 139817400,
+      "roi_pct": 7.55,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.513 UF' = 3513 UF -> 139,817,400 CLP <= 165,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='1,3 km' bus=None -> min=1300 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-X54": {
+      "price_clp": 121100000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$121.100.000' = 1.211e+08 CLP -> 121,100,000 CLP <= 165,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs perro 15kg -> FALLA",
+        "distancia: metro='360 m' bus=None -> min=360 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-M69": {
+      "price_clp": 155618000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.910 UF' = 3910 UF -> 155,618,000 CLP <= 165,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=12.0 vs perro 15kg -> FALLA",
+        "distancia: metro='631 m' bus=None -> min=631 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: visitas (requerido=True)"
+      ]
+    },
+    "PROP-L82": {
+      "price_clp": 143500000,
+      "roi_pct": 7.28,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '$143.500.000' = 1.435e+08 CLP -> 143,500,000 CLP <= 165,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=15.0 vs perro 15kg -> ok",
+        "distancia: metro='521 m' bus=None -> min=521 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-Y19": {
+      "price_clp": 162981000,
+      "roi_pct": 9.2,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '4095 UF' = 4095 UF -> 162,981,000 CLP <= 165,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='736 m' bus=None -> min=736 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-R87": {
+      "price_clp": 138902000,
+      "roi_pct": null,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.490 UF' = 3490 UF -> 138,902,000 CLP <= 165,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='2,1 km' bus='1000 m' -> min=1000 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-J31": {
+      "price_clp": 159996000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.020 UF' = 4020 UF -> 159,996,000 CLP <= 165,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='1,4 km' bus='246 m' -> min=246 vs max 1000",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: visitas (requerido=True)"
+      ]
+    }
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "facts": {
+    "PROP-T63": {
+      "location": "Ñuñoa",
+      "bedrooms": 3,
+      "price_text": "3.987 UF",
+      "rent_text": "$1.210.000",
+      "distance_metro_text": "1800 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Ñuñoa\",\n  \"bedrooms\": 3,\n  \"price_text\": \"UF 3.987\",\n  \"rent_text\": \"$1.210.000/mes\",\n  \"distance_metro_text\": \"1800m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Ñuñoa",
+        "bedrooms_text": "Depto en Ñuñoa, 86m², 3 dormitorios, 1 baño. Precio: UF 3.987. A 1800m del metro Cal y Canto, muy bien conectado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.210.000/mes.",
+        "price_text": "UF 3.987",
+        "rent_text": "$1.210.000/mes",
+        "distance_metro_text": "1800m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-D67": {
+      "location": "Providencia",
+      "bedrooms": 3,
+      "price_text": "3.685 UF",
+      "rent_text": "$960.000",
+      "distance_metro_text": "2,0 km",
+      "distance_bus_text": "996 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 2.0,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Providencia\",\n  \"bedrooms\": 1,\n  \"price_text\": \"UF 3.685\",\n  \"rent_text\": \"USD 960.000/mes\",\n  \"distance_metro_text\": \"2,0km\",\n  \"distance_bus_text\": \"996m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": 2,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Providencia",
+        "bedrooms_text": "Casa en Providencia, 86m², 3D/1B. Precio: UF 3.685. A 2,0km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 996m. Luminoso y con vista despejada. Se aceptan mascotas pequeñas y medianas hasta 2kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado. Arriendo referencial de la zona: $960.000/mes.",
+        "price_text": "UF 3.685",
+        "rent_text": "USD 960.000/mes",
+        "distance_metro_text": "2,0km",
+        "distance_bus_text": "996m",
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Se aceptan mascotas pequeñas y medianas hasta 2kg, previa autorización de la administración.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "rent_text: no es literal del aviso: 'USD 960.000/mes'"
+      ]
+    },
+    "PROP-Q98": {
+      "location": "La Cisterna",
+      "bedrooms": 3,
+      "price_text": "2.968 UF",
+      "rent_text": null,
+      "distance_metro_text": "1,1 km",
+      "distance_bus_text": "326 m",
+      "pets_policy": "no_permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"La Cisterna\",\n  \"bedrooms\": 1,\n  \"price_text\": \"2.968 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,1km\",\n  \"distance_bus_text\": \"326m\",\n  \"pets_policy\": \"no_permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "La Cisterna",
+        "bedrooms_text": "Casa en La Cisterna, 95m², 3D/1B. Ubicación premium, la más solicitada por sus clientes. Precio: 2.968 UF. A 326m de paradero de buses troncal, y 1,1km del metro más cercano. Edificio sin mascotas por reglamento de copropiedad. Incluye 1 estacionamiento subterráneo asignado.",
+        "price_text": "2.968 UF",
+        "rent_text": null,
+        "distance_metro_text": "1,1km",
+        "distance_bus_text": "326m",
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Edificio sin mascotas por reglamento de copropiedad.",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no",
+        "acepta_gatos": "no"
+      },
+      "warnings": []
+    },
+    "PROP-E58": {
+      "location": "Santiago Centro",
+      "bedrooms": 3,
+      "price_text": "$149.100.000",
+      "rent_text": "$1.060.000",
+      "distance_metro_text": "1,9 km",
+      "distance_bus_text": "735 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 4.0,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Santiago Centro\",\n  \"bedrooms\": 3,\n  \"price_text\": \"$149.100.000\",\n  \"rent_text\": \"$1.060.000/mes\",\n  \"distance_metro_text\": \"1,9 km\",\n  \"distance_bus_text\": \"735m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": 4,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Santiago Centro",
+        "bedrooms_text": "Casa en Santiago Centro, 95m², 3 dormitorios, 1 baño. Valor $149.100.000. A 735m de paradero de buses troncal, y 1,9km del metro más cercano. Pet friendly con límite de 4kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo estimado: $1.060.000/mes.",
+        "price_text": "$149.100.000",
+        "rent_text": "$1.060.000/mes",
+        "distance_metro_text": "1,9 km",
+        "distance_bus_text": "735m",
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Pet friendly con límite de 4kg por mascota.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "distance_metro_text: no es literal del aviso: '1,9 km'"
+      ]
+    },
+    "PROP-V49": {
+      "location": "La Cisterna",
+      "bedrooms": 3,
+      "price_text": "3.711 UF",
+      "rent_text": "$760.000",
+      "distance_metro_text": "1,9 km",
+      "distance_bus_text": "836 m",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"La Cisterna\",\n  \"bedrooms\": 2,\n  \"price_text\": \"UF 3.711\",\n  \"rent_text\": \"USD 760.000/mes\",\n  \"distance_metro_text\": \"1,9 km\",\n  \"distance_bus_text\": \"836m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "La Cisterna",
+        "bedrooms_text": "Casa en La Cisterna, 96m², 3D/2B. Precio: UF 3.711. A 836m de paradero de buses troncal, y 1,9km del metro más cercano. Solo se admiten gatos de cualquier tamaño. Incluye estacionamiento propio. Arriendo estimado: $760.000/mes.",
+        "price_text": "UF 3.711",
+        "rent_text": "USD 760.000/mes",
+        "distance_metro_text": "1,9 km",
+        "distance_bus_text": "836m",
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "Solo se admiten gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "rent_text: no es literal del aviso: 'USD 760.000/mes'",
+        "distance_metro_text: no es literal del aviso: '1,9 km'"
+      ]
+    }
+  },
+  "decisions": {
+    "PROP-T63": {
+      "price_clp": 154496250,
+      "roi_pct": 9.4,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.987 UF' = 3987 UF -> 154,496,250 CLP <= 159,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='1800 m' bus=None -> min=1800 vs max 1200",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-D67": {
+      "price_clp": 142793750,
+      "roi_pct": 8.07,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.685 UF' = 3685 UF -> 142,793,750 CLP <= 159,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=2.0 vs gato 4kg -> FALLA",
+        "distancia: metro='2,0 km' bus='996 m' -> min=996 vs max 1200",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-Q98": {
+      "price_clp": 115010000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.968 UF' = 2968 UF -> 115,010,000 CLP <= 159,000,000",
+        "mascotas: politica=no_permitidas especies=cualquiera max_kg=None vs gato 4kg -> FALLA",
+        "distancia: metro='1,1 km' bus='326 m' -> min=326 vs max 1200",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-E58": {
+      "price_clp": 149100000,
+      "roi_pct": 8.53,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$149.100.000' = 1.491e+08 CLP -> 149,100,000 CLP <= 159,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=4.0 vs gato 4kg -> ok",
+        "distancia: metro='1,9 km' bus='735 m' -> min=735 vs max 1200",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-V49": {
+      "price_clp": 143801250,
+      "roi_pct": 6.34,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.711 UF' = 3711 UF -> 143,801,250 CLP <= 159,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='1,9 km' bus='836 m' -> min=836 vs max 1200",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "facts": {
+    "PROP-C10": {
+      "location": "Vitacura",
+      "bedrooms": 3,
+      "price_text": "2.639 UF",
+      "rent_text": "$870.000",
+      "distance_metro_text": "1,7 km",
+      "distance_bus_text": "1000 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Vitacura\",\n  \"bedrooms\": 3,\n  \"price_text\": \"2.639 UF\",\n  \"rent_text\": \"870.000/mes\",\n  \"distance_metro_text\": \"1,7 km\",\n  \"distance_bus_text\": \"1000m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Vitacura",
+        "bedrooms_text": "Depto en Vitacura, 91m², 3D/2B. Precio: 2.639 UF. A 1000m de paradero de buses troncal, y 1,7km del metro más cercano. Luminoso y con vista despejada. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo referencial de la zona: $870.000/mes.",
+        "price_text": "2.639 UF",
+        "rent_text": "870.000/mes",
+        "distance_metro_text": "1,7 km",
+        "distance_bus_text": "1000m",
+        "parking_text": "Incluye 1 estacionamiento.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "distance_metro_text: no es literal del aviso: '1,7 km'"
+      ]
+    },
+    "PROP-X35": {
+      "location": "Maipú",
+      "bedrooms": 2,
+      "price_text": "2.740 UF",
+      "rent_text": null,
+      "distance_metro_text": "798 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "visitas",
+      "raw": "{\n  \"location\": \"Maipú\",\n  \"bedrooms\": 2,\n  \"price_text\": \"2.740 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"798m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"visitas\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Maipú",
+        "bedrooms_text": "Depto en Maipú, 69m², 2D/1B. Justo en el sector que busca el comprador. Precio: 2.740 UF. A 798m de la estación de metro Los Leones. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+        "price_text": "2.740 UF",
+        "rent_text": null,
+        "distance_metro_text": "798m",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-P69": {
+      "location": "Maipú",
+      "bedrooms": 1,
+      "price_text": "$109.100.000",
+      "rent_text": null,
+      "distance_metro_text": "581 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Maipú\",\n  \"bedrooms\": 2,\n  \"price_text\": \"109.100.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"581m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Maipú",
+        "bedrooms_text": "Depto en Maipú, 46m², 1 dormitorio + sala de estar amplia que puede usarse como dormitorio adicional, 1B. ¡En la comuna favorita del cliente! Valor $109.100.000. A 581m de la estación de metro Tobalaba. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "price_text": "109.100.000",
+        "rent_text": null,
+        "distance_metro_text": "581m",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-H28": {
+      "location": "Ñuñoa",
+      "bedrooms": 3,
+      "price_text": "$111.000.000",
+      "rent_text": null,
+      "distance_metro_text": "539 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 2.0,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Ñuñoa\",\n  \"bedrooms\": 3,\n  \"price_text\": \"$111.000.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"539m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": 2,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Ñuñoa",
+        "bedrooms_text": "Depto en Ñuñoa, 79m², 3D/2B. Justo en el sector que busca el comprador. Valor $111.000.000. A 539m de la estación de metro Ñuñoa. Pet friendly con límite de 2kg por mascota. Incluye 1 estacionamiento.",
+        "price_text": "$111.000.000",
+        "rent_text": null,
+        "distance_metro_text": "539m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento.",
+        "pets_text": "Pet friendly con límite de 2kg por mascota.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-W84": {
+      "location": "Providencia",
+      "bedrooms": 2,
+      "price_text": "2.849 UF",
+      "rent_text": null,
+      "distance_metro_text": "1000 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Providencia\",\n  \"bedrooms\": 2,\n  \"price_text\": \"UF 2.849\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1000m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Providencia",
+        "bedrooms_text": "Depto en Providencia, 70m², 2 dormitorios, 2 baños. Precio: UF 2.849. A 1000m de la estación de metro Cal y Canto. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento techado asignado.",
+        "price_text": "UF 2.849",
+        "rent_text": null,
+        "distance_metro_text": "1000m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-J30": {
+      "location": "Peñalolén",
+      "bedrooms": 4,
+      "price_text": "2641 UF",
+      "rent_text": "$570.000",
+      "distance_metro_text": "1,6 km",
+      "distance_bus_text": "634 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "calle",
+      "raw": "{\n  \"location\": \"Peñalolén\",\n  \"bedrooms\": 4,\n  \"price_text\": \"2641 UF\",\n  \"rent_text\": \"570.000/mes\",\n  \"distance_metro_text\": \"1,6km\",\n  \"distance_bus_text\": \"634m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Peñalolén",
+        "bedrooms_text": "Casa en Peñalolén, 111m², 4 dormitorios, 2 baños. Precio: 2641 UF. A 634m de paradero de buses troncal, y 1,6km del metro más cercano. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Estacionamiento en la calle, sin problemas para aparcar en el sector. Piso alto, orientación norte. Arriendo estimado: $570.000/mes.",
+        "price_text": "2641 UF",
+        "rent_text": "570.000/mes",
+        "distance_metro_text": "1,6km",
+        "distance_bus_text": "634m",
+        "parking_text": "Estacionamiento en la calle, sin problemas para aparcar en el sector.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-E64": {
+      "location": "Maipú",
+      "bedrooms": 3,
+      "price_text": "2869 UF",
+      "rent_text": null,
+      "distance_metro_text": "703 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Maipú\",\n  \"bedrooms\": 1,\n  \"price_text\": \"2869 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"703m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Maipú",
+        "bedrooms_text": "Casa en Maipú, 80m², 3D/1B. Precio: 2869 UF. A 703m de la estación de metro Tobalaba. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye 1 estacionamiento techado asignado.",
+        "price_text": "2869 UF",
+        "rent_text": null,
+        "distance_metro_text": "703m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-M43": {
+      "location": "Maipú",
+      "bedrooms": 2,
+      "price_text": "$92.500.000",
+      "rent_text": null,
+      "distance_metro_text": "1,5 km",
+      "distance_bus_text": "364 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 5.0,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Maipú\",\n  \"bedrooms\": 2,\n  \"price_text\": \"$92.500.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,5km\",\n  \"distance_bus_text\": \"364m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": 5,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Maipú",
+        "bedrooms_text": "Depto en Maipú, 79m², 2 dormitorios, 1 baño. Justo en el sector que busca el comprador. Valor $92.500.000. A 1,5km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 364m. Se aceptan mascotas pequeñas y medianas hasta 5kg, previa autorización de la administración. Incluye 1 estacionamiento subterráneo asignado.",
+        "price_text": "$92.500.000",
+        "rent_text": null,
+        "distance_metro_text": "1,5km",
+        "distance_bus_text": "364m",
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Se aceptan mascotas pequeñas y medianas hasta 5kg, previa autorización de la administración.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-C10": {
+      "price_clp": 106615600,
+      "roi_pct": 9.79,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '2.639 UF' = 2639 UF -> 106,615,600 CLP <= 117,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 7kg -> ok",
+        "distancia: metro='1,7 km' bus='1000 m' -> min=1000 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-X35": {
+      "price_clp": 110696000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.740 UF' = 2740 UF -> 110,696,000 CLP <= 117,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 7kg -> ok",
+        "distancia: metro='798 m' bus=None -> min=798 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: visitas (requerido=True)"
+      ]
+    },
+    "PROP-P69": {
+      "price_clp": 109100000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$109.100.000' = 1.091e+08 CLP -> 109,100,000 CLP <= 117,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 7kg -> ok",
+        "distancia: metro='581 m' bus=None -> min=581 vs max 1000",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-H28": {
+      "price_clp": 111000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$111.000.000' = 1.11e+08 CLP -> 111,000,000 CLP <= 117,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=2.0 vs gato 7kg -> FALLA",
+        "distancia: metro='539 m' bus=None -> min=539 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-W84": {
+      "price_clp": 115099600,
+      "roi_pct": null,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '2.849 UF' = 2849 UF -> 115,099,600 CLP <= 117,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 7kg -> ok",
+        "distancia: metro='1000 m' bus=None -> min=1000 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-J30": {
+      "price_clp": 106696400,
+      "roi_pct": 6.41,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '2641 UF' = 2641 UF -> 106,696,400 CLP <= 117,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 7kg -> ok",
+        "distancia: metro='1,6 km' bus='634 m' -> min=634 vs max 1000",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: calle (requerido=True)"
+      ]
+    },
+    "PROP-E64": {
+      "price_clp": 115907600,
+      "roi_pct": null,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '2869 UF' = 2869 UF -> 115,907,600 CLP <= 117,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 7kg -> ok",
+        "distancia: metro='703 m' bus=None -> min=703 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-M43": {
+      "price_clp": 92500000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$92.500.000' = 9.25e+07 CLP -> 92,500,000 CLP <= 117,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=5.0 vs gato 7kg -> FALLA",
+        "distancia: metro='1,5 km' bus='364 m' -> min=364 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}

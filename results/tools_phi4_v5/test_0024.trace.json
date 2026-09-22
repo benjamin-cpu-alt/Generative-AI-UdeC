@@ -1,0 +1,241 @@
+{
+  "facts": {
+    "PROP-A26": {
+      "location": "Maipú",
+      "bedrooms": 3,
+      "price_text": "4.735 UF",
+      "rent_text": "$1.190.000",
+      "distance_metro_text": "627 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Maipú\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"4.735 UF\",\n  \"rent_text\": \"Arriendo estimado: $1.190.000/mes\",\n  \"distance_metro_text\": \"A 627m de la estación de metro Baquedano\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado.\",\n  \"pets_text\": \"Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 695,
+      "output_tokens": 155,
+      "wall_s": 5.02,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Maipú",
+        "bedrooms_text": null,
+        "price_text": "4.735 UF",
+        "rent_text": "Arriendo estimado: $1.190.000/mes",
+        "distance_metro_text": "A 627m de la estación de metro Baquedano",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "PROP-J59": {
+      "location": "La Florida",
+      "bedrooms": 3,
+      "price_text": "4.038 UF",
+      "rent_text": null,
+      "distance_metro_text": "213 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en La Florida\",\n  \"bedrooms_text\": \"3 dormitorios\",\n  \"price_text\": \"4.038 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 213m de la estación de metro Plaza Egaña\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento techado asignado.\",\n  \"pets_text\": \"Solo se admiten gatos de cualquier tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 658,
+      "output_tokens": 136,
+      "wall_s": 4.34,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Florida",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "4.038 UF",
+        "rent_text": null,
+        "distance_metro_text": "A 213m de la estación de metro Plaza Egaña",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Solo se admiten gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-Y70": {
+      "location": "Maipú",
+      "bedrooms": 4,
+      "price_text": "$138.600.000",
+      "rent_text": null,
+      "distance_metro_text": "1300 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "visitas",
+      "raw": "{\n  \"location_text\": \"Depto en Maipú\",\n  \"bedrooms_text\": \"4 dormitorios\",\n  \"price_text\": \"$138.600.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 1300m del metro Escuela Militar\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento de visitas disponible\",\n  \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 676,
+      "output_tokens": 133,
+      "wall_s": 4.22,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Maipú",
+        "bedrooms_text": "4 dormitorios",
+        "price_text": "$138.600.000",
+        "rent_text": null,
+        "distance_metro_text": "A 1300m del metro Escuela Militar",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento de visitas disponible",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-H54": {
+      "location": "Vitacura",
+      "bedrooms": 3,
+      "price_text": "$148.000.000",
+      "rent_text": null,
+      "distance_metro_text": "1,8 km",
+      "distance_bus_text": "752 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "visitas",
+      "raw": "{\n  \"location_text\": \"Depto en Vitacura\",\n  \"bedrooms_text\": \"3 dormitorios\",\n  \"price_text\": \"$148.000.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,8km del metro más cercano\",\n  \"distance_bus_text\": \"752m de paradero de buses troncal\",\n  \"parking_text\": \"Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente\",\n  \"pets_text\": \"Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 677,
+      "output_tokens": 151,
+      "wall_s": 4.73,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Vitacura",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "$148.000.000",
+        "rent_text": null,
+        "distance_metro_text": "1,8km del metro más cercano",
+        "distance_bus_text": "752m de paradero de buses troncal",
+        "parking_text": "Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-M77": {
+      "location": "Maipú",
+      "bedrooms": 3,
+      "price_text": "4898 UF",
+      "rent_text": "$850.000",
+      "distance_metro_text": "369 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto en Maipú, 97m²\", \"bedrooms_text\": \"3 dormitorios\", \"price_text\": \"4898 UF\", \"rent_text\": \"Arriendo estimado: $850.000/mes\", \"distance_metro_text\": \"A 369m de la estación de metro Tobalaba\", \"distance_bus_text\": null, \"parking_text\": \"Incluye 1 estacionamiento\", \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie.\",\"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 695,
+      "output_tokens": 141,
+      "wall_s": 4.59,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Maipú, 97m²",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "4898 UF",
+        "rent_text": "Arriendo estimado: $850.000/mes",
+        "distance_metro_text": "A 369m de la estación de metro Tobalaba",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-A26": {
+      "price_clp": 188689750,
+      "roi_pct": 7.57,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.735 UF' = 4735 UF -> 188,689,750 CLP > 185,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 22kg -> ok",
+        "distancia: metro='627 m' bus=None -> min=627 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-J59": {
+      "price_clp": 160914300,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.038 UF' = 4038 UF -> 160,914,300 CLP <= 185,500,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs perro 22kg -> FALLA",
+        "distancia: metro='213 m' bus=None -> min=213 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-Y70": {
+      "price_clp": 138600000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$138.600.000' = 1.386e+08 CLP -> 138,600,000 CLP <= 185,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 22kg -> ok",
+        "distancia: metro='1300 m' bus=None -> min=1300 vs max 1000",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: visitas (requerido=True)"
+      ]
+    },
+    "PROP-H54": {
+      "price_clp": 148000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$148.000.000' = 1.48e+08 CLP -> 148,000,000 CLP <= 185,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 22kg -> ok",
+        "distancia: metro='1,8 km' bus='752 m' -> min=752 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: visitas (requerido=True)"
+      ]
+    },
+    "PROP-M77": {
+      "price_clp": 195185300,
+      "roi_pct": 5.23,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4898 UF' = 4898 UF -> 195,185,300 CLP > 185,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 22kg -> ok",
+        "distancia: metro='369 m' bus=None -> min=369 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

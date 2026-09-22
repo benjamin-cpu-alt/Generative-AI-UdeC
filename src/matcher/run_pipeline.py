@@ -10,6 +10,7 @@ Uso:
   python -m matcher.run_pipeline --mode tools      --run tools_phi4                       # prompt v2
   python -m matcher.run_pipeline --mode tools      --run tools_phi4_v1 --prompt-version v1
   python -m matcher.run_pipeline --mode tools      --run dev_tools_v2 --split train --limit 30   # iterar en DEV
+  python -m matcher.run_pipeline --mode tools      --run dev_tools_v5 --split train --limit 30 --prompt-version v5
   python -m matcher.run_pipeline --mode cot        --run cot_phi4
   python -m matcher.run_pipeline --mode decomp_llm --run decomp_phi4
   python -m matcher.evaluate --runs baseline_phi4 cot_phi4 decomp_phi4 tools_phi4
@@ -76,8 +77,9 @@ def main(argv=None) -> int:
     ap.add_argument("--only", nargs="*")
     ap.add_argument("--timeout", type=int, default=600)
     ap.add_argument("--force", action="store_true")
-    ap.add_argument("--prompt-version", default="v1", choices=("v1", "v2", "v3", "v4"),
-                    help="prompt del extractor (v1/v2/v3; ver extract.py; se elige en dev, nunca en test)")
+    ap.add_argument("--prompt-version", default="v1", choices=("v1", "v2", "v3", "v4", "v5"),
+                    help="prompt del extractor (ver extract.py; v5 = spans + grounding; "
+                         "se elige en dev, nunca en test)")
     a = ap.parse_args(argv)
 
     cases = [Case.load(p) for p in sorted((CASES_DIR / a.split).glob("*.json"))]

@@ -1,0 +1,375 @@
+{
+  "facts": {
+    "PROP-H76": {
+      "location": "Macul",
+      "bedrooms": 2,
+      "price_text": "$122.300.000",
+      "rent_text": "$790.000",
+      "distance_metro_text": "1,2 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Macul\",\n  \"bedrooms_text\": \"2 dormitorios\",\n  \"price_text\": \"$122.300.000\",\n  \"rent_text\": \"Arriendo referencial de la zona: $790.000/mes\",\n  \"distance_metro_text\": \"a 1,2 km de la estación Plaza Egaña\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento techado asignado.\",\n  \"pets_text\": \"Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 698,
+      "output_tokens": 156,
+      "wall_s": 5.94,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Macul",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "$122.300.000",
+        "rent_text": "Arriendo referencial de la zona: $790.000/mes",
+        "distance_metro_text": "a 1,2 km de la estación Plaza Egaña",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-D97": {
+      "location": "Macul",
+      "bedrooms": 2,
+      "price_text": "4.140 UF",
+      "rent_text": "$750.000",
+      "distance_metro_text": "570 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en Macul\",\n  \"bedrooms_text\": \"2 dormitorios\",\n  \"price_text\": \"UF 4.140\",\n  \"rent_text\": \"Arriendo referencial de la zona: $750.000/mes\",\n  \"distance_metro_text\": \"A 570m de la estación de metro Los Leones.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.\",\n  \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 700,
+      "output_tokens": 160,
+      "wall_s": 5.9,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Macul",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "UF 4.140",
+        "rent_text": "Arriendo referencial de la zona: $750.000/mes",
+        "distance_metro_text": "A 570m de la estación de metro Los Leones.",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-B16": {
+      "location": "Macul",
+      "bedrooms": 2,
+      "price_text": "3.200 UF",
+      "rent_text": "$620.000",
+      "distance_metro_text": "823 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en Macul\",\n  \"bedrooms_text\": \"2 dormitorios\",\n  \"price_text\": \"UF 3.200\",\n  \"rent_text\": \"Arriendo referencial de la zona: $620.000/mes\",\n  \"distance_metro_text\": \"823m de la estación de metro Manquehue\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye estacionamiento propio.\",\n  \"pets_text\": \"se aceptan gatos, perros no permitidos por reglamento de copropiedad\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 679,
+      "output_tokens": 152,
+      "wall_s": 5.59,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Macul",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "UF 3.200",
+        "rent_text": "Arriendo referencial de la zona: $620.000/mes",
+        "distance_metro_text": "823m de la estación de metro Manquehue",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "se aceptan gatos, perros no permitidos por reglamento de copropiedad",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-N46": {
+      "location": "Ñuñoa",
+      "bedrooms": 4,
+      "price_text": "2.988 UF",
+      "rent_text": "$1.000.000",
+      "distance_metro_text": "838 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Casa en Ñuñoa\",\n  \"bedrooms_text\": \"4D\",\n  \"price_text\": \"UF 2.988\",\n  \"rent_text\": \"Arriendo referencial de la zona: $1.000.000/mes\",\n  \"distance_metro_text\": \"A 838m de la estación de metro Cal y Canto\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye estacionamiento propio.\",\n  \"pets_text\": \"se aceptan perros, gatos no permitidos por reglamento de copropiedad\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no\"\n}",
+      "prompt_tokens": 678,
+      "output_tokens": 157,
+      "wall_s": 5.64,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Ñuñoa",
+        "bedrooms_text": "4D",
+        "price_text": "UF 2.988",
+        "rent_text": "Arriendo referencial de la zona: $1.000.000/mes",
+        "distance_metro_text": "A 838m de la estación de metro Cal y Canto",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "se aceptan perros, gatos no permitidos por reglamento de copropiedad",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no"
+      },
+      "warnings": []
+    },
+    "PROP-J85": {
+      "location": "Ñuñoa",
+      "bedrooms": 4,
+      "price_text": "3.502 UF",
+      "rent_text": null,
+      "distance_metro_text": "389 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Ñuñoa, 103m²\", \"bedrooms_text\": \"4D/1B\", \"price_text\": \"UF 3.502\", \"rent_text\": null, \"distance_metro_text\": \"389m de la estación de metro Irarrázaval\", \"distance_bus_text\": null, \"parking_text\": \"Incluye 1 estacionamiento\", \"pets_text\": \"se aceptan perros, gatos no permitidos por reglamento de copropiedad\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"no\"}",
+      "prompt_tokens": 663,
+      "output_tokens": 133,
+      "wall_s": 4.96,
+      "error": null,
+      "spans": {
+        "location_text": "Ñuñoa, 103m²",
+        "bedrooms_text": "4D/1B",
+        "price_text": "UF 3.502",
+        "rent_text": null,
+        "distance_metro_text": "389m de la estación de metro Irarrázaval",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento",
+        "pets_text": "se aceptan perros, gatos no permitidos por reglamento de copropiedad",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no"
+      },
+      "warnings": []
+    },
+    "PROP-T26": {
+      "location": "Macul",
+      "bedrooms": null,
+      "price_text": "3667 UF",
+      "rent_text": null,
+      "distance_metro_text": "1450 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Macul\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"Precio: 3667 UF.\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 1450m del metro Cal y Canto\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado.\",\n  \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 665,
+      "output_tokens": 143,
+      "wall_s": 5.45,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Macul",
+        "bedrooms_text": null,
+        "price_text": "Precio: 3667 UF.",
+        "rent_text": null,
+        "distance_metro_text": "A 1450m del metro Cal y Canto",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-Q59": {
+      "location": "La Cisterna",
+      "bedrooms": 2,
+      "price_text": "$151.600.000",
+      "rent_text": null,
+      "distance_metro_text": "1,8 km",
+      "distance_bus_text": "644 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 4.0,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto en La Cisterna\", \"bedrooms_text\": \"2 dormitorios\", \"price_text\": \"$151.600.000\", \"rent_text\": null, \"distance_metro_text\": \"1,8km del metro más cercano\", \"distance_bus_text\": \"644m de paradero de buses troncal\", \"parking_text\": \"Incluye estacionamiento propio\", \"pets_text\": \"Pet friendly con límite de 4kg por mascota\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 674,
+      "output_tokens": 130,
+      "wall_s": 4.74,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Cisterna",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "$151.600.000",
+        "rent_text": null,
+        "distance_metro_text": "1,8km del metro más cercano",
+        "distance_bus_text": "644m de paradero de buses troncal",
+        "parking_text": "Incluye estacionamiento propio",
+        "pets_text": "Pet friendly con límite de 4kg por mascota",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-V66": {
+      "location": "La Reina",
+      "bedrooms": 1,
+      "price_text": "$153.400.000",
+      "rent_text": "$910.000",
+      "distance_metro_text": "456 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en La Reina, 53m²\",\n  \"bedrooms_text\": \"1 dormitorio + loggia cerrada\",\n  \"price_text\": \"$153.400.000\",\n  \"rent_text\": \"Arriendo referencial de la zona: $910.000/mes\",\n  \"distance_metro_text\": \"A 456m de la estación de metro Franklin.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento techado asignado.\",\n  \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 688,
+      "output_tokens": 161,
+      "wall_s": 5.87,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Reina, 53m²",
+        "bedrooms_text": "1 dormitorio + loggia cerrada",
+        "price_text": "$153.400.000",
+        "rent_text": "Arriendo referencial de la zona: $910.000/mes",
+        "distance_metro_text": "A 456m de la estación de metro Franklin.",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-H76": {
+      "price_clp": 122300000,
+      "roi_pct": 7.75,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$122.300.000' = 1.223e+08 CLP -> 122,300,000 CLP <= 161,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='1,2 km' bus=None -> min=1200 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-D97": {
+      "price_clp": 168084000,
+      "roi_pct": 5.35,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.140 UF' = 4140 UF -> 168,084,000 CLP > 161,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='570 m' bus=None -> min=570 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-B16": {
+      "price_clp": 129920000,
+      "roi_pct": 5.73,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.200 UF' = 3200 UF -> 129,920,000 CLP <= 161,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs perro 4kg -> FALLA",
+        "distancia: metro='823 m' bus=None -> min=823 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-N46": {
+      "price_clp": 121312800,
+      "roi_pct": 9.89,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '2.988 UF' = 2988 UF -> 121,312,800 CLP <= 161,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='838 m' bus=None -> min=838 vs max 1000",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-J85": {
+      "price_clp": 142181200,
+      "roi_pct": null,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.502 UF' = 3502 UF -> 142,181,200 CLP <= 161,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='389 m' bus=None -> min=389 vs max 1000",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-T26": {
+      "price_clp": 148880200,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3667 UF' = 3667 UF -> 148,880,200 CLP <= 161,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='1450 m' bus=None -> min=1450 vs max 1000",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-Q59": {
+      "price_clp": 151600000,
+      "roi_pct": null,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$151.600.000' = 1.516e+08 CLP -> 151,600,000 CLP <= 161,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=4.0 vs perro 4kg -> ok",
+        "distancia: metro='1,8 km' bus='644 m' -> min=644 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-V66": {
+      "price_clp": 153400000,
+      "roi_pct": 7.12,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$153.400.000' = 1.534e+08 CLP -> 153,400,000 CLP <= 161,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='456 m' bus=None -> min=456 vs max 1000",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}

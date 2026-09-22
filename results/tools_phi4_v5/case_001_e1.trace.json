@@ -1,0 +1,379 @@
+{
+  "facts": {
+    "PROP-A42": {
+      "location": "Providencia",
+      "bedrooms": 2,
+      "price_text": "3.850 UF",
+      "rent_text": "$980.000",
+      "distance_metro_text": "950 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Providencia\",\n  \"bedrooms_text\": \"2D/2B\",\n  \"price_text\": \"3.850 UF\",\n  \"rent_text\": \"Arriendo referencial de la zona: $980.000/mes\",\n  \"distance_metro_text\": \"A 950m de la estación de metro Los Leones.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado.\",\n  \"pets_text\": \"Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 694,
+      "output_tokens": 164,
+      "wall_s": 8.62,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Providencia",
+        "bedrooms_text": "2D/2B",
+        "price_text": "3.850 UF",
+        "rent_text": "Arriendo referencial de la zona: $980.000/mes",
+        "distance_metro_text": "A 950m de la estación de metro Los Leones.",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-B19": {
+      "location": "Ñuñoa",
+      "bedrooms": 3,
+      "price_text": "$148.500.000",
+      "rent_text": null,
+      "distance_metro_text": "1,4 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto en Ñuñoa\", \"bedrooms_text\": \"3D/2B\", \"price_text\": \"$148.500.000\", \"rent_text\": null, \"distance_metro_text\": \"a 1,4 km de la estación Ñuñoa\", \"distance_bus_text\": null, \"parking_text\": \"Incluye 1 estacionamiento\", \"pets_text\": \"comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"si\"}",
+      "prompt_tokens": 668,
+      "output_tokens": 130,
+      "wall_s": 4.12,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Ñuñoa",
+        "bedrooms_text": "3D/2B",
+        "price_text": "$148.500.000",
+        "rent_text": null,
+        "distance_metro_text": "a 1,4 km de la estación Ñuñoa",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento",
+        "pets_text": "comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-C88": {
+      "location": "San Miguel",
+      "bedrooms": 2,
+      "price_text": "3.500 UF",
+      "rent_text": null,
+      "distance_metro_text": "1,2 km",
+      "distance_bus_text": "400 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 20.0,
+      "parking": "visitas",
+      "raw": "{\n  \"location_text\": \"Depto en San Miguel\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"3.500 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,2km del metro más cercano\",\n  \"distance_bus_text\": \"400m de paradero de buses troncal\",\n  \"parking_text\": \"Estacionamiento de visitas disponible, no asignado de forma permanente\",\n  \"pets_text\": \"Se aceptan mascotas pequeñas y medianas hasta 20kg, previa autorización de la administración\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 680,
+      "output_tokens": 155,
+      "wall_s": 4.69,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en San Miguel",
+        "bedrooms_text": null,
+        "price_text": "3.500 UF",
+        "rent_text": null,
+        "distance_metro_text": "1,2km del metro más cercano",
+        "distance_bus_text": "400m de paradero de buses troncal",
+        "parking_text": "Estacionamiento de visitas disponible, no asignado de forma permanente",
+        "pets_text": "Se aceptan mascotas pequeñas y medianas hasta 20kg, previa autorización de la administración",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('2D/')"
+      ]
+    },
+    "PROP-D05": {
+      "location": "Providencia",
+      "bedrooms": 1,
+      "price_text": "3.600 UF",
+      "rent_text": null,
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en Providencia\",\n  \"bedrooms_text\": \"1D + escritorio\",\n  \"price_text\": \"3.600 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 500m del metro\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye estacionamiento\",\n  \"pets_text\": \"no se especifica política de mascotas\",\n  \"acepta_mascotas\": \"no_dice\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 655,
+      "output_tokens": 130,
+      "wall_s": 4.04,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Providencia",
+        "bedrooms_text": "1D + escritorio",
+        "price_text": "3.600 UF",
+        "rent_text": null,
+        "distance_metro_text": "A 500m del metro",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento",
+        "pets_text": "no se especifica política de mascotas",
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms_text: no es literal del aviso: '1D + escritorio'"
+      ]
+    },
+    "PROP-E33": {
+      "location": "Ñuñoa",
+      "bedrooms": 2,
+      "price_text": "$145.000.000",
+      "rent_text": null,
+      "distance_metro_text": "850 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 10.0,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto en Ñuñoa\", \"bedrooms_text\": \"2D/2B\", \"price_text\": \"$145.000.000\", \"rent_text\": null, \"distance_metro_text\": \"A 850m del metro Plaza Egaña\", \"distance_bus_text\": null, \"parking_text\": \"Incluye 1 estacionamiento\", \"pets_text\": \"Aceptamos mascotas pequeñas, gatos y perros hasta 10kg.\",\"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"si\"}",
+      "prompt_tokens": 657,
+      "output_tokens": 127,
+      "wall_s": 3.96,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Ñuñoa",
+        "bedrooms_text": "2D/2B",
+        "price_text": "$145.000.000",
+        "rent_text": null,
+        "distance_metro_text": "A 850m del metro Plaza Egaña",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento",
+        "pets_text": "Aceptamos mascotas pequeñas, gatos y perros hasta 10kg.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-F61": {
+      "location": "Providencia",
+      "bedrooms": 2,
+      "price_text": "3.700 UF",
+      "rent_text": "$920.000",
+      "distance_metro_text": "700 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Providencia\",\n  \"bedrooms_text\": \"2D/2B\",\n  \"price_text\": \"3.700 UF\",\n  \"rent_text\": \"Arriendo estimado: $920.000/mes\",\n  \"distance_metro_text\": \"A 700m del metro Manquehue.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento techado asignado.\",\n  \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 670,
+      "output_tokens": 150,
+      "wall_s": 4.68,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Providencia",
+        "bedrooms_text": "2D/2B",
+        "price_text": "3.700 UF",
+        "rent_text": "Arriendo estimado: $920.000/mes",
+        "distance_metro_text": "A 700m del metro Manquehue.",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-G77": {
+      "location": "Ñuñoa",
+      "bedrooms": 2,
+      "price_text": "$142.000.000",
+      "rent_text": "$880.000",
+      "distance_metro_text": "300 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en Ñuñoa\",\n  \"bedrooms_text\": \"2D/1B\",\n  \"price_text\": \"$142.000.000\",\n  \"rent_text\": \"Arriendo estimado: $880.000/mes\",\n  \"distance_metro_text\": \"A 300m del metro Irarrázaval\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Cuenta con 1 estacionamiento en subterráneo\",\n  \"pets_text\": \"se aceptan perros, gatos no permitidos por reglamento de copropiedad\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no\"\n}",
+      "prompt_tokens": 683,
+      "output_tokens": 159,
+      "wall_s": 5.16,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Ñuñoa",
+        "bedrooms_text": "2D/1B",
+        "price_text": "$142.000.000",
+        "rent_text": "Arriendo estimado: $880.000/mes",
+        "distance_metro_text": "A 300m del metro Irarrázaval",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo",
+        "pets_text": "se aceptan perros, gatos no permitidos por reglamento de copropiedad",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no"
+      },
+      "warnings": []
+    },
+    "PROP-H12": {
+      "location": "La Reina",
+      "bedrooms": 3,
+      "price_text": "$151.000.000",
+      "rent_text": null,
+      "distance_metro_text": "1,8 km",
+      "distance_bus_text": "200 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Casa en La Reina\", \"bedrooms_text\": \"3D/2B\", \"price_text\": \"$151.000.000\", \"rent_text\": null, \"distance_metro_text\": \"a 1,8km de la estación de metro más cercana\", \"distance_bus_text\": \"contada con paradero de buses a 200m\", \"parking_text\": \"Incluye estacionamiento propio\", \"pets_text\": \"ideal para mascotas grandes\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 675,
+      "output_tokens": 132,
+      "wall_s": 4.34,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en La Reina",
+        "bedrooms_text": "3D/2B",
+        "price_text": "$151.000.000",
+        "rent_text": null,
+        "distance_metro_text": "a 1,8km de la estación de metro más cercana",
+        "distance_bus_text": "contada con paradero de buses a 200m",
+        "parking_text": "Incluye estacionamiento propio",
+        "pets_text": "ideal para mascotas grandes",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "distance_bus_text: no es literal del aviso: 'contada con paradero de buses a 200m'"
+      ]
+    }
+  },
+  "decisions": {
+    "PROP-A42": {
+      "price_clp": 150920000,
+      "roi_pct": 7.79,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.850 UF' = 3850 UF -> 150,920,000 CLP > 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 18kg -> ok",
+        "distancia: metro='950 m' bus=None -> min=950 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-B19": {
+      "price_clp": 148500000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$148.500.000' = 1.485e+08 CLP -> 148,500,000 CLP <= 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 18kg -> ok",
+        "distancia: metro='1,4 km' bus=None -> min=1400 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-C88": {
+      "price_clp": 137200000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.500 UF' = 3500 UF -> 137,200,000 CLP <= 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=20.0 vs perro 18kg -> ok",
+        "distancia: metro='1,2 km' bus='400 m' -> min=400 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: visitas (requerido=True)"
+      ]
+    },
+    "PROP-D05": {
+      "price_clp": 141120000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.600 UF' = 3600 UF -> 141,120,000 CLP <= 150,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 18kg -> FALLA",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 1000",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-E33": {
+      "price_clp": 145000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$145.000.000' = 1.45e+08 CLP -> 145,000,000 CLP <= 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=10.0 vs perro 18kg -> FALLA",
+        "distancia: metro='850 m' bus=None -> min=850 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-F61": {
+      "price_clp": 145040000,
+      "roi_pct": 7.61,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.700 UF' = 3700 UF -> 145,040,000 CLP <= 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 18kg -> ok",
+        "distancia: metro='700 m' bus=None -> min=700 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-G77": {
+      "price_clp": 142000000,
+      "roi_pct": 7.44,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '$142.000.000' = 1.42e+08 CLP -> 142,000,000 CLP <= 150,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 18kg -> ok",
+        "distancia: metro='300 m' bus=None -> min=300 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-H12": {
+      "price_clp": 151000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$151.000.000' = 1.51e+08 CLP -> 151,000,000 CLP > 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 18kg -> ok",
+        "distancia: metro='1,8 km' bus='200 m' -> min=200 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

@@ -1,0 +1,418 @@
+{
+  "facts": {
+    "PROP-E59": {
+      "location": "La Reina",
+      "bedrooms": 4,
+      "price_text": "$119.700.000",
+      "rent_text": null,
+      "distance_metro_text": "1,4 km",
+      "distance_bus_text": "538 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "visitas",
+      "raw": "{\n  \"location_text\": \"Depto en La Reina\",\n  \"bedrooms_text\": \"4 dormitorios\",\n  \"price_text\": \"$119.700.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,4km del metro más cercano\",\n  \"distance_bus_text\": \"538m de paradero de buses troncal\",\n  \"parking_text\": \"estacionamiento de visitas disponible, no asignado de forma permanente\",\n  \"pets_text\": \"Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 678,
+      "output_tokens": 154,
+      "wall_s": 5.74,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Reina",
+        "bedrooms_text": "4 dormitorios",
+        "price_text": "$119.700.000",
+        "rent_text": null,
+        "distance_metro_text": "1,4km del metro más cercano",
+        "distance_bus_text": "538m de paradero de buses troncal",
+        "parking_text": "estacionamiento de visitas disponible, no asignado de forma permanente",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-T82": {
+      "location": "Vitacura",
+      "bedrooms": 2,
+      "price_text": "4.020 UF",
+      "rent_text": "$1.100.000",
+      "distance_metro_text": "907 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Vitacura\",\n  \"bedrooms_text\": \"2 dormitorios\",\n  \"price_text\": \"4.020 UF\",\n  \"rent_text\": \"Arriendo referencial de la zona: $1.100.000/mes\",\n  \"distance_metro_text\": \"907m de la estación de metro Irarrázaval\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado.\",\n  \"pets_text\": \"Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 682,
+      "output_tokens": 158,
+      "wall_s": 5.94,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Vitacura",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "4.020 UF",
+        "rent_text": "Arriendo referencial de la zona: $1.100.000/mes",
+        "distance_metro_text": "907m de la estación de metro Irarrázaval",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-L49": {
+      "location": "La Reina",
+      "bedrooms": 3,
+      "price_text": "4.013 UF",
+      "rent_text": "$660.000",
+      "distance_metro_text": "489 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en La Reina\",\n  \"bedrooms_text\": \"3 dormitorios\",\n  \"price_text\": \"UF 4.013\",\n  \"rent_text\": \"Arriendo referencial de la zona: $660.000/mes\",\n  \"distance_metro_text\": \"489m de la estación de metro Príncipe de Gales\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento\",\n  \"pets_text\": \"pet friendly, aceptamos mascotas sin restricciones de raza o tamaño\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 682,
+      "output_tokens": 154,
+      "wall_s": 5.7,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Reina",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "UF 4.013",
+        "rent_text": "Arriendo referencial de la zona: $660.000/mes",
+        "distance_metro_text": "489m de la estación de metro Príncipe de Gales",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento",
+        "pets_text": "pet friendly, aceptamos mascotas sin restricciones de raza o tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-W76": {
+      "location": "La Florida",
+      "bedrooms": 2,
+      "price_text": "4.275 UF",
+      "rent_text": null,
+      "distance_metro_text": "1600 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto en La Florida\", \"bedrooms_text\": \"2 dormitorios\", \"price_text\": \"UF 4.275\", \"rent_text\": null, \"distance_metro_text\": \"a 1600m del metro Tobalaba\", \"distance_bus_text\": \"a pasos de todo\", \"parking_text\": \"Incluye 1 estacionamiento\", \"pets_text\": \"comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"si\"}",
+      "prompt_tokens": 675,
+      "output_tokens": 126,
+      "wall_s": 4.54,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Florida",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "UF 4.275",
+        "rent_text": null,
+        "distance_metro_text": "a 1600m del metro Tobalaba",
+        "distance_bus_text": "a pasos de todo",
+        "parking_text": "Incluye 1 estacionamiento",
+        "pets_text": "comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-Q58": {
+      "location": "Vitacura",
+      "bedrooms": 2,
+      "price_text": "$144.200.000",
+      "rent_text": "$980.000",
+      "distance_metro_text": "1000 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en Vitacura\",\n  \"bedrooms_text\": \"2D/2B\",\n  \"price_text\": \"$144.200.000\",\n  \"rent_text\": \"/mes: $980.000\",\n  \"distance_metro_text\": \"A 1000m de la estación de metro Tobalaba\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento\",\n  \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 677,
+      "output_tokens": 146,
+      "wall_s": 5.32,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Vitacura",
+        "bedrooms_text": "2D/2B",
+        "price_text": "$144.200.000",
+        "rent_text": "/mes: $980.000",
+        "distance_metro_text": "A 1000m de la estación de metro Tobalaba",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "rent_text: no es literal del aviso: '/mes: $980.000'"
+      ]
+    },
+    "PROP-F60": {
+      "location": "La Florida",
+      "bedrooms": null,
+      "price_text": "3.056 UF",
+      "rent_text": "$1.000.000",
+      "distance_metro_text": "589 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en La Florida\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"3.056 UF\",\n  \"rent_text\": \"Arriendo estimado: $1.000.000/mes\",\n  \"distance_metro_text\": \"A 589m de la estación de metro Tobalaba\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento\",\n  \"pets_text\": \"Solo se admiten gatos de cualquier tamaño\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 675,
+      "output_tokens": 142,
+      "wall_s": 6.02,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Florida",
+        "bedrooms_text": null,
+        "price_text": "3.056 UF",
+        "rent_text": "Arriendo estimado: $1.000.000/mes",
+        "distance_metro_text": "A 589m de la estación de metro Tobalaba",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento",
+        "pets_text": "Solo se admiten gatos de cualquier tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-M80": {
+      "location": "Vitacura",
+      "bedrooms": 4,
+      "price_text": "3.725 UF",
+      "rent_text": "$1.170.000",
+      "distance_metro_text": "1250 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Vitacura\",\n  \"bedrooms_text\": \"4D/1B\",\n  \"price_text\": \"3.725 UF\",\n  \"rent_text\": \"1.170.000/mes\",\n  \"distance_metro_text\": \"1250m del metro Tobalaba\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento techado asignado.\",\n  \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 690,
+      "output_tokens": 142,
+      "wall_s": 5.68,
+      "error": null,
+      "spans": {
+        "location_text": "Vitacura",
+        "bedrooms_text": "4D/1B",
+        "price_text": "3.725 UF",
+        "rent_text": "1.170.000/mes",
+        "distance_metro_text": "1250m del metro Tobalaba",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-S71": {
+      "location": "Recoleta",
+      "bedrooms": 3,
+      "price_text": "3419 UF",
+      "rent_text": null,
+      "distance_metro_text": "561 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 29.0,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Recoleta\",\n  \"bedrooms_text\": \"3 dormitorios\",\n  \"price_text\": \"3419 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 561m de la estación de metro Tobalaba\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento techado asignado\",\n  \"pets_text\": \"Se aceptan mascotas pequeñas y medianas hasta 29kg, previa autorización de la administración\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 667,
+      "output_tokens": 149,
+      "wall_s": 5.35,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Recoleta",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "3419 UF",
+        "rent_text": null,
+        "distance_metro_text": "A 561m de la estación de metro Tobalaba",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado",
+        "pets_text": "Se aceptan mascotas pequeñas y medianas hasta 29kg, previa autorización de la administración",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-K66": {
+      "location": "Vitacura",
+      "bedrooms": 2,
+      "price_text": "3.121 UF",
+      "rent_text": "$930.000",
+      "distance_metro_text": "447 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en Vitacura\",\n  \"bedrooms_text\": \"2 dormitorios\",\n  \"price_text\": \"UF 3.121\",\n  \"rent_text\": \"Arriendo referencial de la zona: $930.000/mes\",\n  \"distance_metro_text\": \"447m de la estación de metro Bellas Artes\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.\",\n  \"pets_text\": \"Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 693,
+      "output_tokens": 166,
+      "wall_s": 6.06,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Vitacura",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "UF 3.121",
+        "rent_text": "Arriendo referencial de la zona: $930.000/mes",
+        "distance_metro_text": "447m de la estación de metro Bellas Artes",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-E59": {
+      "price_clp": 119700000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$119.700.000' = 1.197e+08 CLP -> 119,700,000 CLP <= 162,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='1,4 km' bus='538 m' -> min=538 vs max 1000",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: visitas (requerido=True)"
+      ]
+    },
+    "PROP-T82": {
+      "price_clp": 160599000,
+      "roi_pct": 8.22,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.020 UF' = 4020 UF -> 160,599,000 CLP <= 162,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='907 m' bus=None -> min=907 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-L49": {
+      "price_clp": 160319350,
+      "roi_pct": 4.94,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.013 UF' = 4013 UF -> 160,319,350 CLP <= 162,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='489 m' bus=None -> min=489 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-W76": {
+      "price_clp": 170786250,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.275 UF' = 4275 UF -> 170,786,250 CLP > 162,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='1600 m' bus=None -> min=1600 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-Q58": {
+      "price_clp": 144200000,
+      "roi_pct": 8.16,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '$144.200.000' = 1.442e+08 CLP -> 144,200,000 CLP <= 162,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='1000 m' bus=None -> min=1000 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-F60": {
+      "price_clp": 122087200,
+      "roi_pct": 9.83,
+      "failed_constraints": [
+        "mascotas",
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.056 UF' = 3056 UF -> 122,087,200 CLP <= 162,500,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs perro 30kg -> FALLA",
+        "distancia: metro='589 m' bus=None -> min=589 vs max 1000",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-M80": {
+      "price_clp": 148813750,
+      "roi_pct": 9.43,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.725 UF' = 3725 UF -> 148,813,750 CLP <= 162,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='1250 m' bus=None -> min=1250 vs max 1000",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-S71": {
+      "price_clp": 136589050,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3419 UF' = 3419 UF -> 136,589,050 CLP <= 162,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=29.0 vs perro 30kg -> FALLA",
+        "distancia: metro='561 m' bus=None -> min=561 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-K66": {
+      "price_clp": 124683950,
+      "roi_pct": 8.95,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.121 UF' = 3121 UF -> 124,683,950 CLP <= 162,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='447 m' bus=None -> min=447 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

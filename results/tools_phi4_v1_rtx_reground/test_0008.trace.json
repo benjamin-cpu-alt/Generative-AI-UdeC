@@ -1,0 +1,328 @@
+{
+  "facts": {
+    "PROP-W32": {
+      "location": "San Miguel",
+      "bedrooms": 2,
+      "price_text": "4.491 UF",
+      "rent_text": "$1.410.000",
+      "distance_metro_text": "1,4 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"San Miguel\",\n  \"bedrooms\": 2,\n  \"price_text\": \"UF 4.491\",\n  \"rent_text\": \"USD 1.410.000/mes\",\n  \"distance_metro_text\": \"1,4 km\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "San Miguel",
+        "bedrooms_text": "Depto en San Miguel, 77m², 2 dormitorios, 1 baño. Precio: UF 4.491. Ubicado a 1,4 km de la estación Cal y Canto, unos 18 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo estimado: $1.410.000/mes.",
+        "price_text": "UF 4.491",
+        "rent_text": "USD 1.410.000/mes",
+        "distance_metro_text": "1,4 km",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "rent_text: no es literal del aviso: 'USD 1.410.000/mes'"
+      ]
+    },
+    "PROP-K43": {
+      "location": "Vitacura",
+      "bedrooms": 3,
+      "price_text": "$138.200.000",
+      "rent_text": "$630.000",
+      "distance_metro_text": "2,1 km",
+      "distance_bus_text": "992 m",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Vitacura\",\n  \"bedrooms\": 3,\n  \"price_text\": \"$138.200.000\",\n  \"rent_text\": \"$630.000/mes\",\n  \"distance_metro_text\": \"2,1km\",\n  \"distance_bus_text\": \"992m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Vitacura",
+        "bedrooms_text": "Depto en Vitacura, 97m², 3 dormitorios, 2 baños. Luminoso y con vista despejada. Valor $138.200.000. A 992m de paradero de buses troncal, y 2,1km del metro más cercano. Se aceptan perros, gatos no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $630.000/mes.",
+        "price_text": "$138.200.000",
+        "rent_text": "$630.000/mes",
+        "distance_metro_text": "2,1km",
+        "distance_bus_text": "992m",
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Se aceptan perros, gatos no permitidos por reglamento de copropiedad.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-G50": {
+      "location": "Independencia",
+      "bedrooms": 2,
+      "price_text": "4445 UF",
+      "rent_text": null,
+      "distance_metro_text": "320 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "visitas",
+      "raw": "{\n  \"location\": \"Independencia\",\n  \"bedrooms\": 2,\n  \"price_text\": \"4445 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"320m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"visitas\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Independencia",
+        "bedrooms_text": "Depto en Independencia, 73m², 2D/1B. Precio: 4445 UF. A 320m de la estación de metro Los Leones. Entrega inmediata. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+        "price_text": "4445 UF",
+        "rent_text": null,
+        "distance_metro_text": "320m",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-N50": {
+      "location": "Recoleta",
+      "bedrooms": 3,
+      "price_text": "4.257 UF",
+      "rent_text": "$1.130.000",
+      "distance_metro_text": "1,9 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Recoleta\",\n  \"bedrooms\": 2,\n  \"price_text\": \"4.257 UF\",\n  \"rent_text\": \"1.130.000/mes\",\n  \"distance_metro_text\": \"1,9 km\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Recoleta",
+        "bedrooms_text": "Depto en Recoleta, 94m², 3D/2B. Precio: 4.257 UF. Ubicado a 1,9 km de la estación Tobalaba, unos 23 minutos caminando. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Piso alto, orientación norte. Arriendo referencial de la zona: $1.130.000/mes.",
+        "price_text": "4.257 UF",
+        "rent_text": "1.130.000/mes",
+        "distance_metro_text": "1,9 km",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-C35": {
+      "location": "Santiago Centro",
+      "bedrooms": 3,
+      "price_text": "5.028 UF",
+      "rent_text": null,
+      "distance_metro_text": "196 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Santiago Centro\",\n  \"bedrooms\": 3,\n  \"price_text\": \"5.028 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"196m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Santiago Centro",
+        "bedrooms_text": "Depto en Santiago Centro, 81m², 3 dormitorios, 2 baños. ¡En la comuna favorita del cliente! Precio: 5.028 UF (ligeramente sobre el techo del cliente, pero el corredor indica que es negociable). A 196m de la estación de metro Vicente Valdés. 100% pet friendly, sin restricciones de tamaño ni especie. Incluye estacionamiento propio.",
+        "price_text": "5.028 UF",
+        "rent_text": null,
+        "distance_metro_text": "196m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-Y93": {
+      "location": "Peñalolén",
+      "bedrooms": 3,
+      "price_text": "4707 UF",
+      "rent_text": "$1.510.000",
+      "distance_metro_text": "1,1 km",
+      "distance_bus_text": "226 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 6.0,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Peñalolén\",\n  \"bedrooms\": 3,\n  \"price_text\": \"4707 UF\",\n  \"rent_text\": \"1.510.000/mes\",\n  \"distance_metro_text\": \"1,1km\",\n  \"distance_bus_text\": \"226m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": 6,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Peñalolén",
+        "bedrooms_text": "Casa en Peñalolén, 84m², 3 dormitorios, 1 baño. Precio: 4707 UF. A 1,1km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 226m. Excelente conectividad. Aceptamos mascotas, gatos y perros hasta 6kg. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $1.510.000/mes.",
+        "price_text": "4707 UF",
+        "rent_text": "1.510.000/mes",
+        "distance_metro_text": "1,1km",
+        "distance_bus_text": "226m",
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Aceptamos mascotas, gatos y perros hasta 6kg.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-S63": {
+      "location": "Las Condes",
+      "bedrooms": 3,
+      "price_text": "$165.900.000",
+      "rent_text": "$1.170.000",
+      "distance_metro_text": "347 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Las Condes\",\n  \"bedrooms\": 3,\n  \"price_text\": \"$165.900.000\",\n  \"rent_text\": \"$1.170.000/mes\",\n  \"distance_metro_text\": \"347m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Las Condes",
+        "bedrooms_text": "Casa en Las Condes, 82m², 3 dormitorios, 1 baño. Valor $165.900.000. A 347m de la estación de metro Manquehue. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Entrega inmediata. Arriendo estimado: $1.170.000/mes.",
+        "price_text": "$165.900.000",
+        "rent_text": "$1.170.000/mes",
+        "distance_metro_text": "347m",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-W32": {
+      "price_clp": 174699900,
+      "roi_pct": 9.69,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.491 UF' = 4491 UF -> 174,699,900 CLP <= 191,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='1,4 km' bus=None -> min=1400 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-K43": {
+      "price_clp": 138200000,
+      "roi_pct": 5.47,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$138.200.000' = 1.382e+08 CLP -> 138,200,000 CLP <= 191,500,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs gato 6kg -> FALLA",
+        "distancia: metro='2,1 km' bus='992 m' -> min=992 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-G50": {
+      "price_clp": 172910500,
+      "roi_pct": null,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4445 UF' = 4445 UF -> 172,910,500 CLP <= 191,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='320 m' bus=None -> min=320 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: visitas (requerido=True)"
+      ]
+    },
+    "PROP-N50": {
+      "price_clp": 165597300,
+      "roi_pct": 8.19,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.257 UF' = 4257 UF -> 165,597,300 CLP <= 191,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='1,9 km' bus=None -> min=1900 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-C35": {
+      "price_clp": 195589200,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '5.028 UF' = 5028 UF -> 195,589,200 CLP > 191,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='196 m' bus=None -> min=196 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-Y93": {
+      "price_clp": 183102300,
+      "roi_pct": 9.9,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '4707 UF' = 4707 UF -> 183,102,300 CLP <= 191,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=6.0 vs gato 6kg -> ok",
+        "distancia: metro='1,1 km' bus='226 m' -> min=226 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-S63": {
+      "price_clp": 165900000,
+      "roi_pct": 8.46,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$165.900.000' = 1.659e+08 CLP -> 165,900,000 CLP <= 191,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='347 m' bus=None -> min=347 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

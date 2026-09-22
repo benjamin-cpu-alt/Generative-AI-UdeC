@@ -1,0 +1,237 @@
+{
+  "facts": {
+    "PROP-H18": {
+      "location": "Estación Central",
+      "bedrooms": 4,
+      "price_text": "3.287 UF",
+      "rent_text": "$490.000",
+      "distance_metro_text": "222 m",
+      "distance_bus_text": "222 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Estación Central\",\n  \"bedrooms_text\": \"4 dormitorios\",\n  \"price_text\": \"UF 3.287\",\n  \"rent_text\": \"Arriendo estimado: $490.000/mes\",\n  \"distance_metro_text\": \"222m de paradero de buses troncal, y 1,1km del metro más cercano.\",\n  \"distance_bus_text\": \"222m de paradero de buses troncal\",\n  \"parking_text\": \"Incluye 1 estacionamiento techado asignado.\",\n  \"pets_text\": \"Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 695,
+      "output_tokens": 175,
+      "wall_s": 6.01,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Estación Central",
+        "bedrooms_text": "4 dormitorios",
+        "price_text": "UF 3.287",
+        "rent_text": "Arriendo estimado: $490.000/mes",
+        "distance_metro_text": "222m de paradero de buses troncal, y 1,1km del metro más cercano.",
+        "distance_bus_text": "222m de paradero de buses troncal",
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-T57": {
+      "location": "Peñalolén",
+      "bedrooms": 3,
+      "price_text": "$112.400.000",
+      "rent_text": "$700.000",
+      "distance_metro_text": "1,4 km",
+      "distance_bus_text": "236 m",
+      "pets_policy": "no_permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Casa en Peñalolén\", \"bedrooms_text\": \"3 dormitorios\", \"price_text\": \"$112.400.000\", \"rent_text\": \"/mes: $700.000\", \"distance_metro_text\": \"a 1,4km de la estación de metro más cercana\", \"distance_bus_text\": \"a 236m de paradero de buses troncal\", \"parking_text\": \"Cuenta con 1 estacionamiento en subterráneo\", \"pets_text\": \"Edificio sin mascotas por reglamento de copropiedad\", \"acepta_mascotas\": \"no\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 704,
+      "output_tokens": 151,
+      "wall_s": 5.18,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Peñalolén",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "$112.400.000",
+        "rent_text": "/mes: $700.000",
+        "distance_metro_text": "a 1,4km de la estación de metro más cercana",
+        "distance_bus_text": "a 236m de paradero de buses troncal",
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo",
+        "pets_text": "Edificio sin mascotas por reglamento de copropiedad",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "rent_text: no es literal del aviso: '/mes: $700.000'",
+        "distance_bus_text: no es literal del aviso: 'a 236m de paradero de buses troncal'"
+      ]
+    },
+    "PROP-E13": {
+      "location": "Independencia",
+      "bedrooms": 1,
+      "price_text": "$129.300.000",
+      "rent_text": "$1.090.000",
+      "distance_metro_text": "373 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Independencia\",\n  \"bedrooms_text\": \"1 dormitorio + loggia cerrada\",\n  \"price_text\": \"$129.300.000\",\n  \"rent_text\": \"Arriendo referencial de la zona: $1.090.000/mes\",\n  \"distance_metro_text\": \"373m de la estación de metro Tobalaba\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado.\",\n  \"pets_text\": \"Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 698,
+      "output_tokens": 162,
+      "wall_s": 5.38,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Independencia",
+        "bedrooms_text": "1 dormitorio + loggia cerrada",
+        "price_text": "$129.300.000",
+        "rent_text": "Arriendo referencial de la zona: $1.090.000/mes",
+        "distance_metro_text": "373m de la estación de metro Tobalaba",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-Z45": {
+      "location": "Independencia",
+      "bedrooms": 2,
+      "price_text": "$140.000.000",
+      "rent_text": null,
+      "distance_metro_text": "477 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto en Independencia\", \"bedrooms_text\": \"2 dormitorios\", \"price_text\": \"$140.000.000\", \"rent_text\": null, \"distance_metro_text\": \"477m de la estación de metro Plaza Egaña\", \"distance_bus_text\": null, \"parking_text\": \"Incluye estacionamiento propio.\", \"pets_text\": \"aceptamos perros y gatos de cualquier tamaño\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"si\"}",
+      "prompt_tokens": 687,
+      "output_tokens": 118,
+      "wall_s": 4.06,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Independencia",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "$140.000.000",
+        "rent_text": null,
+        "distance_metro_text": "477m de la estación de metro Plaza Egaña",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "aceptamos perros y gatos de cualquier tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-X26": {
+      "location": "Independencia",
+      "bedrooms": 4,
+      "price_text": "$137.000.000",
+      "rent_text": null,
+      "distance_metro_text": "450 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\"location_text\": \"Depto en Independencia\", \"bedrooms_text\": \"4 dormitorios\", \"price_text\": \"$137.000.000\", \"rent_text\": null, \"distance_metro_text\": \"A 450m de la estación de metro Príncipe de Gales\", \"distance_bus_text\": null, \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado.\", \"pets_text\": \"Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.\",\"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"si\"}",
+      "prompt_tokens": 687,
+      "output_tokens": 132,
+      "wall_s": 4.44,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Independencia",
+        "bedrooms_text": "4 dormitorios",
+        "price_text": "$137.000.000",
+        "rent_text": null,
+        "distance_metro_text": "A 450m de la estación de metro Príncipe de Gales",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-H18": {
+      "price_clp": 133287850,
+      "roi_pct": 4.41,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.287 UF' = 3287 UF -> 133,287,850 CLP <= 135,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='222 m' bus='222 m' -> min=222 vs max 500",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-T57": {
+      "price_clp": 112400000,
+      "roi_pct": 7.47,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$112.400.000' = 1.124e+08 CLP -> 112,400,000 CLP <= 135,500,000",
+        "mascotas: politica=no_permitidas especies=cualquiera max_kg=None vs perro 30kg -> FALLA",
+        "distancia: metro='1,4 km' bus='236 m' -> min=236 vs max 500",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-E13": {
+      "price_clp": 129300000,
+      "roi_pct": 10.12,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$129.300.000' = 1.293e+08 CLP -> 129,300,000 CLP <= 135,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='373 m' bus=None -> min=373 vs max 500",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-Z45": {
+      "price_clp": 140000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$140.000.000' = 1.4e+08 CLP -> 140,000,000 CLP > 135,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='477 m' bus=None -> min=477 vs max 500",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-X26": {
+      "price_clp": 137000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$137.000.000' = 1.37e+08 CLP -> 137,000,000 CLP > 135,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='450 m' bus=None -> min=450 vs max 500",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}

@@ -1,0 +1,377 @@
+{
+  "facts": {
+    "PROP-R21": {
+      "location": "La Reina",
+      "bedrooms": 2,
+      "price_text": "$108.500.000",
+      "rent_text": null,
+      "distance_metro_text": "1,5 km",
+      "distance_bus_text": "871 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\"location_text\": \"Depto en La Reina, 64m²\", \"bedrooms_text\": \"2D/1B\", \"price_text\": \"Valor $108.500.000\", \"rent_text\": null, \"distance_metro_text\": \"A 1,5km de la estación de metro más cercana\", \"distance_bus_text\": \"paradero de buses troncal a 871m\", \"parking_text\": \"Incluye 1 estacionamiento techado asignado\", \"pets_text\": \"Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 707,
+      "output_tokens": 154,
+      "wall_s": 6.59,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Reina, 64m²",
+        "bedrooms_text": "2D/1B",
+        "price_text": "Valor $108.500.000",
+        "rent_text": null,
+        "distance_metro_text": "A 1,5km de la estación de metro más cercana",
+        "distance_bus_text": "paradero de buses troncal a 871m",
+        "parking_text": "Incluye 1 estacionamiento techado asignado",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-H26": {
+      "location": "La Reina",
+      "bedrooms": null,
+      "price_text": "2.349 UF",
+      "rent_text": "$460.000",
+      "distance_metro_text": "755 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en La Reina, 89m²\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"Precio: 2.349 UF.\",\n  \"rent_text\": \"Arriendo estimado: $460.000/mes.\",\n  \"distance_metro_text\": \"A 755m de la estación de metro Lo Vial.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye estacionamiento propio.\",\n  \"pets_text\": \"Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 673,
+      "output_tokens": 152,
+      "wall_s": 5.55,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Reina, 89m²",
+        "bedrooms_text": null,
+        "price_text": "Precio: 2.349 UF.",
+        "rent_text": "Arriendo estimado: $460.000/mes.",
+        "distance_metro_text": "A 755m de la estación de metro Lo Vial.",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-Q60": {
+      "location": "La Reina",
+      "bedrooms": 3,
+      "price_text": "2.020 UF",
+      "rent_text": "$610.000",
+      "distance_metro_text": "2,7 km",
+      "distance_bus_text": "1200 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto en La Reina, 87m²\", \"bedrooms_text\": \"3D/1B\", \"price_text\": \"UF 2.020\", \"rent_text\": \"Arriendo referencial de la zona: $610.000/mes\", \"distance_metro_text\": \"a 2,7km de la estación de metro más cercana\", \"distance_bus_text\": \"contando con paradero de buses troncal a 1200m\", \"parking_text\": \"Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.\", \"pets_text\": \"Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.\",\"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 705,
+      "output_tokens": 177,
+      "wall_s": 6.4,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Reina, 87m²",
+        "bedrooms_text": "3D/1B",
+        "price_text": "UF 2.020",
+        "rent_text": "Arriendo referencial de la zona: $610.000/mes",
+        "distance_metro_text": "a 2,7km de la estación de metro más cercana",
+        "distance_bus_text": "contando con paradero de buses troncal a 1200m",
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "distance_bus_text: no es literal del aviso: 'contando con paradero de buses troncal a 1200m'"
+      ]
+    },
+    "PROP-S58": {
+      "location": "Recoleta",
+      "bedrooms": null,
+      "price_text": "2.752 UF",
+      "rent_text": null,
+      "distance_metro_text": "984 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Recoleta\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 2.752\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 984m de la estación de metro Bellas Artes\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento techado asignado\",\n  \"pets_text\": \"Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 678,
+      "output_tokens": 145,
+      "wall_s": 5.18,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Recoleta",
+        "bedrooms_text": null,
+        "price_text": "UF 2.752",
+        "rent_text": null,
+        "distance_metro_text": "A 984m de la estación de metro Bellas Artes",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-L53": {
+      "location": "La Reina",
+      "bedrooms": 3,
+      "price_text": "2.646 UF",
+      "rent_text": "$610.000",
+      "distance_metro_text": "1078 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Casa en La Reina\",\n  \"bedrooms_text\": \"3 dormitorios\",\n  \"price_text\": \"2.646 UF\",\n  \"rent_text\": \"Arriendo estimado: $610.000/mes\",\n  \"distance_metro_text\": \"1078m de la estación de metro Príncipe de Gales\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento\",\n  \"pets_text\": \"Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 678,
+      "output_tokens": 147,
+      "wall_s": 5.22,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en La Reina",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "2.646 UF",
+        "rent_text": "Arriendo estimado: $610.000/mes",
+        "distance_metro_text": "1078m de la estación de metro Príncipe de Gales",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-G71": {
+      "location": "Las Condes",
+      "bedrooms": null,
+      "price_text": "$78.100.000",
+      "rent_text": "$520.000",
+      "distance_metro_text": "237 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 6.0,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en Las Condes\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"$78.100.000\",\n  \"rent_text\": \"Arriendo referencial de la zona: $520.000/mes\",\n  \"distance_metro_text\": \"A 237m de la estación de metro Cal y Canto\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento\",\n  \"pets_text\": \"Pet friendly con límite de 6kg por mascota\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 680,
+      "output_tokens": 152,
+      "wall_s": 5.42,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Las Condes",
+        "bedrooms_text": null,
+        "price_text": "$78.100.000",
+        "rent_text": "Arriendo referencial de la zona: $520.000/mes",
+        "distance_metro_text": "A 237m de la estación de metro Cal y Canto",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento",
+        "pets_text": "Pet friendly con límite de 6kg por mascota",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-A17": {
+      "location": "Las Condes",
+      "bedrooms": 1,
+      "price_text": "$89.800.000",
+      "rent_text": "$600.000",
+      "distance_metro_text": "1,7 km",
+      "distance_bus_text": "951 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\"location_text\": \"Depto en Las Condes\", \"bedrooms_text\": \"1D\", \"price_text\": \"$89.800.000\", \"rent_text\": \"/mes: $600.000\", \"distance_metro_text\": \"1,7km del metro más cercano\", \"distance_bus_text\": \"951m de paradero de buses troncal\", \"parking_text\": \"Incluye 1 estacionamiento techado asignado\", \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 707,
+      "output_tokens": 142,
+      "wall_s": 5.29,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Las Condes",
+        "bedrooms_text": "1D",
+        "price_text": "$89.800.000",
+        "rent_text": "/mes: $600.000",
+        "distance_metro_text": "1,7km del metro más cercano",
+        "distance_bus_text": "951m de paradero de buses troncal",
+        "parking_text": "Incluye 1 estacionamiento techado asignado",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms_text: no es literal del aviso: '1D'",
+        "rent_text: no es literal del aviso: '/mes: $600.000'"
+      ]
+    },
+    "PROP-J25": {
+      "location": "La Reina",
+      "bedrooms": 3,
+      "price_text": "$97.800.000",
+      "rent_text": null,
+      "distance_metro_text": "1450 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 2.0,
+      "parking": "asignado",
+      "raw": "{\"location_text\": \"Depto en La Reina, 86m²\", \"bedrooms_text\": \"3D/1B\", \"price_text\": \"$97.800.000\", \"rent_text\": null, \"distance_metro_text\": \"A 1450m del metro Cal y Canto\", \"distance_bus_text\": null, \"parking_text\": \"Incluye 1 estacionamiento techado asignado.\", \"pets_text\": \"Aceptamos mascotas, gatos y perros hasta 2kg.\",\"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"si\"}",
+      "prompt_tokens": 673,
+      "output_tokens": 134,
+      "wall_s": 4.78,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Reina, 86m²",
+        "bedrooms_text": "3D/1B",
+        "price_text": "$97.800.000",
+        "rent_text": null,
+        "distance_metro_text": "A 1450m del metro Cal y Canto",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Aceptamos mascotas, gatos y perros hasta 2kg.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-R21": {
+      "price_clp": 108500000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$108.500.000' = 1.085e+08 CLP -> 108,500,000 CLP > 107,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='1,5 km' bus='871 m' -> min=871 vs max 1200",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-H26": {
+      "price_clp": 92785500,
+      "roi_pct": 5.95,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.349 UF' = 2349 UF -> 92,785,500 CLP <= 107,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='755 m' bus=None -> min=755 vs max 1200",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-Q60": {
+      "price_clp": 79790000,
+      "roi_pct": 9.17,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.020 UF' = 2020 UF -> 79,790,000 CLP <= 107,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='2,7 km' bus='1200 m' -> min=1200 vs max 1200",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-S58": {
+      "price_clp": 108704000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '2.752 UF' = 2752 UF -> 108,704,000 CLP > 107,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='984 m' bus=None -> min=984 vs max 1200",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-L53": {
+      "price_clp": 104517000,
+      "roi_pct": 7.0,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.646 UF' = 2646 UF -> 104,517,000 CLP <= 107,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='1078 m' bus=None -> min=1078 vs max 1200",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-G71": {
+      "price_clp": 78100000,
+      "roi_pct": 7.99,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$78.100.000' = 7.81e+07 CLP -> 78,100,000 CLP <= 107,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=6.0 vs gato 6kg -> ok",
+        "distancia: metro='237 m' bus=None -> min=237 vs max 1200",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-A17": {
+      "price_clp": 89800000,
+      "roi_pct": 8.02,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$89.800.000' = 8.98e+07 CLP -> 89,800,000 CLP <= 107,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='1,7 km' bus='951 m' -> min=951 vs max 1200",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-J25": {
+      "price_clp": 97800000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$97.800.000' = 9.78e+07 CLP -> 97,800,000 CLP <= 107,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=2.0 vs gato 6kg -> FALLA",
+        "distancia: metro='1450 m' bus=None -> min=1450 vs max 1200",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}

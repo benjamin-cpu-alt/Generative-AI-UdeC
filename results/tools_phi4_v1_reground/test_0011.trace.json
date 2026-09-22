@@ -1,0 +1,278 @@
+{
+  "facts": {
+    "PROP-U67": {
+      "location": "Santiago Centro",
+      "bedrooms": 2,
+      "price_text": "2.203 UF",
+      "rent_text": null,
+      "distance_metro_text": "1,2 km",
+      "distance_bus_text": "251 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Santiago Centro\",\n  \"bedrooms\": 2,\n  \"price_text\": \"2.203 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,2km\",\n  \"distance_bus_text\": \"251m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Santiago Centro",
+        "bedrooms_text": "Depto en Santiago Centro, 71m², 2 dormitorios + sala de estar amplia que puede usarse como dormitorio adicional, 1B. Justo en el sector que busca el comprador. Precio: 2.203 UF. A 251m de paradero de buses troncal, y 1,2km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento.",
+        "price_text": "2.203 UF",
+        "rent_text": null,
+        "distance_metro_text": "1,2km",
+        "distance_bus_text": "251m",
+        "parking_text": "Incluye 1 estacionamiento.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-W73": {
+      "location": "Providencia",
+      "bedrooms": 4,
+      "price_text": "1.987 UF",
+      "rent_text": null,
+      "distance_metro_text": "0,9 km",
+      "distance_bus_text": "230 m",
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Providencia\",\n  \"bedrooms\": 4,\n  \"price_text\": \"UF 1.987\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"0,9km\",\n  \"distance_bus_text\": \"230m\",\n  \"pets_policy\": \"no_mencionada\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Providencia",
+        "bedrooms_text": "Depto en Providencia, 110m², 4 dormitorios, 1 baño. Precio rebajado a UF 1.987. A 0,9km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 230m. Incluye estacionamiento propio.",
+        "price_text": "UF 1.987",
+        "rent_text": null,
+        "distance_metro_text": "0,9km",
+        "distance_bus_text": "230m",
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": null,
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-D21": {
+      "location": "Peñalolén",
+      "bedrooms": 3,
+      "price_text": "1.900 UF",
+      "rent_text": "$600.000",
+      "distance_metro_text": "763 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Peñalolén\",\n  \"bedrooms\": 3,\n  \"price_text\": \"1.900 UF\",\n  \"rent_text\": \"600.000/mes\",\n  \"distance_metro_text\": \"763m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Peñalolén",
+        "bedrooms_text": "Depto en Peñalolén, 97m², 3D/2B. Precio: 1.900 UF. A 763m de la estación de metro Franklin. Solo se admiten perros de cualquier tamaño. Incluye 1 estacionamiento subterráneo asignado. Arriendo estimado: $600.000/mes.",
+        "price_text": "1.900 UF",
+        "rent_text": "600.000/mes",
+        "distance_metro_text": "763m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Solo se admiten perros de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-T92": {
+      "location": "La Cisterna",
+      "bedrooms": 4,
+      "price_text": "1.710 UF",
+      "rent_text": "$510.000",
+      "distance_metro_text": "477 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 5.0,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"La Cisterna\",\n  \"bedrooms\": 4,\n  \"price_text\": \"UF 1.710\",\n  \"rent_text\": \"$510.000/mes\",\n  \"distance_metro_text\": \"477m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": 5,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "La Cisterna",
+        "bedrooms_text": "Casa en La Cisterna, 111m², 4D/1B. Precio: UF 1.710. A 477m de la estación de metro Vicente Valdés. Pet friendly con límite de 5kg por mascota. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $510.000/mes.",
+        "price_text": "UF 1.710",
+        "rent_text": "$510.000/mes",
+        "distance_metro_text": "477m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Pet friendly con límite de 5kg por mascota.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-R74": {
+      "location": "Santiago Centro",
+      "bedrooms": 3,
+      "price_text": "2.193 UF",
+      "rent_text": "$390.000",
+      "distance_metro_text": "225 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Santiago Centro\",\n  \"bedrooms\": 3,\n  \"price_text\": \"2.193 UF\",\n  \"rent_text\": \"390.000/mes\",\n  \"distance_metro_text\": \"225m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Santiago Centro",
+        "bedrooms_text": "Casa en Santiago Centro, 96m², 3 dormitorios, 1 baño. Precio: 2.193 UF. A 225m de la estación de metro Cal y Canto. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye 1 estacionamiento. Arriendo estimado: $390.000/mes.",
+        "price_text": "2.193 UF",
+        "rent_text": "390.000/mes",
+        "distance_metro_text": "225m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-N37": {
+      "location": "Vitacura",
+      "bedrooms": 4,
+      "price_text": "1.928 UF",
+      "rent_text": null,
+      "distance_metro_text": null,
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Vitacura\",\n  \"bedrooms\": 4,\n  \"price_text\": \"1.928 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"unos 13 minutos caminando\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Vitacura",
+        "bedrooms_text": "Casa en Vitacura, 96m², 4 dormitorios, 2 baños. Precio: 1.928 UF. Ubicado a 1,1 km de la estación Vicente Valdés, unos 13 minutos caminando. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio.",
+        "price_text": "1.928 UF",
+        "rent_text": null,
+        "distance_metro_text": "unos 13 minutos caminando",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-U67": {
+      "price_clp": 85806850,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.203 UF' = 2203 UF -> 85,806,850 CLP <= 87,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 5kg -> ok",
+        "distancia: metro='1,2 km' bus='251 m' -> min=251 vs max 800",
+        "dormitorios: 2 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-W73": {
+      "price_clp": 77393650,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '1.987 UF' = 1987 UF -> 77,393,650 CLP <= 87,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 5kg -> FALLA",
+        "distancia: metro='0,9 km' bus='230 m' -> min=230 vs max 800",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-D21": {
+      "price_clp": 74005000,
+      "roi_pct": 9.73,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '1.900 UF' = 1900 UF -> 74,005,000 CLP <= 87,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 5kg -> ok",
+        "distancia: metro='763 m' bus=None -> min=763 vs max 800",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-T92": {
+      "price_clp": 66604500,
+      "roi_pct": 9.19,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '1.710 UF' = 1710 UF -> 66,604,500 CLP <= 87,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=5.0 vs perro 5kg -> ok",
+        "distancia: metro='477 m' bus=None -> min=477 vs max 800",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-R74": {
+      "price_clp": 85417350,
+      "roi_pct": 5.48,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.193 UF' = 2193 UF -> 85,417,350 CLP <= 87,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 5kg -> ok",
+        "distancia: metro='225 m' bus=None -> min=225 vs max 800",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-N37": {
+      "price_clp": 75095600,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '1.928 UF' = 1928 UF -> 75,095,600 CLP <= 87,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 5kg -> ok",
+        "distancia: metro=None bus=None -> min=None vs max 800",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

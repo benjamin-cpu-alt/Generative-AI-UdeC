@@ -1,0 +1,426 @@
+{
+  "facts": {
+    "PROP-J66": {
+      "location": "Santiago Centro",
+      "bedrooms": 2,
+      "price_text": "$187.500.000",
+      "rent_text": "$1.490.000",
+      "distance_metro_text": "382 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Santiago Centro\",\n  \"bedrooms_text\": \"2 dormitorios\",\n  \"price_text\": \"Valor $187.500.000\",\n  \"rent_text\": \"Arriendo referencial de la zona: $1.490.000/mes\",\n  \"distance_metro_text\": \"A 382m de la estación de metro Ñuñoa\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento techado asignado.\",\n  \"pets_text\": \"Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Santiago Centro",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "Valor $187.500.000",
+        "rent_text": "Arriendo referencial de la zona: $1.490.000/mes",
+        "distance_metro_text": "A 382m de la estación de metro Ñuñoa",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-R92": {
+      "location": "Ñuñoa",
+      "bedrooms": 2,
+      "price_text": "$177.900.000",
+      "rent_text": "$1.440.000",
+      "distance_metro_text": "1,3 km",
+      "distance_bus_text": "334 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 2.0,
+      "parking": "calle",
+      "raw": "{\"location_text\": \"Depto en Ñuñoa\", \"bedrooms_text\": \"2D/2B\", \"price_text\": \"$177.900.000\", \"rent_text\": \"/mes: $1.440.000\", \"distance_metro_text\": \"a 1,3km de la estación de metro más cercana\", \"distance_bus_text\": \"a 334m de paradero de buses troncal\", \"parking_text\": \"estacionamiento en la calle, sin problemas para aparcar en el sector.\", \"pets_text\": \"Pet friendly con límite de 2kg por mascota.\",\"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Ñuñoa",
+        "bedrooms_text": "2D/2B",
+        "price_text": "$177.900.000",
+        "rent_text": "/mes: $1.440.000",
+        "distance_metro_text": "a 1,3km de la estación de metro más cercana",
+        "distance_bus_text": "a 334m de paradero de buses troncal",
+        "parking_text": "estacionamiento en la calle, sin problemas para aparcar en el sector.",
+        "pets_text": "Pet friendly con límite de 2kg por mascota.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "rent_text: no es literal del aviso: '/mes: $1.440.000'",
+        "distance_bus_text: no es literal del aviso: 'a 334m de paradero de buses troncal'"
+      ]
+    },
+    "PROP-S11": {
+      "location": "San Miguel",
+      "bedrooms": 1,
+      "price_text": "$207.800.000",
+      "rent_text": null,
+      "distance_metro_text": "254 m",
+      "distance_bus_text": "254 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en San Miguel, 57m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B.\",\n  \"bedrooms_text\": \"1 dormitorio\",\n  \"price_text\": \"Valor $207.800.000.\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"254m de paradero de buses troncal, y 1,4km del metro más cercano.\",\n  \"distance_bus_text\": \"254m de paradero de buses troncal\",\n  \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado.\",\n  \"pets_text\": \"Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en San Miguel, 57m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B.",
+        "bedrooms_text": "1 dormitorio",
+        "price_text": "Valor $207.800.000.",
+        "rent_text": null,
+        "distance_metro_text": "254m de paradero de buses troncal, y 1,4km del metro más cercano.",
+        "distance_bus_text": "254m de paradero de buses troncal",
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-M92": {
+      "location": "Recoleta",
+      "bedrooms": 3,
+      "price_text": "$208.500.000",
+      "rent_text": "$1.060.000",
+      "distance_metro_text": "411 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Recoleta\",\n  \"bedrooms_text\": \"3 dormitorios\",\n  \"price_text\": \"$208.500.000\",\n  \"rent_text\": \"Arriendo referencial de la zona: $1.060.000/mes\",\n  \"distance_metro_text\": \"411m de la estación de metro Bellas Artes\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado.\",\n  \"pets_text\": \"Se aceptan perros, gatos no permitidos por reglamento de copropiedad\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Recoleta",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "$208.500.000",
+        "rent_text": "Arriendo referencial de la zona: $1.060.000/mes",
+        "distance_metro_text": "411m de la estación de metro Bellas Artes",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Se aceptan perros, gatos no permitidos por reglamento de copropiedad",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no"
+      },
+      "warnings": []
+    },
+    "PROP-L44": {
+      "location": "Providencia",
+      "bedrooms": 1,
+      "price_text": "4.709 UF",
+      "rent_text": null,
+      "distance_metro_text": "542 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en Providencia\",\n  \"bedrooms_text\": \"1D + sala de estar amplia que puede usarse como dormitorio adicional\",\n  \"price_text\": \"4.709 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 542m de la estación de metro Tobalaba\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye estacionamiento propio\",\n  \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Providencia",
+        "bedrooms_text": "1D + sala de estar amplia que puede usarse como dormitorio adicional",
+        "price_text": "4.709 UF",
+        "rent_text": null,
+        "distance_metro_text": "A 542m de la estación de metro Tobalaba",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "bedrooms_text: no es literal del aviso: '1D + sala de estar amplia que puede usarse como dormitorio adicional'"
+      ]
+    },
+    "PROP-F77": {
+      "location": "Las Condes",
+      "bedrooms": 2,
+      "price_text": "$218.000.000",
+      "rent_text": null,
+      "distance_metro_text": "1,6 km",
+      "distance_bus_text": "449 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\"location_text\": \"Depto en Las Condes\", \"bedrooms_text\": \"2 dormitorios\", \"price_text\": \"Valor $218.000.000\", \"rent_text\": null, \"distance_metro_text\": \"1,6km del metro más cercano\", \"distance_bus_text\": \"449m de paradero de buses troncal\", \"parking_text\": \"Incluye 1 estacionamiento techado asignado\", \"pets_text\": \"Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"si\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Las Condes",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "Valor $218.000.000",
+        "rent_text": null,
+        "distance_metro_text": "1,6km del metro más cercano",
+        "distance_bus_text": "449m de paradero de buses troncal",
+        "parking_text": "Incluye 1 estacionamiento techado asignado",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-E53": {
+      "location": "Vitacura",
+      "bedrooms": 2,
+      "price_text": "4.315 UF",
+      "rent_text": "$1.090.000",
+      "distance_metro_text": "193 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en Vitacura\",\n  \"bedrooms_text\": \"2D/1B\",\n  \"price_text\": \"UF 4.315\",\n  \"rent_text\": \"Arriendo estimado: $1.090.000/mes\",\n  \"distance_metro_text\": \"193m de la estación de metro Franklin\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.\",\n  \"pets_text\": \"Solo se admiten perros de cualquier tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Vitacura",
+        "bedrooms_text": "2D/1B",
+        "price_text": "UF 4.315",
+        "rent_text": "Arriendo estimado: $1.090.000/mes",
+        "distance_metro_text": "193m de la estación de metro Franklin",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "pets_text": "Solo se admiten perros de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-X71": {
+      "location": "Independencia",
+      "bedrooms": 3,
+      "price_text": "5299 UF",
+      "rent_text": "$1.370.000",
+      "distance_metro_text": "477 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Casa en Independencia\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"5299 UF\",\n  \"rent_text\": \"Arriendo estimado: $1.370.000/mes.\",\n  \"distance_metro_text\": \"A 477m de la estación de metro Cal y Canto.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento techado asignado.\",\n  \"pets_text\": \"Solo se admiten perros de cualquier tamaño.\",\n  \"acepta_mascotas\": \"no\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Independencia",
+        "bedrooms_text": null,
+        "price_text": "5299 UF",
+        "rent_text": "Arriendo estimado: $1.370.000/mes.",
+        "distance_metro_text": "A 477m de la estación de metro Cal y Canto.",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Solo se admiten perros de cualquier tamaño.",
+        "acepta_mascotas": "no",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "PROP-V75": {
+      "location": "Vitacura",
+      "bedrooms": 3,
+      "price_text": "4789 UF",
+      "rent_text": null,
+      "distance_metro_text": "1,2 km",
+      "distance_bus_text": "449 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 3.0,
+      "parking": "asignado",
+      "raw": "{\"location_text\": \"Depto en Vitacura\", \"bedrooms_text\": \"3 dormitorios\", \"price_text\": \"Precio: 4789 UF.\", \"rent_text\": null, \"distance_metro_text\": \"1,2km del metro más cercano\", \"distance_bus_text\": \"A 449m de paradero de buses troncal\", \"parking_text\": \"Incluye 1 estacionamiento techado asignado\", \"pets_text\": \"Se aceptan mascotas pequeñas y medianas hasta 3kg, previa autorización de la administración.\",\"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Vitacura",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "Precio: 4789 UF.",
+        "rent_text": null,
+        "distance_metro_text": "1,2km del metro más cercano",
+        "distance_bus_text": "A 449m de paradero de buses troncal",
+        "parking_text": "Incluye 1 estacionamiento techado asignado",
+        "pets_text": "Se aceptan mascotas pequeñas y medianas hasta 3kg, previa autorización de la administración.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-J66": {
+      "price_clp": 187500000,
+      "roi_pct": 9.54,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$187.500.000' = 1.875e+08 CLP -> 187,500,000 CLP <= 213,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='382 m' bus=None -> min=382 vs max 600",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-R92": {
+      "price_clp": 177900000,
+      "roi_pct": 9.71,
+      "failed_constraints": [
+        "mascotas",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$177.900.000' = 1.779e+08 CLP -> 177,900,000 CLP <= 213,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=2.0 vs perro 4kg -> FALLA",
+        "distancia: metro='1,3 km' bus='334 m' -> min=334 vs max 600",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: calle (requerido=True)"
+      ]
+    },
+    "PROP-S11": {
+      "price_clp": 207800000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$207.800.000' = 2.078e+08 CLP -> 207,800,000 CLP <= 213,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='254 m' bus='254 m' -> min=254 vs max 600",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-M92": {
+      "price_clp": 208500000,
+      "roi_pct": 6.1,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$208.500.000' = 2.085e+08 CLP -> 208,500,000 CLP <= 213,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='411 m' bus=None -> min=411 vs max 600",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-L44": {
+      "price_clp": 186711850,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.709 UF' = 4709 UF -> 186,711,850 CLP <= 213,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='542 m' bus=None -> min=542 vs max 600",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-F77": {
+      "price_clp": 218000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$218.000.000' = 2.18e+08 CLP -> 218,000,000 CLP > 213,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='1,6 km' bus='449 m' -> min=449 vs max 600",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-E53": {
+      "price_clp": 171089750,
+      "roi_pct": 7.65,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.315 UF' = 4315 UF -> 171,089,750 CLP <= 213,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='193 m' bus=None -> min=193 vs max 600",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-X71": {
+      "price_clp": 210105350,
+      "roi_pct": 7.82,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '5299 UF' = 5299 UF -> 210,105,350 CLP <= 213,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='477 m' bus=None -> min=477 vs max 600",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-V75": {
+      "price_clp": 189883850,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4789 UF' = 4789 UF -> 189,883,850 CLP <= 213,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=3.0 vs perro 4kg -> FALLA",
+        "distancia: metro='1,2 km' bus='449 m' -> min=449 vs max 600",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}

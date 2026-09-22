@@ -132,7 +132,54 @@ Reglas por campo:
 
 Ignora frases de marketing ("oportunidad", "bajo el presupuesto", "negociable", "comuna favorita", "a pasos de todo"): no son hechos."""
 
-PROMPTS = {"v1": SYSTEM_V1, "v2": SYSTEM_V2, "v3": SYSTEM_V3, "v4": SYSTEM_V4}
+# v5 = "localizar, no interpretar". Diagnóstico sobre tools_phi4_v1 (extract_report, 352 propiedades):
+# los errores se concentran en los campos que el modelo debía INTERPRETAR (bedrooms 42, parking 10,
+# pets_species 12, pets_max_kg 4) y en alucinaciones de unidad/ejemplo en los que debía COPIAR
+# (price 15, rent 4). v5 pide solo COPIAS LITERALES de la cláusula de cada tema y tres respuestas
+# cerradas sobre mascotas; grounding.py verifica que cada span exista en el aviso y lo parsea.
+# Sin números de ejemplo en el prompt (v1 contaminaba: "$980.000" aparecía como arriendo).
+SPANS_SCHEMA_V5: Dict = {
+    "type": "object",
+    "properties": {
+        "location_text": {"type": ["string", "null"]},
+        "bedrooms_text": {"type": ["string", "null"]},
+        "price_text": {"type": ["string", "null"]},
+        "rent_text": {"type": ["string", "null"]},
+        "distance_metro_text": {"type": ["string", "null"]},
+        "distance_bus_text": {"type": ["string", "null"]},
+        "parking_text": {"type": ["string", "null"]},
+        "pets_text": {"type": ["string", "null"]},
+        "acepta_mascotas": {"type": "string", "enum": ["si", "no", "no_dice"]},
+        "acepta_perros": {"type": "string", "enum": ["si", "no", "no_dice"]},
+        "acepta_gatos": {"type": "string", "enum": ["si", "no", "no_dice"]},
+    },
+    "required": ["location_text", "bedrooms_text", "price_text", "rent_text", "distance_metro_text",
+                 "distance_bus_text", "parking_text", "pets_text",
+                 "acepta_mascotas", "acepta_perros", "acepta_gatos"],
+}
+
+SYSTEM_V5 = """Eres un localizador de frases en avisos inmobiliarios chilenos. Recibes el texto de UNA propiedad. Para cada campo devuelves la COPIA LITERAL del fragmento del aviso que habla de ese tema, o null si el aviso no lo menciona. No interpretas, no calculas, no conviertes, no resumes ni corriges: copia el fragmento tal cual, con los mismos números, signos y unidades que aparecen en el aviso.
+
+Campos (fragmentos copiados):
+- location_text: el fragmento que dice dónde está la propiedad (la frase que empieza con "Depto en" o "Casa en").
+- bedrooms_text: el fragmento del aviso que dice cuántos dormitorios y baños tiene, copiado tal cual con sus números. Muchos avisos lo abrevian como un número pegado a la letra D (dormitorios), una barra, y un número pegado a la letra B (baños): copia esa abreviatura tal como aparece. Incluye en el fragmento los ambientes extra que mencione en la misma frase (escritorio, loggia, sala de estar). Si el aviso dice "estudio" o "ambiente único", copia esa frase.
+- price_text: el fragmento con el precio de venta, con su signo $ o su UF exactamente como aparece.
+- rent_text: el fragmento con el arriendo mensual estimado o referencial (el que dice "/mes"). null si el aviso no publica arriendo.
+- distance_metro_text: la frase completa sobre la distancia a la estación de metro, aunque también mencione minutos caminando. null si no aparece.
+- distance_bus_text: la frase completa sobre la distancia a un paradero de buses troncal. null si no aparece.
+- parking_text: la frase completa sobre estacionamiento. null si el aviso no lo menciona.
+- pets_text: la frase completa sobre mascotas (política, especies, límite de peso). null si el aviso no lo menciona.
+
+Campos (respuestas cerradas, solo sobre lo que dice pets_text):
+- acepta_mascotas: "si" si el aviso dice que acepta mascotas (aunque sea con condiciones o límites); "no" si dice que no acepta; "no_dice" si no lo menciona o dice que no se especifica.
+- acepta_perros: "si" si permite perros explícitamente o acepta mascotas sin restringir la especie; "no" si dice que los perros no están permitidos o que solo admite gatos; "no_dice" en otro caso.
+- acepta_gatos: lo mismo para gatos.
+
+Las frases de marketing ("oportunidad", "bajo el presupuesto", "negociable", "comuna favorita", "a pasos de todo") no son hechos: no las copies en ningún campo."""
+
+PROMPTS = {"v1": SYSTEM_V1, "v2": SYSTEM_V2, "v3": SYSTEM_V3, "v4": SYSTEM_V4, "v5": SYSTEM_V5}
+# Versiones cuyo esquema es de SPANS (se pasan por grounding.py para obtener Facts).
+SPAN_VERSIONS = {"v5"}
 # Versión REPORTADA (test 30/51, dev 21/30). v2–v4 perdieron en dev y nunca se corrieron en test.
 DEFAULT_PROMPT = "v1"
 SYSTEM = PROMPTS[DEFAULT_PROMPT]
@@ -141,7 +188,7 @@ SYSTEM = PROMPTS[DEFAULT_PROMPT]
 @dataclass
 class Facts:
     location: Optional[str]
-    bedrooms: int
+    bedrooms: Optional[int]             # None = no verificable (v5: cláusula sin número)
     price_text: str
     rent_text: Optional[str]
     distance_metro_text: Optional[str]
@@ -156,6 +203,8 @@ class Facts:
     output_tokens: int = 0
     wall_s: float = 0.0
     error: Optional[str] = None
+    spans: Dict = field(default_factory=dict)        # v5: lo que devolvió el modelo, antes del anclaje
+    warnings: List[str] = field(default_factory=list)  # v5: spans no literales / números no anclados
 
     def to_dict(self) -> Dict:
         return asdict(self)
@@ -185,17 +234,26 @@ def extract_facts(model: str, prop_id: str, text: str, options: Optional[Dict] =
     """Una llamada al modelo por propiedad. Nunca recibe el perfil del comprador."""
     options = options or default_options()
     system = PROMPTS[prompt_version]
+    spans_mode = prompt_version in SPAN_VERSIONS
+    schema = SPANS_SCHEMA_V5 if spans_mode else FACTS_SCHEMA
     user = f"Texto del aviso {prop_id}:\n\"{text}\"\n\nDevuelve el JSON de hechos."
     t0 = time.time()
     try:
-        r = ollama_chat(model, system, user, options, fmt=FACTS_SCHEMA, timeout=timeout)
+        r = ollama_chat(model, system, user, options, fmt=schema, timeout=timeout)
         raw = r.get("message", {}).get("content", "")
         obj = json.loads(raw)
     except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError) as e:
-        return Facts(location=None, bedrooms=0, price_text="", rent_text=None,
+        return Facts(location=None, bedrooms=None, price_text="", rent_text=None,
                      distance_metro_text=None, distance_bus_text=None,
                      pets_policy="no_mencionada", pets_species=[], pets_max_kg=None,
                      parking="no_mencionado", raw="", wall_s=time.time() - t0, error=str(e))
+    meta = dict(raw=raw, prompt_tokens=r.get("prompt_eval_count") or 0,
+                output_tokens=r.get("eval_count") or 0, wall_s=round(time.time() - t0, 2))
+    if spans_mode:
+        # El modelo solo localizó fragmentos; grounding.py los ancla al aviso y los interpreta.
+        from . import grounding
+        kwargs, warnings = grounding.facts_from_spans(obj, text)
+        return Facts(**kwargs, spans=obj, warnings=warnings, **meta)
     return Facts(
         location=obj.get("location"),
         bedrooms=int(obj.get("bedrooms") or 0),
@@ -207,8 +265,5 @@ def extract_facts(model: str, prop_id: str, text: str, options: Optional[Dict] =
         pets_species=list(obj.get("pets_species") or []),
         pets_max_kg=obj.get("pets_max_kg"),
         parking=obj.get("parking") or "no_mencionado",
-        raw=raw,
-        prompt_tokens=r.get("prompt_eval_count") or 0,
-        output_tokens=r.get("eval_count") or 0,
-        wall_s=round(time.time() - t0, 2),
+        **meta,
     )

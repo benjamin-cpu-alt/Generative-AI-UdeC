@@ -1,0 +1,337 @@
+{
+  "facts": {
+    "PROP-S62": {
+      "location": null,
+      "bedrooms": 2,
+      "price_text": "$167.700.000",
+      "rent_text": "$1.400.000",
+      "distance_metro_text": "1,8 km",
+      "distance_bus_text": "1167 m",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": null,\n  \"bedrooms\": 2,\n  \"price_text\": \"167.700.000 UF\",\n  \"rent_text\": \"1.400.000/mes\",\n  \"distance_metro_text\": \"1,8 km\",\n  \"distance_bus_text\": \"1167m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": null,
+        "bedrooms_text": "Depto en Estación Central, 67m², 2 dormitorios, 1 baño. Valor $167.700.000. A 1,8km de la estación de metro más cercana, pero cuenta con paradero de buses troncal a 1167m. Ideal para inversionistas. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $1.400.000/mes.",
+        "price_text": "167.700.000 UF",
+        "rent_text": "1.400.000/mes",
+        "distance_metro_text": "1,8 km",
+        "distance_bus_text": "1167m",
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Se aceptan gatos, perros no permitidos por reglamento de copropiedad.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "price_text: no es literal del aviso: '167.700.000 UF'",
+        "distance_metro_text: no es literal del aviso: '1,8 km'"
+      ]
+    },
+    "PROP-V33": {
+      "location": "Independencia",
+      "bedrooms": 2,
+      "price_text": "3.792 UF",
+      "rent_text": null,
+      "distance_metro_text": "2400 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Independencia\",\n  \"bedrooms\": 2,\n  \"price_text\": \"3.792 UF\",\n  \"rent_text\": \"980.000/mes\",\n  \"distance_metro_text\": \"2400m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Independencia",
+        "bedrooms_text": "Depto en Independencia, 73m², 2 dormitorios, 1 baño. Precio: 3.792 UF. A 2400m del metro Franklin, muy bien conectado. Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño. Incluye 1 estacionamiento. Arriendo estimado: $910.000/mes.",
+        "price_text": "3.792 UF",
+        "rent_text": "980.000/mes",
+        "distance_metro_text": "2400m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "rent_text: no es literal del aviso: '980.000/mes'",
+        "rent_text: número no está en el aviso: '980.000/mes'"
+      ]
+    },
+    "PROP-C22": {
+      "location": "Estación Central",
+      "bedrooms": 3,
+      "price_text": "3678 UF",
+      "rent_text": "$860.000",
+      "distance_metro_text": "1,1 km",
+      "distance_bus_text": "554 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 2.0,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Estación Central\",\n  \"bedrooms\": 1,\n  \"price_text\": \"3678 UF\",\n  \"rent_text\": \"860.000/mes\",\n  \"distance_metro_text\": \"1,1km\",\n  \"distance_bus_text\": \"554m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": 2,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Estación Central",
+        "bedrooms_text": "Casa en Estación Central, 88m², 3D/1B. Ubicación premium, la más solicitada por sus clientes. Precio: 3678 UF. A 554m de paradero de buses troncal, y 1,1km del metro más cercano. Se aceptan mascotas pequeñas y medianas hasta 2kg, previa autorización de la administración. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $860.000/mes.",
+        "price_text": "3678 UF",
+        "rent_text": "860.000/mes",
+        "distance_metro_text": "1,1km",
+        "distance_bus_text": "554m",
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "pets_text": "Se aceptan mascotas pequeñas y medianas hasta 2kg, previa autorización de la administración.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-P69": {
+      "location": "Estación Central",
+      "bedrooms": 2,
+      "price_text": "3.574 UF",
+      "rent_text": "$820.000",
+      "distance_metro_text": "1,8 km",
+      "distance_bus_text": "1026 m",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location\": \"Estación Central\",\n  \"bedrooms\": 2,\n  \"price_text\": \"UF 3.574\",\n  \"rent_text\": \"$820.000/mes\",\n  \"distance_metro_text\": \"1,8km\",\n  \"distance_bus_text\": \"1026m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"asignado\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Estación Central",
+        "bedrooms_text": "Depto en Estación Central, 74m², 2 dormitorios, 2 baños. Precio: UF 3.574. Luminoso y con vista despejada. A 1026m de paradero de buses troncal, y 1,8km del metro más cercano. Solo se admiten gatos de cualquier tamaño. Incluye 1 estacionamiento techado asignado. Arriendo referencial de la zona: $820.000/mes.",
+        "price_text": "UF 3.574",
+        "rent_text": "$820.000/mes",
+        "distance_metro_text": "1,8km",
+        "distance_bus_text": "1026m",
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Solo se admiten gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-B91": {
+      "location": "Peñalolén",
+      "bedrooms": 2,
+      "price_text": "$146.400.000",
+      "rent_text": "$660.000",
+      "distance_metro_text": "1,9 km",
+      "distance_bus_text": "892 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "visitas",
+      "raw": "{\n  \"location\": \"Peñalolén\",\n  \"bedrooms\": 2,\n  \"price_text\": \"146.400.000\",\n  \"rent_text\": \"660.000/mes\",\n  \"distance_metro_text\": \"1,9 km\",\n  \"distance_bus_text\": \"892m\",\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"visitas\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Peñalolén",
+        "bedrooms_text": "Depto en Peñalolén, 62m², 2D/1B. Valor $146.400.000. A 892m de paradero de buses troncal, y 1,9km del metro más cercano. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente. Arriendo referencial de la zona: $660.000/mes.",
+        "price_text": "146.400.000",
+        "rent_text": "660.000/mes",
+        "distance_metro_text": "1,9 km",
+        "distance_bus_text": "892m",
+        "parking_text": "Cuenta con estacionamiento de visitas disponible, no asignado de forma permanente.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "distance_metro_text: no es literal del aviso: '1,9 km'"
+      ]
+    },
+    "PROP-X77": {
+      "location": "Estación Central",
+      "bedrooms": 1,
+      "price_text": "$150.100.000",
+      "rent_text": "$1.270.000",
+      "distance_metro_text": "2750 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"Estación Central\",\n  \"bedrooms\": 1,\n  \"price_text\": \"$150.100.000\",\n  \"rent_text\": \"$1.270.000/mes\",\n  \"distance_metro_text\": \"2750m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Estación Central",
+        "bedrooms_text": "Depto en Estación Central, 59m², 1 dormitorio + escritorio (walk-in office, fácilmente convertible en segundo dormitorio), 1B. Ubicación premium, la más solicitada por sus clientes. Valor $150.100.000. A 2750m del metro Baquedano, a pasos de todo. 100% pet friendly, sin restricciones de tamaño ni especie. Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio. Arriendo estimado: $1.270.000/mes.",
+        "price_text": "$150.100.000",
+        "rent_text": "$1.270.000/mes",
+        "distance_metro_text": "2750m",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-K28": {
+      "location": "San Miguel",
+      "bedrooms": 3,
+      "price_text": "$145.700.000",
+      "rent_text": null,
+      "distance_metro_text": "1850 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location\": \"San Miguel\",\n  \"bedrooms\": 3,\n  \"price_text\": \"$145.700.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1850m\",\n  \"distance_bus_text\": null,\n  \"pets_policy\": \"permitidas\",\n  \"pets_species\": [\"perro\", \"gato\"],\n  \"pets_max_kg\": null,\n  \"parking\": \"propio\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "San Miguel",
+        "bedrooms_text": "Depto en San Miguel, 91m², 3 dormitorios, 2 baños. Precio: $145.700.000. A 1850m del metro Lo Vial, muy bien conectado. Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño. Incluye estacionamiento propio.",
+        "price_text": "$145.700.000",
+        "rent_text": null,
+        "distance_metro_text": "1850m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-S62": {
+      "price_clp": 167700000,
+      "roi_pct": 10.02,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$167.700.000' = 1.677e+08 CLP -> 167,700,000 CLP <= 178,500,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='1,8 km' bus='1167 m' -> min=1167 vs max 1500",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-V33": {
+      "price_clp": 149594400,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.792 UF' = 3792 UF -> 149,594,400 CLP <= 178,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='2400 m' bus=None -> min=2400 vs max 1500",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-C22": {
+      "price_clp": 145097100,
+      "roi_pct": 7.11,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3678 UF' = 3678 UF -> 145,097,100 CLP <= 178,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=2.0 vs gato 4kg -> FALLA",
+        "distancia: metro='1,1 km' bus='554 m' -> min=554 vs max 1500",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-P69": {
+      "price_clp": 140994300,
+      "roi_pct": 6.98,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.574 UF' = 3574 UF -> 140,994,300 CLP <= 178,500,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='1,8 km' bus='1026 m' -> min=1026 vs max 1500",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-B91": {
+      "price_clp": 146400000,
+      "roi_pct": 5.41,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$146.400.000' = 1.464e+08 CLP -> 146,400,000 CLP <= 178,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='1,9 km' bus='892 m' -> min=892 vs max 1500",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: visitas (requerido=True)"
+      ]
+    },
+    "PROP-X77": {
+      "price_clp": 150100000,
+      "roi_pct": 10.15,
+      "failed_constraints": [
+        "distancia_transporte",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$150.100.000' = 1.501e+08 CLP -> 150,100,000 CLP <= 178,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='2750 m' bus=None -> min=2750 vs max 1500",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-K28": {
+      "price_clp": 145700000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$145.700.000' = 1.457e+08 CLP -> 145,700,000 CLP <= 178,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='1850 m' bus=None -> min=1850 vs max 1500",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

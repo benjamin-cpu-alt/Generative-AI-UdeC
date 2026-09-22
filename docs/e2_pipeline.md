@@ -110,3 +110,43 @@ se lee como "sin límite" ⇒ aprobaciones indebidas). Quitar la frase global so
 revirtió, así que la causa es la interacción entre las líneas reescritas y ese campo, no aislable
 por inspección. En un 3.8B las instrucciones del prompt no son composicionales; por eso ninguna
 versión nueva se corre en test sin ganar antes en dev. Es un límite del método que va al PDF.
+
+### v5: "localizar, no interpretar" (anclaje + parsers)
+
+Lectura de `extract_report` sobre `tools_phi4_v1` (352 propiedades, M4 y RTX coinciden):
+los errores se concentran en los campos que el modelo debía **interpretar** (bedrooms 42:
+"3D/1B" → 1, "1 dormitorio + sala convertible" → 2; parking 10/10: "en la calle" → asignado;
+pets_species 12: "gatos sí, perros no" → ambas; pets_max_kg 4: "hasta 6kg" → null) y en
+alucinaciones de unidad o del ejemplo del prompt en los que solo debía **copiar**
+("$126.100.000" → "126.100.000 UF"; arriendo "$980.000" del ejemplo). En `test_0039` la M4
+"acertó" por cancelación de dos errores y la RTX no: `e1_strict` puede inflarse por errores
+que se compensan; `full_correct` es la métrica honesta.
+
+v5 (`extract.SYSTEM_V5` + `SPANS_SCHEMA_V5` + `grounding.py`) cambia el contrato con el
+modelo: devuelve solo **copias literales** de la cláusula de cada tema y tres respuestas
+cerradas sobre mascotas (`acepta_mascotas/perros/gatos`); Python verifica que cada span exista
+en el aviso (los números inventados quedan "no verificables" y nunca aprueban), lee la unidad
+del aviso y parsea dormitorios, estacionamiento y kg. Sin números de ejemplo en el prompt.
+
+Cota superior sin re-extraer (`python -m matcher.reground`, re-decide los traces v1 pasando
+por grounding; las cláusulas se toman del aviso completo): `tools_phi4_v1` 30 → **42**/51,
+`tools_phi4_v1_rtx` 29 → **42**/51 (`results/*_reground/`). El residuo son los 9 casos de
+especies bajo negación, que v5 ataca con las preguntas cerradas y solo se puede medir
+re-extrayendo.
+
+Resultados (una sola corrida en test, tras validar en dev):
+
+| run | n | e1_strict | full_correct | aprob. indebida | aritmética | esquema | tok/caso | s/caso M4 |
+|---|---|---|---|---|---|---|---|---|
+| dev_tools_v1 (train, dev) | 30 | 21 | 19 | 9 | 0 | 0 | 689 | 27,9 |
+| dev_tools_v5 (train, dev) | 30 | 29 → 30* | 25 → 30* | 1 → 0* | 0 | 0 | 1079 | 42,6 |
+| tools_phi4_v1 (test) | 51 | 30 | 22 | 20 | 1 | 0 | 674 | 29,7 |
+| **tools_phi4_v5 (test)** | 51 | **51** | 40 | **0** | **0** | **0** | 1056 | 35,3 |
+
+\* `dev_tools_v5_reground`: misma salida del modelo re-decidida tras dos ajustes de grounding
+aprendidos en dev (respuestas de mascotas solo con cláusula anclada; fallback de dormitorios).
+Los 11 casos de test sin `full_correct` son rechazos falsos o de ranking, nunca aprobaciones:
+4× "Solo se admiten gatos" → `acepta_gatos: no` (lee "solo" como prohibición); 3× `pets_text`
+rellenado con los nombres del esquema (alucinación por decodificación restringida → sin respaldo
+→ rechazo); 2× distancia no anclada; 2× ranking (`location` no literal). Fallback de dormitorios
+usado en 56/352 propiedades (notación "3D/1B" que el modelo no reconoce): se reporta como límite.

@@ -1,0 +1,288 @@
+{
+  "facts": {
+    "PROP-T39": {
+      "location": "Santiago Centro",
+      "bedrooms": 1,
+      "price_text": "$175.000.000",
+      "rent_text": "$970.000",
+      "distance_metro_text": "855 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en Santiago Centro\",\n  \"bedrooms_text\": \"1D/1B\",\n  \"price_text\": \"$175.000.000\",\n  \"rent_text\": \"/mes: $970.000\",\n  \"distance_metro_text\": \"A 855m de la estación de metro Ñuñoa\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye estacionamiento propio\",\n  \"pets_text\": \"aceptamos mascotas sin restricciones de raza o tamaño\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 684,
+      "output_tokens": 147,
+      "wall_s": 4.73,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Santiago Centro",
+        "bedrooms_text": "1D/1B",
+        "price_text": "$175.000.000",
+        "rent_text": "/mes: $970.000",
+        "distance_metro_text": "A 855m de la estación de metro Ñuñoa",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio",
+        "pets_text": "aceptamos mascotas sin restricciones de raza o tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "rent_text: no es literal del aviso: '/mes: $970.000'"
+      ]
+    },
+    "PROP-P84": {
+      "location": "Santiago Centro",
+      "bedrooms": 1,
+      "price_text": "4.183 UF",
+      "rent_text": null,
+      "distance_metro_text": null,
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 20.0,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Santiago Centro\",\n  \"bedrooms_text\": \"1 dormitorios\",\n  \"price_text\": \"UF 4.183\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Se aceptan mascotas pequeñas y medianas hasta 20kg, previa autorización de la administración. Incluye 1 estacionamiento techado asignado.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento techado asignado.\",\n  \"pets_text\": \"Se aceptan mascotas pequeñas y medianas hasta 20kg, previa autorización de la administración.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 665,
+      "output_tokens": 167,
+      "wall_s": 5.16,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Santiago Centro",
+        "bedrooms_text": "1 dormitorios",
+        "price_text": "UF 4.183",
+        "rent_text": null,
+        "distance_metro_text": "Se aceptan mascotas pequeñas y medianas hasta 20kg, previa autorización de la administración. Incluye 1 estacionamiento techado asignado.",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento techado asignado.",
+        "pets_text": "Se aceptan mascotas pequeñas y medianas hasta 20kg, previa autorización de la administración.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-H18": {
+      "location": "Santiago Centro",
+      "bedrooms": 1,
+      "price_text": "4698 UF",
+      "rent_text": null,
+      "distance_metro_text": "990 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\"location_text\": \"Depto en Santiago Centro\", \"bedrooms_text\": \"1 dormitorios\", \"price_text\": \"4698 UF\", \"rent_text\": null, \"distance_metro_text\": \"A 990m de la estación de metro Ñuñoa\", \"distance_bus_text\": null, \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado\", \"pets_text\": \"Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"si\"}",
+      "prompt_tokens": 687,
+      "output_tokens": 129,
+      "wall_s": 4.28,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Santiago Centro",
+        "bedrooms_text": "1 dormitorios",
+        "price_text": "4698 UF",
+        "rent_text": null,
+        "distance_metro_text": "A 990m de la estación de metro Ñuñoa",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-W67": {
+      "location": "Santiago Centro",
+      "bedrooms": 1,
+      "price_text": "4.051 UF",
+      "rent_text": null,
+      "distance_metro_text": "2,1 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en Santiago Centro\",\n  \"bedrooms_text\": \"1 dormitorios\",\n  \"price_text\": \"4.051 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"a 2,1 km de la estación Franklin\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye estacionamiento propio\",\n  \"pets_text\": \"Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 671,
+      "output_tokens": 133,
+      "wall_s": 4.6,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Santiago Centro",
+        "bedrooms_text": "1 dormitorios",
+        "price_text": "4.051 UF",
+        "rent_text": null,
+        "distance_metro_text": "a 2,1 km de la estación Franklin",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-Y22": {
+      "location": "Depto estudio en Santiago Centro",
+      "bedrooms": 0,
+      "price_text": "3.429 UF",
+      "rent_text": null,
+      "distance_metro_text": "950 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 23.0,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto estudio en Santiago Centro\",\n  \"bedrooms_text\": \"1B\",\n  \"price_text\": \"3.429 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 950m de la estación de metro Príncipe de Gales\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado.\",\n  \"pets_text\": \"se aceptan mascotas pequeñas y medianas hasta 23kg, previa autorización de la administración\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 691,
+      "output_tokens": 154,
+      "wall_s": 5.18,
+      "error": null,
+      "spans": {
+        "location_text": "Depto estudio en Santiago Centro",
+        "bedrooms_text": "1B",
+        "price_text": "3.429 UF",
+        "rent_text": null,
+        "distance_metro_text": "A 950m de la estación de metro Príncipe de Gales",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "se aceptan mascotas pequeñas y medianas hasta 23kg, previa autorización de la administración",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo (estudio)"
+      ]
+    },
+    "PROP-Z96": {
+      "location": "Santiago Centro",
+      "bedrooms": 1,
+      "price_text": "4.523 UF",
+      "rent_text": "$1.210.000",
+      "distance_metro_text": "888 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Santiago Centro\",\n  \"bedrooms_text\": \"1D/1B\",\n  \"price_text\": \"UF 4.523\",\n  \"rent_text\": \"Arriendo estimado: $1.210.000/mes\",\n  \"distance_metro_text\": \"A 888m de la estación de metro Vicente Valdés\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado.\",\n  \"pets_text\": \"Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 699,
+      "output_tokens": 164,
+      "wall_s": 5.18,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Santiago Centro",
+        "bedrooms_text": "1D/1B",
+        "price_text": "UF 4.523",
+        "rent_text": "Arriendo estimado: $1.210.000/mes",
+        "distance_metro_text": "A 888m de la estación de metro Vicente Valdés",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-T39": {
+      "price_clp": 175000000,
+      "roi_pct": 6.65,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$175.000.000' = 1.75e+08 CLP -> 175,000,000 CLP > 173,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 25kg -> ok",
+        "distancia: metro='855 m' bus=None -> min=855 vs max 1200",
+        "dormitorios: 1 vs min 1",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-P84": {
+      "price_clp": 162509550,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.183 UF' = 4183 UF -> 162,509,550 CLP <= 173,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=20.0 vs perro 25kg -> FALLA",
+        "distancia: metro=None bus=None -> min=None vs max 1200",
+        "dormitorios: 1 vs min 1",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-H18": {
+      "price_clp": 182517300,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4698 UF' = 4698 UF -> 182,517,300 CLP > 173,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 25kg -> ok",
+        "distancia: metro='990 m' bus=None -> min=990 vs max 1200",
+        "dormitorios: 1 vs min 1",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-W67": {
+      "price_clp": 157381350,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.051 UF' = 4051 UF -> 157,381,350 CLP <= 173,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 25kg -> ok",
+        "distancia: metro='2,1 km' bus=None -> min=2100 vs max 1200",
+        "dormitorios: 1 vs min 1",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-Y22": {
+      "price_clp": 133216650,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.429 UF' = 3429 UF -> 133,216,650 CLP <= 173,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=23.0 vs perro 25kg -> FALLA",
+        "distancia: metro='950 m' bus=None -> min=950 vs max 1200",
+        "dormitorios: 0 vs min 1",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-Z96": {
+      "price_clp": 175718550,
+      "roi_pct": 8.26,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.523 UF' = 4523 UF -> 175,718,550 CLP > 173,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 25kg -> ok",
+        "distancia: metro='888 m' bus=None -> min=888 vs max 1200",
+        "dormitorios: 1 vs min 1",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}

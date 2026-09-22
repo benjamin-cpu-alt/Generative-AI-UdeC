@@ -87,9 +87,10 @@ def decide(prop_id: str, f: Facts, hc: HardConstraints, sc: SoftConstraints, uf_
     if dist is None or dist > hc.distancia_max_transporte_m:
         d.failed_constraints.append(C_DISTANCE)
 
-    # 4. Dormitorios
-    d.notes.append(f"dormitorios: {f.bedrooms} vs min {hc.dormitorios_min}")
-    if f.bedrooms < hc.dormitorios_min:
+    # 4. Dormitorios (None = la cláusula no tiene un número: no verificable, se rechaza)
+    d.notes.append(f"dormitorios: {f.bedrooms if f.bedrooms is not None else 'no verificable'} "
+                   f"vs min {hc.dormitorios_min}")
+    if f.bedrooms is None or f.bedrooms < hc.dormitorios_min:
         d.failed_constraints.append(C_BEDROOMS)
 
     # 5. Estacionamiento

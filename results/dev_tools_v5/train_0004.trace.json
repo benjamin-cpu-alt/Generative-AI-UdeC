@@ -1,0 +1,238 @@
+{
+  "facts": {
+    "PROP-P94": {
+      "location": "La Cisterna",
+      "bedrooms": 4,
+      "price_text": "4.374 UF",
+      "rent_text": null,
+      "distance_metro_text": "967 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en La Cisterna\",\n  \"bedrooms_text\": \"4D/1B\",\n  \"price_text\": \"UF 4.374\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"967m de la estación de metro Franklin\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Cuenta con 1 estacionamiento en subterráneo\",\n  \"pets_text\": \"acceptamos mascotas sin restricciones de raza o tamaño\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 668,
+      "output_tokens": 143,
+      "wall_s": 4.87,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Cisterna",
+        "bedrooms_text": "4D/1B",
+        "price_text": "UF 4.374",
+        "rent_text": null,
+        "distance_metro_text": "967m de la estación de metro Franklin",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo",
+        "pets_text": "acceptamos mascotas sin restricciones de raza o tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets_text: no es literal del aviso: 'acceptamos mascotas sin restricciones de raza o tamaño'"
+      ]
+    },
+    "PROP-C72": {
+      "location": "Independencia",
+      "bedrooms": null,
+      "price_text": "$156.800.000",
+      "rent_text": null,
+      "distance_metro_text": "1,6 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 18.0,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Casa en Independencia, 97m²\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"Valor $156.800.000.\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Ubicado a 1,6 km de la estación Ñuñoa\",\n  \"distance_bus_text\": \"unos 20 minutos caminando\",\n  \"parking_text\": \"Incluye 1 estacionamiento techado asignado\",\n  \"pets_text\": \"Aceptamos mascotas, gatos y perros hasta 18kg\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 677,
+      "output_tokens": 153,
+      "wall_s": 5.1,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Independencia, 97m²",
+        "bedrooms_text": null,
+        "price_text": "Valor $156.800.000.",
+        "rent_text": null,
+        "distance_metro_text": "Ubicado a 1,6 km de la estación Ñuñoa",
+        "distance_bus_text": "unos 20 minutos caminando",
+        "parking_text": "Incluye 1 estacionamiento techado asignado",
+        "pets_text": "Aceptamos mascotas, gatos y perros hasta 18kg",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-Z98": {
+      "location": "Vitacura",
+      "bedrooms": 2,
+      "price_text": "3.951 UF",
+      "rent_text": "$1.240.000",
+      "distance_metro_text": "573 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Vitacura\",\n  \"bedrooms_text\": \"2 dormitorios\",\n  \"price_text\": \"3.951 UF\",\n  \"rent_text\": \"Arriendo estimado: $1.240.000/mes.\",\n  \"distance_metro_text\": \"A 573m de la estación de metro Franklin.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado.\",\n  \"pets_text\": \"Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 687,
+      "output_tokens": 155,
+      "wall_s": 5.37,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Vitacura",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "3.951 UF",
+        "rent_text": "Arriendo estimado: $1.240.000/mes.",
+        "distance_metro_text": "A 573m de la estación de metro Franklin.",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-W52": {
+      "location": "Las Condes",
+      "bedrooms": 2,
+      "price_text": "4.990 UF",
+      "rent_text": "$1.190.000",
+      "distance_metro_text": "986 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en Las Condes\",\n  \"bedrooms_text\": \"2 dormitorios\",\n  \"price_text\": \"4.990 UF\",\n  \"rent_text\": \"Arriendo estimado: $1.190.000/mes\",\n  \"distance_metro_text\": \"A 986m de la estación de metro Cal y Canto\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye estacionamiento propio\",\n  \"pets_text\": \"no_dice\",\n  \"acepta_mascotas\": \"no\",\n  \"acepta_perros\": \"no\",\n  \"acepta_gatos\": \"no\"\n}",
+      "prompt_tokens": 667,
+      "output_tokens": 140,
+      "wall_s": 4.71,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Las Condes",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "4.990 UF",
+        "rent_text": "Arriendo estimado: $1.190.000/mes",
+        "distance_metro_text": "A 986m de la estación de metro Cal y Canto",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio",
+        "pets_text": "no_dice",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no",
+        "acepta_gatos": "no"
+      },
+      "warnings": [
+        "pets_text: no es literal del aviso: 'no_dice'"
+      ]
+    },
+    "PROP-X90": {
+      "location": "Independencia",
+      "bedrooms": 4,
+      "price_text": "$191.100.000",
+      "rent_text": null,
+      "distance_metro_text": "771 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 18.0,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Independencia\",\n  \"bedrooms_text\": \"4D/1B\",\n  \"price_text\": \"$191.100.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"771m de la estación de metro Baquedano\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado\",\n  \"pets_text\": \"Se aceptan mascotas pequeñas y medianas hasta 18kg, previa autorización de la administración\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 680,
+      "output_tokens": 154,
+      "wall_s": 5.62,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Independencia",
+        "bedrooms_text": "4D/1B",
+        "price_text": "$191.100.000",
+        "rent_text": null,
+        "distance_metro_text": "771m de la estación de metro Baquedano",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado",
+        "pets_text": "Se aceptan mascotas pequeñas y medianas hasta 18kg, previa autorización de la administración",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-P94": {
+      "price_clp": 168399000,
+      "roi_pct": null,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.374 UF' = 4374 UF -> 168,399,000 CLP <= 207,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 20kg -> ok",
+        "distancia: metro='967 m' bus=None -> min=967 vs max 1000",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-C72": {
+      "price_clp": 156800000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "distancia_transporte",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$156.800.000' = 1.568e+08 CLP -> 156,800,000 CLP <= 207,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=18.0 vs perro 20kg -> FALLA",
+        "distancia: metro='1,6 km' bus=None -> min=1600 vs max 1000",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-Z98": {
+      "price_clp": 152113500,
+      "roi_pct": 9.78,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.951 UF' = 3951 UF -> 152,113,500 CLP <= 207,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 20kg -> ok",
+        "distancia: metro='573 m' bus=None -> min=573 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-W52": {
+      "price_clp": 192115000,
+      "roi_pct": 7.43,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.990 UF' = 4990 UF -> 192,115,000 CLP <= 207,000,000",
+        "mascotas: politica=no_permitidas especies=cualquiera max_kg=None vs perro 20kg -> FALLA",
+        "distancia: metro='986 m' bus=None -> min=986 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-X90": {
+      "price_clp": 191100000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$191.100.000' = 1.911e+08 CLP -> 191,100,000 CLP <= 207,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=18.0 vs perro 20kg -> FALLA",
+        "distancia: metro='771 m' bus=None -> min=771 vs max 1000",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}

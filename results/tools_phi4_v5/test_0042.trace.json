@@ -1,0 +1,290 @@
+{
+  "facts": {
+    "PROP-R48": {
+      "location": "Ñuñoa",
+      "bedrooms": 3,
+      "price_text": "3324 UF",
+      "rent_text": "$460.000",
+      "distance_metro_text": "713 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en Ñuñoa\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"3324 UF\",\n  \"rent_text\": \"Arriendo referencial de la zona: $460.000/mes\",\n  \"distance_metro_text\": \"A 713m de la estación de metro Escuela Militar\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye estacionamiento propio.\",\n  \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 690,
+      "output_tokens": 149,
+      "wall_s": 4.84,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Ñuñoa",
+        "bedrooms_text": null,
+        "price_text": "3324 UF",
+        "rent_text": "Arriendo referencial de la zona: $460.000/mes",
+        "distance_metro_text": "A 713m de la estación de metro Escuela Militar",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "PROP-Z71": {
+      "location": "San Miguel",
+      "bedrooms": 3,
+      "price_text": "2683 UF",
+      "rent_text": "$820.000",
+      "distance_metro_text": "742 m",
+      "distance_bus_text": "742 m",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Casa en San Miguel\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"2683 UF\",\n  \"rent_text\": \"Arriendo estimado: $820.000/mes.\",\n  \"distance_metro_text\": \"742m de paradero de buses troncal\",\n  \"distance_bus_text\": \"742m de paradero de buses troncal\",\n  \"parking_text\": \"Incluye estacionamiento propio.\",\n  \"pets_text\": \"aceptan perros, gatos no permitidos por reglamento de copropiedad\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no\"\n}",
+      "prompt_tokens": 682,
+      "output_tokens": 151,
+      "wall_s": 5.04,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en San Miguel",
+        "bedrooms_text": null,
+        "price_text": "2683 UF",
+        "rent_text": "Arriendo estimado: $820.000/mes.",
+        "distance_metro_text": "742m de paradero de buses troncal",
+        "distance_bus_text": "742m de paradero de buses troncal",
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "aceptan perros, gatos no permitidos por reglamento de copropiedad",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "PROP-M20": {
+      "location": "La Florida",
+      "bedrooms": 2,
+      "price_text": "2.941 UF",
+      "rent_text": "$990.000",
+      "distance_metro_text": "1,4 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 13.0,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en La Florida\",\n  \"bedrooms_text\": \"2 dormitorios\",\n  \"price_text\": \"2.941 UF\",\n  \"rent_text\": \"Arriendo referencial de la zona: $990.000/mes\",\n  \"distance_metro_text\": \"a 1,4 km de la estación Escuela Militar, unos 18 minutos caminando.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye estacionamiento propio.\",\n  \"pets_text\": \"Se aceptan mascotas pequeñas y medianas hasta 13kg, previa autorización de la administración.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 685,
+      "output_tokens": 164,
+      "wall_s": 5.24,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Florida",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "2.941 UF",
+        "rent_text": "Arriendo referencial de la zona: $990.000/mes",
+        "distance_metro_text": "a 1,4 km de la estación Escuela Militar, unos 18 minutos caminando.",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "Se aceptan mascotas pequeñas y medianas hasta 13kg, previa autorización de la administración.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-P43": {
+      "location": "Independencia",
+      "bedrooms": 2,
+      "price_text": "3.267 UF",
+      "rent_text": null,
+      "distance_metro_text": "1,6 km",
+      "distance_bus_text": "497 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en Independencia\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.267\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"a 1,6km de la estación de metro más cercana\",\n  \"distance_bus_text\": \"a 497m de paradero de buses troncal\",\n  \"parking_text\": \"Cuenta con 1 estacionamiento en subterráneo\",\n  \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 691,
+      "output_tokens": 154,
+      "wall_s": 4.93,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Independencia",
+        "bedrooms_text": null,
+        "price_text": "UF 3.267",
+        "rent_text": null,
+        "distance_metro_text": "a 1,6km de la estación de metro más cercana",
+        "distance_bus_text": "a 497m de paradero de buses troncal",
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "distance_bus_text: no es literal del aviso: 'a 497m de paradero de buses troncal'",
+        "bedrooms: recuperado del aviso completo ('2D/')"
+      ]
+    },
+    "PROP-J19": {
+      "location": "Ñuñoa",
+      "bedrooms": 1,
+      "price_text": "2350 UF",
+      "rent_text": null,
+      "distance_metro_text": "596 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Ñuñoa\",\n  \"bedrooms_text\": \"1D\",\n  \"price_text\": \"2350 UF\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"596m de la estación de metro Escuela Militar\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"1 estacionamiento en subterráneo, valor incluido en el precio\",\n  \"pets_text\": \"aceptamos mascotas sin restricciones de raza o tamaño\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 692,
+      "output_tokens": 140,
+      "wall_s": 4.56,
+      "error": null,
+      "spans": {
+        "location_text": "Ñuñoa",
+        "bedrooms_text": "1D",
+        "price_text": "2350 UF",
+        "rent_text": null,
+        "distance_metro_text": "596m de la estación de metro Escuela Militar",
+        "distance_bus_text": null,
+        "parking_text": "1 estacionamiento en subterráneo, valor incluido en el precio",
+        "pets_text": "aceptamos mascotas sin restricciones de raza o tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms_text: no es literal del aviso: '1D'"
+      ]
+    },
+    "PROP-T11": {
+      "location": "Vitacura",
+      "bedrooms": 3,
+      "price_text": "3.196 UF",
+      "rent_text": "$660.000",
+      "distance_metro_text": "415 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Casa en Vitacura\",\n  \"bedrooms_text\": \"3 dormitorios\",\n  \"price_text\": \"UF 3.196\",\n  \"rent_text\": \"Arriendo referencial de la zona: $660.000/mes\",\n  \"distance_metro_text\": \"A 415m de la estación de metro Irarrázaval.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye estacionamiento propio.\",\n  \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 676,
+      "output_tokens": 149,
+      "wall_s": 4.68,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Vitacura",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "UF 3.196",
+        "rent_text": "Arriendo referencial de la zona: $660.000/mes",
+        "distance_metro_text": "A 415m de la estación de metro Irarrázaval.",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento propio.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-R48": {
+      "price_clp": 132793800,
+      "roi_pct": 4.16,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3324 UF' = 3324 UF -> 132,793,800 CLP > 130,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='713 m' bus=None -> min=713 vs max 800",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-Z71": {
+      "price_clp": 107185850,
+      "roi_pct": 9.18,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '2683 UF' = 2683 UF -> 107,185,850 CLP <= 130,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='742 m' bus='742 m' -> min=742 vs max 800",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-M20": {
+      "price_clp": 117492950,
+      "roi_pct": 10.11,
+      "failed_constraints": [
+        "mascotas",
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '2.941 UF' = 2941 UF -> 117,492,950 CLP <= 130,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=13.0 vs perro 15kg -> FALLA",
+        "distancia: metro='1,4 km' bus=None -> min=1400 vs max 800",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-P43": {
+      "price_clp": 130516650,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.267 UF' = 3267 UF -> 130,516,650 CLP > 130,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='1,6 km' bus='497 m' -> min=497 vs max 800",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-J19": {
+      "price_clp": 93882500,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '2350 UF' = 2350 UF -> 93,882,500 CLP <= 130,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='596 m' bus=None -> min=596 vs max 800",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-T11": {
+      "price_clp": 127680200,
+      "roi_pct": 6.2,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.196 UF' = 3196 UF -> 127,680,200 CLP <= 130,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='415 m' bus=None -> min=415 vs max 800",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}
