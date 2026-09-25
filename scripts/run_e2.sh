@@ -15,7 +15,7 @@ set -euo pipefail
 cd "$(dirname "$0")/../src"
 
 MODEL="${MODEL:-phi4-mini:latest}"
-PROMPT="${PROMPT:-v1}"   # versión del prompt del extractor reportada en el PDF (ver extract.py)
+PROMPT="${PROMPT:-v5}"   # versión del prompt del extractor reportada en el PDF (ver extract.py)
 LIMIT_ARG=""; [ -n "${LIMIT:-}" ] && LIMIT_ARG="--limit $LIMIT"
 
 echo "================ baseline (prompting directo) ================"

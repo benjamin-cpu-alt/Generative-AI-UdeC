@@ -25,6 +25,7 @@ import urllib.error
 from pathlib import Path
 from typing import List
 
+from .extract import DEFAULT_PROMPT
 from .pipeline import MODES, run_case
 from .schema import Case
 
@@ -34,7 +35,7 @@ RESULTS_DIR = ROOT / "results"
 
 
 def run(model: str, mode: str, run_name: str, cases: List[Case], results_dir: Path = RESULTS_DIR,
-        force: bool = False, timeout: int = 600, prompt_version: str = "v1") -> int:
+        force: bool = False, timeout: int = 600, prompt_version: str = DEFAULT_PROMPT) -> int:
     out = results_dir / run_name
     out.mkdir(parents=True, exist_ok=True)
     done = 0
@@ -77,7 +78,7 @@ def main(argv=None) -> int:
     ap.add_argument("--only", nargs="*")
     ap.add_argument("--timeout", type=int, default=600)
     ap.add_argument("--force", action="store_true")
-    ap.add_argument("--prompt-version", default="v1", choices=("v1", "v2", "v3", "v4", "v5"),
+    ap.add_argument("--prompt-version", default=DEFAULT_PROMPT, choices=("v1", "v2", "v3", "v4", "v5"),
                     help="prompt del extractor (ver extract.py; v5 = spans + grounding; "
                          "se elige en dev, nunca en test)")
     a = ap.parse_args(argv)

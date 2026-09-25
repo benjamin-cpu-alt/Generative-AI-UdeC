@@ -55,20 +55,32 @@ baseline. Argumentar sobre estos ejes, en este orden:
 
 1. **Economía de modelo (10 pts):** puntaje completo al modelo más pequeño que
    *funcione*. Phi-4-mini (3.8B) parte con ventaja; Granite (8B) y DeepSeek (7B)
-   deben justificar los parámetros extra con una mejora que la destilación no pueda
+   deben justificar los parámetros extra con una mejora que la intervención no pueda
    dar a Phi-4-mini.
 2. **Naturaleza del fallo:** un modelo que falla por *formato* (`raw_wrapped` alto,
-   `e1_after_extract` ≫ `e1_strict`) es arreglable con destilación; uno que falla por
-   *aritmética* en la misma proporción tras extractor tiene un techo más bajo.
+   `e1_after_extract` ≫ `e1_strict`) se arregla con decodificación restringida; uno que
+   falla por *aritmética* en la misma proporción tras extractor necesita herramientas.
+   Ninguno de los dos tipos de fallo se resuelve con más parámetros.
 3. **Costo de inferencia:** tokens/resp y s/resp en el hardware declarado. DeepSeek-R1
    razona en `<think>` y puede emitir 5–10× más tokens; en la RTX 3050 eso pesa.
-4. **Factibilidad de fine-tuning local:** QLoRA sobre 3.8B cabe en 6 GB de VRAM con
-   margen; sobre 7–8B es ajustado.
 
 ## 4. Decisión
 
-> _(Completar con los números.)_ Elegimos **___** porque ___. Descartamos ___ porque ___
-> y ___ porque ___.
+Elegimos **Phi-4-mini (3.8B)**. Los tres candidatos dan **0/51** con prompting directo, así
+que los parámetros extra no compran corrección en esta tarea: el fallo no es de capacidad
+general sino de *tipo* (aritmética, inecuaciones y formato), y eso se ataca con descomposición
+y herramientas, no con un modelo mayor. Siendo el más pequeño de los tres, maximiza el criterio
+de economía de modelo sin ceder nada. Además, el rol que la E1 le asignó era exactamente
+"resolver la tarea si se le guía dividiendo el problema en pasos simples": la E2 ejecuta esa
+hipótesis y la confirma (**51/51** `e1_strict` con la solución; ver `docs/e2_pipeline.md`).
+
+Descartamos **Granite 4.1 (8B)** porque no cumple el rol por el que fue propuesto —formato
+JSON estricto—: tiene más fallos de esquema que Phi (8 vs 5) y la peor tasa de aprobación
+indebida por presupuesto (51 % vs 33 %). Descartamos **DeepSeek-R1-Distill-Qwen (7B)** porque,
+pese a razonar mejor (9 % de aprobación indebida por presupuesto), tampoco acierta ningún caso,
+falla 26 veces por esquema al emitir `<think>` antes del JSON, y cuesta ~4.996 tokens y ~323 s
+por caso con 22 respuestas truncadas: inviable como sistema en la RTX 3050 de 6 GB. Su ventaja
+—razonar por pasos— es justamente lo que la descomposición le da a Phi-4-mini sin pagar 7B.
 
 ## 5. Evidencia anecdótica para el video
 

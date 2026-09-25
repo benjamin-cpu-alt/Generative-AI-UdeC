@@ -17,6 +17,7 @@ import random
 import sys
 from pathlib import Path
 
+from .extract import DEFAULT_PROMPT
 from .pipeline import run_case
 from .prompt import render_profile, render_soft
 from .rules import expected_output
@@ -51,7 +52,8 @@ def main(argv=None) -> int:
     ap.add_argument("--model", default="phi4-mini:latest")
     ap.add_argument("--baseline-model", default=None, help="por defecto el mismo modelo")
     ap.add_argument("--skip-baseline", action="store_true")
-    ap.add_argument("--prompt-version", default="v1", help="prompt del extractor (v1 = el reportado en el PDF)")
+    ap.add_argument("--prompt-version", default=DEFAULT_PROMPT,
+                    help="prompt del extractor (v5 = el reportado en el PDF; v1 = la primera versión)")
     a = ap.parse_args(argv)
 
     paths = sorted(CASES_DIR.glob("*.json"))

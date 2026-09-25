@@ -23,7 +23,7 @@ from typing import Dict, List, Optional
 
 from . import prompt as base_prompt
 from .constraints import Decision, build_output, decide
-from .extract import Facts, default_options, extract_facts, ollama_chat
+from .extract import DEFAULT_PROMPT, Facts, default_options, extract_facts, ollama_chat
 from .schema import Case
 
 MODES = ("baseline", "cot", "decomp_llm", "tools")
@@ -91,12 +91,12 @@ def run_single(case: Case, model: str, mode: str, options: Dict, timeout: int = 
 
 # --------------------------------------------------------- decomposición ----
 
-def extract_all(case: Case, model: str, options: Dict, timeout: int, prompt_version: str = "v1") -> Dict[str, Facts]:
+def extract_all(case: Case, model: str, options: Dict, timeout: int, prompt_version: str = DEFAULT_PROMPT) -> Dict[str, Facts]:
     return {p.id: extract_facts(model, p.id, p.text, options, timeout, prompt_version) for p in case.properties}
 
 
 def run_tools(case: Case, model: str, options: Optional[Dict] = None, timeout: int = 120,
-              prompt_version: str = "v1") -> Trace:
+              prompt_version: str = DEFAULT_PROMPT) -> Trace:
     options = options or default_options()
     t0 = time.time()
     facts = extract_all(case, model, options, timeout, prompt_version)
@@ -141,7 +141,7 @@ FACT_KEYS = ("location", "bedrooms", "price_text", "rent_text", "distance_metro_
 
 
 def run_decomp_llm(case: Case, model: str, options: Optional[Dict] = None, timeout: int = 300,
-                   prompt_version: str = "v1") -> Trace:
+                   prompt_version: str = DEFAULT_PROMPT) -> Trace:
     """Extracción igual que `tools`, pero la aritmética y la lógica las hace el LLM."""
     options = options or default_options()
     t0 = time.time()
@@ -173,7 +173,7 @@ def run_decomp_llm(case: Case, model: str, options: Optional[Dict] = None, timeo
     return tr
 
 
-def run_case(case: Case, model: str, mode: str, timeout: int = 600, prompt_version: str = "v1") -> Trace:
+def run_case(case: Case, model: str, mode: str, timeout: int = 600, prompt_version: str = DEFAULT_PROMPT) -> Trace:
     if mode == "tools":
         return run_tools(case, model, timeout=min(timeout, 120), prompt_version=prompt_version)
     if mode == "decomp_llm":

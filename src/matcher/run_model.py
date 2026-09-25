@@ -4,12 +4,12 @@ Cada caso produce:
   results/<run>/<case_id>.txt        respuesta cruda, tal cual la emitió el modelo
   results/<run>/<case_id>.meta.json  modelo, opciones, tokens, duración (trazabilidad)
 
-El prompt es siempre `prompt.render_prompt(case)`: baseline y solución se
-distinguen SOLO por el modelo (`--model`), nunca por el prompt.
+El prompt es siempre `prompt.render_prompt(case)`. Este módulo corre el BASELINE
+(prompting directo) de cualquier modelo; la solución de la E2 vive en run_pipeline.py.
 
 Uso:
   python -m matcher.run_model --model phi4-mini:latest --run baseline_phi4
-  python -m matcher.run_model --model phi4-mini-distill --run distill_phi4
+  python -m matcher.run_model --model granite4.1:8b --run baseline_granite
 """
 from __future__ import annotations
 

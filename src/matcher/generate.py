@@ -1,4 +1,5 @@
-"""Generador de casos sintéticos (perfil + catálogo) para destilación y evaluación.
+"""Generador de casos sintéticos (perfil + catálogo) para evaluación (test) y para
+iterar el prompt del extractor (train, usado como split dev).
 
 Orden de construcción (inverso al caso E1 anotado a mano):
   1. Se elige un ESCENARIO por propiedad (pasa todo / falla por X con trampa Y).

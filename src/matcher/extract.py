@@ -180,8 +180,9 @@ Las frases de marketing ("oportunidad", "bajo el presupuesto", "negociable", "co
 PROMPTS = {"v1": SYSTEM_V1, "v2": SYSTEM_V2, "v3": SYSTEM_V3, "v4": SYSTEM_V4, "v5": SYSTEM_V5}
 # Versiones cuyo esquema es de SPANS (se pasan por grounding.py para obtener Facts).
 SPAN_VERSIONS = {"v5"}
-# Versión REPORTADA (test 30/51, dev 21/30). v2–v4 perdieron en dev y nunca se corrieron en test.
-DEFAULT_PROMPT = "v1"
+# Versión REPORTADA en la E2: v5 (test 51/51 e1_strict, dev 30/30). v1 se conserva como
+# evidencia de la iteración (test 30/51) y v2–v4 perdieron en dev y nunca se corrieron en test.
+DEFAULT_PROMPT = "v5"
 SYSTEM = PROMPTS[DEFAULT_PROMPT]
 
 
@@ -230,7 +231,7 @@ def default_options(num_ctx: int = 2048, num_predict: int = 256) -> Dict:
 
 
 def extract_facts(model: str, prop_id: str, text: str, options: Optional[Dict] = None,
-                  timeout: int = 120, prompt_version: str = "v1") -> Facts:
+                  timeout: int = 120, prompt_version: str = DEFAULT_PROMPT) -> Facts:
     """Una llamada al modelo por propiedad. Nunca recibe el perfil del comprador."""
     options = options or default_options()
     system = PROMPTS[prompt_version]
