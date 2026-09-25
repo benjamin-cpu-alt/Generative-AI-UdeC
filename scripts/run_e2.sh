@@ -10,12 +10,14 @@
 # Uso:  bash scripts/run_e2.sh              # baseline + tools (lo mínimo para la E2)
 #       ALL=1 bash scripts/run_e2.sh        # además las ablaciones cot y decomp_llm
 #       LIMIT=3 bash scripts/run_e2.sh      # prueba rápida
+#       SPLIT=ood bash scripts/run_e2.sh    # sobre los avisos escritos a mano
 # Se puede interrumpir y retomar: los casos ya respondidos se omiten.
 set -euo pipefail
 cd "$(dirname "$0")/../src"
 
 MODEL="${MODEL:-phi4-mini:latest}"
-PROMPT="${PROMPT:-v5}"   # versión del prompt del extractor reportada en el PDF (ver extract.py)
+PROMPT="${PROMPT:-v5}"       # prompt del extractor reportado en el PDF (ver extract.py)
+GROUNDING="${GROUNDING:-g3}"  # capa de anclaje reportada (ver grounding.py)
 LIMIT_ARG=""; [ -n "${LIMIT:-}" ] && LIMIT_ARG="--limit $LIMIT"
 
 echo "================ baseline (prompting directo) ================"
@@ -26,14 +28,15 @@ python3 -m matcher.run_model --model "$MODEL" --run baseline_phi4 --num-predict 
 RUNS=(baseline_phi4)
 MODES=(tools); [ -n "${ALL:-}" ] && MODES=(cot decomp_llm tools)
 for m in "${MODES[@]}"; do
-  run="${m}_phi4"; [ "$m" = "decomp_llm" ] && run="decomp_phi4"; [ "$m" = "tools" ] && run="tools_phi4_$PROMPT"
+  run="${m}_phi4"; [ "$m" = "decomp_llm" ] && run="decomp_phi4"; [ "$m" = "tools" ] && run="tools_phi4_${PROMPT}_${GROUNDING}"
   echo "================ $m ================"
   # shellcheck disable=SC2086
-  python3 -m matcher.run_pipeline --mode "$m" --model "$MODEL" --run "$run" --prompt-version "$PROMPT" $LIMIT_ARG \
+  python3 -m matcher.run_pipeline --mode "$m" --model "$MODEL" --run "$run" \
+    --prompt-version "$PROMPT" --grounding "$GROUNDING" $LIMIT_ARG \
     2>&1 | tee -a "../results/$run.log"
   RUNS+=("$run")
 done
 
 python3 -m matcher.evaluate --runs "${RUNS[@]}"
 echo
-python3 -m matcher.extract_report --run "tools_phi4_$PROMPT"
+python3 -m matcher.extract_report --run "tools_phi4_${PROMPT}_${GROUNDING}"

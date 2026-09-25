@@ -21,7 +21,7 @@ import time
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional
 
-from . import prompt as base_prompt
+from . import grounding, prompt as base_prompt
 from .constraints import Decision, build_output, decide
 from .extract import DEFAULT_PROMPT, Facts, default_options, extract_facts, ollama_chat
 from .schema import Case
@@ -91,21 +91,25 @@ def run_single(case: Case, model: str, mode: str, options: Dict, timeout: int = 
 
 # --------------------------------------------------------- decomposición ----
 
-def extract_all(case: Case, model: str, options: Dict, timeout: int, prompt_version: str = DEFAULT_PROMPT) -> Dict[str, Facts]:
-    return {p.id: extract_facts(model, p.id, p.text, options, timeout, prompt_version) for p in case.properties}
+def extract_all(case: Case, model: str, options: Dict, timeout: int,
+                prompt_version: str = DEFAULT_PROMPT,
+                grounding_version: str = grounding.DEFAULT_VERSION) -> Dict[str, Facts]:
+    return {p.id: extract_facts(model, p.id, p.text, options, timeout, prompt_version,
+                                grounding_version) for p in case.properties}
 
 
 def run_tools(case: Case, model: str, options: Optional[Dict] = None, timeout: int = 120,
-              prompt_version: str = DEFAULT_PROMPT) -> Trace:
+              prompt_version: str = DEFAULT_PROMPT,
+              grounding_version: str = grounding.DEFAULT_VERSION) -> Trace:
     options = options or default_options()
     t0 = time.time()
-    facts = extract_all(case, model, options, timeout, prompt_version)
+    facts = extract_all(case, model, options, timeout, prompt_version, grounding_version)
     decisions: List[Decision] = [
         decide(pid, f, case.hard_constraints, case.soft_constraints, case.uf_value)
         for pid, f in facts.items()
     ]
     out = build_output(decisions)
-    tr = Trace(case_id=case.id, mode=f"tools/{prompt_version}", model=model,
+    tr = Trace(case_id=case.id, mode=f"tools/{prompt_version}/{grounding_version}", model=model,
                output_text=json.dumps(out, ensure_ascii=False, indent=2),
                facts={k: v.to_dict() for k, v in facts.items()},
                decisions={d.id: {"price_clp": d.price_clp, "roi_pct": d.roi_pct,
@@ -173,9 +177,12 @@ def run_decomp_llm(case: Case, model: str, options: Optional[Dict] = None, timeo
     return tr
 
 
-def run_case(case: Case, model: str, mode: str, timeout: int = 600, prompt_version: str = DEFAULT_PROMPT) -> Trace:
+def run_case(case: Case, model: str, mode: str, timeout: int = 600,
+             prompt_version: str = DEFAULT_PROMPT,
+             grounding_version: str = grounding.DEFAULT_VERSION) -> Trace:
     if mode == "tools":
-        return run_tools(case, model, timeout=min(timeout, 120), prompt_version=prompt_version)
+        return run_tools(case, model, timeout=min(timeout, 120), prompt_version=prompt_version,
+                         grounding_version=grounding_version)
     if mode == "decomp_llm":
         return run_decomp_llm(case, model, timeout=min(timeout, 300), prompt_version=prompt_version)
     if mode in ("baseline", "cot"):

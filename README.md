@@ -58,14 +58,16 @@ data/
 ├── prompt_e2_case_001.txt   # prompt de la E2 renderizado para el caso de la E1
 └── cases/
     ├── test/     # 50 casos held-out + case_001_e1. Solo evaluación, una corrida por estrategia.
-    └── train/    # 300 casos. Split dev: se usan para iterar el prompt del extractor. Nunca se reportan.
+    ├── train/    # 300 casos. Split dev: se usan para iterar el prompt del extractor. Nunca se reportan.
+    └── ood/      # 12 casos con avisos ESCRITOS A MANO (ver su README). Control de generalización.
 results/<run>/    # <case_id>.txt (salida juzgada) + .meta.json (tokens, tiempo) + .trace.json (hechos y decisiones)
 results/archive/  # runs anteriores no comparables (p.ej. baselines sin soft constraints)
 scripts/run_baselines.sh    # los 3 candidatos con prompting directo
 scripts/run_e2.sh           # baseline + solución (+ ablaciones con ALL=1) y la tabla
+scripts/build_ood.py        # los avisos del set OOD, con su anotación auto-verificada
 docs/comparacion_modelos.md # compromiso de modelo, con los números
 docs/e2_pipeline.md         # la solución en detalle: intervención, ablaciones, resultados, límites
-tests/            # 163 tests (pytest), sin Ollama
+tests/            # 209 tests (pytest), sin Ollama
 ```
 
 ### 1. Prompt y verificador determinista
@@ -146,38 +148,61 @@ de **decisión**:
 | Atención selectiva (frases de marketing) | el extractor no ve el perfil: no hay decisión que sesgar |
 | Texto conversacional / esquema roto | JSON Schema en la extracción; el JSON final lo ensambla código |
 
-Detalle completo, ablaciones e iteración del prompt del extractor (v1→v5) en
+La intervención tiene dos piezas versionadas por separado y ambas reproducibles: el
+**prompt del extractor** (`v1`…`v5`, lo que se le pide al modelo) y la **capa de anclaje**
+(`g1`…`g3`, lo que el código hace con lo que el modelo devuelve). Se eligen con
+`--prompt-version` y `--grounding`. Detalle completo, ablaciones, la iteración del prompt
+(v1→v5), la de la capa (g1→g3) y los límites medidos en
 [`docs/e2_pipeline.md`](docs/e2_pipeline.md).
 
-### 4. Resultados (51 casos held-out, temperatura 0, semilla 0)
+### 4. Resultados
 
-| Estrategia (phi4-mini 3.8B) | e1_strict | full_correct | aprob. indebida | aritmética | esquema | tok/caso | s/caso M4 · RTX |
+phi4-mini 3.8B, temperatura 0, semilla 0, mismo verificador para todas las filas.
+`e1_strict` es el criterio de corrección del Entregable 1 (no aprobar lo que viola una
+restricción, no errar la aritmética, no romper el esquema). `full_correct` exige además
+que el conjunto aprobado y su orden sean exactamente los esperados.
+
+**Test — 51 casos held-out** (sintéticos, generados con plantillas):
+
+| Estrategia | e1_strict | full_correct | aprob. indebida | aritmética | esquema | tok/caso | s/caso M4 · RTX |
 |---|---|---|---|---|---|---|---|
 | Baseline (prompting directo) | 0/51 | 0 | 40 | 6 | 5 | 346 | 15,8 · 11,9 |
 | A · CoT (procedimiento por pasos, 1 llamada) | 0/51 | 0 | 43 | 4 | 4 | 326 | 21,0 |
-| B · Descomposición sin herramientas (decide el LLM) | 0/51 | 0 | 41 | 4 | 6 | 991 | 51,4 |
-| C · Descomposición + herramientas, extractor v1 | 30/51 | 22 | 20 | 1 | 0 | 674 | 29,7 · 31,0 |
-| **C · Descomposición + herramientas, extractor v5** | **51/51** | **40** | **0** | **0** | **0** | 1056 | 35,3 · 43,2 |
+| B · Descomposición sin herramientas | 0/51 | 0 | 41 | 4 | 6 | 991 | 51,4 |
+| C · Solución, extractor v1 + anclaje g1 | 30/51 | 22 | 20 | 1 | 0 | 674 | 29,7 · 31,0 |
+| **C · Solución, extractor v5 + anclaje g3** | **51/51** | **51** | **0** | **0** | **0** | 1056 | 35,3 · 43,2 |
 
-Las dos cifras dicen cosas distintas y las dos se reportan:
+El veredicto coincide **caso por caso** entre la MacBook M4 y la RTX 3050.
 
-* **`e1_strict` = 51/51** — bajo el criterio de corrección de la E1 (no aprobar lo que viola una
-  restricción, no errar la aritmética, no romper el esquema) la solución no falla nunca, y el
-  veredicto coincide **caso por caso** entre la M4 y la RTX 3050.
-* **`full_correct` = 40/51** — bajo el criterio completo (además, conjunto exacto y orden
-  correcto) quedan 11 casos: 9 rechazos falsos y 2 de ranking. Nunca una aprobación indebida.
-  El sistema se equivoca **siendo conservador**, que es la dirección segura para esta tarea.
+**OOD — 12 casos escritos a mano** (`data/cases/ood/`, 70 propiedades): fichas de portal,
+WhatsApp sin tildes, MAYÚSCULAS con erratas, cifras en palabras, `135 millones`,
+`UF 4.250,5`, `2D+servicio`, distancias solo en minutos. Ninguna plantilla del generador.
 
-Los fallos residuales son de **percepción**, no de cálculo: "Solo se admiten gatos" leído como
-prohibición, y `pets_text` rellenado con los nombres del esquema cuando el aviso no menciona
-mascotas. Están documentados con su mecanismo en [`docs/e2_pipeline.md`](docs/e2_pipeline.md).
+| Estrategia | e1_strict | full_correct | aprob. indebida | aritmética |
+|---|---|---|---|---|
+| Baseline | 0/12 | 0 | 7 | 4 |
+| Solución v5 + g1 | 8/12 | 4 | 4 | 0 |
+| Solución v5 + g2 | 9/12 | 5 | 3 | 0 |
+| Solución v5 + g3 | 11/12 | 7 | 0 | 1 |
+
+**La caída de 51/51 a 9/12 entre test y OOD es el resultado más informativo del trabajo**:
+mide cuánto de la solución dependía de las plantillas del generador. El baseline también se
+derrumba en OOD (0/12), así que la comparación se sostiene. Los cinco fallos que quedan
+están documentados con su mecanismo en [`docs/e2_pipeline.md`](docs/e2_pipeline.md): cuatro
+son rechazos falsos o de ranking (el sistema se equivoca siendo conservador) y uno rompe
+`e1_strict` por una unidad de jerga (`"620 lucas"` = $620.000).
+
+Sobre esos mismos 70 avisos que ninguna plantilla generó, el modelo localiza correctamente
+el precio en el 97 % de los casos, la distancia en el 99 %, la política de mascotas en el
+99 % y el estacionamiento en el 94 %: es la medida de lo que aporta el LLM una vez que la
+interpretación vive en el código.
 
 ### 5. Reproducir lo que muestra el video
 
 ```bash
 ollama pull phi4-mini:latest          # digest 78fad5d182a7, Q4_K_M, 2,5 GB
 pip install -r requirements.txt
-python3 -m pytest tests -q            # 163 tests, sin Ollama
+python3 -m pytest tests -q            # 209 tests, sin Ollama
 
 cd src
 # baseline y solución sobre el MISMO caso, en vivo, con el veredicto de ambos (~50 s)
@@ -185,8 +210,11 @@ python3 -m matcher.demo --case case_001_e1     # el caso original de la E1
 python3 -m matcher.demo --random               # un caso al azar del set de test
 
 # la tabla completa a partir de los resultados versionados en results/ (no llama al modelo)
-python3 -m matcher.evaluate --runs baseline_phi4 cot_phi4 decomp_phi4 tools_phi4_v1 tools_phi4_v5
-python3 -m matcher.extract_report --run tools_phi4_v5     # errores de extracción campo a campo
+python3 -m matcher.evaluate --runs baseline_phi4 cot_phi4 decomp_phi4 tools_phi4_v1 tools_phi4_v5_g3
+python3 -m matcher.extract_report --run tools_phi4_v5_g3           # errores de extracción campo a campo
+
+# el set OOD escrito a mano (avisos que ninguna plantilla generó)
+python3 -m matcher.evaluate --runs baseline_phi4_ood tools_phi4_v5_ood_g3 --cases ../data/cases/ood
 ```
 
 Para regenerar los resultados desde cero (baseline + solución, ~45 min en la M4):

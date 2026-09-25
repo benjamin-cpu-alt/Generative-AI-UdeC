@@ -1,0 +1,17 @@
+{
+  "case_id": "ood_001",
+  "model": "phi4-mini:latest",
+  "run": "baseline_phi4_ood",
+  "options": {
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "num_predict": 2048,
+    "seed": 0
+  },
+  "prompt_tokens": 1080,
+  "output_tokens": 321,
+  "total_duration_s": 12.75,
+  "wall_s": 12.76,
+  "done_reason": "stop",
+  "timestamp": "2026-09-24T22:43:38"
+}

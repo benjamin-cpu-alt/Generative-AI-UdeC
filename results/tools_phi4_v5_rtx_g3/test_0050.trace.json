@@ -1,0 +1,239 @@
+{
+  "facts": {
+    "PROP-Y60": {
+      "location": "Peñalolén",
+      "bedrooms": 4,
+      "price_text": "4.900 UF",
+      "rent_text": "$820.000",
+      "distance_metro_text": "375 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Casa en Peñalolén\",\n  \"bedrooms_text\": \"4D\",\n  \"price_text\": \"UF 4.900\",\n  \"rent_text\": \"Arriendo estimado: $820.000/mes\",\n  \"distance_metro_text\": \"A 375m de la estación de metro Príncipe de Gales\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado.\",\n  \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Peñalolén",
+        "bedrooms_text": "4D",
+        "price_text": "UF 4.900",
+        "rent_text": "Arriendo estimado: $820.000/mes",
+        "distance_metro_text": "A 375m de la estación de metro Príncipe de Gales",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado.",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-G37": {
+      "location": "Peñalolén",
+      "bedrooms": 3,
+      "price_text": "$195.700.000",
+      "rent_text": null,
+      "distance_metro_text": "700 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\"location_text\": \"Casa en Peñalolén\", \"bedrooms_text\": \"no_dice\", \"price_text\": \"$195.700.000\", \"rent_text\": \"no_dice\", \"distance_metro_text\": \"a 700m del metro Franklin\", \"distance_bus_text\": \"a pasos de todo\", \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado\", \"pets_text\": \"acepta_mascotas: si, acepta_perros: si, acepta_gatos: si\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"si\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Peñalolén",
+        "bedrooms_text": "no_dice",
+        "price_text": "$195.700.000",
+        "rent_text": "no_dice",
+        "distance_metro_text": "a 700m del metro Franklin",
+        "distance_bus_text": "a pasos de todo",
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado",
+        "pets_text": "acepta_mascotas: si, acepta_perros: si, acepta_gatos: si",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "rent_text: no es literal del aviso: 'no_dice'",
+        "rent_text: número no está en el aviso: 'no_dice'",
+        "pets_text: recuperado del aviso ('100% pet friendly, sin restricciones de tamaño n')",
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "PROP-T82": {
+      "location": "La Cisterna",
+      "bedrooms": 4,
+      "price_text": "3.686 UF",
+      "rent_text": null,
+      "distance_metro_text": "315 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en La Cisterna\",\n  \"bedrooms_text\": \"4 dormitorios\",\n  \"price_text\": \"UF 3.686\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"315m de la estación de metro Franklin\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.\",\n  \"pets_text\": \"No se aceptan mascotas\",\n  \"acepta_mascotas\": \"no\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Cisterna",
+        "bedrooms_text": "4 dormitorios",
+        "price_text": "UF 3.686",
+        "rent_text": null,
+        "distance_metro_text": "315m de la estación de metro Franklin",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con 1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "pets_text": "No se aceptan mascotas",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-J30": {
+      "location": "La Cisterna",
+      "bedrooms": 4,
+      "price_text": "$155.400.000",
+      "rent_text": null,
+      "distance_metro_text": "1,0 km",
+      "distance_bus_text": "437 m",
+      "pets_policy": "no_permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto en La Cisterna\", \"bedrooms_text\": \"4 dormitorios\", \"price_text\": \"$155.400.000\", \"rent_text\": null, \"distance_metro_text\": \"1,0km del metro más cercano\", \"distance_bus_text\": \"437m de paradero de buses troncal\", \"parking_text\": \"Incluye estacionamiento propio\", \"pets_text\": \"sin mascotas por reglamento de copropiedad\", \"acepta_mascotas\": \"no\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Cisterna",
+        "bedrooms_text": "4 dormitorios",
+        "price_text": "$155.400.000",
+        "rent_text": null,
+        "distance_metro_text": "1,0km del metro más cercano",
+        "distance_bus_text": "437m de paradero de buses troncal",
+        "parking_text": "Incluye estacionamiento propio",
+        "pets_text": "sin mascotas por reglamento de copropiedad",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-H42": {
+      "location": "La Cisterna",
+      "bedrooms": 3,
+      "price_text": "$206.500.000",
+      "rent_text": "$1.330.000",
+      "distance_metro_text": "1,3 km",
+      "distance_bus_text": "294 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\"location_text\": \"Depto en La Cisterna\", \"bedrooms_text\": \"3 dormitorios\", \"price_text\": \"Valor $206.500.000\", \"rent_text\": \"Arriendo estimado: $1.330.000/mes\", \"distance_metro_text\": \"1,3km del metro más cercano\", \"distance_bus_text\": \"294m de paradero de buses troncal\", \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado\", \"pets_text\": \"Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Cisterna",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "Valor $206.500.000",
+        "rent_text": "Arriendo estimado: $1.330.000/mes",
+        "distance_metro_text": "1,3km del metro más cercano",
+        "distance_bus_text": "294m de paradero de buses troncal",
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado",
+        "pets_text": "Edificio pet friendly, aceptamos mascotas sin restricciones de raza o tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-Y60": {
+      "price_clp": 196490000,
+      "roi_pct": 5.01,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.900 UF' = 4900 UF -> 196,490,000 CLP <= 199,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='375 m' bus=None -> min=375 vs max 500",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-G37": {
+      "price_clp": 195700000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$195.700.000' = 1.957e+08 CLP -> 195,700,000 CLP <= 199,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='700 m' bus=None -> min=700 vs max 500",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-T82": {
+      "price_clp": 147808600,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.686 UF' = 3686 UF -> 147,808,600 CLP <= 199,500,000",
+        "mascotas: politica=no_permitidas especies=cualquiera max_kg=None vs perro 30kg -> FALLA",
+        "distancia: metro='315 m' bus=None -> min=315 vs max 500",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-J30": {
+      "price_clp": 155400000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$155.400.000' = 1.554e+08 CLP -> 155,400,000 CLP <= 199,500,000",
+        "mascotas: politica=no_permitidas especies=cualquiera max_kg=None vs perro 30kg -> FALLA",
+        "distancia: metro='1,0 km' bus='437 m' -> min=437 vs max 500",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-H42": {
+      "price_clp": 206500000,
+      "roi_pct": 7.73,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$206.500.000' = 2.065e+08 CLP -> 206,500,000 CLP > 199,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='1,3 km' bus='294 m' -> min=294 vs max 500",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    }
+  }
+}

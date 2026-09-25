@@ -1,0 +1,240 @@
+{
+  "facts": {
+    "PROP-G20": {
+      "location": "La Florida",
+      "bedrooms": 2,
+      "price_text": "4.481 UF",
+      "rent_text": "$830.000",
+      "distance_metro_text": "1,3 km",
+      "distance_bus_text": "213 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 4.0,
+      "parking": "asignado",
+      "raw": "{\"location_text\": \"Depto en La Florida\", \"bedrooms_text\": \"2D/2B\", \"price_text\": \"UF 4.481\", \"rent_text\": \"Arriendo estimado: $830.000/mes\", \"distance_metro_text\": \"1,3km del metro más cercano\", \"distance_bus_text\": \"213m de paradero de buses troncal\", \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado\", \"pets_text\": \"Se aceptan mascotas pequeñas y medianas hasta 4kg, previa autorización de la administración.\",\"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Florida",
+        "bedrooms_text": "2D/2B",
+        "price_text": "UF 4.481",
+        "rent_text": "Arriendo estimado: $830.000/mes",
+        "distance_metro_text": "1,3km del metro más cercano",
+        "distance_bus_text": "213m de paradero de buses troncal",
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado",
+        "pets_text": "Se aceptan mascotas pequeñas y medianas hasta 4kg, previa autorización de la administración.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "PROP-F13": {
+      "location": "La Florida",
+      "bedrooms": 3,
+      "price_text": "$207.500.000",
+      "rent_text": null,
+      "distance_metro_text": "1,6 km",
+      "distance_bus_text": "249 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en La Florida\",\n  \"bedrooms_text\": \"3 dormitorios\",\n  \"price_text\": \"Valor $207.500.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 1,6km de la estación de metro más cercana\",\n  \"distance_bus_text\": \"paradero de buses troncal a 249m\",\n  \"parking_text\": \"Incluye 1 estacionamiento subterráneo asignado\",\n  \"pets_text\": \"100% pet friendly, sin restricciones de tamaño ni especie\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Florida",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "Valor $207.500.000",
+        "rent_text": null,
+        "distance_metro_text": "A 1,6km de la estación de metro más cercana",
+        "distance_bus_text": "paradero de buses troncal a 249m",
+        "parking_text": "Incluye 1 estacionamiento subterráneo asignado",
+        "pets_text": "100% pet friendly, sin restricciones de tamaño ni especie",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "PROP-L68": {
+      "location": "La Florida",
+      "bedrooms": 2,
+      "price_text": "$176.500.000",
+      "rent_text": "$1.410.000",
+      "distance_metro_text": "1,3 km",
+      "distance_bus_text": "411 m",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en La Florida\",\n  \"bedrooms_text\": \"2D/1B\",\n  \"price_text\": \"$176.500.000\",\n  \"rent_text\": \"/mes: $1.410.000\",\n  \"distance_metro_text\": \"1,3km del metro más cercano\",\n  \"distance_bus_text\": \"411m de paradero de buses troncal\",\n  \"parking_text\": \"Incluye 1 estacionamiento\",\n  \"pets_text\": \"Solo se admiten perros de cualquier tamaño\",\n  \"acepta_mascotas\": \"no\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Florida",
+        "bedrooms_text": "2D/1B",
+        "price_text": "$176.500.000",
+        "rent_text": "/mes: $1.410.000",
+        "distance_metro_text": "1,3km del metro más cercano",
+        "distance_bus_text": "411m de paradero de buses troncal",
+        "parking_text": "Incluye 1 estacionamiento",
+        "pets_text": "Solo se admiten perros de cualquier tamaño",
+        "acepta_mascotas": "no",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "rent_text: no es literal del aviso: '/mes: $1.410.000'"
+      ]
+    },
+    "PROP-S26": {
+      "location": "La Florida",
+      "bedrooms": 3,
+      "price_text": "4.024 UF",
+      "rent_text": null,
+      "distance_metro_text": "842 m",
+      "distance_bus_text": "842 m",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en La Florida\",\n  \"bedrooms_text\": \"3 dormitorios\",\n  \"price_text\": \"UF 4.024\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"842m de paradero de buses troncal\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"1 estacionamiento en subterráneo, valor incluido en el precio.\",\n  \"pets_text\": \"Se aceptan gatos, perros no permitidos por reglamento de copropiedad\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Florida",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "UF 4.024",
+        "rent_text": null,
+        "distance_metro_text": "842m de paradero de buses troncal",
+        "distance_bus_text": null,
+        "parking_text": "1 estacionamiento en subterráneo, valor incluido en el precio.",
+        "pets_text": "Se aceptan gatos, perros no permitidos por reglamento de copropiedad",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "distance_bus_text: recuperada del aviso (842 m)"
+      ]
+    },
+    "PROP-M65": {
+      "location": "La Florida",
+      "bedrooms": 3,
+      "price_text": "$173.400.000",
+      "rent_text": null,
+      "distance_metro_text": "1,3 km",
+      "distance_bus_text": "792 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "ninguno",
+      "raw": "{\n  \"location_text\": \"Depto en La Florida\",\n  \"bedrooms_text\": \"3 dormitorios\",\n  \"price_text\": \"$173.400.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"1,3km del metro más cercano\",\n  \"distance_bus_text\": \"792m de paradero de buses troncal\",\n  \"parking_text\": \"Sin estacionamiento\",\n  \"pets_text\": \"Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Florida",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "$173.400.000",
+        "rent_text": null,
+        "distance_metro_text": "1,3km del metro más cercano",
+        "distance_bus_text": "792m de paradero de buses troncal",
+        "parking_text": "Sin estacionamiento",
+        "pets_text": "Comunidad pet friendly, aceptamos perros y gatos de cualquier tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "PROP-G20": {
+      "price_clp": 170502050,
+      "roi_pct": 5.84,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.481 UF' = 4481 UF -> 170,502,050 CLP <= 206,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=4.0 vs perro 4kg -> ok",
+        "distancia: metro='1,3 km' bus='213 m' -> min=213 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-F13": {
+      "price_clp": 207500000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$207.500.000' = 2.075e+08 CLP -> 207,500,000 CLP > 206,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='1,6 km' bus='249 m' -> min=249 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "PROP-L68": {
+      "price_clp": 176500000,
+      "roi_pct": 9.59,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '$176.500.000' = 1.765e+08 CLP -> 176,500,000 CLP <= 206,500,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='1,3 km' bus='411 m' -> min=411 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-S26": {
+      "price_clp": 153113200,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.024 UF' = 4024 UF -> 153,113,200 CLP <= 206,500,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs perro 4kg -> FALLA",
+        "distancia: metro='842 m' bus='842 m' -> min=842 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "PROP-M65": {
+      "price_clp": 173400000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$173.400.000' = 1.734e+08 CLP -> 173,400,000 CLP <= 206,500,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 4kg -> ok",
+        "distancia: metro='1,3 km' bus='792 m' -> min=792 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: ninguno (requerido=True)"
+      ]
+    }
+  }
+}

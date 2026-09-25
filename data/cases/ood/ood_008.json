@@ -1,0 +1,120 @@
+{
+  "id": "ood_008",
+  "uf_value": 38400,
+  "style": "MAYÚSCULAS, erratas y abreviaturas de portal barato.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 120000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 7,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Quinta Normal"
+    ]
+  },
+  "properties": [
+    {
+      "id": "OOD-801",
+      "text": "DEPTO 2D/1B 55M2 EN QUINTA NORMAL. PRECIO UF 3.000. A 600 MTS METRO CUMBRE. ACEPTAN MASCOTAS HASTA 10 KILOS. INCLUYE ESTACIONAMIENTO. ARRIENDO $560.000",
+      "note": "todo en mayúsculas",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 10
+        },
+        "parking": "propio",
+        "price_uf": 3000,
+        "price_clp": null,
+        "rent_monthly_clp": 560000,
+        "location": "Quinta Normal"
+      }
+    },
+    {
+      "id": "OOD-802",
+      "text": "depto 2d/1b 50m2 en quinta normal, precio 3.050 uf. a 900 mts del metro. NO SE ACEPTAN MASCOTAS. estacionamiento propio",
+      "note": "negativa en mayúsculas dentro de texto en minúsculas",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3050,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Quinta Normal"
+      }
+    },
+    {
+      "id": "OOD-803",
+      "text": "Casa 3D/1B 85m2 en Renca. Valor $118.000.000. A 1.500 mts del metro mas cercano. Acepta mascotas. Estacionamento propio.",
+      "note": "errata 'Estacionamento' (sin la i); distancia excedida",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 118000000,
+        "rent_monthly_clp": null,
+        "location": "Renca"
+      }
+    },
+    {
+      "id": "OOD-804",
+      "text": "Dpto 2D/1B, 52m2, Quinta Normal, UF 3.250. A 1.000 mts del metro. Se acepta 1 mascota chica hasta 5 kilos. Estacionamiento asignado.",
+      "note": "dos fallos; 'Dpto' abreviado",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "asignado",
+        "price_uf": 3250,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Quinta Normal"
+      }
+    },
+    {
+      "id": "OOD-805",
+      "text": "DEPTO 2D 1B 58M2 EN QUINTA NORMAL, UF 3.100. A 400 MTS DEL METRO. PET FRIENDLY SIN RESTRICCIONES. ESTACIONAMIENTO EN LA CALLE, SIN PROBLEMAS PARA APARCAR.",
+      "note": "estacionamiento en la calle, en mayúsculas",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 3100,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Quinta Normal"
+      }
+    }
+  ]
+}

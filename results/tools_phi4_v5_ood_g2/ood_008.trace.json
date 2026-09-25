@@ -1,0 +1,246 @@
+{
+  "facts": {
+    "OOD-801": {
+      "location": "DEPTO",
+      "bedrooms": 2,
+      "price_text": "3.000 UF",
+      "rent_text": "$560.000",
+      "distance_metro_text": "600 MTS",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 10.0,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"DEPTO 2D/1B 55M2 EN QUINTA NORMAL\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.000\",\n  \"rent_text\": \"ARRIENDO $560.000\",\n  \"distance_metro_text\": \"A 600 MTS METRO CUMBRE\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"INCLUYE ESTACIONAMIENTO\",\n  \"pets_text\": \"ACEPTAN MASCOTAS HASTA 10 KILOS\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "DEPTO 2D/1B 55M2 EN QUINTA NORMAL",
+        "bedrooms_text": null,
+        "price_text": "UF 3.000",
+        "rent_text": "ARRIENDO $560.000",
+        "distance_metro_text": "A 600 MTS METRO CUMBRE",
+        "distance_bus_text": null,
+        "parking_text": "INCLUYE ESTACIONAMIENTO",
+        "pets_text": "ACEPTAN MASCOTAS HASTA 10 KILOS",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('2D/')"
+      ]
+    },
+    "OOD-802": {
+      "location": "depto",
+      "bedrooms": 2,
+      "price_text": "3.050 UF",
+      "rent_text": null,
+      "distance_metro_text": "900 mts",
+      "distance_bus_text": null,
+      "pets_policy": "no_permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"depto 2d/1b 50m2 en quinta normal\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"3.050 uf.\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"a 900 mts del metro\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento propio\",\n  \"pets_text\": \"NO SE ACEPTAN MASCOTAS\",\n  \"acepta_mascotas\": \"no\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "depto 2d/1b 50m2 en quinta normal",
+        "bedrooms_text": null,
+        "price_text": "3.050 uf.",
+        "rent_text": null,
+        "distance_metro_text": "a 900 mts del metro",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento propio",
+        "pets_text": "NO SE ACEPTAN MASCOTAS",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('2d/')"
+      ]
+    },
+    "OOD-803": {
+      "location": "Casa",
+      "bedrooms": 3,
+      "price_text": "$118.000.000",
+      "rent_text": null,
+      "distance_metro_text": "1.500 mts",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\"location_text\": \"Casa 3D/1B 85m2 en Renca.\", \"bedrooms_text\": null, \"price_text\": \"Valor $118.000.000.\", \"rent_text\": null, \"distance_metro_text\": \"A 1.500 mts del metro mas cercano.\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento propio.\", \"pets_text\": \"Acepta mascotas.\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Casa 3D/1B 85m2 en Renca.",
+        "bedrooms_text": null,
+        "price_text": "Valor $118.000.000.",
+        "rent_text": null,
+        "distance_metro_text": "A 1.500 mts del metro mas cercano.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio.",
+        "pets_text": "Acepta mascotas.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')",
+        "parking_text: no es literal del aviso: 'Estacionamiento propio.'",
+        "parking_text: recuperado del aviso ('Estacionamento propio.')"
+      ]
+    },
+    "OOD-804": {
+      "location": null,
+      "bedrooms": 2,
+      "price_text": "3.250 UF",
+      "rent_text": null,
+      "distance_metro_text": "1.000 mts",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 5.0,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto 2D/1B, 52m2, Quinta Normal\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.250\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 1.000 mts del metro.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento asignado.\",\n  \"pets_text\": \"Se acepta 1 mascota chica hasta 5 kilos.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/1B, 52m2, Quinta Normal",
+        "bedrooms_text": null,
+        "price_text": "UF 3.250",
+        "rent_text": null,
+        "distance_metro_text": "A 1.000 mts del metro.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento asignado.",
+        "pets_text": "Se acepta 1 mascota chica hasta 5 kilos.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('2D/')"
+      ]
+    },
+    "OOD-805": {
+      "location": "DEPTO",
+      "bedrooms": null,
+      "price_text": "3.100 UF",
+      "rent_text": null,
+      "distance_metro_text": "400 MTS",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "calle",
+      "raw": "{\n  \"location_text\": \"DEPTO 2D 1B 58M2 EN QUINTA NORMAL\",\n  \"bedrooms_text\": \"1B\",\n  \"price_text\": \"UF 3.100\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 400 MTS DEL METRO\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"ESTACIONAMIENTO EN LA CALLE\",\n  \"pets_text\": \"PET FRIENDLY SIN RESTRICCIONES\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "DEPTO 2D 1B 58M2 EN QUINTA NORMAL",
+        "bedrooms_text": "1B",
+        "price_text": "UF 3.100",
+        "rent_text": null,
+        "distance_metro_text": "A 400 MTS DEL METRO",
+        "distance_bus_text": null,
+        "parking_text": "ESTACIONAMIENTO EN LA CALLE",
+        "pets_text": "PET FRIENDLY SIN RESTRICCIONES",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "OOD-801": {
+      "price_clp": 115200000,
+      "roi_pct": 5.83,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.000 UF' = 3000 UF -> 115,200,000 CLP <= 120,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=10.0 vs gato 7kg -> ok",
+        "distancia: metro='600 MTS' bus=None -> min=600 vs max 1200",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-802": {
+      "price_clp": 117120000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.050 UF' = 3050 UF -> 117,120,000 CLP <= 120,000,000",
+        "mascotas: politica=no_permitidas especies=cualquiera max_kg=None vs gato 7kg -> FALLA",
+        "distancia: metro='900 mts' bus=None -> min=900 vs max 1200",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-803": {
+      "price_clp": 118000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$118.000.000' = 1.18e+08 CLP -> 118,000,000 CLP <= 120,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 7kg -> ok",
+        "distancia: metro='1.500 mts' bus=None -> min=2 vs max 1200",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "OOD-804": {
+      "price_clp": 124800000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.250 UF' = 3250 UF -> 124,800,000 CLP > 120,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=5.0 vs gato 7kg -> FALLA",
+        "distancia: metro='1.000 mts' bus=None -> min=1 vs max 1200",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "OOD-805": {
+      "price_clp": 119040000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.100 UF' = 3100 UF -> 119,040,000 CLP <= 120,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 7kg -> ok",
+        "distancia: metro='400 MTS' bus=None -> min=400 vs max 1200",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: calle (requerido=True)"
+      ]
+    }
+  }
+}

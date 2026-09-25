@@ -68,12 +68,12 @@ def spans_from_v1(f: Dict, text: str) -> Dict:
     }
 
 
-def reground_case(case: Case, trace: Dict) -> Dict:
+def reground_case(case: Case, trace: Dict, version: str = grounding.DEFAULT_VERSION) -> Dict:
     facts: Dict[str, Facts] = {}
     for p in case.properties:
         f = trace["facts"].get(p.id) or {}
         spans = f.get("spans") or spans_from_v1(f, p.text)        # traces v5 ya traen spans
-        kwargs, warnings = grounding.facts_from_spans(spans, p.text)
+        kwargs, warnings = grounding.facts_from_spans(spans, p.text, version)
         facts[p.id] = Facts(**kwargs, spans=spans, warnings=warnings, raw=f.get("raw", ""))
     decisions: List[Decision] = [
         decide(pid, fx, case.hard_constraints, case.soft_constraints, case.uf_value)
@@ -94,6 +94,7 @@ def main(argv=None) -> int:
     ap.add_argument("--run", required=True, help="corrida tools existente (con .trace.json)")
     ap.add_argument("--out", required=True, help="nombre de la corrida re-decidida en results/")
     ap.add_argument("--split", default="test")
+    ap.add_argument("--grounding", default=grounding.DEFAULT_VERSION, choices=grounding.VERSIONS)
     a = ap.parse_args(argv)
 
     src, out = RESULTS_DIR / a.run, RESULTS_DIR / a.out
@@ -104,11 +105,12 @@ def main(argv=None) -> int:
         tp = src / f"{case.id}.trace.json"
         if not tp.exists():
             continue
-        r = reground_case(case, json.loads(tp.read_text(encoding="utf-8")))
+        r = reground_case(case, json.loads(tp.read_text(encoding="utf-8")), a.grounding)
         (out / f"{case.id}.txt").write_text(json.dumps(r["output"], ensure_ascii=False, indent=2), encoding="utf-8")
         meta_src = src / f"{case.id}.meta.json"
         meta = json.loads(meta_src.read_text(encoding="utf-8")) if meta_src.exists() else {}
-        meta.update({"run": a.out, "mode": f"reground/{a.run}", "source_run": a.run,
+        meta.update({"run": a.out, "mode": f"reground/{a.run}/{a.grounding}", "source_run": a.run,
+                     "grounding_version": a.grounding,
                      "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S")})
         (out / f"{case.id}.meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
         (out / f"{case.id}.trace.json").write_text(

@@ -1,0 +1,37 @@
+{
+  "approved_matches": [
+    {
+      "id": "OOD-107",
+      "price_clp": 39000000,
+      "roi_pct": 12.00
+    },
+    {
+      "id": "OOD-104",
+      "price_clp": 41000000,
+      "roi_pct": 7.91
+    },
+    {
+      "id": "OOD-102",
+      "price_clp": 37000000,
+      "roi_pct": 37.84
+    }
+  ],
+  "rejected": [
+    {
+      "id": "OOD-101",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 800 m."]
+    },
+    {
+      "id": "OOD-103",
+      "failed_constraints": ["Presupuesto Máximo de Compra: $200.000.000 CLP", "Distancia máxima a transporte público (metro O paradero de buses troncal): 800 m."]
+    },
+    {
+      "id": "OOD-105",
+      "failed_constraints": ["Mascotas: Tiene 1 perro de 12kg (la propiedad debe permitir explícitamente mascotas de ese tamaño y especie).", "Distancia máxima a transporte público (metro O paradero de buses troncal): 800 m."]
+    },
+    {
+      "id": "OOD-106",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 800 m."]
+    }
+  ]
+}

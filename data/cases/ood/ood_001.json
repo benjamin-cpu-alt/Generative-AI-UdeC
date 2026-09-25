@@ -1,0 +1,161 @@
+{
+  "id": "ood_001",
+  "uf_value": 39100,
+  "style": "Ficha de portal inmobiliario: prosa formal, unidades escritas completas.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 200000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 12,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Providencia",
+      "Ñuñoa"
+    ]
+  },
+  "properties": [
+    {
+      "id": "OOD-101",
+      "text": "Departamento en Providencia, 3 dormitorios y 2 baños, 92 m². Valor de venta: UF 4.900. Ubicado a 450 metros de Metro Salvador. El reglamento de copropiedad permite mascotas de hasta 15 kilos. Incluye un estacionamiento en subterráneo y bodega. Renta estimada de mercado: $1.100.000 mensuales.",
+      "note": "cumple todo; 'metros'/'kilos' en palabras completas",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 450,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "propio",
+        "price_uf": 4900,
+        "price_clp": null,
+        "rent_monthly_clp": 1100000,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "OOD-102",
+      "text": "Departamento en Ñuñoa, 1 dormitorio más pieza de servicio con baño, 68 m². Precio: UF 3.700. A 300 metros de Metro Chile España. Se aceptan mascotas sin restricción. Estacionamiento asignado.",
+      "note": "'1 dormitorio más pieza de servicio': la pieza de servicio no es dormitorio",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3700,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "OOD-103",
+      "text": "Depto 3D/2B de 105 m² en Las Condes, excelente ubicación. Valor: $210.000.000. A 600 metros de Metro Manquehue. Acepta mascotas. Dos estacionamientos.",
+      "note": "sobre presupuesto en CLP",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 210000000,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "OOD-104",
+      "text": "Amplio departamento en Providencia, 2 dormitorios, 78 m². UF 4.100. A 12 minutos caminando del metro. Pet friendly. Incluye estacionamiento.",
+      "note": "distancia SOLO en minutos: no verificable -> debe rechazarse",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4100,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "OOD-105",
+      "text": "Casa de 3 dormitorios, 110 m². Precio: $185.000.000. A 700 metros de Metro Ñuñoa. El condominio no acepta mascotas. Estacionamiento propio para dos autos.",
+      "note": "negativa de mascotas en prosa ('no acepta')",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 185000000,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "OOD-106",
+      "text": "Departamento 2D/1B de 70 m² en Providencia. Valor: UF 4.500. A 250 metros del Metro Los Leones. Mascotas permitidas hasta 20 kilos. Cuenta con estacionamiento de visitas para el edificio.",
+      "note": "estacionamiento de visitas redactado como si fuera una ventaja",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 250,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 20
+        },
+        "parking": "visitas",
+        "price_uf": 4500,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "OOD-107",
+      "text": "Depto en Macul, 2 dormitorios, 65 m². Precio: UF 3.900. A 550 metros de Metro Los Presidentes. Acepta perros y gatos, sin límite de peso. Estacionamiento propio. Se arrienda actualmente en $1.000.000.",
+      "note": "cumple pero NO está en comuna preferida y tiene mayor ROI: la preferencia debe ganarle al ROI en el ranking",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 550,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3900,
+        "price_clp": null,
+        "rent_monthly_clp": 1000000,
+        "location": "Macul"
+      }
+    }
+  ]
+}

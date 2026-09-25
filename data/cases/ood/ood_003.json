@@ -1,0 +1,145 @@
+{
+  "id": "ood_003",
+  "uf_value": 39300,
+  "style": "Cifras escritas en palabras y en 'millones'.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 160000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 25,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "San Miguel",
+      "Macul"
+    ]
+  },
+  "properties": [
+    {
+      "id": "OOD-301",
+      "text": "Casa en San Miguel, tres dormitorios y dos baños, 120 m². Precio: ciento cuarenta y cinco millones de pesos. A quinientos metros del Metro El Llano. Se aceptan perros de cualquier tamaño. Dos estacionamientos propios. Arriendo estimado: novecientos mil pesos.",
+      "note": "TODAS las cifras en palabras: ningún número que copiar. Probablemente imposible de anclar -> rechazo por no verificable (falso negativo seguro)",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 145000000,
+        "rent_monthly_clp": 900000,
+        "location": "San Miguel"
+      }
+    },
+    {
+      "id": "OOD-302",
+      "text": "Depto 3D/2B, 88 m², Macul. Valor: $158 millones. A 400 m del metro. Acepta mascotas hasta 30 kilos. Estacionamiento propio.",
+      "note": "'$158 millones': cifra abreviada, sin arriendo (roi null)",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 30
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 158000000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "OOD-303",
+      "text": "Casa 4D/2B de 130 m² en San Miguel. $172 millones. A 550 metros del metro. Pet friendly sin restricciones. Estacionamiento para 3 autos.",
+      "note": "'$172 millones' sobre presupuesto",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 550,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 172000000,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      }
+    },
+    {
+      "id": "OOD-304",
+      "text": "Depto en La Cisterna, 3 dormitorios, 80 m². UF 3.800. A 1,2 km de la estación. Acepta mascotas hasta 20 kilos. Estacionamiento asignado.",
+      "note": "dos fallos: distancia y peso de mascota",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 20
+        },
+        "parking": "asignado",
+        "price_uf": 3800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Cisterna"
+      }
+    },
+    {
+      "id": "OOD-305",
+      "text": "Departamento en Macul, dos dormitorios, 64 m². Precio: UF 3.500. A 300 metros del metro. Perros bienvenidos. Estacionamiento propio.",
+      "note": "'dos dormitorios' en palabras, bajo el mínimo de 3",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3500,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "OOD-306",
+      "text": "Casa 3D/1B, 105 m². Precio: UF 3.600. A 480 metros del Metro San Miguel. No se especifica política de mascotas. Estacionamiento propio.",
+      "note": "política de mascotas ausente y declarada como ausente",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 480,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3600,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      }
+    }
+  ]
+}

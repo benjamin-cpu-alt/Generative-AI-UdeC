@@ -1,0 +1,293 @@
+{
+  "facts": {
+    "OOD-701": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "4.200 UF",
+      "rent_text": "$820.000",
+      "distance_metro_text": "600 m",
+      "distance_bus_text": "600 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto 2D/2B, 75 m², La Reina\",\n  \"bedrooms_text\": \"2D/2B\",\n  \"price_text\": \"UF 4.200\",\n  \"rent_text\": \"Arriendo: $820.000\",\n  \"distance_metro_text\": \"600 m de paradero troncal\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio\",\n  \"pets_text\": \"Se admite una mascota por departamento, sin restricción de tamaño\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/2B, 75 m², La Reina",
+        "bedrooms_text": "2D/2B",
+        "price_text": "UF 4.200",
+        "rent_text": "Arriendo: $820.000",
+        "distance_metro_text": "600 m de paradero troncal",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Se admite una mascota por departamento, sin restricción de tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "distance_bus_text: recuperada del aviso (600 m)"
+      ]
+    },
+    "OOD-702": {
+      "location": "Peñalolén",
+      "bedrooms": 3,
+      "price_text": "$160.000.000",
+      "rent_text": "$900.000",
+      "distance_metro_text": "700 metros",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Peñalolén\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"$160.000.000\",\n  \"rent_text\": \"Arriendo: $900.000\",\n  \"distance_metro_text\": \"A 700 metros del metro\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio\",\n  \"pets_text\": \"se aceptan perros hasta veinte kilos\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Peñalolén",
+        "bedrooms_text": null,
+        "price_text": "$160.000.000",
+        "rent_text": "Arriendo: $900.000",
+        "distance_metro_text": "A 700 metros del metro",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "se aceptan perros hasta veinte kilos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "OOD-703": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "4.100 UF",
+      "rent_text": null,
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto 2D/1B, 68 m², La Reina.\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 4.100\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 500 m del metro.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio.\",\n  \"pets_text\": \"gatos sí están permitidos.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/1B, 68 m², La Reina.",
+        "bedrooms_text": null,
+        "price_text": "UF 4.100",
+        "rent_text": null,
+        "distance_metro_text": "A 500 m del metro.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio.",
+        "pets_text": "gatos sí están permitidos.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('2D/')"
+      ]
+    },
+    "OOD-704": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "4.000 UF",
+      "rent_text": null,
+      "distance_metro_text": "450 metros",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 8.0,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto 2D/1B, 66 m², Peñalolén\", \"bedrooms_text\": null, \"price_text\": \"UF 4.000\", \"rent_text\": null, \"distance_metro_text\": \"450 metros del metro\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento propio\", \"pets_text\": \"Solo mascotas de raza pequeña, máximo 8 kg.\",\"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/1B, 66 m², Peñalolén",
+        "bedrooms_text": null,
+        "price_text": "UF 4.000",
+        "rent_text": null,
+        "distance_metro_text": "450 metros del metro",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Solo mascotas de raza pequeña, máximo 8 kg.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('2D/')"
+      ]
+    },
+    "OOD-705": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "3.900 UF",
+      "rent_text": null,
+      "distance_metro_text": "400 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto 2D/1B\", \"bedrooms_text\": \"2D/1B\", \"price_text\": \"UF 3.900\", \"rent_text\": null, \"distance_metro_text\": \"A 400 m del metro\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento propio\", \"pets_text\": null, \"acepta_mascotas\": \"no_dice\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/1B",
+        "bedrooms_text": "2D/1B",
+        "price_text": "UF 3.900",
+        "rent_text": null,
+        "distance_metro_text": "A 400 m del metro",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": null,
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "OOD-706": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "4.350 UF",
+      "rent_text": null,
+      "distance_metro_text": "300 metros",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "visitas",
+      "raw": "{\n  \"location_text\": \"Depto 2D/2B, 80 m², La Reina.\",\n  \"bedrooms_text\": \"2D/2B\",\n  \"price_text\": \"UF 4.350\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 300 metros del metro.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento de visitas disponible las 24 horas.\",\n  \"pets_text\": \"Aceptamos mascotas, incluidos perros grandes.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/2B, 80 m², La Reina.",
+        "bedrooms_text": "2D/2B",
+        "price_text": "UF 4.350",
+        "rent_text": null,
+        "distance_metro_text": "A 300 metros del metro.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento de visitas disponible las 24 horas.",
+        "pets_text": "Aceptamos mascotas, incluidos perros grandes.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets: parser=permitidas/cualquiera reemplaza al modelo=permitidas/['perro']"
+      ]
+    }
+  },
+  "decisions": {
+    "OOD-701": {
+      "price_clp": 164640000,
+      "roi_pct": 5.98,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.200 UF' = 4200 UF -> 164,640,000 CLP <= 170,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 20kg -> ok",
+        "distancia: metro='600 m' bus='600 m' -> min=600 vs max 800",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-702": {
+      "price_clp": 160000000,
+      "roi_pct": 6.75,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '$160.000.000' = 1.6e+08 CLP -> 160,000,000 CLP <= 170,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 20kg -> ok",
+        "distancia: metro='700 metros' bus=None -> min=700 vs max 800",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-703": {
+      "price_clp": 160720000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.100 UF' = 4100 UF -> 160,720,000 CLP <= 170,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs perro 20kg -> FALLA",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 800",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-704": {
+      "price_clp": 156800000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.000 UF' = 4000 UF -> 156,800,000 CLP <= 170,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=8.0 vs perro 20kg -> FALLA",
+        "distancia: metro='450 metros' bus=None -> min=450 vs max 800",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-705": {
+      "price_clp": 152880000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.900 UF' = 3900 UF -> 152,880,000 CLP <= 170,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 20kg -> FALLA",
+        "distancia: metro='400 m' bus=None -> min=400 vs max 800",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-706": {
+      "price_clp": 170520000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.350 UF' = 4350 UF -> 170,520,000 CLP > 170,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 20kg -> ok",
+        "distancia: metro='300 metros' bus=None -> min=300 vs max 800",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: visitas (requerido=True)"
+      ]
+    }
+  }
+}

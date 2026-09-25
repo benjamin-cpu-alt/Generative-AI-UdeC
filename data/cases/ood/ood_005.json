@@ -1,0 +1,143 @@
+{
+  "id": "ood_005",
+  "uf_value": 39000,
+  "style": "Tipologías chilenas: '2D+servicio', '3D+E'.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 175000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 8,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Las Condes",
+      "Vitacura"
+    ]
+  },
+  "properties": [
+    {
+      "id": "OOD-501",
+      "text": "Depto 2D+servicio, 2B, 95 m², Las Condes. UF 4.400. A 600 m de Metro Escuela Militar. Acepta mascotas pequeñas hasta 10 kg. 1 estacionamiento. Arriendo: $950.000.",
+      "note": "'2D+servicio' = 2 dormitorios, bajo el mínimo de 3",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 10
+        },
+        "parking": "propio",
+        "price_uf": 4400,
+        "price_clp": null,
+        "rent_monthly_clp": 950000,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "OOD-502",
+      "text": "Departamento en Vitacura, 3D+E (escritorio), 2B, 110 m². UF 4.450. A 750 metros del metro. Pet friendly hasta 15 kilos. Estacionamiento y bodega. Arriendo: $1.050.000.",
+      "note": "'3D+E' = 3 dormitorios + escritorio: el escritorio no suma",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "propio",
+        "price_uf": 4450,
+        "price_clp": null,
+        "rent_monthly_clp": 1050000,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "OOD-503",
+      "text": "Casa 4D/3B + quincho, 180 m², Las Condes. $240.000.000. A 400 m del metro. Acepta perros grandes. Tres estacionamientos.",
+      "note": "muy sobre presupuesto",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 240000000,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "OOD-504",
+      "text": "Depto 3D/2B, 90 m², Ñuñoa. UF 4.300. A 500 metros del metro. Se aceptan mascotas hasta 5 kilos. Estacionamiento propio.",
+      "note": "límite de peso bajo el del comprador (8 kg)",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "propio",
+        "price_uf": 4300,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "OOD-505",
+      "text": "Depto 3D/2B, 100 m², Vitacura. UF 4.480. A 850 m del metro. Acepta mascotas sin restricción. Estacionamiento de cortesía para visitas.",
+      "note": "'estacionamiento de cortesía para visitas'; precio justo bajo el tope",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 850,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 4480,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "OOD-506",
+      "text": "Depto 3D/2B, 98 m², Las Condes. UF 4.490. A 900 metros del metro. Acepta perros y gatos. 1 estacionamiento asignado. Arriendo: $1.000.000.",
+      "note": "near miss extremo: UF 4.490 = $175.110.000, sobre el tope por $110.000",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4490,
+        "price_clp": null,
+        "rent_monthly_clp": 1000000,
+        "location": "Las Condes"
+      }
+    }
+  ]
+}

@@ -231,7 +231,8 @@ def default_options(num_ctx: int = 2048, num_predict: int = 256) -> Dict:
 
 
 def extract_facts(model: str, prop_id: str, text: str, options: Optional[Dict] = None,
-                  timeout: int = 120, prompt_version: str = DEFAULT_PROMPT) -> Facts:
+                  timeout: int = 120, prompt_version: str = DEFAULT_PROMPT,
+                  grounding_version: Optional[str] = None) -> Facts:
     """Una llamada al modelo por propiedad. Nunca recibe el perfil del comprador."""
     options = options or default_options()
     system = PROMPTS[prompt_version]
@@ -253,7 +254,8 @@ def extract_facts(model: str, prop_id: str, text: str, options: Optional[Dict] =
     if spans_mode:
         # El modelo solo localizó fragmentos; grounding.py los ancla al aviso y los interpreta.
         from . import grounding
-        kwargs, warnings = grounding.facts_from_spans(obj, text)
+        kwargs, warnings = grounding.facts_from_spans(
+            obj, text, grounding_version or grounding.DEFAULT_VERSION)
         return Facts(**kwargs, spans=obj, warnings=warnings, **meta)
     return Facts(
         location=obj.get("location"),

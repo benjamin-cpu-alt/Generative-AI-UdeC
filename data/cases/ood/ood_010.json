@@ -1,0 +1,142 @@
+{
+  "id": "ood_010",
+  "uf_value": 38800,
+  "style": "UF con 'aproximado', con decimales y en rango.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 180000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Maipú"
+    ]
+  },
+  "properties": [
+    {
+      "id": "OOD-1001",
+      "text": "Casa 3D/2B, 105 m², Maipú. Valor aproximado: UF 4.500. A 800 m de Metro Del Sol. Acepta gatos y perros. Dos estacionamientos propios. Arriendo: $880.000.",
+      "note": "'valor aproximado' antes de la cifra",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4500,
+        "price_clp": null,
+        "rent_monthly_clp": 880000,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "OOD-1002",
+      "text": "Depto 3D/1B, 78 m², Maipú. UF 4.250,5. A 600 metros del metro. Pet friendly. Estacionamiento asignado.",
+      "note": "UF con decimal en formato chileno (coma); sin arriendo -> roi null",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4250.5,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "OOD-1003",
+      "text": "Casa 4D/2B, 120 m², Maipú. Entre UF 4.900 y UF 5.100 según forma de pago. A 900 m del metro. Acepta mascotas. Estacionamiento propio.",
+      "note": "precio en RANGO; ambos extremos superan el tope, así que el veredicto no depende de cuál se tome",
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4900,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "OOD-1004",
+      "text": "Depto 3D/2B, 82 m², Cerrillos. $170.000.000. A 1,3 km del metro. Acepta gatos hasta 4 kilos. Estacionamiento propio.",
+      "note": "dos fallos: distancia y peso",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": 4
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 170000000,
+        "rent_monthly_clp": null,
+        "location": "Cerrillos"
+      }
+    },
+    {
+      "id": "OOD-1005",
+      "text": "Depto 2D/1B, 62 m², Maipú. UF 3.900. A 400 metros del metro. Acepta mascotas. Estacionamiento propio.",
+      "note": "bajo el mínimo de dormitorios",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3900,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "OOD-1006",
+      "text": "Casa 3D/2B, 98 m², Maipú. UF 4.640. A 700 m del metro. Acepta mascotas sin restricciones. Estacionamiento propio. Arriendo: $920.000.",
+      "note": "near miss máximo: UF 4.640 = $180.032.000, sobre el tope por $32.000",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4640,
+        "price_clp": null,
+        "rent_monthly_clp": 920000,
+        "location": "Maipú"
+      }
+    }
+  ]
+}

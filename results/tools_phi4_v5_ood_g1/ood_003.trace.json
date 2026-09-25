@@ -1,0 +1,291 @@
+{
+  "facts": {
+    "OOD-301": {
+      "location": "San Miguel",
+      "bedrooms": 3,
+      "price_text": "",
+      "rent_text": null,
+      "distance_metro_text": null,
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Casa en San Miguel\",\n  \"bedrooms_text\": \"tres dormitorios\",\n  \"price_text\": \"ciento cuarenta y cinco millones de pesos\",\n  \"rent_text\": \"novecientos mil pesos\",\n  \"distance_metro_text\": \"A quinientos metros del Metro El Llano\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Dos estacionamientos propios\",\n  \"pets_text\": \"se aceptan perros de cualquier tamaño\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en San Miguel",
+        "bedrooms_text": "tres dormitorios",
+        "price_text": "ciento cuarenta y cinco millones de pesos",
+        "rent_text": "novecientos mil pesos",
+        "distance_metro_text": "A quinientos metros del Metro El Llano",
+        "distance_bus_text": null,
+        "parking_text": "Dos estacionamientos propios",
+        "pets_text": "se aceptan perros de cualquier tamaño",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "price_text: número no está en el aviso: 'ciento cuarenta y cinco millones de pesos'",
+        "rent_text: número no está en el aviso: 'novecientos mil pesos'"
+      ]
+    },
+    "OOD-302": {
+      "location": "Depto",
+      "bedrooms": 3,
+      "price_text": "$158",
+      "rent_text": null,
+      "distance_metro_text": "400 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 30.0,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto 3D/2B\", \"bedrooms_text\": \"2B\", \"price_text\": \"$158 millones\", \"rent_text\": null, \"distance_metro_text\": \"A 400 m del metro\", \"distance_bus_text\": null, \"parking_text\": \"estacionamiento propio\", \"pets_text\": \"acepta mascotas hasta 30 kilos\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 3D/2B",
+        "bedrooms_text": "2B",
+        "price_text": "$158 millones",
+        "rent_text": null,
+        "distance_metro_text": "A 400 m del metro",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento propio",
+        "pets_text": "acepta mascotas hasta 30 kilos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "OOD-303": {
+      "location": "San Miguel",
+      "bedrooms": 4,
+      "price_text": "$172",
+      "rent_text": null,
+      "distance_metro_text": "550 metros",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en San Miguel\",\n  \"bedrooms_text\": \"4D\",\n  \"price_text\": \"$172 millones\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 550 metros del metro\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento para 3 autos\",\n  \"pets_text\": \"Pet friendly sin restricciones\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en San Miguel",
+        "bedrooms_text": "4D",
+        "price_text": "$172 millones",
+        "rent_text": null,
+        "distance_metro_text": "A 550 metros del metro",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento para 3 autos",
+        "pets_text": "Pet friendly sin restricciones",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "OOD-304": {
+      "location": "La Cisterna",
+      "bedrooms": 3,
+      "price_text": "3.800 UF",
+      "rent_text": null,
+      "distance_metro_text": "1,2 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 20.0,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en La Cisterna\",\n  \"bedrooms_text\": \"3 dormitorios\",\n  \"price_text\": \"UF 3.800\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 1,2 km de la estación\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento asignado.\",\n  \"pets_text\": \"acepta mascotas hasta 20 kilos\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en La Cisterna",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "UF 3.800",
+        "rent_text": null,
+        "distance_metro_text": "A 1,2 km de la estación",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento asignado.",
+        "pets_text": "acepta mascotas hasta 20 kilos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "OOD-305": {
+      "location": "Macul",
+      "bedrooms": 2,
+      "price_text": "3.500 UF",
+      "rent_text": null,
+      "distance_metro_text": "300 metros",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Departamento en Macul\",\n  \"bedrooms_text\": \"dos dormitorios\",\n  \"price_text\": \"UF 3.500\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 300 metros del metro\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento propio\",\n  \"pets_text\": \"Perros bienvenidos\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en Macul",
+        "bedrooms_text": "dos dormitorios",
+        "price_text": "UF 3.500",
+        "rent_text": null,
+        "distance_metro_text": "A 300 metros del metro",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento propio",
+        "pets_text": "Perros bienvenidos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "OOD-306": {
+      "location": "Casa",
+      "bedrooms": 3,
+      "price_text": "3.600 UF",
+      "rent_text": null,
+      "distance_metro_text": "480 metros",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Casa 3D/1B\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.600\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 480 metros del Metro San Miguel\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio.\",\n  \"pets_text\": \"No se especifica política de mascotas.\",\n  \"acepta_mascotas\": \"no_dice\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Casa 3D/1B",
+        "bedrooms_text": null,
+        "price_text": "UF 3.600",
+        "rent_text": null,
+        "distance_metro_text": "A 480 metros del Metro San Miguel",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio.",
+        "pets_text": "No se especifica política de mascotas.",
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    }
+  },
+  "decisions": {
+    "OOD-301": {
+      "price_clp": null,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio ilegible: '' -> se rechaza por no verificable",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 25kg -> ok",
+        "distancia: metro=None bus=None -> min=None vs max 600",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-302": {
+      "price_clp": 158,
+      "roi_pct": null,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$158' = 158 CLP -> 158 CLP <= 160,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=30.0 vs perro 25kg -> ok",
+        "distancia: metro='400 m' bus=None -> min=400 vs max 600",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-303": {
+      "price_clp": 172,
+      "roi_pct": null,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '$172' = 172 CLP -> 172 CLP <= 160,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 25kg -> ok",
+        "distancia: metro='550 metros' bus=None -> min=550 vs max 600",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-304": {
+      "price_clp": 149340000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.800 UF' = 3800 UF -> 149,340,000 CLP <= 160,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=20.0 vs perro 25kg -> FALLA",
+        "distancia: metro='1,2 km' bus=None -> min=1200 vs max 600",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "OOD-305": {
+      "price_clp": 137550000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.500 UF' = 3500 UF -> 137,550,000 CLP <= 160,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 25kg -> ok",
+        "distancia: metro='300 metros' bus=None -> min=300 vs max 600",
+        "dormitorios: 2 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-306": {
+      "price_clp": 141480000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.600 UF' = 3600 UF -> 141,480,000 CLP <= 160,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 25kg -> FALLA",
+        "distancia: metro='480 metros' bus=None -> min=480 vs max 600",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

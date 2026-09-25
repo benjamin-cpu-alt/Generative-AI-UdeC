@@ -1,0 +1,31 @@
+{
+  "approved_matches": [
+    {
+      "id": "OOD-206",
+      "price_clp": 3100000,
+      "roi_pct": 57.37
+    }
+  ],
+  "rejected": [
+    {
+      "id": "OOD-201",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 400 mts"]
+    },
+    {
+      "id": "OOD-202",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 300 mts", "Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado"]
+    },
+    {
+      "id": "OOD-203",
+      "failed_constraints": ["Mascotas: Tiene 1 gato de 5kg (la propiedad debe permitir explícitamente mascotas de ese tamaño y especie)"]
+    },
+    {
+      "id": "OOD-204",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 600 mts"]
+    },
+    {
+      "id": "OOD-205",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 850 mts", "Mascotas: Tiene 1 gato de 5kg (la propiedad debe permitir explícitamente mascotas de ese tamaño y especie)"]
+    }
+  ]
+}

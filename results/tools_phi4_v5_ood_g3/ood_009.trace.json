@@ -1,0 +1,292 @@
+{
+  "facts": {
+    "OOD-901": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "3.500 UF",
+      "rent_text": "$640.000",
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 12.0,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto 2D/1B, 58 m², San Joaquín.\",\n  \"bedrooms_text\": \"2D/1B\",\n  \"price_text\": \"UF 3.500.\",\n  \"rent_text\": \"Arriendo: $640.000.\",\n  \"distance_metro_text\": \"A 500 m del Metro Pedrero.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Se vende con estacionamiento y bodega incluidos en el precio.\",\n  \"pets_text\": \"Acepta mascotas hasta 12 kilos.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/1B, 58 m², San Joaquín.",
+        "bedrooms_text": "2D/1B",
+        "price_text": "UF 3.500.",
+        "rent_text": "Arriendo: $640.000.",
+        "distance_metro_text": "A 500 m del Metro Pedrero.",
+        "distance_bus_text": null,
+        "parking_text": "Se vende con estacionamiento y bodega incluidos en el precio.",
+        "pets_text": "Acepta mascotas hasta 12 kilos.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "OOD-902": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "3.600 UF",
+      "rent_text": "$50.000",
+      "distance_metro_text": "450 metros",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "ninguno",
+      "raw": "{\n  \"location_text\": \"Depto 2D/1B, 60 m², San Joaquín.\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.600\",\n  \"rent_text\": \"/mes $50.000\",\n  \"distance_metro_text\": \"A 450 metros del metro.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento opcional, se arrienda aparte a $50.000 mensuales.\",\n  \"pets_text\": \"Pet friendly.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/1B, 60 m², San Joaquín.",
+        "bedrooms_text": null,
+        "price_text": "UF 3.600",
+        "rent_text": "/mes $50.000",
+        "distance_metro_text": "A 450 metros del metro.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento opcional, se arrienda aparte a $50.000 mensuales.",
+        "pets_text": "Pet friendly.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "rent_text: no es literal del aviso: '/mes $50.000'",
+        "bedrooms: recuperado del aviso completo ('2D/')"
+      ]
+    },
+    "OOD-903": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "3.800 UF",
+      "rent_text": null,
+      "distance_metro_text": "600 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "visitas",
+      "raw": "{\n  \"location_text\": \"Depto 2D/2B\",\n  \"bedrooms_text\": \"2D/2B\",\n  \"price_text\": \"UF 3.800\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 600 m del metro.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Cuenta con estacionamientos de visita y acceso controlado.\",\n  \"pets_text\": \"acepta perros\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/2B",
+        "bedrooms_text": "2D/2B",
+        "price_text": "UF 3.800",
+        "rent_text": null,
+        "distance_metro_text": "A 600 m del metro.",
+        "distance_bus_text": null,
+        "parking_text": "Cuenta con estacionamientos de visita y acceso controlado.",
+        "pets_text": "acepta perros",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "OOD-904": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "3.450 UF",
+      "rent_text": "$610.000",
+      "distance_metro_text": "700 metros",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto 2D/1B, 55 m², San Joaquín.\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.450.\",\n  \"rent_text\": \"Arriendo: $610.000.\",\n  \"distance_metro_text\": \"A 700 metros del metro.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Derecho a uso de un estacionamiento asignado a la unidad.\",\n  \"pets_text\": \"Mascotas permitidas.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/1B, 55 m², San Joaquín.",
+        "bedrooms_text": null,
+        "price_text": "UF 3.450.",
+        "rent_text": "Arriendo: $610.000.",
+        "distance_metro_text": "A 700 metros del metro.",
+        "distance_bus_text": null,
+        "parking_text": "Derecho a uso de un estacionamiento asignado a la unidad.",
+        "pets_text": "Mascotas permitidas.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('2D/')"
+      ]
+    },
+    "OOD-905": {
+      "location": "Depto",
+      "bedrooms": 3,
+      "price_text": "3.950 UF",
+      "rent_text": null,
+      "distance_metro_text": "850 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 6.0,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto 3D/1B, 72 m², San Joaquín.\", \"bedrooms_text\": null, \"price_text\": \"UF 3.950.\", \"rent_text\": null, \"distance_metro_text\": \"A 850 m del metro.\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento propio.\", \"pets_text\": \"acepta mascotas hasta 6 kilos.\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 3D/1B, 72 m², San Joaquín.",
+        "bedrooms_text": null,
+        "price_text": "UF 3.950.",
+        "rent_text": null,
+        "distance_metro_text": "A 850 m del metro.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio.",
+        "pets_text": "acepta mascotas hasta 6 kilos.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "OOD-906": {
+      "location": "La Granja",
+      "bedrooms": 3,
+      "price_text": "$160.000.000",
+      "rent_text": null,
+      "distance_metro_text": "800 metros",
+      "distance_bus_text": "800 metros",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"La Granja\", \"bedrooms_text\": \"2B\", \"price_text\": \"$160.000.000\", \"rent_text\": null, \"distance_metro_text\": \"A 800 metros de paradero troncal.\", \"distance_bus_text\": null, \"parking_text\": \"Dos estacionamientos propios.\", \"pets_text\": \"acepta perros grandes.\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "La Granja",
+        "bedrooms_text": "2B",
+        "price_text": "$160.000.000",
+        "rent_text": null,
+        "distance_metro_text": "A 800 metros de paradero troncal.",
+        "distance_bus_text": null,
+        "parking_text": "Dos estacionamientos propios.",
+        "pets_text": "acepta perros grandes.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "distance_bus_text: recuperada del aviso (800 metros)",
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    }
+  },
+  "decisions": {
+    "OOD-901": {
+      "price_clp": 136675000,
+      "roi_pct": 5.62,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.500 UF' = 3500 UF -> 136,675,000 CLP <= 155,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=12.0 vs perro 10kg -> ok",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 900",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-902": {
+      "price_clp": 140580000,
+      "roi_pct": 0.43,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.600 UF' = 3600 UF -> 140,580,000 CLP <= 155,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 10kg -> ok",
+        "distancia: metro='450 metros' bus=None -> min=450 vs max 900",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: ninguno (requerido=True)"
+      ]
+    },
+    "OOD-903": {
+      "price_clp": 148390000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.800 UF' = 3800 UF -> 148,390,000 CLP <= 155,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 10kg -> ok",
+        "distancia: metro='600 m' bus=None -> min=600 vs max 900",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: visitas (requerido=True)"
+      ]
+    },
+    "OOD-904": {
+      "price_clp": 134722500,
+      "roi_pct": 5.43,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.450 UF' = 3450 UF -> 134,722,500 CLP <= 155,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 10kg -> ok",
+        "distancia: metro='700 metros' bus=None -> min=700 vs max 900",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "OOD-905": {
+      "price_clp": 154247500,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.950 UF' = 3950 UF -> 154,247,500 CLP <= 155,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=6.0 vs perro 10kg -> FALLA",
+        "distancia: metro='850 m' bus=None -> min=850 vs max 900",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-906": {
+      "price_clp": 160000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$160.000.000' = 1.6e+08 CLP -> 160,000,000 CLP > 155,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 10kg -> ok",
+        "distancia: metro='800 metros' bus='800 metros' -> min=800 vs max 900",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

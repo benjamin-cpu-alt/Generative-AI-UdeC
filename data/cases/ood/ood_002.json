@@ -1,0 +1,142 @@
+{
+  "id": "ood_002",
+  "uf_value": 38750,
+  "style": "WhatsApp de corredor: minúsculas, sin tildes, abreviaturas, 'lucas'.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 130000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "La Florida"
+    ]
+  },
+  "properties": [
+    {
+      "id": "OOD-201",
+      "text": "hola! te mando el depto de la florida: 2d 1b, 58 mts. piden 3.200 uf. esta a 400 mts del metro vicuña mackenna. aceptan gatos hasta 8 kilos. tiene 1 estacionamiento asignado. arriendo referencial 620 lucas",
+      "note": "'620 lucas' = $620.000 (jerga chilena); minúsculas y sin tildes",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 8
+        },
+        "parking": "asignado",
+        "price_uf": 3200,
+        "price_clp": null,
+        "rent_monthly_clp": 620000,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "OOD-202",
+      "text": "el otro tambien en la florida: 1d+1b, 45 mts, 2.900 uf. a 300 mts del metro. aceptan mascotas chicas. sin estacionamiento, pero hay harto espacio en la calle",
+      "note": "dos fallos; 'sin estacionamiento' seguido de 'espacio en la calle'",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 2900,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "OOD-203",
+      "text": "casa 3d 2b en puente alto, 95 mts, 118 millones. a 1,4 km del metro plaza puente alto. no aceptan mascotas por reglamento. 2 estacionamientos propios",
+      "note": "'118 millones' sin signo $; dos fallos",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1400,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 118000000,
+        "rent_monthly_clp": null,
+        "location": "Puente Alto"
+      }
+    },
+    {
+      "id": "OOD-204",
+      "text": "depto 2d 1b 62 mts en la florida, piden 135 millones. a 600 mts del metro. pet friendly total. estacionamiento subterraneo incluido",
+      "note": "'135 millones' sobre presupuesto",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 135000000,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "OOD-205",
+      "text": "2d/2b 70 mts en macul, 3.300 uf. a 850 mts del metro. aceptan solo perros. estacionamiento asignado. renta 700 lucas",
+      "note": "'solo perros' y el comprador tiene gato",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 850,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3300,
+        "price_clp": null,
+        "rent_monthly_clp": 700000,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "OOD-206",
+      "text": "depto 2d 1b en la florida, 3.100 uf, a 700 mts del metro, aceptan gatos y perros hasta 10 kg, tiene estacionamiento propio. arriendo 650.000",
+      "note": "cumple; mismo grupo de preferencia que OOD-201, mayor ROI -> va primero",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 10
+        },
+        "parking": "propio",
+        "price_uf": 3100,
+        "price_clp": null,
+        "rent_monthly_clp": 650000,
+        "location": "La Florida"
+      }
+    }
+  ]
+}

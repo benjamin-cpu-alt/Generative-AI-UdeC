@@ -1,0 +1,120 @@
+{
+  "id": "ood_006",
+  "uf_value": 38600,
+  "style": "Gastos comunes compitiendo con el precio de venta.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 145000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 700,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Santiago Centro"
+    ]
+  },
+  "properties": [
+    {
+      "id": "OOD-601",
+      "text": "Depto 2D/1B, 55 m², Santiago Centro. Precio: UF 3.600. Gastos comunes: $95.000. A 200 metros del Metro Universidad de Chile. Acepta gatos y perros chicos. Estacionamiento asignado. Arriendo: $620.000.",
+      "note": "tres cifras en pesos y UF en el mismo aviso: precio, GC y arriendo",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3600,
+        "price_clp": null,
+        "rent_monthly_clp": 620000,
+        "location": "Santiago Centro"
+      }
+    },
+    {
+      "id": "OOD-602",
+      "text": "Depto 1D/1B, 40 m², Santiago Centro. Valor UF 3.100, gastos comunes aproximados $70.000 mensuales. A 150 m del metro. Pet friendly. Estacionamiento propio.",
+      "note": "GC 'mensuales' puede confundirse con arriendo",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 150,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3100,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      }
+    },
+    {
+      "id": "OOD-603",
+      "text": "Depto 2D/2B, 62 m², Estación Central. $142.000.000. GC $130.000. A 300 metros del metro. No acepta mascotas. Estacionamiento propio.",
+      "note": "'GC' abreviado; precio en CLP bajo el tope",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 142000000,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      }
+    },
+    {
+      "id": "OOD-604",
+      "text": "Depto 2D/1B, 50 m², Santiago Centro. UF 3.900. A 1,1 km del metro. Acepta mascotas hasta 8 kilos. Estacionamiento propio. Arriendo: $600.000.",
+      "note": "dos fallos: presupuesto y distancia",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1100,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 8
+        },
+        "parking": "propio",
+        "price_uf": 3900,
+        "price_clp": null,
+        "rent_monthly_clp": 600000,
+        "location": "Santiago Centro"
+      }
+    },
+    {
+      "id": "OOD-605",
+      "text": "Depto 2D/1B, 53 m², Santiago Centro. UF 3.700. Gastos comunes $88.000. A 400 m del metro. Se aceptan mascotas hasta 3 kilos. Estacionamiento propio.",
+      "note": "límite 3 kg contra gato de 4 kg",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 3
+        },
+        "parking": "propio",
+        "price_uf": 3700,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago Centro"
+      }
+    }
+  ]
+}

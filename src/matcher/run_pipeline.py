@@ -25,6 +25,7 @@ import urllib.error
 from pathlib import Path
 from typing import List
 
+from . import grounding
 from .extract import DEFAULT_PROMPT
 from .pipeline import MODES, run_case
 from .schema import Case
@@ -35,7 +36,8 @@ RESULTS_DIR = ROOT / "results"
 
 
 def run(model: str, mode: str, run_name: str, cases: List[Case], results_dir: Path = RESULTS_DIR,
-        force: bool = False, timeout: int = 600, prompt_version: str = DEFAULT_PROMPT) -> int:
+        force: bool = False, timeout: int = 600, prompt_version: str = DEFAULT_PROMPT,
+        grounding_version: str = grounding.DEFAULT_VERSION) -> int:
     out = results_dir / run_name
     out.mkdir(parents=True, exist_ok=True)
     done = 0
@@ -45,7 +47,8 @@ def run(model: str, mode: str, run_name: str, cases: List[Case], results_dir: Pa
             print(f"[{i}/{len(cases)}] {case.id}: ya existe, se omite", flush=True)
             continue
         try:
-            tr = run_case(case, model, mode, timeout=timeout, prompt_version=prompt_version)
+            tr = run_case(case, model, mode, timeout=timeout, prompt_version=prompt_version,
+                          grounding_version=grounding_version)
         except (urllib.error.URLError, TimeoutError, OSError) as e:
             print(f"[{i}/{len(cases)}] {case.id}: ERROR {e}", file=sys.stderr, flush=True)
             continue
@@ -53,6 +56,7 @@ def run(model: str, mode: str, run_name: str, cases: List[Case], results_dir: Pa
         meta = {
             "case_id": case.id, "model": model, "run": run_name, "mode": mode,
             "prompt_version": prompt_version if mode in ("tools", "decomp_llm") else None,
+            "grounding_version": grounding_version if mode == "tools" else None,
             "calls": tr.calls, "prompt_tokens": tr.prompt_tokens, "output_tokens": tr.output_tokens,
             "wall_s": tr.wall_s, "done_reason": "error" if tr.errors else "stop",
             "errors": tr.errors, "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"),
@@ -78,6 +82,9 @@ def main(argv=None) -> int:
     ap.add_argument("--only", nargs="*")
     ap.add_argument("--timeout", type=int, default=600)
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--grounding", default=grounding.DEFAULT_VERSION, choices=grounding.VERSIONS,
+                    help="versión de la capa de anclaje (g1 = la de results/tools_phi4_v5; "
+                         "g2 = + recuperación de cláusula y especies por parseo)")
     ap.add_argument("--prompt-version", default=DEFAULT_PROMPT, choices=("v1", "v2", "v3", "v4", "v5"),
                     help="prompt del extractor (ver extract.py; v5 = spans + grounding; "
                          "se elige en dev, nunca en test)")
@@ -92,7 +99,8 @@ def main(argv=None) -> int:
         print("sin casos", file=sys.stderr)
         return 1
     print(f"modo={a.mode} modelo={a.model} run={a.run} casos={len(cases)}", flush=True)
-    n = run(a.model, a.mode, a.run, cases, force=a.force, timeout=a.timeout, prompt_version=a.prompt_version)
+    n = run(a.model, a.mode, a.run, cases, force=a.force, timeout=a.timeout,
+            prompt_version=a.prompt_version, grounding_version=a.grounding)
     print(f"listo: {n} respuestas nuevas en results/{a.run}/")
     return 0
 

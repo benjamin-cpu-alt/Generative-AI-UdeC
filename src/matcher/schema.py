@@ -23,7 +23,11 @@ class PetsPolicy:
 @dataclass
 class Truth:
     bedrooms: int
-    distance_transport_m: int           # menor distancia a metro o paradero troncal
+    # Menor distancia a metro o paradero troncal. None = el aviso NO publica una distancia
+    # verificable (p.ej. solo "a 10 minutos caminando"): la restricción no se puede comprobar
+    # y por tanto falla, igual que una política de mascotas no explícita. Los 351 casos
+    # sintéticos siempre traen un entero; esto solo ocurre en el set OOD escrito a mano.
+    distance_transport_m: Optional[int]
     pets: PetsPolicy
     parking: str                        # "propio" | "asignado" | "visitas" | "calle" | "ninguno"
     price_uf: Optional[float] = None

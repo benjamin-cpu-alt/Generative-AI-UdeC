@@ -1,0 +1,144 @@
+{
+  "id": "ood_009",
+  "uf_value": 39050,
+  "style": "Estacionamiento redactado de forma ambigua.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 155000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 10,
+    "distancia_max_transporte_m": 900,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "San Joaquín"
+    ]
+  },
+  "properties": [
+    {
+      "id": "OOD-901",
+      "text": "Depto 2D/1B, 58 m², San Joaquín. UF 3.500. A 500 m del Metro Pedrero. Acepta mascotas hasta 12 kilos. Se vende con estacionamiento y bodega incluidos en el precio. Arriendo: $640.000.",
+      "note": "'se vende con estacionamiento incluido' = propio",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 12
+        },
+        "parking": "propio",
+        "price_uf": 3500,
+        "price_clp": null,
+        "rent_monthly_clp": 640000,
+        "location": "San Joaquín"
+      }
+    },
+    {
+      "id": "OOD-902",
+      "text": "Depto 2D/1B, 60 m², San Joaquín. UF 3.600. A 450 metros del metro. Pet friendly. Estacionamiento opcional, se arrienda aparte a $50.000 mensuales.",
+      "note": "'estacionamiento opcional, se arrienda aparte': la unidad NO lo incluye",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 450,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3600,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Joaquín"
+      }
+    },
+    {
+      "id": "OOD-903",
+      "text": "Depto 2D/2B, 70 m², Macul. UF 3.800. A 600 m del metro. Acepta perros. Cuenta con estacionamientos de visita y acceso controlado.",
+      "note": "'estacionamientos de visita' en plural",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 3800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "OOD-904",
+      "text": "Depto 2D/1B, 55 m², San Joaquín. UF 3.450. A 700 metros del metro. Mascotas permitidas. Derecho a uso de un estacionamiento asignado a la unidad. Arriendo: $610.000.",
+      "note": "'derecho a uso de un estacionamiento asignado a la unidad' = asignado",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3450,
+        "price_clp": null,
+        "rent_monthly_clp": 610000,
+        "location": "San Joaquín"
+      }
+    },
+    {
+      "id": "OOD-905",
+      "text": "Depto 3D/1B, 72 m², San Joaquín. UF 3.950. A 850 m del metro. Acepta mascotas hasta 6 kilos. Estacionamiento propio.",
+      "note": "límite 6 kg contra perro de 10 kg",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 850,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 6
+        },
+        "parking": "propio",
+        "price_uf": 3950,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Joaquín"
+      }
+    },
+    {
+      "id": "OOD-906",
+      "text": "Casa 3D/2B, 95 m², La Granja. $160.000.000. A 800 metros de paradero troncal. Acepta perros grandes. Dos estacionamientos propios.",
+      "note": "sobre presupuesto",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 160000000,
+        "rent_monthly_clp": null,
+        "location": "La Granja"
+      }
+    }
+  ]
+}

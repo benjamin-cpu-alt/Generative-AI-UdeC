@@ -1,0 +1,285 @@
+{
+  "facts": {
+    "OOD-201": {
+      "location": "Florida",
+      "bedrooms": 2,
+      "price_text": "3.200 UF",
+      "rent_text": "620",
+      "distance_metro_text": "400 mts",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": 8.0,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto en Florida\",\n  \"bedrooms_text\": \"2d 1b\",\n  \"price_text\": \"3.200 UF\",\n  \"rent_text\": \"arriendo referencial 620 lucas\",\n  \"distance_metro_text\": \"a 400 mts del metro vicuña mackenna\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"tiene 1 estacionamiento asignado\",\n  \"pets_text\": \"aceptan gatos hasta 8 kilos\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en Florida",
+        "bedrooms_text": "2d 1b",
+        "price_text": "3.200 UF",
+        "rent_text": "arriendo referencial 620 lucas",
+        "distance_metro_text": "a 400 mts del metro vicuña mackenna",
+        "distance_bus_text": null,
+        "parking_text": "tiene 1 estacionamiento asignado",
+        "pets_text": "aceptan gatos hasta 8 kilos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "OOD-202": {
+      "location": "el otro tambien en la florida",
+      "bedrooms": 1,
+      "price_text": "2.900 UF",
+      "rent_text": null,
+      "distance_metro_text": "300 mts",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "ninguno",
+      "raw": "{\n  \"location_text\": \"el otro tambien en la florida\",\n  \"bedrooms_text\": \"1d+1b\",\n  \"price_text\": \"2.900 uf.\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"a 300 mts del metro\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"sin estacionamiento\",\n  \"pets_text\": \"aceptan mascotas chicas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "el otro tambien en la florida",
+        "bedrooms_text": "1d+1b",
+        "price_text": "2.900 uf.",
+        "rent_text": null,
+        "distance_metro_text": "a 300 mts del metro",
+        "distance_bus_text": null,
+        "parking_text": "sin estacionamiento",
+        "pets_text": "aceptan mascotas chicas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "OOD-203": {
+      "location": "puente alto",
+      "bedrooms": null,
+      "price_text": "118 millones",
+      "rent_text": null,
+      "distance_metro_text": "1,4 km",
+      "distance_bus_text": null,
+      "pets_policy": "no_permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto en puente alto\",\n  \"bedrooms_text\": \"2b\",\n  \"price_text\": \"118 millones\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"a 1,4 km del metro plaza puente alto\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"2 estacionamientos propios\",\n  \"pets_text\": \"no aceptan mascotas por reglamento\",\n  \"acepta_mascotas\": \"no\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto en puente alto",
+        "bedrooms_text": "2b",
+        "price_text": "118 millones",
+        "rent_text": null,
+        "distance_metro_text": "a 1,4 km del metro plaza puente alto",
+        "distance_bus_text": null,
+        "parking_text": "2 estacionamientos propios",
+        "pets_text": "no aceptan mascotas por reglamento",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "OOD-204": {
+      "location": "depto",
+      "bedrooms": 2,
+      "price_text": "135 millones",
+      "rent_text": null,
+      "distance_metro_text": "600 mts",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"depto 2d 1b 62 mts en la florida\",\n  \"bedrooms_text\": \"2d 1b\",\n  \"price_text\": \"135 millones\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"a 600 mts del metro\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento subterraneo incluido\",\n  \"pets_text\": \"pet friendly total\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "depto 2d 1b 62 mts en la florida",
+        "bedrooms_text": "2d 1b",
+        "price_text": "135 millones",
+        "rent_text": null,
+        "distance_metro_text": "a 600 mts del metro",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento subterraneo incluido",
+        "pets_text": "pet friendly total",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "OOD-205": {
+      "location": "2d/2b",
+      "bedrooms": 2,
+      "price_text": "3.300 UF",
+      "rent_text": "700",
+      "distance_metro_text": "850 mts",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"2d/2b 70 mts en macul\",\n  \"bedrooms_text\": \"2d/2b\",\n  \"price_text\": \"3.300 uf.\",\n  \"rent_text\": \"renta 700 lucas\",\n  \"distance_metro_text\": \"a 850 mts del metro.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento asignado.\",\n  \"pets_text\": \"aceptan solo perros.\",\n  \"acepta_mascotas\": \"no\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "2d/2b 70 mts en macul",
+        "bedrooms_text": "2d/2b",
+        "price_text": "3.300 uf.",
+        "rent_text": "renta 700 lucas",
+        "distance_metro_text": "a 850 mts del metro.",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento asignado.",
+        "pets_text": "aceptan solo perros.",
+        "acepta_mascotas": "no",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "OOD-206": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "3.100 UF",
+      "rent_text": "650.000",
+      "distance_metro_text": "700 mts",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 10.0,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto 2d 1b en la florida\",\n  \"bedrooms_text\": \"2d 1b\",\n  \"price_text\": \"3.100 UF\",\n  \"rent_text\": \"arriendo 650.000\",\n  \"distance_metro_text\": \"a 700 mts del metro\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"tiene estacionamiento propio\",\n  \"pets_text\": \"aceptan gatos y perros hasta 10 kg\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2d 1b en la florida",
+        "bedrooms_text": "2d 1b",
+        "price_text": "3.100 UF",
+        "rent_text": "arriendo 650.000",
+        "distance_metro_text": "a 700 mts del metro",
+        "distance_bus_text": null,
+        "parking_text": "tiene estacionamiento propio",
+        "pets_text": "aceptan gatos y perros hasta 10 kg",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "OOD-201": {
+      "price_clp": 124000000,
+      "roi_pct": 0.01,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.200 UF' = 3200 UF -> 124,000,000 CLP <= 130,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=8.0 vs gato 5kg -> ok",
+        "distancia: metro='400 mts' bus=None -> min=400 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "OOD-202": {
+      "price_clp": 112375000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '2.900 UF' = 2900 UF -> 112,375,000 CLP <= 130,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 5kg -> ok",
+        "distancia: metro='300 mts' bus=None -> min=300 vs max 1000",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: ninguno (requerido=True)"
+      ]
+    },
+    "OOD-203": {
+      "price_clp": 118000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "distancia_transporte",
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '118 millones' = 1.18e+08 CLP -> 118,000,000 CLP <= 130,000,000",
+        "mascotas: politica=no_permitidas especies=cualquiera max_kg=None vs gato 5kg -> FALLA",
+        "distancia: metro='1,4 km' bus=None -> min=1400 vs max 1000",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-204": {
+      "price_clp": 135000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '135 millones' = 1.35e+08 CLP -> 135,000,000 CLP > 130,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 5kg -> ok",
+        "distancia: metro='600 mts' bus=None -> min=600 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-205": {
+      "price_clp": 127875000,
+      "roi_pct": 0.01,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.300 UF' = 3300 UF -> 127,875,000 CLP <= 130,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs gato 5kg -> FALLA",
+        "distancia: metro='850 mts' bus=None -> min=850 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "OOD-206": {
+      "price_clp": 120125000,
+      "roi_pct": 6.49,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.100 UF' = 3100 UF -> 120,125,000 CLP <= 130,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=10.0 vs gato 5kg -> ok",
+        "distancia: metro='700 mts' bus=None -> min=700 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

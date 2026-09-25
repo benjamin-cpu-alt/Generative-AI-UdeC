@@ -1,0 +1,140 @@
+{
+  "id": "ood_012",
+  "uf_value": 38950,
+  "style": "Avisos largos, saturados de marketing (trampa de atención selectiva).",
+  "hard_constraints": {
+    "presupuesto_max_clp": 165000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 8,
+    "distancia_max_transporte_m": 700,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Providencia"
+    ]
+  },
+  "properties": [
+    {
+      "id": "OOD-1201",
+      "text": "¡OPORTUNIDAD ÚNICA EN EL CORAZÓN DE PROVIDENCIA! Espectacular departamento de 2 dormitorios y 2 baños, 78 m² totalmente remodelados, cocina americana, piso flotante y ventanas termopanel. El barrio más cotizado de Santiago, rodeado de cafés, parques y colegios de primer nivel. Valor: UF 4.180, ¡muy por debajo de la tasación comercial! A solo 350 metros del Metro Manuel Montt. Edificio pet friendly, se aceptan mascotas de hasta 12 kilos. Incluye estacionamiento subterráneo y bodega. Renta actual: $880.000 mensuales. ¡No la dejes pasar!",
+      "note": "cumple, pero el dato útil está enterrado en 90 palabras de marketing",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 350,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 12
+        },
+        "parking": "propio",
+        "price_uf": 4180,
+        "price_clp": null,
+        "rent_monthly_clp": 880000,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "OOD-1202",
+      "text": "¡IMPERDIBLE! Hermoso departamento en el mejor sector de Providencia, a pasos de todo. 2 dormitorios amplios, 1 baño completo, 65 m². Precio: UF 4.350, ¡bajo el presupuesto de cualquier comprador según nuestro tasador! A 300 metros del metro. Aceptamos mascotas sin restricción. Estacionamiento propio incluido en el precio.",
+      "note": "la trampa de la E1: '¡bajo el presupuesto!' sobre un precio que lo excede",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4350,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "OOD-1203",
+      "text": "EXCELENTE INVERSIÓN. Departamento de 2D/2B en Ñuñoa, 70 m², orientación nororiente, excelente luminosidad natural durante todo el día. Ideal para inversionistas: alta demanda de arriendo en el sector. Valor: UF 4.100. Ubicado a 1,5 km del Metro Irarrázaval, pero con excelente conectividad y locomoción a pasos. Se aceptan mascotas pequeñas. Estacionamiento propio.",
+      "note": "'conectividad excelente' minimizando 1,5 km reales",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4100,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "OOD-1204",
+      "text": "¡ÚLTIMA UNIDAD DISPONIBLE! Moderno departamento de 2 dormitorios y 2 baños en Providencia, 72 m². Terminaciones premium, conserjería 24/7, gimnasio y sala multiuso. Valor: UF 4.000. A 250 metros del Metro Salvador. El reglamento de copropiedad NO permite mascotas de ninguna especie. Incluye un estacionamiento asignado.",
+      "note": "negativa de mascotas enterrada entre amenidades",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 250,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "OOD-1205",
+      "text": "OPORTUNIDAD DE INVERSIÓN EN PROVIDENCIA. Acogedor departamento de 1 dormitorio más amplio living-comedor que puede habilitarse fácilmente como segundo dormitorio, 1 baño, 52 m². Valor: UF 3.900. A 400 metros del metro. Pet friendly, sin restricciones de tamaño. Estacionamiento propio. Renta estimada: $700.000.",
+      "note": "el dormitorio 'convertible' de la E1, redactado de otra forma",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3900,
+        "price_clp": null,
+        "rent_monthly_clp": 700000,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "OOD-1206",
+      "text": "¡GRAN OPORTUNIDAD! Departamento 2D/1B de 68 m² en Providencia, inmejorable ubicación. Valor: UF 4.150. A 500 metros del Metro Los Leones, en pleno corazón del barrio El Golf. Se aceptan gatos y perros de hasta 15 kilos. Cuenta con amplio estacionamiento para visitas y acceso vehicular controlado. Renta: $820.000.",
+      "note": "'amplio estacionamiento para visitas' suena a ventaja pero no cumple",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "visitas",
+        "price_uf": 4150,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    }
+  ]
+}

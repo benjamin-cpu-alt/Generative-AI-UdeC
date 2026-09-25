@@ -103,7 +103,9 @@ def evaluate_property(prop: Property, case: Case) -> ExpectedProperty:
     if not pets_ok:
         failed.append(C_PETS)
 
-    if t.distance_transport_m > hc.distancia_max_transporte_m:
+    # Sin distancia publicada no se puede verificar la restricción -> falla (no se aprueba
+    # una propiedad cuya cercanía al transporte es indemostrable).
+    if t.distance_transport_m is None or t.distance_transport_m > hc.distancia_max_transporte_m:
         failed.append(C_DISTANCE)
 
     if t.bedrooms < hc.dormitorios_min:

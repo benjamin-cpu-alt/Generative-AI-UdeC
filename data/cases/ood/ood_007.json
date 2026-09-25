@@ -1,0 +1,145 @@
+{
+  "id": "ood_007",
+  "uf_value": 39200,
+  "style": "Política de mascotas con fraseos poco habituales.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 170000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 20,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Peñalolén",
+      "La Reina"
+    ]
+  },
+  "properties": [
+    {
+      "id": "OOD-701",
+      "text": "Depto 2D/2B, 75 m², La Reina. UF 4.200. A 600 m de paradero troncal. Se admite una mascota por departamento, sin restricción de tamaño. Estacionamiento propio. Arriendo: $820.000.",
+      "note": "'una mascota por departamento' = permitidas, sin límite de peso ni especie",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4200,
+        "price_clp": null,
+        "rent_monthly_clp": 820000,
+        "location": "La Reina"
+      }
+    },
+    {
+      "id": "OOD-702",
+      "text": "Casa 3D/2B, 100 m², Peñalolén. $160.000.000. A 700 metros del metro. Se aceptan perros hasta veinte kilos. Estacionamiento propio. Arriendo: $900.000.",
+      "note": "límite en palabras ('veinte kilos') EXACTAMENTE igual al peso del perro: 20 <= 20 cumple",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 20
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 160000000,
+        "rent_monthly_clp": 900000,
+        "location": "Peñalolén"
+      }
+    },
+    {
+      "id": "OOD-703",
+      "text": "Depto 2D/1B, 68 m², La Reina. UF 4.100. A 500 m del metro. Prohibido mantener perros; gatos sí están permitidos. Estacionamiento propio.",
+      "note": "negación invertida: prohíbe primero, permite después",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4100,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      }
+    },
+    {
+      "id": "OOD-704",
+      "text": "Depto 2D/1B, 66 m², Peñalolén. UF 4.000. A 450 metros del metro. Solo mascotas de raza pequeña, máximo 8 kg. Estacionamiento propio.",
+      "note": "adjetivo cualitativo + límite numérico en la misma frase",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 450,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 8
+        },
+        "parking": "propio",
+        "price_uf": 4000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      }
+    },
+    {
+      "id": "OOD-705",
+      "text": "Depto 2D/1B, 60 m², Macul. UF 3.900. A 400 m del metro. Estacionamiento propio. Excelente conectividad.",
+      "note": "el aviso simplemente no habla de mascotas",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3900,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "OOD-706",
+      "text": "Depto 2D/2B, 80 m², La Reina. UF 4.350. A 300 metros del metro. Aceptamos mascotas, incluidos perros grandes. Estacionamiento de visitas disponible las 24 horas.",
+      "note": "mascotas OK pero el estacionamiento es de visitas",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 4300,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      }
+    }
+  ]
+}

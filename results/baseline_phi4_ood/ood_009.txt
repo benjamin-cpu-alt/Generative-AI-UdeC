@@ -1,0 +1,32 @@
+{
+  "approved_matches": [
+    {
+      "id": "OOD-901",
+      "price_clp": 3500000,
+      "roi_pct": 49.68
+    },
+    {
+      "id": "OOD-904",
+      "price_clp": 3450000,
+      "roi_pct": 55.90
+    }
+  ],
+  "rejected": [
+    {
+      "id": "OOD-902",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 450 m excede el límite de 900 m."]
+    },
+    {
+      "id": "OOD-903",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 600 m excede el límite de 900 m.", "Estacionamiento: Cuenta con estacionamientos de visita y acceso controlado."]
+    },
+    {
+      "id": "OOD-905",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 850 m excede el límite de 900 m.", "Mascotas: Acepta mascotas hasta 6 kilos. (violando la restricción de tamaño de la mascota)."]
+    },
+    {
+      "id": "OOD-906",
+      "failed_constraints": ["Presupuesto Máximo de Compra: $160.000.000 CLP (excede el presupuesto máximo de $155.000.000 CLP)."]
+    }
+  ]
+}

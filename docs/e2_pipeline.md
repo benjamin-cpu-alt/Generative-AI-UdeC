@@ -150,3 +150,109 @@ Los 11 casos de test sin `full_correct` son rechazos falsos o de ranking, nunca 
 rellenado con los nombres del esquema (alucinación por decodificación restringida → sin respaldo
 → rechazo); 2× distancia no anclada; 2× ranking (`location` no literal). Fallback de dormitorios
 usado en 56/352 propiedades (notación "3D/1B" que el modelo no reconoce): se reporta como límite.
+
+## Set OOD: avisos escritos a mano
+
+`data/cases/ood/` — 12 casos, 70 propiedades, 19 aprobadas (27 %), construidos con
+`scripts/build_ood.py` y auto-verificados contra `rules.py`. Ninguna plantilla del
+generador: fichas de portal, WhatsApp sin tildes, MAYÚSCULAS con erratas, cifras en
+palabras, "135 millones", "620 lucas", `UF 4.250,5`, rangos de precio, `2D+servicio`,
+`3D+E`, gastos comunes junto al precio, distancias solo en minutos. Detalle y convenciones
+de anotación en [`data/cases/ood/README.md`](../data/cases/ood/README.md).
+
+Existe para responder la objeción que la solución se gana sola: si la interpretación la
+hace el código, **¿queda algo que el LLM aporte, o esto es un regex sobre las plantillas
+del generador?** La respuesta se mide, no se argumenta.
+
+## Capa de anclaje: g1 → g2 → g3
+
+La intervención tiene dos piezas versionadas por separado: el **prompt del extractor**
+(v1…v5, lo que se le pide al modelo) y la **capa de anclaje** (g1…g3, lo que hace el
+código con lo que el modelo devuelve). `--grounding` las selecciona; las tres son
+reproducibles, así que cada fila de las tablas se puede regenerar.
+
+| Capa | Qué añade | De dónde salió |
+|---|---|---|
+| `g1` | anclaje de spans + parsers; recuperación desde el aviso solo para dormitorios | la corrida original de v5 |
+| `g2` | **A.** recuperación de cláusula para mascotas, estacionamiento, distancias y ubicación cuando el span no ancla. **B.** especies leídas de la cláusula por parseo en vez de las tres respuestas del modelo | análisis de los 11 fallos de `tools_phi4_v5` (test) |
+| `g3` | cinco correcciones de parseo y seguridad (abajo) | correr g2 sobre el set OOD |
+
+Las cinco de g3, todas con **impacto cero en test y dev** (la ruta que corrigen no se
+activa con los avisos del generador; se verificó comparando las salidas byte a byte):
+
+1. `"135 millones"` = 135.000.000 CLP (formato estándar en Chile).
+2. **No adivinar la unidad del precio.** Si el aviso no dice UF ni `$` junto al número, el
+   precio queda *no verificable* y la propiedad no se aprueba. Adivinar por magnitud leyó
+   "piden 135 millones" como 135 UF = $5,2 M y aprobó dos propiedades fuera de presupuesto.
+3. `"Estacionamiento opcional, se arrienda aparte"` ya no cae en la rama por defecto
+   `propio`. El defecto de diseño era que la rama permisiva fuera la de descarte.
+4. En una distancia, `"1.500 mts"` son 1500 m y no 1,5 m: el punto de miles se leía como
+   decimal y aprobaba una propiedad a 1,5 km del metro.
+5. `"UF 4.250,5"` se ancla completo (miles y decimales a la vez), como ya hacía
+   `normalize.parse_number`.
+
+Las cuatro primeras solo pueden **quitar** aprobaciones; la quinta puede añadir una, y se
+declara como tal. Las cinco se encontraron mirando OOD, así que la columna g3 sobre OOD
+**no es una medición ciega**; la que sí lo es, es g2.
+
+## Resultados finales
+
+phi4-mini 3.8B, prompt del extractor v5, temperatura 0, semilla 0. `e1_strict` es el
+criterio de corrección del Entregable 1; `full_correct` exige además conjunto exacto y
+orden correcto.
+
+### Test — 51 casos held-out, plantillas del generador
+
+| Run | e1_strict | full_correct | aprob. indebida | aritmética | esquema | s/caso M4 · RTX |
+|---|---|---|---|---|---|---|
+| Baseline (prompting directo) | 0/51 | 0 | 40 | 6 | 5 | 15,8 · 11,9 |
+| A · CoT, una llamada | 0/51 | 0 | 43 | 4 | 4 | 21,0 |
+| B · Descomposición sin herramientas | 0/51 | 0 | 41 | 4 | 6 | 51,4 |
+| C · Solución, extractor v1 + g1 | 30/51 | 22 | 20 | 1 | 0 | 29,7 · 31,0 |
+| C · Solución, v5 + g1 | 51/51 | 40 | 0 | 0 | 0 | 35,3 · 43,2 |
+| **C · Solución, v5 + g3** | **51/51** | **51** | **0** | **0** | **0** | 35,3 · 43,2 |
+
+Dev (30 casos de `train/`, donde se eligió v5): v1+g1 21/30, v5+g1 29/30, v5+g3 **30/30**.
+
+### OOD — 12 casos escritos a mano
+
+| Run | e1_strict | full_correct | aprob. indebida | aritmética |
+|---|---|---|---|---|
+| Baseline | 0/12 | 0 | 7 | 4 |
+| Solución v5 + g1 | 8/12 | 4 | 4 | 0 |
+| Solución v5 + g2 *(medición ciega)* | 9/12 | 5 | 3 | 0 |
+| Solución v5 + g3 | 11/12 | 7 | 0 | 1 |
+
+El baseline también se derrumba aquí (0/12), así que la comparación sigue siendo válida.
+La caída de 51/51 a 9/12 entre test y OOD **es el resultado más informativo del trabajo**:
+mide cuánto de la solución dependía de las plantillas del generador.
+
+## Límites, con mecanismo
+
+Los cinco fallos que quedan en OOD con g3. Ninguno es una aprobación indebida salvo donde
+se indica; el sistema se equivoca **siendo conservador**, que es la dirección segura.
+
+| Caso | Qué pasa | Mecanismo |
+|---|---|---|
+| `ood_002` OOD-201 | `"Arriendo referencial 620 lucas"` → arriendo = 620 → ROI 0,01 en vez de 6,0. **Rompe `e1_strict`** (error aritmético sobre una propiedad aprobada) | El anclaje exige que el número esté en el aviso, y "620" lo está. Lo que falta es la unidad: "lucas" (miles de pesos) es jerga chilena que ni el modelo traduce ni el normalizador conoce. Un multiplicador para "lucas"/"k" sería un parche a un caso; la corrección de fondo es la misma de g3.2 aplicada al arriendo — exigir marca de moneda —, pero eso convierte el ROI en `null` y el criterio E1 lo castiga igual. Es un límite del **criterio**, no solo del sistema |
+| `ood_003` OOD-301 | `"ciento cuarenta y cinco millones de pesos"` → precio no verificable → rechazo falso | No hay ningún dígito que anclar. El diseño exige que el número exista en el aviso, así que un aviso sin dígitos es, por construcción, no procesable. Es el precio de la garantía de no aprobar con números inventados |
+| `ood_005` OOD-502 | `"3D+E (escritorio)"` → dormitorios `null` → rechazo falso | El fallback busca `"ND/"` o `"N dormitorios"`; `"3D+E"` no coincide. Es exactamente la fragilidad que el set OOD existe para exponer: el parser cubre las notaciones del generador y una variante real se le escapa |
+| `ood_011` OOD-1101 | `"2D 1B."` → dormitorios `null` → rechazo falso | Mismo mecanismo: la notación telegráfica sin barra no está cubierta |
+| `ood_004` | Ranking: OOD-406 (Conchalí) antes que OOD-402 (Recoleta, comuna preferida) | `parse_location` asume que la comuna sigue a "en" (`"Depto en Providencia"`). En `"Depto 2D/2B, 72 m², Recoleta."` la comuna va al final y el parser devuelve el fragmento equivocado: 47 de 70 propiedades. Solo afecta el ranking (soft constraint), nunca una aprobación |
+
+Dos de los cinco (`3D+E`, `2D 1B`) se arreglarían ampliando el parser de dormitorios, y el
+del ranking con una lista de comunas. **No se hizo a propósito**: son mejoras que *añaden*
+aprobaciones y se descubrieron mirando el conjunto de evaluación, así que incluirlas
+convertiría la cifra de OOD en un número ajustado. Quedan documentadas como trabajo de la
+E3.
+
+### Qué aporta el LLM, medido
+
+Con la interpretación movida al código, la objeción legítima es si el modelo sigue haciendo
+algo. La respuesta está en la tabla de extracción por campo sobre OOD (`extract_report
+--run tools_phi4_v5_ood_g3 --cases ../data/cases/ood`): sobre 70 avisos que ninguna
+plantilla generó, el modelo localiza correctamente el precio en el 97 %, la distancia en el
+99 %, la política de mascotas en el 99 % y el estacionamiento en el 94 % de los casos. Los
+parsers reciben la cláusula correcta porque el modelo la encontró en texto libre, con
+marketing, erratas y mayúsculas de por medio. Lo que el código aporta es que, una vez
+localizada, la interpretación sea determinista y la aritmética exacta.

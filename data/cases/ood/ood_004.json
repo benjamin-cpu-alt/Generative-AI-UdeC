@@ -1,0 +1,144 @@
+{
+  "id": "ood_004",
+  "uf_value": 38900,
+  "style": "Distancias en minutos, en micro, o en metros junto a minutos.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 190000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 900,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Recoleta"
+    ]
+  },
+  "properties": [
+    {
+      "id": "OOD-401",
+      "text": "Depto 2D/1B, 60 m², Recoleta. UF 4.300. A pasos del Metro Cerro Blanco, unos 5 minutos caminando. Se aceptan gatos. Estacionamiento propio. Arriendo: $720.000.",
+      "note": "'a pasos' + minutos, sin metros -> no verificable",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4300,
+        "price_clp": null,
+        "rent_monthly_clp": 720000,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "OOD-402",
+      "text": "Depto 2D/2B, 72 m², Recoleta. UF 4.600. A 350 metros del Metro Patronato, aproximadamente 4 minutos a pie. Mascotas permitidas hasta 10 kilos. Estacionamiento asignado. Arriendo: $850.000.",
+      "note": "metros Y minutos en la misma frase: debe usar los metros",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 350,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 10
+        },
+        "parking": "asignado",
+        "price_uf": 4600,
+        "price_clp": null,
+        "rent_monthly_clp": 850000,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "OOD-403",
+      "text": "Depto 3D/1B, 85 m², Independencia. $165.000.000. Muy bien conectado, a 15 minutos del metro en micro. Acepta mascotas. Estacionamiento propio.",
+      "note": "'15 minutos en micro': ni siquiera es caminando",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 165000000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "OOD-404",
+      "text": "Depto 2D/1B, 58 m², Recoleta. UF 4.900 (negociable). A 800 m del metro. Pet friendly, sin límite de peso ni especie. Estacionamiento propio. Arriendo: $800.000.",
+      "note": "near miss: UF 4.900 = $190.610.000, sobre el tope por $610.000",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4900,
+        "price_clp": null,
+        "rent_monthly_clp": 800000,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "OOD-405",
+      "text": "Depto 2D/1B, 55 m², Recoleta. UF 4.200. A 500 metros del metro y a 200 metros de paradero de Transantiago troncal. Solo se aceptan perros. Estacionamiento propio.",
+      "note": "dos distancias válidas; falla por especie (comprador tiene gato)",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4200,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "OOD-406",
+      "text": "Casa 3D/2B, 98 m², Conchalí. $150.000.000. A 1.100 metros del metro, pero a 400 metros de paradero troncal. Acepta gatos y perros. Estacionamiento propio. Arriendo: $900.000.",
+      "note": "cumple por el paradero; NO preferida y con mayor ROI que OOD-402",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 150000000,
+        "rent_monthly_clp": 900000,
+        "location": "Conchalí"
+      }
+    }
+  ]
+}

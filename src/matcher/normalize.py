@@ -29,8 +29,13 @@ def parse_number(text: str) -> Optional[float]:
 def parse_money(text: Optional[str]) -> Tuple[Optional[float], Optional[str]]:
     """Devuelve (valor, unidad) con unidad en {"UF", "CLP"} o (None, None).
 
-    La unidad se decide por el texto ("UF" vs "$"/"CLP"/"pesos"); si no viene, por
-    magnitud (un precio de vivienda en UF está en el orden de 10^3–10^4; en CLP en 10^7–10^9).
+    La unidad se decide por el texto ("UF" vs "$"/"CLP"/"pesos"). "135 millones" son
+    135.000.000 CLP: es una forma estándar de escribir precios en Chile y aparece en los
+    avisos reales del set OOD (`data/cases/ood/`). Si el texto no trae ninguna marca de
+    unidad, se decide por magnitud (un precio de vivienda en UF está en el orden de
+    10^3–10^4; en CLP en 10^7–10^9); esa suposición es la que `grounding` desactiva con
+    `require_unit=True` a partir de g3, porque adivinar la unidad puede aprobar una
+    propiedad que está fuera de presupuesto.
     """
     if not text:
         return None, None
@@ -38,6 +43,8 @@ def parse_money(text: Optional[str]) -> Tuple[Optional[float], Optional[str]]:
     if value is None:
         return None, None
     t = text.upper()
+    if re.search(r"MILL[OÓ]N|MILLONES", t):
+        return value * 1_000_000, "CLP"
     if "UF" in t:
         return value, "UF"
     if "$" in t or "CLP" in t or "PESO" in t:

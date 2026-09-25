@@ -1,0 +1,122 @@
+{
+  "id": "ood_011",
+  "uf_value": 39400,
+  "style": "Avisos telegráficos: frases de dos palabras, '600k'.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 135000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 15,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Independencia"
+    ]
+  },
+  "properties": [
+    {
+      "id": "OOD-1101",
+      "text": "2D 1B. 55m2. Independencia. UF 3.300. Metro a 350m. Mascotas OK hasta 20kg. Est. propio. Arriendo 600k.",
+      "note": "'Est. propio' abreviado; '600k' = $600.000",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 350,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 20
+        },
+        "parking": "propio",
+        "price_uf": 3300,
+        "price_clp": null,
+        "rent_monthly_clp": 600000,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "OOD-1102",
+      "text": "1D 1B. 42m2. Independencia. UF 2.900. Metro 200m. Mascotas OK. Est. asignado.",
+      "note": "telegráfico, un dormitorio",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 2900,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "OOD-1103",
+      "text": "3D 2B. 78m2. Recoleta. UF 3.400. Metro 1km. Sin mascotas. Est. propio.",
+      "note": "'Metro 1km' sin preposición; dos fallos",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3400,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "OOD-1104",
+      "text": "2D 1B. 58m2. Independencia. UF 3.380. Metro 400m. Solo gatos. Est. propio.",
+      "note": "'Solo gatos' en dos palabras; comprador tiene perro",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3380,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "OOD-1105",
+      "text": "2D 2B. 60m2. Independencia. UF 3.420. Metro 600m. Perros y gatos OK. Est. visitas.",
+      "note": "'Est. visitas' abreviado; precio justo bajo el tope",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 3420,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      }
+    }
+  ]
+}

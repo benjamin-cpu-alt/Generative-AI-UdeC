@@ -1,0 +1,292 @@
+{
+  "facts": {
+    "OOD-401": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "4.300 UF",
+      "rent_text": "$720.000",
+      "distance_metro_text": null,
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto 2D/1B, 60 m², Recoleta\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 4.300\",\n  \"rent_text\": \"Arriendo: $720.000.\",\n  \"distance_metro_text\": \"A pasos del Metro Cerro Blanco, unos 5 minutos caminando.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio.\",\n  \"pets_text\": \"Se aceptan gatos.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/1B, 60 m², Recoleta",
+        "bedrooms_text": null,
+        "price_text": "UF 4.300",
+        "rent_text": "Arriendo: $720.000.",
+        "distance_metro_text": "A pasos del Metro Cerro Blanco, unos 5 minutos caminando.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio.",
+        "pets_text": "Se aceptan gatos.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('2D/')"
+      ]
+    },
+    "OOD-402": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "4.600 UF",
+      "rent_text": "$850.000",
+      "distance_metro_text": "350 metros",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 10.0,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto 2D/2B, 72 m², Recoleta\",\n  \"bedrooms_text\": \"2D/2B\",\n  \"price_text\": \"UF 4.600\",\n  \"rent_text\": \"Arriendo: $850.000\",\n  \"distance_metro_text\": \"350 metros del Metro Patronato, aproximadamente 4 minutos a pie\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento asignado\",\n  \"pets_text\": \"Mascotas permitidas hasta 10 kilos\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/2B, 72 m², Recoleta",
+        "bedrooms_text": "2D/2B",
+        "price_text": "UF 4.600",
+        "rent_text": "Arriendo: $850.000",
+        "distance_metro_text": "350 metros del Metro Patronato, aproximadamente 4 minutos a pie",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento asignado",
+        "pets_text": "Mascotas permitidas hasta 10 kilos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "OOD-403": {
+      "location": "Depto",
+      "bedrooms": 3,
+      "price_text": "$165.000.000",
+      "rent_text": null,
+      "distance_metro_text": null,
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto 3D/1B, 85 m², Independencia\", \"bedrooms_text\": null, \"price_text\": \"$165.000.000\", \"rent_text\": null, \"distance_metro_text\": \"a 15 minutos del metro en micro\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento propio\", \"pets_text\": \"Acepta mascotas\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 3D/1B, 85 m², Independencia",
+        "bedrooms_text": null,
+        "price_text": "$165.000.000",
+        "rent_text": null,
+        "distance_metro_text": "a 15 minutos del metro en micro",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Acepta mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "OOD-404": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "4.900 UF",
+      "rent_text": "$800.000",
+      "distance_metro_text": "800 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto 2D/1B, 58 m², Recoleta\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 4.900 (negociable)\",\n  \"rent_text\": \"Arriendo: $800.000\",\n  \"distance_metro_text\": \"A 800 m del metro\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio\",\n  \"pets_text\": \"Pet friendly, sin límite de peso ni especie\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/1B, 58 m², Recoleta",
+        "bedrooms_text": null,
+        "price_text": "UF 4.900 (negociable)",
+        "rent_text": "Arriendo: $800.000",
+        "distance_metro_text": "A 800 m del metro",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Pet friendly, sin límite de peso ni especie",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('2D/')"
+      ]
+    },
+    "OOD-405": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "4.200 UF",
+      "rent_text": null,
+      "distance_metro_text": "500 metros",
+      "distance_bus_text": "200 metros",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto 2D/1B, 55 m², Recoleta\", \"bedrooms_text\": null, \"price_text\": \"UF 4.200\", \"rent_text\": null, \"distance_metro_text\": \"500 metros del metro\", \"distance_bus_text\": \"200 metros de paradero de Transantiago troncal\", \"parking_text\": \"Estacionamiento propio\", \"pets_text\": \"Solo se aceptan perros\", \"acepta_mascotas\": \"no\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"no\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/1B, 55 m², Recoleta",
+        "bedrooms_text": null,
+        "price_text": "UF 4.200",
+        "rent_text": null,
+        "distance_metro_text": "500 metros del metro",
+        "distance_bus_text": "200 metros de paradero de Transantiago troncal",
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Solo se aceptan perros",
+        "acepta_mascotas": "no",
+        "acepta_perros": "si",
+        "acepta_gatos": "no"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('2D/')"
+      ]
+    },
+    "OOD-406": {
+      "location": "Conchalí",
+      "bedrooms": 3,
+      "price_text": "$150.000.000",
+      "rent_text": "$900.000",
+      "distance_metro_text": "1100 metros",
+      "distance_bus_text": "400 metros",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Conchalí\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"$150.000.000\",\n  \"rent_text\": \"Arriendo: $900.000.\",\n  \"distance_metro_text\": \"A 1.100 metros del metro\",\n  \"distance_bus_text\": \"a 400 metros de paradero troncal\",\n  \"parking_text\": \"Estacionamiento propio\",\n  \"pets_text\": \"acepta gatos y perros\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Conchalí",
+        "bedrooms_text": null,
+        "price_text": "$150.000.000",
+        "rent_text": "Arriendo: $900.000.",
+        "distance_metro_text": "A 1.100 metros del metro",
+        "distance_bus_text": "a 400 metros de paradero troncal",
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "acepta gatos y perros",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    }
+  },
+  "decisions": {
+    "OOD-401": {
+      "price_clp": 167270000,
+      "roi_pct": 5.17,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.300 UF' = 4300 UF -> 167,270,000 CLP <= 190,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 6kg -> ok",
+        "distancia: metro=None bus=None -> min=None vs max 900",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-402": {
+      "price_clp": 178940000,
+      "roi_pct": 5.7,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.600 UF' = 4600 UF -> 178,940,000 CLP <= 190,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=10.0 vs gato 6kg -> ok",
+        "distancia: metro='350 metros' bus=None -> min=350 vs max 900",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "OOD-403": {
+      "price_clp": 165000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$165.000.000' = 1.65e+08 CLP -> 165,000,000 CLP <= 190,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro=None bus=None -> min=None vs max 900",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-404": {
+      "price_clp": 190610000,
+      "roi_pct": 5.04,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.900 UF' = 4900 UF -> 190,610,000 CLP > 190,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='800 m' bus=None -> min=800 vs max 900",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-405": {
+      "price_clp": 163380000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.200 UF' = 4200 UF -> 163,380,000 CLP <= 190,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs gato 6kg -> FALLA",
+        "distancia: metro='500 metros' bus='200 metros' -> min=200 vs max 900",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-406": {
+      "price_clp": 150000000,
+      "roi_pct": 7.2,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$150.000.000' = 1.5e+08 CLP -> 150,000,000 CLP <= 190,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='1100 metros' bus='400 metros' -> min=400 vs max 900",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}
