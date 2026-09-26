@@ -1,0 +1,128 @@
+{
+  "id": "real_001",
+  "uf_value": 41024.46,
+  "hard_constraints": {
+    "presupuesto_max_clp": 150000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Providencia",
+      "Ñuñoa"
+    ]
+  },
+  "properties": [
+    {
+      "id": "REAL-01",
+      "text": "Casa en Santiago. 3D/3B, 85 m². Precio: UF 4.420. Incluye 2 estacionamientos. • Admite mascotas. • Bodega. [VEN] ID HOUM: 138743. En Houm te lo hacemos más fácil y seguro. Los beneficios de comprar con nosotros:. Te ayudamos a conseguir financiamiento a través de una asesoría personalizada. Mediación y seguimiento de todo el proceso. Comisión del 2% + IVA. ¡Solo te preocupas de las firmas! Casa en venta, ubicada en la comuna de Santiago, con una superficie construida de 85.00 m² y superficie total de 105.00 m². Sus principales características son:. 3 dormitorios. 3 baños. Admite mascotas. 2 estacionamientos. Año de construcción: 2011. Logia. Bodega. Si compras con nosotros, te brindamos asesoría personalizada durante todo el proceso. Más que una corredora, somos Houm. Aplican T&C.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4420,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      },
+      "fuente": "https://www.yapo.cl/bienes-raices-venta-de-propiedades-casas/casa-en-pasaje-san-oscar/31542208",
+      "portal": "yapo",
+      "note": "Yapo sin coordenadas: la ficha no trae distancia",
+      "expect": [
+        "distancia_transporte",
+        "presupuesto"
+      ]
+    },
+    {
+      "id": "REAL-05",
+      "text": "Casa en Santiago, Maule. 6D/4B, 300 m². Precio: $260.000.000. Distancia estimada a la estación de metro Matta: 1330 m. Superficie: 420 m². Se vende amplia casa de dos pisos, ubicada en calle Maule, comuna de Santiago, en un sector con excelente conectividad y cercanía a transporte público. La propiedad destaca por su gran terreno y múltiples espacios interiores, lo que la hace ideal tanto para uso habitacional como para proyectos institucionales o comerciales. Características de la propiedad:. Superficie de terreno: 420 m² aprox. Superficie construida: 300 m². Varias piezas interiores. 4 baños. Patio interior. Patio trasero con quincho. Ubicación y conectividad:. Cercana al Metro Rondizzoni. Excelente acceso a Línea 2 del Metro. Sector con buena locomoción y servicios. 💼 Comisión de corretaje: 2% + IVA. (Incluye asesoría legal). 📞 Barros Propiedades.",
+      "truth": {
+        "bedrooms": 6,
+        "distance_transport_m": 1330,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 260000000,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      },
+      "fuente": "https://chilepropiedades.cl/ver-publicacion/venta/santiago/casa/maule/116503429",
+      "portal": "chilepropiedades",
+      "note": "6D es el dato del portal; la descripción dice 'varias piezas'",
+      "expect": [
+        "distancia_transporte",
+        "estacionamiento",
+        "mascotas",
+        "presupuesto"
+      ]
+    },
+    {
+      "id": "REAL-09",
+      "text": "Departamento en Providencia. Precio: UF 10.409. Distancia estimada a la estación de metro Inés de Suárez: 1137 m. Este departamento de 2 dormitorios en suite tiene una distribución muy funcional y luminosa, con espacios bien aprovechados y acabados de alta calidad. Cuenta con cocina equipada y un gran living comedor con terraza. bodega. SIN COMISIÓN!!",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1137,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 10409,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "fuente": "https://www.icasas.cl/propiedad/6752-b254-1077514b-a6fff69b9d72-4d94",
+      "portal": "icasas",
+      "note": "sin '2D/' en la ficha: el número sale de '2 dormitorios en suite'",
+      "expect": [
+        "distancia_transporte",
+        "estacionamiento",
+        "mascotas",
+        "presupuesto"
+      ]
+    },
+    {
+      "id": "REAL-13",
+      "text": "Departamento en Providencia. 3D/2B. Precio: UF 7.300. Distancia estimada a la estación de metro Francisco Bilbao: 410 m. Departamento actualmente Arrendado (hasta Enero). En Venta luminoso departamento remodelado con finas terminaciones de 86m2 útiles/ 94m2 total. con hermosa vista despejada excelente conectividad a pasos de estación de metro Francisco Bilbao, colegios, movilización y buenos accesos. Amplio Departamento de 3 dormitorios con distribución: Habitación principal amplia, luminosa con salida a terraza, Habitación segunda buen tamaño, luminosa. Baño compartido con ventilación natural, segundo baño de visita sin ducha, con conexión a lavadora. Cuenta con estacionamiento y bodega. El edificio cuenta con conserjería 24/7, estacionamientos de visitas, jardines, juegos para niños, quinchos y un bicicletero cerrado. Orientación: Norte. Solicite una visita a VOD Propiedades.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 410,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 7300,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "fuente": "https://www.toctoc.com/venta/departamento/metropolitana/providencia/b_a0889ceecfdb2e4d386ba82f495a64d1b54efaca",
+      "portal": "toctoc",
+      "note": "'Cuenta con estacionamiento y bodega'; 'actualmente arrendado' no publica monto",
+      "expect": [
+        "mascotas",
+        "presupuesto"
+      ]
+    }
+  ]
+}

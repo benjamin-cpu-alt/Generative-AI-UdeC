@@ -3,8 +3,9 @@
 ## Modelo comprometido
 
 `phi4-mini:latest` (Phi-4-mini-instruct, 3.8B, Ollama digest `78fad5d182a7`, cuantización
-Q4_K_M, 2.5 GB). Es el más pequeño de los tres candidatos de la E1 y los tres dan 0/51 con
-prompting directo (`results/summary_baselines.csv`): los parámetros extra de Granite (8B) y
+Q4_K_M, 2.5 GB). Es el más pequeño de los tres candidatos de la E1 (que marcó a DeepSeek como
+*[Principal]*: desviación declarada y justificada en `docs/comparacion_modelos.md`) y los tres dan 0/51 con
+prompting directo (`docs/comparacion_modelos.md`): los parámetros extra de Granite (8B) y
 DeepSeek-R1 (7B) no compran corrección en esta tarea, y DeepSeek cuesta ~20× en tiempo.
 
 ## La intervención y su vínculo con el diagnóstico de la E1
@@ -21,9 +22,10 @@ de **decisión**:
 | Atención selectiva (marketing) | El extractor **nunca ve el perfil del comprador**: no hay decisión que sesgar. "¡Bajo el presupuesto según el tasador!" no tiene ningún campo donde caer. | `extract.py` |
 | Texto conversacional / esquema roto | Decodificación restringida (`format` = JSON Schema en Ollama) en la extracción; el JSON final lo ensambla código. | `extract.py`, `constraints.build_output` |
 
-Lo que el modelo sigue haciendo (la parte no trivial de NLP): contar dormitorios *reales*
-("escritorio convertible" no es dormitorio), leer la política de mascotas (especie, peso,
-ausencia) y el tipo de estacionamiento (visitas ≠ propio). Ahí viven los fallos residuales.
+Lo que el modelo sigue haciendo: con el extractor v1 contaba dormitorios *reales* y leía la
+política de mascotas y el tipo de estacionamiento, y ahí vivían los fallos residuales. Con v5
+(la versión reportada) solo **localiza** la cláusula de cada tema en texto libre y responde tres
+preguntas cerradas sobre mascotas; la interpretación la hace `grounding.py` (ver más abajo).
 
 Entrada, esquema de salida, criterio de corrección (`verifier.py`) y set de test son
 **idénticos** a los del baseline. `constraints.py` no importa `rules.py` ni ve `truth`.
@@ -34,7 +36,7 @@ Entrada, esquema de salida, criterio de corrección (`verifier.py`) y set de tes
 |---|---|
 | `baseline` | prompting directo, 1 llamada (`run_model.py`) |
 | `cot` | mismo prompt + procedimiento por pasos ("presupuesto primero…"); 1 llamada, sin herramientas. Es la hipótesis literal de la E1 para Phi-4-mini. |
-| `decomp_llm` | extracción por propiedad (igual que la solución) pero el LLM convierte, compara y arma el JSON final. Aísla el aporte de las herramientas. |
+| `decomp_llm` | extracción por propiedad igual que la solución, pero el LLM convierte, compara y arma el JSON final. Aísla el aporte de las herramientas: `decomp_phi4_v5` recibe los mismos hechos que `tools_phi4_v5_g3` (352/352 propiedades idénticas). Una primera corrida, `decomp_phi4`, usó el extractor v2 (ver abajo). |
 | `tools` | **solución**: extracción por propiedad + Python decide. |
 | fine-tuning | evaluado y descartado sin correr: no corrige la multiplicación 4×5 dígitos, ajusta a plantillas del generador, y QLoRA sobre prompts de 1.300 tokens es ajustado en 6 GB de VRAM. |
 
@@ -43,18 +45,20 @@ Entrada, esquema de salida, criterio de corrección (`verifier.py`) y set de tes
 ```bash
 ollama pull phi4-mini:latest
 pip install -r requirements.txt
-python3 -m pytest tests -q                         # 104 tests, sin Ollama
+python3 -m pytest tests -q                         # 244 tests, sin Ollama
 
 # Demo del video: baseline vs solución sobre el mismo caso, con veredicto de ambos
 cd src
 python3 -m matcher.demo --case case_001_e1         # el caso original de la E1
 python3 -m matcher.demo --random                   # caso sorteado, no elegido a mano
+python3 -m matcher.demo --split ood --case ood_002 # caso de fallo ("620 lucas")
 
-# Tabla completa (51 casos held-out; ~10 min baseline + ~20 min solución en M4)
-bash ../scripts/run_e2.sh                          # baseline + solución (prompt v1, el reportado)
+# Tabla completa (51 casos held-out; ~14 min baseline + ~30 min solución en M4)
+bash ../scripts/run_e2.sh                          # baseline + solución (v5 + g3, la reportada)
 ALL=1 bash ../scripts/run_e2.sh                    # + ablaciones cot y decomp_llm
-python3 -m matcher.evaluate --runs baseline_phi4 cot_phi4 decomp_phi4 tools_phi4_v1
-python3 -m matcher.extract_report --run tools_phi4_v1 --show   # errores de extracción campo a campo
+SPLIT=ood bash ../scripts/run_e2.sh                # set OOD -> baseline_phi4_ood, tools_phi4_v5_ood_g3
+python3 -m matcher.evaluate --runs baseline_phi4 cot_phi4 decomp_phi4_v5 tools_phi4_v1 tools_phi4_v5_g3
+python3 -m matcher.extract_report --run tools_phi4_v5_g3 --show   # errores de extracción campo a campo
 
 # Iterar el prompt del extractor SIEMPRE en dev (train/) antes de test:
 python3 -m matcher.run_pipeline --mode tools --run dev_tools_v4 --split train --limit 30 --prompt-version v4
@@ -66,16 +70,30 @@ cabe completo en VRAM; en la M4 corre en Metal. Cada llamada de extracción ve ~
 emite ~80. Opcional en Windows para reducir memoria: `set OLLAMA_FLASH_ATTENTION=1` y
 `set OLLAMA_KV_CACHE_TYPE=q8_0`.
 
-## Resultados (51 casos held-out, temperatura 0, semilla 0, MacBook Air M4)
+## Primera versión (v1) y ablaciones (51 casos held-out, temperatura 0, semilla 0, M4)
 
-Fuente: `results/summary_e2.csv` (regenerable con `evaluate --runs baseline_phi4 cot_phi4 decomp_phi4 tools_phi4_v1`).
+Sección histórica: la solución todavía usaba el extractor v1. Los resultados finales (v5 + g3)
+están en *Resultados finales*. Regenerable con `evaluate --runs baseline_phi4 cot_phi4
+decomp_phi4 tools_phi4_v1` (los CSV de `results/` no se versionan).
 
 | Run | e1_strict | full_correct | fail_schema | fail_false_approval | fail_arithmetic | llamadas | tok salida | s/caso |
 |---|---|---|---|---|---|---|---|---|
 | baseline_phi4 (prompting directo) | 0/51 | 0 | 5 | 40 | 6 | 1 | 346 | 15.8 |
 | cot_phi4 (A, procedimiento por pasos) | 0/51 | 0 | 4 | 43 | 4 | 1 | 326 | 21.0 |
 | decomp_phi4 (B, extracción + LLM decide) | 0/51 | 0 | 6 | 41 | 4 | N+1 | 991 | 51.4 |
-| **tools_phi4_v1 (solución)** | **30/51** (IC 95 %: 45–71 %) | 22 | 0 | 20 | 1 | N | 674 | 29.7 |
+| **tools_phi4_v1 (solución, extractor v1)** | **30/51** (IC 95 %: 45–71 %) | 22 | 0 | 20 | 1 | N | 674 | 29.7 |
+
+`decomp_phi4` se corrió el 14-sep con el extractor **v2** (`prompt_version` en sus
+`.meta.json`), no con el v1 de la fila `tools_phi4_v1`: 265 de las 352 propiedades tienen
+hechos distintos. v2 deja `pets_max_kg` nulo donde el aviso dice "hasta N kg" (ver la
+iteración de prompts más abajo), lo que explica parte de sus 24 aprobaciones indebidas por
+mascotas. La comparación B vs C mide, por tanto, *LLM decide sobre hechos v2* contra *Python
+decide sobre hechos v1*; no aísla limpiamente el aporte de las herramientas. La conclusión
+sobre presupuesto sobrevive, y reforzada: `extract_report` da 0/352 errores de precio en
+`decomp_phi4` (v2) contra 15/352 en `tools_phi4_v1`, y aun así el LLM aprueba 27 propiedades
+fuera de presupuesto contra 0 de Python. Con hechos mejores, el que decide sigue fallando.
+Por esto la ablación se repitió el 26-sep con el extractor de la solución (sección *Ablación B
+limpia* en *Resultados finales*).
 
 Aprobaciones indebidas por restricción (propiedades inválidas aprobadas igual):
 
@@ -87,9 +105,10 @@ Aprobaciones indebidas por restricción (propiedades inválidas aprobadas igual)
 | dormitorios | 41 | 11 (27 %) | 13 (32 %) | 13 (32 %) | 12 (29 %) |
 | estacionamiento | 34 | 1 (3 %) | 2 (6 %) | 8 (24 %) | 8 (24 %) |
 
-Lectura: la descomposición sola (`decomp_llm`) no repara nada —con los mismos hechos limpios,
+Lectura: la descomposición sola (`decomp_llm`) no repara nada —con hechos limpios (v2 aquí; v5
+con hechos idénticos a la solución en la *Ablación B limpia*),
 phi4-mini sigue sin poder multiplicar UF×valor ni comparar—; lo que repara es quitarle la
-aritmética y la lógica al modelo. Los 21 fallos residuales de la solución son todos de
+aritmética y la lógica al modelo. Los 21 fallos residuales de v1 son todos de
 *lectura* de un campo (ver `extract_report.py`): dormitorios "convertibles" (16) y notación
 "3D/1B" (26, solo produce rechazos de más), negación en mascotas ("gatos sí, perros no" → ambas),
 enum de estacionamiento ("en la calle" → asignado) y copia de los números de ejemplo del prompt
@@ -99,7 +118,7 @@ enum de estacionamiento ("en la calle" → asignado) y copia de los números de 
 
 | Prompt | e1_strict dev | err. precio | err. dormitorios | err. peso mascota | err. estacionamiento |
 |---|---|---|---|---|---|
-| v1 (reportado) | 21/30 | 13 | 27 | 6 | 5 |
+| v1 (el de la tabla anterior) | 21/30 | 13 | 27 | 6 | 5 |
 | v2 (sin ejemplos numéricos, reglas reescritas) | 13/30 | 0 | 6 | 32 | 22 |
 | v3 (v2 + líneas de v1 para mascotas/estacionamiento) | 8/30 | 0 | 7 | 27 | 7 |
 | v4 (v3 sin la frase global "nunca inventes un número") | 8/30 | 2 | 9 | 24 | 7 |
@@ -176,6 +195,7 @@ reproducibles, así que cada fila de las tablas se puede regenerar.
 | `g1` | anclaje de spans + parsers; recuperación desde el aviso solo para dormitorios | la corrida original de v5 |
 | `g2` | **A.** recuperación de cláusula para mascotas, estacionamiento, distancias y ubicación cuando el span no ancla. **B.** especies leídas de la cláusula por parseo en vez de las tres respuestas del modelo | análisis de los 11 fallos de `tools_phi4_v5` (test) |
 | `g3` | cinco correcciones de parseo y seguridad (abajo) | correr g2 sobre el set OOD |
+| `g4` | *posterior a la E2, no reportada*: la cláusula de mascotas debe nombrar mascotas; estacionamiento "en arriendo"/"opción de" = no incluido | avisos reales de `src/scout` (`docs/scout.md`); salidas idénticas a g3 en test, dev, OOD y el set real |
 
 Las cinco de g3, todas con **impacto cero en test y dev** (la ruta que corrigen no se
 activa con los avisos del generador; se verificó comparando las salidas byte a byte):
@@ -207,12 +227,39 @@ orden correcto.
 |---|---|---|---|---|---|---|
 | Baseline (prompting directo) | 0/51 | 0 | 40 | 6 | 5 | 15,8 · 11,9 |
 | A · CoT, una llamada | 0/51 | 0 | 43 | 4 | 4 | 21,0 |
-| B · Descomposición sin herramientas | 0/51 | 0 | 41 | 4 | 6 | 51,4 |
+| B · Descomposición sin herramientas (mismos hechos que C v5 + g3) | 0/51 | 0 | 34 | 8 | 9 | 59,3 |
 | C · Solución, extractor v1 + g1 | 30/51 | 22 | 20 | 1 | 0 | 29,7 · 31,0 |
 | C · Solución, v5 + g1 | 51/51 | 40 | 0 | 0 | 0 | 35,3 · 43,2 |
 | **C · Solución, v5 + g3** | **51/51** | **51** | **0** | **0** | **0** | 35,3 · 43,2 |
 
 Dev (30 casos de `train/`, donde se eligió v5): v1+g1 21/30, v5+g1 29/30, v5+g3 **30/30**.
+
+#### Ablación B limpia
+
+`decomp_phi4_v5` (26-sep, M4) le entrega al LLM exactamente los hechos que usa la solución
+(extractor v5 + anclaje g3; los traces coinciden en las 352 propiedades, lo que además
+confirma que la extracción es determinista entre corridas). La única diferencia con la fila
+C v5 + g3 es quién convierte, compara y ordena:
+
+| Restricción | inválidas | baseline | B (LLM decide) | C (Python decide) |
+|---|---|---|---|---|
+| presupuesto | 69 | 23 (33 %) | 22 (32 %) | **0** |
+| mascotas | 83 | 16 (19 %) | 22 (27 %) | **0** |
+| distancia_transporte | 37 | 5 (14 %) | 7 (19 %) | **0** |
+| dormitorios | 41 | 11 (27 %) | 5 (12 %) | **0** |
+| estacionamiento | 34 | 1 (3 %) | 1 (3 %) | **0** |
+
+Con hechos correctos y ya normalizados, phi4-mini sigue aprobando casi un tercio de las
+propiedades fuera de presupuesto: el mismo nivel que el baseline leyendo el aviso crudo.
+Que la descomposición le ahorre la lectura no le arregla la multiplicación UF×valor ni la
+comparación. Dormitorios y estacionamiento sí mejoran, porque llegan como un entero y una
+categoría ya resueltos, y la comparación es trivial. Además aparecen 8 errores aritméticos
+(ROI o `price_clp` mal calculados sobre aprobadas correctas) y 9 fallos de esquema pese a la
+decodificación restringida: 6 por ids inventados o repetidos (`PROP-PROP-U30`) y 3 respuestas
+truncadas en un bucle que repite razones de rechazo hasta agotar los 1.024 tokens. La gramática
+garantiza la forma del JSON, no que termine ni que los ids existan. Esto
+aísla la causa: el fallo de la E1 está en **decidir y calcular**, y eso es lo que la
+intervención le quita al modelo.
 
 ### OOD — 12 casos escritos a mano
 
@@ -227,7 +274,32 @@ El baseline también se derrumba aquí (0/12), así que la comparación sigue si
 La caída de 51/51 a 9/12 entre test y OOD **es el resultado más informativo del trabajo**:
 mide cuánto de la solución dependía de las plantillas del generador.
 
+### Real — 16 avisos de portales, sorteados y anotados
+
+`data/cases/real/` (procedimiento en su README): 4 casos, un aviso de cada portal por caso,
+con el comprador de la E1. Con ese comprador ninguno debe aprobarse.
+
+| Run | e1_strict | full_correct | aprob. indebida | aritmética | esquema |
+|---|---|---|---|---|---|
+| Baseline | 0/4 | 0 | 3 | 0 | 1 |
+| Solución v5 + g3 | 4/4 | 4 | 0 | 0 | 0 |
+| Solución v5 + g4 | 4/4 | 4 | 0 | 0 | 0 |
+
+Extracción campo a campo (`extract_report --run tools_phi4_v5_real_g3 --cases
+../data/cases/real`): precio, distancia, mascotas y estacionamiento 16/16; dormitorios 14/16.
+Los dos errores son los avisos que la anotación marcó como ambiguos (R04, un estudio; R14,
+4D según el portal y 5 dormitorios según el texto).
+
 ## Límites, con mecanismo
+
+**Fallo real, con aprobación indebida** (`data/cases/real_fallo/fallo_001`, aviso de
+Chilepropiedades que no salió del sorteo): con g3, el modelo copia "Se aceptan ofertas. Se
+acepta canje con corredores." como cláusula de mascotas y `parse_species` lee "acepta" como
+"acepta mascotas". Además, "opción de arriendo de estacionamientos" cae en la rama por
+defecto `propio`. El aviso cuesta exactamente el tope del comprador y se aprueba sin decir
+nada de mascotas ni incluir estacionamiento. Mecanismo: los parsers de g3 se escribieron
+sobre avisos donde la cláusula de mascotas SIEMPRE habla de mascotas. g4 (ver *Capa de
+anclaje*) lo corrige sin cambiar ninguna otra salida.
 
 Los cinco fallos que quedan en OOD con g3. Ninguno es una aprobación indebida salvo donde
 se indica; el sistema se equivoca **siendo conservador**, que es la dirección segura.
@@ -250,9 +322,35 @@ E3.
 
 Con la interpretación movida al código, la objeción legítima es si el modelo sigue haciendo
 algo. La respuesta está en la tabla de extracción por campo sobre OOD (`extract_report
---run tools_phi4_v5_ood_g3 --cases ../data/cases/ood`): sobre 70 avisos que ninguna
-plantilla generó, el modelo localiza correctamente el precio en el 97 %, la distancia en el
-99 %, la política de mascotas en el 99 % y el estacionamiento en el 94 % de los casos. Los
-parsers reciben la cláusula correcta porque el modelo la encontró en texto libre, con
-marketing, erratas y mayúsculas de por medio. Lo que el código aporta es que, una vez
-localizada, la interpretación sea determinista y la aritmética exacta.
+--run tools_phi4_v5_ood_g3 --cases ../data/cases/ood`), separando lo que rescató la
+recuperación por código de g2/g3 (los `warnings` "recuperado del aviso" de cada trace):
+
+| Campo (70 avisos OOD) | valor final correcto | sin recuperación por código |
+|---|---|---|
+| precio | 97 % | 97 % |
+| distancia | 99 % | 96 % |
+| mascotas (acepta o no) | 99 % | 96 % |
+| estacionamiento | 94 % | 91 % |
+| arriendo | 90 % | 90 % |
+| dormitorios | 89 % | **47 %** |
+| comuna (solo ranking) | 33 % | — |
+
+En precio, distancia, mascotas y estacionamiento el modelo encuentra la cláusula correcta en
+texto libre, con marketing, erratas y mayúsculas de por medio, en más del 90 % de los casos.
+En dormitorios no: su span solo da el número correcto en 33 de 70 avisos, y 29 los rescata
+el fallback `ND/` sobre el aviso completo. Es la medida honesta de lo que aporta el LLM una vez
+que la interpretación vive en el código.
+
+### Otros límites del diseño, medidos
+
+- **El span de dormitorios no se ancla.** Precio, arriendo, distancias, estacionamiento,
+  mascotas y comuna se verifican contra el aviso; `bedrooms_text` se parsea aunque el modelo
+  lo haya parafraseado. En test pasa en 31 de 352 propiedades (37 en la RTX, 13 en dev, 0 en
+  OOD) y en ninguna produjo un número distinto del real, pero un dormitorio inventado podría
+  aprobar. Es la excepción a la garantía de que un número que no está en el aviso nunca aprueba.
+- **La unidad del arriendo se descarta.** `constraints.decide` toma el monto y lo trata como
+  CLP. Ningún aviso del repositorio publica el arriendo en UF, así que no afecta a ninguna
+  cifra, pero un "arriendo 25 UF/mes" daría un ROI errado (el mismo mecanismo de `620 lucas`).
+- **`full_correct` no compara las razones de rechazo.** La E1 no las exige. Para v5 + g3,
+  `failed_constraints` coincide con la esperada en 246/246 rechazos de test y en 44/51 de OOD
+  (p.ej. OOD-203 agrega `dormitorios` porque no reconoce `3d 2b` sin barra).

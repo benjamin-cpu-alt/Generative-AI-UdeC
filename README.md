@@ -13,6 +13,13 @@ El sistema es un motor de validación que lee descripciones de propiedades no es
 **`phi4-mini:latest`** — Phi-4-mini-instruct, 3.8B, Ollama digest `78fad5d182a7`, cuantización
 Q4_K_M (2,5 GB). Es el más pequeño de los tres candidatos de la E1.
 
+**Desviación declarada respecto a la E1:** el PDF de la E1 marcó a DeepSeek-R1-Distill-Qwen
+(7B) como candidato *[Principal]*, por su razonamiento paso a paso. La E2 se compromete con
+Phi-4-mini, el candidato que la E1 propuso para probar si un modelo compacto resuelve la
+tarea cuando se la divide en pasos. El cambio se justifica con la medición de abajo: con
+prompting directo DeepSeek tampoco acierta ningún caso, y su razonamiento en `<think>` cuesta
+~20× más tiempo por caso y trunca 22 de 51 respuestas.
+
 Los tres candidatos se corrieron con el mismo prompt directo sobre los 51 casos held-out y los
 tres dan **0/51**: los parámetros extra no compran corrección en esta tarea.
 
@@ -20,7 +27,7 @@ tres dan **0/51**: los parámetros extra no compran corrección en esta tarea.
 |---|---|---|---|
 | **Phi-4-mini** | **3.8B** | **0/51** | **Elegido**: mismo resultado que los grandes, con el menor costo y la menor huella. La E1 le asignó el rol de "resolver la tarea si se le guía dividiendo el problema en pasos simples": la E2 ejecuta esa hipótesis. |
 | Granite 4.1 | 8.0B | 0/51 | Propuesto por su formato JSON estricto (BFCL), tiene **más** fallos de esquema que Phi (8 vs 5) y la peor tasa de aprobación indebida por presupuesto (51 %). |
-| DeepSeek-R1-Distill-Qwen | 7.0B | 0/51 | Razona mejor (9 % de aprobación indebida por presupuesto vs 33 %) pero no alcanza a acertar un solo caso, falla 26 veces por esquema (emite `<think>` antes del JSON) y cuesta ~4.996 tokens y ~323 s por caso, con 22 respuestas truncadas. Inviable en la RTX 3050. |
+| DeepSeek-R1-Distill-Qwen | 7.0B | 0/51 | Era el *[Principal]* de la E1. Razona mejor (14 % de aprobación indebida por presupuesto vs 33 %) pero no acierta un solo caso: 26 fallos de esquema, 22 de ellos respuestas truncadas (el `<think>` agota el presupuesto de 8.192 tokens antes del JSON), a ~4.996 tokens y ~323 s por caso. Inviable en la RTX 3050. |
 
 Detalle y tablas completas en [`docs/comparacion_modelos.md`](docs/comparacion_modelos.md).
 
@@ -59,7 +66,9 @@ data/
 └── cases/
     ├── test/     # 50 casos held-out + case_001_e1. Solo evaluación, una corrida por estrategia.
     ├── train/    # 300 casos. Split dev: se usan para iterar el prompt del extractor. Nunca se reportan.
-    └── ood/      # 12 casos con avisos ESCRITOS A MANO (ver su README). Control de generalización.
+    ├── ood/      # 12 casos con avisos ESCRITOS A MANO (ver su README). Control de generalización.
+    ├── real/     # 4 casos con 16 avisos REALES de portales, sorteados y anotados a mano (ver su README)
+    └── real_fallo/  # el aviso real que reveló la aprobación falsa de g3 (no sorteado)
 results/<run>/    # <case_id>.txt (salida juzgada) + .meta.json (tokens, tiempo) + .trace.json (hechos y decisiones)
 results/archive/  # runs anteriores no comparables (p.ej. baselines sin soft constraints)
 scripts/run_baselines.sh    # los 3 candidatos con prompting directo
@@ -67,7 +76,8 @@ scripts/run_e2.sh           # baseline + solución (+ ablaciones con ALL=1) y la
 scripts/build_ood.py        # los avisos del set OOD, con su anotación auto-verificada
 docs/comparacion_modelos.md # compromiso de modelo, con los números
 docs/e2_pipeline.md         # la solución en detalle: intervención, ablaciones, resultados, límites
-tests/            # 209 tests (pytest), sin Ollama
+src/scout/        # extensión posterior a la E2: busca avisos reales en 5 portales y los analiza (docs/scout.md)
+tests/            # 244 tests (pytest), sin Ollama ni red
 ```
 
 ### 1. Prompt y verificador determinista
@@ -100,7 +110,7 @@ el juez). Reporta dos niveles, siempre juntos:
 | `e1_after_extract` | Mismas 3 condiciones tras un extractor determinista que quita fences/`<think>` y recorta al JSON. Separa fallos de formato de fallos de razonamiento. |
 | `exact_match` | Métrica secundaria: el conjunto aprobado y rechazado coincide exactamente con el esperado. Se reporta porque el criterio E1 no penaliza rechazos falsos. |
 | `ranking_ok` | Métrica secundaria (soft constraints): `exact_match` y `approved_matches` en el orden esperado (comuna preferida → ROI desc; empates en cualquier orden). |
-| `full_correct` | `e1_strict` ∧ `exact_match` ∧ `ranking_ok`: la salida completa es la esperada. Es la métrica más exigente y la que debe mostrar la mejora E2→E4. |
+| `full_correct` | `e1_strict` ∧ `exact_match` ∧ `ranking_ok`: conjunto y orden esperados. Es la métrica más exigente. No compara la lista `failed_constraints` de cada rechazo (la E1 no la exige); para la solución v5 + g3 coincide en 246/246 rechazos de test y 44/51 de OOD. |
 
 Ids se normalizan (`"[PROP-A42]"` ≡ `"PROP-A42"`); el nombre de la clave ROI
 acepta `roi_pct` (PDF E1) y `roi_calculado_pct` (prompt_base.txt).
@@ -168,11 +178,20 @@ que el conjunto aprobado y su orden sean exactamente los esperados.
 |---|---|---|---|---|---|---|---|
 | Baseline (prompting directo) | 0/51 | 0 | 40 | 6 | 5 | 346 | 15,8 · 11,9 |
 | A · CoT (procedimiento por pasos, 1 llamada) | 0/51 | 0 | 43 | 4 | 4 | 326 | 21,0 |
-| B · Descomposición sin herramientas | 0/51 | 0 | 41 | 4 | 6 | 991 | 51,4 |
+| B · Descomposición sin herramientas (mismos hechos que la solución) | 0/51 | 0 | 34 | 8 | 9 | 1377 | 59,3 |
 | C · Solución, extractor v1 + anclaje g1 | 30/51 | 22 | 20 | 1 | 0 | 674 | 29,7 · 31,0 |
 | **C · Solución, extractor v5 + anclaje g3** | **51/51** | **51** | **0** | **0** | **0** | 1056 | 35,3 · 43,2 |
 
-El veredicto coincide **caso por caso** entre la MacBook M4 y la RTX 3050.
+La fila B es la ablación limpia: el LLM recibe **exactamente los mismos hechos** que Python
+(v5 + g3; 352/352 propiedades idénticas) y solo tiene que convertir UF→CLP, comparar, calcular
+el ROI y armar el JSON. Acierta 0/51, contra 51/51 cuando lo hace Python: el fallo diagnosticado
+en la E1 no es de lectura sino de cálculo y decisión. (Una primera corrida de B con el extractor
+v2, `decomp_phi4`, también dio 0/51; ver `docs/e2_pipeline.md`.)
+
+Con la solución v5 + g3 el veredicto coincide **caso por caso** entre la MacBook M4 y la RTX 3050
+(51/51 en ambas). En las demás filas hay diferencias menores entre máquinas (misma semilla,
+distinto backend numérico): el baseline tiene 40 aprobaciones indebidas en la M4 y 38 en la
+RTX, v1 + g1 acierta 30 y 29 casos, y v5 + g1 da 40 y 42 en `full_correct` (`results/*_rtx*/`).
 
 **OOD — 12 casos escritos a mano** (`data/cases/ood/`, 70 propiedades): fichas de portal,
 WhatsApp sin tildes, MAYÚSCULAS con erratas, cifras en palabras, `135 millones`,
@@ -186,71 +205,154 @@ WhatsApp sin tildes, MAYÚSCULAS con erratas, cifras en palabras, `135 millones`
 | Solución v5 + g3 | 11/12 | 7 | 0 | 1 |
 
 **La caída de 51/51 a 9/12 entre test y OOD es el resultado más informativo del trabajo**:
-mide cuánto de la solución dependía de las plantillas del generador. El baseline también se
+mide cuánto de la solución dependía de las plantillas del generador. El 9/12 es g2, la única
+medición ciega; las cinco correcciones de g3 se escribieron mirando estos casos, así que su
+11/12 no cuenta como medición de generalización. El baseline también se
 derrumba en OOD (0/12), así que la comparación se sostiene. Los cinco fallos que quedan
 están documentados con su mecanismo en [`docs/e2_pipeline.md`](docs/e2_pipeline.md): cuatro
 son rechazos falsos o de ranking (el sistema se equivoca siendo conservador) y uno rompe
 `e1_strict` por una unidad de jerga (`"620 lucas"` = $620.000).
 
-Sobre esos mismos 70 avisos que ninguna plantilla generó, el modelo localiza correctamente
-el precio en el 97 % de los casos, la distancia en el 99 %, la política de mascotas en el
-99 % y el estacionamiento en el 94 %: es la medida de lo que aporta el LLM una vez que la
-interpretación vive en el código.
+Sobre esos mismos 70 avisos, el valor final de cada campo es correcto en: precio 97 %,
+distancia 99 %, mascotas 99 %, estacionamiento 94 %, arriendo 90 % y dormitorios 89 %. Si se
+descuentan los casos que rescató la recuperación por código de g2/g3 (el span del modelo no
+ancló y el código buscó la frase en el aviso), lo que el modelo localiza solo es: precio 97 %,
+distancia 96 %, mascotas 96 %, estacionamiento 91 % y arriendo 90 %. En dormitorios localiza
+solo 47 % (33/70); el resto lo recupera el fallback `ND/`. Esa es la medida de lo que aporta
+el LLM una vez que la interpretación vive en el código (`extract_report --run
+tools_phi4_v5_ood_g3 --cases ../data/cases/ood` y los `warnings` de cada `.trace.json`).
+
+**Real — 16 avisos de portales, sorteados** (`data/cases/real/`): 4 casos con un aviso de
+Yapo, Chilepropiedades, iCasas y TocToc cada uno. Se sortearon con semilla fija entre 2.198
+unidades **antes** de leerlos, se anotaron a mano y se evaluaron con el comprador de la E1.
+El texto de cada propiedad es la ficha que arma `src/scout` (sección 6).
+
+| Estrategia | e1_strict | full_correct | aprob. indebida | aritmética | esquema |
+|---|---|---|---|---|---|
+| Baseline | 0/4 | 0 | 3 | 0 | 1 |
+| **Solución v5 + g3** | **4/4** | **4** | **0** | **0** | **0** |
+
+Con ese comprador (perro de 18 kg, $150 M, estacionamiento) **ningún aviso debe aprobarse**:
+solo 3 de 16 declaran aceptar mascotas, y los tres fallan en otra restricción. El set mide
+aprobaciones indebidas y lectura, no aciertos positivos. El baseline aprueba, por ejemplo,
+un departamento de UF 6.000 "a $60.000.000" (~$246 M reales). Campo a campo, la solución
+lee bien precio, distancia, mascotas y estacionamiento en 16/16. En dormitorios falla 2/16,
+justo los dos que la anotación marcó como ambiguos (un estudio y un aviso cuyo portal dice
+4D y cuyo texto describe 5).
+
+**Fallo real de la solución** (`data/cases/real_fallo/`, no sorteado): en un aviso de
+Chilepropiedades, el modelo copió "Se aceptan ofertas. Se acepta canje con corredores."
+como cláusula de mascotas y "La administración cuenta con opción de arriendo de
+estacionamientos" como la de estacionamiento. g3 leyó "acepta" como "acepta mascotas" y
+dejó el estacionamiento en la rama por defecto `propio`. Resultado: **aprobación indebida**
+de un aviso que no dice nada de mascotas y no incluye estacionamiento. En los casos
+sintéticos la cláusula de mascotas siempre hablaba de mascotas, así que el defecto no tenía
+cómo aparecer. La versión **g4** exige que esa cláusula nombre mascotas y trata el
+estacionamiento "en arriendo"/"opción de" como no incluido. Da salidas **idénticas** a g3 en
+test, dev, OOD y el set real, y corrige este caso. g3 sigue siendo la versión reportada.
 
 ### 5. Reproducir lo que muestra el video
 
 ```bash
 ollama pull phi4-mini:latest          # digest 78fad5d182a7, Q4_K_M, 2,5 GB
 pip install -r requirements.txt
-python3 -m pytest tests -q            # 209 tests, sin Ollama
+python3 -m pytest tests -q            # 244 tests, sin Ollama
 
 cd src
 # baseline y solución sobre el MISMO caso, en vivo, con el veredicto de ambos (~50 s)
 python3 -m matcher.demo --case case_001_e1     # el caso original de la E1
 python3 -m matcher.demo --random               # un caso al azar del set de test
+python3 -m matcher.demo --split ood --case ood_002   # caso de fallo: "620 lucas" -> ROI 0,01 en vez de 6,0
+python3 -m matcher.demo --split real --random --seed 7                      # aviso REAL sorteado (~30 s)
+python3 -m matcher.demo --split real_fallo --case fallo_001 --grounding g3  # fallo real: aprueba de más
+python3 -m matcher.demo --split real_fallo --case fallo_001 --grounding g4  # corregido
 
 # la tabla completa a partir de los resultados versionados en results/ (no llama al modelo)
-python3 -m matcher.evaluate --runs baseline_phi4 cot_phi4 decomp_phi4 tools_phi4_v1 tools_phi4_v5_g3
+python3 -m matcher.evaluate --runs baseline_phi4 cot_phi4 decomp_phi4_v5 tools_phi4_v1 tools_phi4_v5_g3
 python3 -m matcher.extract_report --run tools_phi4_v5_g3           # errores de extracción campo a campo
 
 # el set OOD escrito a mano (avisos que ninguna plantilla generó)
 python3 -m matcher.evaluate --runs baseline_phi4_ood tools_phi4_v5_ood_g3 --cases ../data/cases/ood
+# el set real (avisos de portales, sorteados y anotados)
+python3 -m matcher.evaluate --runs baseline_phi4_real tools_phi4_v5_real_g3 tools_phi4_v5_real_g4 --cases ../data/cases/real
+python3 -m matcher.evaluate --runs baseline_phi4_real_fallo tools_phi4_v5_real_fallo_g3 tools_phi4_v5_real_fallo_g4 --cases ../data/cases/real_fallo
 ```
+
+Guion sugerido para el video (≤ 3:00, todo en vivo, sin cortes que oculten la ejecución):
+
+| Tiempo | Qué se muestra | Comando |
+|---|---|---|
+| 0:00–0:20 | tarea, fallo de la E1 y pipeline (diagrama del PDF) | — |
+| 0:20–1:00 | **aviso real sorteado**, baseline y solución lado a lado, con veredicto | `demo --split real --random --seed 7` |
+| 1:00–1:30 | resultados sobre conjuntos declarados: test, OOD, real | los `evaluate` de arriba (no llaman al modelo) |
+| 1:30–2:10 | **caso de fallo real** y su mecanismo: g3 aprueba de más, g4 no | `demo --split real_fallo ... --grounding g3` y luego `g4` |
+| 2:10–2:40 | búsqueda en vivo en un portal (con caché) | `python3 -m scout --perfil ../data/scout/perfil_ejemplo.json --fuentes toctoc --max-por-fuente 2` |
+| 2:40–3:00 | límites: estudios, conflictos portal/texto, mascotas no declaradas | — |
+
+La semilla 7 elige `real_003`; cualquier otra semilla sirve, y el sorteo se hace en
+cámara, así que el caso no se eligió a favor del sistema.
 
 Para regenerar los resultados desde cero (baseline + solución, ~45 min en la M4):
 
 ```bash
 bash scripts/run_e2.sh          # o ALL=1 bash scripts/run_e2.sh para incluir las ablaciones
+SPLIT=ood bash scripts/run_e2.sh   # el set OOD -> baseline_phi4_ood, tools_phi4_v5_ood_g3
+SPLIT=real bash scripts/run_e2.sh  # el set real -> baseline_phi4_real, tools_phi4_v5_real_g3
 ```
+
+Las filas `v5 + g2` y `v5 + g3` no son corridas nuevas del modelo: `matcher.reground` vuelve
+a decidir sobre los spans ya extraídos por `tools_phi4_v5` con la capa nueva. Como la capa
+de anclaje solo procesa la salida del modelo (temperatura 0, semilla 0), equivale a correrla
+en vivo, y por eso comparten tokens y tiempos con la corrida original.
 
 Se puede interrumpir y retomar: los casos ya respondidos se omiten. Cada corrida deja la
 salida cruda, los tokens/tiempos y los hechos extraídos por propiedad en `results/<run>/`,
 así que todo número de este README y del PDF es trazable a un archivo del repositorio.
 
-### 6. Correr los modelos candidatos (comparación de la E1)
+### 6. Extensión: buscar avisos reales en portales (`src/scout`)
+
+Posterior a la E2 y fuera de sus cifras. Pregunta al comprador sus filtros, busca en Yapo,
+PortalPM, Chilepropiedades, iCasas y TocToc, calcula la distancia al metro con las
+coordenadas del aviso y OpenStreetMap, y pasa cada aviso por el mismo analizador (phi4-mini
++ extractor v5 + anclaje). Clasifica en **aprobadas**, **por revisar** (no incumplen nada
+verificable, pero falta un dato, típicamente mascotas) y **rechazadas**.
+
+```bash
+cd src
+python3 -m scout                                              # cuestionario interactivo
+python3 -m scout --perfil ../data/scout/perfil_ejemplo.json   # perfil desde JSON
+```
+
+Respeta robots.txt, se identifica como bot y, si un portal lo bloquea, lo registra y sigue
+con los demás. Con avisos reales apareció una aprobación falsa que los casos sintéticos no
+podían mostrar ("Se aceptan ofertas" leído como "acepta mascotas"). Se corrigió en una versión
+nueva del anclaje, **g4**, que da salidas idénticas a g3 en test, dev y OOD. Detalle,
+supuestos sobre cada portal y límites en [`docs/scout.md`](docs/scout.md).
+
+### 7. Correr los modelos candidatos (comparación de la E1)
 
 ```bash
 pip install -r requirements.txt
 python3 -m pytest tests -q
 
-ollama pull phi4-mini:latest granite4.1:8b deepseek-r1:7b
-bash scripts/run_baselines.sh            # los tres; o: bash scripts/run_baselines.sh phi4
+ollama pull phi4-mini:latest            # ollama pull acepta un modelo por llamada
+ollama pull granite4.1:8b
+ollama pull deepseek-r1:7b
+bash scripts/run_baselines.sh            # los tres (900 s/caso, como la tabla); o: bash scripts/run_baselines.sh phi4
 LIMIT=3 bash scripts/run_baselines.sh    # prueba rápida
 ```
 
 Cada modelo corre con temperatura 0 y seed 0 sobre los 51 casos de `test/`.
 DeepSeek-R1 recibe `num_predict 8192` porque razona en `<think>` antes del JSON
-(con 2048 se trunca sin responder); eso lo hace ~10× más lento y queda reflejado
+(con 2048 se trunca sin responder); eso lo hace ~20× más lento y queda reflejado
 en las columnas `truncated`, `mean_output_tokens` y `mean_wall_s`.
 
-Tiempos de referencia en MacBook Air M4: phi4-mini ≈ 10 s/caso, granite ≈ 25 s/caso,
-deepseek-r1 ≈ 2–5 min/caso.
+Tiempos medidos en MacBook Air M4: phi4-mini 15,8 s/caso, granite 31,8 s/caso,
+deepseek-r1 323 s/caso.
 Las respuestas crudas quedan en `results/baseline_<modelo>/` (se versionan: son la
 evidencia trazable) y la tabla en `results/summary.csv`. Interrumpir y retomar es
 seguro: los casos ya respondidos se omiten.
 
-Para argumentar el compromiso de modelo, llenar `docs/comparacion_modelos.md`
-con `results/summary.csv` y `results/<run>_breakdown.csv`.
 
 Comandos individuales:
 

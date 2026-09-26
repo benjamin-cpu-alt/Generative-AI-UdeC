@@ -1,0 +1,50 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-H16",
+      "price_clp": 15500000,
+      "roi_pct": 77.57
+    },
+    {
+      "id": "PROP-B33",
+      "price_clp": 139500000,
+      "roi_pct": 8.77
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-S66",
+      "failed_constraints": [
+        "price exceeds budget",
+        "pets_max_kg is missing"
+      ]
+    },
+    {
+      "id": "PROP-K27",
+      "failed_constraints": [
+        "price exceeds budget",
+        "distance to metro exceeds limit"
+      ]
+    },
+    {
+      "id": "PROP-X97",
+      "failed_constraints": [
+        "location not preferred",
+        "bedrooms less than required"
+      ]
+    },
+    {
+      "id": "PROP-W68",
+      "failed_constraints": [
+        "price exceeds budget"
+      ]
+    },
+    {
+      "id": "PROP-C32",
+      "failed_constraints": [
+        "price exceeds budget",
+        "pets_max_kg exceeds limit"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "real_004",
+  "model": "phi4-mini:latest",
+  "run": "baseline_phi4_real",
+  "options": {
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "num_predict": 2048,
+    "seed": 0
+  },
+  "prompt_tokens": 1493,
+  "output_tokens": 2048,
+  "total_duration_s": 64.74,
+  "wall_s": 64.77,
+  "done_reason": "length",
+  "timestamp": "2026-09-26T17:29:15"
+}

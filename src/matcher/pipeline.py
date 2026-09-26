@@ -145,11 +145,12 @@ FACT_KEYS = ("location", "bedrooms", "price_text", "rent_text", "distance_metro_
 
 
 def run_decomp_llm(case: Case, model: str, options: Optional[Dict] = None, timeout: int = 300,
-                   prompt_version: str = DEFAULT_PROMPT) -> Trace:
+                   prompt_version: str = DEFAULT_PROMPT,
+                   grounding_version: str = grounding.DEFAULT_VERSION) -> Trace:
     """Extracción igual que `tools`, pero la aritmética y la lógica las hace el LLM."""
     options = options or default_options()
     t0 = time.time()
-    facts = extract_all(case, model, options, timeout, prompt_version)
+    facts = extract_all(case, model, options, timeout, prompt_version, grounding_version)
     clean = {pid: {k: getattr(f, k) for k in FACT_KEYS} for pid, f in facts.items()}
     uf = f"{int(case.uf_value):,}".replace(",", ".")
     user = "\n\n".join([
@@ -184,7 +185,8 @@ def run_case(case: Case, model: str, mode: str, timeout: int = 600,
         return run_tools(case, model, timeout=min(timeout, 120), prompt_version=prompt_version,
                          grounding_version=grounding_version)
     if mode == "decomp_llm":
-        return run_decomp_llm(case, model, timeout=min(timeout, 300), prompt_version=prompt_version)
+        return run_decomp_llm(case, model, timeout=min(timeout, 300), prompt_version=prompt_version,
+                              grounding_version=grounding_version)
     if mode in ("baseline", "cot"):
         # Mismas opciones que scripts/run_baselines.sh para phi4/granite.
         return run_single(case, model, mode,

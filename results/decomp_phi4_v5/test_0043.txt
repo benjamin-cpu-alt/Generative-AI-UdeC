@@ -1,0 +1,35 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-A76",
+      "price_clp": 62990000,
+      "roi_pct": 21.01
+    },
+    {
+      "id": "PROP-L43",
+      "price_clp": 28560000,
+      "roi_pct": 27.52
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-E88",
+      "failed_constraints": [
+        "price exceeds budget",
+        "pets_max_kg is missing"
+      ]
+    },
+    {
+      "id": "PROP-J77",
+      "failed_constraints": [
+        "parking is none"
+      ]
+    },
+    {
+      "id": "PROP-R62",
+      "failed_constraints": [
+        "pets_max_kg is missing"
+      ]
+    }
+  ]
+}

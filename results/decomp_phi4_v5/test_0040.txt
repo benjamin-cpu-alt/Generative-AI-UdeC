@@ -1,0 +1,43 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-L14",
+      "price_clp": 2232000,
+      "roi_pct": 11.85
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-E61",
+      "failed_constraints": [
+        "price exceeds budget",
+        "distance to metro exceeds limit"
+      ]
+    },
+    {
+      "id": "PROP-Y67",
+      "failed_constraints": [
+        "bedrooms less than required"
+      ]
+    },
+    {
+      "id": "PROP-F45",
+      "failed_constraints": [
+        "pets_max_kg not specified"
+      ]
+    },
+    {
+      "id": "PROP-Q71",
+      "failed_constraints": [
+        "parking not private",
+        "distance to metro exceeds limit"
+      ]
+    },
+    {
+      "id": "PROP-M20",
+      "failed_constraints": [
+        "pets_max_kg less than required"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+ "approved_matches": [
+  {
+   "id": "PROP-T11",
+   "price_clp": 40500000,
+   "roi_pct": 79.71
+  },
+  {
+   "id": "PROP-R48",
+   "price_clp": 132000000,
+   "roi_pct": 27.91
+  }
+ ],
+ "rejected": [
+  {
+   "id": "PROP-Z71",
+   "failed_constraints": [
+    "distancia_maximo_transporte_publico",
+    "campos_dormitorios"
+   ]
+  },
+  {
+   "id": "PROP-M20",
+   "failed_constraints": [
+    "distancia_maximo_transporte_publico",
+    "pet_max_kg"
+   ]
+  },
+  {
+   "id": "PROP-P43",
+   "failed_constraints": [
+    "distancia_maximo_transporte_publico"
+   ]
+  },
+  {
+   "id": "PROP-J19",
+   "failed_constraints": [
+    "distancia_maximo_transporte_publico",
+    "campos_dormitorios",
+    "pet_max_kg"
+   ]
+  }
+ ]
+}

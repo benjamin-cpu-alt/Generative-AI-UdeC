@@ -1,0 +1,66 @@
+{
+ "approved_matches": [
+  {
+   "id": "PROP-X39",
+   "price_clp": 35240000,
+   "roi_pct": 20.00
+  },
+  {
+   "id": "PROP-L14",
+   "price_clp": 1081100000,
+   "roi_pct": 63.16
+  },
+  {
+   "id": "PROP-U15",
+   "price_clp": 88440000,
+   "roi_pct": 51.80
+  }
+ ],
+ "rejected": [
+  {
+   "id": "PROP-V55",
+   "failed_constraints": [
+    "pets_policy",
+    "bedrooms",
+    "parking"
+   ]
+  },
+  {
+   "id": "PROP-A55",
+   "failed_constraints": [
+    "pets_policy",
+    "pets_max_kg",
+    "price_clp"
+   ]
+  },
+  {
+   "id": "PROP-S45",
+   "failed_constraints": [
+    "price_clp",
+    "parking"
+   ]
+  },
+  {
+   "id": "PROP-E73",
+   "failed_constraints": [
+    "price_clp",
+    "pets_max_kg"
+   ]
+  },
+  {
+   "id": "PROP-B80",
+   "failed_constraints": [
+    "distance_metro_text",
+    "distance_bus_text",
+    "price_clp"
+   ]
+  },
+  {
+   "id": "PROP-Q72",
+   "failed_constraints": [
+    "price_clp",
+    "pets_max_kg"
+   ]
+  }
+ ]
+}

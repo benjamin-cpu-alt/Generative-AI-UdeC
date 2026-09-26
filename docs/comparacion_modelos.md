@@ -8,11 +8,11 @@ mismo verificador determinista (`src/matcher/verifier.py`).
 Cómo regenerar esta tabla:
 
 ```bash
-bash scripts/run_baselines.sh          # ~10-30 min por modelo según hardware
+bash scripts/run_baselines.sh          # M4: ~15 min phi4, ~30 min granite, ~4,5 h deepseek
 python3 -m matcher.evaluate --runs baseline_phi4 baseline_granite baseline_deepseek   # desde src/
 ```
 
-## 1. Tabla de resultados (copiar de `results/summary.csv`)
+## 1. Tabla de resultados
 
 | Modelo | Params | e1_strict | e1_after_extract | exact_match | ranking_ok | full_correct | fail_schema | fail_false_approval | fail_arithmetic | tokens/resp | s/resp |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -20,7 +20,8 @@ python3 -m matcher.evaluate --runs baseline_phi4 baseline_granite baseline_deeps
 | granite4.1 | 8.0B | 0/51 | 0/51 | 0/51 | 0/51 | 0/51 | 8 | 42 | 1 | 265 | 31.8 |
 | deepseek-r1-distill-qwen | 7.0B | 0/51 | 2/51 | 2/51 | 1/51 | 0/51 | 26 | 18 | 5 | 4996 | 323.3 |
 
-Corrida del 15-sep-2026 (`results/summary_baselines.csv`), timeout 900 s/caso. DeepSeek queda
+Corrida del 15-sep-2026, timeout 900 s/caso (los CSV no se versionan: se regeneran con el
+`evaluate` de arriba a partir de las respuestas crudas en `results/baseline_*/`). DeepSeek queda
 truncado en 22/51 casos aun con `num_predict 8192` (de ahí sus 26 `fail_schema`): el `<think>`
 consume el presupuesto antes de emitir el JSON.
 
@@ -34,7 +35,7 @@ consume el presupuesto antes de emitir el JSON.
   parte del criterio E1; `full_correct` es la métrica más exigente y la que debe crecer hasta la E4.
 - `fail_*`: motivo del fallo tras extractor. Es la columna que dice *por qué* falla cada modelo.
 
-## 2. Aprobaciones indebidas por restricción (copiar de `results/<run>_breakdown.csv`)
+## 2. Aprobaciones indebidas por restricción (`results/<run>_breakdown.csv`)
 
 | Restricción | Inválidas en test | phi4 aprueba | granite aprueba | deepseek aprueba |
 |---|---|---|---|---|
@@ -50,8 +51,8 @@ confusión aritmética.
 
 ## 3. Criterios de decisión
 
-El modelo elegido es el que maximiza la suma de la rúbrica, no el que mejor rinde en
-baseline. Argumentar sobre estos ejes, en este orden:
+Los tres fallan en baseline, así que la elección no puede basarse en quién rinde mejor sin
+intervención. Se decide sobre estos ejes, en este orden:
 
 1. **Economía de modelo (10 pts):** puntaje completo al modelo más pequeño que
    *funcione*. Phi-4-mini (3.8B) parte con ventaja; Granite (8B) y DeepSeek (7B)
@@ -62,11 +63,13 @@ baseline. Argumentar sobre estos ejes, en este orden:
    falla por *aritmética* en la misma proporción tras extractor necesita herramientas.
    Ninguno de los dos tipos de fallo se resuelve con más parámetros.
 3. **Costo de inferencia:** tokens/resp y s/resp en el hardware declarado. DeepSeek-R1
-   razona en `<think>` y puede emitir 5–10× más tokens; en la RTX 3050 eso pesa.
+   razona en `<think>` y emite ~14× más tokens que Phi (4.996 vs 346 por caso); en la RTX 3050 eso pesa.
 
 ## 4. Decisión
 
-Elegimos **Phi-4-mini (3.8B)**. Los tres candidatos dan **0/51** con prompting directo, así
+Elegimos **Phi-4-mini (3.8B)**. Es una desviación respecto a la E1, que marcó a
+DeepSeek-R1-Distill-Qwen como candidato *[Principal]*; se declara aquí y se justifica con
+los números de las secciones 1 y 2. Los tres candidatos dan **0/51** con prompting directo, así
 que los parámetros extra no compran corrección en esta tarea: el fallo no es de capacidad
 general sino de *tipo* (aritmética, inecuaciones y formato), y eso se ataca con descomposición
 y herramientas, no con un modelo mayor. Siendo el más pequeño de los tres, maximiza el criterio
@@ -77,9 +80,10 @@ hipótesis y la confirma (**51/51** `e1_strict` con la solución; ver `docs/e2_p
 Descartamos **Granite 4.1 (8B)** porque no cumple el rol por el que fue propuesto —formato
 JSON estricto—: tiene más fallos de esquema que Phi (8 vs 5) y la peor tasa de aprobación
 indebida por presupuesto (51 % vs 33 %). Descartamos **DeepSeek-R1-Distill-Qwen (7B)** porque,
-pese a razonar mejor (9 % de aprobación indebida por presupuesto), tampoco acierta ningún caso,
-falla 26 veces por esquema al emitir `<think>` antes del JSON, y cuesta ~4.996 tokens y ~323 s
-por caso con 22 respuestas truncadas: inviable como sistema en la RTX 3050 de 6 GB. Su ventaja
+pese a razonar mejor (14 % de aprobación indebida por presupuesto, contra 33 % de Phi), tampoco
+acierta ningún caso: tiene 26 fallos de esquema, 22 de ellos respuestas truncadas porque el
+`<think>` agota los 8.192 tokens antes de emitir el JSON, y cuesta ~4.996 tokens y ~323 s por
+caso: inviable como sistema en la RTX 3050 de 6 GB. Su ventaja
 —razonar por pasos— es justamente lo que la descomposición le da a Phi-4-mini sin pagar 7B.
 
 ## 5. Evidencia anecdótica para el video

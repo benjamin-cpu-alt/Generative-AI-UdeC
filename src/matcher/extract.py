@@ -10,9 +10,9 @@ El LLM ve UNA propiedad a la vez y NUNCA ve el perfil del comprador. Por eso:
   - responde bajo un JSON Schema impuesto por decodificación restringida de
     Ollama (`format`), así que el esquema no puede romperse.
 
-La única decisión semántica que se le pide es contar dormitorios REALES y leer
-la política de mascotas/estacionamiento: ahí es donde el modelo todavía puede fallar
-(ver extract_report.py).
+En v1–v4 la única decisión semántica que se le pide es contar dormitorios REALES y
+leer la política de mascotas/estacionamiento. En v5 ni eso: el modelo solo localiza
+la cláusula de cada tema y grounding.py la interpreta (ver extract_report.py).
 """
 from __future__ import annotations
 
@@ -181,7 +181,8 @@ PROMPTS = {"v1": SYSTEM_V1, "v2": SYSTEM_V2, "v3": SYSTEM_V3, "v4": SYSTEM_V4, "
 # Versiones cuyo esquema es de SPANS (se pasan por grounding.py para obtener Facts).
 SPAN_VERSIONS = {"v5"}
 # Versión REPORTADA en la E2: v5 (test 51/51 e1_strict, dev 30/30). v1 se conserva como
-# evidencia de la iteración (test 30/51) y v2–v4 perdieron en dev y nunca se corrieron en test.
+# evidencia de la iteración (test 30/51). v2–v4 perdieron en dev y no se corrieron como
+# solución en test; v2 sí es el extractor de la ablación B (results/decomp_phi4, ver su meta).
 DEFAULT_PROMPT = "v5"
 SYSTEM = PROMPTS[DEFAULT_PROMPT]
 

@@ -7,13 +7,13 @@ con el mismo juez:
   results/<run>/<case_id>.trace.json   hechos extraídos + decisiones (solo modos decomp)
 
 Uso:
-  python -m matcher.run_pipeline --mode tools      --run tools_phi4                       # prompt v2
-  python -m matcher.run_pipeline --mode tools      --run tools_phi4_v1 --prompt-version v1
+  python -m matcher.run_pipeline --mode tools      --run tools_phi4_v5_g3             # v5 + g3 (lo reportado)
+  python -m matcher.run_pipeline --mode tools      --run tools_phi4_v1 --prompt-version v1 --grounding g1
   python -m matcher.run_pipeline --mode tools      --run dev_tools_v2 --split train --limit 30   # iterar en DEV
   python -m matcher.run_pipeline --mode tools      --run dev_tools_v5 --split train --limit 30 --prompt-version v5
   python -m matcher.run_pipeline --mode cot        --run cot_phi4
-  python -m matcher.run_pipeline --mode decomp_llm --run decomp_phi4
-  python -m matcher.evaluate --runs baseline_phi4 cot_phi4 decomp_phi4 tools_phi4
+  python -m matcher.run_pipeline --mode decomp_llm --run decomp_phi4 --prompt-version v2   # así se corrió la reportada
+  python -m matcher.evaluate --runs baseline_phi4 cot_phi4 decomp_phi4 tools_phi4_v5_g3
 """
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ from pathlib import Path
 from typing import List
 
 from . import grounding
-from .extract import DEFAULT_PROMPT
+from .extract import DEFAULT_PROMPT, SPAN_VERSIONS
 from .pipeline import MODES, run_case
 from .schema import Case
 
@@ -56,7 +56,8 @@ def run(model: str, mode: str, run_name: str, cases: List[Case], results_dir: Pa
         meta = {
             "case_id": case.id, "model": model, "run": run_name, "mode": mode,
             "prompt_version": prompt_version if mode in ("tools", "decomp_llm") else None,
-            "grounding_version": grounding_version if mode == "tools" else None,
+            "grounding_version": (grounding_version if mode == "tools"
+                                  or (mode == "decomp_llm" and prompt_version in SPAN_VERSIONS) else None),
             "calls": tr.calls, "prompt_tokens": tr.prompt_tokens, "output_tokens": tr.output_tokens,
             "wall_s": tr.wall_s, "done_reason": "error" if tr.errors else "stop",
             "errors": tr.errors, "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"),
@@ -84,7 +85,8 @@ def main(argv=None) -> int:
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--grounding", default=grounding.DEFAULT_VERSION, choices=grounding.VERSIONS,
                     help="versión de la capa de anclaje (g1 = la de results/tools_phi4_v5; "
-                         "g2 = + recuperación de cláusula y especies por parseo)")
+                         "g2 = + recuperación de cláusula y especies por parseo; "
+                         "g3 = + correcciones de parseo y seguridad, la reportada)")
     ap.add_argument("--prompt-version", default=DEFAULT_PROMPT, choices=("v1", "v2", "v3", "v4", "v5"),
                     help="prompt del extractor (ver extract.py; v5 = spans + grounding; "
                          "se elige en dev, nunca en test)")

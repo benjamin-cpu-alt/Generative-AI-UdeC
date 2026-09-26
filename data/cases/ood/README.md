@@ -12,8 +12,11 @@ La respuesta se mide aquí: si el rendimiento se sostiene sobre avisos que ningu
 plantilla produjo, la percepción del modelo es real; si se derrumba, lo que había era
 ajuste al generador. Los dos resultados se reportan.
 
-Se usa **solo para evaluar**. Ninguna versión del prompt ni de la capa de anclaje se
-ajustó mirando estos casos.
+Se usa **solo para evaluar**. Ninguna versión del prompt se ajustó mirando estos casos, y
+las capas de anclaje g1 y g2 tampoco: la cifra de g2 (9/12) es la medición ciega. **g3 sí**:
+sus cinco correcciones salieron de mirar los fallos de g2 aquí, así que su 11/12 no es una
+medición de generalización (ver `docs/e2_pipeline.md`, *Capa de anclaje*). Las mejoras que
+añadirían aprobaciones (`3D+E`, `2D 1B`, comuna al final) se dejaron fuera a propósito.
 
 ## Cómo se construyó
 

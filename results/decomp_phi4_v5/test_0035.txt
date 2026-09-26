@@ -1,0 +1,51 @@
+{
+  "approved_matches": [
+  {
+    "id": "PROP-M78",
+    "price_clp": 23641,
+    "roi_pct": 11.76
+  },
+  {
+    "id": "PROP-B38",
+    "price_clp": 197730,
+    "roi_pct": 5.47
+  },
+  {
+    "id": "PROP-T83",
+    "price_clp": 29400,
+    "roi_pct": 5.09
+  },
+  {
+    "id": "PROP-K42",
+    "price_clp": 22317,
+    "roi_pct": 11.53
+  },
+  {
+    "id": "PROP-F96",
+    "price_clp": 220220,
+    "roi_pct": 0
+  }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-N60",
+      "failed_constraints": [
+        "distancia_metro_text: 429 m mayor que 1500 m",
+        "bedrooms: 1 menor que 2"
+      ]
+    },
+    {
+      "id": "PROP-A01",
+      "failed_constraints": [
+        "pets_policy: no_mencionada"
+      ]
+    },
+    {
+      "id": "PROP-C23",
+      "failed_constraints": [
+        "distancia_metro_text: 2500 m mayor que 1500 m",
+        "distancia_bus_text: 800 m mayor que 1500 m"
+      ]
+    }
+  ]
+}

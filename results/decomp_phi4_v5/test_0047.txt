@@ -1,0 +1,57 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-C22",
+      "price_clp": 44188,
+      "roi_pct": 20.00
+    },
+    {
+      "id": "PROP-P69",
+      "price_clp": 43242,
+      "roi_pct": 23.66
+    },
+    {
+      "id": "PROP-B91",
+      "price_clp": 17688000,
+      "roi_pct": 4.93
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-S62",
+      "failed_constraints": [
+        "price exceeds budget",
+        "parking is not own or assigned"
+      ]
+    },
+    {
+      "id": "PROP-V33",
+      "failed_constraints": [
+        "distance to metro exceeds limit",
+        "no pets allowed",
+        "no own or assigned parking"
+      ]
+    },
+    {
+      "id": "PROP-C22",
+      "failed_constraints": [
+        "distance to metro exceeds limit"
+      ]
+    },
+    {
+      "id": "PROP-X77",
+      "failed_constraints": [
+        "price exceeds budget",
+        "distance to metro exceeds limit",
+        "only 1 bedroom"
+      ]
+    },
+    {
+      "id": "PROP-K28",
+      "failed_constraints": [
+        "price exceeds budget",
+        "no rent information provided"
+      ]
+    }
+  ]
+}

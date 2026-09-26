@@ -22,7 +22,7 @@ Reglas de anclaje:
 Versiones de la capa (`version=`), para que cada corrida siga siendo reproducible:
   g1  la capa con la que se corrió results/tools_phi4_v5*: anclaje + parsers, con
       recuperación desde el aviso SOLO para dormitorios.
-  g2  (por defecto) añade dos mecanismos derivados del análisis de los 11 fallos de
+  g2  añade dos mecanismos derivados del análisis de los 11 fallos de
       tools_phi4_v5, todos rechazos falsos o de ranking:
         A. recuperación de cláusula: si el span no ancla (el modelo parafraseó, copió
            el nombre del campo o se llevó la mitad equivocada de la frase), el código
@@ -34,10 +34,11 @@ Versiones de la capa (`version=`), para que cada corrida siga siendo reproducibl
            que confunden exclusividad con prohibición. Las respuestas del modelo se
            usan solo si el parser no reconoce el patrón.
       Ambos mecanismos dejan constancia en `warnings`: son medibles, no invisibles.
-  g3  (por defecto) tres correcciones de SEGURIDAD encontradas al correr g2 sobre el set
-      OOD escrito a mano. Las tres solo pueden QUITAR aprobaciones, nunca añadirlas, y
-      ninguna cambia un solo veredicto en test/ ni en dev (la ruta que corrigen no se
-      activa con los avisos del generador; se verificó comparando las salidas):
+  g3  (por defecto) cinco correcciones de parseo y seguridad encontradas al correr g2
+      sobre el set OOD escrito a mano. Las cuatro primeras solo pueden QUITAR aprobaciones,
+      nunca añadirlas (la quinta es la excepción, ver abajo), y ninguna cambia un solo
+      veredicto en test/ ni en dev (la ruta que corrigen no se activa con los avisos del
+      generador; se verificó comparando las salidas):
         1. "135 millones" se entiende como 135.000.000 CLP (formato estándar en Chile);
         2. si el aviso no declara la unidad junto al número, el precio queda NO VERIFICABLE
            en vez de adivinarse por magnitud. Adivinarla convirtió "piden 135 millones" en
@@ -49,6 +50,16 @@ Versiones de la capa (`version=`), para que cada corrida siga siendo reproducibl
         5. "UF 4.250,5" se ancla completo (miles y decimales a la vez). Este último SÍ
            puede añadir una aprobación, pero corrige una inconsistencia con
            normalize.parse_number, que siempre aceptó ese formato.
+  g4  dos correcciones de SEGURIDAD encontradas con avisos REALES de portales (src/scout),
+      después de la E2. Solo pueden quitar aprobaciones y no cambian ningún veredicto en
+      test/, dev ni OOD (verificado re-decidiendo las corridas versionadas). g3 sigue siendo
+      la versión por defecto y la reportada en la E2.
+        1. La cláusula de mascotas tiene que HABLAR de mascotas. En un aviso real el modelo
+           copió "Se aceptan ofertas. Se acepta canje con corredores." y parse_species leyó
+           "acepta" como "acepta mascotas": aprobaba un aviso que no dice nada de mascotas.
+        2. "La administración cuenta con opción de arriendo de estacionamientos" no incluye
+           estacionamiento: arriendo/compra aparte, "opción de", "posibilidad de" y
+           "adicional" pasan a `ninguno` en vez de caer en la rama por defecto `propio`.
 """
 from __future__ import annotations
 
@@ -298,12 +309,19 @@ def parse_bedrooms(clause: Optional[str]) -> Optional[int]:
 
 # Señales de que el estacionamiento NO viene con la unidad aunque la frase lo mencione
 # ("Estacionamiento opcional, se arrienda aparte a $50.000 mensuales" -> no lo incluye).
+# g4: señales de que el estacionamiento se ofrece aparte (visto en avisos reales).
+_PARKING_OFFERED_APART = re.compile(r"arriendo|arrendar|arrienda|venta aparte|se vende aparte|compra aparte|"
+                                    r"opci[óo]n de|posibilidad de|adicional|se puede (?:comprar|arrendar)",
+                                    re.IGNORECASE)
+# g4: una cláusula de mascotas tiene que nombrar mascotas o una especie.
+_PETS_WORDS = re.compile(r"mascota|perr[oa]s?|gat[oa]s?|\bpets?\b|animal", re.IGNORECASE)
+
 _PARKING_NOT_INCLUDED = re.compile(r"opcional|se arrienda|arriendo aparte|\baparte\b|"
                                    r"por separado|valor adicional|costo adicional|no incluid",
                                    re.IGNORECASE)
 
 
-def parse_parking(clause: Optional[str], strict: bool = False) -> str:
+def parse_parking(clause: Optional[str], strict: bool = False, apart: bool = False) -> str:
     """Clasifica la cláusula de estacionamiento. El orden importa: "en la calle, sin
     problemas para aparcar" es `calle`, no `ninguno`.
 
@@ -326,6 +344,8 @@ def parse_parking(clause: Optional[str], strict: bool = False) -> str:
     if re.search(r"\bsin\b|no incluye|no cuenta|no tiene|no dispone", s):
         return "ninguno"
     if strict and _PARKING_NOT_INCLUDED.search(s):
+        return "ninguno"
+    if apart and _PARKING_OFFERED_APART.search(s):
         return "ninguno"
     if "asignad" in s:
         return "asignado"
@@ -391,7 +411,7 @@ def parse_location(span: Optional[str], text: str) -> Optional[str]:
 SPAN_FIELDS = ("location_text", "bedrooms_text", "price_text", "rent_text", "distance_metro_text",
                "distance_bus_text", "parking_text", "pets_text")
 ANSWER_FIELDS = ("acepta_mascotas", "acepta_perros", "acepta_gatos")
-VERSIONS = ("g1", "g2", "g3")
+VERSIONS = ("g1", "g2", "g3", "g4")
 DEFAULT_VERSION = "g3"
 
 
@@ -400,8 +420,9 @@ def facts_from_spans(obj: Dict, text: str, version: str = DEFAULT_VERSION) -> Tu
     aplicando anclaje. Devuelve (kwargs, warnings). `version`: ver el docstring del módulo."""
     if version not in VERSIONS:
         raise ValueError(f"versión de grounding desconocida: {version} (usa {'|'.join(VERSIONS)})")
-    g2 = version in ("g2", "g3")
-    g3 = version == "g3"
+    g2 = version in ("g2", "g3", "g4")
+    g3 = version in ("g3", "g4")
+    g4 = version == "g4"
     warnings: List[str] = []
 
     def anchored(field: str, topic: Optional[str] = None) -> Optional[str]:
@@ -447,7 +468,7 @@ def facts_from_spans(obj: Dict, text: str, version: str = DEFAULT_VERSION) -> Tu
 
     # --- mascotas: cláusula anclada (o recuperada) + especies por parseo -------------
     pets_clause = obj.get("pets_text")
-    pets_ok_clause = clause_anchored(pets_clause, text)
+    pets_ok_clause = clause_anchored(pets_clause, text) and (not g4 or bool(_PETS_WORDS.search(pets_clause)))
     if not pets_ok_clause and g2:
         recovered = topic_sentence(text, "pets_text")
         if recovered:
@@ -501,6 +522,6 @@ def facts_from_spans(obj: Dict, text: str, version: str = DEFAULT_VERSION) -> Tu
         "pets_policy": policy,
         "pets_species": species,
         "pets_max_kg": pets_kg,
-        "parking": parse_parking(parking_clause, strict=g3),
+        "parking": parse_parking(parking_clause, strict=g3, apart=g4),
     }
     return kwargs, warnings

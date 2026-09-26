@@ -1,0 +1,53 @@
+{
+ "approved_matches": [
+  {
+   "id": "PROP-C45",
+   "price_clp": 15500000,
+   "roi_pct": 12.23
+  },
+  {
+   "id": "PROP-A93",
+   "price_clp": 4252000,
+   "roi_pct": 29.85
+  },
+  {
+   "id": "PROP-H81",
+   "price_clp": 16500000,
+   "roi_pct": 0.00
+  },
+  {
+   "id": "PROP-G43",
+   "price_clp": 17000000,
+   "roi_pct": 5.00
+  }
+ ],"rejected": [
+  {
+   "id": "PROP-U42",
+   "failed_constraints": [
+    "price exceeds budget",
+    "pets policy not specified for 4kg cat"
+   ]
+  },
+  {
+   "id": "PROP-D60",
+   "failed_constraints": [
+    "pets policy not specified for 4kg cat"
+   ]
+  },
+  {
+   "id": "PROP-P91",
+   "failed_constraints": [
+    "pets policy not allowed",
+    "parking not own or assigned",
+    "price exceeds budget"
+   ]
+  },
+  {
+   "id": "PROP-Z41",
+   "failed_constraints": [
+    "price exceeds budget",
+    "no assigned parking"
+   ]
+  }
+ ]
+}

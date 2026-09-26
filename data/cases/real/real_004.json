@@ -1,0 +1,126 @@
+{
+  "id": "real_004",
+  "uf_value": 41024.46,
+  "hard_constraints": {
+    "presupuesto_max_clp": 150000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Providencia",
+      "Ñuñoa"
+    ]
+  },
+  "properties": [
+    {
+      "id": "REAL-04",
+      "text": "Departamento en Providencia. 1D/1B, 24 m². Precio: UF 1.400. Sin Estacionamiento. Permite mascotas. Departamento antiguo tipo Studio en primer piso SECTOR PROVIDENCIA. Especial para renta, excelente ubicación y conectividad. Sector de alta demanda en arriendos unipersonales, especialmente estudiantes, ejecutivos jóvenes, personas solas. Consta de 1 espacio/dormitorio, pasillo, amplio baño completo con conexión a lavadora, cocina cerrada pequeña, thermo eléctrico para agua caliente, piso flotante. Edificio de excelente construcción del año 1955, en constante proceso de modernización y mantenciones, a una cuadra del Parque Bustamante, 3 cuadras de salida Metro Estación Baquedano, Facultad de derecho Universidad de Chile, Universidad San Sebastián, Universidad Andrés Bello, Museo Violeta Parra, Plaza Italia, Parque Forestal, Barrio Bellavista, Metro Estación Bustamante Línea 5, Hospital del Trabajador ACHS, otros varios. Gran oportunidad para inversionistas.",
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 1400,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "fuente": "https://www.yapo.cl/bienes-raices-venta-de-propiedades-apartamentos/paque-bustamante-metro-baquedano-1-d-1-b-cocina-pasillo-24-m2-totales/32927623",
+      "portal": "yapo",
+      "note": "'tipo Studio', '1 espacio/dormitorio' = estudio (0); '3 cuadras' no es distancia",
+      "expect": [
+        "distancia_transporte",
+        "dormitorios",
+        "estacionamiento"
+      ]
+    },
+    {
+      "id": "REAL-08",
+      "text": "Casa en Ñuñoa, Calle 9 1799. 3D/1B, 90 m². Precio: $140.000.000. Incluye 2 estacionamientos. Distancia estimada a la estación de metro Ñuble: 825 m. Superficie: 75 m². 🏡 ¡Tu Nuevo Hogar Te Espera en el Corazón de Ñuñoa! 🌳. 📍 Ubicación Inmejorable: Calle Nueve 1799, Ñuñoa. Disfruta de la tranquilidad de un barrio residencial con la conectividad que siempre quisiste. ✨ Espacios Pensados Para Ti:. Superficie Total: 75 m² de terreno y 90 m² construidos distribuidos en dos cómodos pisos . Primer Piso: El centro de la vida familiar. Amplio Living-Comedor con elegante piso flotante y acceso directo al patio , ideal para integrar tus reuniones. Funcional Cocina que también se conecta al patio, pensada para la comodidad diaria. Baño . ☀️ ¡El Paraíso Exterior que Siempre Soñaste! 🚗🥩. El verdadero valor añadido de esta propiedad es su espectacular y privado patio , diseñado para el disfrute y el relajo:. Estacionamiento para 2 vehículos , ¡un lujo en Ñuñoa! Quincho para Asados : Prepara tus mejores eventos sin salir de casa. ¡Te enamorarás!",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 825,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 140000000,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "fuente": "https://chilepropiedades.cl/ver-publicacion/venta/nunoa/casa/calle-9-1799/98645507",
+      "portal": "chilepropiedades",
+      "note": "CASO LÍMITE: cumple todo salvo mascotas, que no se mencionan",
+      "expect": [
+        "mascotas"
+      ]
+    },
+    {
+      "id": "REAL-12",
+      "text": "Casa en La Florida, Avenida Trinidad Oriente 1289, La Florida, Santiago, Metropolitana De Santiago, 8301717, Chl. 4D/3B. Precio: UF 20.000. Distancia estimada a la estación de metro San José de la Estrella: 2005 m. Buscar invertir en un proyecto comercial? o te quieres ir a vivir a una casa con gran terreno, a pasos de avenida La Florida. Te presentamos una casa grande con terreno de 1.000 m2, ideal para familia grande o gran potencial comercial. Cuenta con:. 5 dormitorios. 3 baños. 7 estacionamientos. cocina independiente. bodega. cuarto de lavado. casa de cuidador (sin regularizar). piscina. Ubicada en un barrio tranquilo y residencial, cercano a metro. ... , supermercados, bomba de bencina ,restorantes, farmacias, etc. La casa se destaca por su amplitud y comodidad en sus espacios. Mostrar.",
+      "truth": {
+        "bedrooms": 5,
+        "distance_transport_m": 2005,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 20000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      },
+      "fuente": "https://www.icasas.cl/propiedad/db2c-8ea5-1159153a-397dc58b8407-4632",
+      "portal": "icasas",
+      "note": "CONFLICTO: el portal dice 4D, la descripción '5 dormitorios' (manda la descripción)",
+      "expect": [
+        "distancia_transporte",
+        "mascotas",
+        "presupuesto"
+      ]
+    },
+    {
+      "id": "REAL-16",
+      "text": "Casa en Santiago. 3D/2B. Precio: UF 4.890. Distancia estimada a la estación de metro Universidad Católica: 443 m. Excelente departamento en Primer piso ubicado en Metro UC. Tiene dos dormitorios, un baño, mas pieza y baño de servicios. Cocina tradicional. Gran Patio de 23 metros cuadrados, con bodega. Todo con piso de parquet,. OPCION DE ESTACIONAMIENTO EN CALLE CON AUTORIZACION MUNICIPAL.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 443,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 4890,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      },
+      "fuente": "https://www.toctoc.com/venta/casas/metropolitana/santiago/b_e0fcbfdd01e0238ee711a35a8bc3514c4e154b04",
+      "portal": "toctoc",
+      "note": "portal dice 3D y 'casa'; el texto: departamento, 'dos dormitorios... mas pieza y baño de servicios' (servicio no cuenta); 'opción de estacionamiento en calle' = calle",
+      "expect": [
+        "estacionamiento",
+        "mascotas",
+        "presupuesto"
+      ]
+    }
+  ]
+}

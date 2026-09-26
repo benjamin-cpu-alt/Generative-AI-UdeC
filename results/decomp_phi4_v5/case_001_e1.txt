@@ -1,0 +1,54 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-A42",
+      "price_clp": 15500000,
+      "roi_pct": 77.42
+    },
+    {
+      "id": "PROP-E33",
+      "price_clp": 145000000,
+      "roi_pct": 8.56
+    },
+    {
+      "id": "PROP-F61",
+      "price_clp": 18500000,
+      "roi_pct": 62.16
+    },
+    {
+      "id": "PROP-G77",
+      "price_clp": 142000000,
+      "roi_pct": 8.52
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-B19",
+      "failed_constraints": [
+        "price exceeds budget",
+        "parking is not own or assigned"
+      ]
+    },
+    {
+      "id": "PROP-C88",
+      "failed_constraints": [
+        "pets_max_kg exceeds limit",
+        "parking is not own or assigned"
+      ]
+    },
+    {
+      "id": "PROP-D05",
+      "failed_constraints": [
+        "location is not preferred",
+        "bedrooms are less than required"
+      ]
+    },
+    {
+      "id": "PROP-H12",
+      "failed_constraints": [
+        "price exceeds budget",
+        "location is not preferred"
+      ]
+    }
+  ]
+}

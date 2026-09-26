@@ -1,0 +1,125 @@
+{
+  "id": "real_003",
+  "uf_value": 41024.46,
+  "hard_constraints": {
+    "presupuesto_max_clp": 150000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Providencia",
+      "Ñuñoa"
+    ]
+  },
+  "properties": [
+    {
+      "id": "REAL-03",
+      "text": "Departamento en Ñuñoa. 1D/1B, 32 m². Precio: UF 2.300. Distancia estimada a la estación de metro Irarrázaval: 898 m. Sin Estacionamiento. Permite mascotas. Hermoso departamento, a pocas cuadras de las estaciones de Metro Irarrázaval (Líneas 3 y 5) y Ñuble (Líneas 5 y 6), próximo a nuevo Mall Vivo en construcción. Departamento ubicado en Vicuña Mackenna N°1432, de 1 dormitorio, 1 baño, ventanas termopanel en todo el departamento, cocina americana completamente amoblada y equipada, con espacio cerrado para instalación de lavadora, living Comedor con orientación norte, piso 16, departamento de 32mts², sin bodega, ni estacionamiento. Edificio cuenta con piscina, lavandería, estacionamientos de visitas, sala de eventos y conserjería 24hrs. GGCC aprox. 55.000.",
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 898,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 2300,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      },
+      "fuente": "https://www.yapo.cl/bienes-raices-venta-de-propiedades-apartamentos/moderno-depto-en-av-vicuna-mackenna-1432-nunoa/32901693",
+      "portal": "yapo",
+      "note": "'Sin Estacionamiento' + 'ni estacionamiento'; el de visitas es del edificio",
+      "expect": [
+        "dormitorios",
+        "estacionamiento"
+      ]
+    },
+    {
+      "id": "REAL-07",
+      "text": "Departamento en Providencia, Europa 2121. 2D/2B, 78 m². Precio: UF 6.000. Incluye 1 estacionamiento. Distancia estimada a la estación de metro Pedro de Valdivia: 648 m. Superficie: 80 m². Venta departamento Vista despejada en Calle Europa 2121 Providencia Metro Pedro de Valdivia. En un barrio tranquilo con colegios, mall, supermercados, restaurante, Clínicas, metro, locomoción para todas las comunas. El departamento dispone de 2 dormitorios, 2 baños, 2 Terrazas con vista despejada, Living comedor con salida a la terraza, cocina independiente equipada, horno empotrado, cocina a gas, campana, Piscina, áreas verdes, Sala Multiuso, Estacionamiento de Visitas, Cámaras Seg Orientación: Sur Poniente, Dormitorios: 2 uno en suite con terraza propia con vistas y walkig closet. Estacionamientos: 1 Bodegas: 1 Gasto. Común: 200.000 aprox. VENDE CORRETAJE SANTIAGO.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 648,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 6000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "fuente": "https://chilepropiedades.cl/ver-publicacion/venta/providencia/departamento/europa-2121/94338048",
+      "portal": "chilepropiedades",
+      "note": "'Estacionamientos: 1'; el 'Estacionamiento de Visitas' es amenidad del edificio",
+      "expect": [
+        "mascotas",
+        "presupuesto"
+      ]
+    },
+    {
+      "id": "REAL-11",
+      "text": "Departamento en La Florida, Pasaje Galicia 1335, La Florida, Santiago, Metropolitana De Santiago, 8240000, Chl. 2D/1B. Precio: UF 2.800. Distancia estimada a la estación de metro Vicente Valdés: 1667 m. Departamento recién remodelado , Vista Norte y excelente conectividad. Con una superficie de 48 m2 construidos cuenta con:. 2 Dormitorios grandes (en ambos camas de dos plazas),. living comedor,. Cocina americana,. 2 Baños,. Estacionamiento,. Balcón. Departamento se encuentra en primer piso, cada piso con solo 4 departamentos, orientación Norte. Áreas comunes: sala de eventos, piscina y jardín. a pasos d. ... e metro Vicuña Mackenna y Vicente Valdés,. Exento de contribuciones. Mostrar.",
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1667,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      },
+      "fuente": "https://www.icasas.cl/propiedad/1d30-b006-9d582fb9-9a4a511d44eb-4196",
+      "portal": "icasas",
+      "note": "'Estacionamiento,' en la lista de lo que incluye; 'a pasos del metro' no es distancia",
+      "expect": [
+        "distancia_transporte",
+        "mascotas"
+      ]
+    },
+    {
+      "id": "REAL-15",
+      "text": "Casa en La Florida. 3D/4B. Precio: UF 6.100. Distancia estimada a la estación de metro Trinidad: 4646 m. Casa de 3 dormitorios y 4 baños, con distintos espacios interiores, piscina, terraza y mansarda, ubicada en sector Rojas Magallanes, La Florida. Sobre un terreno de 178 m², la propiedad cuenta con 120 m² construidos totales e incorpora living, comedor, sala de estar y cocina tradicional. El dormitorio principal es en suite. A estos espacios se suma una mansarda con baño, que por sus características ofrece un espacio de uso flexible, pudiendo destinarse a segundo estar, home office, sala de juegos u otro uso, de acuerdo con las necesidades familiares. En el exterior, la propiedad dispone de terraza, piscina y sector de parrilla. Cuenta además con patio, antejardín, logia, bodega y estacionamiento para 2 vehículos. Características principales. 178 m² de terreno. 120 m² construidos totales. 3 dormitorios. Dormitorio principal en suite. 4 baños. Living. Comedor. Bodega. 2 estacionamientos.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 4646,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 6100,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      },
+      "fuente": "https://www.toctoc.com/venta/casas/metropolitana/la-florida/b_d35a0d0d995c05005b25ff9e60156208c082a8dd",
+      "portal": "toctoc",
+      "note": "la mansarda de 'uso flexible' no es dormitorio",
+      "expect": [
+        "distancia_transporte",
+        "mascotas",
+        "presupuesto"
+      ]
+    }
+  ]
+}

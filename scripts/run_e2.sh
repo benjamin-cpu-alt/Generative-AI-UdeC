@@ -11,6 +11,8 @@
 #       ALL=1 bash scripts/run_e2.sh        # además las ablaciones cot y decomp_llm
 #       LIMIT=3 bash scripts/run_e2.sh      # prueba rápida
 #       SPLIT=ood bash scripts/run_e2.sh    # sobre los avisos escritos a mano
+# Con SPLIT distinto de test las corridas llevan el sufijo _<split> (baseline_phi4_ood,
+# tools_phi4_v5_ood_g3), así que nunca pisan las de test.
 # Se puede interrumpir y retomar: los casos ya respondidos se omiten.
 set -euo pipefail
 cd "$(dirname "$0")/../src"
@@ -18,25 +20,39 @@ cd "$(dirname "$0")/../src"
 MODEL="${MODEL:-phi4-mini:latest}"
 PROMPT="${PROMPT:-v5}"       # prompt del extractor reportado en el PDF (ver extract.py)
 GROUNDING="${GROUNDING:-g3}"  # capa de anclaje reportada (ver grounding.py)
+# Ablación B (decomp_llm): mismo extractor que la solución, así el LLM decide sobre los MISMOS
+# hechos que Python (results/decomp_phi4_v5). DECOMP_PROMPT=v2 reproduce la primera versión
+# (results/decomp_phi4), que usó otro extractor.
+DECOMP_PROMPT="${DECOMP_PROMPT:-$PROMPT}"
+SPLIT="${SPLIT:-test}"        # subcarpeta de data/cases (test|ood|train)
+CASES="../data/cases/$SPLIT"
+[ -d "$CASES" ] || { echo "no existe $CASES" >&2; exit 1; }
+SFX=""; [ "$SPLIT" != "test" ] && SFX="_$SPLIT"
 LIMIT_ARG=""; [ -n "${LIMIT:-}" ] && LIMIT_ARG="--limit $LIMIT"
 
-echo "================ baseline (prompting directo) ================"
+echo "================ baseline (prompting directo, split=$SPLIT) ================"
 # shellcheck disable=SC2086
-python3 -m matcher.run_model --model "$MODEL" --run baseline_phi4 --num-predict 2048 --num-ctx 4096 $LIMIT_ARG \
-  2>&1 | tee -a ../results/baseline_phi4.log
+python3 -m matcher.run_model --model "$MODEL" --run "baseline_phi4$SFX" --split "$SPLIT" \
+  --num-predict 2048 --num-ctx 4096 $LIMIT_ARG \
+  2>&1 | tee -a "../results/baseline_phi4$SFX.log"
 
-RUNS=(baseline_phi4)
+RUNS=("baseline_phi4$SFX")
 MODES=(tools); [ -n "${ALL:-}" ] && MODES=(cot decomp_llm tools)
+TOOLS_RUN="tools_phi4_${PROMPT}${SFX}_${GROUNDING}"
 for m in "${MODES[@]}"; do
-  run="${m}_phi4"; [ "$m" = "decomp_llm" ] && run="decomp_phi4"; [ "$m" = "tools" ] && run="tools_phi4_${PROMPT}_${GROUNDING}"
-  echo "================ $m ================"
+  run="${m}_phi4$SFX"; p="$PROMPT"
+  if [ "$m" = "decomp_llm" ]; then
+    p="$DECOMP_PROMPT"; run="decomp_phi4_${p}$SFX"; [ "$p" = "v2" ] && run="decomp_phi4$SFX"
+  fi
+  [ "$m" = "tools" ] && run="$TOOLS_RUN"
+  echo "================ $m (split=$SPLIT) ================"
   # shellcheck disable=SC2086
-  python3 -m matcher.run_pipeline --mode "$m" --model "$MODEL" --run "$run" \
-    --prompt-version "$PROMPT" --grounding "$GROUNDING" $LIMIT_ARG \
+  python3 -m matcher.run_pipeline --mode "$m" --model "$MODEL" --run "$run" --split "$SPLIT" \
+    --prompt-version "$p" --grounding "$GROUNDING" $LIMIT_ARG \
     2>&1 | tee -a "../results/$run.log"
   RUNS+=("$run")
 done
 
-python3 -m matcher.evaluate --runs "${RUNS[@]}"
+python3 -m matcher.evaluate --runs "${RUNS[@]}" --cases "$CASES"
 echo
-python3 -m matcher.extract_report --run "tools_phi4_${PROMPT}_${GROUNDING}"
+python3 -m matcher.extract_report --run "$TOOLS_RUN" --cases "$CASES"

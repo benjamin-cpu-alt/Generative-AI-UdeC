@@ -1,0 +1,37 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-H18",
+      "price_clp": 56197200,
+      "roi_pct": 266.67
+    },
+    {
+      "id": "PROP-Y22",
+      "price_clp": 5417700,
+      "roi_pct": 393.66
+    },
+    {
+      "id": "PROP-Z96",
+      "price_clp": 54177000,
+      "roi_pct": 10.99
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-T39",
+      "failed_constraints": ["price_exceeds_budget"]
+    },
+    {
+      "id": "PROP-P84",
+      "failed_constraints": ["pets_max_kg_exceeded"]
+    },
+    {
+      "id": "PROP-W67",
+      "failed_constraints": ["price_exceeds_budget"]
+    },
+    {
+      "id": "PROP-Z96",
+      "failed_constraints": ["pets_max_kg_exceeded"]
+    }
+  ]
+}

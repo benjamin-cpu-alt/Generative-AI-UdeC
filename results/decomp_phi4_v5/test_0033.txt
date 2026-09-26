@@ -1,0 +1,34 @@
+{
+  "approved_matches": [
+  {
+    "id": "PROP-G20",
+    "price_clp": 1792000,
+    "roi_pct": 5.73
+  },
+  {
+    "id": "PROP-L68",
+    "price_clp": 189900000,
+    "roi_pct": 10.00
+  },
+  {
+    "id": "PROP-S26",
+    "price_clp": 403040,
+    "roi_pct": 0.00
+  }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-F13",
+      "failed_constraints": [
+        "price exceeds budget"
+      ]
+    },
+    {
+      "id": "PROP-M65",
+      "failed_constraints": [
+        "no assigned parking",
+        "price exceeds budget"
+      ]
+    }
+  ]
+}

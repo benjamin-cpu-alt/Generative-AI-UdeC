@@ -1,7 +1,9 @@
 """Renderiza el prompt que ve el modelo a partir de un caso.
 
-Es el MISMO prompt para el baseline y para la solución: la intervención de la
-E2 no cambia el prompt, cambia el modelo (destilado). El esquema de salida es el
+Es el prompt del BASELINE (prompting directo) y el esquema contra el que se juzga a
+todas las estrategias. La solución de la E2 no lo reemplaza con otro prompt: descompone
+la tarea (extracción por propiedad, ver extract.py) y deja la aritmética y las
+comparaciones a herramientas en Python (pipeline.py). El esquema de salida es el
 del PDF del Entregable 1 (id, price_clp, roi_pct / id, failed_constraints).
 
 Mantiene las SOFT CONSTRAINTS de la E1 (data/prompt_base.txt): ubicación preferida

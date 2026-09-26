@@ -1,0 +1,53 @@
+{
+  "facts": {
+    "REAL-F1": {
+      "location": "Providencia",
+      "bedrooms": 3,
+      "price_text": "$150.000.000",
+      "rent_text": null,
+      "distance_metro_text": "112 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Departamento en Providencia, Av. Providencia 1645.\", \"bedrooms_text\": \"Dormitorios: 3 dormitorios amplios.\", \"price_text\": \"$150.000.000\", \"rent_text\": \"La administración cuenta con opción de arriendo de estacionamientos.\", \"distance_metro_text\": \"Distancia estimada a la estación de metro Pedro de Valdivia: 112 m.\", \"distance_bus_text\": null, \"parking_text\": \"La administración cuenta con opción de arriendo de estacionamientos.\", \"pets_text\": \"Se aceptan ofertas. Se acepta canje con corredores.\",\"acepta_mascotas\": \"no_dice\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 854,
+      "output_tokens": 163,
+      "wall_s": 5.41,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en Providencia, Av. Providencia 1645.",
+        "bedrooms_text": "Dormitorios: 3 dormitorios amplios.",
+        "price_text": "$150.000.000",
+        "rent_text": "La administración cuenta con opción de arriendo de estacionamientos.",
+        "distance_metro_text": "Distancia estimada a la estación de metro Pedro de Valdivia: 112 m.",
+        "distance_bus_text": null,
+        "parking_text": "La administración cuenta con opción de arriendo de estacionamientos.",
+        "pets_text": "Se aceptan ofertas. Se acepta canje con corredores.",
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "rent_text: número no está en el aviso: 'La administración cuenta con opción de arriendo de estacionamientos.'",
+        "pets: parser=permitidas/cualquiera reemplaza al modelo=no_mencionada/cualquiera"
+      ]
+    }
+  },
+  "decisions": {
+    "REAL-F1": {
+      "price_clp": 150000000,
+      "roi_pct": null,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '$150.000.000' = 1.5e+08 CLP -> 150,000,000 CLP <= 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 18kg -> ok",
+        "distancia: metro='112 m' bus=None -> min=112 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

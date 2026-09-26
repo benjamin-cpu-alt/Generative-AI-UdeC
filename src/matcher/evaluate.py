@@ -34,11 +34,12 @@ from .schema import Case
 from .verifier import Verdict, verify
 
 ROOT = Path(__file__).resolve().parents[2]
-CASES_DIR = ROOT / "data" / "cases" / "test"   # held-out; train/ es solo para destilar
+CASES_DIR = ROOT / "data" / "cases" / "test"   # held-out; train/ es solo para iterar el extractor
 RESULTS_DIR = ROOT / "results"
 
 CONSTRAINTS = ["presupuesto", "mascotas", "distancia_transporte", "dormitorios", "estacionamiento"]
-_FA_RE = re.compile(r"(PROP-\w+) aprobada pero viola \[([^\]]*)\]")
+# Cualquier id (PROP-… en test, OOD-… en el set escrito a mano): ver verifier.py.
+_FA_RE = re.compile(r"(\S+) aprobada pero viola \[([^\]]*)\]")
 
 
 def load_cases(cases_dir: Path = CASES_DIR) -> List[Case]:

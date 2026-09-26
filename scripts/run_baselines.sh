@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # Corre los tres modelos candidatos con prompting directo sobre el split test
 # y produce la tabla comparativa. Requiere Ollama corriendo con los modelos:
-#   ollama pull phi4-mini:latest granite4.1:8b deepseek-r1:7b
+#   ollama pull phi4-mini:latest && ollama pull granite4.1:8b && ollama pull deepseek-r1:7b
 #
 # Uso:  bash scripts/run_baselines.sh              # los tres
 #       bash scripts/run_baselines.sh phi4         # solo uno (phi4|granite|deepseek)
 #       LIMIT=3 bash scripts/run_baselines.sh phi4 # prueba rápida con 3 casos
-#       TIMEOUT=900 FORCE=1 bash scripts/run_baselines.sh deepseek  # re-corre todo con 900 s/caso
+#       FORCE=1 bash scripts/run_baselines.sh deepseek  # re-corre todo (900 s/caso, como la tabla)
 #
 # Cada ejecución se puede interrumpir y retomar: los casos ya respondidos se omiten.
 # Compatible con bash 3.2 (macOS) y Git Bash (Windows).
@@ -32,7 +32,7 @@ extra_of() {
 
 TARGETS=("$@"); [ ${#TARGETS[@]} -eq 0 ] && TARGETS=(phi4 granite deepseek)
 LIMIT_ARG=""; [ -n "${LIMIT:-}" ] && LIMIT_ARG="--limit $LIMIT"
-TIMEOUT_ARG="--timeout ${TIMEOUT:-600}"   # segundos máximos por caso
+TIMEOUT_ARG="--timeout ${TIMEOUT:-900}"   # segundos máximos por caso (la tabla de la E2 usó 900)
 FORCE_ARG=""; [ -n "${FORCE:-}" ] && FORCE_ARG="--force"   # re-genera casos ya respondidos
 
 RUNS=()

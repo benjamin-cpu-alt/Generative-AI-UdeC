@@ -1,0 +1,61 @@
+{
+ "approved_matches": [
+  {
+    "id": "PROP-H59",
+    "price_clp": 14130000,
+    "roi_pct": 6.38
+  },
+  {
+    "id": "PROP-M69",
+    "price_clp": 38910000,
+    "roi_pct": 8.77
+  },
+  {
+    "id": "PROP-L82",
+    "price_clp": 13965000000,
+    "roi_pct": 8.76
+  },
+  {
+    "id": "PROP-R87",
+    "price_clp": 34490000,
+    "roi_pct": 4.52
+  },
+  {
+    "id": "PROP-Y19",
+    "price_clp": 40985000,
+    "roi_pct": 8.99
+  }
+ ],
+ "rejected": [
+  {
+    "id": "PROP-W64",
+    "failed_constraints": [
+      "distancia_metro_text: 1,1 km mayor que 1000 m",
+      "bedrooms: 2 no es minimo 2",
+      "parking: visitas no es propio ni asignado"
+    ]
+  },
+  {
+    "id": "PROP-Q61",
+    "failed_constraints": [
+      "distancia_metro_text: 2,3 km mayor que 1000 m"
+    ]
+  },
+  {
+    "id": "PROP-X54",
+    "failed_constraints": [
+      "distancia_metro_text: 360 m mayor que 1000 m",
+      "pets_species: gato no es compatible con max 15 kg",
+      "parking: visitas no es propio ni asignado"
+    ]
+  },
+  {
+    "id": "PROP-J31",
+    "failed_constraints": [
+      "distancia_metro_text: 1,4 km mayor que 1000 m",
+      "distancia_bus_text: 246 m mayor que 1000 m",
+      "parking: visitas no es propio ni asignado"
+    ]
+  }
+ ]
+}

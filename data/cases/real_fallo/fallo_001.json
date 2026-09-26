@@ -1,0 +1,45 @@
+{
+  "id": "fallo_001",
+  "uf_value": 41024.46,
+  "hard_constraints": {
+    "presupuesto_max_clp": 150000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Providencia",
+      "Ñuñoa"
+    ]
+  },
+  "properties": [
+    {
+      "id": "REAL-F1",
+      "text": "Departamento en Providencia, Av. Providencia 1645. 3D/2B, 80 m². Precio: $150.000.000. Distancia estimada a la estación de metro Pedro de Valdivia: 112 m. Superficie: 80 m². Se vende hermoso departamento totalmente remodelado y sin uso , ubicado en las Torres Carlos Antúnez, en pleno corazón de Providencia. Cuenta con excelentes terminaciones, pisos flotantes y cerámicos nuevos, e iluminación natural con hermosa vista despejada hacia Providencia y la Cordillera. Dormitorios: 3 dormitorios amplios. Baños: 2 baños completos. Espacios Comunes: Living-comedor amplio y muy luminoso. Cocina: Cocina independiente con muebles nuevos y termo eléctrico. Equipamiento del Edificio y Servicios:. 2 ascensores amplios. Conserjería y vigilancia 24/7 con circuito de cámaras. La administración cuenta con opción de arriendo de estacionamientos. Conectividad: Ubicación privilegiada a pasos de Av. Pedro de Valdivia, Metro Pedro de Valdivia y Carlos Antúnez. moll, iglesia, Zona de alta plusvalía. Se aceptan ofertas. Se acepta canje con corredores.",
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 112,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 150000000,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      },
+      "fuente": "https://chilepropiedades.cl/ver-publicacion/venta/providencia/departamento/av-providencia-1645/63865877",
+      "note": "'Se aceptan ofertas' no es política de mascotas; 'opción de arriendo de estacionamientos' = no incluido. g3 aprobaba este aviso.",
+      "expect": [
+        "estacionamiento",
+        "mascotas"
+      ]
+    }
+  ]
+}

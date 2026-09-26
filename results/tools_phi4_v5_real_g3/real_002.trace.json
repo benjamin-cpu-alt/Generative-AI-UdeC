@@ -1,0 +1,199 @@
+{
+  "facts": {
+    "REAL-02": {
+      "location": "Ñuñoa",
+      "bedrooms": 4,
+      "price_text": "9.790 UF",
+      "rent_text": null,
+      "distance_metro_text": "568 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Casa en Ñuñoa.\", \"bedrooms_text\": \"4D/4B\", \"price_text\": \"UF 9.790\", \"rent_text\": null, \"distance_metro_text\": \"Distancia estimada a la estación de metro Monseñor Eyzaguirre: 568 m.\", \"distance_bus_text\": null, \"parking_text\": \"Incluye 4 estacionamientos.\", \"pets_text\": \"no_dice\", \"acepta_mascotas\": \"no_dice\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 866,
+      "output_tokens": 134,
+      "wall_s": 4.7,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Ñuñoa.",
+        "bedrooms_text": "4D/4B",
+        "price_text": "UF 9.790",
+        "rent_text": null,
+        "distance_metro_text": "Distancia estimada a la estación de metro Monseñor Eyzaguirre: 568 m.",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 4 estacionamientos.",
+        "pets_text": "no_dice",
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets: respuestas sin cláusula anclada -> no_mencionada"
+      ]
+    },
+    "REAL-06": {
+      "location": "Providencia",
+      "bedrooms": 1,
+      "price_text": "1.650 UF",
+      "rent_text": null,
+      "distance_metro_text": "226 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\"location_text\": \"Departamento en Providencia, Avenida Vicuña Mackenna 601.\", \"bedrooms_text\": \"1D/1B\", \"price_text\": \"UF 1.650.\", \"rent_text\": null, \"distance_metro_text\": \"226 m.\", \"distance_bus_text\": null, \"parking_text\": null, \"pets_text\": null, \"acepta_mascotas\": \"no_dice\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 837,
+      "output_tokens": 112,
+      "wall_s": 4.05,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en Providencia, Avenida Vicuña Mackenna 601.",
+        "bedrooms_text": "1D/1B",
+        "price_text": "UF 1.650.",
+        "rent_text": null,
+        "distance_metro_text": "226 m.",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": null,
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "REAL-10": {
+      "location": "Providencia",
+      "bedrooms": 1,
+      "price_text": "3.300 UF",
+      "rent_text": null,
+      "distance_metro_text": "927 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\"location_text\": \"Departamento en Providencia.\", \"bedrooms_text\": \"1D/1B. 1 Dormitorio / Ambiente.\", \"price_text\": \"UF 3.300.\", \"rent_text\": null, \"distance_metro_text\": \"Distancia estimada a la estación de metro Los Leones: 927 m.\", \"distance_bus_text\": null, \"parking_text\": null, \"pets_text\": null, \"acepta_mascotas\": \"no_dice\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 715,
+      "output_tokens": 124,
+      "wall_s": 4.06,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en Providencia.",
+        "bedrooms_text": "1D/1B. 1 Dormitorio / Ambiente.",
+        "price_text": "UF 3.300.",
+        "rent_text": null,
+        "distance_metro_text": "Distancia estimada a la estación de metro Los Leones: 927 m.",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": null,
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "REAL-14": {
+      "location": "Ñuñoa",
+      "bedrooms": 4,
+      "price_text": "15.500 UF",
+      "rent_text": null,
+      "distance_metro_text": "923 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"Casa en Ñuñoa.\",\n  \"bedrooms_text\": \"4D/4B\",\n  \"price_text\": \"UF 15.500.\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"923 m.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": null,\n  \"pets_text\": null,\n  \"acepta_mascotas\": \"no_dice\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 767,
+      "output_tokens": 118,
+      "wall_s": 4.04,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Ñuñoa.",
+        "bedrooms_text": "4D/4B",
+        "price_text": "UF 15.500.",
+        "rent_text": null,
+        "distance_metro_text": "923 m.",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": null,
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "REAL-02": {
+      "price_clp": 401629463,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '9.790 UF' = 9790 UF -> 401,629,463 CLP > 150,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 18kg -> FALLA",
+        "distancia: metro='568 m' bus=None -> min=568 vs max 1000",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "REAL-06": {
+      "price_clp": 67690359,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '1.650 UF' = 1650 UF -> 67,690,359 CLP <= 150,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 18kg -> FALLA",
+        "distancia: metro='226 m' bus=None -> min=226 vs max 1000",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "REAL-10": {
+      "price_clp": 135380718,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.300 UF' = 3300 UF -> 135,380,718 CLP <= 150,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 18kg -> FALLA",
+        "distancia: metro='927 m' bus=None -> min=927 vs max 1000",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "REAL-14": {
+      "price_clp": 635879130,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "mascotas",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '15.500 UF' = 15500 UF -> 635,879,130 CLP > 150,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 18kg -> FALLA",
+        "distancia: metro='923 m' bus=None -> min=923 vs max 1000",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    }
+  }
+}

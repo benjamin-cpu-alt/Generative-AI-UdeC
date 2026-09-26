@@ -1,0 +1,44 @@
+{
+ "approved_matches": [
+  {
+    "id": "PROP-A10",
+    "price_clp": 11000000,
+    "roi_pct": 6.61
+  },
+  {
+    "id": "PROP-G38",
+    "price_clp": 6933000,
+    "roi_pct": 12.73
+  }
+ ],
+ "rejected": [
+  {
+    "id": "PROP-Q93",
+    "failed_constraints": ["price_clp: 144000000.0"]
+  },
+  {
+    "id": "PROP-K86",
+    "failed_constraints": ["distance_metro_text", "pets_species", "distance_metro_text"]
+  },
+  {
+    "id": "PROP-P58",
+    "failed_constraints": ["price_clp: 126100000000.0", "distance_metro_text: 800"]
+  },
+  {
+    "id": "PROP-S21",
+    "failed_constraints": ["parking: asignado"]
+  },
+  {
+    "id": "PROP-X59",
+    "failed_constraints": ["bedrooms: 3", "distance_metro_text: 583", "parking: none"]
+  },
+  {
+    "id": "PROP-H38",
+    "failed_constraints": ["parking: calle"]
+  },
+  {
+    "id": "PROP-W17",
+    "failed_constraints": ["bedrooms: 2", "price_clp: 37050000.0"]
+  }
+ ]
+}

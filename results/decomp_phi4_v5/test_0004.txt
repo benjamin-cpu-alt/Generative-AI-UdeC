@@ -1,0 +1,52 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-Y61",
+      "price_clp": 13980000,
+      "roi_pct": 6.95
+    },
+    {
+      "id": "PROP-G78",
+      "price_clp": 3058000,
+      "roi_pct": 44.89
+    },
+    {
+      "id": "PROP-Z84",
+      "price_clp": 5370,
+      "roi_pct": 84.91
+    },
+    {
+      "id": "PROP-K86",
+      "price_clp": 523400,
+      "roi_pct": 23.44
+    },
+    {
+      "id": "PROP-V53",
+      "price_clp": 1755000000,
+      "roi_pct": 0.00
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-J49",
+      "failed_constraints": [
+        "price exceeds budget",
+        "pets_max_kg is missing"
+      ]
+    },
+    {
+      "id": "PROP-R51",
+      "failed_constraints": [
+        "distance to metro exceeds limit",
+        "parking is not assigned"
+      ]
+    },
+    {
+      "id": "PROP-L76",
+      "failed_constraints": [
+        "price exceeds budget",
+        "distance to metro exceeds limit"
+      ]
+    }
+  ]
+}

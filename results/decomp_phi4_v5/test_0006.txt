@@ -1,0 +1,27 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-N49",
+      "price_clp": 4867400,
+      "roi_pct": null
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-G65",
+      "failed_constraints": ["price", "bedrooms", "parking"]
+    },
+    {
+      "id": "PROP-E34",
+      "failed_constraints": ["bedrooms", "pets_max_kg", "parking"]
+    },
+    {
+      "id": "PROP-Y95",
+      "failed_constraints": ["distance_metro_text", "parking"]
+    },
+    {
+      "id": "PROP-L28",
+      "failed_constraints": ["bedrooms", "distance_metro_text", "distance_bus_text", "parking"]
+    }
+  ]
+}

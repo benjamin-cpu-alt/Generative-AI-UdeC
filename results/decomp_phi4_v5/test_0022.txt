@@ -1,0 +1,41 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-G18",
+      "price_clp": 150000000,
+      "roi_pct": 8.00
+    },
+    {
+      "id": "PROP-A20",
+      "price_clp": 72000000,
+      "roi_pct": 6.00
+    },
+    {
+      "id": "PROP-R30",
+      "price_clp": 27036000,
+      "roi_pct": 6.67
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-J10",
+      "failed_constraints": ["price_clp"]
+    },
+    {
+      "id": "PROP-F69",
+      "failed_constraints": ["pets_max_kg"]
+    },
+    {
+      "id": "PROP-Z65",
+      "failed_constraints": ["bedrooms"]
+    },
+    {
+      "id": "PROP-Q20",
+      "failed_constraints": ["parking"]
+    },
+    {
+      "id": "PROP-U19",
+      "failed_constraints": ["bedrooms"]
+    }
+  ]
+}

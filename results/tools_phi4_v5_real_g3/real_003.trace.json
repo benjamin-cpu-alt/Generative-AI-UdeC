@@ -1,0 +1,203 @@
+{
+  "facts": {
+    "REAL-03": {
+      "location": "Ñuñoa",
+      "bedrooms": 1,
+      "price_text": "2.300 UF",
+      "rent_text": null,
+      "distance_metro_text": "898 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "ninguno",
+      "raw": "{\n  \"location_text\": \"Departamento en Ñuñoa.\",\n  \"bedrooms_text\": \"1D/1B\",\n  \"price_text\": \"UF 2.300\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"898 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Sin Estacionamiento.\",\n  \"pets_text\": \"Permite mascotas.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 809,
+      "output_tokens": 123,
+      "wall_s": 4.26,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en Ñuñoa.",
+        "bedrooms_text": "1D/1B",
+        "price_text": "UF 2.300",
+        "rent_text": null,
+        "distance_metro_text": "898 m",
+        "distance_bus_text": null,
+        "parking_text": "Sin Estacionamiento.",
+        "pets_text": "Permite mascotas.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "REAL-07": {
+      "location": "Providencia",
+      "bedrooms": 2,
+      "price_text": "6.000 UF",
+      "rent_text": null,
+      "distance_metro_text": "648 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Departamento en Providencia, Europa 2121.\",\n  \"bedrooms_text\": \"2 dormitorios\",\n  \"price_text\": \"UF 6.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Distancia estimada a la estación de metro Pedro de Valdivia: 648 m.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento.\",\n  \"pets_text\": \"no_dice\",\n  \"acepta_mascotas\": \"no\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 833,
+      "output_tokens": 141,
+      "wall_s": 4.91,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en Providencia, Europa 2121.",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "UF 6.000",
+        "rent_text": null,
+        "distance_metro_text": "Distancia estimada a la estación de metro Pedro de Valdivia: 648 m.",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento.",
+        "pets_text": "no_dice",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets: respuestas sin cláusula anclada -> no_mencionada"
+      ]
+    },
+    "REAL-11": {
+      "location": "La Florida",
+      "bedrooms": 2,
+      "price_text": "2.800 UF",
+      "rent_text": null,
+      "distance_metro_text": "1667 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Departamento en La Florida, Pasaje Galicia 1335, La Florida, Santiago, Metropolitana De Santiago, 8240000, Chl. 2D/1B.\",\n  \"bedrooms_text\": \"2 Dormitorios grandes (en ambos camas de dos plazas)\",\n  \"price_text\": \"UF 2.800\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Distancia estimada a la estación de metro Vicente Valdés: 1667 m.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento\",\n  \"pets_text\": \"no_dice\",\n  \"acepta_mascotas\": \"no_dice\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 772,
+      "output_tokens": 174,
+      "wall_s": 5.61,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en La Florida, Pasaje Galicia 1335, La Florida, Santiago, Metropolitana De Santiago, 8240000, Chl. 2D/1B.",
+        "bedrooms_text": "2 Dormitorios grandes (en ambos camas de dos plazas)",
+        "price_text": "UF 2.800",
+        "rent_text": null,
+        "distance_metro_text": "Distancia estimada a la estación de metro Vicente Valdés: 1667 m.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento",
+        "pets_text": "no_dice",
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets: respuestas sin cláusula anclada -> no_mencionada"
+      ]
+    },
+    "REAL-15": {
+      "location": "La Florida",
+      "bedrooms": 3,
+      "price_text": "6.100 UF",
+      "rent_text": null,
+      "distance_metro_text": "4646 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Casa en La Florida.\", \"bedrooms_text\": \"3 dormitorios\", \"price_text\": \"UF 6.100.\", \"rent_text\": null, \"distance_metro_text\": \"Distancia estimada a la estación de metro Trinidad: 4646 m.\", \"distance_bus_text\": null, \"parking_text\": \"2 estacionamientos para 2 vehículos.\", \"pets_text\": \"no_dice\", \"acepta_mascotas\": \"no_dice\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 843,
+      "output_tokens": 124,
+      "wall_s": 4.54,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en La Florida.",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "UF 6.100.",
+        "rent_text": null,
+        "distance_metro_text": "Distancia estimada a la estación de metro Trinidad: 4646 m.",
+        "distance_bus_text": null,
+        "parking_text": "2 estacionamientos para 2 vehículos.",
+        "pets_text": "no_dice",
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets: respuestas sin cláusula anclada -> no_mencionada",
+        "parking_text: no es literal del aviso: '2 estacionamientos para 2 vehículos.'",
+        "parking_text: recuperado del aviso ('Cuenta además con patio, antejardín, logia, bode')"
+      ]
+    }
+  },
+  "decisions": {
+    "REAL-03": {
+      "price_clp": 94356258,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.300 UF' = 2300 UF -> 94,356,258 CLP <= 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 18kg -> ok",
+        "distancia: metro='898 m' bus=None -> min=898 vs max 1000",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: ninguno (requerido=True)"
+      ]
+    },
+    "REAL-07": {
+      "price_clp": 246146760,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '6.000 UF' = 6000 UF -> 246,146,760 CLP > 150,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 18kg -> FALLA",
+        "distancia: metro='648 m' bus=None -> min=648 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "REAL-11": {
+      "price_clp": 114868488,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '2.800 UF' = 2800 UF -> 114,868,488 CLP <= 150,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 18kg -> FALLA",
+        "distancia: metro='1667 m' bus=None -> min=1667 vs max 1000",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "REAL-15": {
+      "price_clp": 250249206,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "mascotas",
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '6.100 UF' = 6100 UF -> 250,249,206 CLP > 150,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 18kg -> FALLA",
+        "distancia: metro='4646 m' bus=None -> min=4646 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}
