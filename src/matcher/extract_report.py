@@ -14,7 +14,7 @@ import json
 import sys
 from collections import Counter
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Tuple
 
 from . import normalize
 from .schema import Case, Truth

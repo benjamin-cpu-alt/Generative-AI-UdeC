@@ -15,7 +15,7 @@ from __future__ import annotations
 import html as htmllib
 import json
 import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Iterator, List, Optional
 
 from bs4 import BeautifulSoup

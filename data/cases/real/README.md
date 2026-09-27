@@ -9,7 +9,9 @@ evaluación, después de `test/` (sintético) y `ood/` (escrito a mano).
 1. **Sorteo sin mirar** (`scripts/sample_real.py`). Se descargan solo las páginas de
    resultados de Providencia, Ñuñoa, Santiago y La Florida (departamentos y casas), se
    excluyen los proyectos con varias tipologías y se sortean 4 unidades por portal con la
-   semilla 2026, de un universo de 2.198. Recién entonces se abren esos avisos. PortalPM
+   semilla 2026, de universos de 160 (Yapo), 80 (Chilepropiedades), 120 (iCasas) y 1.838
+   (TocToc) unidades; 2.198 en total (`universo_por_portal` en la instantánea). Recién
+   entonces se abren esos avisos. PortalPM
    no aporta: todos sus avisos son proyectos.
 2. **Instantánea** (`fuente/muestra.json`). Guarda la ficha de cada aviso (el texto que
    ven baseline y solución, generado por `src/scout/ficha.py`) y la URL de origen. El

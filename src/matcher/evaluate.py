@@ -27,7 +27,7 @@ import statistics
 import sys
 from collections import Counter
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 from .rules import expected_output
 from .schema import Case

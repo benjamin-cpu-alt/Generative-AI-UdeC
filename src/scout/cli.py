@@ -33,7 +33,8 @@ OUT_ROOT = ROOT / "results" / "scout"
 
 
 def main(argv=None) -> int:
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = argparse.ArgumentParser(prog="python3 -m scout", description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--perfil", help="JSON con el perfil del comprador (omite el cuestionario)")
     ap.add_argument("--guardar-perfil", help="guarda el perfil del cuestionario en este JSON")
     ap.add_argument("--fuentes", default=",".join(REGISTRY), help=f"subconjunto de {','.join(REGISTRY)}")

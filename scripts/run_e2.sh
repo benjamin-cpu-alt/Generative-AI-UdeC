@@ -24,7 +24,7 @@ GROUNDING="${GROUNDING:-g3}"  # capa de anclaje reportada (ver grounding.py)
 # hechos que Python (results/decomp_phi4_v5). DECOMP_PROMPT=v2 reproduce la primera versión
 # (results/decomp_phi4), que usó otro extractor.
 DECOMP_PROMPT="${DECOMP_PROMPT:-$PROMPT}"
-SPLIT="${SPLIT:-test}"        # subcarpeta de data/cases (test|ood|train)
+SPLIT="${SPLIT:-test}"        # subcarpeta de data/cases (test|ood|real|real_fallo|train)
 CASES="../data/cases/$SPLIT"
 [ -d "$CASES" ] || { echo "no existe $CASES" >&2; exit 1; }
 SFX=""; [ "$SPLIT" != "test" ] && SFX="_$SPLIT"

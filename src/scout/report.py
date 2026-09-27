@@ -46,7 +46,7 @@ def summary_text(results: List[Result], discarded: Counter, sources: Dict[str, D
     out.append(f"\n== RECHAZADAS ({len(by[REJECTED])}) por el analizador; incumplimientos: "
                + (", ".join(f"{k} {v}" for k, v in reasons.most_common()) or "—"))
     if discarded:
-        out.append(f"== DESCARTADAS antes del análisis por datos del portal: "
+        out.append("== DESCARTADAS antes del análisis por datos del portal: "
                    + ", ".join(f"{k} {v}" for k, v in discarded.most_common()))
     out.append("\n== FUENTES ==")
     for name, st in sources.items():

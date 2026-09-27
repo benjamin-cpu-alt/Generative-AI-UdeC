@@ -20,7 +20,7 @@ import time
 import urllib.error
 import urllib.request
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 from .prompt import render_prompt
 from .schema import Case

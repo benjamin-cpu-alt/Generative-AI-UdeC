@@ -1,7 +1,7 @@
 # Real Estate AI Matcher (Generative AI - 580694)
 
 **Miembros del Equipo:** Benjamín Grandón V, Carla Maureira V.  
-**Curso:** Generative Artificial Intelligence 
+**Curso:** Generative Artificial Intelligence  
 **Profesor:** Carlos Navarrete, PhD  
 
 ## La Tarea
@@ -62,7 +62,9 @@ src/matcher/
 └── demo.py          # baseline vs solución sobre el mismo caso, en vivo (para el video)
 data/
 ├── prompt_base.txt          # prompt de la E1 (histórico)
+├── perfil_comprador_ejemplo.json  # el comprador de la E1 (también el del set real)
 ├── prompt_e2_case_001.txt   # prompt de la E2 renderizado para el caso de la E1
+├── scout/                   # estaciones de metro/tren (OpenStreetMap) y perfil de ejemplo de scout
 └── cases/
     ├── test/     # 50 casos held-out + case_001_e1. Solo evaluación, una corrida por estrategia.
     ├── train/    # 300 casos. Split dev: se usan para iterar el prompt del extractor. Nunca se reportan.
@@ -71,12 +73,18 @@ data/
     └── real_fallo/  # el aviso real que reveló la aprobación falsa de g3 (no sorteado)
 results/<run>/    # <case_id>.txt (salida juzgada) + .meta.json (tokens, tiempo) + .trace.json (hechos y decisiones)
 results/archive/  # runs anteriores no comparables (p.ej. baselines sin soft constraints)
+results/README.md # índice: qué es cada carpeta de results/ y de dónde sale
 scripts/run_baselines.sh    # los 3 candidatos con prompting directo
 scripts/run_e2.sh           # baseline + solución (+ ablaciones con ALL=1) y la tabla
 scripts/build_ood.py        # los avisos del set OOD, con su anotación auto-verificada
+scripts/sample_real.py      # sorteo del set real (no pisa la instantánea sin --force)
+scripts/build_real.py       # anotación del set real y del caso de fallo, auto-verificada
+scripts/build_estaciones_rm.py  # regenera data/scout/estaciones_rm.json desde OpenStreetMap
 docs/comparacion_modelos.md # compromiso de modelo, con los números
 docs/e2_pipeline.md         # la solución en detalle: intervención, ablaciones, resultados, límites
-src/scout/        # extensión posterior a la E2: busca avisos reales en 5 portales y los analiza (docs/scout.md)
+docs/scout.md               # scout: supuestos sobre cada portal, ética del scraping, límites
+src/scout/        # extensión posterior a la E2: busca avisos reales en 5 portales y los analiza
+experiments/      # evidencia de la E1 (logs de prompting directo, benchmarks de hardware)
 tests/            # 244 tests (pytest), sin Ollama ni red
 ```
 
@@ -223,8 +231,9 @@ el LLM una vez que la interpretación vive en el código (`extract_report --run
 tools_phi4_v5_ood_g3 --cases ../data/cases/ood` y los `warnings` de cada `.trace.json`).
 
 **Real — 16 avisos de portales, sorteados** (`data/cases/real/`): 4 casos con un aviso de
-Yapo, Chilepropiedades, iCasas y TocToc cada uno. Se sortearon con semilla fija entre 2.198
-unidades **antes** de leerlos, se anotaron a mano y se evaluaron con el comprador de la E1.
+Yapo, Chilepropiedades, iCasas y TocToc cada uno. Se sortearon con semilla fija, 4 por portal
+(de 160, 80, 120 y 1.838 unidades respectivamente), **antes** de leerlos; se anotaron a mano y
+se evaluaron con el comprador de la E1.
 El texto de cada propiedad es la ficha que arma `src/scout` (sección 6).
 
 | Estrategia | e1_strict | full_correct | aprob. indebida | aritmética | esquema |
@@ -255,7 +264,7 @@ test, dev, OOD y el set real, y corrige este caso. g3 sigue siendo la versión r
 
 ```bash
 ollama pull phi4-mini:latest          # digest 78fad5d182a7, Q4_K_M, 2,5 GB
-pip install -r requirements.txt
+pip install -r requirements.txt       # Python ≥ 3.9
 python3 -m pytest tests -q            # 244 tests, sin Ollama
 
 cd src
@@ -326,7 +335,7 @@ python3 -m scout --perfil ../data/scout/perfil_ejemplo.json   # perfil desde JSO
 Respeta robots.txt, se identifica como bot y, si un portal lo bloquea, lo registra y sigue
 con los demás. Con avisos reales apareció una aprobación falsa que los casos sintéticos no
 podían mostrar ("Se aceptan ofertas" leído como "acepta mascotas"). Se corrigió en una versión
-nueva del anclaje, **g4**, que da salidas idénticas a g3 en test, dev y OOD. Detalle,
+nueva del anclaje, **g4**, que da salidas idénticas a g3 en test, dev, OOD y el set real. Detalle,
 supuestos sobre cada portal y límites en [`docs/scout.md`](docs/scout.md).
 
 ### 7. Correr los modelos candidatos (comparación de la E1)

@@ -44,7 +44,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from matcher.rules import evaluate_property                      # noqa: E402
-from matcher.schema import Case, HardConstraints, PetsPolicy, Truth  # noqa: E402
+from matcher.schema import Case, PetsPolicy, Truth  # noqa: E402
 
 REAL_DIR = ROOT / "data" / "cases" / "real"
 UF = 41_024.46

@@ -51,7 +51,7 @@ def main(out: Path) -> int:
     fetcher = PoliteFetcher(cache_dir=ROOT / "results" / "scout" / "cache", log=print)
     stations = geo.load_stations()
     rng = random.Random(SEED)
-    sample = []
+    sample, universe = [], {}
     for name in SOURCES:
         src = REGISTRY[name]()
         pool = []
@@ -64,6 +64,7 @@ def main(out: Path) -> int:
                     except (FetchError, SourceError) as e:
                         print(f"[{name}] {tipo} {comuna}: {e}")
         units = sorted({l.key: l for l in pool if not l.is_project}.values(), key=lambda l: l.key)
+        universe[name] = len(units)
         picked = rng.sample(units, min(PER_SOURCE, len(units)))
         print(f"[{name}] {len(pool)} avisos en resultados, {len(units)} unidades, sorteados {len(picked)}")
         for l in picked:
@@ -77,6 +78,7 @@ def main(out: Path) -> int:
     out.write_text(json.dumps({
         "descargado": time.strftime("%Y-%m-%d"), "semilla": SEED, "por_portal": PER_SOURCE,
         "comunas": COMUNAS, "tipos": TIPOS, "portales": SOURCES,
+        "universo_por_portal": universe,
         "nota": "Fichas generadas por src/scout/ficha.py a partir de avisos públicos; cada una "
                 "conserva la URL de origen. Uso académico.",
         "avisos": sample}, ensure_ascii=False, indent=1), encoding="utf-8")
