@@ -23,7 +23,9 @@ python3 -m matcher.evaluate --runs baseline_phi4 baseline_granite baseline_deeps
 Corrida del 15-sep-2026, timeout 900 s/caso (los CSV no se versionan: se regeneran con el
 `evaluate` de arriba a partir de las respuestas crudas en `results/baseline_*/`). DeepSeek queda
 truncado en 22/51 casos aun con `num_predict 8192` (de ahí sus 26 `fail_schema`): el `<think>`
-consume el presupuesto antes de emitir el JSON.
+consume el presupuesto antes de emitir el JSON. Esos 22 `.txt` están vacíos (0 bytes) y no
+corruptos: Ollama entrega el razonamiento aparte del campo `response`, que es lo único que guarda
+`run_model.py`; su `.meta.json` registra `done_reason: "length"` y `output_tokens: 8192`.
 
 > Resultados de la primera pasada (prompt sin soft constraints, no comparable):
 > `results/archive/e2_baseline_sin_soft/README.md`.

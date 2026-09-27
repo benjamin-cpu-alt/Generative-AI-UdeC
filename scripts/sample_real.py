@@ -16,10 +16,14 @@ Salida: data/cases/real/fuente/muestra.json (instantánea versionada: el set no 
 los portales sigan publicando esos avisos). La anotación se hace a mano después
 (scripts/build_real.py).
 
-  python3 scripts/sample_real.py            # ~5 min: respeta las pausas de cada portal
+  python3 scripts/sample_real.py --out /tmp/muestra.json   # ~5 min: respeta las pausas
+
+No sobrescribe la instantánea versionada salvo con --force: los portales cambian a diario,
+así que volver a sortear hoy daría otros avisos y dejaría data/cases/real/ sin su fuente.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import random
 import sys
@@ -43,7 +47,7 @@ SOURCES = ["yapo", "chilepropiedades", "icasas", "toctoc"]   # portalpm: solo pr
 OUT = ROOT / "data" / "cases" / "real" / "fuente" / "muestra.json"
 
 
-def main() -> int:
+def main(out: Path) -> int:
     fetcher = PoliteFetcher(cache_dir=ROOT / "results" / "scout" / "cache", log=print)
     stations = geo.load_stations()
     rng = random.Random(SEED)
@@ -69,16 +73,22 @@ def main() -> int:
             sample.append({"source": l.source, "source_id": l.source_id, "url": l.url,
                            "comuna": l.comuna, "tipo": l.property_type, "title": l.title,
                            "ficha": render(l)})
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps({
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps({
         "descargado": time.strftime("%Y-%m-%d"), "semilla": SEED, "por_portal": PER_SOURCE,
         "comunas": COMUNAS, "tipos": TIPOS, "portales": SOURCES,
         "nota": "Fichas generadas por src/scout/ficha.py a partir de avisos públicos; cada una "
                 "conserva la URL de origen. Uso académico.",
         "avisos": sample}, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"{len(sample)} avisos -> {OUT}")
+    print(f"{len(sample)} avisos -> {out}")
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--out", type=Path, default=OUT, help=f"archivo de salida (por defecto {OUT.relative_to(ROOT)})")
+    ap.add_argument("--force", action="store_true", help="permite sobrescribir un archivo existente")
+    args = ap.parse_args()
+    if args.out.exists() and not args.force:
+        sys.exit(f"{args.out} ya existe (es la instantánea del set real); usa --out u --force")
+    sys.exit(main(args.out))
