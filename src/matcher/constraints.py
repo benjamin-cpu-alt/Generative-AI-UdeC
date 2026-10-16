@@ -67,14 +67,18 @@ def decide(prop_id: str, f: Facts, hc: HardConstraints, sc: SoftConstraints, uf_
         if d.price_clp > hc.presupuesto_max_clp:
             d.failed_constraints.append(C_BUDGET)
 
-    # 2. Mascotas
-    pets_ok = (
-        f.pets_policy == "permitidas"
-        and (not f.pets_species or hc.mascota_especie in f.pets_species)
-        and (f.pets_max_kg is None or hc.mascota_kg <= f.pets_max_kg)
-    )
-    d.notes.append(f"mascotas: politica={f.pets_policy} especies={f.pets_species or 'cualquiera'} "
-                   f"max_kg={f.pets_max_kg} vs {hc.mascota_especie} {hc.mascota_kg:g}kg -> {'ok' if pets_ok else 'FALLA'}")
+    # 2. Mascotas (comprador sin mascota: la restricción no aplica)
+    if hc.mascota_especie is None:
+        pets_ok = True
+        d.notes.append("mascotas: el comprador no tiene mascota -> ok")
+    else:
+        pets_ok = (
+            f.pets_policy == "permitidas"
+            and (not f.pets_species or hc.mascota_especie in f.pets_species)
+            and (f.pets_max_kg is None or hc.mascota_kg <= f.pets_max_kg)
+        )
+        d.notes.append(f"mascotas: politica={f.pets_policy} especies={f.pets_species or 'cualquiera'} "
+                       f"max_kg={f.pets_max_kg} vs {hc.mascota_especie} {hc.mascota_kg:g}kg -> {'ok' if pets_ok else 'FALLA'}")
     if not pets_ok:
         d.failed_constraints.append(C_PETS)
 

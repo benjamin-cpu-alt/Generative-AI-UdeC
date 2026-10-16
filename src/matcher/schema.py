@@ -46,8 +46,11 @@ class Property:
 @dataclass
 class HardConstraints:
     presupuesto_max_clp: int
-    mascota_especie: str
-    mascota_kg: float
+    # None = el comprador NO tiene mascota: la restricción de mascotas se cumple siempre.
+    # Solo lo usan los sets de la E3 (hard_*, comprador 2 del set real); en train/test/ood
+    # todo comprador tiene mascota, así que su verdad no cambia.
+    mascota_especie: Optional[str]
+    mascota_kg: Optional[float]
     distancia_max_transporte_m: int
     dormitorios_min: int
     estacionamiento_requerido: bool

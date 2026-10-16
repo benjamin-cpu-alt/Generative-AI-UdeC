@@ -1,0 +1,185 @@
+{
+  "id": "hd_09",
+  "uf_value": 41050,
+  "style": "Marketing engañoso y excepciones de mascotas.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 165000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 22,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "San Miguel"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HD-0901",
+      "text": "¡Bajo el presupuesto de cualquier comprador! San Miguel, 2D/2B. UF 4.100. A 400 m del metro. Pet friendly. Estacionamiento propio.",
+      "note": "UF 4.100 = $168.305.000 > tope, diga lo que diga el aviso",
+      "tags": [
+        "distractor"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4100,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      }
+    },
+    {
+      "id": "HD-0902",
+      "text": "San Miguel, 2D/1B. UF 3.950. A 750 m del Metro San Miguel. Se aceptan perros grandes. Estacionamiento asignado. Arriendo $780.000.",
+      "note": "control: cumple todo sin dificultad",
+      "tags": [],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3950,
+        "price_clp": null,
+        "rent_monthly_clp": 780000,
+        "location": "San Miguel"
+      }
+    },
+    {
+      "id": "HD-0903",
+      "text": "San Miguel, 3 dormitorios. $150.000.000. A 500 m del metro. Se aceptan mascotas, excepto perros de más de 20 kg. Estacionamiento propio.",
+      "note": "la excepción limita perros a 20 kg; el del comprador pesa 22",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 20
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 150000000,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      }
+    },
+    {
+      "id": "HD-0904",
+      "text": "San Joaquín, 2 dorm. UF 3.700. Metro Lo Vial a 1.100 m; paradero troncal de Gran Avenida a 350 m. Acepta mascotas. Estac. propio. Arriendo 700 lucas.",
+      "note": "vale el paradero (350 m); '700 lucas' = $700.000",
+      "tags": [
+        "dist_multiple",
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 350,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3700,
+        "price_clp": null,
+        "rent_monthly_clp": 700000,
+        "location": "San Joaquín"
+      }
+    },
+    {
+      "id": "HD-0905",
+      "text": "San Miguel, 2D/2B. UF 3.600. A 450 m del metro. Pet friendly. El estacionamiento se vende por separado en UF 300.",
+      "note": "estacionamiento aparte = la unidad no lo incluye",
+      "tags": [
+        "estac_ambiguo",
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 450,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3600,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      }
+    },
+    {
+      "id": "HD-0906",
+      "text": "La Cisterna, 3D/2B. Precio publicado UF 4.300 → rebajado a UF 3.990. A 600 m del metro. Mascotas permitidas. Estacionamiento propio. Arriendo $820.000.",
+      "note": "vale el precio rebajado (UF 3.990 = $163.789.500)",
+      "tags": [
+        "correccion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3990,
+        "price_clp": null,
+        "rent_monthly_clp": 820000,
+        "location": "La Cisterna"
+      }
+    },
+    {
+      "id": "HD-0907",
+      "text": "San Miguel, un dormitorio. UF 3.100. A 300 m del metro. Pet friendly. Estacionamiento propio.",
+      "note": "'un dormitorio' en palabras: 1 < 2",
+      "tags": [
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3100,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Miguel"
+      }
+    }
+  ]
+}

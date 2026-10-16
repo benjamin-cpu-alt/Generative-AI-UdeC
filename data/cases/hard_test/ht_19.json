@@ -1,0 +1,213 @@
+{
+  "id": "ht_19",
+  "uf_value": 39700,
+  "style": "Perro grande; casas del sector poniente.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 180000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 28,
+    "distancia_max_transporte_m": 1300,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Maipú"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-1901",
+      "text": "Maipú, casa 3D/2B. UF 4.300. Paradero troncal en Pajaritos a 1.300 m. Perros de cualquier tamaño. Estacionamiento para dos autos. Arriendo 22 UF.",
+      "note": "1.300 m == máximo; arriendo 22 UF",
+      "tags": [
+        "arriendo_uf",
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4300,
+        "price_clp": null,
+        "rent_monthly_clp": 873400,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "HT-1902",
+      "text": "Cerrillos — 4 dorm — $165.000.000 — metro Cerrillos 900 m — mascotas OK — estac. propio — arriendo $1.000.000",
+      "note": "no preferida, mayor ROI",
+      "tags": [
+        "estilo"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 165000000,
+        "rent_monthly_clp": 1000000,
+        "location": "Cerrillos"
+      }
+    },
+    {
+      "id": "HT-1903",
+      "text": "Ciudad Satélite, Maipú. Casa de tres dormitorios y patio; valor 4.400 UF; a 1,2 km del metro; se aceptan perros grandes; estacionamiento propio.",
+      "note": "el barrio va antes de la comuna; UF 4.400 = $174.680.000",
+      "tags": [
+        "cifra_palabras",
+        "comuna_posicion",
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4400,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "HT-1904",
+      "text": "Maipú, 3D. UF 4.000. Metro a 600 m. Perros hasta 25 kg. Con estacionamiento propio.",
+      "note": "25 kg contra perro de 28",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 25
+        },
+        "parking": "propio",
+        "price_uf": 4000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "HT-1905",
+      "text": "Maipú, 4D. $183.000.000 (gastos operacionales aparte). Metro a 500 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "el precio solo ya supera el tope",
+      "tags": [
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 183000000,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "HT-1906",
+      "text": "Maipú, 2D + pieza de servicio. UF 3.800. Metro a 700 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "servicio no cuenta: 2 < 3",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "HT-1907",
+      "text": "Maipú 3D. UF 4.100. A 20 cuadras del metro. Admite mascotas. Con estacionamiento propio.",
+      "note": "cuadras: no verificable",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4100,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "HT-1908",
+      "text": "Maipú, 3D. UF 4.200. Metro a 500 m. Con estacionamiento propio. Antejardín y patio trasero.",
+      "note": "un patio no es permiso de mascotas",
+      "tags": [
+        "mascota_silencio"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4200,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      }
+    }
+  ]
+}

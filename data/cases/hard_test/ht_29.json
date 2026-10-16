@@ -1,0 +1,206 @@
+{
+  "id": "ht_29",
+  "uf_value": 39800,
+  "style": "Centro de Santiago: ciclovías y avisos en mayúsculas.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 145000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 10,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Santiago"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-2901",
+      "text": "Santiago, barrio Brasil. 2D/1B. UF 3.500. Metro Los Héroes a 500 m. Perros de hasta 12 kg. Estacionamiento propio. Arriendo $650.000.",
+      "note": "10 <= 12 kg; UF 3.500 = $139.300.000",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 12
+        },
+        "parking": "propio",
+        "price_uf": 3500,
+        "price_clp": null,
+        "rent_monthly_clp": 650000,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-2902",
+      "text": "Estación Central: 2D, $120.000.000, metro Unión Latinoamericana a 400 m, pet friendly, estacionamiento asignado, arriendo $700.000.",
+      "note": "no preferida, mayor ROI",
+      "tags": [],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 120000000,
+        "rent_monthly_clp": 700000,
+        "location": "Estación Central"
+      }
+    },
+    {
+      "id": "HT-2903",
+      "text": "SANTIAGO. DEPTO 2D 2B. 140 MILLONES. METRO SANTA LUCÍA 300 MTS. ACEPTA MASCOTAS. ESTAC. ASIGNADO.",
+      "note": "mayúsculas; '140 MILLONES' sin $",
+      "tags": [
+        "dorm_notacion",
+        "estilo",
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 140000000,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-2904",
+      "text": "Santiago, 2D. UF 3.650. Metro a 400 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "near miss: UF 3.650 = $145.270.000",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3650,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-2905",
+      "text": "Santiago 2D. $130.000.000. Metro a 400 m. Perros hasta 8 kg. Con estacionamiento propio.",
+      "note": "8 kg contra perro de 10",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 8
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 130000000,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-2906",
+      "text": "Santiago, 2D. $120.000.000. El metro más cercano está a 1.100 m, pero hay ciclovía en la puerta. Admite mascotas. Con estacionamiento propio.",
+      "note": "la ciclovía no cambia la distancia: 1.100 > 1.000",
+      "tags": [
+        "distractor"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1100,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 120000000,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-2907",
+      "text": "Santiago 2D. $125.000.000. Metro a 300 m. Admite mascotas. Sin estacionamiento.",
+      "note": "sin estacionamiento",
+      "tags": [],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 125000000,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-2908",
+      "text": "Santiago, departamento de un ambiente (studio). $85.000.000. Metro a 200 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "un ambiente = 0 dormitorios",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 85000000,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    }
+  ]
+}

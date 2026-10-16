@@ -1,0 +1,212 @@
+{
+  "id": "ht_18",
+  "uf_value": 41000,
+  "style": "Providencia: barrios, bodegas y gastos comunes.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 165000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Providencia"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-1801",
+      "text": "Providencia, barrio Italia. 2D/2B. UF 3.950. Metro Santa Isabel a 650 m. Gatos permitidos. Con estacionamiento propio. Arriendo 20 UF.",
+      "note": "arriendo 20 UF; UF 3.950 = $161.950.000",
+      "tags": [
+        "arriendo_uf"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3950,
+        "price_clp": null,
+        "rent_monthly_clp": 820000,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-1802",
+      "text": "Depto en calle Condell, comuna de Providencia, 2 dormitorios, $164.000.000, metro Parque Bustamante a 300 m, acepta mascotas, estac. asignado.",
+      "note": "'en calle Condell' antes de la comuna; $1.000.000 bajo el tope",
+      "tags": [
+        "casi_cumple",
+        "comuna_posicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 164000000,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-1803",
+      "text": "Santiago (barrio Lastarria): 2D/1B, UF 3.600, metro Bellas Artes a 200 m, admite mascotas, estacionamiento propio, arriendo $900.000.",
+      "note": "no preferida, mayor ROI",
+      "tags": [
+        "comuna_posicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3600,
+        "price_clp": null,
+        "rent_monthly_clp": 900000,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-1804",
+      "text": "Providencia, 3D. Precio de venta UF 3.990; bodega opcional UF 80; GC $140.000. Metro Manuel Montt a 700 m. Mascotas permitidas. Con estacionamiento propio.",
+      "note": "la bodega opcional y los GC no son el precio",
+      "tags": [
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3990,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-1805",
+      "text": "Providencia, 2D. UF 3.800. Metro a 400 m. Solo perros. Con estacionamiento propio.",
+      "note": "solo perros; comprador con gato",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-1806",
+      "text": "Providencia, 2D. Ciento setenta millones. Metro a 500 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "$170.000.000 en palabras > tope",
+      "tags": [
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 170000000,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-1807",
+      "text": "Providencia 2D. UF 3.700. A 850 m del metro. Admite mascotas. Con estacionamiento propio.",
+      "note": "850 m > 800",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 850,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3700,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-1808",
+      "text": "Providencia, 2D. UF 3.600. Metro a 300 m. Gatos OK. Estacionamiento: no (se puede arrendar en el edificio de al lado).",
+      "note": "no incluye estacionamiento",
+      "tags": [
+        "distractor",
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3600,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    }
+  ]
+}

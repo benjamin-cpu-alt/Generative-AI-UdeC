@@ -1,0 +1,211 @@
+{
+  "id": "ht_10",
+  "uf_value": 40750,
+  "style": "Perro grande; estacionamiento no requerido.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 170000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 35,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": false
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Puente Alto",
+      "La Florida"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-1001",
+      "text": "Puente Alto, casa 3D/2B. $119.000.000. Metro Plaza de Puente Alto a 1,5 km. Mascotas sin límite de peso. Sin estacionamiento (pasaje).",
+      "note": "1,5 km == máximo; sin estacionamiento pero no se requiere",
+      "tags": [
+        "casi_cumple",
+        "dist_formato",
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 119000000,
+        "rent_monthly_clp": null,
+        "location": "Puente Alto"
+      }
+    },
+    {
+      "id": "HT-1002",
+      "text": "La Florida, 4 habitaciones. UF 3.950. A 1.200 m del Metro Trinidad. Se aceptan perros grandes. Arriendo $900.000.",
+      "note": "'habitaciones'; perros sin límite",
+      "tags": [
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3950,
+        "price_clp": null,
+        "rent_monthly_clp": 900000,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "HT-1003",
+      "text": "Puente Alto, 3D. $110.000.000. A 700 m del metro. Perros de hasta 30 kg.",
+      "note": "30 kg contra perro de 35",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 30
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 110000000,
+        "rent_monthly_clp": null,
+        "location": "Puente Alto"
+      }
+    },
+    {
+      "id": "HT-1004",
+      "text": "San Bernardo — 3D — $105.000.000 — paradero troncal 600 m — mascotas bienvenidas — arriendo $780.000 (la casa vecina, de 4D, se arrienda en $950.000)",
+      "note": "el arriendo de $950.000 es de la vecina; no preferida, mayor ROI",
+      "tags": [
+        "distractor"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 105000000,
+        "rent_monthly_clp": 780000,
+        "location": "San Bernardo"
+      }
+    },
+    {
+      "id": "HT-1005",
+      "text": "Puente Alto, 2D+1B. $95.000.000. Metro a 500 m. Admite mascotas.",
+      "note": "'2D+1B' = 2 dormitorios y 1 baño: 2 < 3",
+      "tags": [
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 95000000,
+        "rent_monthly_clp": null,
+        "location": "Puente Alto"
+      }
+    },
+    {
+      "id": "HT-1006",
+      "text": "La Florida, 3D. $140.000.000. A 2 km del metro. Pet friendly.",
+      "note": "2 km > 1.500",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 2000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 140000000,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "HT-1007",
+      "text": "Puente Alto, 3D. $100.000.000. A 800 m del metro. Patio amplio.",
+      "note": "no habla de mascotas ('patio amplio' no es permiso)",
+      "tags": [
+        "mascota_silencio"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 100000000,
+        "rent_monthly_clp": null,
+        "location": "Puente Alto"
+      }
+    },
+    {
+      "id": "HT-1008",
+      "text": "La Florida, 4D. UF 4.180. Metro a 900 m. Admite mascotas.",
+      "note": "near miss: UF 4.180 = $170.335.000",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 4180,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      }
+    }
+  ]
+}

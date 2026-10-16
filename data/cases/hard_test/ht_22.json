@@ -1,0 +1,208 @@
+{
+  "id": "ht_22",
+  "uf_value": 40650,
+  "style": "Distancia máxima estricta (600 m).",
+  "hard_constraints": {
+    "presupuesto_max_clp": 160000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 9,
+    "distancia_max_transporte_m": 600,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "San Joaquín"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-2201",
+      "text": "San Joaquín, 2D/1B. UF 3.700. Metro San Joaquín a 550 m. Admite perros pequeños de hasta 10 kg. Estacionamiento propio. Arriendo $700.000.",
+      "note": "perros <= 10 kg; el del comprador pesa 9",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 550,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 10
+        },
+        "parking": "propio",
+        "price_uf": 3700,
+        "price_clp": null,
+        "rent_monthly_clp": 700000,
+        "location": "San Joaquín"
+      }
+    },
+    {
+      "id": "HT-2202",
+      "text": "La Granja – 3 dorm – $140.000.000 – paradero troncal Santa Rosa 200 m – mascotas permitidas – estacionamiento asignado – arriendo $850.000",
+      "note": "no preferida, mayor ROI",
+      "tags": [
+        "estilo"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 140000000,
+        "rent_monthly_clp": 850000,
+        "location": "La Granja"
+      }
+    },
+    {
+      "id": "HT-2203",
+      "text": "Pasaje en San Joaquín, a seiscientos metros del metro Rodrigo de Araya. Casa 2D. Precio 3.850 UF. Pet friendly. Estacionamiento propio.",
+      "note": "600 m en palabras == máximo; UF 3.850 = $156.502.500",
+      "tags": [
+        "casi_cumple",
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3850,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Joaquín"
+      }
+    },
+    {
+      "id": "HT-2204",
+      "text": "San Joaquín, 2D. UF 3.500. Metro a 650 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "650 m > 600",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3500,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Joaquín"
+      }
+    },
+    {
+      "id": "HT-2205",
+      "text": "San Joaquín 2D. UF 3.400. Metro a 400 m. Mascotas de hasta 8 kg. Con estacionamiento propio.",
+      "note": "8 kg contra perro de 9",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 8
+        },
+        "parking": "propio",
+        "price_uf": 3400,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Joaquín"
+      }
+    },
+    {
+      "id": "HT-2206",
+      "text": "San Joaquín, 3D. Precio: UF 4.100; contribuciones $90.000 trimestrales. Metro a 300 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "UF 4.100 = $166.665.000 > tope",
+      "tags": [
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4100,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Joaquín"
+      }
+    },
+    {
+      "id": "HT-2207",
+      "text": "San Joaquín 2D. UF 3.300. Metro a 300 m. Admite mascotas. Estacionamiento opcional (+UF 200).",
+      "note": "opcional con precio aparte = no incluido",
+      "tags": [
+        "estac_ambiguo",
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3300,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Joaquín"
+      }
+    },
+    {
+      "id": "HT-2208",
+      "text": "San Joaquín. Depto 1D (el 3D del piso 4 ya se vendió). UF 2.900. Metro a 200 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "el 3D es otra unidad",
+      "tags": [
+        "distractor"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2900,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "San Joaquín"
+      }
+    }
+  ]
+}

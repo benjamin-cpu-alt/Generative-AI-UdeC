@@ -52,13 +52,17 @@ def fmt_kg(kg: float) -> str:
 
 def render_profile(case: Case) -> str:
     hc = case.hard_constraints
-    especie = "perro" if hc.mascota_especie == "perro" else "gato"
+    if hc.mascota_especie is None:
+        mascotas = "2. Mascotas: No tiene mascota (cualquier política de mascotas le sirve)."
+    else:
+        especie = "perro" if hc.mascota_especie == "perro" else "gato"
+        mascotas = (f"2. Mascotas: Tiene 1 {especie} de {fmt_kg(hc.mascota_kg)} (la propiedad debe "
+                    "permitir explícitamente mascotas de ese tamaño y especie).")
     lines = [
         "PERFIL DEL COMPRADOR — HARD CONSTRAINTS (descalifican si se incumplen):",
         f"1. Presupuesto Máximo de Compra: {fmt_clp(hc.presupuesto_max_clp)} CLP "
         "(usa el valor de la UF de hoy si el precio viene en UF).",
-        f"2. Mascotas: Tiene 1 {especie} de {fmt_kg(hc.mascota_kg)} (la propiedad debe permitir "
-        "explícitamente mascotas de ese tamaño y especie).",
+        mascotas,
         f"3. Distancia máxima a transporte público (metro O paradero de buses troncal): "
         f"{hc.distancia_max_transporte_m} m.",
         f"4. Dormitorios: Mínimo {hc.dormitorios_min} dormitorios reales.",

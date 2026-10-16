@@ -1,0 +1,223 @@
+{
+  "id": "ht_15",
+  "uf_value": 39350,
+  "style": "Estacionamiento no requerido; gatos con condiciones.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 140000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": false
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Recoleta"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-1501",
+      "text": "Recoleta, 2D/1B. $128.000.000. Metro Patronato a 700 m. Se aceptan gatos. Sin estacionamiento. Arriendo $600.000.",
+      "note": "sin estacionamiento pero no se requiere",
+      "tags": [
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 128000000,
+        "rent_monthly_clp": 600000,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "HT-1502",
+      "text": "Barrio Bellavista (Recoleta): 2 dormitorios, UF 3.400, metro Baquedano a 1.100 m, mascotas permitidas, arriendo 17 UF.",
+      "note": "comuna entre paréntesis; arriendo 17 UF",
+      "tags": [
+        "arriendo_uf",
+        "comuna_posicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1100,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3400,
+        "price_clp": null,
+        "rent_monthly_clp": 668950,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "HT-1503",
+      "text": "Independencia | 3D | $125.000.000 | metro Cementerios 600 m | gatos OK | arriendo $750.000",
+      "note": "no preferida, mayor ROI",
+      "tags": [
+        "estilo"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 125000000,
+        "rent_monthly_clp": 750000,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "HT-1504",
+      "text": "Recoleta. Departamento de dos dormitorios. Valor 3.500 UF. A 1,2 km del metro Einstein. Admite gatos de hasta 6 kg.",
+      "note": "6 kg == 6 kg y 1,2 km == máximo: cumple; UF 3.500 = $137.725.000",
+      "tags": [
+        "casi_cumple",
+        "dist_formato",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": 6
+        },
+        "parking": "ninguno",
+        "price_uf": 3500,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "HT-1505",
+      "text": "Recoleta, 2D. $115.000.000. Metro a 400 m. Perros sí; gatos, consultar.",
+      "note": "para gatos solo 'consultar': no hay aceptación explícita",
+      "tags": [
+        "mascota_condicion",
+        "mascota_silencio"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 115000000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "HT-1506",
+      "text": "Estudio de 28 m² en Recoleta. $80.000.000. Metro a 300 m. Gatos sí.",
+      "note": "estudio = 0 dormitorios",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 80000000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "HT-1507",
+      "text": "Recoleta 3D. Precio: 3.580 UF. Metro a 500 m. Gatos sí.",
+      "note": "near miss: 3.580 UF = $140.873.000",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3580,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "HT-1508",
+      "text": "Recoleta 2D. $110.000.000. El metro está 'a la vuelta' (2 cuadras). Gatos sí.",
+      "note": "'a la vuelta' / cuadras: no verificable",
+      "tags": [
+        "dist_formato",
+        "distractor"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 110000000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      }
+    }
+  ]
+}

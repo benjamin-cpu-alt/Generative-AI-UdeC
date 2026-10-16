@@ -1,0 +1,187 @@
+{
+  "id": "hd_07",
+  "uf_value": 39100,
+  "style": "Avisos telegráficos y loggias.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 150000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 8,
+    "distancia_max_transporte_m": 900,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Maipú"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HD-0701",
+      "text": "MAIPU. Casa 3D/2B. 3.700UF. Paradero troncal 300m. Mascotas OK. 2 estac. Arr. 650.000",
+      "note": "telegráfico, sin tildes; 3.700 UF = $144.670.000",
+      "tags": [
+        "estilo"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3700,
+        "price_clp": null,
+        "rent_monthly_clp": 650000,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "HD-0702",
+      "text": "Maipú, casa de 3 dormitorios. $139.000.000. A 600 m del Metro Plaza de Maipú. Perros de hasta cinco kilos. Estacionamiento propio.",
+      "note": "límite en palabras (5 kg) contra perro de 8",
+      "tags": [
+        "cifra_palabras",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 5
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 139000000,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "HD-0703",
+      "text": "Depto 3D 2B en Cerrillos. UF 3.800. A 850 metros del Metro Cerrillos. Acepta mascotas pequeñas de hasta 10 kg. Estac. propio. Arriendo 16,5 UF.",
+      "note": "arriendo con decimal en UF (16,5 x 39.100); 8 kg <= 10",
+      "tags": [
+        "arriendo_uf",
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 850,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 10
+        },
+        "parking": "propio",
+        "price_uf": 3800,
+        "price_clp": null,
+        "rent_monthly_clp": 645150,
+        "location": "Cerrillos"
+      }
+    },
+    {
+      "id": "HD-0704",
+      "text": "Maipú, 2 dormitorios. $128.000.000. A 500 m del metro. Pet friendly. Estacionamiento de visitas disponible.",
+      "note": "estacionamiento de visitas no sirve",
+      "tags": [
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": null,
+        "price_clp": 128000000,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "HD-0705",
+      "text": "Maipú, 2D/2B. Valor: UF 3.890 (incluye estacionamiento y bodega). A 400 m del metro. Perros bienvenidos.",
+      "note": "near miss: UF 3.890 = $152.099.000",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3890,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "HD-0706",
+      "text": "Maipú, 1 dormitorio y una loggia que hoy se usa como dormitorio. UF 3.000. A 300 m del metro. Acepta mascotas. Estacionamiento asignado.",
+      "note": "la loggia no es dormitorio",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Maipú"
+      }
+    },
+    {
+      "id": "HD-0707",
+      "text": "Av. Pajaritos 3200, Maipú. Depto 2D/2B. UF 3.500. Metro Las Parcelas a 450 m. Mascotas permitidas sin límite de peso. Estacionamiento propio. Arriendo $600.000.",
+      "note": "la comuna va en la dirección",
+      "tags": [
+        "comuna_posicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 450,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3500,
+        "price_clp": null,
+        "rent_monthly_clp": 600000,
+        "location": "Maipú"
+      }
+    }
+  ]
+}

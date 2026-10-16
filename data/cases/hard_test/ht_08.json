@@ -1,0 +1,211 @@
+{
+  "id": "ht_08",
+  "uf_value": 41400,
+  "style": "Sector oriente: precios altos y extras con precio aparte.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 220000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 1100,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Vitacura"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-0801",
+      "text": "Vitacura, casa 4 dormitorios, 3 baños. UF 5.250. Paradero troncal de Av. Vitacura a 1,1 km. Mascotas permitidas. Estacionamiento para 3 autos.",
+      "note": "1,1 km == máximo de 1.100: cumple; UF 5.250 = $217.350.000",
+      "tags": [
+        "casi_cumple",
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1100,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5250,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "HT-0802",
+      "text": "Las Condes, 3D/3B. $205.000.000. Metro Colón a 800 m. Se aceptan perros de hasta 10 kg y gatos. Estacionamiento propio. Arriendo 40 UF.",
+      "note": "perros <= 10 kg y gatos; arriendo 40 UF; no preferida, mayor ROI",
+      "tags": [
+        "arriendo_uf",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro",
+            "gato"
+          ],
+          "max_kg": 10
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 205000000,
+        "rent_monthly_clp": 1656000,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HT-0803",
+      "text": "VITACURA — depto tres dormitorios + estudio, UF 5.100, metro Manquehue a 900 m, se aceptan mascotas, estacionamiento asignado, renta 1.500.000",
+      "note": "'tres dormitorios + estudio' = 3",
+      "tags": [
+        "cifra_palabras",
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5100,
+        "price_clp": null,
+        "rent_monthly_clp": 1500000,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "HT-0804",
+      "text": "Vitacura, 3D. UF 5.320. Metro a 600 m. Admite mascotas. Estacionamiento propio.",
+      "note": "near miss: UF 5.320 = $220.248.000",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5320,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "HT-0805",
+      "text": "Vitacura, 4D. UF 5.000. A 700 m del metro. No se aceptan perros. Estacionamiento propio.",
+      "note": "prohíbe perros",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "HT-0806",
+      "text": "Lo Barnechea, 2 dormitorios + sala de juegos. UF 4.900. A 600 m del paradero troncal. Pet friendly. Estacionamiento propio.",
+      "note": "la sala de juegos no es dormitorio",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4900,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Lo Barnechea"
+      }
+    },
+    {
+      "id": "HT-0807",
+      "text": "Vitacura, 3D. UF 4.800, GC $250.000. Metro a 1.400 m. Admite mascotas. Estacionamiento propio.",
+      "note": "1.400 m > 1.100",
+      "tags": [
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "HT-0808",
+      "text": "Vitacura, 3D. UF 4.950. Metro a 500 m. Admite mascotas. Estacionamiento en venta por separado (UF 450).",
+      "note": "se vende aparte: no incluido",
+      "tags": [
+        "estac_ambiguo",
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 4950,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      }
+    }
+  ]
+}

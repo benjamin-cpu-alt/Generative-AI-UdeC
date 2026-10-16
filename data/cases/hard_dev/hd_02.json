@@ -1,0 +1,183 @@
+{
+  "id": "hd_02",
+  "uf_value": 40150,
+  "style": "Comprador SIN mascota: una prohibición de mascotas no lo descalifica.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 210000000,
+    "mascota_especie": null,
+    "mascota_kg": null,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Las Condes",
+      "Vitacura"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HD-0201",
+      "text": "Casa 3D+E en Vitacura, 140 m² construidos. Valor 5.150 UF. Paradero troncal a 800 m. Estacionamiento para 2 autos.",
+      "note": "'3D+E' = 3 dormitorios + escritorio: 3 cumple; sin arriendo (ROI null)",
+      "tags": [
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5150,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "HD-0202",
+      "text": "Departamento en Las Condes, 3 dormitorios y 2 baños. $198.000.000. A 650 m del Metro Manquehue. No se aceptan mascotas. Estacionamiento asignado. Arriendo $1.150.000.",
+      "note": "prohíbe mascotas, pero el comprador no tiene: se aprueba",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 650,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 198000000,
+        "rent_monthly_clp": 1150000,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HD-0203",
+      "text": "Las Condes, depto de 2 dormitorios más pieza de servicio con baño. UF 4.900. A 500 m del metro. Estacionamiento propio.",
+      "note": "la pieza de servicio no cuenta: 2 < 3",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4900,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HD-0204",
+      "text": "Departamento 4D/3B en Las Condes, 120 m². UF 5.000. A 10 minutos caminando del Metro Los Dominicos. Estacionamiento propio.",
+      "note": "distancia solo en minutos: no verificable",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HD-0205",
+      "text": "Departamento en Ñuñoa de 3 dormitorios. Precio: doscientos cinco millones de pesos. A 900 metros del metro. Estacionamiento propio.",
+      "note": "precio solo en palabras ($205.000.000)",
+      "tags": [
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 205000000,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HD-0206",
+      "text": "Providencia, 3D/2B, 95 m². Precio rebajado: antes UF 5.600, ahora UF 5.200. A 400 m del Metro Los Leones. Estacionamiento asignado. Arriendo $1.050.000.",
+      "note": "vale el precio final (UF 5.200 = $208.780.000), no el anterior",
+      "tags": [
+        "correccion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 5200,
+        "price_clp": null,
+        "rent_monthly_clp": 1050000,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HD-0207",
+      "text": "Vitacura. Depto 3D/2B, 98 m². Valor $215 millones. Contribuciones $180.000 trimestrales. A 700 metros del paradero troncal. Estacionamiento propio.",
+      "note": "'$215 millones' sobre el tope; las contribuciones no son el precio",
+      "tags": [
+        "jerga_monto",
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 215000000,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      }
+    }
+  ]
+}

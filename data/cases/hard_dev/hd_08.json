@@ -1,0 +1,194 @@
+{
+  "id": "hd_08",
+  "uf_value": 40900,
+  "style": "Casas grandes; estacionamiento no requerido.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 230000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 3,
+    "distancia_max_transporte_m": 1500,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": false
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "La Reina",
+      "Peñalolén"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HD-0801",
+      "text": "Casa en La Reina, 4D/3B. UF 5.500. A 1,4 km del Metro Príncipe de Gales. Acepta gatos. Sin estacionamiento.",
+      "note": "1,4 km <= 1.500; sin estacionamiento pero no se requiere",
+      "tags": [
+        "dist_formato",
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 1400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 5500,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      }
+    },
+    {
+      "id": "HD-0802",
+      "text": "Peñalolén, casa de 3 dormitorios (uno en suite). $219 millones. Paradero troncal a 900 m. Mascotas según reglamento de copropiedad.",
+      "note": "'según reglamento' no dice si acepta",
+      "tags": [
+        "jerga_monto",
+        "mascota_silencio"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 219000000,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      }
+    },
+    {
+      "id": "HD-0803",
+      "text": "Peñalolén: casa de tres dormitorios, valor cinco mil cuatrocientas UF, a mil metros del paradero troncal. Pet friendly. Estacionamiento de visitas.",
+      "note": "precio y distancia en palabras: UF 5.400 = $220.860.000; 1.000 m",
+      "tags": [
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 5400,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      }
+    },
+    {
+      "id": "HD-0804",
+      "text": "Ñuñoa, 3D/2B, 110 m². UF 5.630. A 800 m del metro. Acepta gatos.",
+      "note": "near miss: UF 5.630 = $230.267.000",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 5630,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HD-0805",
+      "text": "La Reina, 2D + estudio. UF 4.800. A 700 m del metro. Acepta mascotas.",
+      "note": "el estudio no es dormitorio: 2 < 3",
+      "tags": [
+        "dorm_no_cuenta",
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 4800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      }
+    },
+    {
+      "id": "HD-0806",
+      "text": "Macul, casa 3D/2B. UF 5.100. A 600 m del metro. Gatos bienvenidos, perros no. Estacionamiento propio. Arriendo actual 30 UF.",
+      "note": "mayor ROI pero NO preferida; arriendo 30 UF",
+      "tags": [
+        "arriendo_uf",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5100,
+        "price_clp": null,
+        "rent_monthly_clp": 1227000,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "HD-0807",
+      "text": "La Reina, casa 3D. UF 5.000. 15 min caminando al metro. Acepta gatos.",
+      "note": "solo minutos",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 5000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      }
+    }
+  ]
+}

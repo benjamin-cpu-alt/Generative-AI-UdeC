@@ -1,0 +1,212 @@
+{
+  "id": "ht_30",
+  "uf_value": 40550,
+  "style": "Sector oriente: bodegas opcionales y límites justos.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 210000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 16,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Las Condes",
+      "Vitacura"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-3001",
+      "text": "Las Condes, 2D/2B. UF 5.100. Metro Hernando de Magallanes a 1.150 m. Perros hasta 20 kg. Estacionamiento propio. Arriendo 40 UF.",
+      "note": "arriendo 40 UF; UF 5.100 = $206.805.000",
+      "tags": [
+        "arriendo_uf"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1150,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 20
+        },
+        "parking": "propio",
+        "price_uf": 5100,
+        "price_clp": null,
+        "rent_monthly_clp": 1622000,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HT-3002",
+      "text": "Vitacura: tres dormitorios, valor $205.000.000, paradero troncal a 900 m, mascotas permitidas, estacionamiento asignado.",
+      "note": "'tres dormitorios'; sin arriendo",
+      "tags": [
+        "cifra_palabras",
+        "comuna_posicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 205000000,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "HT-3003",
+      "text": "Providencia, 3D/2B, $190.000.000, metro Tobalaba a 500 m, perros permitidos, estacionamiento propio, arriendo $1.400.000.",
+      "note": "no preferida: va después de las preferidas aunque tenga ROI",
+      "tags": [],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 190000000,
+        "rent_monthly_clp": 1400000,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-3004",
+      "text": "Las Condes. Valor UF 5.150. Bodega UF 100 opcional. GC $180.000. 2 dormitorios. Metro a 1,2 km. Admite perros medianos (hasta 18 kg). Estacionamiento propio.",
+      "note": "1,2 km == máximo; UF 5.150 = $208.832.500; la bodega no suma",
+      "tags": [
+        "casi_cumple",
+        "dist_formato",
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 18
+        },
+        "parking": "propio",
+        "price_uf": 5150,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HT-3005",
+      "text": "Vitacura 3D. UF 5.000. Metro a 400 m. No se aceptan perros de más de 15 kg. Con estacionamiento propio.",
+      "note": "límite 15 kg contra perro de 16",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "propio",
+        "price_uf": 5000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "HT-3006",
+      "text": "Vitacura 3D. UF 5.200. Metro a 600 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "near miss: UF 5.200 = $210.860.000",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5200,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "HT-3007",
+      "text": "Las Condes 2D. UF 4.800. Metro a 600 m. Admite mascotas. Estacionamiento de visita reservable.",
+      "note": "visita reservable sigue siendo de visitas",
+      "tags": [
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 4800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HT-3008",
+      "text": "Las Condes 3D. UF 4.900. A 15 minutos del metro en bus. Admite mascotas. Con estacionamiento propio.",
+      "note": "minutos en bus: no verificable",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4900,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    }
+  ]
+}

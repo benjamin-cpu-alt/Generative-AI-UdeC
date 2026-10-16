@@ -1,0 +1,213 @@
+{
+  "id": "ht_09",
+  "uf_value": 39600,
+  "style": "Avisos de Macul con cifras en palabras.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 128000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 7,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Macul"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-0901",
+      "text": "Macul. 2D/1B. Valor 3.150 UF. Metro Las Torres 500 m. Gatos y perros sin restricción. Estac. propio. Arr. $560.000.",
+      "note": "control; UF 3.150 = $124.740.000",
+      "tags": [],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro",
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3150,
+        "price_clp": null,
+        "rent_monthly_clp": 560000,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "HT-0902",
+      "text": "Depto en Macul de dos dormitorios y un baño, ciento veinticinco millones de pesos, a setecientos metros del metro Quilín, acepta mascotas, estacionamiento asignado.",
+      "note": "precio y distancia en palabras",
+      "tags": [
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 125000000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "HT-0903",
+      "text": "2D 2B Ñuñoa; UF 3.200; metro Rodrigo de Araya 300 m; gatos OK; est. propio; arriendo 18 UF",
+      "note": "arriendo 18 UF; no preferida, mayor ROI",
+      "tags": [
+        "arriendo_uf",
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3200,
+        "price_clp": null,
+        "rent_monthly_clp": 712800,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-0904",
+      "text": "Macul, 2D. UF 3.000. A 400 m del metro. Mascotas hasta 5 kilos. Estacionamiento propio.",
+      "note": "5 kg contra gato de 7",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "propio",
+        "price_uf": 3000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "HT-0905",
+      "text": "Macul, 3 dormitorios. Ciento treinta millones. Metro a 600 m. Admite mascotas. Estacionamiento propio.",
+      "note": "$130.000.000 en palabras, sobre el tope",
+      "tags": [
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 130000000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "HT-0906",
+      "text": "Macul, 2D. UF 2.900. A 300 m del metro. Gatos sí. Estacionamiento: no; hay estacionamiento en calle.",
+      "note": "calle no sirve",
+      "tags": [
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 2900,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "HT-0907",
+      "text": "Macul, 2D. UF 3.000. El metro está a 15 minutos a pie. Gatos OK. Estacionamiento propio.",
+      "note": "solo minutos",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "HT-0908",
+      "text": "Macul, 1D + escritorio. UF 2.800. Metro a 500 m. Admite mascotas. Estacionamiento propio.",
+      "note": "'1D + escritorio' = 1",
+      "tags": [
+        "dorm_no_cuenta",
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      }
+    }
+  ]
+}

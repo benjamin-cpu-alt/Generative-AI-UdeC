@@ -1,0 +1,188 @@
+{
+  "id": "hd_05",
+  "uf_value": 39400,
+  "style": "Departamentos chicos; política de mascotas corregida.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 125000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 6,
+    "distancia_max_transporte_m": 700,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Estación Central"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HD-0501",
+      "text": "Estación Central, 1D/1B de 38 m². UF 3.050. A 250 m del Metro Universidad de Santiago. Se permiten gatos (máximo dos). Estac. asignado. Arriendo $420 mil.",
+      "note": "'$420 mil' = $420.000; 'máximo dos' es cantidad, no peso",
+      "tags": [
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 250,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3050,
+        "price_clp": null,
+        "rent_monthly_clp": 420000,
+        "location": "Estación Central"
+      }
+    },
+    {
+      "id": "HD-0502",
+      "text": "Depto en Estación Central, 2 dormitorios. UF 2.900. A 400 metros del metro. Mascotas: consultar con administración. Estacionamiento propio.",
+      "note": "'consultar con administración' no es una aceptación",
+      "tags": [
+        "mascota_silencio"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2900,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      }
+    },
+    {
+      "id": "HD-0503",
+      "text": "Estación Central, departamento de 1 dormitorio. $118.000.000. Está a seiscientos metros del Metro Ecuador. Pet friendly. Estacionamiento propio. Arriendo $450.000.",
+      "note": "distancia en palabras (600 m)",
+      "tags": [
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 118000000,
+        "rent_monthly_clp": 450000,
+        "location": "Estación Central"
+      }
+    },
+    {
+      "id": "HD-0504",
+      "text": "Santiago, 2D/1B. UF 3.150. Metro a 900 m y paradero troncal a 650 m. Acepta gatos hasta 5 kg. Estacionamiento propio.",
+      "note": "distancia OK por el paradero; falla el peso (5 kg contra gato de 6)",
+      "tags": [
+        "dist_multiple",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": 5
+        },
+        "parking": "propio",
+        "price_uf": 3150,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HD-0505",
+      "text": "Depto 1D/1B 40 m² (Quinta Normal). UF 2.800. A 500 m del Metro Gruta de Lourdes. Acepta mascotas. Estacionamiento: no tiene.",
+      "note": "comuna entre paréntesis; no tiene estacionamiento",
+      "tags": [
+        "comuna_posicion"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 2800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Quinta Normal"
+      }
+    },
+    {
+      "id": "HD-0506",
+      "text": "Estación Central, 2D/2B. UF 3.100. A 300 m del Metro Las Rejas. Estacionamiento propio. ACTUALIZACIÓN: la comunidad ahora sí acepta mascotas. Se arrienda en 14 UF.",
+      "note": "la política final es la de la actualización; arriendo en UF",
+      "tags": [
+        "arriendo_uf",
+        "correccion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3100,
+        "price_clp": null,
+        "rent_monthly_clp": 551600,
+        "location": "Estación Central"
+      }
+    },
+    {
+      "id": "HD-0507",
+      "text": "Estación Central, 1 dormitorio. UF 2.700. ¡A pasos del metro! Pet friendly. Estacionamiento propio.",
+      "note": "'a pasos' no es una distancia",
+      "tags": [
+        "dist_formato",
+        "distractor"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2700,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      }
+    }
+  ]
+}

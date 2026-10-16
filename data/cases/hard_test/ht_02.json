@@ -1,0 +1,208 @@
+{
+  "id": "ht_02",
+  "uf_value": 40300,
+  "style": "Comprador sin mascota.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 185000000,
+    "mascota_especie": null,
+    "mascota_kg": null,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Providencia",
+      "Las Condes"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-0201",
+      "text": "Las Condes, depto 3D/2B, 102 m². UF 4.550. Metro Hernando de Magallanes a 700 m. El edificio no admite mascotas de ningún tipo. Dos estacionamientos propios. Renta mensual 1,2 millones.",
+      "note": "prohíbe mascotas pero el comprador no tiene; '1,2 millones' = $1.200.000",
+      "tags": [
+        "jerga_monto",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4550,
+        "price_clp": null,
+        "rent_monthly_clp": 1200000,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HT-0202",
+      "text": "Providencia. Tres dormitorios (principal en suite), dos baños. $179.900.000. A 450 metros del metro Tobalaba. Estacionamiento asignado.",
+      "note": "dormitorios en palabras; la suite cuenta",
+      "tags": [
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 450,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 179900000,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-0203",
+      "text": "Providencia 2D+S (servicio). UF 4.300, metro a 300 m. Con estacionamiento propio.",
+      "note": "'2D+S' = 2 dormitorios + servicio: 2 < 3",
+      "tags": [
+        "dorm_no_cuenta",
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4300,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-0204",
+      "text": "Las Condes, 3 dormitorios. Ciento noventa millones de pesos. A 600 m del metro. Estacionamiento propio.",
+      "note": "precio en palabras ($190.000.000) sobre el tope",
+      "tags": [
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 190000000,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HT-0205",
+      "text": "3D/2B en Ñuñoa. El vendedor menciona una tasación de UF 5.000, pero el precio de venta es $170.000.000. A 900 m del metro. Estacionamiento propio. Arriendo $1.300.000.",
+      "note": "la tasación no es el precio; mayor ROI y no preferida",
+      "tags": [
+        "distractor",
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 170000000,
+        "rent_monthly_clp": 1300000,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-0206",
+      "text": "Las Condes, 4 dormitorios. UF 4.400. A 5 minutos del metro Escuela Militar. Estacionamiento propio.",
+      "note": "minutos, sin metros",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4400,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HT-0207",
+      "text": "Providencia, 3D. UF 4.200. A 500 m del metro. Estacionamiento no incluido (hay disponibilidad para arriendo en el edificio).",
+      "note": "no incluido = ninguno",
+      "tags": [
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 4200,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-0208",
+      "text": "Providencia, 3D/2B. UF 4.592. A 350 m del metro. Estacionamiento asignado.",
+      "note": "near miss: UF 4.592 = $185.057.600",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 350,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4592,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    }
+  ]
+}

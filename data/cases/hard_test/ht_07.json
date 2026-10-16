@@ -1,0 +1,207 @@
+{
+  "id": "ht_07",
+  "uf_value": 38550,
+  "style": "El comprador de la E1 con avisos nuevos.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 150000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 18,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Providencia",
+      "Ñuñoa"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-0701",
+      "text": "Providencia, calle Marchant Pereira. 2 dormitorios, 2 baños, UF 3.850. Metro Los Leones: 950 m. Mascotas sin restricciones. Estacionamiento asignado. Arriendo de referencia $980.000.",
+      "note": "control: cumple todo",
+      "tags": [],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 950,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3850,
+        "price_clp": null,
+        "rent_monthly_clp": 980000,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-0702",
+      "text": "Ñuñoa, 1D + living convertible en segundo dormitorio. UF 3.200. Metro a 400 m. Admite mascotas. Estacionamiento propio. Arriendo $720.000.",
+      "note": "el living convertible no es dormitorio",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3200,
+        "price_clp": null,
+        "rent_monthly_clp": 720000,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-0703",
+      "text": "¡Precio bajo tasación! Providencia, 3D/2B. UF 4.050. Metro a 500 m. Admite mascotas. Estacionamiento propio.",
+      "note": "UF 4.050 = $156.127.500 > tope, pese al marketing",
+      "tags": [
+        "distractor"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4050,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-0704",
+      "text": "Depto Ñuñoa 2 dorm, 145 millones, metro Ñuñoa a 600 m, perros hasta 20 kg, estacionamiento propio, arriendo 820 mil",
+      "note": "'145 millones' sin $; 18 <= 20 kg",
+      "tags": [
+        "jerga_monto",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 20
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 145000000,
+        "rent_monthly_clp": 820000,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-0705",
+      "text": "Santiago, 2D/1B. $132.000.000. Metro Santa Isabel a 300 m. Pet friendly. Estacionamiento propio. Arriendo $950.000.",
+      "note": "no preferida y con el mayor ROI: va después de las preferidas",
+      "tags": [],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 132000000,
+        "rent_monthly_clp": 950000,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-0706",
+      "text": "Providencia, 2D. UF 3.700. A 500 m del metro. Mascotas: solo gatos. Estacionamiento propio.",
+      "note": "solo gatos; comprador con perro",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3700,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-0707",
+      "text": "Ñuñoa, 2D/1B. UF 3.600. Metro a 350 m. Admite mascotas. Estacionamiento: se arrienda aparte en $40.000 al mes.",
+      "note": "se arrienda aparte: no incluido",
+      "tags": [
+        "estac_ambiguo",
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 350,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3600,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-0708",
+      "text": "Providencia, 2D. UF 3.500. A 12 cuadras del metro. Pet friendly. Estacionamiento propio.",
+      "note": "cuadras: no verificable",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3500,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    }
+  ]
+}

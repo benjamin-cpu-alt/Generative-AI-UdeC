@@ -1,0 +1,208 @@
+{
+  "id": "ht_16",
+  "uf_value": 40900,
+  "style": "Comprador sin mascota; casas grandes.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 240000000,
+    "mascota_especie": null,
+    "mascota_kg": null,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Lo Barnechea",
+      "Vitacura"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-1601",
+      "text": "Lo Barnechea, casa 4D/3B, 180 m². UF 5.800. Paradero troncal a 600 m. No se permiten mascotas. 2 estacionamientos.",
+      "note": "UF 5.800 = $237.220.000; la prohibición no afecta",
+      "tags": [
+        "casi_cumple",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Lo Barnechea"
+      }
+    },
+    {
+      "id": "HT-1602",
+      "text": "Vitacura: 3 dormitorios, 2 baños, UF 5.600, metro Escuela Militar a 950 m, estacionamiento propio, arriendo 45 UF.",
+      "note": "arriendo 45 UF",
+      "tags": [
+        "arriendo_uf",
+        "comuna_posicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 950,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5600,
+        "price_clp": null,
+        "rent_monthly_clp": 1840500,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "HT-1603",
+      "text": "Las Condes, 3D/2B, $210.000.000, metro Manquehue a 400 m, estacionamiento asignado, renta 1,6 millones.",
+      "note": "'1,6 millones' = $1.600.000; no preferida",
+      "tags": [
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 210000000,
+        "rent_monthly_clp": 1600000,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HT-1604",
+      "text": "En La Dehesa, Lo Barnechea: casa de cuatro dormitorios, doscientos treinta y cinco millones, a ochocientos metros del paradero troncal, estacionamiento propio para dos autos.",
+      "note": "'en La Dehesa' (barrio) antes de la comuna; todo en palabras",
+      "tags": [
+        "cifra_palabras",
+        "comuna_posicion"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 235000000,
+        "rent_monthly_clp": null,
+        "location": "Lo Barnechea"
+      }
+    },
+    {
+      "id": "HT-1605",
+      "text": "Vitacura, 4D. UF 5.900. Metro a 500 m. Con estacionamiento propio.",
+      "note": "near miss: UF 5.900 = $241.310.000",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5900,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "HT-1606",
+      "text": "Vitacura, 2D + sala de estar familiar. UF 5.000. Metro a 300 m. Con estacionamiento propio.",
+      "note": "la sala de estar no es dormitorio",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "HT-1607",
+      "text": "Vitacura, 3D. UF 5.200. Metro a 700 m. Estacionamiento: el edificio tiene 4 para visitas.",
+      "note": "solo visitas",
+      "tags": [
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 5200,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Vitacura"
+      }
+    },
+    {
+      "id": "HT-1608",
+      "text": "Lo Barnechea, 3D. UF 5.400. Metro más cercano a 4,5 km. Con estacionamiento propio.",
+      "note": "4,5 km > 1.000 m",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 4500,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 5400,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Lo Barnechea"
+      }
+    }
+  ]
+}

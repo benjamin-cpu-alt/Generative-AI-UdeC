@@ -94,7 +94,7 @@ def evaluate_property(prop: Property, case: Case) -> ExpectedProperty:
         failed.append(C_BUDGET)
 
     p = t.pets
-    pets_ok = (
+    pets_ok = hc.mascota_especie is None or (
         p.explicit
         and p.allowed
         and (not p.species or hc.mascota_especie in p.species)

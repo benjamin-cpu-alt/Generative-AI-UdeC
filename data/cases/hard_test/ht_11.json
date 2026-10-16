@@ -1,0 +1,210 @@
+{
+  "id": "ht_11",
+  "uf_value": 39050,
+  "style": "Comprador sin mascota; comunas en direcciones.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 160000000,
+    "mascota_especie": null,
+    "mascota_kg": null,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Ñuñoa"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-1101",
+      "text": "Calle Suecia con Irarrázaval (Ñuñoa). Depto 2D/2B, 64 m². UF 3.990. Metro Irarrázaval a 250 m. Prohibidas las mascotas. Estacionamiento subterráneo propio. Arriendo 19 UF.",
+      "note": "comuna entre paréntesis; prohíbe mascotas pero el comprador no tiene",
+      "tags": [
+        "arriendo_uf",
+        "comuna_posicion",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 250,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3990,
+        "price_clp": null,
+        "rent_monthly_clp": 741950,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-1102",
+      "text": "Ñuñoa: depto de tres dormitorios a cuatrocientos metros del metro Ñuble; valor $158.000.000; estacionamiento asignado; arriendo $700.000.",
+      "note": "dormitorios y distancia en palabras",
+      "tags": [
+        "cifra_palabras",
+        "comuna_posicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 158000000,
+        "rent_monthly_clp": 700000,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-1103",
+      "text": "Macul. 2D/1B. UF 3.400. Paradero troncal a 150 m y metro a 900 m. Estacionamiento propio. Renta $950.000.",
+      "note": "vale el paradero; no preferida, mayor ROI",
+      "tags": [
+        "dist_multiple"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 150,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3400,
+        "price_clp": null,
+        "rent_monthly_clp": 950000,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "HT-1104",
+      "text": "ÑUÑOA – 2 DORMITORIOS – UF 4.050 – METRO CHILE ESPAÑA 780 M – ESTACIONAMIENTO PROPIO",
+      "note": "mayúsculas; 780 m justo bajo 800; UF 4.050 = $158.152.500",
+      "tags": [
+        "casi_cumple",
+        "estilo"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 780,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4050,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-1105",
+      "text": "Ñuñoa, 3D. $162.000.000; GC $130.000. Metro a 300 m. Con estacionamiento propio.",
+      "note": "$162.000.000 > tope por $2.000.000",
+      "tags": [
+        "casi_cumple",
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 162000000,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-1106",
+      "text": "Ñuñoa, 2D/2B. UF 3.700. Metro a 500 m. Estacionamiento: el edificio cuenta con estacionamientos para visitas.",
+      "note": "solo visitas",
+      "tags": [
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 3700,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-1107",
+      "text": "Ñuñoa 2D. UF 3.500. Paradero troncal a 950 m y metro Plaza Egaña a 1,3 km. Con estacionamiento propio.",
+      "note": "la menor es 950 m, igual > 800",
+      "tags": [
+        "dist_formato",
+        "dist_multiple"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 950,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3500,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-1108",
+      "text": "Ñuñoa, 1 dormitorio + estudio sin ventana. UF 3.000. Metro a 400 m. Con estacionamiento propio.",
+      "note": "el estudio no es dormitorio",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    }
+  ]
+}

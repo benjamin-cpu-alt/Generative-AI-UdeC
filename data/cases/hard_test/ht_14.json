@@ -1,0 +1,206 @@
+{
+  "id": "ht_14",
+  "uf_value": 41250,
+  "style": "Casas con patio; precio corregido por el dueño.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 195000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 20,
+    "distancia_max_transporte_m": 900,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "La Reina"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-1401",
+      "text": "La Reina, casa 3D/2B con patio. UF 4.700. Paradero troncal en Av. Larraín a 500 m. Se aceptan perros. Estacionamiento para un auto. Arriendo $1.000.000.",
+      "note": "UF 4.700 = $193.875.000, justo bajo el tope",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4700,
+        "price_clp": null,
+        "rent_monthly_clp": 1000000,
+        "location": "La Reina"
+      }
+    },
+    {
+      "id": "HT-1402",
+      "text": "Peñalolén — 3 dormitorios — $170.000.000 — metro Grecia 700 m — mascotas sin restricción — estacionamiento propio — arriendo $1.150.000",
+      "note": "no preferida, mayor ROI",
+      "tags": [
+        "estilo"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 170000000,
+        "rent_monthly_clp": 1150000,
+        "location": "Peñalolén"
+      }
+    },
+    {
+      "id": "HT-1403",
+      "text": "La Reina, 2D. UF 4.300. Metro a 400 m. Se aceptan mascotas pequeñas de máximo 10 kg. Con estacionamiento propio.",
+      "note": "10 kg contra perro de 20",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 10
+        },
+        "parking": "propio",
+        "price_uf": 4300,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      }
+    },
+    {
+      "id": "HT-1404",
+      "text": "La Reina, 2D/2B. Publicado en UF 4.900; el propietario lo bajó a UF 4.600. Metro Plaza Egaña a 850 m. Mascotas permitidas. Estac. propio.",
+      "note": "vale UF 4.600 = $189.750.000",
+      "tags": [
+        "correccion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 850,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4600,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      }
+    },
+    {
+      "id": "HT-1405",
+      "text": "La Reina, casa 4D. Doscientos millones. Metro a 600 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "$200.000.000 en palabras > tope",
+      "tags": [
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 200000000,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      }
+    },
+    {
+      "id": "HT-1406",
+      "text": "La Reina, 3D. UF 4.400. A 1,2 km del metro. Admite mascotas. Con estacionamiento propio.",
+      "note": "1,2 km > 900",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4400,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      }
+    },
+    {
+      "id": "HT-1407",
+      "text": "La Reina 2D. UF 4.200. Metro a 500 m. Admite mascotas. Estacionamiento comunitario sin asignar, por orden de llegada.",
+      "note": "sin asignar = no es propio ni asignado",
+      "tags": [
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 4200,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      }
+    },
+    {
+      "id": "HT-1408",
+      "text": "La Reina, 3D. UF 4.500. Metro a 300 m. Con estacionamiento propio. Ideal para familias con niños.",
+      "note": "no habla de mascotas",
+      "tags": [
+        "mascota_silencio"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4500,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Reina"
+      }
+    }
+  ]
+}

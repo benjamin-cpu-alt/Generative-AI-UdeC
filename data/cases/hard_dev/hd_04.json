@@ -1,0 +1,190 @@
+{
+  "id": "hd_04",
+  "uf_value": 41200,
+  "style": "Mayúsculas, pie y saldo, kilos en palabras.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 175000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 30,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "La Florida",
+      "Puente Alto"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HD-0401",
+      "text": "CASA LA FLORIDA 3D 2B, 4.200 UF, A 950 MTS METRO BELLAVISTA DE LA FLORIDA, ACEPTA MASCOTAS GRANDES, ESTACIONAMIENTO PARA 2 AUTOS. ARRIENDO $850.000",
+      "note": "todo en mayúsculas; 4.200 UF = $173.040.000",
+      "tags": [
+        "dorm_notacion",
+        "estilo"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 950,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4200,
+        "price_clp": null,
+        "rent_monthly_clp": 850000,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "HD-0402",
+      "text": "Casa en Puente Alto, 3 dormitorios. $120.000.000. Paradero troncal a 600 m. Perros hasta 25 kilos. Estacionamiento propio.",
+      "note": "límite 25 kg contra perro de 30",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 25
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 120000000,
+        "rent_monthly_clp": null,
+        "location": "Puente Alto"
+      }
+    },
+    {
+      "id": "HD-0403",
+      "text": "Puente Alto, 2D 1B. $110.000.000. A 4 cuadras del Metro Protectora de la Infancia. Acepta mascotas. Estacionamiento propio.",
+      "note": "'4 cuadras' no es una distancia verificable",
+      "tags": [
+        "dist_formato",
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 110000000,
+        "rent_monthly_clp": null,
+        "location": "Puente Alto"
+      }
+    },
+    {
+      "id": "HD-0404",
+      "text": "La Florida, 3D/2B, 80 m². UF 4.248. A 500 m del Metro Mirador. Pet friendly. Estacionamiento asignado.",
+      "note": "near miss: UF 4.248 = $175.017.600, sobre el tope por $17.600",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 4248,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "HD-0405",
+      "text": "La Florida, depto 2D/2B. Precio total UF 3.900, con pie de UF 850 y saldo con crédito; GC $70.000. A 1,1 km del metro. Se aceptan perros. Estacionamiento propio. Arriendo 18 UF.",
+      "note": "el pie y los GC no son el precio; 1,1 km = 1.100 m <= 1.200",
+      "tags": [
+        "arriendo_uf",
+        "dist_formato",
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1100,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3900,
+        "price_clp": null,
+        "rent_monthly_clp": 741600,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "HD-0406",
+      "text": "Casa en Macul de cuatro dormitorios. Precio: ciento sesenta y nueve millones. A 300 metros del metro. Mascotas sin restricción. Estacionamiento techado propio.",
+      "note": "dormitorios y precio en palabras ($169.000.000)",
+      "tags": [
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 169000000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "HD-0407",
+      "text": "La Florida, 3 dormitorios. $150.000.000. A 400 m del metro. Acepta mascotas. Se estaciona en la calle sin problema.",
+      "note": "estacionamiento en la calle no sirve",
+      "tags": [
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 150000000,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      }
+    }
+  ]
+}

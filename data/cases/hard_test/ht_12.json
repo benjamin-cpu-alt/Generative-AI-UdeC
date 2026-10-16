@@ -1,0 +1,218 @@
+{
+  "id": "ht_12",
+  "uf_value": 40450,
+  "style": "Excepciones de mascotas y marketing de conectividad.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 175000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 3,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Las Condes"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-1201",
+      "text": "Las Condes, Av. Apoquindo. 2D/2B. UF 4.250. Metro Alcántara a 300 m. Gatos permitidos. Incluye estacionamiento y bodega. Arriendo 24 UF.",
+      "note": "arriendo 24 UF; UF 4.250 = $171.912.500",
+      "tags": [
+        "arriendo_uf"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4250,
+        "price_clp": null,
+        "rent_monthly_clp": 970800,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HT-1202",
+      "text": "Providencia: 3D, $160.000.000, a 600 metros de metro Pedro de Valdivia, se aceptan gatos y perros pequeños (hasta 8 kg), estacionamiento propio, arriendo $1.100.000.",
+      "note": "gatos y perros <= 8 kg; no preferida, mayor ROI",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro",
+            "gato"
+          ],
+          "max_kg": 8
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 160000000,
+        "rent_monthly_clp": 1100000,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-1203",
+      "text": "Las Condes, 2D. UF 4.000. Metro a 500 m. Mascotas no permitidas (excepto peces). Con estacionamiento propio.",
+      "note": "'excepto peces' no permite gatos",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HT-1204",
+      "text": "Departamento 2 dormitorios / 2 baños, UF 4.300, a 1 km del metro Los Dominicos, acepta mascotas, estacionamiento propio. Ubicado en Las Condes.",
+      "note": "1 km == máximo; comuna al final",
+      "tags": [
+        "casi_cumple",
+        "comuna_posicion",
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4300,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HT-1205",
+      "text": "Las Condes, 3D. UF 4.330. Metro a 400 m. Gatos sí. Con estacionamiento propio.",
+      "note": "near miss: UF 4.330 = $175.148.500",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4330,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HT-1206",
+      "text": "Las Condes, 2D. UF 3.900. Metro a 600 m. Con estacionamiento propio. Edificio con piscina y quincho.",
+      "note": "no habla de mascotas",
+      "tags": [
+        "mascota_silencio"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3900,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HT-1207",
+      "text": "Las Condes 2D. UF 3.800. ¡Excelente conectividad! El metro está a 20 minutos caminando. Gatos OK. Con estacionamiento propio.",
+      "note": "'excelente conectividad' con solo minutos",
+      "tags": [
+        "dist_formato",
+        "distractor"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    },
+    {
+      "id": "HT-1208",
+      "text": "Las Condes, 1D/1B + terraza techada habilitada como dormitorio. UF 3.700. Metro a 300 m. Gatos sí. Con estacionamiento propio.",
+      "note": "la terraza habilitada no es dormitorio",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3700,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    }
+  ]
+}

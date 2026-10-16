@@ -18,6 +18,12 @@ los portales sigan publicando esos avisos). La anotación se hace a mano despué
 
   python3 scripts/sample_real.py --out /tmp/muestra.json   # ~5 min: respeta las pausas
 
+Sorteo 2 de la E3 (data/cases/real/PREREGISTRO_E3.md): otra semilla, 6 por portal y sin
+repetir avisos del sorteo 1:
+
+  python3 scripts/sample_real.py --seed 2027 --per-source 6 \
+      --exclude data/cases/real/fuente/muestra.json --out data/cases/real/fuente/muestra_2.json
+
 No sobrescribe la instantánea versionada salvo con --force: los portales cambian a diario,
 así que volver a sortear hoy daría otros avisos y dejaría data/cases/real/ sin su fuente.
 """
@@ -38,6 +44,7 @@ from scout.collect import enrich_transit  # noqa: E402
 from scout.ficha import render  # noqa: E402
 from scout.fetch import FetchError, PoliteFetcher  # noqa: E402
 from scout.sources import REGISTRY, SearchQuery, SourceError  # noqa: E402
+from scout.uf import uf_today  # noqa: E402
 
 SEED = 2026
 PER_SOURCE = 4
@@ -47,10 +54,12 @@ SOURCES = ["yapo", "chilepropiedades", "icasas", "toctoc"]   # portalpm: solo pr
 OUT = ROOT / "data" / "cases" / "real" / "fuente" / "muestra.json"
 
 
-def main(out: Path) -> int:
+def main(out: Path, seed: int = SEED, per_source: int = PER_SOURCE, exclude=()) -> int:
     fetcher = PoliteFetcher(cache_dir=ROOT / "results" / "scout" / "cache", log=print)
     stations = geo.load_stations()
-    rng = random.Random(SEED)
+    rng = random.Random(seed)
+    excluded = {f"{a['source']}:{a['source_id']}" for path in exclude
+                for a in json.loads(Path(path).read_text(encoding="utf-8"))["avisos"]}
     sample, universe = [], {}
     for name in SOURCES:
         src = REGISTRY[name]()
@@ -63,9 +72,10 @@ def main(out: Path) -> int:
                         pool += src.parse_search(fetcher.get(url), url, q)
                     except (FetchError, SourceError) as e:
                         print(f"[{name}] {tipo} {comuna}: {e}")
-        units = sorted({l.key: l for l in pool if not l.is_project}.values(), key=lambda l: l.key)
+        units = sorted({l.key: l for l in pool if not l.is_project and l.key not in excluded}.values(),
+                       key=lambda l: l.key)
         universe[name] = len(units)
-        picked = rng.sample(units, min(PER_SOURCE, len(units)))
+        picked = rng.sample(units, min(per_source, len(units)))
         print(f"[{name}] {len(pool)} avisos en resultados, {len(units)} unidades, sorteados {len(picked)}")
         for l in picked:
             if l.needs_detail:
@@ -76,7 +86,8 @@ def main(out: Path) -> int:
                            "ficha": render(l)})
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({
-        "descargado": time.strftime("%Y-%m-%d"), "semilla": SEED, "por_portal": PER_SOURCE,
+        "descargado": time.strftime("%Y-%m-%d"), "semilla": seed, "por_portal": per_source,
+        "excluidos": len(excluded), "uf_dia": uf_today(fetcher),
         "comunas": COMUNAS, "tipos": TIPOS, "portales": SOURCES,
         "universo_por_portal": universe,
         "nota": "Fichas generadas por src/scout/ficha.py a partir de avisos públicos; cada una "
@@ -90,7 +101,10 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", type=Path, default=OUT, help=f"archivo de salida (por defecto {OUT.relative_to(ROOT)})")
     ap.add_argument("--force", action="store_true", help="permite sobrescribir un archivo existente")
+    ap.add_argument("--seed", type=int, default=SEED)
+    ap.add_argument("--per-source", type=int, default=PER_SOURCE)
+    ap.add_argument("--exclude", nargs="*", default=[], help="instantáneas cuyos avisos no se repiten")
     args = ap.parse_args()
     if args.out.exists() and not args.force:
         sys.exit(f"{args.out} ya existe (es la instantánea del set real); usa --out u --force")
-    sys.exit(main(args.out))
+    sys.exit(main(args.out, args.seed, args.per_source, args.exclude))

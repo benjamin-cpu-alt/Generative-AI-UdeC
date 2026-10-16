@@ -1,0 +1,212 @@
+{
+  "id": "ht_04",
+  "uf_value": 41100,
+  "style": "Casas familiares; distancias dobles.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 200000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 25,
+    "distancia_max_transporte_m": 1200,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "La Florida"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-0401",
+      "text": "Casa en La Florida, 3 dormitorios + escritorio, 2 baños. 4.700 UF. Paradero troncal de Vicuña Mackenna a 900 m; el metro queda a 1,6 km. Perros sin límite de tamaño. Estacionamiento para 2 vehículos. Arriendo 25 UF.",
+      "note": "vale el paradero (900 m); 3 dormitorios (el escritorio no suma); arriendo 25 UF",
+      "tags": [
+        "arriendo_uf",
+        "dist_multiple",
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4700,
+        "price_clp": null,
+        "rent_monthly_clp": 1027500,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "HT-0402",
+      "text": "La Florida, 2 dormitorios + mansarda de uso flexible. UF 4.000. Metro a 600 m. Admite mascotas. Estacionamiento propio.",
+      "note": "la mansarda no es dormitorio",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "HT-0403",
+      "text": "PUENTE ALTO!! CASA 4D 2B, $165.000.000, METRO LAS MERCEDES 800 MTS, MASCOTAS SI, 2 ESTACIONAMIENTOS, ARRIENDO $1.050.000",
+      "note": "mayúsculas; no preferida, mayor ROI",
+      "tags": [
+        "estilo"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 165000000,
+        "rent_monthly_clp": 1050000,
+        "location": "Puente Alto"
+      }
+    },
+    {
+      "id": "HT-0404",
+      "text": "La Florida, 3D. UF 4.500. A 700 m del metro. Se aceptan perros de hasta veinte kilos. Estacionamiento propio.",
+      "note": "límite en palabras (20 kg) contra perro de 25",
+      "tags": [
+        "cifra_palabras",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 20
+        },
+        "parking": "propio",
+        "price_uf": 4500,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "HT-0405",
+      "text": "Av. La Florida 9500, La Florida. 3D/2B. UF 4.850. A 1.200 m del Metro Elisa Correa. Mascotas OK. Estac. propio.",
+      "note": "UF 4.850 = $199.335.000 y 1.200 m: ambos justo dentro del límite",
+      "tags": [
+        "casi_cumple",
+        "comuna_posicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4850,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "HT-0406",
+      "text": "La Florida, casa 3D. Valor $205.000.000 (acepta crédito; pie 20 %: $41.000.000). Metro a 500 m. Admite mascotas. Estacionamiento propio.",
+      "note": "el precio es $205.000.000, no el pie",
+      "tags": [
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 205000000,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "HT-0407",
+      "text": "La Florida, 3D. UF 4.300. Metro a 400 m. Admite mascotas. Acceso a estacionamientos de visita.",
+      "note": "visitas no sirve",
+      "tags": [
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "visitas",
+        "price_uf": 4300,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "HT-0408",
+      "text": "La Florida, 4D. UF 4.600. A seis cuadras del metro. Pet friendly. Estacionamiento propio.",
+      "note": "cuadras: no verificable",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4600,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "La Florida"
+      }
+    }
+  ]
+}

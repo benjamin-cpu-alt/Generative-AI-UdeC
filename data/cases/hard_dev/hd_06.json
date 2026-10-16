@@ -1,0 +1,190 @@
+{
+  "id": "hd_06",
+  "uf_value": 40600,
+  "style": "La comuna preferida debe ganarle al ROI.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 190000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 12,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Providencia"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HD-0601",
+      "text": "Providencia, depto 2+1 (2 dormitorios + escritorio). UF 4.600. A 550 m del Metro Pedro de Valdivia. Perros hasta 15 kg. Estacionamiento propio. Arriendo $900.000.",
+      "note": "'2+1': el +1 es escritorio, 2 dormitorios cumplen",
+      "tags": [
+        "dorm_no_cuenta",
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 550,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 15
+        },
+        "parking": "propio",
+        "price_uf": 4600,
+        "price_clp": null,
+        "rent_monthly_clp": 900000,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HD-0602",
+      "text": "Comuna: Ñuñoa | Dormitorios: 3 | Baños: 2 | Precio: $175.000.000 | Metro: 700 m | Mascotas: sí | Estacionamiento: asignado | Arriendo: $1.100.000",
+      "note": "ficha con barras; mayor ROI pero NO preferida: va después de las de Providencia",
+      "tags": [
+        "estilo"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 175000000,
+        "rent_monthly_clp": 1100000,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HD-0603",
+      "text": "Providencia, 2D/1B. UF 4.700. GC 120 lucas. A 350 m del metro. Pet friendly. Estacionamiento propio.",
+      "note": "near miss: UF 4.700 = $190.820.000; los GC en 'lucas' no son el precio",
+      "tags": [
+        "casi_cumple",
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 350,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4700,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HD-0604",
+      "text": "Providencia, 3 dormitorios. UF 4.300. A 300 m del Metro Salvador. No se aceptan perros. Gatos bienvenidos. Estacionamiento propio.",
+      "note": "solo gatos; comprador con perro",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4300,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HD-0605",
+      "text": "Depto de dos dormitorios en Providencia, $182 millones. A 1 km del metro. Acepta mascotas. Derecho a uso de estacionamiento asignado.",
+      "note": "1 km == máximo de 1.000 m: cumple; 'derecho a uso asignado' = asignado",
+      "tags": [
+        "casi_cumple",
+        "dist_formato",
+        "estac_ambiguo",
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 182000000,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HD-0606",
+      "text": "En el mismo edificio se vende otra unidad 3D con estacionamiento a UF 4.900. Esta unidad en Providencia: 1D/1B, UF 3.800, sin estacionamiento, a 400 m del metro, pet friendly.",
+      "note": "los 3D y el estacionamiento son de la otra unidad",
+      "tags": [
+        "distractor"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HD-0607",
+      "text": "Las Condes, 3D/2B. UF 4.400. A 1,5 km del metro. Pet friendly. Estacionamiento propio.",
+      "note": "1,5 km = 1.500 m > 1.000",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4400,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Las Condes"
+      }
+    }
+  ]
+}

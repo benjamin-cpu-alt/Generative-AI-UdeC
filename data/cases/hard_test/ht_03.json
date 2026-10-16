@@ -1,0 +1,220 @@
+{
+  "id": "ht_03",
+  "uf_value": 38700,
+  "style": "Estacionamiento no requerido; unidades pequeñas.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 118000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 900,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": false
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Santiago"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-0301",
+      "text": "Santiago centro. 1 dormitorio independiente, 35 m². $109.000.000. Metro Bellas Artes a 300 m. Se aceptan gatos. No tiene estacionamiento. Arriendo $430.000.",
+      "note": "sin estacionamiento, pero no se requiere",
+      "tags": [
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 109000000,
+        "rent_monthly_clp": 430000,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-0302",
+      "text": "Barrio Yungay, Santiago. Depto 2D/1B. UF 2.950. A 650 metros de metro Cumming. Mascotas bienvenidas (gatos y perros). Estacionamiento en la calle. Arriendo 13,5 UF.",
+      "note": "arriendo 13,5 UF; calle no importa a este comprador",
+      "tags": [
+        "arriendo_uf",
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro",
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": 2950,
+        "price_clp": null,
+        "rent_monthly_clp": 522450,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-0303",
+      "text": "Loft de 40 m² en Santiago, ambiente único con altillo. UF 2.600. Metro a 200 m. Pet friendly.",
+      "note": "loft de ambiente único = 0 dormitorios",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 2600,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-0304",
+      "text": "Santiago, 1D/1B. $105.000.000. A 400 m del metro. La comunidad solo autoriza perros.",
+      "note": "solo perros; comprador con gato",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 105000000,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-0305",
+      "text": "Independencia, 1D 1B, 98 palos, metro a 500 m, acepta gatos hasta 6 kg, arriendo 520 lucas",
+      "note": "'98 palos'/'520 lucas'; 5 <= 6 kg; no preferida y con más ROI",
+      "tags": [
+        "dorm_notacion",
+        "jerga_monto",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": 6
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 98000000,
+        "rent_monthly_clp": 520000,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "HT-0306",
+      "text": "Santiago, 2D. UF 2.800. A 1,3 km del metro. Acepta gatos.",
+      "note": "1,3 km > 900 m",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 2800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-0307",
+      "text": "Santiago, 2D/1B. UF 3.060. A 400 m del metro. Gatos permitidos.",
+      "note": "near miss: UF 3.060 = $118.422.000",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3060,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-0308",
+      "text": "Santiago, 1 dormitorio. $99.000.000. A 300 m del metro. Mascotas a convenir con el propietario.",
+      "note": "'a convenir' no es aceptación explícita",
+      "tags": [
+        "mascota_silencio"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 99000000,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    }
+  ]
+}

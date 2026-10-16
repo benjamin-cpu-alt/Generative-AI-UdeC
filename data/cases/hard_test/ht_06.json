@@ -1,0 +1,208 @@
+{
+  "id": "ht_06",
+  "uf_value": 40050,
+  "style": "Comprador sin mascota ni auto.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 135000000,
+    "mascota_especie": null,
+    "mascota_kg": null,
+    "distancia_max_transporte_m": 900,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": false
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Independencia"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-0601",
+      "text": "Independencia, 2D/1B. $129.000.000. Metro Plaza Chacabuco a 450 m. No se aceptan mascotas. Sin estacionamiento.",
+      "note": "ni mascotas ni estacionamiento aplican: se aprueba",
+      "tags": [
+        "estac_ambiguo",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 450,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 129000000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "HT-0602",
+      "text": "recoleta 2 dorm 1 baño 3.250 uf metro cerro blanco 300 mts arriendo 650 lucas",
+      "note": "minúsculas, sin puntuación; no preferida, mayor ROI",
+      "tags": [
+        "estilo",
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3250,
+        "price_clp": null,
+        "rent_monthly_clp": 650000,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "HT-0603",
+      "text": "Departamento (Independencia) de 3 habitaciones, UF 3.200; metro Hospitales a 850 m; estacionamiento opcional. Arriendo $500.000.",
+      "note": "comuna entre paréntesis; 'habitaciones'",
+      "tags": [
+        "comuna_posicion",
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 850,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3200,
+        "price_clp": null,
+        "rent_monthly_clp": 500000,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "HT-0604",
+      "text": "Independencia, 2D. UF 3.380. A 300 m del metro.",
+      "note": "near miss: UF 3.380 = $135.369.000",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3380,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "HT-0605",
+      "text": "Monoambiente de 30 m² en Independencia. $70.000.000. A 200 m del metro.",
+      "note": "monoambiente = 0 dormitorios",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 70000000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "HT-0606",
+      "text": "Independencia, 2D. $120.000.000. Metro a 1 km.",
+      "note": "1 km > 900 m",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 120000000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "HT-0607",
+      "text": "Conchalí, 2 dormitorios, ciento veinte millones, paradero troncal a 400 m; metro Vespucio Norte a 1,2 km.",
+      "note": "precio en palabras; vale el paradero",
+      "tags": [
+        "cifra_palabras",
+        "dist_multiple"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 120000000,
+        "rent_monthly_clp": null,
+        "location": "Conchalí"
+      }
+    },
+    {
+      "id": "HT-0608",
+      "text": "Independencia, 2D/2B. Precio $142.000.000 (GC $60.000; contribuciones exentas). A 500 m del metro.",
+      "note": "el precio supera el tope; GC no es el precio",
+      "tags": [
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 142000000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      }
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "id": "ht_25",
+  "uf_value": 39500,
+  "style": "Unidades del mismo edificio y excepciones de especie.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 170000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 14,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Providencia"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-2501",
+      "text": "Providencia, 2D/2B. UF 4.250. Metro Los Leones a 600 m. Mascotas de hasta 15 kg. Estacionamiento propio. Arriendo 21 UF.",
+      "note": "14 <= 15 kg; arriendo 21 UF; UF 4.250 = $167.875.000",
+      "tags": [
+        "arriendo_uf",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "propio",
+        "price_uf": 4250,
+        "price_clp": null,
+        "rent_monthly_clp": 829500,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-2502",
+      "text": "Ñuñoa: 3D, $160.000.000, metro Irarrázaval a 500 m, perros permitidos, estacionamiento asignado, arriendo $1.000.000.",
+      "note": "no preferida, mayor ROI",
+      "tags": [],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 160000000,
+        "rent_monthly_clp": 1000000,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-2503",
+      "text": "Providencia. Unidad 802: 2 dormitorios, UF 4.100, metro Manuel Montt a 750 m, pet friendly, estacionamiento propio. (La unidad 1102, de 3 dormitorios, se vende en UF 4.800.)",
+      "note": "los datos entre paréntesis son de otra unidad",
+      "tags": [
+        "distractor"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 750,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4100,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-2504",
+      "text": "Providencia 2D, 172 millones, metro a 300 m, admite mascotas, con estacionamiento propio.",
+      "note": "'172 millones' > $170.000.000",
+      "tags": [
+        "casi_cumple",
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 172000000,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-2505",
+      "text": "Providencia 2D. UF 4.000. Metro a 400 m. Se aceptan mascotas, excepto perros. Con estacionamiento propio.",
+      "note": "'excepto perros' = solo gatos",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-2506",
+      "text": "Providencia 3D. UF 4.200. Metro a 900 m; paradero troncal a 850 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "la menor (850 m) supera 800",
+      "tags": [
+        "dist_multiple"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 850,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4200,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-2507",
+      "text": "Providencia, 1D/1B + estar. UF 3.600. Metro a 300 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "el estar no cuenta: 1 < 2",
+      "tags": [
+        "dorm_no_cuenta",
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3600,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-2508",
+      "text": "Providencia 2D. UF 3.900. Metro a 500 m. Con estacionamiento propio. Edificio familiar y tranquilo.",
+      "note": "no habla de mascotas",
+      "tags": [
+        "mascota_silencio"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3900,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Providencia"
+      }
+    }
+  ]
+}

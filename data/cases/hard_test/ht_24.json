@@ -1,0 +1,214 @@
+{
+  "id": "ht_24",
+  "uf_value": 41350,
+  "style": "Ñuñoa: barrios entre paréntesis y gastos mezclados.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 205000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 8,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Ñuñoa"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-2401",
+      "text": "Ñuñoa, 3D/2B, 95 m². UF 4.900. Metro Plaza Egaña a 700 m. Gatos permitidos sin límite. Estacionamiento propio. Arriendo 1,1 millones.",
+      "note": "'1,1 millones' = $1.100.000; UF 4.900 = $202.615.000",
+      "tags": [
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4900,
+        "price_clp": null,
+        "rent_monthly_clp": 1100000,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-2402",
+      "text": "Ñuñoa (Villa Olímpica). Dos dormitorios. Valor: 4.300 UF. Metro Estadio Nacional a 450 m. Acepta mascotas de hasta 10 kg. Estacionamiento asignado.",
+      "note": "'Dos dormitorios'; 8 <= 10 kg",
+      "tags": [
+        "cifra_palabras",
+        "comuna_posicion",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 450,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 10
+        },
+        "parking": "asignado",
+        "price_uf": 4300,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-2403",
+      "text": "Providencia, 2D/2B, $195.000.000, metro Salvador a 350 m, admite mascotas, estacionamiento propio, arriendo $1.300.000.",
+      "note": "no preferida, mayor ROI",
+      "tags": [],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 350,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 195000000,
+        "rent_monthly_clp": 1300000,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HT-2404",
+      "text": "Ñuñoa, 2D. Precio venta $199.000.000; GC $95.000; contribuciones $60.000 trimestrales. Paradero troncal a 200 m. Gatos sí. Estacionamiento propio.",
+      "note": "tres montos; solo el primero es el precio",
+      "tags": [
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 199000000,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-2405",
+      "text": "Ñuñoa 2D. UF 4.200. Metro a 400 m. Solo mascotas de hasta 5 kg. Con estacionamiento propio.",
+      "note": "5 kg contra gato de 8",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 5
+        },
+        "parking": "propio",
+        "price_uf": 4200,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-2406",
+      "text": "Ñuñoa 3D. UF 4.960. Metro a 500 m. Gatos sí. Con estacionamiento propio.",
+      "note": "near miss: UF 4.960 = $205.096.000",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4960,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-2407",
+      "text": "Ñuñoa 2D. UF 4.000. Metro a 500 m. Gatos sí. Opción de comprar estacionamiento en el subterráneo.",
+      "note": "'opción de comprar' = no incluido",
+      "tags": [
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 4000,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-2408",
+      "text": "Ñuñoa 3D. UF 4.500. Metro a 1,15 km. Gatos sí. Con estacionamiento propio.",
+      "note": "1,15 km = 1.150 m > 1.000",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1150,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4500,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    }
+  ]
+}

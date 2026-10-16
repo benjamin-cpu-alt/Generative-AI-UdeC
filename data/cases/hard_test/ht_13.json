@@ -1,0 +1,208 @@
+{
+  "id": "ht_13",
+  "uf_value": 38800,
+  "style": "Departamentos de 1 dormitorio; montos escritos con palabras.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 112000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 12,
+    "distancia_max_transporte_m": 700,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Estación Central"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-1301",
+      "text": "Estación Central / 1 dorm / 1 baño / 2.750 UF / metro San Alberto Hurtado 300 m / acepta perros medianos hasta 15 kg / estacionamiento asignado / arriendo 420.000",
+      "note": "ficha con barras; perros <= 15 kg",
+      "tags": [
+        "estilo",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 15
+        },
+        "parking": "asignado",
+        "price_uf": 2750,
+        "price_clp": null,
+        "rent_monthly_clp": 420000,
+        "location": "Estación Central"
+      }
+    },
+    {
+      "id": "HT-1302",
+      "text": "Depto 1D en Estación Central, valor $109.500.000, metro Pila del Ganso a 650 m (también paradero troncal a 900 m), mascotas permitidas, estac. propio.",
+      "note": "vale el metro (650 m), la menor",
+      "tags": [
+        "dist_multiple"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 650,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 109500000,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      }
+    },
+    {
+      "id": "HT-1303",
+      "text": "Estación Central: 2 dormitorios, ciento diez millones, a 200 m del metro, admite mascotas, con estacionamiento propio, se arrienda en cuatrocientos ochenta mil pesos.",
+      "note": "precio y arriendo en palabras",
+      "tags": [
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 110000000,
+        "rent_monthly_clp": 480000,
+        "location": "Estación Central"
+      }
+    },
+    {
+      "id": "HT-1304",
+      "text": "Quinta Normal (Av. Matucana): 1D/1B, UF 2.600, metro Quinta Normal a 400 m, mascotas OK, estacionamiento propio, arriendo $560.000.",
+      "note": "no preferida, mayor ROI",
+      "tags": [
+        "comuna_posicion"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2600,
+        "price_clp": null,
+        "rent_monthly_clp": 560000,
+        "location": "Quinta Normal"
+      }
+    },
+    {
+      "id": "HT-1305",
+      "text": "Estación Central, 1D. UF 2.500. Metro a 300 m. Solo mascotas de hasta 10 kg. Con estacionamiento propio.",
+      "note": "10 kg contra perro de 12",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 10
+        },
+        "parking": "propio",
+        "price_uf": 2500,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      }
+    },
+    {
+      "id": "HT-1306",
+      "text": "Estación Central, 1D. UF 2.890. Metro a 250 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "near miss: UF 2.890 = $112.132.000",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 250,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2890,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      }
+    },
+    {
+      "id": "HT-1307",
+      "text": "Estación Central, 1D. UF 2.700. Metro a 300 m. Admite mascotas. Sin estacionamiento: hay un parking público al frente.",
+      "note": "un parking público no es estacionamiento de la unidad",
+      "tags": [
+        "distractor",
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 2700,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      }
+    },
+    {
+      "id": "HT-1308",
+      "text": "Estación Central, 1D. UF 2.400. El metro queda a 2 cuadras. Admite mascotas. Con estacionamiento propio.",
+      "note": "cuadras: no verificable",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2400,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Estación Central"
+      }
+    }
+  ]
+}

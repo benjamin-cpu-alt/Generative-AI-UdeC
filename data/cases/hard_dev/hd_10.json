@@ -1,0 +1,185 @@
+{
+  "id": "hd_10",
+  "uf_value": 38650,
+  "style": "Comprador sin mascota ni auto.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 120000000,
+    "mascota_especie": null,
+    "mascota_kg": null,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": false
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Recoleta",
+      "Independencia"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HD-1001",
+      "text": "Recoleta, 2D/1B. $115.000.000. A 500 m del Metro Cerro Blanco. No se permiten mascotas. Sin estacionamiento.",
+      "note": "ni mascotas ni estacionamiento importan a este comprador: se aprueba",
+      "tags": [
+        "estac_ambiguo",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 115000000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "HD-1002",
+      "text": "Independencia, 3D. UF 3.150. A 300 m del metro.",
+      "note": "near miss: UF 3.150 = $121.747.500",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3150,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "HD-1003",
+      "text": "Conchalí, 2 D / 1 B, 112 palos, a 900 m del metro, se estaciona en la calle.",
+      "note": "'112 palos' = $112.000.000; '2 D / 1 B' con espacios",
+      "tags": [
+        "dorm_notacion",
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "calle",
+        "price_uf": null,
+        "price_clp": 112000000,
+        "rent_monthly_clp": null,
+        "location": "Conchalí"
+      }
+    },
+    {
+      "id": "HD-1004",
+      "text": "Recoleta, 2 dormitorios. $100.000.000. A 3 cuadras del metro.",
+      "note": "cuadras: no verificable",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": null,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 100000000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "HD-1005",
+      "text": "Independencia, 1 dormitorio + escritorio convertible. $95.000.000. A 400 m del metro.",
+      "note": "el escritorio convertible no cuenta: 1 < 2",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 95000000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "HD-1006",
+      "text": "Depto 2D/2B, 55 m2, metro Hospitales a 200 m, UF 3.000, arriendo 13 UF — Independencia.",
+      "note": "comuna al final; arriendo 13 UF",
+      "tags": [
+        "arriendo_uf",
+        "comuna_posicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3000,
+        "price_clp": null,
+        "rent_monthly_clp": 502450,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "HD-1007",
+      "text": "Recoleta, 2 dormitorios. Ciento treinta millones. A 600 m del metro.",
+      "note": "precio en palabras ($130.000.000) sobre el tope",
+      "tags": [
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 130000000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      }
+    }
+  ]
+}

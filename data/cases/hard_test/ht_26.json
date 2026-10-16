@@ -1,0 +1,217 @@
+{
+  "id": "ht_26",
+  "uf_value": 40000,
+  "style": "Sector norte; estacionamiento vendido.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 120000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 5,
+    "distancia_max_transporte_m": 1100,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Independencia",
+      "Recoleta"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-2601",
+      "text": "Independencia, 2D/1B. UF 2.950. Metro Hospitales a 1.100 m. Gatos OK. Estacionamiento propio. Arriendo 13 UF.",
+      "note": "1.100 m == máximo; UF 2.950 = $118.000.000",
+      "tags": [
+        "arriendo_uf",
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 1100,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 2950,
+        "price_clp": null,
+        "rent_monthly_clp": 520000,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "HT-2602",
+      "text": "Recoleta: 2 dormitorios, $115.000.000, metro Cerro Blanco a 600 m, acepta mascotas, estac. asignado, arriendo $560.000.",
+      "note": "control",
+      "tags": [],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 115000000,
+        "rent_monthly_clp": 560000,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "HT-2603",
+      "text": "Conchalí, 3D, $105.000.000, paradero troncal a 300 m, gatos permitidos, estacionamiento propio, arriendo $650.000.",
+      "note": "no preferida, mayor ROI",
+      "tags": [],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 105000000,
+        "rent_monthly_clp": 650000,
+        "location": "Conchalí"
+      }
+    },
+    {
+      "id": "HT-2604",
+      "text": "independencia 2 dorm 110 palos metro plaza chacabuco 500 mts gatos si estac propio",
+      "note": "minúsculas, sin puntuación; '110 palos'",
+      "tags": [
+        "estilo",
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 110000000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "HT-2605",
+      "text": "Independencia 2D. $100.000.000. Metro a 400 m. Gatos hasta 4 kg. Con estacionamiento propio.",
+      "note": "4 kg contra gato de 5",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": 4
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 100000000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      }
+    },
+    {
+      "id": "HT-2606",
+      "text": "Recoleta 2D. Ciento veintiún millones. Metro a 500 m. Gatos sí. Con estacionamiento propio.",
+      "note": "$121.000.000 en palabras > $120.000.000",
+      "tags": [
+        "casi_cumple",
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 121000000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "HT-2607",
+      "text": "Recoleta 2D. $112.000.000. Metro a 300 m. Gatos sí. Incluye estacionamiento. Corrección: el estacionamiento ya fue vendido por separado.",
+      "note": "vale la corrección: ya no incluye estacionamiento",
+      "tags": [
+        "correccion",
+        "estac_ambiguo"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 112000000,
+        "rent_monthly_clp": null,
+        "location": "Recoleta"
+      }
+    },
+    {
+      "id": "HT-2608",
+      "text": "Independencia, 1 dormitorio. $90.000.000. Metro a 200 m. Gatos sí. Con estacionamiento propio.",
+      "note": "1 < 2",
+      "tags": [],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 90000000,
+        "rent_monthly_clp": null,
+        "location": "Independencia"
+      }
+    }
+  ]
+}

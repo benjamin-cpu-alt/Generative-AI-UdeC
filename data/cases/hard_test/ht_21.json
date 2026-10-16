@@ -1,0 +1,225 @@
+{
+  "id": "ht_21",
+  "uf_value": 39150,
+  "style": "Mensajes de corredor y precios actualizados.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 150000000,
+    "mascota_especie": "gato",
+    "mascota_kg": 4,
+    "distancia_max_transporte_m": 900,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Ñuñoa",
+      "Macul"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-2101",
+      "text": "Hola, te comparto: Ñuñoa, 2 dorm 2 baños, 3.700 uf, metro Ñuble a 500 mts, gatos bienvenidos, 1 estac propio, arrienda en 18 uf",
+      "note": "WhatsApp; 'uf' en minúsculas; arriendo 18 UF",
+      "tags": [
+        "arriendo_uf",
+        "estilo"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3700,
+        "price_clp": null,
+        "rent_monthly_clp": 704700,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-2102",
+      "text": "Macul, sector Quilín. 3D 1B. $148.000.000. Metro Quilín a 900 m. Se aceptan perros y gatos. Estacionamiento asignado.",
+      "note": "900 m == máximo",
+      "tags": [
+        "casi_cumple",
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro",
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": null,
+        "price_clp": 148000000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "HT-2103",
+      "text": "San Joaquín, 2D/2B, UF 3.500, paradero troncal a 300 m y metro a 1 km, admite gatos, estacionamiento propio, arriendo $900.000.",
+      "note": "vale el paradero; no preferida, mayor ROI",
+      "tags": [
+        "dist_multiple"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3500,
+        "price_clp": null,
+        "rent_monthly_clp": 900000,
+        "location": "San Joaquín"
+      }
+    },
+    {
+      "id": "HT-2104",
+      "text": "Ñuñoa, 2D. ACTUALIZADO 12/10: el precio baja de UF 4.000 a UF 3.800. Metro Villa Frei a 600 m. Gatos permitidos. Estacionamiento propio.",
+      "note": "vale UF 3.800 = $148.770.000",
+      "tags": [
+        "correccion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3800,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-2105",
+      "text": "Ñuñoa 2D. UF 3.500. Metro a 400 m. Con estacionamiento propio. Mascotas: preguntar.",
+      "note": "'preguntar' no es aceptación",
+      "tags": [
+        "mascota_silencio"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3500,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-2106",
+      "text": "Macul 3D, 152 palos, metro a 300 m, gatos sí, estac propio",
+      "note": "'152 palos' = $152.000.000 > $150.000.000",
+      "tags": [
+        "casi_cumple",
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 152000000,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "HT-2107",
+      "text": "Ñuñoa, 1D+1E (escritorio). UF 3.100. Metro a 300 m. Gatos sí. Con estacionamiento propio.",
+      "note": "'1D+1E' = 1 dormitorio + escritorio",
+      "tags": [
+        "dorm_no_cuenta",
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3100,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-2108",
+      "text": "Ñuñoa, 2D. UF 3.300. Muy bien conectado: a 5 minutos en auto del metro (2,5 km). Gatos sí. Con estacionamiento propio.",
+      "note": "2,5 km > 900 m, pese a 'muy bien conectado'",
+      "tags": [
+        "dist_formato",
+        "distractor"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 2500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "gato"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3300,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    }
+  ]
+}

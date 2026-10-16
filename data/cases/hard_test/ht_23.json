@@ -1,0 +1,210 @@
+{
+  "id": "ht_23",
+  "uf_value": 38600,
+  "style": "Casas para perro grande; abreviaturas de comuna.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 138000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 30,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 3,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Puente Alto"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-2301",
+      "text": "Puente Alto, casa 3D/2B. $129.000.000. Metro Hospital Sótero del Río a 800 m. Perros grandes bienvenidos. Estacionamiento propio. Arriendo $650.000.",
+      "note": "control",
+      "tags": [],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 129000000,
+        "rent_monthly_clp": 650000,
+        "location": "Puente Alto"
+      }
+    },
+    {
+      "id": "HT-2302",
+      "text": "Casa en La Florida de 4 dormitorios, valor $135.000.000, paradero troncal a 450 m, se aceptan mascotas sin restricción, estacionamiento para 2 autos, renta 800 lucas.",
+      "note": "'800 lucas'; no preferida, mayor ROI",
+      "tags": [
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 450,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 135000000,
+        "rent_monthly_clp": 800000,
+        "location": "La Florida"
+      }
+    },
+    {
+      "id": "HT-2303",
+      "text": "PTE ALTO / Puente Alto centro: casa de 3 dorm + estar, UF 3.500, metro Plaza de Puente Alto a 1 km, mascotas ok, estac. propio",
+      "note": "1 km == máximo; el estar no suma; UF 3.500 = $135.100.000",
+      "tags": [
+        "casi_cumple",
+        "dist_formato",
+        "dorm_notacion",
+        "estilo"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1000,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3500,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Puente Alto"
+      }
+    },
+    {
+      "id": "HT-2304",
+      "text": "Puente Alto, 3D. $120.000.000. Metro a 500 m. Perros de hasta veinticinco kilos. Con estacionamiento propio.",
+      "note": "25 kg (en palabras) contra perro de 30",
+      "tags": [
+        "cifra_palabras",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": 25
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 120000000,
+        "rent_monthly_clp": null,
+        "location": "Puente Alto"
+      }
+    },
+    {
+      "id": "HT-2305",
+      "text": "Puente Alto, 2 dormitorios y altillo. $110.000.000. Metro a 600 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "el altillo no es dormitorio",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 110000000,
+        "rent_monthly_clp": null,
+        "location": "Puente Alto"
+      }
+    },
+    {
+      "id": "HT-2306",
+      "text": "Puente Alto 4D. UF 3.590. Metro a 700 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "near miss: UF 3.590 = $138.574.000",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 4,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3590,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Puente Alto"
+      }
+    },
+    {
+      "id": "HT-2307",
+      "text": "Puente Alto 3D. $125.000.000. Metro Las Mercedes a 1,8 km; paradero troncal a 1.100 m. Admite mascotas. Con estacionamiento propio.",
+      "note": "la menor (1.100 m) supera 1.000",
+      "tags": [
+        "dist_multiple"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1100,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 125000000,
+        "rent_monthly_clp": null,
+        "location": "Puente Alto"
+      }
+    },
+    {
+      "id": "HT-2308",
+      "text": "Puente Alto 3D. $115.000.000. Metro a 600 m. Con estacionamiento propio. Consultar condiciones para mascotas.",
+      "note": "'consultar condiciones' no es aceptación",
+      "tags": [
+        "mascota_silencio"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 115000000,
+        "rent_monthly_clp": null,
+        "location": "Puente Alto"
+      }
+    }
+  ]
+}

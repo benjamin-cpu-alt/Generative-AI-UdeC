@@ -1,0 +1,194 @@
+{
+  "id": "hd_01",
+  "uf_value": 39800,
+  "style": "Mezcla de fichas de portal y mensajes de corredor.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 160000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 15,
+    "distancia_max_transporte_m": 900,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Ñuñoa"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HD-0101",
+      "text": "Ñuñoa, sector Plaza Egaña. Depto 2D 2B de 71 m2. Valor UF 3.950. El Metro Plaza Egaña queda a 600 metros. Mascotas bienvenidas. Incluye 1 estacionamiento y bodega. Arriendo estimado: 22 UF mensuales.",
+      "note": "'2D 2B' sin barra; arriendo en UF (22 x 39.800); la comuna abre el aviso sin 'en'",
+      "tags": [
+        "arriendo_uf",
+        "comuna_posicion",
+        "dorm_notacion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3950,
+        "price_clp": null,
+        "rent_monthly_clp": 875600,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HD-0102",
+      "text": "Departamento en Macul con 1 dormitorio y un escritorio habilitable como segundo dormitorio. UF 3.400. A 300 m del Metro Camino Agrícola. Se aceptan perros. Estacionamiento asignado.",
+      "note": "el escritorio 'habilitable' no es dormitorio: 1 < 2",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3400,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "HD-0103",
+      "text": "Ñuñoa. Departamento 3D/2B, 84 m². Precio UF 4.025, gastos comunes $95.000. A 500 metros del Metro Irarrázaval. Pet friendly. Estacionamiento propio.",
+      "note": "near miss: UF 4.025 = $160.195.000, sobre el tope por $195.000; GC no es el precio",
+      "tags": [
+        "casi_cumple",
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 4025,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HD-0104",
+      "text": "Providencia — 2 dormitorios, 1 baño — $149.000.000 — metro Inés de Suárez a 1,2 km, pero paradero troncal a 250 m — mascotas hasta 15 kg — estacionamiento propio — arriendo $760.000.",
+      "note": "vale el paradero (250 m), no el metro en km; límite 15 kg == perro de 15 kg: cumple",
+      "tags": [
+        "casi_cumple",
+        "dist_formato",
+        "dist_multiple",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 250,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 15
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 149000000,
+        "rent_monthly_clp": 760000,
+        "location": "Providencia"
+      }
+    },
+    {
+      "id": "HD-0105",
+      "text": "Depto en Ñuñoa 2D/1B, 58 m². UF 3.600. A 450 m del Metro Ñuble. Acepta perros. Estacionamiento opcional, en venta aparte por UF 250. Arriendo actual: 680 lucas.",
+      "note": "el estacionamiento se vende aparte: la unidad no lo incluye; '680 lucas' = $680.000",
+      "tags": [
+        "estac_ambiguo",
+        "jerga_monto",
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 450,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3600,
+        "price_clp": null,
+        "rent_monthly_clp": 680000,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HD-0106",
+      "text": "wena! te paso uno en san miguel, 3 dorm 2 baños, 135 palos, a 700 mts del metro el llano, aceptan mascotas sin drama, tiene estacionamiento propio. lo arriendan en 720 lucas",
+      "note": "WhatsApp: '135 palos' = $135.000.000 y '720 lucas' = $720.000; sin mayúsculas",
+      "tags": [
+        "estilo",
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 700,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": null,
+        "price_clp": 135000000,
+        "rent_monthly_clp": 720000,
+        "location": "San Miguel"
+      }
+    },
+    {
+      "id": "HD-0107",
+      "text": "Departamento en Ñuñoa, 2D/2B, 66 m². Valor UF 3.700. A 350 metros del Metro Villa Frei. Estacionamiento propio. Consultar reglamento por mascotas.",
+      "note": "'consultar reglamento' no es una aceptación explícita",
+      "tags": [
+        "mascota_silencio"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 350,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3700,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    }
+  ]
+}

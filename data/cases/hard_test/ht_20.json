@@ -1,0 +1,205 @@
+{
+  "id": "ht_20",
+  "uf_value": 40200,
+  "style": "Comprador sin mascota ni auto; centro.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 125000000,
+    "mascota_especie": null,
+    "mascota_kg": null,
+    "distancia_max_transporte_m": 1000,
+    "dormitorios_min": 1,
+    "estacionamiento_requerido": false
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Santiago"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-2001",
+      "text": "Santiago, 1D/1B, 33 m², UF 2.900, metro La Moneda a 150 m, no se aceptan mascotas, sin estacionamiento, arriendo 12 UF.",
+      "note": "prohíbe mascotas y no tiene estacionamiento: nada de eso aplica",
+      "tags": [
+        "arriendo_uf",
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 150,
+        "pets": {
+          "explicit": true,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 2900,
+        "price_clp": null,
+        "rent_monthly_clp": 482400,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-2002",
+      "text": "SANTIAGO CENTRO — 2 DORMITORIOS — 118 MILLONES — METRO SANTA ANA 400 M — ARRIENDO 520 MIL",
+      "note": "mayúsculas; '118 MILLONES', '520 MIL'",
+      "tags": [
+        "estilo",
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 118000000,
+        "rent_monthly_clp": 520000,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-2003",
+      "text": "Estación Central: 1D, $95.000.000, metro Estación Central 500 m, arriendo $500.000.",
+      "note": "no preferida, mayor ROI",
+      "tags": [],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 500,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 95000000,
+        "rent_monthly_clp": 500000,
+        "location": "Estación Central"
+      }
+    },
+    {
+      "id": "HT-2004",
+      "text": "Depto 1 dormitorio, calle San Diego, Santiago; precio rebajado de $130.000.000 a $123.000.000; metro Franklin a 900 m.",
+      "note": "vale el precio rebajado",
+      "tags": [
+        "comuna_posicion",
+        "correccion"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 900,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 123000000,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-2005",
+      "text": "Santiago, 2D. UF 3.120. Metro a 300 m.",
+      "note": "near miss: UF 3.120 = $125.424.000",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3120,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-2006",
+      "text": "Santiago, estudio de 26 m². $70.000.000. Metro a 200 m.",
+      "note": "estudio = 0 < 1",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 0,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 70000000,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-2007",
+      "text": "Santiago, 1D. $100.000.000. Metro a 1,4 km.",
+      "note": "1,4 km > 1.000",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 1400,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 100000000,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    },
+    {
+      "id": "HT-2008",
+      "text": "Santiago, 2D. Ciento treinta y dos millones. Metro a 400 m.",
+      "note": "$132.000.000 en palabras > tope",
+      "tags": [
+        "cifra_palabras"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": false,
+          "allowed": false,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": null,
+        "price_clp": 132000000,
+        "rent_monthly_clp": null,
+        "location": "Santiago"
+      }
+    }
+  ]
+}

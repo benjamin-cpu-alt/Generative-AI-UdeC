@@ -1,0 +1,214 @@
+{
+  "id": "ht_01",
+  "uf_value": 39250,
+  "style": "Fichas de portal con descripción libre.",
+  "hard_constraints": {
+    "presupuesto_max_clp": 155000000,
+    "mascota_especie": "perro",
+    "mascota_kg": 10,
+    "distancia_max_transporte_m": 800,
+    "dormitorios_min": 2,
+    "estacionamiento_requerido": true
+  },
+  "soft_constraints": {
+    "ubicaciones_preferidas": [
+      "Ñuñoa"
+    ]
+  },
+  "properties": [
+    {
+      "id": "HT-0101",
+      "text": "Se vende departamento luminoso, piso 9, comuna de Ñuñoa. Tiene 2 dormitorios y 2 baños completos. Valor de venta 3.880 UF (gastos comunes aprox. $110.000). Estación Ñuble de la Línea 5 a 550 metros. Reglamento: se permiten perros y gatos de hasta 12 kilos. Un estacionamiento en el subsuelo, propio. Rentabiliza en $830.000 al mes.",
+      "note": "'comuna de Ñuñoa' (no sigue a 'en'); UF 3.880 = $152.290.000; GC no es precio",
+      "tags": [
+        "comuna_posicion",
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 550,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro",
+            "gato"
+          ],
+          "max_kg": 12
+        },
+        "parking": "propio",
+        "price_uf": 3880,
+        "price_clp": null,
+        "rent_monthly_clp": 830000,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-0102",
+      "text": "Macul | 3 dorm | UF 3.600 | 2 baños | metro Macul 400 m | perros OK | estacionamiento asignado | renta 900 lucas",
+      "note": "ficha con barras; '900 lucas'; mayor ROI que HT-0101 pero no preferida",
+      "tags": [
+        "estilo",
+        "jerga_monto"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [
+            "perro"
+          ],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3600,
+        "price_clp": null,
+        "rent_monthly_clp": 900000,
+        "location": "Macul"
+      }
+    },
+    {
+      "id": "HT-0103",
+      "text": "Ñuñoa, 2D/1B de 56 m². UF 3.950. Metro Monseñor Eyzaguirre a 300 metros. Acepta mascotas. Estacionamiento propio.",
+      "note": "near miss: UF 3.950 = $155.037.500, sobre el tope por $37.500",
+      "tags": [
+        "casi_cumple"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 300,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3950,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-0104",
+      "text": "Departamento de 3 dormitorios en Ñuñoa. UF 3.500. Metro a 600 m. Se admiten mascotas que no superen los 8 kilos. Estacionamiento propio.",
+      "note": "límite 8 kg contra perro de 10",
+      "tags": [
+        "mascota_condicion"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 600,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": 8
+        },
+        "parking": "propio",
+        "price_uf": 3500,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-0105",
+      "text": "Ñuñoa: 1 dormitorio y un home office con ventana. UF 3.200. Metro a 400 m. Admite mascotas. Estacionamiento propio.",
+      "note": "el home office no es dormitorio",
+      "tags": [
+        "dorm_no_cuenta"
+      ],
+      "truth": {
+        "bedrooms": 1,
+        "distance_transport_m": 400,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3200,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-0106",
+      "text": "Departamento de 2 dormitorios, 1 baño, con estacionamiento asignado y bodega; acepta mascotas de cualquier tamaño; queda a ochocientos metros del Metro Grecia; valor UF 3.750. Peñalolén.",
+      "note": "distancia en palabras, justo en el máximo (800 <= 800); la comuna cierra el aviso",
+      "tags": [
+        "casi_cumple",
+        "cifra_palabras",
+        "comuna_posicion"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 800,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "asignado",
+        "price_uf": 3750,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Peñalolén"
+      }
+    },
+    {
+      "id": "HT-0107",
+      "text": "Ñuñoa, 2D/2B. UF 3.400. Paradero troncal a 200 m. Pet friendly. Estacionamiento: se puede arrendar uno en el edificio por $45.000.",
+      "note": "el estacionamiento se arrienda aparte: la unidad no lo incluye",
+      "tags": [
+        "estac_ambiguo",
+        "multi_monto"
+      ],
+      "truth": {
+        "bedrooms": 2,
+        "distance_transport_m": 200,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "ninguno",
+        "price_uf": 3400,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    },
+    {
+      "id": "HT-0108",
+      "text": "Ñuñoa, depto 3D. UF 3.300. A 1,05 km del Metro Villa Frei. Acepta mascotas. Estacionamiento propio.",
+      "note": "1,05 km = 1.050 m > 800",
+      "tags": [
+        "dist_formato"
+      ],
+      "truth": {
+        "bedrooms": 3,
+        "distance_transport_m": 1050,
+        "pets": {
+          "explicit": true,
+          "allowed": true,
+          "species": [],
+          "max_kg": null
+        },
+        "parking": "propio",
+        "price_uf": 3300,
+        "price_clp": null,
+        "rent_monthly_clp": null,
+        "location": "Ñuñoa"
+      }
+    }
+  ]
+}
