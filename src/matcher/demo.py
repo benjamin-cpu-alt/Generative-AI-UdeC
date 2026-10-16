@@ -92,6 +92,11 @@ def main(argv=None) -> int:
         keys = ("location", "bedrooms", "price_text", "rent_text", "distance_metro_text",
                 "distance_bus_text", "pets_policy", "pets_species", "pets_max_kg", "parking")
         print(f"  {pid}: " + json.dumps({k: f[k] for k in keys}, ensure_ascii=False))
+        spans = f.get("spans") or {}
+        print(f"      frases copiadas · mascotas: {spans.get('pets_text')!r} · "
+              f"estacionamiento: {spans.get('parking_text')!r}")
+        for w in f.get("warnings") or []:
+            print(f"      ! {w}")
     print("\nPaso 2 · comparaciones deterministas (Python):")
     for pid, d in ts.decisions.items():
         estado = "APROBADA" if not d["failed_constraints"] else f"RECHAZADA {d['failed_constraints']}"

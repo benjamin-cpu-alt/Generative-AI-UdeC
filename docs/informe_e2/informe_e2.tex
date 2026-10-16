@@ -1,0 +1,189 @@
+% Entregable 2 — documento técnico de UNA página (vertical), compilado con LaTeX.
+% Compilar: pdflatex informe_e2.tex  (o subir este archivo a Overleaf).
+% Todas las cifras salen de results/ vía `python3 -m matcher.evaluate` (ver README §4–5).
+% DEBE quedar en UNA página: si Overleaf muestra 2, bajar margin a 1.0cm (línea de geometry)
+% y, si aún no cabe, \parskip a 0.1em. No reducir la letra por debajo de 9pt.
+\documentclass[9pt,a4paper,twocolumn]{extarticle}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[spanish,es-noshorthands,es-tabla]{babel}
+\usepackage[a4paper,margin=1.25cm,columnsep=0.55cm]{geometry}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,calc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+
+\definecolor{sec}{RGB}{30,50,170}
+\titleformat{\section}{\normalsize\bfseries\color{sec}}{\thesection.}{0.4em}{}
+\titlespacing*{\section}{0pt}{0.55em}{0.25em}
+\setlist{nosep,leftmargin=1.1em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.25em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\pagestyle{empty}
+
+\newcommand{\repo}{\url{https://github.com/benjamin-cpu-alt/Generative-AI-UdeC}}
+% >>> Reemplazar por el link del video (acceso abierto) antes de compilar la versión final <<<
+\newcommand{\video}{\textcolor{red}{\textbf{[LINK DEL VIDEO]}}}
+\newcommand{\cod}[1]{\texttt{#1}}
+
+\begin{document}
+
+\twocolumn[{%
+\begin{center}
+{\large\bfseries Entregable 2: Matching Automático Comprador-Propiedad}\\[1pt]
+{\normalsize Descomposición + herramientas sobre Phi-4-mini (3.8B)}\\[2pt]
+\textbf{Equipo:} Benjamín Grandón V, Carla Maureira V. \quad
+Universidad de Concepción — Generative AI (580694)\\[1pt]
+\textbf{Repositorio:} \repo \quad \textbf{Video:} \video
+\end{center}
+\vspace{-2pt}
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize, node distance=3.2mm and 3.4mm,
+  box/.style={draw, rounded corners=2pt, align=center, inner sep=2.5pt, minimum height=12mm},
+  llm/.style={box, fill=blue!8, draw=blue!60!black},
+  code/.style={box, fill=green!9, draw=green!45!black},
+  io/.style={box, fill=gray!8, draw=gray!60!black},
+  base/.style={box, fill=red!5, draw=red!55!black, dashed, minimum height=6mm},
+  arr/.style={-{Stealth[length=1.8mm]}, thick},
+  ataca/.style={font=\scriptsize\itshape, text=red!60!black, align=center, text width=30mm}]
+\node[io, text width=18mm] (in) {Perfil del comprador (5 restricciones) + catálogo en texto crudo};
+\node[llm, text width=33mm, right=of in] (ext) {\textbf{1. Extracción} (phi4-mini)\\una llamada por aviso, salida con JSON Schema; copia el fragmento de cada tema + 3 preguntas cerradas de mascotas; \textbf{no ve el perfil}};
+\node[code, text width=29mm, right=of ext] (anc) {\textbf{2. Anclaje} (\texttt{grounding.py}, g3)\\el fragmento debe existir en el aviso; la unidad se lee del aviso; dato no verificable $\Rightarrow$ no aprueba};
+\node[code, text width=27mm, right=of anc] (dec) {\textbf{3. Decisión} (Python)\\UF$\to$CLP, ROI, 5 restricciones duras, orden por soft constraints};
+\node[io, text width=15mm, right=of dec] (out) {JSON con el esquema de la E1};
+\node[io, text width=17mm, right=of out] (jud) {\textbf{Juez} \texttt{verifier.py}\\\texttt{e1\_strict} 0/1, sin LLM};
+\draw[arr] (in) -- (ext); \draw[arr] (ext) -- (anc); \draw[arr] (anc) -- (dec);
+\draw[arr] (dec) -- (out); \draw[arr] (out) -- (jud);
+\node[ataca, above=0.6mm of ext] {ataca: atención selectiva, esquema roto};
+\node[ataca, above=0.6mm of anc] {garantía: nada inventado se aprueba};
+\node[ataca, above=0.6mm of dec] {ataca: confusión aritmética, colapso lógico};
+\node[base, text width=100mm] (bl) at ($(ext.south)!0.5!(dec.south)+(0,-6mm)$)
+  {\textbf{Baseline}: phi4-mini en \emph{una} llamada con prompting directo (lee, convierte, compara, calcula el ROI y escribe el JSON)};
+\draw[arr, dashed, red!55!black] (in.south) |- (bl.west);
+\draw[arr, dashed, red!55!black] (bl.east) -| (jud.south);
+\end{tikzpicture}\\[-1pt]
+{\footnotesize Figura 1: pipeline. Azul: LLM; verde: código determinista. Baseline y solución reciben la misma entrada y los juzga el mismo verificador.}
+\vspace{4pt}
+}]
+
+\section{Continuidad con la E1}
+Misma tarea (perfil con 5 restricciones duras y soft constraints + catálogo en texto crudo
+$\to$ JSON), mismo fallo y \textbf{mismo criterio de corrección} (\cod{e1\_strict}): es
+incorrecta la salida que aprueba una propiedad que viola una restricción dura, erra UF/CLP o
+el ROI, o rompe el esquema. Lo aplica un juez sin LLM, igual para baseline y solución.
+\textbf{Desviaciones declaradas}: el modelo (§2), y del prompt de la E1 se quitan dos campos
+no verificables; el ranking se expresa por el orden de la lista, que sí se verifica.
+
+\section{Modelo: Phi-4-mini}
+\cod{phi4-mini:latest} (Phi-4-mini-instruct, \textbf{3.8B}), digest Ollama
+\cod{78fad5d182a7}, Q4\_K\_M (2,5\,GB), temperatura 0, semilla 0. Corre de punta a punta en
+los dos equipos de la E1 (MacBook Air M4 y RTX 3050 6\,GB), con veredicto idéntico caso a
+caso. La E1 marcó a DeepSeek como \emph{[Principal]}; el cambio se decidió midiendo a los tres
+candidatos con el mismo prompt directo sobre los 51 casos de test:
+\begin{center}\footnotesize
+\begin{tabular}{@{}lccccr@{}}
+\toprule
+Modelo & Params & \cod{e1\_strict} & Presup.\rlap{$^a$} & Esquema & s/caso \\
+\midrule
+\textbf{Phi-4-mini} & \textbf{3.8B} & 0/51 & 33\,\% & 5 & 15,8 \\
+Granite 4.1 & 8.0B & 0/51 & 51\,\% & 8 & 31,8 \\
+DeepSeek-R1 & 7.0B & 0/51 & 14\,\% & 26\rlap{$^b$} & 323 \\
+\bottomrule
+\end{tabular}\\[1pt]
+{\scriptsize $^a$Aprobaciones indebidas por presupuesto. $^b$22 truncadas: el \texttt{<think>} agota 8.192 tokens.}
+\end{center}
+Más parámetros no compran corrección: DeepSeek razona mejor pero trunca y es $\sim$20$\times$
+más lento, y Granite rompe el esquema más que Phi. Phi-4-mini es el más pequeño, y la E1 le
+asignó el rol de resolver la tarea ``si se le guía dividiendo el problema en pasos'': la E2
+pone a prueba esa hipótesis.
+
+\section{Intervención y vínculo con el fallo}
+Se separa \textbf{percepción} de \textbf{decisión} (Fig.~1), y cada fallo de la E1 queda fuera
+del alcance del modelo:
+\begin{itemize}
+\item \textbf{Confusión aritmética}: UF$\to$CLP, ROI e inecuaciones son código; el LLM nunca
+  multiplica ni compara.
+\item \textbf{Colapso lógico}: una llamada por aviso; cada restricción es una comparación
+  aislada sobre un campo normalizado.
+\item \textbf{Atención selectiva}: el extractor no ve el perfil; ``¡bajo el presupuesto!'' no
+  tiene decisión que sesgar.
+\item \textbf{Esquema roto}: decodificación restringida al extraer; el JSON final lo arma código.
+\end{itemize}
+El modelo solo \emph{copia} fragmentos (\cod{"3.850 UF"}). Si un número no está en el aviso,
+el dato queda no verificable y la propiedad \emph{nunca} se aprueba.
+
+\section{Estrategias evaluadas (test, 51 casos)}
+\begin{center}\footnotesize
+\begin{tabular}{@{}lccccr@{}}
+\toprule
+Estrategia & \cod{e1\_strict} & Ap.\ ind. & Aritm. & Esq. & s/caso \\
+\midrule
+Baseline (prompt directo) & 0/51 & 40 & 6 & 5 & 15,8 \\
+A: CoT por pasos, 1 llamada & 0/51 & 43 & 4 & 4 & 21,0 \\
+B: descomp.\ sin herramientas & 0/51 & 34 & 8 & 9 & 59,3 \\
+C: extractor v1 + anclaje g1 & 30/51 & 20 & 1 & 0 & 29,7 \\
+\textbf{C: v5 + g3 (solución)} & \textbf{51/51} & \textbf{0} & \textbf{0} & \textbf{0} & 35,3 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{B} recibe \emph{los mismos hechos} que C (352/352 idénticos) y solo debe convertir,
+comparar y armar el JSON: acierta 0/51 y aprueba el 32\,\% de lo que excede el presupuesto.
+El fallo de la E1 está en \emph{calcular y decidir}, no en leer. El extractor se iteró
+(v1$\to$v5) solo en 30 casos de desarrollo (21/30 $\to$ 30/30). \textbf{Fine-tuning}:
+descartado sin correr, porque no corrige una multiplicación de 4$\times$5 dígitos y se
+ajustaría a las plantillas del generador.
+
+\section{Resultados contra el baseline}
+Mismo criterio \cod{e1\_strict} para ambos, sobre tres conjuntos declarados:
+\begin{center}\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Conjunto & Casos (avisos) & Baseline & Solución & Ap.\ ind. \\
+\midrule
+Test: sintéticos held-out & 51 (352) & 0/51 & \textbf{51/51} & 40 $\to$ 0 \\
+OOD: escritos a mano & 12 (70) & 0/12 & \textbf{9/12}\rlap{$^c$} & 7 $\to$ 3 \\
+Real: portales, sorteados & 4 (16) & 0/4 & \textbf{4/4} & 3 $\to$ 0 \\
+\bottomrule
+\end{tabular}\\[1pt]
+{\scriptsize $^c$Medición ciega (anclaje g2). g3 da 11/12 y 0 aprobaciones indebidas, pero se ajustó mirando OOD.}
+\end{center}
+\textbf{Real}: 16 avisos de Yapo, Chilepropiedades, iCasas y TocToc, sorteados con semilla fija
+\emph{antes} de leerlos, con el comprador de la E1. Solo 3 declaran aceptar mascotas, así que
+ninguno debe aprobarse. El baseline aprobó un departamento de UF\,6.000 ``a \$60.000.000''
+($\sim$\$246\,M). Costo en la M4: 1.056 tokens y 35\,s por caso, contra 346 y 16\,s.
+
+\section{Límites conocidos, con mecanismo}
+\textbf{Caso de fallo real} (en el video; \cod{data/cases/real\_fallo}). Un aviso de
+Chilepropiedades a exactamente \$150\,M se \textbf{aprueba indebidamente}. El modelo copió
+``Se aceptan ofertas. Se acepta canje\ldots'' como cláusula de mascotas y el parser de g3 leyó
+``acepta'' como ``acepta mascotas''; ``opción de arriendo de estacionamientos'' cayó en la
+rama por defecto \emph{propio}. \emph{Por qué}: los parsers se escribieron sobre avisos
+sintéticos, donde esa cláusula siempre habla de mascotas. La versión g4 exige que nombre
+mascotas y trata ``en arriendo''/``opción de'' como no incluido. Corrige el caso sin cambiar
+ninguna otra salida (test, dev, OOD, real).
+\begin{itemize}
+\item \textbf{``620 lucas''} (OOD): el anclaje verifica que el número exista, no su unidad;
+  ``lucas'' son miles de pesos $\Rightarrow$ ROI 0,01 en vez de 6,0. Único fallo de
+  \cod{e1\_strict} con g3.
+\item \textbf{Cifras en palabras}: sin dígito que anclar $\Rightarrow$ rechazo falso. Es el
+  costo de no aprobar con números inventados.
+\item \textbf{Dormitorios}: en OOD el modelo localiza el fragmento en solo 47\,\% de los
+  avisos; el resto lo rescata un parser (``3D/2B'', ``3 dormitorios'') que no cubre ``3D+E''
+  ni ``2D 1B'' $\Rightarrow$ rechazos falsos. No se amplió porque se halló mirando la
+  evaluación y añadiría aprobaciones.
+\item \textbf{Ambigüedad real}: un estudio y un aviso con 4D en el portal y 5 en el texto
+  dejan dormitorios errados en 2/16.
+\end{itemize}
+La caída de 51/51 a 9/12 (OOD ciego) mide cuánto dependía la solución de las plantillas del
+generador. \textbf{Reproducir}: README del repositorio, §5.
+
+\end{document}
