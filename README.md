@@ -36,6 +36,58 @@ Detalle y tablas completas en [`docs/comparacion_modelos.md`](docs/comparacion_m
 * Ejecutado 100% de forma local (Edge AI) en un entorno híbrido: Workstation Windows (NVIDIA RTX 3050 6GB) y Apple Silicon (MacBook Air M4), utilizando Ollama con cuantización a 4-bits.
 * Los registros de evidencia empírica están disponibles en la carpeta `/experiments`, demostrando que los modelos de 3B a 8B fallan catastróficamente en tareas matemáticas y de retención lógica si no están apoyados por descomposición y herramientas deterministas.
 
+## Entregable 3 (en curso): un benchmark que no se sature
+
+La E2 cerró con 51/51 en test (etiqueta `e2-final`). Antes de construir los agentes de la E3
+se endureció el benchmark, por dos razones medidas:
+
+1. **El criterio de la E1 se satura solo.** `e1_strict` castiga aprobar de más, pero no
+   rechazar de más: **rechazar todo** obtiene 51/51 en test, 12/12 en OOD y 4/4 en real
+   (`results/ref_reject_all*`). Desde la E3, `e1_strict` se reporta siempre junto a
+   `full_correct`, las tasas de aprobación indebida y de rechazo falso por propiedad, e
+   intervalos de Wilson (`python3 -m matcher.metrics`).
+2. **Las plantillas.** `test/` sale del generador. OOD ya mostró la caída (9/12 ciego).
+
+| Set | Casos × avisos | Aprobadas esperadas | Uso en la E3 |
+|---|---|---|---|
+| `hard_dev/` | 10 × 7 | 44 % | ajuste |
+| **`hard_test/`** | 30 × 8 | 42 % | **evaluación principal**, congelado (`MANIFEST.sha256`) |
+| `test/` | 51 × ~7 | 30 % | regresión (continuidad con E1 y E2) |
+| `ood/` | 12 × ~6 | 27 % | pasa a ser dev: ya se usó para diagnosticar g3 |
+| `real_e3/` | 20 × 4 (2 compradores) | por anotar | evaluación sobre texto real, doble anotación humana |
+
+Los avisos hard están escritos a mano y cubren 16 fenómenos con cuotas mínimas: jerga
+("620 lucas", "3 palos"), cifras en palabras, varios montos en un aviso, arriendo en UF,
+notaciones de dormitorios, mascotas condicionadas, distancias en km, cuadras o minutos,
+casi-cumplimientos, distractores, correcciones dentro del aviso, comprador sin mascota o sin
+auto, y otros. El protocolo se escribió antes que los casos
+([`data/cases/hard_test/README.md`](data/cases/hard_test/README.md)), y `scripts/build_hard.py`
+verifica cada anotación contra `rules.py`. El segundo comprador y el segundo sorteo de
+avisos reales quedaron preregistrados antes de descargar nada
+([`data/cases/real/PREREGISTRO_E3.md`](data/cases/real/PREREGISTRO_E3.md)).
+
+```bash
+python3 scripts/build_hard.py --check                    # anotación == rules.py, cuotas, congelamiento
+cd src && python3 -m matcher.metrics --cases ../data/cases/hard_dev \
+    --runs ref_reject_all_hard_dev baseline_phi4_hard_dev tools_phi4_v5_hard_dev_g3
+```
+
+**Control de dificultad sobre `hard_dev`** (16-oct-2026, M4). Es la medición que justifica
+el set: la solución de la E2 ya no satura.
+
+| Run | e1_strict | full_correct | exactitud por aviso | aprob. indebida | rechazo falso |
+|---|---|---|---|---|---|
+| Rechazar todo (piso) | 10/10 | 0/10 | 39/70 | 0/39 | 31/31 |
+| Baseline phi4-mini | 0/10 | 0/10 | 38/70 | 5/39 | 27/31 |
+| Solución E2 (v5 + g3) | **4/10** | **0/10** | 52/70 | 4/39 | 14/31 |
+
+Mecanismo de los fallos de la E2 en dev: las 4 aprobaciones indebidas son de mascotas
+("consultar reglamento", "según reglamento", "hasta cinco kilos": un límite en palabras queda
+`null` y se lee como "sin límite"). Los 2 errores aritméticos son arriendos en UF tratados
+como pesos (ROI 0). El resto son rechazos falsos (jerga, cifras en palabras, notaciones de
+dormitorios). Son los objetivos de los agentes de la E3, y `hard_test` mide si esas mejoras
+generalizan.
+
 ## Entregable 2
 
 ### Estructura

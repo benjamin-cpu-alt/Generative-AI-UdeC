@@ -1,0 +1,341 @@
+{
+  "facts": {
+    "HD-0301": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "3.300 UF",
+      "rent_text": "$560.000",
+      "distance_metro_text": "200 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "ninguno",
+      "raw": "{\n  \"location_text\": \"Depto 2D/1B de 54 m². Santiago Centro\",\n  \"bedrooms_text\": \"2D/1B\",\n  \"price_text\": \"UF 3.300\",\n  \"rent_text\": \"Arriendo $560.000\",\n  \"distance_metro_text\": \"A 200 m del Metro Santa Lucía.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Sin estacionamiento.\",\n  \"pets_text\": \"Se aceptan gatos.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 647,
+      "output_tokens": 144,
+      "wall_s": 6.41,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/1B de 54 m². Santiago Centro",
+        "bedrooms_text": "2D/1B",
+        "price_text": "UF 3.300",
+        "rent_text": "Arriendo $560.000",
+        "distance_metro_text": "A 200 m del Metro Santa Lucía.",
+        "distance_bus_text": null,
+        "parking_text": "Sin estacionamiento.",
+        "pets_text": "Se aceptan gatos.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "HD-0302": {
+      "location": "Santiago",
+      "bedrooms": 2,
+      "price_text": "$129.000.000",
+      "rent_text": null,
+      "distance_metro_text": "300 metros",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "visitas",
+      "raw": "{\"location_text\": \"Departamento en Santiago\", \"bedrooms_text\": \"2 dormitorios\", \"price_text\": \"$129.000.000\", \"rent_text\": null, \"distance_metro_text\": \"A 300 metros del metro\", \"distance_bus_text\": null, \"parking_text\": \"estacionamiento de visitas\", \"pets_text\": \"Solo se permiten perros pequeños\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 632,
+      "output_tokens": 109,
+      "wall_s": 4.8,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en Santiago",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "$129.000.000",
+        "rent_text": null,
+        "distance_metro_text": "A 300 metros del metro",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento de visitas",
+        "pets_text": "Solo se permiten perros pequeños",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HD-0303": {
+      "location": "Independencia",
+      "bedrooms": null,
+      "price_text": "3.450 UF",
+      "rent_text": "15 UF",
+      "distance_metro_text": "0,7 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"Independencia\",\n  \"bedrooms_text\": \"2 habitaciones\",\n  \"price_text\": \"UF 3.450\",\n  \"rent_text\": \"Arriendo 15 UF\",\n  \"distance_metro_text\": \"A 0,7 km del Metro Hospitales\",\n  \"distance_bus_text\": null,\n  \"parking_text\": null,\n  \"pets_text\": \"Gatos sí, perros no\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 640,
+      "output_tokens": 125,
+      "wall_s": 5.72,
+      "error": null,
+      "spans": {
+        "location_text": "Independencia",
+        "bedrooms_text": "2 habitaciones",
+        "price_text": "UF 3.450",
+        "rent_text": "Arriendo 15 UF",
+        "distance_metro_text": "A 0,7 km del Metro Hospitales",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "Gatos sí, perros no",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "HD-0304": {
+      "location": "Santiago",
+      "bedrooms": 3,
+      "price_text": "$138.500.000",
+      "rent_text": null,
+      "distance_metro_text": "820 metros",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\"location_text\": \"Santiago, 3D/2B\", \"bedrooms_text\": null, \"price_text\": \"$138.500.000\", \"rent_text\": null, \"distance_metro_text\": \"A 820 metros del Metro Parque Almagro.\", \"distance_bus_text\": null, \"parking_text\": null, \"pets_text\": \"Pet friendly.\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 633,
+      "output_tokens": 111,
+      "wall_s": 4.56,
+      "error": null,
+      "spans": {
+        "location_text": "Santiago, 3D/2B",
+        "bedrooms_text": null,
+        "price_text": "$138.500.000",
+        "rent_text": null,
+        "distance_metro_text": "A 820 metros del Metro Parque Almagro.",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "Pet friendly.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "HD-0305": {
+      "location": "Monoambiente tipo estudio de",
+      "bedrooms": 0,
+      "price_text": "2.100 UF",
+      "rent_text": null,
+      "distance_metro_text": "150 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\"location_text\": \"Monoambiente tipo estudio de 32 m² en Santiago.\", \"bedrooms_text\": null, \"price_text\": \"UF 2.100\", \"rent_text\": null, \"distance_metro_text\": \"A 150 m del metro.\", \"distance_bus_text\": null, \"parking_text\": null, \"pets_text\": \"Pet friendly.\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 627,
+      "output_tokens": 110,
+      "wall_s": 5.29,
+      "error": null,
+      "spans": {
+        "location_text": "Monoambiente tipo estudio de 32 m² en Santiago.",
+        "bedrooms_text": null,
+        "price_text": "UF 2.100",
+        "rent_text": null,
+        "distance_metro_text": "A 150 m del metro.",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "Pet friendly.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo (estudio)"
+      ]
+    },
+    "HD-0306": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "3.550 UF",
+      "rent_text": null,
+      "distance_metro_text": "400 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 10.0,
+      "parking": "no_mencionado",
+      "raw": "{\"location_text\": \"Depto 2D/2B\", \"bedrooms_text\": \"2D/2B\", \"price_text\": \"UF 3.550\", \"rent_text\": null, \"distance_metro_text\": \"metro Cumming a 400 m\", \"distance_bus_text\": null, \"parking_text\": null, \"pets_text\": \"acepta mascotas (máx. 10 kg)\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 643,
+      "output_tokens": 120,
+      "wall_s": 5.2,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/2B",
+        "bedrooms_text": "2D/2B",
+        "price_text": "UF 3.550",
+        "rent_text": null,
+        "distance_metro_text": "metro Cumming a 400 m",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "acepta mascotas (máx. 10 kg)",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "parking_text: recuperado del aviso ('10 kg), est.')"
+      ]
+    },
+    "HD-0307": {
+      "location": "El depto del piso de arriba",
+      "bedrooms": 1,
+      "price_text": "3.900 UF",
+      "rent_text": null,
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\"location_text\": \"El depto del piso de arriba, de 3D\", \"bedrooms_text\": \"UF 2.950\", \"price_text\": \"UF 3.900\", \"rent_text\": null, \"distance_metro_text\": \"a 500 m del metro\", \"distance_bus_text\": null, \"parking_text\": null, \"pets_text\": \"acepta gatos\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"si\"}",
+      "prompt_tokens": 648,
+      "output_tokens": 114,
+      "wall_s": 4.97,
+      "error": null,
+      "spans": {
+        "location_text": "El depto del piso de arriba, de 3D",
+        "bedrooms_text": "UF 2.950",
+        "price_text": "UF 3.900",
+        "rent_text": null,
+        "distance_metro_text": "a 500 m del metro",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "acepta gatos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('1 dormitorio')"
+      ]
+    }
+  },
+  "decisions": {
+    "HD-0301": {
+      "price_clp": 128370000,
+      "roi_pct": 5.23,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.300 UF' = 3300 UF -> 128,370,000 CLP <= 140,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='200 m' bus=None -> min=200 vs max 800",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: ninguno (requerido=False)"
+      ]
+    },
+    "HD-0302": {
+      "price_clp": 129000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$129.000.000' = 1.29e+08 CLP -> 129,000,000 CLP <= 140,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs gato 4kg -> FALLA",
+        "distancia: metro='300 metros' bus=None -> min=300 vs max 800",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: visitas (requerido=False)"
+      ]
+    },
+    "HD-0303": {
+      "price_clp": 134205000,
+      "roi_pct": 0.0,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.450 UF' = 3450 UF -> 134,205,000 CLP <= 140,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='0,7 km' bus=None -> min=700 vs max 800",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: no_mencionado (requerido=False)"
+      ]
+    },
+    "HD-0304": {
+      "price_clp": 138500000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$138.500.000' = 1.385e+08 CLP -> 138,500,000 CLP <= 140,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='820 metros' bus=None -> min=820 vs max 800",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: no_mencionado (requerido=False)"
+      ]
+    },
+    "HD-0305": {
+      "price_clp": 81690000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '2.100 UF' = 2100 UF -> 81,690,000 CLP <= 140,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='150 m' bus=None -> min=150 vs max 800",
+        "dormitorios: 0 vs min 2",
+        "estacionamiento: no_mencionado (requerido=False)"
+      ]
+    },
+    "HD-0306": {
+      "price_clp": 138095000,
+      "roi_pct": null,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.550 UF' = 3550 UF -> 138,095,000 CLP <= 140,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=10.0 vs gato 4kg -> ok",
+        "distancia: metro='400 m' bus=None -> min=400 vs max 800",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: no_mencionado (requerido=False)"
+      ]
+    },
+    "HD-0307": {
+      "price_clp": 151710000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.900 UF' = 3900 UF -> 151,710,000 CLP > 140,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 800",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: no_mencionado (requerido=False)"
+      ]
+    }
+  }
+}

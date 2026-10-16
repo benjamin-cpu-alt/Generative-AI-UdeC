@@ -50,6 +50,18 @@ modelo (por eso comparte tokens y tiempos con su origen, que queda en `meta.json
 | `tools_phi4_v5_real_g3`, `tools_phi4_v5_real_fallo_g3` | solución v5 + g3 | modelo |
 | `tools_phi4_v5_real_g4`, `tools_phi4_v5_real_fallo_g4` | la misma extracción con g4 (posterior a la E2) | re-decisión |
 
+## E3: referencias y sets hard (`--cases ../data/cases/hard_dev` o `hard_test`)
+
+| Carpeta | Qué es | Tipo |
+|---|---|---|
+| `ref_reject_all`, `ref_reject_all_<split>` | rechaza todo con JSON válido: el piso de `e1_strict` (`python3 -m matcher.reference --split <split>`) | referencia |
+| `baseline_phi4_hard_dev` | baseline sobre hard_dev | modelo |
+| `tools_phi4_v5_hard_dev_g3` | solución E2 (v5 + g3) sobre hard_dev: el control de dificultad | modelo |
+
+Sobre `hard_test` no hay corridas de modelo todavía: el set está congelado y se corre una
+sola vez por sistema (ver `data/cases/hard_test/README.md`). Las métricas de la E3 salen de
+`python3 -m matcher.metrics --cases ../data/cases/<split> --runs ...`.
+
 ## Otros
 
 - `archive/e2_baseline_sin_soft/`: baselines con el prompt y el dataset anteriores a
