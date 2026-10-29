@@ -51,10 +51,10 @@ se endureció el benchmark, por dos razones medidas:
 | Set | Casos × avisos | Aprobadas esperadas | Uso en la E3 |
 |---|---|---|---|
 | `hard_dev/` | 10 × 7 | 44 % | ajuste |
-| **`hard_test/`** | 30 × 8 | 42 % | **evaluación principal**, congelado (`MANIFEST.sha256`) |
+| **`hard_test/`** | 30 × 8 | 47 % | **evaluación principal**, congelado (`MANIFEST.sha256`) |
 | `test/` | 51 × ~7 | 30 % | regresión (continuidad con E1 y E2) |
 | `ood/` | 12 × ~6 | 27 % | pasa a ser dev: ya se usó para diagnosticar g3 |
-| `real_e3/` | 20 × 4 (2 compradores) | por anotar | evaluación sobre texto real, doble anotación humana |
+| `real_e3/` | 20 × 4 (2 compradores) | 6 % (5/80) | evaluación sobre texto real, doble anotación humana |
 
 Los avisos hard están escritos a mano y cubren 16 fenómenos con cuotas mínimas: jerga
 ("620 lucas", "3 palos"), cifras en palabras, varios montos en un aviso, arriendo en UF,
@@ -121,10 +121,39 @@ ranking). Se corrigieron antes de cualquier corrida de evaluación. La evaluaci�
 > para todos los sets: un aviso sin política de mascotas no se descarta (va al final del orden) y
 > un estudio o loft cuenta como 1 dormitorio (`data/cases/hard_test/REVIEW.md`). El juez, la E2,
 > el baseline y el Decisor (`prompts/decisor/v2.md`) se actualizaron, y todo se corre de nuevo con
-> `bash scripts/run_e3.sh todo` (`baseline_e3_*`, `e2_e3_*`, `agents_v2_*`). La tabla siguiente
-> es la corrida anterior (agentes v1, convención antigua) y se conserva como historial.
+> `bash scripts/run_e3.sh todo` (`baseline_e3_*`, `e2_e3_*`, `agents_v2_*`).
 
-Evaluación con la convención anterior (agentes v1):
+**Evaluación final (convención E3, agentes v2, 29-oct-2026, M4).** `hard_test` se corrió una
+sola vez, después de la revisión humana. Entre corchetes, IC de Wilson al 95 %.
+
+| Set | Run | e1_strict | full_correct | exactitud por aviso | aprob. indebida | rechazo falso |
+|---|---|---|---|---|---|---|
+| `hard_test` | Rechazar todo (piso) | 30/30 | 0/30 | 127/240 | 0/127 | 113/113 |
+| `hard_test` | Baseline (prompt directo) | 1/30 | 0/30 | 118/240 | 38/127 | 84/113 |
+| `hard_test` | Solución E2 (v5 + g3) | 11/30 | 1/30 | 193/240 | 0/127 | 47/113 [33–51 %] |
+| `hard_test` | **Agentes v2** | **23/30** | **5/30** | **214/240** | 6/127 [2–10 %] | **20/113** [12–26 %] |
+| `real_e3` | Rechazar todo (piso) | 20/20 | 15/20 | 75/80 | 0/75 | 5/5 |
+| `real_e3` | Baseline (prompt directo) | 0/20 | 0/20 | 59/80 | 17/75 | 4/5 |
+| `real_e3` | Solución E2 (v5 + g3) | 20/20 | 18/20 | 78/80 | 0/75 | 2/5 |
+| `real_e3` | **Agentes v2** | **20/20** | **20/20** | **80/80** | **0/75** | **0/5** |
+
+Ablaciones (`agents_v2_sin_*_hard_test`), `test`, `ood` y `hard_dev`: pendientes, ver
+`bash scripts/run_e3.sh tablas`.
+
+Dónde fallan los agentes en `hard_test` (todo en las herramientas de Python, no en los agentes):
+
+- **5 aprobaciones indebidas por estacionamiento** («uso común (no asignado)», «en la vía
+  pública», «opción de comprar», «ya fue vendido», «+ estacionamiento $8.000.000»). `anclar` los
+  lee como propio o asignado sin marcar duda, así que el Verificador no los revisa. La E2 rechazaba
+  esos 5 avisos, pero por dormitorios: no leía «2D.» ni «3D.». Los agentes arreglan esa lectura
+  y queda expuesto el error de estacionamiento (`results/agents_v2_hard_test/ht_27.trace.jsonl`,
+  HT-2708).
+- **7 rechazos falsos por mascotas.** `comprobar` no acepta «perros OK», «gatos OK» ni «gatos y
+  perros sin restricción» como permiso explícito. La duda queda sin resolver y no aprueba.
+
+No se corrigieron: `hard_test` se corre una sola vez.
+
+Evaluación con la convención anterior (agentes v1, historial):
 
 | Set | Run | e1_strict | full_correct | exactitud por aviso | aprob. indebida | rechazo falso |
 |---|---|---|---|---|---|---|

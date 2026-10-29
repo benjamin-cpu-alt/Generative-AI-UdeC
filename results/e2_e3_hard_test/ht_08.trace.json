@@ -1,0 +1,375 @@
+{
+  "facts": {
+    "HT-0801": {
+      "location": "Vitacura",
+      "bedrooms": 4,
+      "price_text": "5.250 UF",
+      "rent_text": null,
+      "distance_metro_text": "1,1 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Vitacura, casa 4 dormitorios, 3 baños.\",\n  \"bedrooms_text\": \"4 dormitorios\",\n  \"price_text\": \"UF 5.250\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Paradero troncal de Av. Vitacura a 1,1 km.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento para 3 autos.\",\n  \"pets_text\": \"Mascotas permitidas.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 647,
+      "output_tokens": 144,
+      "wall_s": 11.27,
+      "error": null,
+      "spans": {
+        "location_text": "Vitacura, casa 4 dormitorios, 3 baños.",
+        "bedrooms_text": "4 dormitorios",
+        "price_text": "UF 5.250",
+        "rent_text": null,
+        "distance_metro_text": "Paradero troncal de Av. Vitacura a 1,1 km.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento para 3 autos.",
+        "pets_text": "Mascotas permitidas.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-0802": {
+      "location": "Las Condes",
+      "bedrooms": 3,
+      "price_text": "$205.000.000",
+      "rent_text": "40 UF",
+      "distance_metro_text": "800 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 10.0,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Las Condes, 3D/3B\",\n  \"bedrooms_text\": \"3D/3B\",\n  \"price_text\": \"$205.000.000\",\n  \"rent_text\": \"Arriendo 40 UF\",\n  \"distance_metro_text\": \"Metro Colón a 800 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio\",\n  \"pets_text\": \"Se aceptan perros de hasta 10 kg y gatos\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 647,
+      "output_tokens": 141,
+      "wall_s": 10.4,
+      "error": null,
+      "spans": {
+        "location_text": "Las Condes, 3D/3B",
+        "bedrooms_text": "3D/3B",
+        "price_text": "$205.000.000",
+        "rent_text": "Arriendo 40 UF",
+        "distance_metro_text": "Metro Colón a 800 m",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Se aceptan perros de hasta 10 kg y gatos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "HT-0803": {
+      "location": "Depto tres dormitorios + estudio",
+      "bedrooms": 3,
+      "price_text": "5.100 UF",
+      "rent_text": "1.500.000",
+      "distance_metro_text": "900 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto tres dormitorios + estudio\",\n  \"bedrooms_text\": \"3D\",\n  \"price_text\": \"UF 5.100\",\n  \"rent_text\": \"renta 1.500.000\",\n  \"distance_metro_text\": \"metro Manquehue a 900 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento asignado\",\n  \"pets_text\": \"se aceptan mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 644,
+      "output_tokens": 137,
+      "wall_s": 10.57,
+      "error": null,
+      "spans": {
+        "location_text": "Depto tres dormitorios + estudio",
+        "bedrooms_text": "3D",
+        "price_text": "UF 5.100",
+        "rent_text": "renta 1.500.000",
+        "distance_metro_text": "metro Manquehue a 900 m",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento asignado",
+        "pets_text": "se aceptan mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-0804": {
+      "location": "Vitacura",
+      "bedrooms": null,
+      "price_text": "5.320 UF",
+      "rent_text": null,
+      "distance_metro_text": "600 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Vitacura\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 5.320\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 600 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio\",\n  \"pets_text\": \"Admite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 627,
+      "output_tokens": 118,
+      "wall_s": 9.49,
+      "error": null,
+      "spans": {
+        "location_text": "Vitacura",
+        "bedrooms_text": null,
+        "price_text": "UF 5.320",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 600 m",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-0805": {
+      "location": "Vitacura",
+      "bedrooms": 4,
+      "price_text": "5.000 UF",
+      "rent_text": null,
+      "distance_metro_text": "700 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Vitacura\",\n  \"bedrooms_text\": \"4D\",\n  \"price_text\": \"UF 5.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"700 m del metro\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio\",\n  \"pets_text\": \"No se aceptan perros\",\n  \"acepta_mascotas\": \"no\",\n  \"acepta_perros\": \"no\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 630,
+      "output_tokens": 119,
+      "wall_s": 9.18,
+      "error": null,
+      "spans": {
+        "location_text": "Vitacura",
+        "bedrooms_text": "4D",
+        "price_text": "UF 5.000",
+        "rent_text": null,
+        "distance_metro_text": "700 m del metro",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "No se aceptan perros",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets: parser=no_permitidas/cualquiera reemplaza al modelo=no_permitidas/['gato']"
+      ]
+    },
+    "HT-0806": {
+      "location": "Lo Barnechea",
+      "bedrooms": 2,
+      "price_text": "4.900 UF",
+      "rent_text": null,
+      "distance_metro_text": "600 m",
+      "distance_bus_text": "600 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Lo Barnechea, 2 dormitorios + sala de juegos\",\n  \"bedrooms_text\": \"2 dormitorios\",\n  \"price_text\": \"UF 4.900\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 600 m del paradero troncal.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio.\",\n  \"pets_text\": \"Pet friendly.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 636,
+      "output_tokens": 133,
+      "wall_s": 10.28,
+      "error": null,
+      "spans": {
+        "location_text": "Lo Barnechea, 2 dormitorios + sala de juegos",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "UF 4.900",
+        "rent_text": null,
+        "distance_metro_text": "A 600 m del paradero troncal.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio.",
+        "pets_text": "Pet friendly.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "distance_bus_text: recuperada del aviso (600 m)"
+      ]
+    },
+    "HT-0807": {
+      "location": "Vitacura",
+      "bedrooms": null,
+      "price_text": "4.800 UF",
+      "rent_text": null,
+      "distance_metro_text": "1400 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Vitacura\", \"bedrooms_text\": null, \"price_text\": \"UF 4.800\", \"rent_text\": null, \"distance_metro_text\": \"Metro a 1.400 m\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento propio.\", \"pets_text\": \"Admite mascotas.\",\"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 635,
+      "output_tokens": 107,
+      "wall_s": 8.49,
+      "error": null,
+      "spans": {
+        "location_text": "Vitacura",
+        "bedrooms_text": null,
+        "price_text": "UF 4.800",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 1.400 m",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio.",
+        "pets_text": "Admite mascotas.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-0808": {
+      "location": "Vitacura",
+      "bedrooms": null,
+      "price_text": "4.950 UF",
+      "rent_text": null,
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "ninguno",
+      "raw": "{\n  \"location_text\": \"Vitacura\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 4.950\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 500 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento en venta por separado (UF 450)\",\n  \"pets_text\": \"Admite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 635,
+      "output_tokens": 125,
+      "wall_s": 9.56,
+      "error": null,
+      "spans": {
+        "location_text": "Vitacura",
+        "bedrooms_text": null,
+        "price_text": "UF 4.950",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 500 m",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento en venta por separado (UF 450)",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "HT-0801": {
+      "price_clp": 217350000,
+      "roi_pct": null,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '5.250 UF' = 5250 UF -> 217,350,000 CLP <= 220,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 6kg -> ok",
+        "distancia: metro='1,1 km' bus=None -> min=1100 vs max 1100",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0802": {
+      "price_clp": 205000000,
+      "roi_pct": 0.0,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$205.000.000' = 2.05e+08 CLP -> 205,000,000 CLP <= 220,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=10.0 vs perro 6kg -> ok",
+        "distancia: metro='800 m' bus=None -> min=800 vs max 1100",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0803": {
+      "price_clp": 211140000,
+      "roi_pct": 8.53,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '5.100 UF' = 5100 UF -> 211,140,000 CLP <= 220,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 6kg -> ok",
+        "distancia: metro='900 m' bus=None -> min=900 vs max 1100",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "HT-0804": {
+      "price_clp": 220248000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '5.320 UF' = 5320 UF -> 220,248,000 CLP > 220,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 6kg -> ok",
+        "distancia: metro='600 m' bus=None -> min=600 vs max 1100",
+        "dormitorios: no verificable vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0805": {
+      "price_clp": 207000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '5.000 UF' = 5000 UF -> 207,000,000 CLP <= 220,000,000",
+        "mascotas: politica=no_permitidas especies=cualquiera max_kg=None vs perro 6kg -> FALLA",
+        "distancia: metro='700 m' bus=None -> min=700 vs max 1100",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0806": {
+      "price_clp": 202860000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.900 UF' = 4900 UF -> 202,860,000 CLP <= 220,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 6kg -> ok",
+        "distancia: metro='600 m' bus='600 m' -> min=600 vs max 1100",
+        "dormitorios: 2 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0807": {
+      "price_clp": 198720000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.800 UF' = 4800 UF -> 198,720,000 CLP <= 220,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 6kg -> ok",
+        "distancia: metro='1400 m' bus=None -> min=1400 vs max 1100",
+        "dormitorios: no verificable vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0808": {
+      "price_clp": 204930000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.950 UF' = 4950 UF -> 204,930,000 CLP <= 220,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 6kg -> ok",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 1100",
+        "dormitorios: no verificable vs min 3",
+        "estacionamiento: ninguno (requerido=True)"
+      ]
+    }
+  }
+}

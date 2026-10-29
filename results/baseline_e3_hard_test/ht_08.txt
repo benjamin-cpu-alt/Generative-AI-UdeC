@@ -1,0 +1,42 @@
+{
+  "approved_matches": [
+    {
+      "id": "HT-0802",
+      "price_clp": 205000000000,
+      "roi_pct": 29.27
+    },
+    {
+      "id": "HT-0804",
+      "price_clp": 532000000,
+      "roi_pct": 43.55
+    },
+    {
+      "id": "HT-0807",
+      "price_clp": 4800000,
+      "roi_pct": 6.00
+    },
+    {
+      "id": "HT-0808",
+      "price_clp": 4950000,
+      "roi_pct": 9.09
+    }
+  ],
+  "rejected": [
+    {
+      "id": "HT-0801",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal)"]
+    },
+    {
+      "id": "HT-0803",
+      "failed_constraints": ["Mascotas: Tiene 1 perro de 6kg (se rechaza si la propiedad prohíbe mascotas, o si las acepta pero no de esa especie o de ese peso)"]
+    },
+    {
+      "id": "HT-0805",
+      "failed_constraints": ["Mascotas: No se aceptan perros"]
+    },
+    {
+      "id": "HT-0806",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal)"]
+    }
+  ]
+}

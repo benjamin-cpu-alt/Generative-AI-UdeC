@@ -1,0 +1,380 @@
+{
+  "facts": {
+    "HT-0401": {
+      "location": "La Florida",
+      "bedrooms": 3,
+      "price_text": "4.700 UF",
+      "rent_text": "25 UF",
+      "distance_metro_text": "1,6 km",
+      "distance_bus_text": "900 m",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Casa en La Florida, 3 dormitorios + escritorio, 2 baños.\",\n  \"bedrooms_text\": \"3 dormitorios\",\n  \"price_text\": \"4.700 UF\",\n  \"rent_text\": \"Arriendo 25 UF\",\n  \"distance_metro_text\": \"el metro queda a 1,6 km\",\n  \"distance_bus_text\": \"Paradero troncal de Vicuña Mackenna a 900 m\",\n  \"parking_text\": \"Estacionamiento para 2 vehículos.\",\n  \"pets_text\": \"Perros sin límite de tamaño.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 665,
+      "output_tokens": 157,
+      "wall_s": 26.99,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en La Florida, 3 dormitorios + escritorio, 2 baños.",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "4.700 UF",
+        "rent_text": "Arriendo 25 UF",
+        "distance_metro_text": "el metro queda a 1,6 km",
+        "distance_bus_text": "Paradero troncal de Vicuña Mackenna a 900 m",
+        "parking_text": "Estacionamiento para 2 vehículos.",
+        "pets_text": "Perros sin límite de tamaño.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-0402": {
+      "location": "La Florida",
+      "bedrooms": 2,
+      "price_text": "4.000 UF",
+      "rent_text": null,
+      "distance_metro_text": "600 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"La Florida\",\n  \"bedrooms_text\": \"2 dormitorios\",\n  \"price_text\": \"UF 4.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 600 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento propio\",\n  \"pets_text\": \"Admite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 631,
+      "output_tokens": 119,
+      "wall_s": 16.62,
+      "error": null,
+      "spans": {
+        "location_text": "La Florida",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "UF 4.000",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 600 m",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento propio",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-0403": {
+      "location": "Puente Alto",
+      "bedrooms": 4,
+      "price_text": "$165.000.000",
+      "rent_text": "$1.050.000",
+      "distance_metro_text": "800 MTS",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Puente Alto\",\n  \"bedrooms_text\": \"4D\",\n  \"price_text\": \"$165.000.000\",\n  \"rent_text\": \"ARRIENDO $1.050.000\",\n  \"distance_metro_text\": \"METRO LAS MERCEDES 800 MTS\",\n  \"distance_bus_text\": null,\n  \"parking_text\": null,\n  \"pets_text\": \"MASCOTAS SI\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 653,
+      "output_tokens": 132,
+      "wall_s": 19.45,
+      "error": null,
+      "spans": {
+        "location_text": "Puente Alto",
+        "bedrooms_text": "4D",
+        "price_text": "$165.000.000",
+        "rent_text": "ARRIENDO $1.050.000",
+        "distance_metro_text": "METRO LAS MERCEDES 800 MTS",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "MASCOTAS SI",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "parking_text: recuperado del aviso ('PUENTE ALTO!! CASA 4D 2B, $165.000.000, METRO LA')"
+      ]
+    },
+    "HT-0404": {
+      "location": "La Florida",
+      "bedrooms": null,
+      "price_text": "4.500 UF",
+      "rent_text": null,
+      "distance_metro_text": "700 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"La Florida\", \"bedrooms_text\": null, \"price_text\": \"UF 4.500\", \"rent_text\": null, \"distance_metro_text\": \"A 700 m del metro\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento propio\", \"pets_text\": \"se aceptan perros de hasta veinte kilos\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 631,
+      "output_tokens": 108,
+      "wall_s": 16.32,
+      "error": null,
+      "spans": {
+        "location_text": "La Florida",
+        "bedrooms_text": null,
+        "price_text": "UF 4.500",
+        "rent_text": null,
+        "distance_metro_text": "A 700 m del metro",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "se aceptan perros de hasta veinte kilos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-0405": {
+      "location": "Av",
+      "bedrooms": 3,
+      "price_text": "4.850 UF",
+      "rent_text": null,
+      "distance_metro_text": "1200 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"Av. La Florida 9500, La Florida\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 4.850\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 1.200 m del Metro Elisa Correa\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estac. propio.\",\n  \"pets_text\": \"Mascotas OK\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 643,
+      "output_tokens": 131,
+      "wall_s": 19.93,
+      "error": null,
+      "spans": {
+        "location_text": "Av. La Florida 9500, La Florida",
+        "bedrooms_text": null,
+        "price_text": "UF 4.850",
+        "rent_text": null,
+        "distance_metro_text": "A 1.200 m del Metro Elisa Correa",
+        "distance_bus_text": null,
+        "parking_text": "Estac. propio.",
+        "pets_text": "Mascotas OK",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "HT-0406": {
+      "location": "La Florida",
+      "bedrooms": null,
+      "price_text": "$205.000.000",
+      "rent_text": null,
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"La Florida, casa 3D\", \"bedrooms_text\": null, \"price_text\": \"$205.000.000\", \"rent_text\": null, \"distance_metro_text\": \"Metro a 500 m\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento propio\", \"pets_text\": \"Admite mascotas\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 644,
+      "output_tokens": 109,
+      "wall_s": 16.49,
+      "error": null,
+      "spans": {
+        "location_text": "La Florida, casa 3D",
+        "bedrooms_text": null,
+        "price_text": "$205.000.000",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 500 m",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-0407": {
+      "location": "La Florida",
+      "bedrooms": null,
+      "price_text": "4.300 UF",
+      "rent_text": null,
+      "distance_metro_text": "400 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "visitas",
+      "raw": "{\n  \"location_text\": \"La Florida\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 4.300\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 400 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Acceso a estacionamientos de visita.\",\n  \"pets_text\": \"Admite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 628,
+      "output_tokens": 120,
+      "wall_s": 18.45,
+      "error": null,
+      "spans": {
+        "location_text": "La Florida",
+        "bedrooms_text": null,
+        "price_text": "UF 4.300",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 400 m",
+        "distance_bus_text": null,
+        "parking_text": "Acceso a estacionamientos de visita.",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-0408": {
+      "location": "La Florida",
+      "bedrooms": 4,
+      "price_text": "4.600 UF",
+      "rent_text": null,
+      "distance_metro_text": null,
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"La Florida, 4D\",\n  \"bedrooms_text\": \"4D\",\n  \"price_text\": \"UF 4.600\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"a seis cuadras del metro\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento propio\",\n  \"pets_text\": \"Pet friendly\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 625,
+      "output_tokens": 123,
+      "wall_s": 18.26,
+      "error": null,
+      "spans": {
+        "location_text": "La Florida, 4D",
+        "bedrooms_text": "4D",
+        "price_text": "UF 4.600",
+        "rent_text": null,
+        "distance_metro_text": "a seis cuadras del metro",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento propio",
+        "pets_text": "Pet friendly",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "HT-0401": {
+      "price_clp": 193170000,
+      "roi_pct": 0.0,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.700 UF' = 4700 UF -> 193,170,000 CLP <= 200,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 25kg -> ok",
+        "distancia: metro='1,6 km' bus='900 m' -> min=900 vs max 1200",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0402": {
+      "price_clp": 164400000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.000 UF' = 4000 UF -> 164,400,000 CLP <= 200,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 25kg -> ok",
+        "distancia: metro='600 m' bus=None -> min=600 vs max 1200",
+        "dormitorios: 2 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0403": {
+      "price_clp": 165000000,
+      "roi_pct": 7.64,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$165.000.000' = 1.65e+08 CLP -> 165,000,000 CLP <= 200,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 25kg -> ok",
+        "distancia: metro='800 MTS' bus=None -> min=800 vs max 1200",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0404": {
+      "price_clp": 184950000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.500 UF' = 4500 UF -> 184,950,000 CLP <= 200,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 25kg -> ok",
+        "distancia: metro='700 m' bus=None -> min=700 vs max 1200",
+        "dormitorios: no verificable vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0405": {
+      "price_clp": 199335000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '4.850 UF' = 4850 UF -> 199,335,000 CLP <= 200,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 25kg -> ok",
+        "distancia: metro='1200 m' bus=None -> min=1200 vs max 1200",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "HT-0406": {
+      "price_clp": 205000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$205.000.000' = 2.05e+08 CLP -> 205,000,000 CLP > 200,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 25kg -> ok",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 1200",
+        "dormitorios: no verificable vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0407": {
+      "price_clp": 176730000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.300 UF' = 4300 UF -> 176,730,000 CLP <= 200,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 25kg -> ok",
+        "distancia: metro='400 m' bus=None -> min=400 vs max 1200",
+        "dormitorios: no verificable vs min 3",
+        "estacionamiento: visitas (requerido=True)"
+      ]
+    },
+    "HT-0408": {
+      "price_clp": 189060000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.600 UF' = 4600 UF -> 189,060,000 CLP <= 200,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 25kg -> ok",
+        "distancia: metro=None bus=None -> min=None vs max 1200",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

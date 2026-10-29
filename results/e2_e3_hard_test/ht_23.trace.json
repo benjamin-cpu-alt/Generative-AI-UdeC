@@ -1,0 +1,378 @@
+{
+  "facts": {
+    "HT-2301": {
+      "location": "Puente Alto",
+      "bedrooms": 3,
+      "price_text": "$129.000.000",
+      "rent_text": "$650.000",
+      "distance_metro_text": "800 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Puente Alto, casa 3D/2B\", \"bedrooms_text\": \"3D/2B\", \"price_text\": \"$129.000.000\", \"rent_text\": \"Arriendo $650.000\", \"distance_metro_text\": \"Metro Hospital Sótero del Río a 800 m\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento propio\", \"pets_text\": \"Perros grandes bienvenidos\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 647,
+      "output_tokens": 130,
+      "wall_s": 8.97,
+      "error": null,
+      "spans": {
+        "location_text": "Puente Alto, casa 3D/2B",
+        "bedrooms_text": "3D/2B",
+        "price_text": "$129.000.000",
+        "rent_text": "Arriendo $650.000",
+        "distance_metro_text": "Metro Hospital Sótero del Río a 800 m",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Perros grandes bienvenidos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-2302": {
+      "location": "La Florida de",
+      "bedrooms": 4,
+      "price_text": "$135.000.000",
+      "rent_text": "800",
+      "distance_metro_text": "450 m",
+      "distance_bus_text": "450 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Casa en La Florida de 4 dormitorios\",\n  \"bedrooms_text\": \"4 dormitorios\",\n  \"price_text\": \"valor $135.000.000\",\n  \"rent_text\": \"renta 800 lucas\",\n  \"distance_metro_text\": \"paradero troncal a 450 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento para 2 autos\",\n  \"pets_text\": \"se aceptan mascotas sin restricción\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 645,
+      "output_tokens": 143,
+      "wall_s": 8.97,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en La Florida de 4 dormitorios",
+        "bedrooms_text": "4 dormitorios",
+        "price_text": "valor $135.000.000",
+        "rent_text": "renta 800 lucas",
+        "distance_metro_text": "paradero troncal a 450 m",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento para 2 autos",
+        "pets_text": "se aceptan mascotas sin restricción",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "distance_bus_text: recuperada del aviso (450 m)"
+      ]
+    },
+    "HT-2303": {
+      "location": "Puente Alto centro",
+      "bedrooms": 3,
+      "price_text": "3.500 UF",
+      "rent_text": null,
+      "distance_metro_text": "1 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"Puente Alto centro\",\n  \"bedrooms_text\": \"3 dorm\",\n  \"price_text\": \"UF 3.500\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"a 1 km\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estac. propio\",\n  \"pets_text\": \"mascotas ok\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 640,
+      "output_tokens": 121,
+      "wall_s": 7.56,
+      "error": null,
+      "spans": {
+        "location_text": "Puente Alto centro",
+        "bedrooms_text": "3 dorm",
+        "price_text": "UF 3.500",
+        "rent_text": null,
+        "distance_metro_text": "a 1 km",
+        "distance_bus_text": null,
+        "parking_text": "estac. propio",
+        "pets_text": "mascotas ok",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-2304": {
+      "location": "Puente Alto",
+      "bedrooms": null,
+      "price_text": "$120.000.000",
+      "rent_text": null,
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Puente Alto, 3D\", \"bedrooms_text\": null, \"price_text\": \"$120.000.000\", \"rent_text\": null, \"distance_metro_text\": \"Metro a 500 m\", \"distance_bus_text\": null, \"parking_text\": \"Con estacionamiento propio\", \"pets_text\": \"Perros de hasta veinticinco kilos.\",\"acepta_mascotas\": \"no\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 634,
+      "output_tokens": 113,
+      "wall_s": 7.11,
+      "error": null,
+      "spans": {
+        "location_text": "Puente Alto, 3D",
+        "bedrooms_text": null,
+        "price_text": "$120.000.000",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 500 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Perros de hasta veinticinco kilos.",
+        "acepta_mascotas": "no",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-2305": {
+      "location": "Puente Alto",
+      "bedrooms": 2,
+      "price_text": "$110.000.000",
+      "rent_text": null,
+      "distance_metro_text": "600 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Puente Alto\",\n  \"bedrooms_text\": \"2 dormitorios\",\n  \"price_text\": \"$110.000.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 600 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Con estacionamiento propio\",\n  \"pets_text\": \"Admite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 631,
+      "output_tokens": 120,
+      "wall_s": 7.45,
+      "error": null,
+      "spans": {
+        "location_text": "Puente Alto",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "$110.000.000",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 600 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-2306": {
+      "location": "Puente Alto",
+      "bedrooms": null,
+      "price_text": "3.590 UF",
+      "rent_text": null,
+      "distance_metro_text": "700 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Puente Alto\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.590\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 700 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Con estacionamiento propio.\",\n  \"pets_text\": \"Admite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 626,
+      "output_tokens": 118,
+      "wall_s": 7.4,
+      "error": null,
+      "spans": {
+        "location_text": "Puente Alto",
+        "bedrooms_text": null,
+        "price_text": "UF 3.590",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 700 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio.",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-2307": {
+      "location": "Puente Alto",
+      "bedrooms": null,
+      "price_text": "$125.000.000",
+      "rent_text": null,
+      "distance_metro_text": "1,8 km",
+      "distance_bus_text": "1100 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Puente Alto 3D\", \"bedrooms_text\": null, \"price_text\": \"$125.000.000\", \"rent_text\": null, \"distance_metro_text\": \"Metro Las Mercedes a 1,8 km\", \"distance_bus_text\": \"paradero troncal a 1.100 m\", \"parking_text\": \"con estacionamiento propio\", \"pets_text\": \"Admite mascotas\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 642,
+      "output_tokens": 122,
+      "wall_s": 7.74,
+      "error": null,
+      "spans": {
+        "location_text": "Puente Alto 3D",
+        "bedrooms_text": null,
+        "price_text": "$125.000.000",
+        "rent_text": null,
+        "distance_metro_text": "Metro Las Mercedes a 1,8 km",
+        "distance_bus_text": "paradero troncal a 1.100 m",
+        "parking_text": "con estacionamiento propio",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-2308": {
+      "location": "Puente Alto",
+      "bedrooms": null,
+      "price_text": "$115.000.000",
+      "rent_text": null,
+      "distance_metro_text": "600 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Puente Alto 3D\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"$115.000.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 600 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Con estacionamiento propio\",\n  \"pets_text\": \"Consultar condiciones para mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 629,
+      "output_tokens": 122,
+      "wall_s": 7.55,
+      "error": null,
+      "spans": {
+        "location_text": "Puente Alto 3D",
+        "bedrooms_text": null,
+        "price_text": "$115.000.000",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 600 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Consultar condiciones para mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "HT-2301": {
+      "price_clp": 129000000,
+      "roi_pct": 6.05,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '$129.000.000' = 1.29e+08 CLP -> 129,000,000 CLP <= 138,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='800 m' bus=None -> min=800 vs max 1000",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2302": {
+      "price_clp": 135000000,
+      "roi_pct": 0.01,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$135.000.000' = 1.35e+08 CLP -> 135,000,000 CLP <= 138,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='450 m' bus='450 m' -> min=450 vs max 1000",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2303": {
+      "price_clp": 135100000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.500 UF' = 3500 UF -> 135,100,000 CLP <= 138,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='1 km' bus=None -> min=1000 vs max 1000",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "HT-2304": {
+      "price_clp": 120000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$120.000.000' = 1.2e+08 CLP -> 120,000,000 CLP <= 138,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 1000",
+        "dormitorios: no verificable vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2305": {
+      "price_clp": 110000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$110.000.000' = 1.1e+08 CLP -> 110,000,000 CLP <= 138,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='600 m' bus=None -> min=600 vs max 1000",
+        "dormitorios: 2 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2306": {
+      "price_clp": 138574000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.590 UF' = 3590 UF -> 138,574,000 CLP > 138,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='700 m' bus=None -> min=700 vs max 1000",
+        "dormitorios: no verificable vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2307": {
+      "price_clp": 125000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$125.000.000' = 1.25e+08 CLP -> 125,000,000 CLP <= 138,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='1,8 km' bus='1100 m' -> min=1100 vs max 1000",
+        "dormitorios: no verificable vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2308": {
+      "price_clp": 115000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$115.000.000' = 1.15e+08 CLP -> 115,000,000 CLP <= 138,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 30kg -> ok",
+        "distancia: metro='600 m' bus=None -> min=600 vs max 1000",
+        "dormitorios: no verificable vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

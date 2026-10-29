@@ -1,0 +1,386 @@
+{
+  "facts": {
+    "HT-2201": {
+      "location": "San Joaquín",
+      "bedrooms": 2,
+      "price_text": "",
+      "rent_text": "$700.000",
+      "distance_metro_text": "550 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": 10.0,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"San Joaquín, 2D/1B\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.700.000\",\n  \"rent_text\": \"Arriendo $700.000\",\n  \"distance_metro_text\": \"Metro San Joaquín a 550 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio\",\n  \"pets_text\": \"Admite perros pequeños de hasta 10 kg\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 646,
+      "output_tokens": 140,
+      "wall_s": 9.78,
+      "error": null,
+      "spans": {
+        "location_text": "San Joaquín, 2D/1B",
+        "bedrooms_text": null,
+        "price_text": "UF 3.700.000",
+        "rent_text": "Arriendo $700.000",
+        "distance_metro_text": "Metro San Joaquín a 550 m",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Admite perros pequeños de hasta 10 kg",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "price_text: no es literal del aviso: 'UF 3.700.000'",
+        "price_text: número no está en el aviso: 'UF 3.700.000'",
+        "bedrooms: recuperado del aviso completo ('2D/')"
+      ]
+    },
+    "HT-2202": {
+      "location": "La Granja",
+      "bedrooms": 3,
+      "price_text": "$140.000.000",
+      "rent_text": "$850.000",
+      "distance_metro_text": "200 m",
+      "distance_bus_text": "200 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"La Granja\",\n  \"bedrooms_text\": \"3 dorm\",\n  \"price_text\": \"$140.000.000\",\n  \"rent_text\": \"arriendo $850.000\",\n  \"distance_metro_text\": \"paradero troncal Santa Rosa 200 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento asignado\",\n  \"pets_text\": \"mascaras permitidas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 638,
+      "output_tokens": 132,
+      "wall_s": 8.55,
+      "error": null,
+      "spans": {
+        "location_text": "La Granja",
+        "bedrooms_text": "3 dorm",
+        "price_text": "$140.000.000",
+        "rent_text": "arriendo $850.000",
+        "distance_metro_text": "paradero troncal Santa Rosa 200 m",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento asignado",
+        "pets_text": "mascaras permitidas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "distance_bus_text: recuperada del aviso (200 m)",
+        "pets_text: recuperado del aviso ('La Granja – 3 dorm – $140.000.000 – paradero tro')"
+      ]
+    },
+    "HT-2203": {
+      "location": "Pasaje en San Joaquín",
+      "bedrooms": null,
+      "price_text": "3.850 UF",
+      "rent_text": null,
+      "distance_metro_text": null,
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Pasaje en San Joaquín\", \"bedrooms_text\": null, \"price_text\": \"3.850 UF\", \"rent_text\": null, \"distance_metro_text\": \"a seiscientos metros del metro Rodrigo de Araya\", \"distance_bus_text\": null, \"parking_text\": \"estacionamiento propio\", \"pets_text\": \"Pet friendly\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 637,
+      "output_tokens": 112,
+      "wall_s": 7.04,
+      "error": null,
+      "spans": {
+        "location_text": "Pasaje en San Joaquín",
+        "bedrooms_text": null,
+        "price_text": "3.850 UF",
+        "rent_text": null,
+        "distance_metro_text": "a seiscientos metros del metro Rodrigo de Araya",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento propio",
+        "pets_text": "Pet friendly",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-2204": {
+      "location": "San Joaquín",
+      "bedrooms": null,
+      "price_text": "3.500 UF",
+      "rent_text": null,
+      "distance_metro_text": "650 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"San Joaquín, 2D\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.500\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 650 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Con estacionamiento propio\",\n  \"pets_text\": \"Admite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 627,
+      "output_tokens": 122,
+      "wall_s": 8.37,
+      "error": null,
+      "spans": {
+        "location_text": "San Joaquín, 2D",
+        "bedrooms_text": null,
+        "price_text": "UF 3.500",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 650 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-2205": {
+      "location": "San Joaquín",
+      "bedrooms": null,
+      "price_text": "3.400 UF",
+      "rent_text": null,
+      "distance_metro_text": "400 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 8.0,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"San Joaquín 2D\", \"bedrooms_text\": null, \"price_text\": \"UF 3.400\", \"rent_text\": null, \"distance_metro_text\": \"Metro a 400 m\", \"distance_bus_text\": null, \"parking_text\": \"Con estacionamiento propio\", \"pets_text\": \"Mascotas de hasta 8 kg\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 630,
+      "output_tokens": 112,
+      "wall_s": 9.44,
+      "error": null,
+      "spans": {
+        "location_text": "San Joaquín 2D",
+        "bedrooms_text": null,
+        "price_text": "UF 3.400",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 400 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Mascotas de hasta 8 kg",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-2206": {
+      "location": "San Joaquín",
+      "bedrooms": null,
+      "price_text": "4.100 UF",
+      "rent_text": "$90.000",
+      "distance_metro_text": "300 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"San Joaquín, 3D\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 4.100\",\n  \"rent_text\": \"contribuciones $90.000 trimestrales\",\n  \"distance_metro_text\": \"Metro a 300 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"con estacionamiento propio\",\n  \"pets_text\": \"Admite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 639,
+      "output_tokens": 132,
+      "wall_s": 11.02,
+      "error": null,
+      "spans": {
+        "location_text": "San Joaquín, 3D",
+        "bedrooms_text": null,
+        "price_text": "UF 4.100",
+        "rent_text": "contribuciones $90.000 trimestrales",
+        "distance_metro_text": "Metro a 300 m",
+        "distance_bus_text": null,
+        "parking_text": "con estacionamiento propio",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-2207": {
+      "location": "San Joaquín",
+      "bedrooms": null,
+      "price_text": "3.300 UF",
+      "rent_text": null,
+      "distance_metro_text": "300 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "ninguno",
+      "raw": "{\n  \"location_text\": \"San Joaquín 2D.\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.300.\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 300 m.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento opcional (+UF 200).\",\n  \"pets_text\": \"Admite mascotas.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 632,
+      "output_tokens": 127,
+      "wall_s": 10.6,
+      "error": null,
+      "spans": {
+        "location_text": "San Joaquín 2D.",
+        "bedrooms_text": null,
+        "price_text": "UF 3.300.",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 300 m.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento opcional (+UF 200).",
+        "pets_text": "Admite mascotas.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-2208": {
+      "location": "San Joaquín",
+      "bedrooms": null,
+      "price_text": "2.900 UF",
+      "rent_text": null,
+      "distance_metro_text": "200 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"San Joaquín. Depto 1D\", \"bedrooms_text\": null, \"price_text\": \"UF 2.900\", \"rent_text\": null, \"distance_metro_text\": \"Metro a 200 m\", \"distance_bus_text\": null, \"parking_text\": \"Con estacionamiento propio.\", \"pets_text\": \"Admite mascotas.\",\"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 642,
+      "output_tokens": 111,
+      "wall_s": 8.07,
+      "error": null,
+      "spans": {
+        "location_text": "San Joaquín. Depto 1D",
+        "bedrooms_text": null,
+        "price_text": "UF 2.900",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 200 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio.",
+        "pets_text": "Admite mascotas.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "HT-2201": {
+      "price_clp": null,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio ilegible: '' -> se rechaza por no verificable",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=10.0 vs perro 9kg -> ok",
+        "distancia: metro='550 m' bus=None -> min=550 vs max 600",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2202": {
+      "price_clp": 140000000,
+      "roi_pct": 7.29,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$140.000.000' = 1.4e+08 CLP -> 140,000,000 CLP <= 160,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 9kg -> ok",
+        "distancia: metro='200 m' bus='200 m' -> min=200 vs max 600",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "HT-2203": {
+      "price_clp": 156502500,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte",
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.850 UF' = 3850 UF -> 156,502,500 CLP <= 160,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 9kg -> ok",
+        "distancia: metro=None bus=None -> min=None vs max 600",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2204": {
+      "price_clp": 142275000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.500 UF' = 3500 UF -> 142,275,000 CLP <= 160,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 9kg -> ok",
+        "distancia: metro='650 m' bus=None -> min=650 vs max 600",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2205": {
+      "price_clp": 138210000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.400 UF' = 3400 UF -> 138,210,000 CLP <= 160,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=8.0 vs perro 9kg -> FALLA",
+        "distancia: metro='400 m' bus=None -> min=400 vs max 600",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2206": {
+      "price_clp": 166665000,
+      "roi_pct": 0.65,
+      "failed_constraints": [
+        "presupuesto",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.100 UF' = 4100 UF -> 166,665,000 CLP > 160,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 9kg -> ok",
+        "distancia: metro='300 m' bus=None -> min=300 vs max 600",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2207": {
+      "price_clp": 134145000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.300 UF' = 3300 UF -> 134,145,000 CLP <= 160,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 9kg -> ok",
+        "distancia: metro='300 m' bus=None -> min=300 vs max 600",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: ninguno (requerido=True)"
+      ]
+    },
+    "HT-2208": {
+      "price_clp": 117885000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.900 UF' = 2900 UF -> 117,885,000 CLP <= 160,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 9kg -> ok",
+        "distancia: metro='200 m' bus=None -> min=200 vs max 600",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

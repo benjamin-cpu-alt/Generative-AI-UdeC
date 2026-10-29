@@ -1,0 +1,195 @@
+{
+  "facts": {
+    "REAL-22": {
+      "location": "Providencia",
+      "bedrooms": 4,
+      "price_text": "$230.000.000",
+      "rent_text": null,
+      "distance_metro_text": "596 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Departamento en Providencia.\",\n  \"bedrooms_text\": \"4 Dormitorios: Perfectos para familias grandes, home office, sala de juegos o walk-in closets de ensueño.\",\n  \"price_text\": \"$230.000.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Distancia estimada a la estación de metro Inés de Suárez: 596 m.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento.\",\n  \"pets_text\": \"Antejardín de uso exclusivo: Disfrutarás de un espacio al aire libre privado para tus mascotas o tus plantas, con la privacidad y sensación de una casa.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en Providencia.",
+        "bedrooms_text": "4 Dormitorios: Perfectos para familias grandes, home office, sala de juegos o walk-in closets de ensueño.",
+        "price_text": "$230.000.000",
+        "rent_text": null,
+        "distance_metro_text": "Distancia estimada a la estación de metro Inés de Suárez: 596 m.",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento.",
+        "pets_text": "Antejardín de uso exclusivo: Disfrutarás de un espacio al aire libre privado para tus mascotas o tus plantas, con la privacidad y sensación de una casa.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "REAL-28": {
+      "location": "Ñuñoa",
+      "bedrooms": 3,
+      "price_text": "10.500 UF",
+      "rent_text": null,
+      "distance_metro_text": "357 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Departamento en Ñuñoa, Pucará.\", \"bedrooms_text\": \"3 Dormitorios con closet, Principal en suite con balcón.\", \"price_text\": \"UF 10.500.\", \"rent_text\": null, \"distance_metro_text\": \"Distancia estimada a la estación de metro Simón Bolívar: 357 m.\", \"distance_bus_text\": null, \"parking_text\": \"Incluye 1 estacionamiento.\", \"pets_text\": \"no_dice\", \"acepta_mascotas\": \"no_dice\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en Ñuñoa, Pucará.",
+        "bedrooms_text": "3 Dormitorios con closet, Principal en suite con balcón.",
+        "price_text": "UF 10.500.",
+        "rent_text": null,
+        "distance_metro_text": "Distancia estimada a la estación de metro Simón Bolívar: 357 m.",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento.",
+        "pets_text": "no_dice",
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets: respuestas sin cláusula anclada -> no_mencionada"
+      ]
+    },
+    "REAL-34": {
+      "location": "La Florida",
+      "bedrooms": 3,
+      "price_text": "2.914,84 UF",
+      "rent_text": null,
+      "distance_metro_text": "1655 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Departamento en La Florida. Sector García Hurtado de Mendoza, Comuna La Florida.\",\n  \"bedrooms_text\": \"3 Dormitorios.\",\n  \"price_text\": \"UF 2.914,84.\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Distancia estimada a la estación de metro Vicente Valdés: 1655 m.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"1 Estacionamiento.\",\n  \"pets_text\": \"no_dice\",\n  \"acepta_mascotas\": \"no_dice\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en La Florida. Sector García Hurtado de Mendoza, Comuna La Florida.",
+        "bedrooms_text": "3 Dormitorios.",
+        "price_text": "UF 2.914,84.",
+        "rent_text": null,
+        "distance_metro_text": "Distancia estimada a la estación de metro Vicente Valdés: 1655 m.",
+        "distance_bus_text": null,
+        "parking_text": "1 Estacionamiento.",
+        "pets_text": "no_dice",
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets: respuestas sin cláusula anclada -> no_mencionada"
+      ]
+    },
+    "REAL-40": {
+      "location": "Ñuñoa",
+      "bedrooms": 1,
+      "price_text": "3.350 UF",
+      "rent_text": null,
+      "distance_metro_text": "292 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "ninguno",
+      "raw": "{\n  \"location_text\": \"Departamento en Ñuñoa.\",\n  \"bedrooms_text\": \"1D/1B\",\n  \"price_text\": \"UF 3.350.\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"292 m.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"NO cuenta con estacionamiento.\",\n  \"pets_text\": null,\n  \"acepta_mascotas\": \"no_dice\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en Ñuñoa.",
+        "bedrooms_text": "1D/1B",
+        "price_text": "UF 3.350.",
+        "rent_text": null,
+        "distance_metro_text": "292 m.",
+        "distance_bus_text": null,
+        "parking_text": "NO cuenta con estacionamiento.",
+        "pets_text": null,
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "REAL-22": {
+      "price_clp": 230000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$230.000.000' = 2.3e+08 CLP -> 230,000,000 CLP > 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 18kg -> ok",
+        "distancia: metro='596 m' bus=None -> min=596 vs max 1000",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "REAL-28": {
+      "price_clp": 432264315,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '10.500 UF' = 10500 UF -> 432,264,315 CLP > 150,000,000",
+        "mascotas: el aviso no declara política -> no se descarta, va al final del orden",
+        "distancia: metro='357 m' bus=None -> min=357 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "REAL-34": {
+      "price_clp": 119998221,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '2.914,84 UF' = 2914.84 UF -> 119,998,221 CLP <= 150,000,000",
+        "mascotas: el aviso no declara política -> no se descarta, va al final del orden",
+        "distancia: metro='1655 m' bus=None -> min=1655 vs max 1000",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "REAL-40": {
+      "price_clp": 137912900,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.350 UF' = 3350 UF -> 137,912,900 CLP <= 150,000,000",
+        "mascotas: el aviso no declara política -> no se descarta, va al final del orden",
+        "distancia: metro='292 m' bus=None -> min=292 vs max 1000",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: ninguno (requerido=True)"
+      ]
+    }
+  }
+}

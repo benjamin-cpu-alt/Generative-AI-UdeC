@@ -1,0 +1,18 @@
+{
+  "case_id": "real_b1_007",
+  "model": "phi4-mini:latest",
+  "run": "e2_e3_real_e3",
+  "mode": "reground/tools_phi4_v5_real_e3_g3/g3",
+  "prompt_version": "v5",
+  "grounding_version": "g3",
+  "calls": 4,
+  "prompt_tokens": 2394,
+  "output_tokens": 362,
+  "wall_s": 31.09,
+  "done_reason": "error",
+  "errors": [
+    "REAL-31: Unterminated string starting at: line 11 column 20 (char 928)"
+  ],
+  "timestamp": "2026-10-29T19:58:50",
+  "source_run": "tools_phi4_v5_real_e3_g3"
+}

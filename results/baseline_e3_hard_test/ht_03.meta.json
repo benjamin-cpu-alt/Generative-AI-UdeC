@@ -1,0 +1,17 @@
+{
+  "case_id": "ht_03",
+  "model": "phi4-mini:latest",
+  "run": "baseline_e3_hard_test",
+  "options": {
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "num_predict": 2048,
+    "seed": 0
+  },
+  "prompt_tokens": 1046,
+  "output_tokens": 303,
+  "total_duration_s": 11.24,
+  "wall_s": 11.25,
+  "done_reason": "stop",
+  "timestamp": "2026-10-29T16:38:50"
+}

@@ -1,0 +1,381 @@
+{
+  "facts": {
+    "HT-1701": {
+      "location": "Quinta Normal",
+      "bedrooms": 2,
+      "price_text": "3.300 UF",
+      "rent_text": "$580.000",
+      "distance_metro_text": "450 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": 15.0,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Quinta Normal\",\n  \"bedrooms_text\": \"2D/1B\",\n  \"price_text\": \"UF 3.300\",\n  \"rent_text\": \"arriendo $580.000\",\n  \"distance_metro_text\": \"metro Gruta de Lourdes a 450 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento propio\",\n  \"pets_text\": \"se aceptan perros de hasta 15 kilos\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 646,
+      "output_tokens": 137,
+      "wall_s": 9.34,
+      "error": null,
+      "spans": {
+        "location_text": "Quinta Normal",
+        "bedrooms_text": "2D/1B",
+        "price_text": "UF 3.300",
+        "rent_text": "arriendo $580.000",
+        "distance_metro_text": "metro Gruta de Lourdes a 450 m",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento propio",
+        "pets_text": "se aceptan perros de hasta 15 kilos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-1702": {
+      "location": "Lo Prado",
+      "bedrooms": 3,
+      "price_text": "$120.000.000",
+      "rent_text": "$700.000",
+      "distance_metro_text": "300 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Lo Prado\",\n  \"bedrooms_text\": \"3 dormitorios\",\n  \"price_text\": \"$120.000.000\",\n  \"rent_text\": \"arriendo $700.000\",\n  \"distance_metro_text\": \"metro Blanqueado 300 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento asignado\",\n  \"pets_text\": \"mascaras permitidas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 636,
+      "output_tokens": 129,
+      "wall_s": 8.19,
+      "error": null,
+      "spans": {
+        "location_text": "Lo Prado",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "$120.000.000",
+        "rent_text": "arriendo $700.000",
+        "distance_metro_text": "metro Blanqueado 300 m",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento asignado",
+        "pets_text": "mascaras permitidas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets_text: recuperado del aviso ('Lo Prado: 3 dormitorios; $120.000.000; metro Bla')"
+      ]
+    },
+    "HT-1703": {
+      "location": "Quinta Normal",
+      "bedrooms": null,
+      "price_text": "$125.000.000",
+      "rent_text": null,
+      "distance_metro_text": "600 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Quinta Normal, 2D\", \"bedrooms_text\": null, \"price_text\": \"$125.000.000.00\", \"rent_text\": null, \"distance_metro_text\": \"Metro a 600 m\", \"distance_bus_text\": null, \"parking_text\": \"Con estacionamiento propio\", \"pets_text\": \"la publicación anterior decía \\\"no mascotas\\\"; el reglamento vigente sí las permite.\",\"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 642,
+      "output_tokens": 124,
+      "wall_s": 7.84,
+      "error": null,
+      "spans": {
+        "location_text": "Quinta Normal, 2D",
+        "bedrooms_text": null,
+        "price_text": "$125.000.000.00",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 600 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "la publicación anterior decía \"no mascotas\"; el reglamento vigente sí las permite.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "price_text: no es literal del aviso: '$125.000.000.00'"
+      ]
+    },
+    "HT-1704": {
+      "location": "Quinta Normal",
+      "bedrooms": null,
+      "price_text": "3.100 UF",
+      "rent_text": null,
+      "distance_metro_text": "300 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Quinta Normal, 3D\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.100\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 300 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Con estacionamiento propio\",\n  \"pets_text\": \"Gatos sí; perros, no\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 631,
+      "output_tokens": 122,
+      "wall_s": 7.65,
+      "error": null,
+      "spans": {
+        "location_text": "Quinta Normal, 3D",
+        "bedrooms_text": null,
+        "price_text": "UF 3.100",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 300 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Gatos sí; perros, no",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "HT-1705": {
+      "location": "Quinta Normal",
+      "bedrooms": null,
+      "price_text": "",
+      "rent_text": null,
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Quinta Normal 2D, 135 palos, metro a 500 m\", \"bedrooms_text\": null, \"price_text\": null, \"rent_text\": null, \"distance_metro_text\": \"a 500 m\", \"distance_bus_text\": null, \"parking_text\": \"con estacionamiento propio\", \"pets_text\": \"admite mascotas\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 624,
+      "output_tokens": 113,
+      "wall_s": 7.18,
+      "error": null,
+      "spans": {
+        "location_text": "Quinta Normal 2D, 135 palos, metro a 500 m",
+        "bedrooms_text": null,
+        "price_text": null,
+        "rent_text": null,
+        "distance_metro_text": "a 500 m",
+        "distance_bus_text": null,
+        "parking_text": "con estacionamiento propio",
+        "pets_text": "admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-1706": {
+      "location": "Quinta Normal",
+      "bedrooms": null,
+      "price_text": "3.000 UF",
+      "rent_text": null,
+      "distance_metro_text": "1200 m",
+      "distance_bus_text": "1000 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Quinta Normal 2D\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 1.200 m\",\n  \"distance_bus_text\": \"paradero troncal a 1.000 m\",\n  \"parking_text\": \"Con estacionamiento propio\",\n  \"pets_text\": \"Admite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 639,
+      "output_tokens": 133,
+      "wall_s": 8.36,
+      "error": null,
+      "spans": {
+        "location_text": "Quinta Normal 2D",
+        "bedrooms_text": null,
+        "price_text": "UF 3.000",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 1.200 m",
+        "distance_bus_text": "paradero troncal a 1.000 m",
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-1707": {
+      "location": "Quinta Normal",
+      "bedrooms": null,
+      "price_text": "3.200 UF",
+      "rent_text": null,
+      "distance_metro_text": "400 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Quinta Normal 2D\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.200\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 400 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento de uso común (no asignado)\",\n  \"pets_text\": \"Admite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 633,
+      "output_tokens": 127,
+      "wall_s": 8.02,
+      "error": null,
+      "spans": {
+        "location_text": "Quinta Normal 2D",
+        "bedrooms_text": null,
+        "price_text": "UF 3.200",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 400 m",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento de uso común (no asignado)",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-1708": {
+      "location": "Quinta Normal",
+      "bedrooms": 1,
+      "price_text": "2.700 UF",
+      "rent_text": null,
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Quinta Normal\", \"bedrooms_text\": \"1 dormitorio\", \"price_text\": \"UF 2.700\", \"rent_text\": null, \"distance_metro_text\": \"Metro a 500 m\", \"distance_bus_text\": null, \"parking_text\": \"Con estacionamiento propio\", \"pets_text\": \"Admite mascotas\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 648,
+      "output_tokens": 107,
+      "wall_s": 7.61,
+      "error": null,
+      "spans": {
+        "location_text": "Quinta Normal",
+        "bedrooms_text": "1 dormitorio",
+        "price_text": "UF 2.700",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 500 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "HT-1701": {
+      "price_clp": 128535000,
+      "roi_pct": 5.41,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.300 UF' = 3300 UF -> 128,535,000 CLP <= 132,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=15.0 vs perro 15kg -> ok",
+        "distancia: metro='450 m' bus=None -> min=450 vs max 900",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-1702": {
+      "price_clp": 120000000,
+      "roi_pct": 7.0,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$120.000.000' = 1.2e+08 CLP -> 120,000,000 CLP <= 132,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='300 m' bus=None -> min=300 vs max 900",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "HT-1703": {
+      "price_clp": 125000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$125.000.000' = 1.25e+08 CLP -> 125,000,000 CLP <= 132,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='600 m' bus=None -> min=600 vs max 900",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-1704": {
+      "price_clp": 120745000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.100 UF' = 3100 UF -> 120,745,000 CLP <= 132,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs perro 15kg -> FALLA",
+        "distancia: metro='300 m' bus=None -> min=300 vs max 900",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-1705": {
+      "price_clp": null,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio ilegible: '' -> se rechaza por no verificable",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 900",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-1706": {
+      "price_clp": 116850000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.000 UF' = 3000 UF -> 116,850,000 CLP <= 132,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='1200 m' bus='1000 m' -> min=1000 vs max 900",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-1707": {
+      "price_clp": 124640000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.200 UF' = 3200 UF -> 124,640,000 CLP <= 132,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='400 m' bus=None -> min=400 vs max 900",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "HT-1708": {
+      "price_clp": 105165000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.700 UF' = 2700 UF -> 105,165,000 CLP <= 132,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 900",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

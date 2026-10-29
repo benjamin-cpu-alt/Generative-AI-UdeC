@@ -1,0 +1,21 @@
+run,case_id,e1_correct,exact_match,ranking_ok,full_correct,reason,details,lenient_e1,lenient_reason
+baseline_e3_real_e3,real_b1_001,0,0,0,0,false_approval,"REAL-09 aprobada pero viola ['presupuesto', 'distancia_transporte', 'estacionamiento']",,
+baseline_e3_real_e3,real_b1_002,0,0,0,0,false_approval,"REAL-06 aprobada pero viola ['dormitorios', 'estacionamiento']",,
+baseline_e3_real_e3,real_b1_003,0,0,0,0,false_approval,"REAL-07 aprobada pero viola ['presupuesto', 'estacionamiento']",,
+baseline_e3_real_e3,real_b1_004,0,0,0,0,schema_error,JSON malformado | tras limpiar formato: JSON malformado,0,schema_error
+baseline_e3_real_e3,real_b1_005,0,0,0,0,false_approval,REAL-35 aprobada pero viola ['distancia_transporte'] | rechazo falso u omisión de aprobadas: ['REAL-23'],,
+baseline_e3_real_e3,real_b1_006,0,0,0,0,false_approval,"REAL-36 aprobada pero viola ['presupuesto', 'dormitorios']",,
+baseline_e3_real_e3,real_b1_007,0,0,0,0,false_approval,"REAL-31 aprobada pero viola ['presupuesto', 'distancia_transporte', 'estacionamiento']",,
+baseline_e3_real_e3,real_b1_008,0,0,0,0,schema_error,JSON malformado | tras limpiar formato: JSON malformado,0,schema_error
+baseline_e3_real_e3,real_b1_009,0,0,0,0,false_approval,"REAL-33 aprobada pero viola ['dormitorios', 'estacionamiento']",,
+baseline_e3_real_e3,real_b1_010,0,0,0,0,false_approval,REAL-28 aprobada pero viola ['presupuesto'],,
+baseline_e3_real_e3,real_b2_001,0,0,0,0,false_approval,REAL-09 aprobada pero viola ['presupuesto'],,
+baseline_e3_real_e3,real_b2_002,0,0,0,0,false_approval,REAL-10 aprobada pero viola ['dormitorios'],,
+baseline_e3_real_e3,real_b2_003,0,0,0,0,false_approval,"REAL-15 aprobada pero viola ['presupuesto', 'distancia_transporte']",,
+baseline_e3_real_e3,real_b2_004,0,1,1,0,arithmetic_error,REAL-08: price_clp=25200000000 esperado=140000000,,
+baseline_e3_real_e3,real_b2_005,0,0,0,0,false_approval,REAL-35 aprobada pero viola ['distancia_transporte'] | rechazo falso u omisión de aprobadas: ['REAL-23'],,
+baseline_e3_real_e3,real_b2_006,0,0,0,0,false_approval,REAL-36 aprobada pero viola ['dormitorios'],,
+baseline_e3_real_e3,real_b2_007,0,0,0,0,false_approval,"REAL-31 aprobada pero viola ['presupuesto', 'distancia_transporte']",,
+baseline_e3_real_e3,real_b2_008,0,0,0,0,false_approval,REAL-32 aprobada pero viola ['presupuesto'] | rechazo falso u omisión de aprobadas: ['REAL-38'],,
+baseline_e3_real_e3,real_b2_009,0,0,0,0,false_approval,REAL-33 aprobada pero viola ['dormitorios'],,
+baseline_e3_real_e3,real_b2_010,0,0,0,0,false_approval,REAL-28 aprobada pero viola ['presupuesto'],,

@@ -1,0 +1,43 @@
+{
+  "approved_matches": [
+    {
+      "id": "HT-1802",
+      "price_clp": 164000000,
+      "roi_pct": 14.63
+    },
+    {
+      "id": "HT-1803",
+      "price_clp": 3600000,
+      "roi_pct": 32.43
+    },
+    {
+      "id": "HT-1805",
+      "price_clp": 3800000,
+      "roi_pct": 31.58
+    },
+    {
+      "id": "HT-1806",
+      "price_clp": 76000000,
+      "roi_pct": 19.47
+    },
+    {
+      "id": "HT-1807",
+      "price_clp": 3700000,
+      "roi_pct": 41.89
+    }
+  ],
+  "rejected": [
+    {
+      "id": "HT-1801",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 650 m excede la distancia máxima permitida de 800 m."]
+    },
+    {
+      "id": "HT-1804",
+      "failed_constraints": ["Distancia máxima a transporte público (metro O paradero de buses troncal): 700 m excede la distancia máxima permitida de 800 m."]
+    },
+    {
+      "id": "HT-1808",
+      "failed_constraints": ["Estacionamiento: no (se puede arrendar en el edificio de al lado) no cumple con la restricción de tener al menos 1 estacionamiento propio o asignado."]
+    }
+  ]
+}

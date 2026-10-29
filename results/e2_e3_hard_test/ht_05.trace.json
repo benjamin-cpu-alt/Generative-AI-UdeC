@@ -1,0 +1,387 @@
+{
+  "facts": {
+    "HT-0501": {
+      "location": "San Miguel – depto",
+      "bedrooms": null,
+      "price_text": "3.600 UF",
+      "rent_text": "$700.000",
+      "distance_metro_text": "350 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"San Miguel – depto 2D2B\",\n  \"bedrooms_text\": \"2D2B\",\n  \"price_text\": \"UF 3.600\",\n  \"rent_text\": \"/mes 700.000\",\n  \"distance_metro_text\": \"a 350 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": null,\n  \"pets_text\": \"gatos permitidos\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 640,
+      "output_tokens": 128,
+      "wall_s": 21.4,
+      "error": null,
+      "spans": {
+        "location_text": "San Miguel – depto 2D2B",
+        "bedrooms_text": "2D2B",
+        "price_text": "UF 3.600",
+        "rent_text": "/mes 700.000",
+        "distance_metro_text": "a 350 m",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "gatos permitidos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "rent_text: no es literal del aviso: '/mes 700.000'",
+        "parking_text: recuperado del aviso ('San Miguel – depto 2D2B – UF 3.600 – metro Ciuda')"
+      ]
+    },
+    "HT-0502": {
+      "location": "La Cisterna",
+      "bedrooms": 2,
+      "price_text": "$138.000.000",
+      "rent_text": null,
+      "distance_metro_text": null,
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"La Cisterna\",\n  \"bedrooms_text\": \"dos dormitorios\",\n  \"price_text\": \"$138.000.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"paradero troncal a seiscientos cincuenta metros\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento propio\",\n  \"pets_text\": \"mascotas: sí\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 634,
+      "output_tokens": 128,
+      "wall_s": 20.65,
+      "error": null,
+      "spans": {
+        "location_text": "La Cisterna",
+        "bedrooms_text": "dos dormitorios",
+        "price_text": "$138.000.000",
+        "rent_text": null,
+        "distance_metro_text": "paradero troncal a seiscientos cincuenta metros",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento propio",
+        "pets_text": "mascotas: sí",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-0503": {
+      "location": "San Miguel",
+      "bedrooms": null,
+      "price_text": "3.300 UF",
+      "rent_text": null,
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"San Miguel, 2D\", \"bedrooms_text\": null, \"price_text\": \"UF 3.300\", \"rent_text\": null, \"distance_metro_text\": \"A 500 m del metro\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento propio\", \"pets_text\": \"Perros sí, gatos no\", \"acepta_mascotas\": \"no\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"no\"}",
+      "prompt_tokens": 630,
+      "output_tokens": 108,
+      "wall_s": 15.96,
+      "error": null,
+      "spans": {
+        "location_text": "San Miguel, 2D",
+        "bedrooms_text": null,
+        "price_text": "UF 3.300",
+        "rent_text": null,
+        "distance_metro_text": "A 500 m del metro",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Perros sí, gatos no",
+        "acepta_mascotas": "no",
+        "acepta_perros": "si",
+        "acepta_gatos": "no"
+      },
+      "warnings": []
+    },
+    "HT-0504": {
+      "location": "San Joaquín",
+      "bedrooms": 3,
+      "price_text": "3.400 UF",
+      "rent_text": "21 UF",
+      "distance_metro_text": "600 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"San Joaquín, 3D/2B\",\n  \"bedrooms_text\": \"3D/2B\",\n  \"price_text\": \"UF 3.400\",\n  \"rent_text\": \"Arriendo 21 UF\",\n  \"distance_metro_text\": \"Metro Rodrigo de Araya a 600 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio\",\n  \"pets_text\": \"Pet friendly\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 639,
+      "output_tokens": 138,
+      "wall_s": 19.57,
+      "error": null,
+      "spans": {
+        "location_text": "San Joaquín, 3D/2B",
+        "bedrooms_text": "3D/2B",
+        "price_text": "UF 3.400",
+        "rent_text": "Arriendo 21 UF",
+        "distance_metro_text": "Metro Rodrigo de Araya a 600 m",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Pet friendly",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-0505": {
+      "location": "San Miguel",
+      "bedrooms": null,
+      "price_text": "$140.000.000",
+      "rent_text": null,
+      "distance_metro_text": "720 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"San Miguel, 2D\", \"bedrooms_text\": null, \"price_text\": \"$140.000.000\", \"rent_text\": null, \"distance_metro_text\": \"A 720 m del metro\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento propio\", \"pets_text\": \"Gatos aceptados\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"si\"}",
+      "prompt_tokens": 629,
+      "output_tokens": 108,
+      "wall_s": 15.61,
+      "error": null,
+      "spans": {
+        "location_text": "San Miguel, 2D",
+        "bedrooms_text": null,
+        "price_text": "$140.000.000",
+        "rent_text": null,
+        "distance_metro_text": "A 720 m del metro",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Gatos aceptados",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "HT-0506": {
+      "location": "San Miguel",
+      "bedrooms": 2,
+      "price_text": "3.690 UF",
+      "rent_text": null,
+      "distance_metro_text": "400 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"San Miguel 2D/2B\", \"bedrooms_text\": \"2D/2B\", \"price_text\": \"UF 3.690\", \"rent_text\": null, \"distance_metro_text\": \"Metro a 400 m\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento propio\", \"pets_text\": \"Admite mascotas\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 644,
+      "output_tokens": 115,
+      "wall_s": 17.85,
+      "error": null,
+      "spans": {
+        "location_text": "San Miguel 2D/2B",
+        "bedrooms_text": "2D/2B",
+        "price_text": "UF 3.690",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 400 m",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-0507": {
+      "location": "La Cisterna",
+      "bedrooms": 1,
+      "price_text": "2.900 UF",
+      "rent_text": null,
+      "distance_metro_text": "300 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"La Cisterna, 1 dormitorio más sala de estar\",\n  \"bedrooms_text\": \"1 dormitorio\",\n  \"price_text\": \"UF 2.900\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 300 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio\",\n  \"pets_text\": \"Admite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 630,
+      "output_tokens": 128,
+      "wall_s": 17.44,
+      "error": null,
+      "spans": {
+        "location_text": "La Cisterna, 1 dormitorio más sala de estar",
+        "bedrooms_text": "1 dormitorio",
+        "price_text": "UF 2.900",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 300 m",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-0508": {
+      "location": "San Miguel",
+      "bedrooms": null,
+      "price_text": "3.200 UF",
+      "rent_text": null,
+      "distance_metro_text": "400 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "visitas",
+      "raw": "{\n  \"location_text\": \"San Miguel, 2D.\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.200\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 400 m del metro.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento de cortesía para visitas.\",\n  \"pets_text\": \"Gatos sí.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 631,
+      "output_tokens": 124,
+      "wall_s": 17.35,
+      "error": null,
+      "spans": {
+        "location_text": "San Miguel, 2D.",
+        "bedrooms_text": null,
+        "price_text": "UF 3.200",
+        "rent_text": null,
+        "distance_metro_text": "A 400 m del metro.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento de cortesía para visitas.",
+        "pets_text": "Gatos sí.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "HT-0501": {
+      "price_clp": 143640000,
+      "roi_pct": 5.85,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.600 UF' = 3600 UF -> 143,640,000 CLP <= 145,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='350 m' bus=None -> min=350 vs max 700",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "HT-0502": {
+      "price_clp": 138000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$138.000.000' = 1.38e+08 CLP -> 138,000,000 CLP <= 145,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 4kg -> ok",
+        "distancia: metro=None bus=None -> min=None vs max 700",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0503": {
+      "price_clp": 131670000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.300 UF' = 3300 UF -> 131,670,000 CLP <= 145,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs gato 4kg -> FALLA",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 700",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0504": {
+      "price_clp": 135660000,
+      "roi_pct": 0.0,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.400 UF' = 3400 UF -> 135,660,000 CLP <= 145,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='600 m' bus=None -> min=600 vs max 700",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0505": {
+      "price_clp": 140000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$140.000.000' = 1.4e+08 CLP -> 140,000,000 CLP <= 145,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='720 m' bus=None -> min=720 vs max 700",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0506": {
+      "price_clp": 147231000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.690 UF' = 3690 UF -> 147,231,000 CLP > 145,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='400 m' bus=None -> min=400 vs max 700",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0507": {
+      "price_clp": 115710000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.900 UF' = 2900 UF -> 115,710,000 CLP <= 145,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='300 m' bus=None -> min=300 vs max 700",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-0508": {
+      "price_clp": 127680000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.200 UF' = 3200 UF -> 127,680,000 CLP <= 145,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='400 m' bus=None -> min=400 vs max 700",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: visitas (requerido=True)"
+      ]
+    }
+  }
+}

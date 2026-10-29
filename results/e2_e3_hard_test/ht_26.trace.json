@@ -1,0 +1,397 @@
+{
+  "facts": {
+    "HT-2601": {
+      "location": "Independencia",
+      "bedrooms": 2,
+      "price_text": "2.950 UF",
+      "rent_text": "13 UF",
+      "distance_metro_text": "1100 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Independencia\",\n  \"bedrooms_text\": \"2D/1B\",\n  \"price_text\": \"UF 2.950\",\n  \"rent_text\": \"Arriendo 13 UF\",\n  \"distance_metro_text\": \"Metro Hospitales a 1.100 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio\",\n  \"pets_text\": \"Gatos OK\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 640,
+      "output_tokens": 130,
+      "wall_s": 8.86,
+      "error": null,
+      "spans": {
+        "location_text": "Independencia",
+        "bedrooms_text": "2D/1B",
+        "price_text": "UF 2.950",
+        "rent_text": "Arriendo 13 UF",
+        "distance_metro_text": "Metro Hospitales a 1.100 m",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Gatos OK",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "HT-2602": {
+      "location": "Recoleta",
+      "bedrooms": 2,
+      "price_text": "$115.000.000",
+      "rent_text": "$560.000",
+      "distance_metro_text": "600 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"Recoleta\",\n  \"bedrooms_text\": \"2 dormitorios\",\n  \"price_text\": \"$115.000.000\",\n  \"rent_text\": \"arriendo $560.000.\",\n  \"distance_metro_text\": \"metro Cerro Blanco a 600 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": null,\n  \"pets_text\": \"acepta mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 636,
+      "output_tokens": 123,
+      "wall_s": 7.65,
+      "error": null,
+      "spans": {
+        "location_text": "Recoleta",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "$115.000.000",
+        "rent_text": "arriendo $560.000.",
+        "distance_metro_text": "metro Cerro Blanco a 600 m",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "acepta mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-2603": {
+      "location": "Conchalí",
+      "bedrooms": null,
+      "price_text": "$105.000.000",
+      "rent_text": "$650.000",
+      "distance_metro_text": "300 m",
+      "distance_bus_text": "300 m",
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Conchalí\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"$105.000.000\",\n  \"rent_text\": \"arriendo $650.000.\",\n  \"distance_metro_text\": \"paradero troncal a 300 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento propio\",\n  \"pets_text\": \"gatos permitidos\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 637,
+      "output_tokens": 126,
+      "wall_s": 7.78,
+      "error": null,
+      "spans": {
+        "location_text": "Conchalí",
+        "bedrooms_text": null,
+        "price_text": "$105.000.000",
+        "rent_text": "arriendo $650.000.",
+        "distance_metro_text": "paradero troncal a 300 m",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento propio",
+        "pets_text": "gatos permitidos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "distance_bus_text: recuperada del aviso (300 m)"
+      ]
+    },
+    "HT-2604": {
+      "location": "independencia",
+      "bedrooms": 2,
+      "price_text": "",
+      "rent_text": null,
+      "distance_metro_text": "500 mts",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"independencia 2 dorm 110 palos metro plaza chacabuco\",\n  \"bedrooms_text\": \"2 dorm\",\n  \"price_text\": null,\n  \"rent_text\": null,\n  \"distance_metro_text\": null,\n  \"distance_bus_text\": null,\n  \"parking_text\": null,\n  \"pets_text\": \"gatos si estac propio\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 622,
+      "output_tokens": 119,
+      "wall_s": 7.39,
+      "error": null,
+      "spans": {
+        "location_text": "independencia 2 dorm 110 palos metro plaza chacabuco",
+        "bedrooms_text": "2 dorm",
+        "price_text": null,
+        "rent_text": null,
+        "distance_metro_text": null,
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "gatos si estac propio",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "distance_metro_text: recuperada del aviso (500 mts)"
+      ]
+    },
+    "HT-2605": {
+      "location": "Independencia",
+      "bedrooms": null,
+      "price_text": "$100.000.000",
+      "rent_text": null,
+      "distance_metro_text": "400 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": 4.0,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Independencia 2D\", \"bedrooms_text\": null, \"price_text\": \"$100.000.000\", \"rent_text\": null, \"distance_metro_text\": \"Metro a 400 m\", \"distance_bus_text\": null, \"parking_text\": \"Con estacionamiento propio\", \"pets_text\": \"Gatos hasta 4 kg\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"si\"}",
+      "prompt_tokens": 630,
+      "output_tokens": 109,
+      "wall_s": 6.84,
+      "error": null,
+      "spans": {
+        "location_text": "Independencia 2D",
+        "bedrooms_text": null,
+        "price_text": "$100.000.000",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 400 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Gatos hasta 4 kg",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "HT-2606": {
+      "location": "Recoleta",
+      "bedrooms": null,
+      "price_text": "",
+      "rent_text": null,
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Recoleta 2D\", \"bedrooms_text\": null, \"price_text\": \"Ciento veintiún millones\", \"rent_text\": null, \"distance_metro_text\": \"Metro a 500 m\", \"distance_bus_text\": null, \"parking_text\": \"Con estacionamiento propio\", \"pets_text\": \"Gatos sí\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"si\"}",
+      "prompt_tokens": 626,
+      "output_tokens": 106,
+      "wall_s": 7.08,
+      "error": null,
+      "spans": {
+        "location_text": "Recoleta 2D",
+        "bedrooms_text": null,
+        "price_text": "Ciento veintiún millones",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 500 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Gatos sí",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "price_text: número no está en el aviso: 'Ciento veintiún millones'"
+      ]
+    },
+    "HT-2607": {
+      "location": "Recoleta",
+      "bedrooms": null,
+      "price_text": "$112.000.000",
+      "rent_text": null,
+      "distance_metro_text": "300 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Recoleta 2D\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"112.000.000$\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 300 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye estacionamiento\",\n  \"pets_text\": \"Gatos sí\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 638,
+      "output_tokens": 119,
+      "wall_s": 12.62,
+      "error": null,
+      "spans": {
+        "location_text": "Recoleta 2D",
+        "bedrooms_text": null,
+        "price_text": "112.000.000$",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 300 m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye estacionamiento",
+        "pets_text": "Gatos sí",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "price_text: no es literal del aviso: '112.000.000$'"
+      ]
+    },
+    "HT-2608": {
+      "location": "Independencia",
+      "bedrooms": 1,
+      "price_text": "$90.000.000",
+      "rent_text": null,
+      "distance_metro_text": "200 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Independencia, 1 dormitorio.\",\n  \"bedrooms_text\": \"1 dormitorio\",\n  \"price_text\": \"$90.000.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 200 m.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Con estacionamiento propio.\",\n  \"pets_text\": \"Gatos sí.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 628,
+      "output_tokens": 122,
+      "wall_s": 10.45,
+      "error": null,
+      "spans": {
+        "location_text": "Independencia, 1 dormitorio.",
+        "bedrooms_text": "1 dormitorio",
+        "price_text": "$90.000.000",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 200 m.",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio.",
+        "pets_text": "Gatos sí.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "HT-2601": {
+      "price_clp": 118000000,
+      "roi_pct": 0.0,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.950 UF' = 2950 UF -> 118,000,000 CLP <= 120,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 5kg -> ok",
+        "distancia: metro='1100 m' bus=None -> min=1100 vs max 1100",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2602": {
+      "price_clp": 115000000,
+      "roi_pct": 5.84,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$115.000.000' = 1.15e+08 CLP -> 115,000,000 CLP <= 120,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 5kg -> ok",
+        "distancia: metro='600 m' bus=None -> min=600 vs max 1100",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "HT-2603": {
+      "price_clp": 105000000,
+      "roi_pct": 7.43,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$105.000.000' = 1.05e+08 CLP -> 105,000,000 CLP <= 120,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 5kg -> ok",
+        "distancia: metro='300 m' bus='300 m' -> min=300 vs max 1100",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2604": {
+      "price_clp": null,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio ilegible: '' -> se rechaza por no verificable",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 5kg -> ok",
+        "distancia: metro='500 mts' bus=None -> min=500 vs max 1100",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "HT-2605": {
+      "price_clp": 100000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$100.000.000' = 1e+08 CLP -> 100,000,000 CLP <= 120,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=4.0 vs gato 5kg -> FALLA",
+        "distancia: metro='400 m' bus=None -> min=400 vs max 1100",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2606": {
+      "price_clp": null,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio ilegible: '' -> se rechaza por no verificable",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 5kg -> ok",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 1100",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2607": {
+      "price_clp": 112000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$112.000.000' = 1.12e+08 CLP -> 112,000,000 CLP <= 120,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 5kg -> ok",
+        "distancia: metro='300 m' bus=None -> min=300 vs max 1100",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2608": {
+      "price_clp": 90000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$90.000.000' = 9e+07 CLP -> 90,000,000 CLP <= 120,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 5kg -> ok",
+        "distancia: metro='200 m' bus=None -> min=200 vs max 1100",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

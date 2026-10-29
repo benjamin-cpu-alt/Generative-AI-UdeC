@@ -1,0 +1,47 @@
+{
+  "approved_matches": [
+    {
+      "id": "HT-1701",
+      "price_clp": 330000000,
+      "roi_pct": 22.09
+    },
+    {
+      "id": "HT-1703",
+      "price_clp": 1300000000,
+      "roi_pct": 55.71
+    },
+    {
+      "id": "HT-1704",
+      "price_clp": 310000000,
+      "roi_pct": 44.52
+    },
+    {
+      "id": "HT-1705",
+      "price_clp": 320000000,
+      "roi_pct": 27.27
+    },
+    {
+      "id": "HT-1708",
+      "price_clp": 2700000,
+      "roi_pct": 266.67
+    }
+  ],
+  "rejected": [
+    {
+      "id": "HT-1702",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    },
+    {
+      "id": "HT-1706",
+      "failed_constraints": ["Presupuesto Máximo de Compra", "Distancia máxima a transporte público"]
+    },
+    {
+      "id": "HT-1707",
+      "failed_constraints": ["Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado"]
+    },
+    {
+      "id": "HT-1708",
+      "failed_constraints": ["Presupuesto Máximo de Compra", "Distancia máxima a transporte público"]
+    }
+  ]
+}

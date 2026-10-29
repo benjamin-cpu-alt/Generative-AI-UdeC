@@ -1,0 +1,380 @@
+{
+  "facts": {
+    "HT-1401": {
+      "location": "La Reina",
+      "bedrooms": 3,
+      "price_text": "4.700 UF",
+      "rent_text": "$1.000.000",
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"La Reina, casa 3D/2B con patio\",\n  \"bedrooms_text\": \"3D\",\n  \"price_text\": \"UF 4.700\",\n  \"rent_text\": \"Arriendo $1.000.000\",\n  \"distance_metro_text\": \"Paradero troncal en Av. Larraín a 500 m.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento para un auto.\",\n  \"pets_text\": \"Se aceptan perros\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 652,
+      "output_tokens": 147,
+      "wall_s": 10.41,
+      "error": null,
+      "spans": {
+        "location_text": "La Reina, casa 3D/2B con patio",
+        "bedrooms_text": "3D",
+        "price_text": "UF 4.700",
+        "rent_text": "Arriendo $1.000.000",
+        "distance_metro_text": "Paradero troncal en Av. Larraín a 500 m.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento para un auto.",
+        "pets_text": "Se aceptan perros",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-1402": {
+      "location": "Peñalolén",
+      "bedrooms": 3,
+      "price_text": "$170.000.000",
+      "rent_text": "$1.150.000",
+      "distance_metro_text": "700 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Peñalolén\",\n  \"bedrooms_text\": \"3 dormitorios\",\n  \"price_text\": \"$170.000.000\",\n  \"rent_text\": \"arriendo $1.150.000\",\n  \"distance_metro_text\": \"metro Grecia 700 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento propio\",\n  \"pets_text\": \"mascaras sin restricción\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 639,
+      "output_tokens": 132,
+      "wall_s": 9.21,
+      "error": null,
+      "spans": {
+        "location_text": "Peñalolén",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "$170.000.000",
+        "rent_text": "arriendo $1.150.000",
+        "distance_metro_text": "metro Grecia 700 m",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento propio",
+        "pets_text": "mascaras sin restricción",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets_text: recuperado del aviso ('Peñalolén — 3 dormitorios — $170.000.000 — metro')"
+      ]
+    },
+    "HT-1403": {
+      "location": "La Reina",
+      "bedrooms": null,
+      "price_text": "4.300 UF",
+      "rent_text": null,
+      "distance_metro_text": "400 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 10.0,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"La Reina\", \"bedrooms_text\": null, \"price_text\": \"UF 4.300\", \"rent_text\": null, \"distance_metro_text\": \"Metro a 400 m\", \"distance_bus_text\": null, \"parking_text\": \"Con estacionamiento propio\", \"pets_text\": \"se aceptan mascotas pequeñas de máximo 10 kg\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 632,
+      "output_tokens": 111,
+      "wall_s": 7.21,
+      "error": null,
+      "spans": {
+        "location_text": "La Reina",
+        "bedrooms_text": null,
+        "price_text": "UF 4.300",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 400 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "se aceptan mascotas pequeñas de máximo 10 kg",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-1404": {
+      "location": "La Reina",
+      "bedrooms": 2,
+      "price_text": "4.900 UF",
+      "rent_text": null,
+      "distance_metro_text": "850 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"La Reina, 2D/2B\",\n  \"bedrooms_text\": \"2D/2B\",\n  \"price_text\": \"UF 4.900; el propietario lo bajó a UF 4.600\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro Plaza Egaña a 850 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estac. propio.\",\n  \"pets_text\": \"Mascotas permitidas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 648,
+      "output_tokens": 146,
+      "wall_s": 9.25,
+      "error": null,
+      "spans": {
+        "location_text": "La Reina, 2D/2B",
+        "bedrooms_text": "2D/2B",
+        "price_text": "UF 4.900; el propietario lo bajó a UF 4.600",
+        "rent_text": null,
+        "distance_metro_text": "Metro Plaza Egaña a 850 m",
+        "distance_bus_text": null,
+        "parking_text": "Estac. propio.",
+        "pets_text": "Mascotas permitidas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-1405": {
+      "location": "La Reina",
+      "bedrooms": 4,
+      "price_text": "",
+      "rent_text": null,
+      "distance_metro_text": "600 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"La Reina\", \"bedrooms_text\": \"4D\", \"price_text\": \"Doscientos millones\", \"rent_text\": null, \"distance_metro_text\": \"Metro a 600 m\", \"distance_bus_text\": null, \"parking_text\": \"Con estacionamiento propio\", \"pets_text\": \"Admite mascotas\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 625,
+      "output_tokens": 105,
+      "wall_s": 6.97,
+      "error": null,
+      "spans": {
+        "location_text": "La Reina",
+        "bedrooms_text": "4D",
+        "price_text": "Doscientos millones",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 600 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "price_text: número no está en el aviso: 'Doscientos millones'"
+      ]
+    },
+    "HT-1406": {
+      "location": "La Reina",
+      "bedrooms": null,
+      "price_text": "4.400 UF",
+      "rent_text": null,
+      "distance_metro_text": "1,2 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"La Reina\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 4.400\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"A 1,2 km del metro\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Con estacionamiento propio\",\n  \"pets_text\": \"Admite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 628,
+      "output_tokens": 120,
+      "wall_s": 7.74,
+      "error": null,
+      "spans": {
+        "location_text": "La Reina",
+        "bedrooms_text": null,
+        "price_text": "UF 4.400",
+        "rent_text": null,
+        "distance_metro_text": "A 1,2 km del metro",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-1407": {
+      "location": "La Reina",
+      "bedrooms": null,
+      "price_text": "4.200 UF",
+      "rent_text": null,
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "ninguno",
+      "raw": "{\n  \"location_text\": \"La Reina 2D\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 4.200\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 500 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento comunitario sin asignar, por orden de llegada.\",\n  \"pets_text\": \"Admite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 633,
+      "output_tokens": 129,
+      "wall_s": 8.31,
+      "error": null,
+      "spans": {
+        "location_text": "La Reina 2D",
+        "bedrooms_text": null,
+        "price_text": "UF 4.200",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 500 m",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento comunitario sin asignar, por orden de llegada.",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-1408": {
+      "location": "La Reina",
+      "bedrooms": null,
+      "price_text": "4.500 UF",
+      "rent_text": null,
+      "distance_metro_text": "300 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"La Reina\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 4.500\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 300 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Con estacionamiento propio\",\n  \"pets_text\": \"Ideal para familias con niños\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 627,
+      "output_tokens": 119,
+      "wall_s": 8.18,
+      "error": null,
+      "spans": {
+        "location_text": "La Reina",
+        "bedrooms_text": null,
+        "price_text": "UF 4.500",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 300 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Ideal para familias con niños",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "HT-1401": {
+      "price_clp": 193875000,
+      "roi_pct": 6.19,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.700 UF' = 4700 UF -> 193,875,000 CLP <= 195,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 20kg -> ok",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 900",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-1402": {
+      "price_clp": 170000000,
+      "roi_pct": 8.12,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$170.000.000' = 1.7e+08 CLP -> 170,000,000 CLP <= 195,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 20kg -> ok",
+        "distancia: metro='700 m' bus=None -> min=700 vs max 900",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-1403": {
+      "price_clp": 177375000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.300 UF' = 4300 UF -> 177,375,000 CLP <= 195,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=10.0 vs perro 20kg -> FALLA",
+        "distancia: metro='400 m' bus=None -> min=400 vs max 900",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-1404": {
+      "price_clp": 202125000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.900 UF' = 4900 UF -> 202,125,000 CLP > 195,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 20kg -> ok",
+        "distancia: metro='850 m' bus=None -> min=850 vs max 900",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "HT-1405": {
+      "price_clp": null,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio ilegible: '' -> se rechaza por no verificable",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 20kg -> ok",
+        "distancia: metro='600 m' bus=None -> min=600 vs max 900",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-1406": {
+      "price_clp": 181500000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.400 UF' = 4400 UF -> 181,500,000 CLP <= 195,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 20kg -> ok",
+        "distancia: metro='1,2 km' bus=None -> min=1200 vs max 900",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-1407": {
+      "price_clp": 173250000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.200 UF' = 4200 UF -> 173,250,000 CLP <= 195,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 20kg -> ok",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 900",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: ninguno (requerido=True)"
+      ]
+    },
+    "HT-1408": {
+      "price_clp": 185625000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.500 UF' = 4500 UF -> 185,625,000 CLP <= 195,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 20kg -> ok",
+        "distancia: metro='300 m' bus=None -> min=300 vs max 900",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

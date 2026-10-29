@@ -1,0 +1,196 @@
+{
+  "facts": {
+    "REAL-19": {
+      "location": "venta",
+      "bedrooms": 4,
+      "price_text": "3.760 UF",
+      "rent_text": null,
+      "distance_metro_text": null,
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Casa en venta, ubicada en la comuna de Santiago\",\n  \"bedrooms_text\": \"4 dormitorios\",\n  \"price_text\": \"UF 3.760\",\n  \"rent_text\": null,\n  \"distance_metro_text\": null,\n  \"distance_bus_text\": null,\n  \"parking_text\": \"1 estacionamiento\",\n  \"pets_text\": \"Admite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en venta, ubicada en la comuna de Santiago",
+        "bedrooms_text": "4 dormitorios",
+        "price_text": "UF 3.760",
+        "rent_text": null,
+        "distance_metro_text": null,
+        "distance_bus_text": null,
+        "parking_text": "1 estacionamiento",
+        "pets_text": "Admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "REAL-25": {
+      "location": "Santiago",
+      "bedrooms": 1,
+      "price_text": "1.823 UF",
+      "rent_text": null,
+      "distance_metro_text": "779 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"Departamento en Santiago, Gorbea 2203.\",\n  \"bedrooms_text\": \"1D/1B\",\n  \"price_text\": \"UF 1.823\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"779 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": null,\n  \"pets_text\": null,\n  \"acepta_mascotas\": \"no_dice\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en Santiago, Gorbea 2203.",
+        "bedrooms_text": "1D/1B",
+        "price_text": "UF 1.823",
+        "rent_text": null,
+        "distance_metro_text": "779 m",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": null,
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "REAL-31": {
+      "location": "Las Condes",
+      "bedrooms": 6,
+      "price_text": "",
+      "rent_text": null,
+      "distance_metro_text": "4305 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": null,
+        "bedrooms_text": "Casa en Las Condes. 6D/4B. Precio: UF 32.900. Distancia estimada a la estación de metro Los Dominicos: 4305 m. Gran casa con vista despejada hacia la cordillera en condominio en San Carlos de apoquindo a pasos de colegio padre hurtado y Juanita de Los Andes. Primer piso. Hall de acceso. Living y comedor separados y ambos con salida a jardín formado. Dormitorio principal en suite con 2 walkin closet. Cocina con isla central. Gran Logia. Sala de estar / escritorio. Baño de visitas. Bodega. Jardín con riego automático, quincho con parrilla. Piscina climat. ... izada. Segundo piso. Gran sala de estar. Dormitorio en suite. Tres dormitorios que comparten un baño. Pieza y baño de servicio. Mostrar.",
+        "price_text": "",
+        "rent_text": null,
+        "distance_metro_text": null,
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": null,
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "distance_metro_text: recuperada del aviso (4305 m)",
+        "location_text: recuperada del aviso ('Las Condes')"
+      ]
+    },
+    "REAL-37": {
+      "location": "Santo Domingo",
+      "bedrooms": 1,
+      "price_text": "3.831,14 UF",
+      "rent_text": null,
+      "distance_metro_text": "342 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Casa en Santo Domingo 3916, Quinta Normal, Santiago\", \"bedrooms_text\": \"1 dormitorio\", \"price_text\": \"UF 3.831,14\", \"rent_text\": null, \"distance_metro_text\": \"342 m\", \"distance_bus_text\": null, \"parking_text\": \"Se incluye 1 estacionamiento\", \"pets_text\": \"no_dice\", \"acepta_mascotas\": \"no_dice\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Santo Domingo 3916, Quinta Normal, Santiago",
+        "bedrooms_text": "1 dormitorio",
+        "price_text": "UF 3.831,14",
+        "rent_text": null,
+        "distance_metro_text": "342 m",
+        "distance_bus_text": null,
+        "parking_text": "Se incluye 1 estacionamiento",
+        "pets_text": "no_dice",
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets: respuestas sin cláusula anclada -> no_mencionada"
+      ]
+    }
+  },
+  "decisions": {
+    "REAL-19": {
+      "price_clp": 154791793,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.760 UF' = 3760 UF -> 154,791,793 CLP <= 180,000,000",
+        "mascotas: el comprador no tiene mascota -> ok",
+        "distancia: metro=None bus=None -> min=None vs max 1200",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: propio (requerido=False)"
+      ]
+    },
+    "REAL-25": {
+      "price_clp": 75049319,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '1.823 UF' = 1823 UF -> 75,049,319 CLP <= 180,000,000",
+        "mascotas: el comprador no tiene mascota -> ok",
+        "distancia: metro='779 m' bus=None -> min=779 vs max 1200",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: no_mencionado (requerido=False)"
+      ]
+    },
+    "REAL-31": {
+      "price_clp": null,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio ilegible: '' -> se rechaza por no verificable",
+        "mascotas: el comprador no tiene mascota -> ok",
+        "distancia: metro='4305 m' bus=None -> min=4305 vs max 1200",
+        "dormitorios: 6 vs min 2",
+        "estacionamiento: no_mencionado (requerido=False)"
+      ]
+    },
+    "REAL-37": {
+      "price_clp": 157720486,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.831,14 UF' = 3831.14 UF -> 157,720,486 CLP <= 180,000,000",
+        "mascotas: el comprador no tiene mascota -> ok",
+        "distancia: metro='342 m' bus=None -> min=342 vs max 1200",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=False)"
+      ]
+    }
+  }
+}

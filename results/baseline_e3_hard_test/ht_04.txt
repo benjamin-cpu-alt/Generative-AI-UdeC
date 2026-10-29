@@ -1,0 +1,41 @@
+{
+  "approved_matches": [
+    {
+      "id": "HT-0405",
+      "price_clp": 48300000,
+      "roi_pct": 88.66
+    },
+    {
+      "id": "HT-0404",
+      "price_clp": 205000000,
+      "roi_pct": 0.00
+    },
+    {
+      "id": "HT-0408",
+      "price_clp": 46000000,
+      "roi_pct": 0.00
+    }
+  ],
+  "rejected": [
+    {
+      "id": "HT-0401",
+      "failed_constraints": ["Hard Constraint 2: Mascotas: Tiene 1 perro de 25kg (se rechaza si la propiedad prohíbe mascotas, o si las acepta pero no de esa especie o de ese peso)"]
+    },
+    {
+      "id": "HT-0402",
+      "failed_constraints": ["Hard Constraint 2: Mascotas: Admite mascotas"]
+    },
+    {
+      "id": "HT-0403",
+      "failed_constraints": ["Hard Constraint 1: Presupuesto Máximo de Compra: $200.000.000 CLP (precio: $165.000.000 CLP)"]
+    },
+    {
+      "id": "HT-0406",
+      "failed_constraints": ["Hard Constraint 1: Presupuesto Máximo de Compra: $200.000.000 CLP (precio: $205.000.000 CLP)"]
+    },
+    {
+      "id": "HT-0407",
+      "failed_constraints": ["Hard Constraint 2: Mascotas: Admite mascotas", "Hard Constraint 4: Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado (no sirve estacionamiento de visitas ni en la calle)"]
+    }
+  ]
+}

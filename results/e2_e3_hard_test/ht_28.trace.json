@@ -1,0 +1,385 @@
+{
+  "facts": {
+    "HT-2801": {
+      "location": "Ñuñoa",
+      "bedrooms": 3,
+      "price_text": "4.550 UF",
+      "rent_text": "23 UF",
+      "distance_metro_text": "350 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Ñuñoa, 3D/2B.\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 4.550.\",\n  \"rent_text\": \"Arriendo 23 UF.\",\n  \"distance_metro_text\": \"Metro Ñuñoa a 350 m.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio.\",\n  \"pets_text\": \"Gatos sí.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 641,
+      "output_tokens": 133,
+      "wall_s": 9.31,
+      "error": null,
+      "spans": {
+        "location_text": "Ñuñoa, 3D/2B.",
+        "bedrooms_text": null,
+        "price_text": "UF 4.550.",
+        "rent_text": "Arriendo 23 UF.",
+        "distance_metro_text": "Metro Ñuñoa a 350 m.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio.",
+        "pets_text": "Gatos sí.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "HT-2802": {
+      "location": "pasaje de Ñuñoa",
+      "bedrooms": 4,
+      "price_text": "$188.000.000",
+      "rent_text": null,
+      "distance_metro_text": "700 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Casa en pasaje de Ñuñoa\", \"bedrooms_text\": \"4 dormitorios\", \"price_text\": \"$188.000.000\", \"rent_text\": null, \"distance_metro_text\": \"metro Chile España a 700 m\", \"distance_bus_text\": null, \"parking_text\": \"estacionamiento para 2 autos\", \"pets_text\": \"admite mascotas\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 637,
+      "output_tokens": 118,
+      "wall_s": 8.43,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en pasaje de Ñuñoa",
+        "bedrooms_text": "4 dormitorios",
+        "price_text": "$188.000.000",
+        "rent_text": null,
+        "distance_metro_text": "metro Chile España a 700 m",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento para 2 autos",
+        "pets_text": "admite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-2803": {
+      "location": "Macul",
+      "bedrooms": 3,
+      "price_text": "$170.000.000",
+      "rent_text": "$1.150.000",
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Macul\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"$170.000.000\",\n  \"rent_text\": \"arriendo $1.150.000\",\n  \"distance_metro_text\": \"metro Macul a 500 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento propio\",\n  \"pets_text\": \"gatos OK\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 639,
+      "output_tokens": 125,
+      "wall_s": 7.89,
+      "error": null,
+      "spans": {
+        "location_text": "Macul",
+        "bedrooms_text": null,
+        "price_text": "$170.000.000",
+        "rent_text": "arriendo $1.150.000",
+        "distance_metro_text": "metro Macul a 500 m",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento propio",
+        "pets_text": "gatos OK",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "HT-2804": {
+      "location": "Ñuñoa",
+      "bedrooms": 3,
+      "price_text": "4.400 UF",
+      "rent_text": null,
+      "distance_metro_text": "600 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"Ñuñoa. 3 dorms (el aviso anterior decía 2 por error).\",\n  \"bedrooms_text\": \"3 dorms\",\n  \"price_text\": \"UF 4.400\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro Monseñor Eyzaguirre a 600 m.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estac. propio.\",\n  \"pets_text\": \"Gatos permitidos.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 648,
+      "output_tokens": 145,
+      "wall_s": 9.5,
+      "error": null,
+      "spans": {
+        "location_text": "Ñuñoa. 3 dorms (el aviso anterior decía 2 por error).",
+        "bedrooms_text": "3 dorms",
+        "price_text": "UF 4.400",
+        "rent_text": null,
+        "distance_metro_text": "Metro Monseñor Eyzaguirre a 600 m.",
+        "distance_bus_text": null,
+        "parking_text": "Estac. propio.",
+        "pets_text": "Gatos permitidos.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "HT-2805": {
+      "location": "Ñuñoa",
+      "bedrooms": 2,
+      "price_text": "4.000 UF",
+      "rent_text": null,
+      "distance_metro_text": "300 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Ñuñoa, 2D/2B + E\", \"bedrooms_text\": \"2D/2B\", \"price_text\": \"UF 4.000\", \"rent_text\": null, \"distance_metro_text\": \"Metro a 300 m\", \"distance_bus_text\": null, \"parking_text\": \"Con estacionamiento propio\", \"pets_text\": \"Gatos sí\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"si\"}",
+      "prompt_tokens": 633,
+      "output_tokens": 118,
+      "wall_s": 7.41,
+      "error": null,
+      "spans": {
+        "location_text": "Ñuñoa, 2D/2B + E",
+        "bedrooms_text": "2D/2B",
+        "price_text": "UF 4.000",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 300 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Gatos sí",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "HT-2806": {
+      "location": "Ñuñoa",
+      "bedrooms": null,
+      "price_text": "4.300 UF",
+      "rent_text": null,
+      "distance_metro_text": "300 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Ñuñoa 3D\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 4.300\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 300 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Con estacionamiento propio\",\n  \"pets_text\": \"Mascotas: depende del reglamento\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 631,
+      "output_tokens": 126,
+      "wall_s": 8.34,
+      "error": null,
+      "spans": {
+        "location_text": "Ñuñoa 3D",
+        "bedrooms_text": null,
+        "price_text": "UF 4.300",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 300 m",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Mascotas: depende del reglamento",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HT-2807": {
+      "location": "Ñuñoa",
+      "bedrooms": null,
+      "price_text": "$185.000.000",
+      "rent_text": null,
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Ñuñoa 3D\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"$185.000.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 500 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento $8.000.000\",\n  \"pets_text\": \"Gatos sí\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 632,
+      "output_tokens": 125,
+      "wall_s": 7.81,
+      "error": null,
+      "spans": {
+        "location_text": "Ñuñoa 3D",
+        "bedrooms_text": null,
+        "price_text": "$185.000.000",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 500 m",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento $8.000.000",
+        "pets_text": "Gatos sí",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    },
+    "HT-2808": {
+      "location": "Ñuñoa",
+      "bedrooms": null,
+      "price_text": "4.100 UF",
+      "rent_text": null,
+      "distance_metro_text": "800 metros",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "gato"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Ñuñoa\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 4.100\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro a 800 metros\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Con estacionamiento propio\",\n  \"pets_text\": \"Gatos sí\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 627,
+      "output_tokens": 117,
+      "wall_s": 7.38,
+      "error": null,
+      "spans": {
+        "location_text": "Ñuñoa",
+        "bedrooms_text": null,
+        "price_text": "UF 4.100",
+        "rent_text": null,
+        "distance_metro_text": "Metro a 800 metros",
+        "distance_bus_text": null,
+        "parking_text": "Con estacionamiento propio",
+        "pets_text": "Gatos sí",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "si"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "HT-2801": {
+      "price_clp": 187232500,
+      "roi_pct": 0.0,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.550 UF' = 4550 UF -> 187,232,500 CLP <= 190,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='350 m' bus=None -> min=350 vs max 700",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2802": {
+      "price_clp": 188000000,
+      "roi_pct": null,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$188.000.000' = 1.88e+08 CLP -> 188,000,000 CLP <= 190,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='700 m' bus=None -> min=700 vs max 700",
+        "dormitorios: 4 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2803": {
+      "price_clp": 170000000,
+      "roi_pct": 8.12,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '$170.000.000' = 1.7e+08 CLP -> 170,000,000 CLP <= 190,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 700",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2804": {
+      "price_clp": 181060000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.400 UF' = 4400 UF -> 181,060,000 CLP <= 190,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='600 m' bus=None -> min=600 vs max 700",
+        "dormitorios: 3 vs min 3",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "HT-2805": {
+      "price_clp": 164600000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.000 UF' = 4000 UF -> 164,600,000 CLP <= 190,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='300 m' bus=None -> min=300 vs max 700",
+        "dormitorios: 2 vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2806": {
+      "price_clp": 176945000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.300 UF' = 4300 UF -> 176,945,000 CLP <= 190,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='300 m' bus=None -> min=300 vs max 700",
+        "dormitorios: no verificable vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2807": {
+      "price_clp": 185000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$185.000.000' = 1.85e+08 CLP -> 185,000,000 CLP <= 190,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 700",
+        "dormitorios: no verificable vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HT-2808": {
+      "price_clp": 168715000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.100 UF' = 4100 UF -> 168,715,000 CLP <= 190,000,000",
+        "mascotas: politica=permitidas especies=['gato'] max_kg=None vs gato 6kg -> ok",
+        "distancia: metro='800 metros' bus=None -> min=800 vs max 700",
+        "dormitorios: no verificable vs min 3",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

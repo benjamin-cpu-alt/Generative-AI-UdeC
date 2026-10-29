@@ -162,6 +162,9 @@ class Sistema:
         obj = self._llm(tr, "Lector", p["system"], user, schema)
         spans_out = {k: obj.get(k) for k in schema["properties"]}
         if self.cfg.esquema is False:   # sin esquema las respuestas cerradas pueden faltar
+            for k, v in spans_out.items():   # y un "fragmento" puede llegar como número o lista
+                if v is not None and not isinstance(v, str):
+                    spans_out[k] = str(v) if isinstance(v, (int, float)) else None
             for k in ("acepta_mascotas", "acepta_perros", "acepta_gatos"):
                 if k in spans_out and spans_out[k] not in grounding.ANSWERS:
                     spans_out[k] = "no_dice"

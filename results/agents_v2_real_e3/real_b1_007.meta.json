@@ -1,0 +1,35 @@
+{
+  "case_id": "real_b1_007",
+  "run": "agents_v2_real_e3",
+  "split": "real_e3",
+  "mode": "agents",
+  "config": "full",
+  "model": "phi4-mini:latest",
+  "prompts": {
+    "lector": "v1",
+    "verificador": "v1",
+    "decisor": "v2"
+  },
+  "grounding_version": "g3",
+  "calls": 12,
+  "prompt_tokens": 13893,
+  "output_tokens": 1267,
+  "wall_s": 85.16,
+  "llm_s": 85.16,
+  "acciones": {
+    "llamadas_lector": 4,
+    "llamadas_verificador": 6,
+    "verificador_corregir": 6,
+    "comprobar_ok": 6,
+    "llamadas_decisor": 2,
+    "decisor_consultar": 1,
+    "verificador_no_verificable": 2,
+    "decisor_cerrar": 1
+  },
+  "mensajes": 30,
+  "done_reason": "error",
+  "errors": [
+    "Lector: Unterminated string starting at: line 11 column 20 (char 928)"
+  ],
+  "timestamp": "2026-10-29T19:20:18"
+}

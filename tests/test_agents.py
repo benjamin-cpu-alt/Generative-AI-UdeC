@@ -260,6 +260,19 @@ def test_ablacion_sin_literal_acepta_sin_evidencia():
     assert full["rejected"] and sin["approved_matches"][0]["price_clp"] == 100_000_000
 
 
+def test_ablacion_sin_esquema_tolera_spans_que_no_son_texto():
+    class Raro(FakeLLM):
+        def __call__(self, model, system, user, schema, esquema=True, **kw):
+            obj, meta = super().__call__(model, system, user, schema, esquema, **kw)
+            if self.calls[-1] == "Lector":
+                obj = {**obj, "pets_text": ["Acepta perros"], "bedrooms_text": 2}
+            return obj, meta
+    fake = Raro(lambda u: {}, lambda u: {"accion": "cerrar", "consultas": []})
+    _, tr = Sistema(Config(esquema=False), fake).run_case(_case([PROP]))
+    spans = next(m["contenido"] for m in tr.mensajes if m["tipo"] == "spans")
+    assert spans["pets_text"] is None and spans["bedrooms_text"] == "2"
+
+
 def test_nombre_de_la_configuracion():
     assert Config().nombre == "full"
     assert Config(retro=False).nombre == "sin_retro"
