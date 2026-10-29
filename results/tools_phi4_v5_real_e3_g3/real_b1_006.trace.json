@@ -1,0 +1,200 @@
+{
+  "facts": {
+    "REAL-18": {
+      "location": "Bahía Catalina/Lapizlasuli",
+      "bedrooms": 1,
+      "price_text": "$70.000.000",
+      "rent_text": null,
+      "distance_metro_text": "2330 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Casa en Bahía Catalina/Lapizlasuli, en la comuna de La Florida.\",\n  \"bedrooms_text\": \"Un dormitorio principal y un segundo dormitorio pequeño\",\n  \"price_text\": \"$70.000.000\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"2330 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Incluye 1 estacionamiento\",\n  \"pets_text\": \"Permite mascotas\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 811,
+      "output_tokens": 140,
+      "wall_s": 7.46,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Bahía Catalina/Lapizlasuli, en la comuna de La Florida.",
+        "bedrooms_text": "Un dormitorio principal y un segundo dormitorio pequeño",
+        "price_text": "$70.000.000",
+        "rent_text": null,
+        "distance_metro_text": "2330 m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento",
+        "pets_text": "Permite mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "REAL-24": {
+      "location": "Providencia",
+      "bedrooms": 7,
+      "price_text": "$479.000.000",
+      "rent_text": null,
+      "distance_metro_text": "688 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Casa en Providencia\", \"bedrooms_text\": \"7D\", \"price_text\": \"$479.000.000\", \"rent_text\": null, \"distance_metro_text\": \"688 m\", \"distance_bus_text\": null, \"parking_text\": \"Incluye 2 estacionamientos\", \"pets_text\": \"no_dice}\", \"acepta_mascotas\": \"no_dice\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 853,
+      "output_tokens": 110,
+      "wall_s": 6.03,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Providencia",
+        "bedrooms_text": "7D",
+        "price_text": "$479.000.000",
+        "rent_text": null,
+        "distance_metro_text": "688 m",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 2 estacionamientos",
+        "pets_text": "no_dice}",
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets: respuestas sin cláusula anclada -> no_mencionada"
+      ]
+    },
+    "REAL-30": {
+      "location": "Las Condes",
+      "bedrooms": 5,
+      "price_text": "19.900 UF",
+      "rent_text": null,
+      "distance_metro_text": "555 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\"location_text\": \"Casa en Las Condes.\", \"bedrooms_text\": \"5D/4B\", \"price_text\": \"UF 19.900.\", \"rent_text\": null, \"distance_metro_text\": \"Distancia estimada a la estación de metro Los Dominicos: 555 m.\", \"distance_bus_text\": null, \"parking_text\": \"espacio para estacionar 3 a 4 autos.\", \"pets_text\": null, \"acepta_mascotas\": \"no_dice\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 837,
+      "output_tokens": 129,
+      "wall_s": 6.59,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Las Condes.",
+        "bedrooms_text": "5D/4B",
+        "price_text": "UF 19.900.",
+        "rent_text": null,
+        "distance_metro_text": "Distancia estimada a la estación de metro Los Dominicos: 555 m.",
+        "distance_bus_text": null,
+        "parking_text": "espacio para estacionar 3 a 4 autos.",
+        "pets_text": null,
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "REAL-36": {
+      "location": "Ñuñoa",
+      "bedrooms": 1,
+      "price_text": "4.000 UF",
+      "rent_text": null,
+      "distance_metro_text": "584 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Departamento en Ñuñoa.\", \"bedrooms_text\": \"1D/1B\", \"price_text\": \"UF 4.000.\", \"rent_text\": null, \"distance_metro_text\": \"Distancia estimada a la estación de metro Irarrázaval: 584 m.\", \"distance_bus_text\": null, \"parking_text\": \"1 estacionamiento.\", \"pets_text\": \"no_dice.\",\"acepta_mascotas\": \"no_dice\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 823,
+      "output_tokens": 126,
+      "wall_s": 6.47,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en Ñuñoa.",
+        "bedrooms_text": "1D/1B",
+        "price_text": "UF 4.000.",
+        "rent_text": null,
+        "distance_metro_text": "Distancia estimada a la estación de metro Irarrázaval: 584 m.",
+        "distance_bus_text": null,
+        "parking_text": "1 estacionamiento.",
+        "pets_text": "no_dice.",
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets: respuestas sin cláusula anclada -> no_mencionada"
+      ]
+    }
+  },
+  "decisions": {
+    "REAL-18": {
+      "price_clp": 70000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte",
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$70.000.000' = 7e+07 CLP -> 70,000,000 CLP <= 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 18kg -> ok",
+        "distancia: metro='2330 m' bus=None -> min=2330 vs max 1000",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "REAL-24": {
+      "price_clp": 479000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "mascotas"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$479.000.000' = 4.79e+08 CLP -> 479,000,000 CLP > 150,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 18kg -> FALLA",
+        "distancia: metro='688 m' bus=None -> min=688 vs max 1000",
+        "dormitorios: 7 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "REAL-30": {
+      "price_clp": 819243797,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "mascotas",
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '19.900 UF' = 19900 UF -> 819,243,797 CLP > 150,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 18kg -> FALLA",
+        "distancia: metro='555 m' bus=None -> min=555 vs max 1000",
+        "dormitorios: 5 vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "REAL-36": {
+      "price_clp": 164672120,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "mascotas",
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '4.000 UF' = 4000 UF -> 164,672,120 CLP > 150,000,000",
+        "mascotas: politica=no_mencionada especies=cualquiera max_kg=None vs perro 18kg -> FALLA",
+        "distancia: metro='584 m' bus=None -> min=584 vs max 1000",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

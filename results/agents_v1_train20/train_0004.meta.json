@@ -1,0 +1,29 @@
+{
+  "case_id": "train_0004",
+  "run": "agents_v1_train20",
+  "split": "train",
+  "mode": "agents",
+  "config": "full",
+  "model": "phi4-mini:latest",
+  "prompts": {
+    "lector": "v1",
+    "verificador": "v1",
+    "decisor": "v1"
+  },
+  "grounding_version": "g3",
+  "calls": 6,
+  "prompt_tokens": 4666,
+  "output_tokens": 824,
+  "wall_s": 72.5,
+  "llm_s": 72.49,
+  "acciones": {
+    "llamadas_lector": 5,
+    "avisos_sin_dudas": 5,
+    "llamadas_decisor": 1,
+    "decisor_cerrar": 1
+  },
+  "mensajes": 20,
+  "done_reason": "stop",
+  "errors": [],
+  "timestamp": "2026-10-29T10:59:52"
+}

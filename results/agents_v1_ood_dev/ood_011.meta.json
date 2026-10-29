@@ -1,0 +1,37 @@
+{
+  "case_id": "ood_011",
+  "run": "agents_v1_ood_dev",
+  "split": "ood",
+  "mode": "agents",
+  "config": "full",
+  "model": "phi4-mini:latest",
+  "prompts": {
+    "lector": "v1",
+    "verificador": "v1",
+    "decisor": "v1"
+  },
+  "grounding_version": "g3",
+  "calls": 17,
+  "prompt_tokens": 16056,
+  "output_tokens": 1664,
+  "wall_s": 94.31,
+  "llm_s": 94.3,
+  "acciones": {
+    "llamadas_lector": 5,
+    "llamadas_verificador": 10,
+    "verificador_corregir": 6,
+    "comprobar_rechaza": 3,
+    "comprobar_ok": 3,
+    "avisos_sin_dudas": 1,
+    "verificador_sin_objeciones": 1,
+    "dudas_sin_resolver": 1,
+    "llamadas_decisor": 2,
+    "decisor_consultar": 2,
+    "verificador_no_verificable": 4,
+    "cierre_por_presupuesto": 1
+  },
+  "mensajes": 41,
+  "done_reason": "stop",
+  "errors": [],
+  "timestamp": "2026-10-29T12:57:21"
+}

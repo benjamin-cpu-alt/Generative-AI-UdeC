@@ -1,0 +1,183 @@
+{
+  "facts": {
+    "REAL-17": {
+      "location": "Providencia",
+      "bedrooms": 5,
+      "price_text": "48.600 UF",
+      "rent_text": null,
+      "distance_metro_text": "786 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "ninguno",
+      "raw": "{\n  \"location_text\": \"Casa en Providencia. 5D/4B, 1.280 m². Distancia estimada a la estación de metro Los Leones: 786 m. Sin Estacionamiento. Se vende y arriendo amplia casa de un piso, ubicada en calle Los Araucanos, en un sector privilegiado del barrio Pedro de Valdivia Norte.\",\n  \"bedrooms_text\": \"5D/4B\",\n  \"price_text\": \"UF 48.600.\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Distancia estimada a la estación de metro Los Leones: 786 m.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Sin Estacionamiento.\",\n  \"pets_text\": null,\n  \"acepta_mascotas\": \"no_dice\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 843,
+      "output_tokens": 203,
+      "wall_s": 11.21,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Providencia. 5D/4B, 1.280 m². Distancia estimada a la estación de metro Los Leones: 786 m. Sin Estacionamiento. Se vende y arriendo amplia casa de un piso, ubicada en calle Los Araucanos, en un sector privilegiado del barrio Pedro de Valdivia Norte.",
+        "bedrooms_text": "5D/4B",
+        "price_text": "UF 48.600.",
+        "rent_text": null,
+        "distance_metro_text": "Distancia estimada a la estación de metro Los Leones: 786 m.",
+        "distance_bus_text": null,
+        "parking_text": "Sin Estacionamiento.",
+        "pets_text": null,
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "REAL-23": {
+      "location": null,
+      "bedrooms": null,
+      "price_text": "",
+      "rent_text": null,
+      "distance_metro_text": null,
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 13.159101963043213,
+      "error": "Unterminated string starting at: line 8 column 19 (char 283)",
+      "spans": {},
+      "warnings": []
+    },
+    "REAL-29": {
+      "location": "La Florida",
+      "bedrooms": 5,
+      "price_text": "11.500 UF",
+      "rent_text": null,
+      "distance_metro_text": "6405 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\"location_text\": \"Casa en La Florida\", \"bedrooms_text\": \"5D/3B\", \"price_text\": \"UF 11.500\", \"rent_text\": null, \"distance_metro_text\": \"Distancia estimada a la estación de metro Macul: 6405 m.\", \"distance_bus_text\": null, \"parking_text\": \"La vivienda se emplaza en un sector residencial muy tranquilo de Alto Macul, privilegiado, a los pies de la cordillera. Sin pago de gasto común. Mostrar.\", \"pets_text\": \"ets cerrados, una sala de estar, baño completo y una oficina con orientación Oriente, con vista hacia la cordillera. Cuenta con espacio para dos vehículos en sector del antejardín, y por fuera hay disponible para 2 estacionamientos más.\",\"acepta_mascotas\": \"no\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 817,
+      "output_tokens": 199,
+      "wall_s": 9.83,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en La Florida",
+        "bedrooms_text": "5D/3B",
+        "price_text": "UF 11.500",
+        "rent_text": null,
+        "distance_metro_text": "Distancia estimada a la estación de metro Macul: 6405 m.",
+        "distance_bus_text": null,
+        "parking_text": "La vivienda se emplaza en un sector residencial muy tranquilo de Alto Macul, privilegiado, a los pies de la cordillera. Sin pago de gasto común. Mostrar.",
+        "pets_text": "ets cerrados, una sala de estar, baño completo y una oficina con orientación Oriente, con vista hacia la cordillera. Cuenta con espacio para dos vehículos en sector del antejardín, y por fuera hay disponible para 2 estacionamientos más.",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "REAL-35": {
+      "location": "Ñuñoa",
+      "bedrooms": 6,
+      "price_text": "3.036 UF",
+      "rent_text": null,
+      "distance_metro_text": "1253 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Casa en Ñuñoa.\",\n  \"bedrooms_text\": \"6D\",\n  \"price_text\": \"UF 3.036\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Distancia estimada a la estación de metro Ñuble: 1253 m.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento techado\",\n  \"pets_text\": \"no_dice\",\n  \"acepta_mascotas\": \"no\",\n  \"acepta_perros\": \"no\",\n  \"acepta_gatos\": \"no\"\n}",
+      "prompt_tokens": 797,
+      "output_tokens": 131,
+      "wall_s": 6.58,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Ñuñoa.",
+        "bedrooms_text": "6D",
+        "price_text": "UF 3.036",
+        "rent_text": null,
+        "distance_metro_text": "Distancia estimada a la estación de metro Ñuble: 1253 m.",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento techado",
+        "pets_text": "no_dice",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no",
+        "acepta_gatos": "no"
+      },
+      "warnings": [
+        "pets: respuestas sin cláusula anclada -> no_mencionada"
+      ]
+    }
+  },
+  "decisions": {
+    "REAL-17": {
+      "price_clp": 2000766258,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '48.600 UF' = 48600 UF -> 2,000,766,258 CLP > 180,000,000",
+        "mascotas: el comprador no tiene mascota -> ok",
+        "distancia: metro='786 m' bus=None -> min=786 vs max 1200",
+        "dormitorios: 5 vs min 2",
+        "estacionamiento: ninguno (requerido=False)"
+      ]
+    },
+    "REAL-23": {
+      "price_clp": null,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "distancia_transporte",
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio ilegible: '' -> se rechaza por no verificable",
+        "mascotas: el comprador no tiene mascota -> ok",
+        "distancia: metro=None bus=None -> min=None vs max 1200",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: no_mencionado (requerido=False)"
+      ]
+    },
+    "REAL-29": {
+      "price_clp": 473432345,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto",
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '11.500 UF' = 11500 UF -> 473,432,345 CLP > 180,000,000",
+        "mascotas: el comprador no tiene mascota -> ok",
+        "distancia: metro='6405 m' bus=None -> min=6405 vs max 1200",
+        "dormitorios: 5 vs min 2",
+        "estacionamiento: no_mencionado (requerido=False)"
+      ]
+    },
+    "REAL-35": {
+      "price_clp": 124986139,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.036 UF' = 3036 UF -> 124,986,139 CLP <= 180,000,000",
+        "mascotas: el comprador no tiene mascota -> ok",
+        "distancia: metro='1253 m' bus=None -> min=1253 vs max 1200",
+        "dormitorios: 6 vs min 2",
+        "estacionamiento: propio (requerido=False)"
+      ]
+    }
+  }
+}

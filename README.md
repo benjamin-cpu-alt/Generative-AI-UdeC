@@ -102,14 +102,37 @@ diseño, técnicas y ablaciones en [`docs/e3_agentes.md`](docs/e3_agentes.md):
 
 Cada mensaje entre agentes y herramientas queda en `results/<run>/<caso>.trace.jsonl`.
 
-| Run (`hard_dev`, solo ajuste) | e1_strict | full_correct | exactitud por aviso | aprob. indebida | rechazo falso |
-|---|---|---|---|---|---|
-| Solución E2 (v5 + g3) | 4/10 | 0/10 | 52/70 | 4/39 | 14/31 |
-| **Agentes v1** | **10/10** | **8/10** | **69/70** | **0/39** | **1/31** |
+| Set de desarrollo | Run | e1_strict | full_correct | exactitud por aviso | aprob. indebida | rechazo falso |
+|---|---|---|---|---|---|---|
+| `hard_dev` | Solución E2 (v5 + g3) | 4/10 | 0/10 | 52/70 | 4/39 | 14/31 |
+| `hard_dev` | **Agentes v1** | **10/10** | **8/10** | **69/70** | **0/39** | **1/31** |
+| `ood` | Solución E2 (v5 + g3) | 11/12 | 7/12 | 67/70 | 0/51 | 3/19 |
+| `ood` | **Agentes v1** | **12/12** | **10/12** | **68/70** | **0/51** | **2/19** |
+| `train` (20 primeros) | **Agentes v1** | 20/20 | 20/20 | 140/140 | 0/101 | 0/39 |
 
 Estas cifras son de **ajuste**: los agentes se iteraron mirando `hard_dev`, así que no prueban
-nada por sí solas. La evaluación es `hard_test` (después de la revisión humana), más `test`,
+nada por sí solas. `train` y `ood` sirvieron de control de regresión, y ahí se encontraron dos
+reglas ajustadas a `hard_dev` que rompían avisos del generador («previa autorización de la
+administración» leído como si remitiera a un reglamento; «Santiago Centro» ≠ «Santiago» en el
+ranking). Se corrigieron antes de cualquier corrida de evaluación. La evaluación es `hard_test` (después de la revisión humana), más `test`,
 `ood` y `real_e3`.
+
+Evaluación (`bash scripts/run_e3.sh final`, una sola vez, sin cambios al sistema después):
+
+| Set | Run | e1_strict | full_correct | exactitud por aviso | aprob. indebida | rechazo falso |
+|---|---|---|---|---|---|---|
+| `real_e3` | Rechazar todo (piso) | 20/20 | 17/20 | 77/80 | 0/77 | 3/3 |
+| `real_e3` | Baseline (prompt directo) | 0/20 | 0/20 | 59/80 | 18/77 | 3/3 |
+| `real_e3` | Solución E2 (v5 + g3) | 20/20 | 19/20 | 79/80 | 0/77 | 1/3 |
+| `real_e3` | **Agentes v1** | **20/20** | **20/20** | **80/80** | **0/77** | **0/3** |
+| `test` | Solución E2 (v5 + g3) | 51/51 | 51/51 | 352/352 | 0/246 | 0/106 |
+| `test` | **Agentes v1** | **51/51** | **51/51** | **352/352** | **0/246** | **0/106** |
+
+`real_e3` son avisos reales con doble anotación humana, pero solo 3 de 80 deben aprobarse: el
+piso llega a 17/20, así que confirma que no hay regresión y discrimina poco. La única diferencia
+con la E2 es REAL-23 (`real_b2_005`): el Verificador recupera «Precio: UF 2.490.», que el Lector
+no había copiado. En `test`, un JSON truncado del Decisor (`test_0016`) se cerró por defecto con
+el resultado de `evaluar`, y el caso salió correcto igual. El costo es ~80 s por caso (E2: ~30 s).
 
 ```bash
 export PYTHONPATH=src

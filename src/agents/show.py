@@ -43,7 +43,11 @@ def resumen(m: dict) -> str:
                          + (f"  valor={r.get('valor')!r}" if r.get("valor") else "")
                          + (f"  evidencia={r.get('evidencia')!r}" if r.get("evidencia") else "") for r in c)
     if t == "resultado":
-        return f"{c['campo']} = {c['valor']!r} desde {c['evidencia']!r} -> {'ACEPTA' if c['ok'] else 'RECHAZA: ' + c['motivo']}"
+        if c["ok"]:   # si el código leyó otro valor en la evidencia, se muestra cuál
+            veredicto = "ACEPTA" + (f" — {c['motivo'][4:]}" if c["motivo"].startswith("ok: ") else "")
+        else:
+            veredicto = "RECHAZA: " + c["motivo"]
+        return f"{c['campo']} = {c['valor']!r} desde {c['evidencia']!r} -> {veredicto}"
     if t == "evaluacion":
         out = []
         for pid, est in c.items():

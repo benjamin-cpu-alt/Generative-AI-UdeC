@@ -1,0 +1,196 @@
+{
+  "facts": {
+    "REAL-21": {
+      "location": "La Florida",
+      "bedrooms": 3,
+      "price_text": "6.200 UF",
+      "rent_text": null,
+      "distance_metro_text": "484 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Casa en La Florida.\", \"bedrooms_text\": \"3 amplios dormitorios (principal en suite).\", \"price_text\": \"UF 6.200.\", \"rent_text\": null, \"distance_metro_text\": \"Distancia estimada a la estación de metro Bellavista de La Florida: 484 m.\", \"distance_bus_text\": null, \"parking_text\": \"Incluye 1 estacionamiento.\", \"pets_text\": null, \"acepta_mascotas\": \"no_dice\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 807,
+      "output_tokens": 129,
+      "wall_s": 7.68,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en La Florida.",
+        "bedrooms_text": "3 amplios dormitorios (principal en suite).",
+        "price_text": "UF 6.200.",
+        "rent_text": null,
+        "distance_metro_text": "Distancia estimada a la estación de metro Bellavista de La Florida: 484 m.",
+        "distance_bus_text": null,
+        "parking_text": "Incluye 1 estacionamiento.",
+        "pets_text": null,
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "REAL-27": {
+      "location": "Pasaje Delia Poniente",
+      "bedrooms": 2,
+      "price_text": "3.190 UF",
+      "rent_text": null,
+      "distance_metro_text": "2561 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Casa en Pasaje Delia Poniente, Villa Las Casas de Doña Delia\",\n  \"bedrooms_text\": \"2 dormitorios amplios\",\n  \"price_text\": \"UF 3.190\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"2561 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"incluye 1 estacionamiento\",\n  \"pets_text\": \"no_dice\",\n  \"acepta_mascotas\": \"no\",\n  \"acepta_perros\": \"no\",\n  \"acepta_gatos\": \"no\"\n}",
+      "prompt_tokens": 849,
+      "output_tokens": 132,
+      "wall_s": 7.94,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Pasaje Delia Poniente, Villa Las Casas de Doña Delia",
+        "bedrooms_text": "2 dormitorios amplios",
+        "price_text": "UF 3.190",
+        "rent_text": null,
+        "distance_metro_text": "2561 m",
+        "distance_bus_text": null,
+        "parking_text": "incluye 1 estacionamiento",
+        "pets_text": "no_dice",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no",
+        "acepta_gatos": "no"
+      },
+      "warnings": [
+        "pets: respuestas sin cláusula anclada -> no_mencionada"
+      ]
+    },
+    "REAL-33": {
+      "location": "La Florida",
+      "bedrooms": 1,
+      "price_text": "2.440 UF",
+      "rent_text": null,
+      "distance_metro_text": "484 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\"location_text\": \"Departamento en La Florida, Autopista Vespucio Sur, La Florida, Santiago, Provincia De Santiago, Región Metropolitana De Santiago, 8320000, Chile.\", \"bedrooms_text\": \"1D/1B.\", \"price_text\": \"UF 2.440.\", \"rent_text\": null, \"distance_metro_text\": \"484 m.\", \"distance_bus_text\": null, \"parking_text\": null, \"pets_text\": null, \"acepta_mascotas\": \"no_dice\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 826,
+      "output_tokens": 133,
+      "wall_s": 8.25,
+      "error": null,
+      "spans": {
+        "location_text": "Departamento en La Florida, Autopista Vespucio Sur, La Florida, Santiago, Provincia De Santiago, Región Metropolitana De Santiago, 8320000, Chile.",
+        "bedrooms_text": "1D/1B.",
+        "price_text": "UF 2.440.",
+        "rent_text": null,
+        "distance_metro_text": "484 m.",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": null,
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "REAL-39": {
+      "location": "Santiago",
+      "bedrooms": 4,
+      "price_text": "10.297 UF",
+      "rent_text": null,
+      "distance_metro_text": "653 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_mencionada",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\"location_text\": \"Casa en Santiago.\", \"bedrooms_text\": \"3 amplios dormitorios\", \"price_text\": \"UF 10.297.\", \"rent_text\": null, \"distance_metro_text\": \"653 m\", \"distance_bus_text\": null, \"parking_text\": null, \"pets_text\": null, \"acepta_mascotas\": \"no_dice\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 831,
+      "output_tokens": 101,
+      "wall_s": 5.56,
+      "error": null,
+      "spans": {
+        "location_text": "Casa en Santiago.",
+        "bedrooms_text": "3 amplios dormitorios",
+        "price_text": "UF 10.297.",
+        "rent_text": null,
+        "distance_metro_text": "653 m",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": null,
+        "acepta_mascotas": "no_dice",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('4D/')"
+      ]
+    }
+  },
+  "decisions": {
+    "REAL-21": {
+      "price_clp": 255241786,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '6.200 UF' = 6200 UF -> 255,241,786 CLP > 180,000,000",
+        "mascotas: el comprador no tiene mascota -> ok",
+        "distancia: metro='484 m' bus=None -> min=484 vs max 1200",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=False)"
+      ]
+    },
+    "REAL-27": {
+      "price_clp": 131326016,
+      "roi_pct": null,
+      "failed_constraints": [
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.190 UF' = 3190 UF -> 131,326,016 CLP <= 180,000,000",
+        "mascotas: el comprador no tiene mascota -> ok",
+        "distancia: metro='2561 m' bus=None -> min=2561 vs max 1200",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=False)"
+      ]
+    },
+    "REAL-33": {
+      "price_clp": 100449993,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '2.440 UF' = 2440 UF -> 100,449,993 CLP <= 180,000,000",
+        "mascotas: el comprador no tiene mascota -> ok",
+        "distancia: metro='484 m' bus=None -> min=484 vs max 1200",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: no_mencionado (requerido=False)"
+      ]
+    },
+    "REAL-39": {
+      "price_clp": 423907205,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '10.297 UF' = 10297 UF -> 423,907,205 CLP > 180,000,000",
+        "mascotas: el comprador no tiene mascota -> ok",
+        "distancia: metro='653 m' bus=None -> min=653 vs max 1200",
+        "dormitorios: 4 vs min 2",
+        "estacionamiento: no_mencionado (requerido=False)"
+      ]
+    }
+  }
+}
