@@ -88,6 +88,37 @@ como pesos (ROI 0). El resto son rechazos falsos (jerga, cifras en palabras, not
 dormitorios). Son los objetivos de los agentes de la E3, y `hard_test` mide si esas mejoras
 generalizan.
 
+### Sistema multiagente (`src/agents`)
+
+Tres agentes con el mismo phi4-mini, prompts versionados en `prompts/<agente>/v1.md`, y
+diseño, técnicas y ablaciones en [`docs/e3_agentes.md`](docs/e3_agentes.md):
+
+- **Lector:** el extractor de la E2 sin cambios. Copia el fragmento de cada tema.
+- **Verificador:** revisa solo los campos que la herramienta marca como dudosos. Confirma,
+  corrige con evidencia literal (la herramienta `comprobar` la valida), pide releer al Lector
+  o declara el dato no verificable.
+- **Decisor:** ve el resultado de la herramienta `evaluar` y decide si cierra o le consulta un
+  dato al Verificador.
+
+Cada mensaje entre agentes y herramientas queda en `results/<run>/<caso>.trace.jsonl`.
+
+| Run (`hard_dev`, solo ajuste) | e1_strict | full_correct | exactitud por aviso | aprob. indebida | rechazo falso |
+|---|---|---|---|---|---|
+| Solución E2 (v5 + g3) | 4/10 | 0/10 | 52/70 | 4/39 | 14/31 |
+| **Agentes v1** | **10/10** | **8/10** | **69/70** | **0/39** | **1/31** |
+
+Estas cifras son de **ajuste**: los agentes se iteraron mirando `hard_dev`, así que no prueban
+nada por sí solas. La evaluación es `hard_test` (después de la revisión humana), más `test`,
+`ood` y `real_e3`.
+
+```bash
+export PYTHONPATH=src
+python3 -m agents.run --split hard_dev --run agents_v1_hard_dev     # ~70 s por caso en un M4
+python3 -m agents.show results/agents_v1_hard_dev/hd_04.trace.jsonl # la conversación entre agentes
+bash scripts/run_e3.sh final && bash scripts/run_e3.sh ablaciones   # evaluación, una sola vez
+python3 -m pytest tests/test_agents.py -q                           # sin Ollama
+```
+
 ## Entregable 2
 
 ### Estructura

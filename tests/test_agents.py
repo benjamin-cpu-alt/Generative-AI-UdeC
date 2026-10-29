@@ -254,8 +254,14 @@ def test_comprobar_rechaza_precio_inverosimil():
     assert tools.comprobar("precio", "135000000", "135 palos", t, UF)[:2] == (True, 135_000_000)
 
 
-def test_comuna_se_normaliza():
-    assert tools.comprobar("comuna", "Santiago Centro", "Santiago Centro", "Depto. Santiago Centro.", UF)[1] == "Santiago"
+def test_comuna_canonica_y_preferencia():
+    assert tools.comuna_canonica("Santiago Centro") == "Santiago"
+    assert tools.comuna_canonica("Bellavista de La Florida") == "La Florida"
+    assert tools.comuna_canonica("Casa") is None
+    c = _case([], SoftConstraints(ubicaciones_preferidas=["Santiago Centro"]))
+    assert tools.evaluar("P", {**HECHOS, "comuna": "Santiago"}, c)["preferida"]
+    assert "comuna" not in tools.dudas({**HECHOS, "comuna": "Santiago Centro", "_mascotas_por_parser": True},
+                                        "Depto en Santiago Centro. UF 3.000. Metro a 300 m. Acepta mascotas. Estac. propio.")
 
 
 def test_duda_de_mascotas_sin_resolver_no_aprueba():
@@ -273,3 +279,24 @@ def test_duda_de_mascotas_sin_resolver_no_aprueba():
     out, tr = Sistema(Config(), call).run_case(_case([prop]))
     assert out["rejected"] == [{"id": "P-2", "failed_constraints": ["mascotas"]}]
     assert any(m["tipo"] == "duda_sin_resolver" for m in tr.mensajes)
+
+
+@pytest.mark.parametrize("evidencia,esperado", [
+    # frases del generador (train/test): la E2 las lee bien y los agentes no deben tocarlas
+    ("Se aceptan mascotas pequeñas y medianas hasta 15kg, previa autorización de la administración.", []),
+    ("Se aceptan gatos, perros no permitidos por reglamento de copropiedad.", ["gato"]),
+    ("Se aceptan perros, gatos no permitidos por reglamento de copropiedad.", ["perro"]),
+    ("Edificio sin mascotas por reglamento de copropiedad.", None),
+    ("El reglamento de copropiedad permite mascotas de hasta 8 kilos.", []),
+    # frases que aplazan la decisión: no son permiso
+    ("Consultar reglamento por mascotas.", None),
+    ("Mascotas según reglamento de copropiedad.", None),
+])
+def test_especies_frases_de_reglamento(evidencia, esperado):
+    assert tools.especies_de(evidencia) == esperado
+
+
+def test_reglamento_explicito_no_es_duda():
+    h = {**HECHOS, "_mascotas_por_parser": True}
+    t = "Depto en Recoleta. UF 3.000. Metro a 400 m. Se aceptan gatos, perros no permitidos por reglamento de copropiedad. Estacionamiento propio."
+    assert "mascotas" not in tools.dudas({**h, "especies": ["gato"]}, t)

@@ -34,6 +34,17 @@ CLAVES = {"distancia": ("distancia_metro", "distancia_bus"),
           "mascotas_kg": ("mascotas", "especies", "mascotas_kg", "_mascotas_por_parser")}
 
 
+def comuna_canonica(s: Optional[str]) -> Optional[str]:
+    """La comuna de la RM que nombra el texto: "Santiago Centro" -> "Santiago",
+    "Bellavista de La Florida" -> "La Florida"; None si no nombra ninguna. Comparar
+    por esta forma coincide con la anotación de todos los sets (los del generador escriben
+    "Santiago Centro"; los hard, "Santiago")."""
+    if not s:
+        return None
+    f = _fold(s)
+    return next((c for c in _COMUNAS_LARGO if re.search(rf"\b{_fold(c)}\b", f)), None)
+
+
 def distancia(h: Dict) -> Optional[int]:
     ds = [d for d in (h.get("distancia_metro"), h.get("distancia_bus")) if d is not None]
     return min(ds) if ds else None
@@ -48,6 +59,7 @@ COMUNAS_RM = (
     "Pudahuel", "Puente Alto", "Quilicura", "Quinta Normal", "Recoleta", "Renca", "San Bernardo",
     "San Joaquín", "San José de Maipo", "San Miguel", "San Pedro", "San Ramón", "Santiago", "Talagante",
     "Tiltil", "Vitacura")
+_COMUNAS_LARGO = sorted(COMUNAS_RM, key=len, reverse=True)   # "San José de Maipo" antes que "Maipú"
 PARKING = ("propio", "asignado", "visitas", "calle", "ninguno", "no_mencionado")
 
 
@@ -216,7 +228,10 @@ _HABLA = {
     "mascotas": _RE(r"mascota|perr[oa]s?|gat[oa]s?|\bpets?\b"),
     "mascotas_kg": _RE(r"\bkg\b|kilo"),
 }
-_REMITE = _RE(r"reglamento|consultar|administraci[óo]n|a convenir|evaluar")
+# Frases que APLAZAN la decisión sobre mascotas (no son permiso ni prohibición). "previa
+# autorización de la administración" o "perros no permitidos por reglamento" sí son políticas
+# explícitas: la E2 las lee bien en train y no deben marcarse.
+_REMITE = _RE(r"consultar|seg[uú]n (?:el )?reglamento|sujet[oa] a(?:l)? reglamento|a convenir|a evaluar|por evaluar")
 _DORM = _RE(r"\b(\d+|un|una|uno|dos|tres|cuatro|cinco)\s*(?:d\b|dorm|habitaci|pieza)")
 
 
@@ -261,7 +276,7 @@ def _dudas(h: Dict, texto: str) -> Dict[str, str]:
     com = h.get("comuna")
     if not com:
         d["comuna"] = "no se pudo leer la comuna"
-    elif _fold(com.strip()) not in {_fold(c) for c in COMUNAS_RM}:
+    elif comuna_canonica(com) is None:
         d["comuna"] = "lo leído no es el nombre de una comuna de la Región Metropolitana"
     dorms = {m.group(1).lower() for m in _DORM.finditer(texto)}
     if h.get("dormitorios") is None:
@@ -336,8 +351,7 @@ def comprobar(campo: str, valor, evidencia: Optional[str], texto: str, uf: float
         if not s or _fold(s) not in _fold(texto):
             return False, None, f"{s!r} no aparece en el aviso"
         # "Santiago Centro" -> "Santiago"; "Bellavista de La Florida" -> "La Florida"
-        canon = [c for c in sorted(COMUNAS_RM, key=len, reverse=True) if re.search(rf"\b{_fold(c)}\b", _fold(s))]
-        return True, (canon[0] if canon else s), "ok"
+        return True, s, "ok"
 
     if campo == "estacionamiento":
         v = _categoria(valor, PARKING)
@@ -497,10 +511,10 @@ def evaluar(pid: str, h: Dict, case: Case) -> Dict:
 
     failed = [c for c in (C_BUDGET, C_PETS, C_DISTANCE, C_BEDROOMS, C_PARKING) if est[c] != "cumple"]
     roi = normalize.roi_pct(h["arriendo"], p) if p and h.get("arriendo") else None
-    prefs = {_fold(x.strip()) for x in sc.ubicaciones_preferidas}
+    prefs = {comuna_canonica(x) or _fold(x.strip()) for x in sc.ubicaciones_preferidas}
     return {"id": pid, "estado": est, "motivo": motivo, "failed_constraints": failed,
             "price_clp": p, "roi_pct": roi,
-            "preferida": bool(h.get("comuna")) and _fold(h["comuna"].strip()) in prefs}
+            "preferida": bool(h.get("comuna")) and (comuna_canonica(h["comuna"]) or _fold(h["comuna"].strip())) in prefs}
 
 
 def ordenar(evals: List[Dict]) -> Dict:
