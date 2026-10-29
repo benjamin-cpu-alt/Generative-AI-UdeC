@@ -2,6 +2,7 @@
 
   python3 scripts/review_hard.py ht_01          # un caso
   python3 scripts/review_hard.py ht_01 ht_02    # varios
+  python3 scripts/review_hard.py --sheet carla ht_01-ht_15   # planilla de revisión (CSV)
 
 Por cada aviso imprime el texto, la verdad anotada en palabras y el veredicto que esa
 verdad produce con rules.py. La revisión consiste en confirmar que la verdad dice lo mismo
@@ -9,7 +10,9 @@ que el texto (ver data/cases/hard_test/REVIEW.md).
 """
 from __future__ import annotations
 
+import csv
 import json
+import re
 import sys
 import textwrap
 from pathlib import Path
@@ -35,12 +38,64 @@ def pets_text(p: dict) -> str:
     return f"permite {sp}, {kg}"
 
 
-def show(cid: str) -> None:
+def load(cid: str):
     split = "hard_test" if cid.startswith("ht_") else "hard_dev"
     path = ROOT / "data" / "cases" / split / f"{cid}.json"
     raw = json.loads(path.read_text(encoding="utf-8"))
-    case = Case.load(path)
-    exp = expected_output(case)
+    return raw, expected_output(Case.load(path))
+
+
+def buyer_text(raw: dict) -> str:
+    hc = raw["hard_constraints"]
+    mascota = ("sin mascota" if hc["mascota_especie"] is None
+               else f"{hc['mascota_especie']} de {hc['mascota_kg']:g} kg")
+    return (f"tope {clp(hc['presupuesto_max_clp'])} · {mascota} · transporte <= "
+            f"{hc['distancia_max_transporte_m']} m · >= {hc['dormitorios_min']} dorm. · estac. "
+            f"{'requerido' if hc['estacionamiento_requerido'] else 'no requerido'} · UF {clp(raw['uf_value'])}")
+
+
+def truth_cells(t: dict, e) -> dict:
+    return {
+        "comuna": t["location"], "dormitorios": t["bedrooms"],
+        "distancia": f"{t['distance_transport_m']} m" if t["distance_transport_m"] is not None else "NO verificable",
+        "estacionamiento": t["parking"],
+        "precio": (f"UF {t['price_uf']:g} = {clp(e.price_clp)}" if t["price_uf"] is not None else clp(t["price_clp"])),
+        "arriendo": clp(t["rent_monthly_clp"]) + "/mes" if t["rent_monthly_clp"] else "no publica",
+        "mascotas": pets_text(t["pets"]),
+        "veredicto": "APROBADA" if e.approved else "RECHAZADA: " + ", ".join(e.failed_constraints),
+    }
+
+
+def expand(args):
+    out = []
+    for a in args:
+        m = re.fullmatch(r"(h[td])_(\d+)-h[td]_(\d+)", a)
+        out += [f"{m.group(1)}_{i:02d}" for i in range(int(m.group(2)), int(m.group(3)) + 1)] if m else [a]
+    return out
+
+
+def sheet(who: str, cids) -> Path:
+    out = ROOT / "data" / "cases" / "hard_test" / "revision" / f"revision_{who}.csv"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    if out.exists():
+        sys.exit(f"{out.relative_to(ROOT)} ya existe: no se sobrescribe")
+    cols = ["caso", "comprador", "aviso", "texto", "comuna", "dormitorios", "distancia",
+            "estacionamiento", "precio", "arriendo", "mascotas", "veredicto", "nota_anotacion",
+            "correcto", "que_esta_mal"]
+    with open(out, "w", encoding="utf-8-sig", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=cols, delimiter=";")
+        w.writeheader()
+        for cid in cids:
+            raw, exp = load(cid)
+            for p in raw["properties"]:
+                w.writerow({"caso": cid, "comprador": buyer_text(raw), "aviso": p["id"], "texto": p["text"],
+                            **truth_cells(p["truth"], exp.by_id[p["id"]]), "nota_anotacion": p["note"],
+                            "correcto": "", "que_esta_mal": ""})
+    return out
+
+
+def show(cid: str) -> None:
+    raw, exp = load(cid)
     hc = raw["hard_constraints"]
     mascota = ("sin mascota" if hc["mascota_especie"] is None
                else f"{hc['mascota_especie']} de {hc['mascota_kg']:g} kg")
@@ -70,5 +125,9 @@ def show(cid: str) -> None:
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         sys.exit(__doc__)
-    for cid in sys.argv[1:]:
-        show(cid)
+    if sys.argv[1] == "--sheet":
+        path = sheet(sys.argv[2], expand(sys.argv[3:]))
+        print(f"-> {path.relative_to(ROOT)}")
+    else:
+        for cid in expand(sys.argv[1:]):
+            show(cid)
