@@ -1,0 +1,122 @@
+% Entregable 3 — documento técnico de UNA página (vertical). Compilar en Overleaf (pdflatex).
+% Todas las cifras salen de results/ vía `bash scripts/run_e3.sh tablas` (ver docs/e3_agentes.md).
+% Cifras marcadas \pend{} = aún no corridas: reemplazar antes de entregar.
+\documentclass[9pt,a4paper]{extarticle}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[spanish,es-noshorthands,es-tabla]{babel}
+\usepackage[a4paper,margin=1.1cm]{geometry}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,calc,fit}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+
+\definecolor{sec}{RGB}{30,50,170}
+\titleformat{\section}{\normalsize\bfseries\color{sec}}{\thesection.}{0.4em}{}
+\titlespacing*{\section}{0pt}{0.45em}{0.2em}
+\setlist{nosep,leftmargin=1.1em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.2em}
+\setlength{\tabcolsep}{3pt}
+\setlength{\columnsep}{0.5cm}
+\pagestyle{empty}
+
+\newcommand{\repo}{\url{https://github.com/benjamin-cpu-alt/Generative-AI-UdeC}}
+\newcommand{\video}{\textcolor{red}{\textbf{[LINK DEL VIDEO]}}}
+\newcommand{\pend}[1]{\textcolor{red}{#1}}
+\newcommand{\cod}[1]{\texttt{#1}}
+\newcommand{\warn}{\textcolor{orange!80!black}{\textbf{(!)}}}
+
+\begin{document}
+\begin{center}
+{\large\bfseries Entregable 3: Sistema multiagente para matching comprador–propiedad}\\[1pt]
+Lector, Verificador y Decisor sobre Phi-4-mini (3.8B, el mismo modelo para los tres)\\[1pt]
+\textbf{Equipo:} Benjamín Grandón V., Carla Maureira V. — Universidad de Concepción, Generative AI (580694)\\
+\textbf{Repositorio:} \repo \quad \textbf{Video:} \video
+\end{center}
+\vspace{-4pt}
+
+% ------------------------------------------------------------------ grafo --
+\begin{center}
+\begin{tikzpicture}[
+  font=\scriptsize, node distance=5mm and 7mm,
+  ag/.style={draw, rounded corners=3pt, fill=blue!8, draw=blue!60!black, align=center, inner sep=3pt, text width=27mm, minimum height=13mm},
+  tool/.style={draw, fill=green!9, draw=green!45!black, align=center, inner sep=2pt, text width=21mm, minimum height=8mm},
+  io/.style={draw, fill=gray!8, draw=gray!60!black, align=center, inner sep=2pt, text width=19mm, minimum height=8mm},
+  stop/.style={draw, double, fill=red!6, draw=red!60!black, align=center, inner sep=2pt, text width=16mm},
+  arr/.style={-{Stealth[length=1.8mm]}, thick},
+  loop/.style={-{Stealth[length=1.8mm]}, thick, dashed, red!60!black},
+  lab/.style={font=\tiny, align=center, fill=white, inner sep=1pt}]
+\node[io] (in) {Aviso (texto crudo), uno a la vez};
+\node[ag, right=of in] (lec) {\textbf{A1 · Lector}\\copia el fragmento literal de cada tema; no ve al comprador};
+\node[tool, right=of lec] (anc) {\cod{anclar}\\grounding g3 + CLP/m + \textbf{dudas} (\warn{})};
+\node[ag, right=of anc] (ver) {\textbf{A2 · Verificador}\\por campo \warn{}: confirmar · corregir · releer · no\_verificable};
+\node[tool, below=9mm of ver] (com) {\cod{comprobar}\\evidencia en el aviso; el código interpreta el valor};
+\node[tool, below=9mm of anc] (eva) {\cod{evaluar}\\5 restricciones: cumple / falla / no\_verificable};
+\node[ag, below=9mm of lec] (dec) {\textbf{A3 · Decisor}\\por caso: cerrar o consultar un dato};
+\node[tool, left=of dec] (ord) {\cod{ordenar}\\JSON E1 (preferida, ROI)};
+\node[stop, below=4mm of ord] (out) {\textbf{FIN}: JSON estricto};
+\node[io, above=3mm of in, text width=19mm] (perfil) {Perfil del comprador};
+
+\draw[arr] (in) -- (lec);
+\draw[arr] (lec) -- node[lab, above=1pt]{spans} (anc);
+\draw[arr] (anc) -- node[lab, above=1pt]{hechos +\\\warn{} y frase} (ver);
+\draw[arr] (ver) -- node[lab, right]{campo, evidencia,\\valor} (com);
+\draw[loop] (com.east) to[out=0,in=0,looseness=1.6] node[lab, right]{rechazo + motivo\\($\le$1 reintento)} (ver.east);
+\draw[loop] (ver.north) to[out=150,in=30] node[lab, above]{releer: campos + motivo ($\le$2 rondas)} (lec.north);
+\draw[arr] (com.west) -- node[lab, above]{hechos corregidos} (eva.east);
+\draw[arr] (anc.south) -- node[lab, right]{sin \warn{}} (eva.north);
+\draw[arr] (eva) -- node[lab, above]{estado por\\restricción} (dec);
+\draw[loop] (dec.south) to[out=-30,in=-120] node[lab, below]{consultar(id, campo) si quedó no\_verificable ($\le$1 ronda)} (ver.south west);
+\draw[arr] (dec) -- node[lab, above]{cerrar} (ord);
+\draw[arr] (ord) -- (out);
+\draw[arr, gray] (perfil.south east) to[out=-20,in=160] (dec.north west);
+\end{tikzpicture}
+\end{center}
+\vspace{-6pt}
+{\scriptsize Azul: agentes (phi4-mini, salida con JSON Schema). Verde: herramientas en Python. Rojo discontinuo: bucles, con su presupuesto. Un dato que sigue sin leerse nunca aprueba: la restricción queda no\_verificable y falla.}
+
+\begin{multicols}{2}
+\section{Continuidad con la E2 y por qué agentes}
+La E2 (v5+g3) obtuvo 51/51 en test, pero el criterio E1 solo penaliza aprobaciones indebidas: \textbf{rechazar todo también obtiene 51/51}. Respondimos a la observación del profesor con un benchmark nuevo: \cod{hard\_dev} (10 casos, 70 avisos) para iterar y \cod{hard\_test} (30 casos, 240 avisos, 16 fenómenos con cuota, congelado con SHA-256 y revisado por ambos integrantes), con 42\,\% de avisos que deben aprobarse. Reportamos además \textit{full\_correct} (conjunto, precios, ROI y orden exactos), tasas por aviso con IC de Wilson al 95\,\% y el piso de rechazar todo. En \cod{hard\_dev} la E2 cae a 4/10 (E1) y 0/10 (full). Sus fallos son léxicos: jerga («135 palos», «680 lucas»), cifras en palabras, «3D+E», «consultar reglamento por mascotas», arriendos en UF. Cada agente responde a uno de esos fallos.
+
+\section{Agentes (prompts en \cod{prompts/<agente>/v1.md})}
+\textbf{A1 Lector.} El extractor de la E2 sin cambios (\cod{SYSTEM\_V5}). En relectura decide por campo entre un fragmento nuevo y \cod{null}. \textbf{A2 Verificador.} Solo ve los campos que \cod{anclar} marca con \warn{}, junto con la frase donde mirar. Por cada uno decide si confirma, corrige (con evidencia literal, validada por \cod{comprobar}), pide releer o lo declara no verificable. \textbf{A3 Decisor.} Ve \cod{evaluar} y decide si cierra o consulta. No escribe veredictos ni calcula. La tabla completa (rol, entrada/salida, herramientas, parada) está en \cod{docs/e3\_agentes.md}.
+
+\section{Técnicas (taxonomía de \textit{The Prompt Report})}
+Role prompting y reglas zero-shot (los tres); descomposición; salida estructurada con decodificación restringida y acciones como \cod{enum} (\textbf{$-$esquema}); few-shot en línea con números que no están en ningún set; grounding en evidencia literal (\textbf{$-$literal}); self-refine por relectura y consulta (\textbf{$-$refinar}); crítica con herramienta, tipo CRITIC (\textbf{$-$retro}); herramientas para el cálculo, tipo PAL (\textbf{$-$herramientas\_A3}).
+
+\section{Resultados (mismas entradas, mismo juez)}
+{\scriptsize
+\begin{tabularx}{\columnwidth}{@{}Xcccc@{}}
+\toprule
+\cod{hard\_test} (30 casos) & E1 & full & aprob. indebidas & rechazos falsos\\
+\midrule
+Rechazar todo (piso) & \pend{30/30} & \pend{0/30} & 0 & \pend{100\%}\\
+Baseline (prompt directo) & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
+E2 (v5+g3) & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
+\textbf{Agentes (full)} & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
+\quad $-$esquema & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
+\quad $-$literal & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
+\quad $-$refinar & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
+\quad $-$retro & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
+\quad $-$herramientas\_A3 & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
+\bottomrule
+\end{tabularx}}
+
+{\scriptsize Regresión: test-51 \pend{–}, OOD \pend{–}, real\_e3 \pend{–} (20 casos con doble anotación humana; $\kappa$ de 0,61 a 1,00).}
+
+\section{Caso de fallo}
+\pend{Por escribir con la traza real: \cod{results/agents\_v1\_hard\_test/<caso>.trace.jsonl}.}
+
+\section{Reproducibilidad}
+\cod{bash scripts/run\_e3.sh final} y \cod{ablaciones}; \cod{python3 -m agents.show <traza>} muestra la conversación del video. Las trazas de los casos del video y del caso de fallo están versionadas en \cod{results/}. Los prompts se versionan por archivo y los tests (sin Ollama) cubren las herramientas, los prompts y los presupuestos de los bucles.
+\end{multicols}
+\end{document}

@@ -1,0 +1,34 @@
+{
+  "case_id": "hd_08",
+  "run": "agents_v1_hard_dev",
+  "split": "hard_dev",
+  "mode": "agents",
+  "config": "full",
+  "model": "phi4-mini:latest",
+  "prompts": {
+    "lector": "v1",
+    "verificador": "v1",
+    "decisor": "v1"
+  },
+  "grounding_version": "g3",
+  "calls": 16,
+  "prompt_tokens": 14561,
+  "output_tokens": 1623,
+  "wall_s": 76.91,
+  "llm_s": 76.9,
+  "acciones": {
+    "llamadas_lector": 7,
+    "avisos_sin_dudas": 4,
+    "llamadas_verificador": 7,
+    "verificador_corregir": 9,
+    "comprobar_rechaza": 5,
+    "comprobar_ok": 4,
+    "llamadas_decisor": 2,
+    "decisor_consultar": 1,
+    "decisor_cerrar": 1
+  },
+  "mensajes": 42,
+  "done_reason": "stop",
+  "errors": [],
+  "timestamp": "2026-10-29T08:42:06"
+}
