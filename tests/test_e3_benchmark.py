@@ -132,3 +132,25 @@ def test_wilson():
     lo, hi = wilson(51, 51)
     assert hi == pytest.approx(1.0) and 0.92 < lo < 0.94
     assert wilson(0, 0) == (0.0, 0.0)
+
+
+# ------------------------------------------------------------ set real E3 --
+
+REAL_E3 = sorted(glob.glob(str(CASES / "real_e3" / "*.json")))
+
+
+def test_real_e3_dos_compradores_y_mismos_avisos():
+    assert len(REAL_E3) == 20
+    b1 = [Case.load(p) for p in REAL_E3 if "real_b1_" in p]
+    b2 = [Case.load(p) for p in REAL_E3 if "real_b2_" in p]
+    assert len(b1) == len(b2) == 10
+    assert all(c.hard_constraints.mascota_especie is None for c in b2)
+    ids = lambda cs: sorted(p.id for c in cs for p in c.properties)
+    assert ids(b1) == ids(b2) and len(ids(b1)) == 40
+
+
+def test_real_e3_aprobaciones_preregistradas():
+    """Cifras de PREREGISTRO_E3.md: si la adjudicación cambia, este test lo delata."""
+    n = {b: sum(len(expected_output(Case.load(p)).approved_ids) for p in REAL_E3 if f"real_{b}_" in p)
+         for b in ("b1", "b2")}
+    assert n == {"b1": 0, "b2": 3}

@@ -61,3 +61,34 @@ El mismo procedimiento de `scripts/sample_real.py`, con estos cambios:
 ## Uso
 
 Solo para evaluar. Ningún prompt, parser ni agente se ajusta mirando `real_e3/`.
+
+## Resultado (28-oct-2026)
+
+- Sorteo 2 hecho el 16-oct, después del commit de este preregistro: 24 avisos, UF $41.168,03
+  (`fuente/muestra_2.json`).
+- Anotación doble completa: Carla y Benjamín anotaron los 40 avisos por separado
+  (`anotacion/hoja_*.csv`). Acuerdo **antes** de adjudicar
+  (`anotacion/acuerdo_antes_de_adjudicar.txt`):
+
+  | Campo | Acuerdo | Kappa |
+  |---|---|---|
+  | dormitorios | 38/40 | 0,94 |
+  | distancia_m | 35/40 | 0,87 |
+  | mascotas | 37/40 | 0,69 |
+  | estacionamiento | 31/40 | 0,61 |
+  | precio (valor y moneda) | 40/40 | 1,00 |
+  | comuna | 38/40 | 0,94 |
+
+  `mascotas_especies` y `mascotas_max_kg` también dan 40/40, pero solo porque ninguno de los
+  dos los llenó en ningún aviso.
+- 21 desacuerdos (`anotacion/DESACUERDOS.md`), resueltos en conjunto en
+  `anotacion/adjudicada.csv`. 7 eran de transcripción (5 distancias y 2 comunas) y se
+  resolvieron con la ficha; 14 eran de criterio (dormitorios de estudios, mascotas,
+  estacionamiento). **Ninguna decisión de criterio cambia un veredicto.** La única
+  adjudicación que lo cambia es de transcripción (R08, distancia 825 m de la ficha, comprador 2).
+- `real_e3/`: 20 casos y 80 evaluaciones. Aprobaciones esperadas: **0/40 con el comprador 1 y
+  3/40 con el comprador 2** (REAL-08, REAL-23, REAL-38). Incluso sin mascota, los avisos
+  reales fallan sobre todo por presupuesto, por distancia (Yapo no trae coordenadas) y por
+  dormitorios. El set sigue midiendo principalmente aprobaciones indebidas: rechazar todo
+  acierta 17/20 casos en `full_correct`. Se reporta así; el comprador no se ajusta después
+  de ver los avisos.

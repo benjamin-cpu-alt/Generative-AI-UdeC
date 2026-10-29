@@ -1,0 +1,35 @@
+40 avisos, anotadores: carla, benjamin
+
+campo                acuerdo   kappa
+dormitorios           38/40    0.94
+distancia_m           35/40    0.87
+mascotas              37/40    0.69
+mascotas_especies     40/40    1.00
+mascotas_max_kg       40/40    1.00
+estacionamiento       31/40    0.61
+precio_valor          40/40    1.00
+precio_moneda         40/40    1.00
+comuna                38/40    0.94
+
+21 desacuerdos (resolverlos en anotacion/adjudicada.csv):
+  R04 dormitorios: carla='0' benjamin='1'
+  R10 dormitorios: carla='0' benjamin='1'
+  R02 distancia_m: carla='568' benjamin='NV'
+  R03 distancia_m: carla='898' benjamin='NV'
+  R06 distancia_m: carla='226' benjamin='NV'
+  R07 distancia_m: carla='648' benjamin='NV'
+  R08 distancia_m: carla='825' benjamin='NV'
+  R03 mascotas: carla='permite' benjamin='no_menciona'
+  R04 mascotas: carla='permite' benjamin='no_menciona'
+  R38 mascotas: carla='permite' benjamin='no_menciona'
+  R05 estacionamiento: carla='propio' benjamin='ninguno'
+  R12 estacionamiento: carla='propio' benjamin='ninguno'
+  R13 estacionamiento: carla='visitas' benjamin='propio'
+  R28 estacionamiento: carla='visitas' benjamin='propio'
+  R31 estacionamiento: carla='propio' benjamin='ninguno'
+  R32 estacionamiento: carla='propio' benjamin='ninguno'
+  R34 estacionamiento: carla='propio' benjamin='visitas'
+  R35 estacionamiento: carla='ninguno' benjamin='propio'
+  R39 estacionamiento: carla='propio' benjamin='ninguno'
+  R02 comuna: carla='ñuñoa' benjamin='santiago'
+  R27 comuna: carla='la florida' benjamin='ñuñoa'

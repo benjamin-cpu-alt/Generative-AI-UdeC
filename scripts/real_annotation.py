@@ -1,10 +1,12 @@
 """Anotación humana doble del set real de la E3 (protocolo: data/cases/real/PREREGISTRO_E3.md).
 
   python3 scripts/real_annotation.py sheets      # hojas en blanco, una por anotador
+  python3 scripts/real_annotation.py check carla # valida UNA hoja (formato), sin compararla
   python3 scripts/real_annotation.py agreement   # acuerdo y kappa de Cohen por campo
   python3 scripts/real_annotation.py build       # real_e3/ desde anotacion/adjudicada.csv
 
-Las hojas son CSV con ';' (se abren directo en Excel o Google Sheets en español). Los 40
+Las hojas son CSV con ';' (se abren directo en Excel en español). Se aceptan también
+exportadas con ',' (Numbers, Google Sheets): el separador se detecta solo. Los 40
 avisos son los 16 del sorteo 1 (fuente/muestra.json) y los 24 del sorteo 2
 (fuente/muestra_2.json). Cada anotador llena SOLO su hoja, sin mirar la del otro ni
 scripts/build_real.py (la anotación previa de Claude del sorteo 1).
@@ -76,8 +78,12 @@ def listings() -> List[Dict]:
 
 
 def read_sheet(path: Path) -> Dict[str, Dict]:
-    with open(path, encoding="utf-8-sig", newline="") as f:
-        return {r["rid"]: r for r in csv.DictReader(f, delimiter=";")}
+    # Numbers antepone una línea con el nombre de la tabla: se salta todo hasta el encabezado.
+    lines = path.read_text(encoding="utf-8-sig").splitlines(keepends=True)
+    start = next((i for i, l in enumerate(lines) if l.startswith("rid")), 0)
+    header = lines[start]
+    delim = ";" if header.count(";") >= header.count(",") else ","
+    return {r["rid"]: r for r in csv.DictReader(lines[start:], delimiter=delim)}
 
 
 def cmd_sheets() -> int:
@@ -108,7 +114,28 @@ def validate(sheet: Dict[str, Dict], who: str) -> List[str]:
                 errs.append(f"{who} {rid}: falta {k}")
             elif k == "distancia_m" and not (v == "NV" or v.isdigit()):
                 errs.append(f"{who} {rid}: distancia_m={v!r} (entero o NV)")
+            elif k == "dormitorios" and not v.isdigit():
+                errs.append(f"{who} {rid}: dormitorios={v!r} (entero; estudio = 0)")
+            elif k in ("precio_valor", "mascotas_max_kg") and v and not _is_number(v):
+                errs.append(f"{who} {rid}: {k}={v!r} no es un número")
     return errs
+
+
+def _is_number(v: str) -> bool:
+    try:
+        float(v.replace(".", "").replace(",", "."))
+        return True
+    except ValueError:
+        return False
+
+
+def cmd_check(who: str) -> int:
+    sheet = read_sheet(SHEETS / f"hoja_{who}.csv")
+    errs = validate(sheet, who)
+    for e in errs:
+        print("  " + e)
+    print(f"{len(sheet) - len({e.split(':')[0] for e in errs})}/{len(sheet)} avisos sin problemas")
+    return 1 if errs else 0
 
 
 def cohen_kappa(a: List[str], b: List[str]) -> float:
@@ -208,5 +235,9 @@ def cmd_build() -> int:
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=("sheets", "agreement", "build"))
-    sys.exit({"sheets": cmd_sheets, "agreement": cmd_agreement, "build": cmd_build}[ap.parse_args().cmd]())
+    ap.add_argument("cmd", choices=("sheets", "check", "agreement", "build"))
+    ap.add_argument("who", nargs="?", choices=ANNOTATORS, help="solo para check")
+    a = ap.parse_args()
+    if a.cmd == "check":
+        sys.exit(cmd_check(a.who or ap.error("check necesita el anotador: carla o benjamin")))
+    sys.exit({"sheets": cmd_sheets, "agreement": cmd_agreement, "build": cmd_build}[a.cmd]())

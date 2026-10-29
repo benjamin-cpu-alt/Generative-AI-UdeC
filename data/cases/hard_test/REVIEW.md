@@ -11,7 +11,8 @@ dormitorios, distancia, mascotas, estacionamiento, comuna) y que `expect` sea el
 correcto. Ver un caso:
 
 ```bash
-python3 -c "import json,sys; d=json.load(open(sys.argv[1])); [print(p['id'], p['text'], '\n   ', p['truth'], p['note'], '\n') for p in d['properties']]" data/cases/hard_test/ht_01.json
+python3 scripts/review_hard.py ht_01            # texto, verdad en palabras y veredicto
+python3 scripts/review_hard.py ht_01 ht_02 > revision.txt   # varios, a un archivo
 ```
 
 | Revisor | Casos revisados | Fecha |
