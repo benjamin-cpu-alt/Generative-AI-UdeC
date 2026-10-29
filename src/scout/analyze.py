@@ -108,9 +108,15 @@ def analyze_one(listing: Listing, profile: BuyerProfile, uf_value: float, extrac
                       note=f"la extracción falló ({facts.error}); no se pudo evaluar")
     hc, sc = profile.hard_constraints(uf_value), profile.soft_constraints()
     d = decide(listing.key, facts, hc, sc, uf_value)
-    if not profile.tiene_mascota and C_PETS in d.failed_constraints:
-        d.failed_constraints.remove(C_PETS)
+    if not profile.tiene_mascota:
+        if C_PETS in d.failed_constraints:
+            d.failed_constraints.remove(C_PETS)
+        d.pets_confirmed = True
         d.notes.append("mascotas: el comprador no tiene -> no aplica")
+    elif not d.pets_confirmed:
+        # Convención E3: sin política declarada no se descarta. Aquí eso es "revisar": el
+        # comprador puede conversarlo, pero no se aprueba solo.
+        d.failed_constraints.append(C_PETS)
     missing = [c for c in unverifiable_constraints(facts, profile) if c in d.failed_constraints]
     violated = [c for c in d.failed_constraints if c not in missing]
 
@@ -132,8 +138,8 @@ def rank(results: List[Result]) -> List[Result]:
     def key(r: Result):
         if not r.decision:
             return (1, 0, 0.0, 0)
-        preferred, has_roi, roi = r.decision.rank_key
-        return (-preferred, -has_roi, -roi, r.decision.price_clp or 0)
+        pets, preferred, has_roi, roi = r.decision.rank_key
+        return (-pets, -preferred, -has_roi, -roi, r.decision.price_clp or 0)
     return sorted(results, key=key)
 
 

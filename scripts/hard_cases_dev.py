@@ -54,8 +54,8 @@ CASES = [
         P("HD-0107", """Departamento en Ñuñoa, 2D/2B, 66 m². Valor UF 3.700. A 350 metros del Metro
            Villa Frei. Estacionamiento propio. Consultar reglamento por mascotas.""",
           tags=["mascota_silencio"],
-          note="'consultar reglamento' no es una aceptación explícita",
-          expect=[M], loc="Ñuñoa", beds=2, dist=350, pets=NONE_, parking="propio", uf=3700),
+          note="'consultar reglamento' no es una aceptación explícita -> convención E3: sin política de mascotas no se descarta (va al final del orden)",
+          expect=[], loc="Ñuñoa", beds=2, dist=350, pets=NONE_, parking="propio", uf=3700),
     ]),
 
     # ------------------------------------------------------------------ 02 --
@@ -206,8 +206,8 @@ CASES = [
         P("HD-0502", """Depto en Estación Central, 2 dormitorios. UF 2.900. A 400 metros del metro.
            Mascotas: consultar con administración. Estacionamiento propio.""",
           tags=["mascota_silencio"],
-          note="'consultar con administración' no es una aceptación",
-          expect=[M], loc="Estación Central", beds=2, dist=400, pets=NONE_, parking="propio",
+          note="'consultar con administración' no es una aceptación -> convención E3: sin política de mascotas no se descarta (va al final del orden)",
+          expect=[], loc="Estación Central", beds=2, dist=400, pets=NONE_, parking="propio",
           uf=2900),
         P("HD-0503", """Estación Central, departamento de 1 dormitorio. $118.000.000. Está a
            seiscientos metros del Metro Ecuador. Pet friendly. Estacionamiento propio. Arriendo
@@ -347,8 +347,8 @@ CASES = [
         P("HD-0802", """Peñalolén, casa de 3 dormitorios (uno en suite). $219 millones. Paradero
            troncal a 900 m. Mascotas según reglamento de copropiedad.""",
           tags=["mascota_silencio", "jerga_monto"],
-          note="'según reglamento' no dice si acepta",
-          expect=[M], loc="Peñalolén", beds=3, dist=900, pets=NONE_, parking="ninguno",
+          note="'según reglamento' no dice si acepta -> convención E3: sin política de mascotas no se descarta (va al final del orden)",
+          expect=[], loc="Peñalolén", beds=3, dist=900, pets=NONE_, parking="ninguno",
           clp=219_000_000),
         P("HD-0803", """Peñalolén: casa de tres dormitorios, valor cinco mil cuatrocientas UF, a mil
            metros del paradero troncal. Pet friendly. Estacionamiento de visitas.""",

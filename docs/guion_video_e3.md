@@ -4,6 +4,9 @@ Se graba la terminal con `agents.show --pausa`, que reproduce una traza real men
 Los casos del video son de `real_e3/` (avisos de portales con doble anotación humana) y se eligen
 **después** de la corrida final, sin repetirla: el video muestra lo que el sistema hizo.
 
+> Elegidos con la corrida v1. Tras la convención E3 se repiten con `agents_v2_real_e3`: revisar
+> que las trazas sigan mostrando lo mismo y cambiar `agents_v1` por `agents_v2` en los comandos.
+
 Casos elegidos después de la corrida final (`results/agents_v1_real_e3/`):
 
 - **`real_b2_004`** (comprador 2): la traza más completa. REAL-08 se aprueba. REAL-12: el

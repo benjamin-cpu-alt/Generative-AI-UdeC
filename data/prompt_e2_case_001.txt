@@ -4,15 +4,15 @@ VALOR UF HOY: $39.200 CLP
 
 PERFIL DEL COMPRADOR — HARD CONSTRAINTS (descalifican si se incumplen):
 1. Presupuesto Máximo de Compra: $150.000.000 CLP (usa el valor de la UF de hoy si el precio viene en UF).
-2. Mascotas: Tiene 1 perro de 18kg (la propiedad debe permitir explícitamente mascotas de ese tamaño y especie).
+2. Mascotas: Tiene 1 perro de 18kg (se rechaza si la propiedad prohíbe mascotas, o si las acepta pero no de esa especie o de ese peso; si el aviso no dice nada de mascotas o lo deja a convenir, NO se rechaza por esto).
 3. Distancia máxima a transporte público (metro O paradero de buses troncal): 1000 m.
-4. Dormitorios: Mínimo 2 dormitorios reales.
+4. Dormitorios: Mínimo 2 dormitorios reales (un estudio, loft o monoambiente cuenta como 1).
 5. Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado (no sirve estacionamiento de visitas ni en la calle).
 
 SOFT CONSTRAINTS (no descalifican, pero determinan el ranking de las aprobadas):
 - Ubicación preferida: Providencia o Ñuñoa (mayor preferencia). Una propiedad en comuna preferida NO se aprueba si viola una Hard Constraint.
 - ROI esperado: (arriendo mensual estimado × 12) / precio de la propiedad × 100. Mayor ROI = mejor score.
-- Orden del ranking: primero las de comuna preferida, luego el resto; dentro de cada grupo, de mayor a menor roi_pct (las sin arriendo publicado al final del grupo).
+- Orden del ranking: primero las de comuna preferida, luego el resto; dentro de cada grupo, de mayor a menor roi_pct (las sin arriendo publicado al final del grupo). Si el comprador tiene mascota, las aprobadas cuyo aviso no confirma que acepta mascotas van después de todas las demás, con el mismo orden entre ellas.
 
 CATÁLOGO RAW DE PROPIEDADES (datos extraídos con OCR/Scraping):
 

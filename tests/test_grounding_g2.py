@@ -157,7 +157,7 @@ def test_g2_sigue_rechazando_lo_que_no_se_puede_verificar():
                          distancia_max_transporte_m=800, dormitorios_min=2,
                          estacionamiento_requerido=True)
     d = decide("P", Facts(**kwargs), hc, SoftConstraints(), 39_000)
-    assert {"presupuesto", "mascotas"} <= set(d.failed_constraints)
+    assert "presupuesto" in d.failed_constraints and not d.pets_confirmed   # convención E3
 
 
 def test_version_desconocida_falla_fuerte():

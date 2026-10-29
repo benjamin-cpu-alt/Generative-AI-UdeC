@@ -44,7 +44,7 @@ def test_expected_output_e1_case():
     assert exp.by_id["PROP-A42"].failed_constraints == ["presupuesto"]
     assert exp.by_id["PROP-B19"].failed_constraints == ["distancia_transporte"]
     assert exp.by_id["PROP-C88"].failed_constraints == ["estacionamiento"]
-    assert exp.by_id["PROP-D05"].failed_constraints == ["mascotas", "dormitorios"]
+    assert exp.by_id["PROP-D05"].failed_constraints == ["dormitorios"]   # convención E3: mascotas sin declarar no descarta
     assert exp.by_id["PROP-E33"].failed_constraints == ["mascotas"]
     assert exp.by_id["PROP-H12"].failed_constraints == ["presupuesto"]
 

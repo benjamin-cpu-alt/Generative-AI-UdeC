@@ -51,8 +51,10 @@ def resumen(m: dict) -> str:
     if t == "evaluacion":
         out = []
         for pid, est in c.items():
-            malas = [f"{k}:{v}" for k, v in est.items() if v != "cumple"]
-            out.append(f"{pid}: {'APRUEBA' if not malas else ', '.join(malas)}")
+            malas = [f"{k}:{v}" for k, v in est.items() if v in ("falla", "no_verificable")]
+            dudas = [f"{k} sin confirmar" for k, v in est.items() if v == "sin_confirmar"]
+            out.append(f"{pid}: " + (", ".join(malas) if malas else
+                                     "APRUEBA" + (f" ({', '.join(dudas)}: al final del orden)" if dudas else "")))
         return "\n".join(out)
     if t in ("cerrar", "consultar"):
         return t.upper() + "".join(f"\n  {q['id']} · {q['campo']}: {q['motivo']}" for q in c["consultas"])

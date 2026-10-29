@@ -116,13 +116,13 @@ E2 (v5+g3) & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
 \toprule
 \textit{full\_correct} (rechazos falsos) & Piso & Baseline & E2 & \textbf{Agentes}\\
 \midrule
-\cod{real\_e3} (20 casos, 80 avisos) & 17/20 (3/3) & 0/20 (3/3) & 19/20 (1/3) & \textbf{20/20} (0/3)\\
-test-51 (regresión) & 4/51 & 0/51 & 51/51 & \textbf{51/51}\\
-OOD (12, usado como dev) & 0/12 & 0/12 & 7/12 & \textbf{10/12}\\
+\cod{real\_e3} (20 casos, 80 avisos) & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
+test-51 (regresión) & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
+OOD (12, usado como dev) & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
 \bottomrule
 \end{tabularx}
 
-\cod{real\_e3}: avisos de portales con doble anotación humana ($\kappa$ de 0,61 a 1,00). Ningún sistema aprueba indebidamente salvo el baseline (18/77). Solo 3 de los 80 avisos deben aprobarse, por eso el piso llega a 17/20: el set confirma que no hay regresión, pero discrimina poco. La única diferencia con la E2 es REAL-23: el Verificador recupera «Precio: UF 2.490.», que el Lector no había copiado, y \cod{comprobar} lo acepta.}
+\textbf{Convención E3.} En la revisión humana de \cod{hard\_test} (8 objeciones de 160 avisos, ninguna de transcripción) el equipo acordó que un aviso sin política de mascotas no se descarta, porque se puede conversar: se aprueba y va al final del orden. Un estudio o loft cuenta como 1 dormitorio. Juez, E2, baseline y Decisor (v2) usan esa regla en todos los sets. \pend{Comentario de real\_e3 con las cifras nuevas.}}
 
 \section{Caso de fallo}
 \cod{OOD-502} (\cod{results/agents\_v1\_ood\_dev/ood\_005.trace.jsonl}): «3D+E (escritorio), 2B». El Lector copia «2B» (baños) como dormitorios. \cod{anclar} no encuentra un número de dormitorios y marca \warn{}. El Verificador corrige a 2 con la misma evidencia «2B», \cod{comprobar} lo rechaza («no encuentra un dato de dormitorios») y en el reintento el Verificador repite la misma corrección en vez de buscar «3D+E». Ante la consulta del Decisor responde no\_verificable, la restricción falla y el aviso queda como \textbf{rechazo falso}. La regla de seguridad convierte el error en un rechazo y no en una aprobación indebida (aprobar «2» habría sido también incorrecto). Lo que falta es que la retroalimentación cambie la estrategia: el modelo de 3.8B se ancla al fragmento que ya tiene. \pend{Reemplazar o complementar con el fallo más frecuente de \cod{hard\_test}.}

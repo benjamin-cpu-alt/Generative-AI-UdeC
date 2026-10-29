@@ -56,8 +56,9 @@ def render_profile(case: Case) -> str:
         mascotas = "2. Mascotas: No tiene mascota (cualquier política de mascotas le sirve)."
     else:
         especie = "perro" if hc.mascota_especie == "perro" else "gato"
-        mascotas = (f"2. Mascotas: Tiene 1 {especie} de {fmt_kg(hc.mascota_kg)} (la propiedad debe "
-                    "permitir explícitamente mascotas de ese tamaño y especie).")
+        mascotas = (f"2. Mascotas: Tiene 1 {especie} de {fmt_kg(hc.mascota_kg)} (se rechaza si la "
+                    "propiedad prohíbe mascotas, o si las acepta pero no de esa especie o de ese peso; "
+                    "si el aviso no dice nada de mascotas o lo deja a convenir, NO se rechaza por esto).")
     lines = [
         "PERFIL DEL COMPRADOR — HARD CONSTRAINTS (descalifican si se incumplen):",
         f"1. Presupuesto Máximo de Compra: {fmt_clp(hc.presupuesto_max_clp)} CLP "
@@ -65,7 +66,8 @@ def render_profile(case: Case) -> str:
         mascotas,
         f"3. Distancia máxima a transporte público (metro O paradero de buses troncal): "
         f"{hc.distancia_max_transporte_m} m.",
-        f"4. Dormitorios: Mínimo {hc.dormitorios_min} dormitorios reales.",
+        f"4. Dormitorios: Mínimo {hc.dormitorios_min} dormitorios reales (un estudio, loft o "
+        "monoambiente cuenta como 1).",
     ]
     if hc.estacionamiento_requerido:
         lines.append(
@@ -87,7 +89,9 @@ def render_soft(case: Case) -> str:
         "- ROI esperado: (arriendo mensual estimado × 12) / precio de la propiedad × 100. "
         "Mayor ROI = mejor score.",
         "- Orden del ranking: primero las de comuna preferida, luego el resto; dentro de "
-        "cada grupo, de mayor a menor roi_pct (las sin arriendo publicado al final del grupo).",
+        "cada grupo, de mayor a menor roi_pct (las sin arriendo publicado al final del grupo). "
+        "Si el comprador tiene mascota, las aprobadas cuyo aviso no confirma que acepta mascotas "
+        "van después de todas las demás, con el mismo orden entre ellas.",
     ])
 
 

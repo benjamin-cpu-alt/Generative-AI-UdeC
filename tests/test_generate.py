@@ -56,7 +56,10 @@ def test_generated_case_matches_declared_scenarios():
         d = json.loads(p.read_text(encoding="utf-8"))
         exp = expected_output(Case.from_dict(d))
         for prop in d["properties"]:
-            assert exp.by_id[prop["id"]].approved == (prop["scenario"] == "pass"), (p.name, prop["id"])
+            # convención E3: el escenario "mascotas sin declarar" ya no descarta
+            ok = (prop["scenario"] in ("pass", "pets_unspecified")
+                  or (prop["scenario"] == "bedrooms" and d["hard_constraints"]["dormitorios_min"] <= 1))
+            assert exp.by_id[prop["id"]].approved == ok, (p.name, prop["id"])
 
 
 def test_generation_is_deterministic():

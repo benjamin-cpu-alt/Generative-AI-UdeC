@@ -36,8 +36,8 @@ CASES = [
         P("HT-2105", """Ñuñoa 2D. UF 3.500. Metro a 400 m. Con estacionamiento propio. Mascotas:
            preguntar.""",
           tags=["mascota_silencio"],
-          note="'preguntar' no es aceptación",
-          expect=[M], loc="Ñuñoa", beds=2, dist=400, pets=NONE_, parking="propio", uf=3500),
+          note="'preguntar' no es aceptación -> convención E3: sin política de mascotas no se descarta (va al final del orden)",
+          expect=[], loc="Ñuñoa", beds=2, dist=400, pets=NONE_, parking="propio", uf=3500),
         P("HT-2106", """Macul 3D, 152 palos, metro a 300 m, gatos sí, estac propio""",
           tags=["jerga_monto", "casi_cumple"],
           note="'152 palos' = $152.000.000 > $150.000.000",
@@ -150,8 +150,8 @@ CASES = [
         P("HT-2308", """Puente Alto 3D. $115.000.000. Metro a 600 m. Con estacionamiento propio.
            Consultar condiciones para mascotas.""",
           tags=["mascota_silencio"],
-          note="'consultar condiciones' no es aceptación",
-          expect=[M], loc="Puente Alto", beds=3, dist=600, pets=NONE_, parking="propio",
+          note="'consultar condiciones' no es aceptación -> convención E3: sin política de mascotas no se descarta (va al final del orden)",
+          expect=[], loc="Puente Alto", beds=3, dist=600, pets=NONE_, parking="propio",
           clp=115_000_000),
     ]),
 
@@ -249,8 +249,8 @@ CASES = [
         P("HT-2508", """Providencia 2D. UF 3.900. Metro a 500 m. Con estacionamiento propio. Edificio
            familiar y tranquilo.""",
           tags=["mascota_silencio"],
-          note="no habla de mascotas",
-          expect=[M], loc="Providencia", beds=2, dist=500, pets=NONE_, parking="propio", uf=3900),
+          note="no habla de mascotas -> convención E3: sin política de mascotas no se descarta (va al final del orden)",
+          expect=[], loc="Providencia", beds=2, dist=500, pets=NONE_, parking="propio", uf=3900),
     ]),
 
     # ------------------------------------------------------------------ 26 --
@@ -390,8 +390,8 @@ CASES = [
         P("HT-2806", """Ñuñoa 3D. UF 4.300. Metro a 300 m. Con estacionamiento propio. Mascotas:
            depende del reglamento.""",
           tags=["mascota_silencio"],
-          note="'depende del reglamento' no es aceptación",
-          expect=[M], loc="Ñuñoa", beds=3, dist=300, pets=NONE_, parking="propio", uf=4300),
+          note="'depende del reglamento' no es aceptación -> convención E3: sin política de mascotas no se descarta (va al final del orden)",
+          expect=[], loc="Ñuñoa", beds=3, dist=300, pets=NONE_, parking="propio", uf=4300),
         P("HT-2807", """Ñuñoa 3D. $185.000.000 + estacionamiento $8.000.000. Metro a 500 m. Gatos
            sí.""",
           tags=["multi_monto", "estac_ambiguo"],

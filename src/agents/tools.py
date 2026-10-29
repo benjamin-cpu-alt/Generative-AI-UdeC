@@ -471,7 +471,9 @@ def interpretar(campo: str, ev: str, uf: float) -> List:
 
 def evaluar(pid: str, h: Dict, case: Case) -> Dict:
     """Las 5 restricciones sobre los hechos. Un dato faltante nunca aprueba: la restricción
-    queda `no_verificable` y cuenta como fallida (misma regla de seguridad que la E2)."""
+    queda `no_verificable` y cuenta como fallida (misma regla de seguridad que la E2).
+    Convención E3: un aviso sin política de mascotas queda `sin_confirmar` (no se descarta y va
+    al final del orden), salvo que una duda sobre el permiso quedara sin resolver."""
     hc, sc = case.hard_constraints, case.soft_constraints
     est: Dict[str, str] = {}
     motivo: Dict[str, str] = {}
@@ -482,8 +484,11 @@ def evaluar(pid: str, h: Dict, case: Case) -> Dict:
 
     if hc.mascota_especie is None:
         est[C_PETS], motivo[C_PETS] = "cumple", "el comprador no tiene mascota"
+    elif h["mascotas"] == "no_explicita" and h.get("_mascotas_duda"):
+        est[C_PETS], motivo[C_PETS] = "no_verificable", "nadie resolvió la duda sobre el permiso de mascotas"
     elif h["mascotas"] == "no_explicita":
-        est[C_PETS], motivo[C_PETS] = "no_verificable", "el aviso no declara política de mascotas"
+        est[C_PETS], motivo[C_PETS] = ("sin_confirmar", "el aviso no declara política de mascotas: "
+                                       "no se descarta, va al final del orden")
     else:
         ok = (h["mascotas"] == "permitidas"
               and (not h["especies"] or hc.mascota_especie in h["especies"])
@@ -497,8 +502,8 @@ def evaluar(pid: str, h: Dict, case: Case) -> Dict:
     motivo[C_DISTANCE] = f"{d if d is not None else '?'} m vs máximo {hc.distancia_max_transporte_m} m"
 
     b = h.get("dormitorios")
-    est[C_BEDROOMS] = "no_verificable" if b is None else ("cumple" if b >= hc.dormitorios_min else "falla")
-    motivo[C_BEDROOMS] = f"{b if b is not None else '?'} vs mínimo {hc.dormitorios_min}"
+    est[C_BEDROOMS] = "no_verificable" if b is None else ("cumple" if max(b, 1) >= hc.dormitorios_min else "falla")
+    motivo[C_BEDROOMS] = f"{'0 (estudio = 1)' if b == 0 else b if b is not None else '?'} vs mínimo {hc.dormitorios_min}"
 
     pk = h.get("estacionamiento")
     if not hc.estacionamiento_requerido:
@@ -509,18 +514,19 @@ def evaluar(pid: str, h: Dict, case: Case) -> Dict:
         est[C_PARKING] = "cumple" if pk in ("propio", "asignado") else "falla"
     motivo[C_PARKING] = f"{pk} (requerido={'sí' if hc.estacionamiento_requerido else 'no'})"
 
-    failed = [c for c in (C_BUDGET, C_PETS, C_DISTANCE, C_BEDROOMS, C_PARKING) if est[c] != "cumple"]
+    failed = [c for c in (C_BUDGET, C_PETS, C_DISTANCE, C_BEDROOMS, C_PARKING) if est[c] in ("falla", "no_verificable")]
     roi = normalize.roi_pct(h["arriendo"], p) if p and h.get("arriendo") else None
     prefs = {comuna_canonica(x) or _fold(x.strip()) for x in sc.ubicaciones_preferidas}
     return {"id": pid, "estado": est, "motivo": motivo, "failed_constraints": failed,
-            "price_clp": p, "roi_pct": roi,
+            "price_clp": p, "roi_pct": roi, "mascotas_confirmadas": est[C_PETS] != "sin_confirmar",
             "preferida": bool(h.get("comuna")) and (comuna_canonica(h["comuna"]) or _fold(h["comuna"].strip())) in prefs}
 
 
 def ordenar(evals: List[Dict]) -> Dict:
-    """JSON estricto de la E1: aprobadas por comuna preferida y luego ROI desc."""
+    """JSON estricto de la E1: mascotas sin confirmar al final; luego comuna preferida y ROI desc."""
     ok = [e for e in evals if not e["failed_constraints"]]
-    ok.sort(key=lambda e: (e["preferida"], e["roi_pct"] is not None, e["roi_pct"] or 0.0), reverse=True)
+    ok.sort(key=lambda e: (e.get("mascotas_confirmadas", True), e["preferida"],
+                           e["roi_pct"] is not None, e["roi_pct"] or 0.0), reverse=True)
     return {
         "approved_matches": [{"id": e["id"], "price_clp": e["price_clp"], "roi_pct": e["roi_pct"]} for e in ok],
         "rejected": [{"id": e["id"], "failed_constraints": e["failed_constraints"]}

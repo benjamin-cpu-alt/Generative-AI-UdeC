@@ -117,7 +117,14 @@ administración» leído como si remitiera a un reglamento; «Santiago Centro» 
 ranking). Se corrigieron antes de cualquier corrida de evaluación. La evaluación es `hard_test` (después de la revisión humana), más `test`,
 `ood` y `real_e3`.
 
-Evaluación (`bash scripts/run_e3.sh final`, una sola vez, sin cambios al sistema después):
+> **Convención E3 (29-oct).** En la revisión humana de `hard_test` el equipo cambió dos reglas
+> para todos los sets: un aviso sin política de mascotas no se descarta (va al final del orden) y
+> un estudio o loft cuenta como 1 dormitorio (`data/cases/hard_test/REVIEW.md`). El juez, la E2,
+> el baseline y el Decisor (`prompts/decisor/v2.md`) se actualizaron, y todo se corre de nuevo con
+> `bash scripts/run_e3.sh todo` (`baseline_e3_*`, `e2_e3_*`, `agents_v2_*`). La tabla siguiente
+> es la corrida anterior (agentes v1, convención antigua) y se conserva como historial.
+
+Evaluación con la convención anterior (agentes v1):
 
 | Set | Run | e1_strict | full_correct | exactitud por aviso | aprob. indebida | rechazo falso |
 |---|---|---|---|---|---|---|

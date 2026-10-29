@@ -71,9 +71,9 @@
     {
       "id": "HT-0303",
       "text": "Loft de 40 m² en Santiago, ambiente único con altillo. UF 2.600. Metro a 200 m. Pet friendly.",
-      "note": "loft de ambiente único = 0 dormitorios",
+      "note": "loft de ambiente único = 0 dormitorios -> convención E3: estudio/loft = 1 dormitorio",
       "tags": [
-        "dorm_no_cuenta"
+        "dorm_notacion"
       ],
       "truth": {
         "bedrooms": 0,
@@ -196,7 +196,7 @@
     {
       "id": "HT-0308",
       "text": "Santiago, 1 dormitorio. $99.000.000. A 300 m del metro. Mascotas a convenir con el propietario.",
-      "note": "'a convenir' no es aceptación explícita",
+      "note": "'a convenir' no es aceptación explícita -> convención E3: sin política de mascotas no se descarta (va al final del orden)",
       "tags": [
         "mascota_silencio"
       ],

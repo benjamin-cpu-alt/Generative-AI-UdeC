@@ -92,3 +92,16 @@ Solo para evaluar. Ningún prompt, parser ni agente se ajusta mirando `real_e3/`
   dormitorios. El set sigue midiendo principalmente aprobaciones indebidas: rechazar todo
   acierta 17/20 casos en `full_correct`. Se reporta así; el comprador no se ajusta después
   de ver los avisos.
+
+## Enmienda (29-oct-2026): convención E3 de mascotas y estudios
+
+En la revisión humana de `hard_test` el equipo cambió dos convenciones para **todos** los sets
+(ver `data/cases/hard_test/REVIEW.md`): un aviso sin política de mascotas no se descarta (va al
+final del orden) y un estudio o loft cuenta como 1 dormitorio. Las anotaciones de `real_e3` no
+cambian; cambia el veredicto que `rules.py` deriva de ellas. Aprobaciones esperadas: **2/40 con
+el comprador 1** (antes 0) y 3/40 con el comprador 2 (sin cambio).
+
+Ya se había corrido una vez `real_e3` con la convención anterior (agentes v1: 20/20). El cambio
+no viene de esos resultados sino de la revisión de `hard_test`, y los empeora: con el criterio
+nuevo, esas salidas rechazan por error los 2 avisos del comprador 1. Se reporta la corrida
+nueva (`agents_v2_real_e3`, `e2_e3_real_e3`, `baseline_e3_real_e3`) y se conserva la anterior.

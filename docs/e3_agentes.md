@@ -4,7 +4,7 @@ Tres agentes con el **mismo modelo** (phi4-mini, 3.8B, Ollama, temperatura 0, se
 agente decide qué pasa después; el orquestador (`src/agents/orchestrator.py`) solo ejecuta esa
 decisión dentro de un presupuesto de rondas y registra **cada mensaje** en
 `results/<run>/<caso>.trace.jsonl`. Los prompts están versionados fuera del código, en
-`prompts/<agente>/v1.md`.
+`prompts/<agente>/v1.md` (Decisor: `v2.md`, convención E3).
 
 ```
                  spans                    hechos + dudas (⚠)
@@ -23,8 +23,8 @@ decisión dentro de un presupuesto de rondas y registra **cada mensaje** en
 | | Lector | Verificador | Decisor |
 |---|---|---|---|
 | Rol | Copia del aviso el fragmento literal de cada tema. No conoce al comprador. | Revisa si lo leído dice lo mismo que el aviso, solo en los campos que `anclar` marca como dudosos. No conoce al comprador. | Ve el resultado de `evaluar` de todos los avisos del caso y decide si está listo o si falta un dato. |
-| Prompt | `prompts/lector/v1.md` (`system` = `SYSTEM_V5` de la E2, sin cambios; `relectura` nueva) | `prompts/verificador/v1.md` (`revisar`, `retro`, `consulta`) | `prompts/decisor/v1.md` (`decidir`; `sin_herramientas` para la ablación) |
-| Herramientas | `anclar` (grounding g3 de la E2 + conversión a CLP/m) | `comprobar` (la evidencia debe estar en el aviso; el código interpreta el valor, también cifras en palabras y jerga) | `evaluar` (5 restricciones, estado cumple/falla/no_verificable), `ordenar` (JSON de la E1) |
+| Prompt | `prompts/lector/v1.md` (`system` = `SYSTEM_V5` de la E2, sin cambios; `relectura` nueva) | `prompts/verificador/v1.md` (`revisar`, `retro`, `consulta`) | `prompts/decisor/v2.md` (`decidir`; `sin_herramientas` para la ablación) |
+| Herramientas | `anclar` (grounding g3 de la E2 + conversión a CLP/m) | `comprobar` (la evidencia debe estar en el aviso; el código interpreta el valor, también cifras en palabras y jerga) | `evaluar` (5 restricciones, estado cumple/falla/no_verificable; mascotas también sin_confirmar), `ordenar` (JSON de la E1) |
 | Entrada | Texto de un aviso (y, en relectura, los campos que devuelve el Verificador con su motivo) | Aviso + tabla campo / fragmento / dato leído, con ⚠ y la frase donde mirar | Perfil del comprador + texto y evaluación de cada aviso |
 | Salida (JSON Schema) | 8 fragmentos + 3 respuestas cerradas de mascotas | `revisiones[]`: campo, acción, evidencia, valor | `accion` ∈ {cerrar, consultar}, `consultas[]`: id, campo, motivo |
 | Decide | Por campo releído: fragmento nuevo o `null` («el aviso no lo dice») | Por campo: `confirmar` · `corregir` (→ `comprobar`) · `releer` (→ Lector) · `no_verificable`; tras un rechazo de `comprobar`: corregir de nuevo, `mantener` o `no_verificable` | `cerrar` (→ `ordenar`, fin) o `consultar` (→ Verificador) |
@@ -34,8 +34,13 @@ Reglas de seguridad (deterministas, en el orquestador y las herramientas):
 
 - Un dato que sigue sin leerse **nunca aprueba**: la restricción queda `no_verificable` y falla (igual que en la E2).
 - `comprobar` rechaza evidencia que no está en el aviso, evidencia sobre **otra propiedad** («en el mismo edificio se vende otra unidad…»), montos inverosímiles (un «precio» de $720.000) y permisos de mascotas que remiten a un reglamento.
-- Una duda sobre mascotas que nadie resolvió deja el permiso como no explícito.
-- Una consulta del Decisor solo se ejecuta si el campo dejó una restricción `no_verificable`, y una sola vez.
+- Convención E3 (revisión humana de `hard_test`): un aviso que no declara política de mascotas
+  queda `sin_confirmar`, se aprueba si cumple lo demás y va al final del orden. Un estudio o loft
+  cuenta como 1 dormitorio.
+- Una duda sobre el permiso de mascotas que nadie resolvió **no** es lo mismo que el silencio:
+  la restricción queda `no_verificable` y falla (podría haber una restricción no leída).
+- Una consulta del Decisor solo se ejecuta si el campo dejó una restricción `no_verificable` (o
+  mascotas `sin_confirmar`), y una sola vez.
 
 ## Técnicas de prompting (taxonomía: Schulhoff et al., 2024, *The Prompt Report*)
 
@@ -56,9 +61,9 @@ Reglas de seguridad (deterministas, en el orquestador y las herramientas):
 
 ```bash
 export PYTHONPATH=src
-python3 -m agents.run --split hard_dev --run agents_v1_hard_dev          # iterar (solo dev)
-python3 -m agents.show results/agents_v1_hard_dev/hd_01.trace.jsonl      # ver la conversación
-bash scripts/run_e3.sh final        # una vez, después de la revisión humana de hard_test
-bash scripts/run_e3.sh ablaciones
+python3 -m agents.run --split hard_dev --run agents_v2_hard_dev          # iterar (solo dev)
+python3 -m agents.show results/agents_v2_hard_dev/hd_01.trace.jsonl      # ver la conversación
+bash scripts/run_e3.sh todo         # hard_test, real_e3, ablaciones, test, ood, hard_dev
+bash scripts/run_e3.sh tablas
 python3 -m pytest tests/test_agents.py -q   # sin Ollama: herramientas, prompts y bucles
 ```

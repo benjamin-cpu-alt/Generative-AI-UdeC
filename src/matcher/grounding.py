@@ -87,7 +87,7 @@ _BED_RE = re.compile(r"\b(\d+|un|una|uno|dos|tres|cuatro|cinco|seis)\s*(?:d\b|do
 # Fallback sobre el aviso completo cuando el modelo no localiza la cláusula: solo formas
 # inequívocas ("3D/", "3 dormitorios"), nunca "N d" suelto.
 _BED_STRICT_RE = re.compile(r"\b(\d+)\s*(?:D\s*/|dormitorios?\b)", re.IGNORECASE)
-_STUDIO_RE = re.compile(r"\b(?:estudio|monoambiente|ambiente único|ambiente unico)\b", re.IGNORECASE)
+_STUDIO_RE = re.compile(r"\b(?:estudio|studio|loft|monoambiente|ambiente único|ambiente unico)\b", re.IGNORECASE)
 _LOC_PREFIX_RE = re.compile(r"^\W*(?:depto\.?|departamento|casa|propiedad|ubicad[oa])?\s*(?:en)\s+", re.IGNORECASE)
 _LOC_IN_AD_RE = re.compile(r"\b(?:depto\.?|dpto\.?|departamento|casa|propiedad)\b[^.]{0,40}?\ben\s+"
                            r"([A-ZÁÉÍÓÚÑ][\wÁÉÍÓÚÑáéíóúñ]*(?:\s+[A-ZÁÉÍÓÚÑ][\wÁÉÍÓÚÑáéíóúñ]*){0,2})",

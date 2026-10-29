@@ -44,5 +44,5 @@ def test_caso_de_fallo_real_separado_del_sorteo():
     case = Case.load(ROOT / "data" / "cases" / "real_fallo" / "fallo_001.json")
     exp = expected_output(case)
     assert exp.approved_ids == set()
-    assert sorted(exp.by_id["REAL-F1"].failed_constraints) == ["estacionamiento", "mascotas"]
+    assert exp.by_id["REAL-F1"].failed_constraints == ["estacionamiento"]   # convención E3: mascotas no descarta
     assert not (REAL / "fallo_001.json").exists()

@@ -79,7 +79,7 @@ class Config:
     model: str = "phi4-mini:latest"
     lector: str = "v1"
     verificador: str = "v1"
-    decisor: str = "v1"
+    decisor: str = "v2"               # v2: convención E3 (mascotas sin_confirmar, estudio = 1)
     grounding: str = "g3"
     esquema: bool = True               # −esquema: salida libre, se busca el JSON en el texto
     literal: bool = True               # −literal: `comprobar` no exige que el valor salga de la evidencia
@@ -250,6 +250,8 @@ class Sistema:
             h["distancia_metro"], h["distancia_bus"] = valor, None
             return
         h[campo] = valor
+        if campo in ("mascotas", "mascotas_kg"):
+            h.pop("_mascotas_duda", None)
         if campo == "mascotas":
             h["especies"] = (tools.especies_de(evidencia) or []) if valor == "permitidas" else []
             if valor != "permitidas":
@@ -285,11 +287,13 @@ class Sistema:
             self._seguridad(tr, prop, h, marcar)
 
     def _seguridad(self, tr: Traza, prop: Property, h: Dict, marcar: Dict[str, str]) -> None:
-        """Una duda sobre el permiso de mascotas que nadie resolvió no puede aprobar: el
-        permiso queda no explícito (misma regla que un dato faltante)."""
+        """Una duda sobre el permiso de mascotas que nadie resolvió no puede aprobar: la
+        restricción queda no_verificable (misma regla que un dato faltante). Es distinto de un
+        aviso que no declara política, que la convención E3 no descarta."""
         pend = [c for c in ("mascotas", "mascotas_kg") if c in marcar and (prop.id, c) not in self._resueltos]
         if pend and h.get("mascotas") == "permitidas":
             self._vaciar(h, "mascotas")
+            h["_mascotas_duda"] = True
             tr.msg("orquestador", "hechos", "duda_sin_resolver",
                    {"campos": pend, "efecto": "mascotas queda no verificable"}, aviso=prop.id)
             tr.contar("dudas_sin_resolver")
@@ -351,12 +355,15 @@ class Sistema:
         for c in obj.get("consultas") or []:
             if not (isinstance(c, dict) and c.get("id") in evals and c.get("campo") in CAMPOS):
                 continue
-            # solo se consulta un dato que dejó una restricción sin verificar, y una sola vez
-            ok = any(evals[c["id"]]["estado"][r] == "no_verificable" for r in CAMPO2C.get(c["campo"], ()))
+            # solo se consulta un dato que dejó una restricción sin verificar (o mascotas sin
+            # confirmar), y una sola vez
+            ok = any(evals[c["id"]]["estado"][r] in ("no_verificable", "sin_confirmar")
+                     for r in CAMPO2C.get(c["campo"], ()))
             (consultas if ok and (c["id"], c["campo"]) not in self._consultados else descartadas).append(c)
         if descartadas:
             tr.msg("orquestador", "Decisor", "consultas_descartadas",
-                   {"motivo": "la restricción no está no_verificable o ya se consultó", "consultas": descartadas})
+                   {"motivo": "la restricción no está no_verificable ni sin_confirmar, o ya se consultó",
+                    "consultas": descartadas})
         if accion == "consultar" and not consultas:
             accion = "cerrar"
         tr.msg("Decisor", "herramienta:ordenar" if accion == "cerrar" else "Verificador", accion,
@@ -367,6 +374,9 @@ class Sistema:
     def decisor_sin_herramientas(self, tr: Traza, case: Case, hechos: Dict[str, Dict]) -> Dict:
         p = self.p["decisor"]
         limpio = {pid: {k: v for k, v in h.items() if not k.startswith("_")} for pid, h in hechos.items()}
+        for pid, h in hechos.items():      # una duda sin resolver se muestra como dato no leído
+            if h.get("_mascotas_duda"):
+                limpio[pid]["mascotas"] = None
         user = llm.render(p["sin_herramientas"], perfil=self.perfil(case),
                           preferencias=base_prompt.render_soft(case),
                           uf="$" + f"{int(case.uf_value):,}".replace(",", "."),

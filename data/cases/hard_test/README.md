@@ -81,10 +81,14 @@ Cuotas por caso:
   `round(UF × valor UF del caso)`. "Actualmente arrendado" sin monto = sin arriendo (ROI `null`).
 - **Dormitorios**: solo los declarados como dormitorio, habitación o pieza (las suites
   cuentan). No cuentan escritorio, pieza o dormitorio de servicio, estudio, sala
-  "convertible" o "habilitable", mansarda ni loggia. Monoambiente o estudio = 0.
+  "convertible" o "habilitable", mansarda ni loggia. Monoambiente o estudio = 0 en `truth`,
+  y **cuenta como 1** para el mínimo del comprador (convención E3, ver `REVIEW.md`).
 - **Distancia**: la menor entre metro (o tren) y paradero troncal, en metros. km → m.
   Minutos, cuadras y "a pasos" no son una distancia verificable (`null` → la restricción falla).
-- **Mascotas**: hace falta una aceptación explícita. "Pet friendly", "se aceptan mascotas"
+- **Mascotas** (convención E3, ver `REVIEW.md`): si el aviso no declara política, o la deja
+  abierta ("consultar", "a convenir", "según reglamento"), el aviso **no se descarta**: se
+  aprueba si cumple lo demás y va al final del orden. En `truth` sigue anotándose como no
+  explícita. Lo que sigue es la anotación de una política declarada. "Pet friendly", "se aceptan mascotas"
   y "una mascota por depto" = cualquier especie y peso. Las especies y el peso se anotan tal
   como se publican; el límite de peso es inclusivo (20 kg ≤ 20 kg cumple). "Consultar", "a
   convenir" o "según reglamento" sin más = no explícita. Se evita "mascotas pequeñas" sin

@@ -92,8 +92,8 @@ CASES = [
         P("HT-1206", """Las Condes, 2D. UF 3.900. Metro a 600 m. Con estacionamiento propio. Edificio
            con piscina y quincho.""",
           tags=["mascota_silencio"],
-          note="no habla de mascotas",
-          expect=[M], loc="Las Condes", beds=2, dist=600, pets=NONE_, parking="propio", uf=3900),
+          note="no habla de mascotas -> convención E3: sin política de mascotas no se descarta (va al final del orden)",
+          expect=[], loc="Las Condes", beds=2, dist=600, pets=NONE_, parking="propio", uf=3900),
         P("HT-1207", """Las Condes 2D. UF 3.800. ¡Excelente conectividad! El metro está a 20 minutos
            caminando. Gatos OK. Con estacionamiento propio.""",
           tags=["dist_formato", "distractor"],
@@ -206,8 +206,8 @@ CASES = [
         P("HT-1408", """La Reina, 3D. UF 4.500. Metro a 300 m. Con estacionamiento propio. Ideal para
            familias con niños.""",
           tags=["mascota_silencio"],
-          note="no habla de mascotas",
-          expect=[M], loc="La Reina", beds=3, dist=300, pets=NONE_, parking="propio", uf=4500),
+          note="no habla de mascotas -> convención E3: sin política de mascotas no se descarta (va al final del orden)",
+          expect=[], loc="La Reina", beds=3, dist=300, pets=NONE_, parking="propio", uf=4500),
     ]),
 
     # ------------------------------------------------------------------ 15 --
@@ -462,8 +462,8 @@ CASES = [
         P("HT-1908", """Maipú, 3D. UF 4.200. Metro a 500 m. Con estacionamiento propio. Antejardín y
            patio trasero.""",
           tags=["mascota_silencio"],
-          note="un patio no es permiso de mascotas",
-          expect=[M], loc="Maipú", beds=3, dist=500, pets=NONE_, parking="propio", uf=4200),
+          note="un patio no es permiso de mascotas -> convención E3: sin política de mascotas no se descarta (va al final del orden)",
+          expect=[], loc="Maipú", beds=3, dist=500, pets=NONE_, parking="propio", uf=4200),
     ]),
 
     # ------------------------------------------------------------------ 20 --
@@ -498,9 +498,9 @@ CASES = [
           note="near miss: UF 3.120 = $125.424.000",
           expect=[B], loc="Santiago", beds=2, dist=300, pets=NONE_, parking="ninguno", uf=3120),
         P("HT-2006", """Santiago, estudio de 26 m². $70.000.000. Metro a 200 m.""",
-          tags=["dorm_no_cuenta"],
-          note="estudio = 0 < 1",
-          expect=[R], loc="Santiago", beds=0, dist=200, pets=NONE_, parking="ninguno",
+          tags=["dorm_notacion"],
+          note="estudio = 0 < 1 -> convención E3: estudio/loft = 1 dormitorio",
+          expect=[], loc="Santiago", beds=0, dist=200, pets=NONE_, parking="ninguno",
           clp=70_000_000),
         P("HT-2007", """Santiago, 1D. $100.000.000. Metro a 1,4 km.""",
           tags=["dist_formato"],

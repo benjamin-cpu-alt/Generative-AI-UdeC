@@ -157,7 +157,8 @@ def gen_property(rng: random.Random, hc: HardConstraints, sc: SoftConstraints, u
             notes.append(f"estacionamiento '{parking}' menciona la palabra pero no cumple")
         elif s == "bedrooms":
             bedrooms = max(0, hc.dormitorios_min - 1)
-            fails.append(C_BEDROOMS)
+            if bedrooms >= 1:            # convención E3: un estudio (0) cuenta como 1
+                fails.append(C_BEDROOMS)
             notes.append("dormitorio 'convertible' que no es real")
         elif s == "pets_weight":
             lim = max(2, int(hc.mascota_kg - rng.choice([1, 2, 3, 5, 8])))
@@ -171,9 +172,9 @@ def gen_property(rng: random.Random, hc: HardConstraints, sc: SoftConstraints, u
             fails.append(C_PETS)
             notes.append("acepta la otra especie, no la del comprador")
         elif s == "pets_unspecified":
+            # Convención E3: sin política declarada no se descarta (va al final del orden).
             pets = PetsPolicy(explicit=False, allowed=False, species=[], max_kg=None)
-            fails.append(C_PETS)
-            notes.append("política de mascotas ausente (debe ser explícita)")
+            notes.append("política de mascotas ausente (no descarta: convención E3)")
         elif s == "pets_none":
             pets = PetsPolicy(explicit=True, allowed=False, species=[], max_kg=None)
             fails.append(C_PETS)

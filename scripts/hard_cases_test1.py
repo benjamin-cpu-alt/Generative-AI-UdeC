@@ -127,9 +127,9 @@ CASES = [
           uf=2950, rent=rent_uf(13.5, 38_700)),
         P("HT-0303", """Loft de 40 m² en Santiago, ambiente único con altillo. UF 2.600. Metro a 200
            m. Pet friendly.""",
-          tags=["dorm_no_cuenta"],
-          note="loft de ambiente único = 0 dormitorios",
-          expect=[R], loc="Santiago", beds=0, dist=200, pets=ANY, parking="ninguno", uf=2600),
+          tags=["dorm_notacion"],
+          note="loft de ambiente único = 0 dormitorios -> convención E3: estudio/loft = 1 dormitorio",
+          expect=[], loc="Santiago", beds=0, dist=200, pets=ANY, parking="ninguno", uf=2600),
         P("HT-0304", """Santiago, 1D/1B. $105.000.000. A 400 m del metro. La comunidad solo autoriza
            perros.""",
           tags=["mascota_condicion"],
@@ -155,8 +155,8 @@ CASES = [
         P("HT-0308", """Santiago, 1 dormitorio. $99.000.000. A 300 m del metro. Mascotas a convenir
            con el propietario.""",
           tags=["mascota_silencio"],
-          note="'a convenir' no es aceptación explícita",
-          expect=[M], loc="Santiago", beds=1, dist=300, pets=NONE_, parking="ninguno",
+          note="'a convenir' no es aceptación explícita -> convención E3: sin política de mascotas no se descarta (va al final del orden)",
+          expect=[], loc="Santiago", beds=1, dist=300, pets=NONE_, parking="ninguno",
           clp=99_000_000),
     ]),
 
@@ -492,8 +492,8 @@ CASES = [
           clp=140_000_000),
         P("HT-1007", """Puente Alto, 3D. $100.000.000. A 800 m del metro. Patio amplio.""",
           tags=["mascota_silencio"],
-          note="no habla de mascotas ('patio amplio' no es permiso)",
-          expect=[M], loc="Puente Alto", beds=3, dist=800, pets=NONE_, parking="ninguno",
+          note="no habla de mascotas ('patio amplio' no es permiso) -> convención E3: sin política de mascotas no se descarta (va al final del orden)",
+          expect=[], loc="Puente Alto", beds=3, dist=800, pets=NONE_, parking="ninguno",
           clp=100_000_000),
         P("HT-1008", """La Florida, 4D. UF 4.180. Metro a 900 m. Admite mascotas.""",
           tags=["casi_cumple"],

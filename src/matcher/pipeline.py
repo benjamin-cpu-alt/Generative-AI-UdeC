@@ -52,12 +52,14 @@ PROCEDURE = (
     "Paso 1. Precio: si viene en UF, multiplica por el valor de la UF de hoy y escribe el resultado "
     "exacto en CLP. Compara con el presupuesto máximo. Ignora frases como 'bajo el presupuesto', "
     "'negociable' o 'según el tasador': solo vale el número.\n"
-    "Paso 2. Dormitorios reales: escritorios, loggias o salas 'convertibles' NO son dormitorios.\n"
+    "Paso 2. Dormitorios reales: escritorios, loggias o salas 'convertibles' NO son dormitorios; "
+    "un estudio, loft o monoambiente cuenta como 1.\n"
     "Paso 3. Distancia: la menor entre metro y paradero troncal, en metros; los minutos caminando no cuentan.\n"
-    "Paso 4. Mascotas: debe aceptar explícitamente la especie y el peso del comprador.\n"
+    "Paso 4. Mascotas: rechaza si prohíbe mascotas o no acepta la especie o el peso del comprador; "
+    "si no dice nada o lo deja a convenir, no rechaces por esto (va al final del orden).\n"
     "Paso 5. Estacionamiento: solo propio o asignado.\n"
     "Paso 6. Si falló CUALQUIER paso, va a rejected. Si pasó todos, calcula roi_pct y va a approved_matches.\n"
-    "Paso 7. Ordena approved_matches por comuna preferida y luego ROI descendente."
+    "Paso 7. Ordena approved_matches: mascotas sin confirmar al final; luego comuna preferida y ROI descendente."
 )
 
 

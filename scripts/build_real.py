@@ -62,34 +62,34 @@ B, M, D, R, E = "presupuesto", "mascotas", "distancia_transporte", "dormitorios"
 ANNOTATION = {
     "R01": dict(beds=3, dist=None, pets=ANY, parking="propio", uf=4420, loc="Santiago", expect=[B, D],
                 note="Yapo sin coordenadas: la ficha no trae distancia"),
-    "R02": dict(beds=4, dist=568, pets=NONE_, parking="propio", uf=9790, loc="Ñuñoa", expect=[B, M]),
+    "R02": dict(beds=4, dist=568, pets=NONE_, parking="propio", uf=9790, loc="Ñuñoa", expect=[B]),
     "R03": dict(beds=1, dist=898, pets=ANY, parking="ninguno", uf=2300, loc="Ñuñoa", expect=[R, E],
                 note="'Sin Estacionamiento' + 'ni estacionamiento'; el de visitas es del edificio"),
     "R04": dict(beds=0, dist=None, pets=ANY, parking="ninguno", uf=1400, loc="Providencia", expect=[D, R, E],
                 note="'tipo Studio', '1 espacio/dormitorio' = estudio (0); '3 cuadras' no es distancia"),
     "R05": dict(beds=6, dist=1330, pets=NONE_, parking="ninguno", clp=260_000_000, loc="Santiago",
-                expect=[B, M, D, E], note="6D es el dato del portal; la descripción dice 'varias piezas'"),
-    "R06": dict(beds=1, dist=226, pets=NONE_, parking="ninguno", uf=1650, loc="Providencia", expect=[M, R, E],
+                expect=[B, D, E], note="6D es el dato del portal; la descripción dice 'varias piezas'"),
+    "R06": dict(beds=1, dist=226, pets=NONE_, parking="ninguno", uf=1650, loc="Providencia", expect=[R, E],
                 note="'2 Ambientes (Dormitorio Living Comedor)', '1 Espacioso Dormitorio'"),
-    "R07": dict(beds=2, dist=648, pets=NONE_, parking="propio", uf=6000, loc="Providencia", expect=[B, M],
+    "R07": dict(beds=2, dist=648, pets=NONE_, parking="propio", uf=6000, loc="Providencia", expect=[B],
                 note="'Estacionamientos: 1'; el 'Estacionamiento de Visitas' es amenidad del edificio"),
-    "R08": dict(beds=3, dist=825, pets=NONE_, parking="propio", clp=140_000_000, loc="Ñuñoa", expect=[M],
+    "R08": dict(beds=3, dist=825, pets=NONE_, parking="propio", clp=140_000_000, loc="Ñuñoa", expect=[],
                 note="CASO LÍMITE: cumple todo salvo mascotas, que no se mencionan"),
-    "R09": dict(beds=2, dist=1137, pets=NONE_, parking="ninguno", uf=10409, loc="Providencia", expect=[B, M, D, E],
+    "R09": dict(beds=2, dist=1137, pets=NONE_, parking="ninguno", uf=10409, loc="Providencia", expect=[B, D, E],
                 note="sin '2D/' en la ficha: el número sale de '2 dormitorios en suite'"),
-    "R10": dict(beds=1, dist=927, pets=NONE_, parking="ninguno", uf=3300, loc="Providencia", expect=[M, R, E],
+    "R10": dict(beds=1, dist=927, pets=NONE_, parking="ninguno", uf=3300, loc="Providencia", expect=[R, E],
                 note="'1 Dormitorio / Ambiente', 22 m²: 1 (o estudio, 0); falla igual con mínimo 2"),
-    "R11": dict(beds=2, dist=1667, pets=NONE_, parking="propio", uf=2800, loc="La Florida", expect=[M, D],
+    "R11": dict(beds=2, dist=1667, pets=NONE_, parking="propio", uf=2800, loc="La Florida", expect=[D],
                 note="'Estacionamiento,' en la lista de lo que incluye; 'a pasos del metro' no es distancia"),
-    "R12": dict(beds=5, dist=2005, pets=NONE_, parking="propio", uf=20000, loc="La Florida", expect=[B, M, D],
+    "R12": dict(beds=5, dist=2005, pets=NONE_, parking="propio", uf=20000, loc="La Florida", expect=[B, D],
                 note="CONFLICTO: el portal dice 4D, la descripción '5 dormitorios' (manda la descripción)"),
-    "R13": dict(beds=3, dist=410, pets=NONE_, parking="propio", uf=7300, loc="Providencia", expect=[B, M],
+    "R13": dict(beds=3, dist=410, pets=NONE_, parking="propio", uf=7300, loc="Providencia", expect=[B],
                 note="'Cuenta con estacionamiento y bodega'; 'actualmente arrendado' no publica monto"),
-    "R14": dict(beds=5, dist=923, pets=NONE_, parking="ninguno", uf=15500, loc="Ñuñoa", expect=[B, M, E],
+    "R14": dict(beds=5, dist=923, pets=NONE_, parking="ninguno", uf=15500, loc="Ñuñoa", expect=[B, E],
                 note="CONFLICTO: portal 4D; texto: 1 dormitorio en el primer piso + 4 en el segundo = 5"),
-    "R15": dict(beds=3, dist=4646, pets=NONE_, parking="propio", uf=6100, loc="La Florida", expect=[B, M, D],
+    "R15": dict(beds=3, dist=4646, pets=NONE_, parking="propio", uf=6100, loc="La Florida", expect=[B, D],
                 note="la mansarda de 'uso flexible' no es dormitorio"),
-    "R16": dict(beds=2, dist=443, pets=NONE_, parking="calle", uf=4890, loc="Santiago", expect=[B, M, E],
+    "R16": dict(beds=2, dist=443, pets=NONE_, parking="calle", uf=4890, loc="Santiago", expect=[B, E],
                 note="portal dice 3D y 'casa'; el texto: departamento, 'dos dormitorios... mas pieza y baño "
                      "de servicios' (servicio no cuenta); 'opción de estacionamiento en calle' = calle"),
 }
@@ -155,10 +155,10 @@ def build_fallo():
          "properties": [{"id": "REAL-F1", "text": src["ficha"], "truth": asdict(truth), "fuente": src["url"],
                          "note": "'Se aceptan ofertas' no es política de mascotas; 'opción de arriendo de "
                                  "estacionamientos' = no incluido. g3 aprobaba este aviso.",
-                         "expect": [E, M]}]}
+                         "expect": [E]}]}   # [E, M] antes de la convención E3 de mascotas
     case = Case.from_dict(c)
     got = sorted(evaluate_property(case.properties[0], case).failed_constraints)
-    if got != sorted([E, M]):
+    if got != [E]:
         print(f"fallo_001: rules.py={got}")
         return None
     return c

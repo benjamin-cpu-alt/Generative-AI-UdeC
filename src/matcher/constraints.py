@@ -6,9 +6,10 @@ cruzado que el modelo deba sostener. Las 5 reglas son la definición de la tarea
 (Entregable 1, sección 1), no una heurística nueva:
 
   1. presupuesto:   price_clp <= presupuesto_max_clp  (UF→CLP con la UF del día)
-  2. mascotas:      política explícita de aceptación, especie permitida, peso <= límite
+  2. mascotas:      si el aviso acepta: especie permitida y peso <= límite; si no declara
+                    política, no se descarta y va al final del orden (convención E3)
   3. distancia:     min(metro, paradero troncal) <= distancia_max
-  4. dormitorios:   dormitorios reales >= mínimo
+  4. dormitorios:   dormitorios reales >= mínimo (estudio/loft = 1, convención E3)
   5. estacionamiento: propio o asignado (visitas / calle / ninguno no sirven)
 
 Este módulo NO importa rules.py: opera sobre `Facts` (lo que el LLM leyó), nunca
@@ -40,6 +41,7 @@ class Decision:
     roi_pct: Optional[float]
     failed_constraints: List[str] = field(default_factory=list)
     preferred_location: bool = False
+    pets_confirmed: bool = True                       # False: política de mascotas no declarada
     notes: List[str] = field(default_factory=list)   # trazabilidad de cada comparación
 
     @property
@@ -48,8 +50,9 @@ class Decision:
 
     @property
     def rank_key(self) -> tuple:
-        # Soft constraints de la E1: comuna preferida primero; luego ROI desc; sin arriendo al final.
-        return (self.preferred_location, self.roi_pct is not None, self.roi_pct or 0.0)
+        # Mascotas sin confirmar al final (convención E3); luego las soft constraints de la E1:
+        # comuna preferida primero; luego ROI desc; sin arriendo al final.
+        return (self.pets_confirmed, self.preferred_location, self.roi_pct is not None, self.roi_pct or 0.0)
 
 
 def decide(prop_id: str, f: Facts, hc: HardConstraints, sc: SoftConstraints, uf_value: float) -> Decision:
@@ -71,6 +74,9 @@ def decide(prop_id: str, f: Facts, hc: HardConstraints, sc: SoftConstraints, uf_
     if hc.mascota_especie is None:
         pets_ok = True
         d.notes.append("mascotas: el comprador no tiene mascota -> ok")
+    elif f.pets_policy not in ("permitidas", "no_permitidas"):
+        pets_ok, d.pets_confirmed = True, False
+        d.notes.append("mascotas: el aviso no declara política -> no se descarta, va al final del orden")
     else:
         pets_ok = (
             f.pets_policy == "permitidas"
@@ -94,7 +100,7 @@ def decide(prop_id: str, f: Facts, hc: HardConstraints, sc: SoftConstraints, uf_
     # 4. Dormitorios (None = la cláusula no tiene un número: no verificable, se rechaza)
     d.notes.append(f"dormitorios: {f.bedrooms if f.bedrooms is not None else 'no verificable'} "
                    f"vs min {hc.dormitorios_min}")
-    if f.bedrooms is None or f.bedrooms < hc.dormitorios_min:
+    if f.bedrooms is None or max(f.bedrooms, 1) < hc.dormitorios_min:   # estudio = 1
         d.failed_constraints.append(C_BEDROOMS)
 
     # 5. Estacionamiento

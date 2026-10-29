@@ -109,8 +109,26 @@ def test_evaluar_dato_faltante_nunca_aprueba():
     for campo in ("precio", "dormitorios"):
         e = tools.evaluar("P", {**HECHOS, campo: None}, c)
         assert e["failed_constraints"] and "no_verificable" in e["estado"].values()
+    # convención E3: sin política declarada no se descarta, pero va al final del orden;
+    # una duda sobre el permiso que nadie resolvió sí falla
     e = tools.evaluar("P", {**HECHOS, "mascotas": "no_explicita"}, c)
-    assert e["estado"]["mascotas"] == "no_verificable"
+    assert e["estado"]["mascotas"] == "sin_confirmar" and not e["failed_constraints"]
+    assert not e["mascotas_confirmadas"]
+    e = tools.evaluar("P", {**HECHOS, "mascotas": "no_explicita", "_mascotas_duda": True}, c)
+    assert e["estado"]["mascotas"] == "no_verificable" and e["failed_constraints"] == ["mascotas"]
+
+
+def test_evaluar_estudio_cuenta_como_un_dormitorio():
+    c = _case([])
+    e = tools.evaluar("P", {**HECHOS, "dormitorios": 0}, c)
+    assert e["estado"]["dormitorios"] == ("cumple" if c.hard_constraints.dormitorios_min <= 1 else "falla")
+
+
+def test_ordenar_mascotas_sin_confirmar_al_final():
+    c = _case([], SoftConstraints(ubicaciones_preferidas=["Macul"]))
+    evs = [tools.evaluar("A", {**HECHOS, "comuna": "Macul", "mascotas": "no_explicita"}, c),
+           tools.evaluar("B", HECHOS, c)]
+    assert [m["id"] for m in tools.ordenar(evs)["approved_matches"]] == ["B", "A"]
 
 
 def test_ordenar_preferida_y_roi():

@@ -164,7 +164,8 @@ def test_facts_from_spans_unverifiable_never_approves():
     assert any(w.startswith("price_text") for w in warnings)
     d = decide("PROP-X", Facts(**kwargs), HC, SC, uf_value=38_850)
     assert not d.approved
-    assert {"presupuesto", "dormitorios", "mascotas", "distancia_transporte", "estacionamiento"} <= set(d.failed_constraints)
+    assert {"presupuesto", "dormitorios", "distancia_transporte", "estacionamiento"} <= set(d.failed_constraints)
+    assert not d.pets_confirmed            # convención E3: mascotas sin declarar no descarta
 
 
 def test_bedrooms_fallback_recovers_compact_notation_and_records_it():

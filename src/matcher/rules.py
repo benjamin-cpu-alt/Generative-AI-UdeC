@@ -27,6 +27,7 @@ class ExpectedProperty:
     roi_pct: Optional[float]            # None si el texto no da arriendo
     failed_constraints: List[str] = field(default_factory=list)
     preferred_location: bool = False    # soft constraint: comuna preferida del comprador
+    pets_confirmed: bool = True         # False: el comprador tiene mascota y el aviso no declara política
 
     @property
     def approved(self) -> bool:
@@ -34,8 +35,9 @@ class ExpectedProperty:
 
     @property
     def rank_key(self) -> tuple:
-        """Mayor = mejor. Comuna preferida primero; luego ROI (sin arriendo = último)."""
-        return (self.preferred_location, self.roi_pct is not None, self.roi_pct or 0.0)
+        """Mayor = mejor. Mascotas sin confirmar al final (convención E3); luego comuna
+        preferida; luego ROI (sin arriendo = último)."""
+        return (self.pets_confirmed, self.preferred_location, self.roi_pct is not None, self.roi_pct or 0.0)
 
 
 @dataclass
@@ -53,7 +55,7 @@ class Expected:
     @property
     def ranking(self) -> List[List[str]]:
         """Aprobadas ordenadas de mejor a peor, agrupadas en niveles de empate
-        (misma preferencia y mismo ROI): dentro de un nivel cualquier orden vale."""
+        (misma confirmación de mascotas, preferencia y ROI): dentro de un nivel cualquier orden vale."""
         approved = sorted((v for v in self.by_id.values() if v.approved),
                           key=lambda e: e.rank_key, reverse=True)
         tiers: List[List[str]] = []
@@ -93,10 +95,13 @@ def evaluate_property(prop: Property, case: Case) -> ExpectedProperty:
     if clp > hc.presupuesto_max_clp:
         failed.append(C_BUDGET)
 
+    # Convención E3 (revisión humana de hard_test): un aviso que no declara política de
+    # mascotas, o que la deja abierta ("a convenir", "consultar"), no se descarta porque se
+    # puede conversar; se aprueba si cumple lo demás y queda al final del orden.
     p = t.pets
-    pets_ok = hc.mascota_especie is None or (
-        p.explicit
-        and p.allowed
+    pets_confirmed = hc.mascota_especie is None or p.explicit
+    pets_ok = hc.mascota_especie is None or not p.explicit or (
+        p.allowed
         and (not p.species or hc.mascota_especie in p.species)
         and (p.max_kg is None or hc.mascota_kg <= p.max_kg)
     )
@@ -108,7 +113,7 @@ def evaluate_property(prop: Property, case: Case) -> ExpectedProperty:
     if t.distance_transport_m is None or t.distance_transport_m > hc.distancia_max_transporte_m:
         failed.append(C_DISTANCE)
 
-    if t.bedrooms < hc.dormitorios_min:
+    if effective_bedrooms(t.bedrooms) < hc.dormitorios_min:
         failed.append(C_BEDROOMS)
 
     if hc.estacionamiento_requerido and t.parking not in VALID_PARKING:
@@ -120,7 +125,13 @@ def evaluate_property(prop: Property, case: Case) -> ExpectedProperty:
         roi_pct=roi_pct(t.rent_monthly_clp, clp),
         failed_constraints=failed,
         preferred_location=is_preferred_location(t.location, case),
+        pets_confirmed=pets_confirmed,
     )
+
+
+def effective_bedrooms(bedrooms: int) -> int:
+    """Convención E3: un estudio, loft o monoambiente (0 dormitorios separados) cuenta como 1."""
+    return max(bedrooms, 1)
 
 
 def is_preferred_location(location: Optional[str], case: Case) -> bool:

@@ -113,9 +113,12 @@ def test_sin_mascota_en_el_decisor_y_el_prompt():
     assert "No tiene mascota" in render_profile(_case(HC_SIN, PetsPolicy(explicit=False)))
 
 
-def test_con_mascota_sigue_exigiendo_permiso():
+def test_con_mascota_sin_politica_no_descarta_pero_baja():
+    """Convención E3: sin política declarada no se descarta; una prohibición sí."""
     hc = HardConstraints(**{**HC_SIN.__dict__, "mascota_especie": "perro", "mascota_kg": 10})
-    c = _case(hc, PetsPolicy(explicit=False))
+    e = evaluate_property(_case(hc, PetsPolicy(explicit=False)).properties[0], _case(hc, PetsPolicy(explicit=False)))
+    assert "mascotas" not in e.failed_constraints and not e.pets_confirmed
+    c = _case(hc, PetsPolicy(explicit=True, allowed=False))
     assert "mascotas" in evaluate_property(c.properties[0], c).failed_constraints
 
 
@@ -153,4 +156,4 @@ def test_real_e3_aprobaciones_preregistradas():
     """Cifras de PREREGISTRO_E3.md: si la adjudicación cambia, este test lo delata."""
     n = {b: sum(len(expected_output(Case.load(p)).approved_ids) for p in REAL_E3 if f"real_{b}_" in p)
          for b in ("b1", "b2")}
-    assert n == {"b1": 0, "b2": 3}
+    assert n == {"b1": 2, "b2": 3}   # b1: 0 -> 2 por la convención E3 de mascotas (enmienda del 29-oct)
