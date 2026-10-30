@@ -90,10 +90,14 @@ generalizan.
 
 ### Sistema multiagente (`src/agents`)
 
-Tres agentes con el mismo phi4-mini, prompts versionados en `prompts/<agente>/v1.md`, y
-diseño, técnicas y ablaciones en [`docs/e3_agentes.md`](docs/e3_agentes.md):
+Tres agentes con el mismo phi4-mini, prompts versionados fuera del código en
+`prompts/<agente>/<versión>.md` (corrida final: Lector `v1`, Verificador `v1`, Decisor `v2`), y
+diseño, técnicas y ablaciones en [`docs/e3_agentes.md`](docs/e3_agentes.md). Para reproducir el
+video, ver [Reproducir lo que muestra el video de la E3](#reproducir-lo-que-muestra-el-video-de-la-e3).
 
-- **Lector:** el extractor de la E2 sin cambios. Copia el fragmento de cada tema.
+- **Lector:** el extractor de la E2 sin cambios. Copia el fragmento de cada tema. Cuando el
+  Verificador le devuelve campos, decide por campo entre revisar su salida (fragmento nuevo) o
+  responder `null` («el aviso no lo dice»).
 - **Verificador:** revisa solo los campos que la herramienta marca como dudosos. Confirma,
   corrige con evidencia literal (la herramienta `comprobar` la valida), pide releer al Lector
   o declara el dato no verificable.
@@ -121,7 +125,9 @@ ranking). Se corrigieron antes de cualquier corrida de evaluación. La evaluaci�
 > para todos los sets: un aviso sin política de mascotas no se descarta (va al final del orden) y
 > un estudio o loft cuenta como 1 dormitorio (`data/cases/hard_test/REVIEW.md`). El juez, la E2,
 > el baseline y el Decisor (`prompts/decisor/v2.md`) se actualizaron, y todo se corre de nuevo con
-> `bash scripts/run_e3.sh todo` (`baseline_e3_*`, `e2_e3_*`, `agents_v2_*`).
+> `bash scripts/run_e3.sh todo` (`baseline_e3_*`, `e2_e3_*`, `agents_v2_*`). El Verificador
+> (`prompts/verificador/v1.md`) no cambia: anota el hecho («Estudio» = 0 dormitorios separados,
+> como el `truth` de los casos) y la regla «cuenta como 1» la aplican `evaluar` y `rules.py`.
 
 **Evaluación final (convención E3, agentes v2, 29-oct-2026, M4).** `hard_test` se corrió una
 sola vez, después de la revisión humana. Entre corchetes, IC de Wilson al 95 %.
@@ -136,7 +142,6 @@ sola vez, después de la revisión humana. Entre corchetes, IC de Wilson al 95 %
 | `real_e3` | Baseline (prompt directo) | 0/20 | 0/20 | 59/80 | 17/75 | 4/5 |
 | `real_e3` | Solución E2 (v5 + g3) | 20/20 | 18/20 | 78/80 | 0/75 | 2/5 |
 | `real_e3` | **Agentes v2** | **20/20** | **20/20** | **80/80** | **0/75** | **0/5** |
-
 | `test` | Rechazar todo (piso) | 51/51 | 3/51 | 227/352 | 0/227 | 125/125 |
 | `test` | Baseline (prompt directo) | 0/51 | 0/51 | 199/352 | 61/227 | 92/125 |
 | `test` | Solución E2 (v5 + g3) | 51/51 | 47/51 | 351/352 | 0/227 | 1/125 |
@@ -156,19 +161,39 @@ sola vez, después de la revisión humana. Entre corchetes, IC de Wilson al 95 %
 | − esquema (salida libre) | 25/30 | 1/30 | 182/240 | 0/127 | 58/113 |
 | − literal (evidencia sin validar) | 17/30 | 7/30 | 212/240 | 13/127 | 15/113 |
 | − refinar (sin relectura ni consulta) | 23/30 | 5/30 | 214/240 | 6/127 | 20/113 |
+| − releer (solo sin relectura; post-hoc) | 23/30 | 5/30 | 214/240 | 6/127 | 20/113 |
+| − consultar (solo sin consulta; post-hoc) | 23/30 | 5/30 | 214/240 | 6/127 | 20/113 |
 | − retro (sin reintento tras `comprobar`) | 26/30 | 5/30 | 211/240 | 2/127 | 27/113 |
 | − herramientas_A3 (Decisor escribe el JSON) | 0/30 | 0/30 | 123/240 | 13/127 | 104/113 |
 
 - **− herramientas_A3:** 25/30 JSON inválidos. El Decisor inventa ids («HT-0109» en un caso de 8
   avisos), repite ids en ambas listas y se inventa restricciones («distancia_bus», «budget»).
-- **− literal:** sin la validación de la evidencia, las aprobaciones indebidas se duplican.
+- **− literal:** sin la validación de la evidencia, las aprobaciones indebidas se duplican
+  (13 vs 6) y `e1_strict` cae de 23 a 17. `full_correct` sube de 5 a 7 porque `comprobar` también
+  rechaza correcciones buenas, y `full_correct` es todo o nada por caso. Sin la validación se
+  arreglan 4 casos: «Perros sin límite de tamaño» y «Mascotas sin límite de peso» no cuentan como
+  permiso explícito (ht_04, ht_10), la evidencia mal copiada «UF 3.850.000» (ht_07) y un precio
+  inverosímil rechazado que deja el precio equivocado de `anclar` (ht_11). Se rompen 2 que estaban
+  bien: «20 minutos caminando» y «15 minutos del metro en bus» se aceptan como 20 m y 15 m (ht_12,
+  ht_30). El criterio de la tarea castiga aprobar de más, así que la técnica se mantiene.
 - **− esquema:** el Verificador copia el formato de la tabla en vez de escribir JSON, a veces en
   un bucle hasta agotar los tokens, y no corrige nada. El sistema rechaza más y por eso
   `e1_strict` *sube*: es la saturación del criterio E1.
 - **− retro:** menos aprobaciones indebidas, pero más rechazos falsos. El reintento recupera
   datos y también mete errores.
-- **− refinar:** ningún veredicto cambia. Las 24 consultas del Decisor terminaban en no
-  verificable, y las 5 relecturas no recuperaban el dato.
+- **− refinar:** ningún veredicto cambia. Quita una técnica (self-refine) que actúa en dos bucles,
+  y las trazas de la corrida full separan el aporte de cada uno. Las 5 relecturas del Lector no
+  cambian ningún estado: lo que `evaluar` entrega al Decisor es idéntico con y sin refinar en los
+  30 casos, y la primera propuesta del Decisor también. El Decisor consulta en 24 casos (41
+  consultas). 38 consultas no cambian nada y 3 recuperan un dato (`no_verificable` → `cumple`:
+  HT-0903, HT-1008, HT-2106), pero esos avisos fallan otra restricción. Solo cambia su lista
+  `failed_constraints`, que el juez no compara.
+- **− releer y − consultar** (post-hoc: corridas el 30-oct tras la revisión, con `--sin releer` y
+  `--sin consultar`): confirman la lectura de las trazas. Las dos dan las mismas cifras que el
+  sistema completo. Sin relectura las 30 respuestas son idénticas a las del sistema completo (603 llamadas
+  en vez de 614). Sin consulta cambian solo 3 respuestas (ht_09, ht_10, ht_21), y solo en
+  `failed_constraints`: falta la restricción que la consulta habría resuelto (533 llamadas). El
+  costo de refinar (92 llamadas) es casi todo de la consulta, que no cambia veredictos.
 
 El caso ht_16 de `− esquema` se repitió porque una suspensión del Mac produjo un HTTP 500 de
 Ollama. Desde entonces `agents/llm.py` reintenta los errores de conexión.
@@ -205,11 +230,57 @@ el resultado de `evaluar`, y el caso salió correcto igual. El costo es ~80 s po
 
 ```bash
 export PYTHONPATH=src
-python3 -m agents.run --split hard_dev --run agents_v1_hard_dev     # ~70 s por caso en un M4
-python3 -m agents.show results/agents_v1_hard_dev/hd_04.trace.jsonl # la conversación entre agentes
-bash scripts/run_e3.sh final && bash scripts/run_e3.sh ablaciones   # evaluación, una sola vez
+python3 -m agents.run --split hard_dev --run agents_v2_hard_dev     # ~70 s por caso en un M4 (dev)
+python3 -m agents.show results/agents_v2_hard_dev/hd_04.trace.jsonl # la conversación entre agentes
+bash scripts/run_e3.sh todo     # evaluación final + ablaciones (hard_test se corre una sola vez)
+bash scripts/run_e3.sh refinar  # −refinar separado en −releer y −consultar (post-hoc)
+bash scripts/run_e3.sh tablas   # solo las tablas, desde results/ (no llama al modelo)
 python3 -m pytest tests/test_agents.py -q                           # sin Ollama
 ```
+
+### Reproducir lo que muestra el video de la E3
+
+El video reproduce, mensaje a mensaje, trazas reales de la corrida final (`agents_v2_*`). Las
+trazas están versionadas, así que los pasos 1 a 3 no necesitan Ollama ni GPU. Desde la raíz del
+repositorio:
+
+```bash
+pip install -r requirements.txt       # Python ≥ 3.9
+python3 -m pytest tests -q            # 352 tests, sin Ollama ni red
+export PYTHONPATH=src                 # en Windows (PowerShell): $env:PYTHONPATH="src"
+```
+
+1. **Avisos reales** (`real_e3/`, doble anotación humana). Los mensajes entre agentes y la salida final:
+
+   ```bash
+   python3 -m agents.show results/agents_v2_real_e3/real_b2_004.trace.jsonl --pausa 0.4   # Lector → anclar → Verificador → comprobar → Decisor → JSON
+   python3 -m agents.show results/agents_v2_real_e3/real_b2_004.trace.jsonl --aviso REAL-04   # bucle de relectura cortado a las 2 rondas
+   python3 -m agents.show results/agents_v2_real_e3/real_b2_005.trace.jsonl --aviso REAL-23   # el aviso que la E2 rechazaba: el Verificador recupera «Precio: UF 2.490.»
+   python3 -m agents.show results/agents_v2_real_e3/real_b1_004.trace.jsonl --aviso REAL-08   # convención E3: sin política de mascotas, va al final
+   ```
+
+2. **Caso de fallo** (HT-2708, aprobación indebida por estacionamiento):
+
+   ```bash
+   python3 -m agents.show results/agents_v2_hard_test/ht_27.trace.jsonl --aviso HT-2708
+   ```
+
+3. **Tablas** del final del video y del PDF, desde `results/` (no llama al modelo):
+
+   ```bash
+   bash scripts/run_e3.sh tablas
+   ```
+
+4. **En vivo** (llama al modelo, ~1 min por caso). Temperatura 0 y semilla fija: en la misma
+   máquina la traza nueva debería coincidir con la versionada; en otro hardware puede variar algún mensaje:
+
+   ```bash
+   ollama pull phi4-mini:latest       # digest 78fad5d182a7, Q4_K_M, 2,5 GB
+   python3 -m agents.run --split real_e3 --only real_b2_004 --run demo_video --force
+   python3 -m agents.show results/demo_video/real_b2_004.trace.jsonl
+   ```
+
+Guion con los tiempos y qué se dice en cada tramo: [`docs/guion_video_e3.md`](docs/guion_video_e3.md).
 
 ## Entregable 2
 
@@ -260,7 +331,7 @@ docs/e2_pipeline.md         # la solución en detalle: intervención, ablaciones
 docs/scout.md               # scout: supuestos sobre cada portal, ética del scraping, límites
 src/scout/        # extensión posterior a la E2: busca avisos reales en 5 portales y los analiza
 experiments/      # evidencia de la E1 (logs de prompting directo, benchmarks de hardware)
-tests/            # 244 tests (pytest), sin Ollama ni red
+tests/            # 352 tests (pytest), sin Ollama ni red
 ```
 
 ### 1. Prompt y verificador determinista
@@ -435,12 +506,16 @@ cómo aparecer. La versión **g4** exige que esa cláusula nombre mascotas y tra
 estacionamiento "en arriendo"/"opción de" como no incluido. Da salidas **idénticas** a g3 en
 test, dev, OOD y el set real, y corrige este caso. g3 sigue siendo la versión reportada.
 
-### 5. Reproducir lo que muestra el video
+### 5. Reproducir lo que mostraba el video de la E2
+
+El video de la **E3** se reproduce con los comandos de
+[Reproducir lo que muestra el video de la E3](#reproducir-lo-que-muestra-el-video-de-la-e3).
+Esta sección es la del video de la E2 (baseline vs solución v5 + g3).
 
 ```bash
 ollama pull phi4-mini:latest          # digest 78fad5d182a7, Q4_K_M, 2,5 GB
 pip install -r requirements.txt       # Python ≥ 3.9
-python3 -m pytest tests -q            # 244 tests, sin Ollama
+python3 -m pytest tests -q            # 352 tests, sin Ollama
 
 cd src
 # baseline y solución sobre el MISMO caso, en vivo, con el veredicto de ambos (~50 s)
@@ -462,7 +537,7 @@ python3 -m matcher.evaluate --runs baseline_phi4_real tools_phi4_v5_real_g3 tool
 python3 -m matcher.evaluate --runs baseline_phi4_real_fallo tools_phi4_v5_real_fallo_g3 tools_phi4_v5_real_fallo_g4 --cases ../data/cases/real_fallo
 ```
 
-Guion sugerido para el video (≤ 3:00, todo en vivo, sin cortes que oculten la ejecución):
+Guion del video de la E2 (≤ 3:00, todo en vivo, sin cortes que oculten la ejecución):
 
 | Tiempo | Qué se muestra | Comando |
 |---|---|---|

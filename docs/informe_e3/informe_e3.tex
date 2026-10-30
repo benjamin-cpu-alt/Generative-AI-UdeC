@@ -6,7 +6,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage[spanish,es-noshorthands,es-tabla]{babel}
-\usepackage[a4paper,margin=1.1cm]{geometry}
+\usepackage[a4paper,margin=1.0cm]{geometry}
 \usepackage{microtype}
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -20,7 +20,7 @@
 
 \definecolor{sec}{RGB}{30,50,170}
 \titleformat{\section}{\normalsize\bfseries\color{sec}}{\thesection.}{0.4em}{}
-\titlespacing*{\section}{0pt}{0.45em}{0.2em}
+\titlespacing*{\section}{0pt}{0.3em}{0.15em}
 \setlist{nosep,leftmargin=1.1em}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.2em}
@@ -33,6 +33,7 @@
 \newcommand{\pend}[1]{\textcolor{red}{#1}}
 \newcommand{\cod}[1]{\texttt{#1}}
 \newcommand{\warn}{\textcolor{orange!80!black}{\textbf{(!)}}}
+\newcommand{\alto}{\textcolor{red!70!black}{\rule{0.9ex}{0.9ex}}}% condición de parada
 
 \begin{document}
 \begin{center}
@@ -62,36 +63,36 @@ Lector, Verificador y Decisor sobre Phi-4-mini (3.8B, el mismo modelo para los t
 \node[tool, below=9mm of anc] (eva) {\cod{evaluar}\\5 restricciones: cumple / falla / no\_verificable / sin\_confirmar};
 \node[ag, below=9mm of lec] (dec) {\textbf{A3 · Decisor}\\por caso: cerrar o consultar un dato};
 \node[tool, left=of dec] (ord) {\cod{ordenar}\\JSON E1 (preferida, ROI)};
-\node[stop, below=4mm of ord] (out) {\textbf{FIN}: JSON estricto};
-\node[io, above=3mm of in, text width=19mm] (perfil) {Perfil del comprador};
+\node[stop, below=5mm of ord] (out) {\alto{} \textbf{FIN}: JSON estricto};
+\node[io, below=3mm of in] (perfil) {Perfil del comprador};
 
-\draw[arr] (in) -- (lec);
+\draw[arr] (in) -- node[lab, above=1pt]{texto} (lec);
 \draw[arr] (lec) -- node[lab, above=1pt]{spans} (anc);
 \draw[arr] (anc) -- node[lab, above=1pt]{hechos +\\\warn{} y frase} (ver);
 \draw[arr] (ver) -- node[lab, right]{campo, evidencia,\\valor} (com);
-\draw[loop] (com.east) to[out=0,in=0,looseness=1.6] node[lab, right]{rechazo + motivo\\($\le$1 reintento)} (ver.east);
-\draw[loop] (ver.north) to[out=150,in=30] node[lab, above]{releer: campos + motivo ($\le$2 rondas)} (lec.north);
-\draw[arr] (com.west) -- node[lab, above]{hechos corregidos} (eva.east);
-\draw[arr] (anc.south) -- node[lab, right]{sin \warn{}} (eva.north);
+\draw[loop] (com.east) to[out=0,in=0,looseness=1.6] node[lab, right]{rechazo + motivo\\($\le$1 reintento;\\luego \alto{} dato null)} (ver.east);
+\draw[loop] (ver.north) to[out=150,in=30] node[lab, above]{releer: campos + motivo ($\le$2 rondas; luego \alto{} dato null)} (lec.north);
+\draw[arr] (com.west) -- node[lab, above]{\alto{} hechos\\finales} (eva.east);
+\draw[arr] (anc.south) -- node[lab, right]{\alto{} sin \warn{}:\\hechos} (eva.north);
 \draw[arr] (eva) -- node[lab, above]{estado por\\restricción} (dec);
-\draw[loop] (dec.south) to[out=-30,in=-120] node[lab, below]{consultar(id, campo) si quedó no\_verificable o sin\_confirmar ($\le$1 ronda)} (ver.south west);
-\draw[arr] (dec) -- node[lab, above]{cerrar} (ord);
-\draw[arr] (ord) -- (out);
-\draw[arr, gray] (perfil.south east) to[out=-20,in=160] (dec.north west);
+\draw[loop] (dec.south) to[out=-30,in=-120] node[lab, below]{consultar(id, campo) si no\_verificable o sin\_confirmar ($\le$1 ronda; luego \alto{} cierre forzado)} (ver.south west);
+\draw[arr] (dec) -- node[lab, above]{cerrar} node[lab, below]{\alto{}} (ord);
+\draw[arr] (ord) -- node[lab, right=1pt]{JSON E1} (out);
+\draw[arr, gray] (perfil.east) -| node[lab, pos=0.3]{restricciones\\+ preferencias} (dec.north);
 \end{tikzpicture}
 \end{center}
 \vspace{-6pt}
-{\scriptsize Azul: agentes (phi4-mini, salida con JSON Schema). Verde: herramientas en Python. Rojo discontinuo: bucles, con su presupuesto. Un dato que sigue sin leerse nunca aprueba: la restricción queda no\_verificable y falla.}
+{\scriptsize Azul: agentes (phi4-mini, salida con JSON Schema). Verde: herramientas en Python. Rojo discontinuo: bucles, con su presupuesto. \alto{}: condición de parada. Hechos finales: confirmados, corregidos o null. Un dato null nunca aprueba: la restricción queda no\_verificable y falla. El perfil llega también a \cod{evaluar} y \cod{ordenar}.}
 
 \begin{multicols}{2}
 \section{Continuidad con la E2 y por qué agentes}
-La E2 (v5+g3) obtuvo 51/51 en test, pero el criterio E1 solo penaliza aprobaciones indebidas: \textbf{rechazar todo también obtiene 51/51}. Respondimos a la observación del profesor con un benchmark nuevo: \cod{hard\_dev} (10 casos, 70 avisos) para iterar y \cod{hard\_test} (30 casos, 240 avisos, 16 fenómenos con cuota, congelado con SHA-256 y revisado por ambos integrantes), con 47\,\% de avisos que deben aprobarse. Reportamos además \textit{full\_correct} (conjunto, precios, ROI y orden exactos), tasas por aviso con IC de Wilson al 95\,\% y el piso de rechazar todo. En \cod{hard\_dev} la E2 cae a 4/10 (E1) y 0/10 (full). Sus fallos son léxicos: jerga («135 palos», «680 lucas»), cifras en palabras, «3D+E», «consultar reglamento por mascotas», arriendos en UF. Cada agente responde a uno de esos fallos.
+La E2 (v5+g3) obtuvo 51/51 en test, pero el criterio E1 solo penaliza aprobaciones indebidas: \textbf{rechazar todo también obtiene 51/51}. Construimos un benchmark nuevo: \cod{hard\_dev} (10 casos, 70 avisos) para iterar y \cod{hard\_test} (30 casos, 240 avisos, 16 fenómenos con cuota, congelado con SHA-256, revisado por ambos), con 47\,\% de avisos aprobables. Reportamos además \textit{full\_correct} (respuesta exacta), tasas por aviso con IC de Wilson al 95\,\% y el piso de rechazar todo. En \cod{hard\_dev} la E2 cae a 4/10 (E1) y 0/10 (full). Sus fallos son léxicos: jerga («135 palos»), cifras en palabras, «3D+E», «consultar reglamento», arriendos en UF. Cada agente responde a uno de esos fallos.
 
 \section{Agentes (prompts en \cod{prompts/<agente>/}; Decisor v2)}
-\textbf{A1 Lector.} El extractor de la E2 sin cambios (\cod{SYSTEM\_V5}). En relectura decide por campo entre un fragmento nuevo y \cod{null}. \textbf{A2 Verificador.} Solo ve los campos que \cod{anclar} marca con \warn{}, junto con la frase donde mirar. Por cada uno decide si confirma, corrige (con evidencia literal, validada por \cod{comprobar}), pide releer o lo declara no verificable. \textbf{A3 Decisor.} Ve \cod{evaluar} y decide si cierra o consulta. No escribe veredictos ni calcula. La tabla completa (rol, entrada/salida, herramientas, parada) está en \cod{docs/e3\_agentes.md}.
+\textbf{A1 Lector.} El extractor de la E2 sin cambios (\cod{SYSTEM\_V5}). Es el agente con menos autonomía: lo que copia decide si el aviso va al Verificador o directo al Decisor, y en relectura revisa su salida o responde \cod{null}. \textbf{A2 Verificador.} Solo ve los campos que \cod{anclar} marca con \warn{}, junto con la frase donde mirar. Por cada uno decide si confirma, corrige (con evidencia literal, validada por \cod{comprobar}), pide releer o lo declara no verificable. \textbf{A3 Decisor.} Ve \cod{evaluar} y decide si cierra o consulta. No escribe veredictos ni calcula. Rol, entrada/salida, herramientas y parada de cada uno: \cod{docs/e3\_agentes.md}.
 
 \section{Técnicas (taxonomía de \textit{The Prompt Report})}
-Role prompting y reglas zero-shot (los tres); descomposición; salida estructurada con decodificación restringida y acciones como \cod{enum} (\textbf{$-$esquema}); few-shot en línea con números que no están en ningún set; grounding en evidencia literal (\textbf{$-$literal}); self-refine por relectura y consulta (\textbf{$-$refinar}); crítica con herramienta, tipo CRITIC (\textbf{$-$retro}); herramientas para el cálculo, tipo PAL (\textbf{$-$herramientas\_A3}).
+Role prompting y reglas zero-shot (los tres); descomposición; salida estructurada con decodificación restringida y acciones como \cod{enum} (\textbf{$-$esquema}); few-shot en línea (sin ablación); grounding en evidencia literal (\textbf{$-$literal}); self-refine por relectura y consulta (\textbf{$-$refinar}); crítica con herramienta, tipo CRITIC (\textbf{$-$retro}); herramientas para el cálculo, tipo PAL (\textbf{$-$herramientas\_A3}).
 
 \section{Resultados (mismas entradas, mismo juez)}
 {\scriptsize
@@ -105,7 +106,7 @@ E2 (v5+g3) & 11/30 & 1/30 & 0/127 & 47/113\\
 \textbf{Agentes (full)} & \textbf{23/30} & \textbf{5/30} & 6/127 & \textbf{20/113}\\
 \quad $-$esquema & 25/30 & 1/30 & 0/127 & 58/113\\
 \quad $-$literal & 17/30 & 7/30 & 13/127 & 15/113\\
-\quad $-$refinar & 23/30 & 5/30 & 6/127 & 20/113\\
+\quad $-$refinar$^*$ & 23/30 & 5/30 & 6/127 & 20/113\\
 \quad $-$retro & 26/30 & 5/30 & 2/127 & 27/113\\
 \quad $-$herramientas\_A3 & 0/30 & 0/30 & 13/127 & 104/113\\
 \bottomrule
@@ -122,16 +123,16 @@ OOD (12, usado como dev) & 0/12 (21/21) & 0/12 (14/21) & 7/12 (3/21) & \textbf{1
 \bottomrule
 \end{tabularx}
 
-\textbf{Convención E3.} En la revisión humana de \cod{hard\_test} (8 objeciones de 160 avisos, ninguna de transcripción) el equipo acordó que un aviso sin política de mascotas no se descarta, porque se puede conversar: se aprueba y va al final del orden. Un estudio o loft cuenta como 1 dormitorio. Juez, E2, baseline y Decisor (v2) usan esa regla en todos los sets.
+\textbf{Convención E3.} En la revisión humana de \cod{hard\_test} (8 objeciones de 160 avisos, ninguna de transcripción) el equipo acordó que un aviso sin política de mascotas no se descarta: se aprueba y va al final del orden. Un estudio o loft cuenta como 1 dormitorio (el Verificador anota 0; la regla la aplica \cod{evaluar}). Juez, E2, baseline y Decisor (v2) la usan en todos los sets.
 
 En \cod{hard\_test} los agentes duplican el E1 de la E2 (23 vs 11/30) y bajan los rechazos falsos de 42\,\% a 18\,\% (IC 12–26\,\%), a cambio de 6 aprobaciones indebidas (5\,\%, IC 2–10\,\%; la E2 tiene 0). La mejora está en cifras en palabras (20 vs 13/21) y comuna en otra posición (17 vs 11/17). En \cod{real\_e3} solo 5 de 80 avisos deben aprobarse y rechazar todo acierta 15/20: separan los rechazos falsos (entre paréntesis); los agentes aprueban los 5. En test-51 no hay regresión.
 
-\textbf{Ablaciones.} Sin herramientas, el Decisor escribe un JSON inválido en 25/30 casos (ids inventados o repetidos, restricciones que no existen). Sin evidencia literal se duplican las aprobaciones indebidas (13 vs 6). Sin esquema el Verificador copia la tabla en vez de JSON, no corrige nada y el E1 \emph{sube} a 25/30 porque rechaza más (58/113): la saturación de la sección 1. Sin retroalimentación hay menos aprobaciones indebidas (2) pero más rechazos falsos (27): el reintento recupera datos y también mete errores. Quitar relectura y consulta no cambia ningún veredicto: las 24 consultas terminan en no\_verificable.}
+\textbf{Ablaciones.} Sin herramientas, el Decisor escribe un JSON inválido en 25/30 casos (ids inventados o repetidos, restricciones que no existen). Sin evidencia literal se duplican las aprobaciones indebidas (13 vs 6); \emph{full} sube a 7/30 porque \cod{comprobar} también rechaza correcciones buenas: arregla 4 casos y rompe 2 al aceptar «20 minutos caminando» como 20 m. Sin esquema el Verificador copia la tabla en vez de JSON y el E1 \emph{sube} a 25/30 porque rechaza más (58/113): la saturación de la sección 1. Sin retroalimentación hay menos aprobaciones indebidas (2) pero más rechazos falsos (27): el reintento recupera datos y también mete errores. $^*$Quitar relectura, consulta o ambas (cada bucle por separado, post-hoc) no cambia ningún veredicto: de 41 consultas, 3 recuperan un dato en avisos que fallan otra restricción.}
 
 \section{Caso de fallo}
-\cod{HT-2708} (\cod{results/agents\_v2\_hard\_test/ht\_27.trace.jsonl}): «La Florida, 3D. \$145.000.000. Metro a 600 m. Admite mascotas. Estacionamiento en la vía pública frente a la casa». El comprador exige estacionamiento. La E2 lo rechaza, pero por dormitorios: no lee «3D.». En los agentes, \cod{anclar} marca dormitorios con \warn{}, el Verificador corrige a 3 con evidencia «3D.» y \cod{comprobar} lo acepta. Pero \cod{anclar} ya había leído la vía pública como estacionamiento \emph{propio} sin marcar duda, así que ningún agente lo revisa y el aviso se \textbf{aprueba indebidamente}. Es la falla más frecuente: las 5 aprobaciones indebidas por estacionamiento («uso común (no asignado)», «opción de comprar», «ya fue vendido», «+ estacionamiento \$8.000.000») siguen el mismo patrón, y en las 5 la E2 acertaba por la razón equivocada. El Verificador solo revisa lo que la herramienta marca: arreglar un campo destapa los errores silenciosos de otro. La segunda causa (7 rechazos falsos) también está en código: \cod{comprobar} no acepta «perros OK» ni «gatos OK» como permiso explícito. No corregimos ninguna en \cod{hard\_test}, que se corre una sola vez.
+\cod{HT-2708} (traza \cod{ht\_27}): «La Florida, 3D. \$145.000.000. Metro a 600 m. Admite mascotas. Estacionamiento en la vía pública frente a la casa». El comprador exige estacionamiento. La E2 lo rechaza, pero por dormitorios: no lee «3D.». En los agentes, \cod{anclar} marca dormitorios con \warn{}, el Verificador corrige a 3 con evidencia «3D.» y \cod{comprobar} lo acepta. Pero \cod{anclar} ya había leído la vía pública como estacionamiento \emph{propio} sin marcar duda, así que ningún agente lo revisa y el aviso se \textbf{aprueba indebidamente}. Las 5 aprobaciones indebidas por estacionamiento siguen este patrón (la E2 acertaba por la razón equivocada): arreglar un campo destapa los errores silenciosos de otro. La segunda causa (7 rechazos falsos) también está en código: \cod{comprobar} no acepta «perros OK» como permiso explícito. No corregimos ninguna: \cod{hard\_test} se corre una sola vez.
 
 \section{Reproducibilidad}
-\cod{bash scripts/run\_e3.sh final} y \cod{ablaciones}; \cod{python3 -m agents.show <traza>} muestra la conversación del video. Las trazas de los casos del video y del caso de fallo están versionadas en \cod{results/}. Los prompts se versionan por archivo y los tests (sin Ollama) cubren las herramientas, los prompts y los presupuestos de los bucles.
+El README («Reproducir lo que muestra el video de la E3») reproduce el video y el caso de fallo sin Ollama, con \cod{agents.show} sobre las trazas de \cod{results/}; \cod{bash scripts/run\_e3.sh todo} regenera todas las corridas. 352 tests sin Ollama.
 \end{multicols}
 \end{document}

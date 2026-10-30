@@ -18,7 +18,8 @@ reintentos tras `comprobar`, rondas de consulta). Un dato que sigue sin leerse n
 aprueba: la restricción queda no_verificable y falla.
 
 Ablaciones (Config): esquema, literal, refinar, retro, herramientas_decisor. Cada una
-quita UNA técnica y deja el resto igual.
+quita UNA técnica y deja el resto igual. refinar (self-refine) actúa en dos bucles; releer y
+consultar quitan solo uno de ellos, para medirlos por separado.
 """
 from __future__ import annotations
 
@@ -84,6 +85,8 @@ class Config:
     esquema: bool = True               # −esquema: salida libre, se busca el JSON en el texto
     literal: bool = True               # −literal: `comprobar` no exige que el valor salga de la evidencia
     refinar: bool = True               # −refinar: sin relecturas del Lector ni consultas del Decisor
+    releer: bool = True                # −releer: solo sin relecturas del Lector
+    consultar: bool = True             # −consultar: solo sin consultas del Decisor
     retro: bool = True                 # −retro: el rechazo de `comprobar` no vuelve al Verificador
     herramientas_decisor: bool = True  # −herramientas_A3: el Decisor escribe el JSON final a mano
     max_relecturas: int = 2
@@ -93,8 +96,8 @@ class Config:
 
     @property
     def nombre(self) -> str:
-        quitadas = [k for k in ("esquema", "literal", "refinar", "retro", "herramientas_decisor")
-                    if not getattr(self, k)]
+        quitadas = [k for k in ("esquema", "literal", "refinar", "releer", "consultar", "retro",
+                                "herramientas_decisor") if not getattr(self, k)]
         return "full" if not quitadas else "sin_" + "_".join(quitadas)
 
 
@@ -319,9 +322,10 @@ class Sistema:
                         "rechazos": rechazos}, aviso=prop.id)
             if not pedidos:
                 return
-            if not self.cfg.refinar or relecturas >= self.cfg.max_relecturas:
+            if not (self.cfg.refinar and self.cfg.releer) or relecturas >= self.cfg.max_relecturas:
                 tr.msg("orquestador", "Verificador", "sin_relectura",
-                       {"motivo": "refinamiento desactivado" if not self.cfg.refinar else "presupuesto agotado",
+                       {"motivo": "refinamiento desactivado" if not (self.cfg.refinar and self.cfg.releer)
+                        else "presupuesto agotado",
                         "campos": list(pedidos)}, aviso=prop.id)
                 return
             relecturas += 1
@@ -418,9 +422,10 @@ class Sistema:
             d = self.decisor(tr, case, evals)
             if d["accion"] == "cerrar" or not d["consultas"]:
                 break
-            if not self.cfg.refinar or ronda >= self.cfg.max_consultas:
+            if not (self.cfg.refinar and self.cfg.consultar) or ronda >= self.cfg.max_consultas:
                 tr.msg("orquestador", "herramienta:ordenar", "cierre_por_presupuesto",
-                       {"motivo": "refinamiento desactivado" if not self.cfg.refinar else "presupuesto agotado",
+                       {"motivo": "refinamiento desactivado" if not (self.cfg.refinar and self.cfg.consultar)
+                        else "presupuesto agotado",
                         "consultas_ignoradas": d["consultas"]})
                 tr.contar("cierre_por_presupuesto")
                 break

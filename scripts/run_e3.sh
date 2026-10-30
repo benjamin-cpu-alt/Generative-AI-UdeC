@@ -12,6 +12,7 @@
 #       bash scripts/run_e3.sh hard_test   # UNA vez: baseline, E2, agentes y piso en hard_test
 #       bash scripts/run_e3.sh final       # real_e3, test y ood (ood es dev)
 #       bash scripts/run_e3.sh ablaciones  # hard_test, las 5 ablaciones
+#       bash scripts/run_e3.sh refinar     # hard_test, −refinar separado en −releer y −consultar
 #       bash scripts/run_e3.sh dev         # hard_dev
 #       bash scripts/run_e3.sh tablas      # solo evaluate + metrics sobre lo que ya existe
 #
@@ -22,6 +23,7 @@ export PYTHONPATH=src
 MODEL="phi4-mini:latest"
 AG="v2"   # versión del sistema de agentes (decisor v2: convención E3)
 TECNICAS="esquema literal refinar retro herramientas_decisor"
+REFINAR="releer consultar"   # los dos bucles de −refinar, por separado (post-hoc, 30-oct)
 
 # corrida E2 original de cada split (para re-decidir sin llamar al modelo)
 e2_fuente() { case "$1" in test) echo tools_phi4_v5_g3 ;; *) echo "tools_phi4_v5_$1_g3" ;; esac; }
@@ -42,7 +44,8 @@ tabla() {
 }
 tabla_split() { tabla "$1" "baseline_e3_$1" "e2_e3_$1" "agents_${AG}_$1" "$(piso_run "$1")"; }
 tabla_ablaciones() {
-  tabla hard_test "agents_${AG}_hard_test" $(for t in $TECNICAS; do echo "agents_${AG}_sin_${t}_hard_test"; done)
+  local runs; runs=$(for t in $TECNICAS $REFINAR; do r="agents_${AG}_sin_${t}_hard_test"; [ -d "results/$r" ] && echo "$r"; done)
+  tabla hard_test "agents_${AG}_hard_test" $runs
 }
 
 hard_test() {   # SOLO después de la revisión humana (data/cases/hard_test/REVIEW.md) y una sola vez
@@ -52,13 +55,15 @@ hard_test() {   # SOLO después de la revisión humana (data/cases/hard_test/REV
 }
 final_split() { baseline "$1"; e2_redecide "$1"; agentes "$1"; piso "$1"; tabla_split "$1"; }
 ablaciones() { for t in $TECNICAS; do ablacion hard_test "$t"; done; tabla_ablaciones; }
+refinar()    { for t in $REFINAR; do ablacion hard_test "$t"; done; tabla_ablaciones; }
 
 case "${1:-}" in
   todo)       hard_test; final_split real_e3; ablaciones; final_split test; final_split ood; final_split hard_dev ;;
   hard_test)  hard_test ;;
   final)      final_split real_e3; final_split test; final_split ood ;;
   ablaciones) ablaciones ;;
+  refinar)    refinar ;;
   dev)        final_split hard_dev ;;
   tablas)     for s in hard_test real_e3 test ood hard_dev; do tabla_split "$s"; done; tabla_ablaciones ;;
-  *) echo "uso: bash scripts/run_e3.sh todo|hard_test|final|ablaciones|dev|tablas" >&2; exit 2 ;;
+  *) echo "uso: bash scripts/run_e3.sh todo|hard_test|final|ablaciones|refinar|dev|tablas" >&2; exit 2 ;;
 esac

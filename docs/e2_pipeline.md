@@ -45,7 +45,7 @@ Entrada, esquema de salida, criterio de corrección (`verifier.py`) y set de tes
 ```bash
 ollama pull phi4-mini:latest
 pip install -r requirements.txt
-python3 -m pytest tests -q                         # 244 tests, sin Ollama
+python3 -m pytest tests -q                         # 352 tests, sin Ollama (244 al cierre de la E2)
 
 # Demo del video: baseline vs solución sobre el mismo caso, con veredicto de ambos
 cd src

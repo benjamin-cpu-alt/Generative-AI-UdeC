@@ -25,7 +25,7 @@ from .orchestrator import Config, Sistema
 ROOT = Path(__file__).resolve().parents[2]
 CASES_DIR = ROOT / "data" / "cases"
 RESULTS_DIR = ROOT / "results"
-ABLACIONES = ("esquema", "literal", "refinar", "retro", "herramientas_decisor")
+ABLACIONES = ("esquema", "literal", "refinar", "releer", "consultar", "retro", "herramientas_decisor")
 
 
 def main(argv=None) -> int:

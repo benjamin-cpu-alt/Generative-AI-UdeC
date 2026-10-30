@@ -253,6 +253,29 @@ def test_ablacion_sin_refinar_no_relee_ni_consulta():
     assert any(m["tipo"] == "cierre_por_presupuesto" for m in tr.mensajes)
 
 
+def test_ablacion_sin_releer_consulta_pero_no_relee():
+    fake = FakeLLM(lambda u: {"revisiones": [{"campo": "precio", "accion": "releer", "evidencia": None,
+                                              "valor": None}]},
+                   lambda u: {"accion": "consultar",
+                              "consultas": [{"id": "P-1", "campo": "precio", "motivo": "x"}]})
+    _, tr = Sistema(Config(releer=False), fake).run_case(_case([PROP]))
+    assert fake.calls.count("Lector") == 1
+    assert any(m["tipo"] == "consulta" for m in tr.mensajes)       # la consulta sí se ejecuta
+    assert Config(releer=False).nombre == "sin_releer"
+
+
+def test_ablacion_sin_consultar_relee_pero_no_consulta():
+    fake = FakeLLM(lambda u: {"revisiones": [{"campo": "precio", "accion": "releer", "evidencia": None,
+                                              "valor": None}]},
+                   lambda u: {"accion": "consultar",
+                              "consultas": [{"id": "P-1", "campo": "precio", "motivo": "x"}]})
+    _, tr = Sistema(Config(consultar=False), fake).run_case(_case([PROP]))
+    assert fake.calls.count("Lector") == 1 + Config().max_relecturas
+    assert fake.calls.count("Decisor") == 1
+    assert any(m["tipo"] == "cierre_por_presupuesto" for m in tr.mensajes)
+    assert Config(consultar=False).nombre == "sin_consultar"
+
+
 def test_ablacion_sin_literal_acepta_sin_evidencia():
     malo = {"revisiones": [{"campo": "precio", "accion": "corregir", "evidencia": "inventada", "valor": "100000000"}]}
     full, _ = Sistema(Config(), FakeLLM(lambda u: malo, lambda u: {"accion": "cerrar", "consultas": []})).run_case(_case([PROP]))
