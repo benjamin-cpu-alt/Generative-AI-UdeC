@@ -64,11 +64,18 @@ def call(model: str, system: str, user: str, schema: Optional[Dict], esquema: bo
     t0 = time.time()
     meta = {"prompt_tokens": 0, "output_tokens": 0, "wall_s": 0.0, "raw": "", "error": None}
     try:
-        if esquema:
-            r = ollama_chat(model, system, user, opts, fmt=schema, timeout=timeout)
-        else:
-            r = ollama_chat(model, system, user + "\n\nResponde solo con un objeto JSON.", opts,
-                            timeout=timeout)
+        for intento in range(3):   # un error de conexión (Ollama reiniciando) no es una respuesta
+            try:
+                if esquema:
+                    r = ollama_chat(model, system, user, opts, fmt=schema, timeout=timeout)
+                else:
+                    r = ollama_chat(model, system, user + "\n\nResponde solo con un objeto JSON.", opts,
+                                    timeout=timeout)
+                break
+            except (urllib.error.URLError, TimeoutError, OSError):
+                if intento == 2:
+                    raise
+                time.sleep(10)
         raw = r.get("message", {}).get("content", "")
         meta.update(prompt_tokens=r.get("prompt_eval_count") or 0, output_tokens=r.get("eval_count") or 0,
                     raw=raw)
