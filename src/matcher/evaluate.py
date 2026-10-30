@@ -95,7 +95,7 @@ def breakdown(run: str, verdicts: List[Verdict], cases: List[Case]) -> List[Dict
 
 
 def cost(run: str, results_dir: Path) -> Dict:
-    metas = [json.loads(p.read_text()) for p in (results_dir / run).glob("*.meta.json")]
+    metas = [json.loads(p.read_text(encoding="utf-8")) for p in (results_dir / run).glob("*.meta.json")]
     if not metas:
         return {"model": "", "truncated": "", "mean_output_tokens": "", "mean_wall_s": ""}
     return {

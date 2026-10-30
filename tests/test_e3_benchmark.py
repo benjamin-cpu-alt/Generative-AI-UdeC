@@ -45,7 +45,8 @@ def test_hard_test_coincide_con_el_manifiesto():
         if line.strip() and not line.startswith("#"):
             digest, name = line.split(maxsplit=1)
             manifest[name] = digest
-    current = {Path(p).name: hashlib.sha256(Path(p).read_bytes()).hexdigest()
+    # CRLF -> LF: en Windows git puede extraer los JSON con CRLF; el manifiesto se calculó sobre LF
+    current = {Path(p).name: hashlib.sha256(Path(p).read_bytes().replace(b"\r\n", b"\n")).hexdigest()
                for p in HARD["hard_test"]}
     assert current == manifest, "hard_test/ cambió: re-congelar con build_hard.py --freeze y registrarlo en REVIEW.md"
 
@@ -76,7 +77,7 @@ def test_hard_test_tiene_aprobaciones_suficientes():
 
 
 def test_dev_y_test_no_comparten_avisos():
-    texts = lambda s: {p["text"] for f in HARD[s] for p in json.loads(Path(f).read_text())["properties"]}
+    texts = lambda s: {p["text"] for f in HARD[s] for p in json.loads(Path(f).read_text(encoding="utf-8"))["properties"]}
     assert not texts("hard_dev") & texts("hard_test")
 
 

@@ -1,0 +1,5 @@
+# Los casos, las trazas y el manifiesto de hard_test se hashean y se comparan byte a byte:
+# siempre LF, también en un checkout de Windows.
+*.json   text eol=lf
+*.jsonl  text eol=lf
+*.sha256 text eol=lf

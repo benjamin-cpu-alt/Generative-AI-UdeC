@@ -154,7 +154,9 @@ def check_split(name: str, conf: Dict, errors: List[str]) -> Tuple[Dict, List[Tu
 
 
 def file_hashes(dirpath: Path) -> Dict[str, str]:
-    return {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(dirpath.glob("*.json"))}
+    # CRLF -> LF, para que un checkout en Windows no rompa el congelamiento
+    return {p.name: hashlib.sha256(p.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+            for p in sorted(dirpath.glob("*.json"))}
 
 
 def read_manifest() -> Dict[str, str]:
