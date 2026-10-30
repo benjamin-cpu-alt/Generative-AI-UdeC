@@ -1,0 +1,35 @@
+{
+  "approved_matches": [
+    {
+      "id": "HD-0307",
+      "price_clp": 3900000,
+      "roi_pct": 0.0
+    }
+  ],
+  "rejected": [
+    {
+      "id": "HD-0301",
+      "failed_constraints": ["Mascotas: 1 gato de 4kg no permitido"]
+    },
+    {
+      "id": "HD-0302",
+      "failed_constraints": ["Mascotas: Perros no permitidos", "Distancia máxima a transporte público: 300 metros"]
+    },
+    {
+      "id": "HD-0303",
+      "failed_constraints": ["Mascotas: Perros no permitidos"]
+    },
+    {
+      "id": "HD-0304",
+      "failed_constraints": ["Distancia máxima a transporte público: 820 metros"]
+    },
+    {
+      "id": "HD-0305",
+      "failed_constraints": ["Distancia máxima a transporte público: 150 metros"]
+    },
+    {
+      "id": "HD-0306",
+      "failed_constraints": ["Mascotas: Máximo 10 kg no especificado"]
+    }
+  ]
+}

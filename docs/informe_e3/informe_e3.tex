@@ -85,7 +85,7 @@ Lector, Verificador y Decisor sobre Phi-4-mini (3.8B, el mismo modelo para los t
 
 \begin{multicols}{2}
 \section{Continuidad con la E2 y por qué agentes}
-La E2 (v5+g3) obtuvo 51/51 en test, pero el criterio E1 solo penaliza aprobaciones indebidas: \textbf{rechazar todo también obtiene 51/51}. Respondimos a la observación del profesor con un benchmark nuevo: \cod{hard\_dev} (10 casos, 70 avisos) para iterar y \cod{hard\_test} (30 casos, 240 avisos, 16 fenómenos con cuota, congelado con SHA-256 y revisado por ambos integrantes), con 47\,\% de avisos que deben aprobarse. Reportamos además \textit{full\_correct} (conjunto, precios, ROI y orden exactos), tasas por aviso con IC de Wilson al 95\,\% y el piso de rechazar todo. En \cod{hard\_dev} la E2 cae a \pend{4/10} (E1) y \pend{0/10} (full). Sus fallos son léxicos: jerga («135 palos», «680 lucas»), cifras en palabras, «3D+E», «consultar reglamento por mascotas», arriendos en UF. Cada agente responde a uno de esos fallos.
+La E2 (v5+g3) obtuvo 51/51 en test, pero el criterio E1 solo penaliza aprobaciones indebidas: \textbf{rechazar todo también obtiene 51/51}. Respondimos a la observación del profesor con un benchmark nuevo: \cod{hard\_dev} (10 casos, 70 avisos) para iterar y \cod{hard\_test} (30 casos, 240 avisos, 16 fenómenos con cuota, congelado con SHA-256 y revisado por ambos integrantes), con 47\,\% de avisos que deben aprobarse. Reportamos además \textit{full\_correct} (conjunto, precios, ROI y orden exactos), tasas por aviso con IC de Wilson al 95\,\% y el piso de rechazar todo. En \cod{hard\_dev} la E2 cae a 4/10 (E1) y 0/10 (full). Sus fallos son léxicos: jerga («135 palos», «680 lucas»), cifras en palabras, «3D+E», «consultar reglamento por mascotas», arriendos en UF. Cada agente responde a uno de esos fallos.
 
 \section{Agentes (prompts en \cod{prompts/<agente>/}; Decisor v2)}
 \textbf{A1 Lector.} El extractor de la E2 sin cambios (\cod{SYSTEM\_V5}). En relectura decide por campo entre un fragmento nuevo y \cod{null}. \textbf{A2 Verificador.} Solo ve los campos que \cod{anclar} marca con \warn{}, junto con la frase donde mirar. Por cada uno decide si confirma, corrige (con evidencia literal, validada por \cod{comprobar}), pide releer o lo declara no verificable. \textbf{A3 Decisor.} Ve \cod{evaluar} y decide si cierra o consulta. No escribe veredictos ni calcula. La tabla completa (rol, entrada/salida, herramientas, parada) está en \cod{docs/e3\_agentes.md}.
@@ -103,11 +103,11 @@ Rechazar todo (piso) & 30/30 & 0/30 & 0/127 & 113/113\\
 Baseline (prompt directo) & 1/30 & 0/30 & 38/127 & 84/113\\
 E2 (v5+g3) & 11/30 & 1/30 & 0/127 & 47/113\\
 \textbf{Agentes (full)} & \textbf{23/30} & \textbf{5/30} & 6/127 & \textbf{20/113}\\
-\quad $-$esquema & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
-\quad $-$literal & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
-\quad $-$refinar & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
-\quad $-$retro & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
-\quad $-$herramientas\_A3 & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
+\quad $-$esquema & 25/30 & 1/30 & 0/127 & 58/113\\
+\quad $-$literal & 17/30 & 7/30 & 13/127 & 15/113\\
+\quad $-$refinar & 23/30 & 5/30 & 6/127 & 20/113\\
+\quad $-$retro & 26/30 & 5/30 & 2/127 & 27/113\\
+\quad $-$herramientas\_A3 & 0/30 & 0/30 & 13/127 & 104/113\\
 \bottomrule
 \end{tabularx}}
 
@@ -117,14 +117,16 @@ E2 (v5+g3) & 11/30 & 1/30 & 0/127 & 47/113\\
 \textit{full\_correct} (rechazos falsos) & Piso & Baseline & E2 & \textbf{Agentes}\\
 \midrule
 \cod{real\_e3} (20 casos, 80 avisos) & 15/20 (5/5) & 0/20 (4/5) & 18/20 (2/5) & \textbf{20/20 (0/5)}\\
-test-51 (regresión) & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
-OOD (12, usado como dev) & \pend{–} & \pend{–} & \pend{–} & \pend{–}\\
+test-51 (regresión) & 3/51 (125/125) & 0/51 (92/125) & 47/51 (1/125) & \textbf{50/51 (1/125)}\\
+OOD (12, usado como dev) & 0/12 (21/21) & 0/12 (14/21) & 7/12 (3/21) & \textbf{10/12 (2/21)}\\
 \bottomrule
 \end{tabularx}
 
 \textbf{Convención E3.} En la revisión humana de \cod{hard\_test} (8 objeciones de 160 avisos, ninguna de transcripción) el equipo acordó que un aviso sin política de mascotas no se descarta, porque se puede conversar: se aprueba y va al final del orden. Un estudio o loft cuenta como 1 dormitorio. Juez, E2, baseline y Decisor (v2) usan esa regla en todos los sets.
 
-En \cod{hard\_test} los agentes duplican el E1 de la E2 (23 vs 11/30) y bajan los rechazos falsos de 42\,\% a 18\,\% (IC 12–26\,\%), a cambio de 6 aprobaciones indebidas (5\,\%, IC 2–10\,\%; la E2 tiene 0). Por fenómeno, la mejora está en cifras en palabras (20 vs 13/21), comuna en otra posición (17 vs 11/17) y estilo (12 vs 9/15). En \cod{real\_e3} solo 5 de 80 avisos deben aprobarse, así que rechazar todo acierta 15/20 casos: lo que separa a los sistemas son los rechazos falsos (entre paréntesis). Los agentes aprueban los 5 y la E2 pierde 2.}
+En \cod{hard\_test} los agentes duplican el E1 de la E2 (23 vs 11/30) y bajan los rechazos falsos de 42\,\% a 18\,\% (IC 12–26\,\%), a cambio de 6 aprobaciones indebidas (5\,\%, IC 2–10\,\%; la E2 tiene 0). La mejora está en cifras en palabras (20 vs 13/21) y comuna en otra posición (17 vs 11/17). En \cod{real\_e3} solo 5 de 80 avisos deben aprobarse y rechazar todo acierta 15/20: separan los rechazos falsos (entre paréntesis); los agentes aprueban los 5. En test-51 no hay regresión.
+
+\textbf{Ablaciones.} Sin herramientas, el Decisor escribe un JSON inválido en 25/30 casos (ids inventados o repetidos, restricciones que no existen). Sin evidencia literal se duplican las aprobaciones indebidas (13 vs 6). Sin esquema el Verificador copia la tabla en vez de JSON, no corrige nada y el E1 \emph{sube} a 25/30 porque rechaza más (58/113): la saturación de la sección 1. Sin retroalimentación hay menos aprobaciones indebidas (2) pero más rechazos falsos (27): el reintento recupera datos y también mete errores. Quitar relectura y consulta no cambia ningún veredicto: las 24 consultas terminan en no\_verificable.}
 
 \section{Caso de fallo}
 \cod{HT-2708} (\cod{results/agents\_v2\_hard\_test/ht\_27.trace.jsonl}): «La Florida, 3D. \$145.000.000. Metro a 600 m. Admite mascotas. Estacionamiento en la vía pública frente a la casa». El comprador exige estacionamiento. La E2 lo rechaza, pero por dormitorios: no lee «3D.». En los agentes, \cod{anclar} marca dormitorios con \warn{}, el Verificador corrige a 3 con evidencia «3D.» y \cod{comprobar} lo acepta. Pero \cod{anclar} ya había leído la vía pública como estacionamiento \emph{propio} sin marcar duda, así que ningún agente lo revisa y el aviso se \textbf{aprueba indebidamente}. Es la falla más frecuente: las 5 aprobaciones indebidas por estacionamiento («uso común (no asignado)», «opción de comprar», «ya fue vendido», «+ estacionamiento \$8.000.000») siguen el mismo patrón, y en las 5 la E2 acertaba por la razón equivocada. El Verificador solo revisa lo que la herramienta marca: arreglar un campo destapa los errores silenciosos de otro. La segunda causa (7 rechazos falsos) también está en código: \cod{comprobar} no acepta «perros OK» ni «gatos OK» como permiso explícito. No corregimos ninguna en \cod{hard\_test}, que se corre una sola vez.

@@ -36,7 +36,7 @@ Detalle y tablas completas en [`docs/comparacion_modelos.md`](docs/comparacion_m
 * Ejecutado 100% de forma local (Edge AI) en un entorno híbrido: Workstation Windows (NVIDIA RTX 3050 6GB) y Apple Silicon (MacBook Air M4), utilizando Ollama con cuantización a 4-bits.
 * Los registros de evidencia empírica están disponibles en la carpeta `/experiments`, demostrando que los modelos de 3B a 8B fallan catastróficamente en tareas matemáticas y de retención lógica si no están apoyados por descomposición y herramientas deterministas.
 
-## Entregable 3 (en curso): un benchmark que no se sature
+## Entregable 3: un benchmark que no se sature
 
 La E2 cerró con 51/51 en test (etiqueta `e2-final`). Antes de construir los agentes de la E3
 se endureció el benchmark, por dos razones medidas:
@@ -137,8 +137,41 @@ sola vez, después de la revisión humana. Entre corchetes, IC de Wilson al 95 %
 | `real_e3` | Solución E2 (v5 + g3) | 20/20 | 18/20 | 78/80 | 0/75 | 2/5 |
 | `real_e3` | **Agentes v2** | **20/20** | **20/20** | **80/80** | **0/75** | **0/5** |
 
-Ablaciones (`agents_v2_sin_*_hard_test`), `test`, `ood` y `hard_dev`: pendientes, ver
-`bash scripts/run_e3.sh tablas`.
+| `test` | Rechazar todo (piso) | 51/51 | 3/51 | 227/352 | 0/227 | 125/125 |
+| `test` | Baseline (prompt directo) | 0/51 | 0/51 | 199/352 | 61/227 | 92/125 |
+| `test` | Solución E2 (v5 + g3) | 51/51 | 47/51 | 351/352 | 0/227 | 1/125 |
+| `test` | **Agentes v2** | **51/51** | **50/51** | **351/352** | **0/227** | **1/125** |
+| `ood` (dev) | Rechazar todo (piso) | 12/12 | 0/12 | 49/70 | 0/49 | 21/21 |
+| `ood` (dev) | Baseline (prompt directo) | 0/12 | 0/12 | 40/70 | 16/49 | 14/21 |
+| `ood` (dev) | Solución E2 (v5 + g3) | 11/12 | 7/12 | 67/70 | 0/49 | 3/21 |
+| `ood` (dev) | **Agentes v2** | **12/12** | **10/12** | **68/70** | **0/49** | **2/21** |
+| `hard_dev` (dev) | Solución E2 (v5 + g3) | 4/10 | 0/10 | 55/70 | 1/36 | 14/34 |
+| `hard_dev` (dev) | **Agentes v2** | **10/10** | **8/10** | **69/70** | **0/36** | **1/34** |
+
+**Ablaciones en `hard_test`** (`agents_v2_sin_<técnica>_hard_test`, una técnica quitada a la vez):
+
+| Configuración | e1_strict | full_correct | exactitud por aviso | aprob. indebida | rechazo falso |
+|---|---|---|---|---|---|
+| **Agentes v2 (full)** | 23/30 | 5/30 | 214/240 | 6/127 | 20/113 |
+| − esquema (salida libre) | 25/30 | 1/30 | 182/240 | 0/127 | 58/113 |
+| − literal (evidencia sin validar) | 17/30 | 7/30 | 212/240 | 13/127 | 15/113 |
+| − refinar (sin relectura ni consulta) | 23/30 | 5/30 | 214/240 | 6/127 | 20/113 |
+| − retro (sin reintento tras `comprobar`) | 26/30 | 5/30 | 211/240 | 2/127 | 27/113 |
+| − herramientas_A3 (Decisor escribe el JSON) | 0/30 | 0/30 | 123/240 | 13/127 | 104/113 |
+
+- **− herramientas_A3:** 25/30 JSON inválidos. El Decisor inventa ids («HT-0109» en un caso de 8
+  avisos), repite ids en ambas listas y se inventa restricciones («distancia_bus», «budget»).
+- **− literal:** sin la validación de la evidencia, las aprobaciones indebidas se duplican.
+- **− esquema:** el Verificador copia el formato de la tabla en vez de escribir JSON, a veces en
+  un bucle hasta agotar los tokens, y no corrige nada. El sistema rechaza más y por eso
+  `e1_strict` *sube*: es la saturación del criterio E1.
+- **− retro:** menos aprobaciones indebidas, pero más rechazos falsos. El reintento recupera
+  datos y también mete errores.
+- **− refinar:** ningún veredicto cambia. Las 24 consultas del Decisor terminaban en no
+  verificable, y las 5 relecturas no recuperaban el dato.
+
+El caso ht_16 de `− esquema` se repitió porque una suspensión del Mac produjo un HTTP 500 de
+Ollama. Desde entonces `agents/llm.py` reintenta los errores de conexión.
 
 Dónde fallan los agentes en `hard_test` (todo en las herramientas de Python, no en los agentes):
 

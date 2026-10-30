@@ -1,0 +1,32 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-B38",
+      "price_clp": 19900000,
+      "roi_pct": 24.38
+    },
+    {
+      "id": "PROP-M78",
+      "price_clp": 18900000,
+      "roi_pct": 23.44
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-N60",
+      "failed_constraints": ["Mascotas: 1 gato de 4kg (aceptado, pero no preferido por la mascota del comprador)", "Distancia máxima a transporte público: 429m de la estación de metro Irarrázaval (excede 1500m)"]
+    },
+    {
+      "id": "PROP-T83",
+      "failed_constraints": ["Distancia máxima a transporte público: 1474m de la estación de metro Bellas Artes (excede 1500m)", "Mascotas: 100% pet friendly (aceptado, pero no preferido por la mascota del comprador)"]
+    },
+    {
+      "id": "PROP-K42",
+      "failed_constraints": ["Distancia máxima a transporte público: 1,9km de la estación de metro más cercana (excede 1500m)", "Mascotas: 100% pet friendly (aceptado, pero no preferido por la mascota del comprador)"]
+    },
+    {
+      "id": "PROP-F96",
+      "failed_constraints": ["Distancia máxima a transporte público: 2,4km de la estación de metro más cercana (excede 1500m)", "Mascotas: No se especifica política de mascotas (no se puede confirmar si acepta o no)"]
+    }
+  ]
+}

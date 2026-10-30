@@ -1,0 +1,17 @@
+{
+  "case_id": "ood_001",
+  "model": "phi4-mini:latest",
+  "run": "baseline_e3_ood",
+  "options": {
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "num_predict": 2048,
+    "seed": 0
+  },
+  "prompt_tokens": 1158,
+  "output_tokens": 471,
+  "total_duration_s": 22.94,
+  "wall_s": 22.97,
+  "done_reason": "stop",
+  "timestamp": "2026-10-30T02:40:26"
+}

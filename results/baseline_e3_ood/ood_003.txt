@@ -1,0 +1,31 @@
+{
+  "approved_matches": [
+    {
+      "id": "OOD-305",
+      "price_clp": 3500000,
+      "roi_pct": 34.78
+    }
+  ],
+  "rejected": [
+    {
+      "id": "OOD-301",
+      "failed_constraints": ["Mascotas: 25kg no aceptado", "Distancia máxima a transporte público: 600m excedido"]
+    },
+    {
+      "id": "OOD-302",
+      "failed_constraints": ["Distancia máxima a transporte público: 400m excedido"]
+    },
+    {
+      "id": "OOD-303",
+      "failed_constraints": ["Distancia máxima a transporte público: 550m excedido", "Mascotas: Sin restricciones"]
+    },
+    {
+      "id": "OOD-304",
+      "failed_constraints": ["Distancia máxima a transporte público: 1200m excedido", "Mascotas: 20kg no aceptado"]
+    },
+    {
+      "id": "OOD-306",
+      "failed_constraints": ["Mascotas: No especificado"]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-F13",
+      "price_clp": 206500000,
+      "roi_pct": 42.99
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-G20",
+      "failed_constraints": ["Mascotas: 1 perro de 4kg no aceptado (se aceptan mascotas pequeñas y medianas hasta 4kg, previa autorización de la administración)"]
+    },
+    {
+      "id": "PROP-L68",
+      "failed_constraints": ["Mascotas: 1 perro de cualquier tamaño no especificado (solo se admiten perros de cualquier tamaño)"]
+    },
+    {
+      "id": "PROP-S26",
+      "failed_constraints": ["Mascotas: 1 perro no permitido por reglamento de copropiedad (se aceptan gatos, perros no permitidos por reglamento de copropiedad)"]
+    },
+    {
+      "id": "PROP-M65",
+      "failed_constraints": ["Estacionamiento: Sin estacionamiento"]
+    }
+  ]
+}

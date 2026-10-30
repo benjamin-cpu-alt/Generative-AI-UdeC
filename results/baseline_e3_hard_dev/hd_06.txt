@@ -1,0 +1,41 @@
+{
+  "approved_matches": [
+    {
+      "id": "HD-0601",
+      "price_clp": 46000000,
+      "roi_pct": 2.42
+    },
+    {
+      "id": "HD-0603",
+      "price_clp": 47000000,
+      "roi_pct": 5.45
+    },
+    {
+      "id": "HD-0607",
+      "price_clp": 44000000,
+      "roi_pct": 0.00
+    }
+  ],
+  "rejected": [
+    {
+      "id": "HD-0602",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    },
+    {
+      "id": "HD-0604",
+      "failed_constraints": ["Mascotas"]
+    },
+    {
+      "id": "HD-0605",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    },
+    {
+      "id": "HD-0606",
+      "failed_constraints": ["Presupuesto Máximo de Compra", "Distancia máxima a transporte público"]
+    },
+    {
+      "id": "HD-0607",
+      "failed_constraints": ["Distancia máxima a transporte público"]
+    }
+  ]
+}

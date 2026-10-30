@@ -1,0 +1,27 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-X51",
+      "price_clp": 29500000,
+      "roi_pct": 49.59
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-J38",
+      "failed_constraints": ["Hard Constraint 1: Presupuesto Máximo de Compra: $95.500.000 CLP (precio: 58360000 CLP)"]
+    },
+    {
+      "id": "PROP-N39",
+      "failed_constraints": ["Hard Constraint 1: Presupuesto Máximo de Compra: $95.500.000 CLP (precio: 59580000 CLP)"]
+    },
+    {
+      "id": "PROP-M87",
+      "failed_constraints": ["Hard Constraint 1: Presupuesto Máximo de Compra: $95.500.000 CLP (precio: 73020000 CLP)"]
+    },
+    {
+      "id": "PROP-Z74",
+      "failed_constraints": ["Hard Constraint 2: Distancia máxima a transporte público (metro O paradero de buses troncal): 1000 m (distancia: 373m)", "Hard Constraint 4: Estacionamiento: Debe incluir al menos 1 estacionamiento propio o asignado (estacionamiento: subterráneo, no se considera propio o asignado)"]
+    }
+  ]
+}

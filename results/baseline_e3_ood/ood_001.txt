@@ -1,0 +1,37 @@
+{
+  "approved_matches": [
+    {
+      "id": "OOD-107",
+      "price_clp": 39000000,
+      "roi_pct": 12.00
+    },
+    {
+      "id": "OOD-104",
+      "price_clp": 41800000,
+      "roi_pct": 7.57
+    },
+    {
+      "id": "OOD-102",
+      "price_clp": 37000000,
+      "roi_pct": 37.84
+    }
+  ],
+  "rejected": [
+    {
+      "id": "OOD-101",
+      "failed_constraints": ["Hard Constraint 2: Mascotas. El reglamento de copropiedad permite mascotas de hasta 15 kilos. El comprador tiene un perro de 12kg. El comprador no puede tener mascotas de 12kg. Hard Constraint 5: Estacionamiento. El estacionamiento es de visitas, lo cual no es permitido."]
+    },
+    {
+      "id": "OOD-103",
+      "failed_constraints": ["Hard Constraint 1: Presupuesto Máximo de Compra. El precio es de $210.000.000, lo cual es superior al presupuesto máximo de $200.000.000. Hard Constraint 5: Estacionamiento. El condominio no acepta mascotas. El comprador tiene un perro de 12kg. El condominio no tiene estacionamiento propio o asignado."]
+    },
+    {
+      "id": "OOD-105",
+      "failed_constraints": ["Hard Constraint 1: Presupuesto Máximo de Compra. El precio es de $185.000.000, lo cual es superior al presupuesto máximo de $200.000.000. Hard Constraint 5: Estacionamiento. El condominio no acepta mascotas. El comprador tiene un perro de 12kg. El condominio no tiene estacionamiento propio o asignado."]
+    },
+    {
+      "id": "OOD-106",
+      "failed_constraints": ["Hard Constraint 2: Mascotas. El departamento no acepta perros y gatos, sin límite de peso. El comprador tiene un perro de 12kg. Hard Constraint 5: Estacionamiento. El departamento cuenta con estacionamiento de visitas, lo cual no es permitido."]
+    }
+  ]
+}

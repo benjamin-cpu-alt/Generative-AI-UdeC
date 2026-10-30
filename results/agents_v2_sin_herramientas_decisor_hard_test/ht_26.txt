@@ -1,0 +1,60 @@
+{
+  "approved_matches": [
+    {
+      "id": "HT-2601",
+      "price_clp": 118000000,
+      "roi_pct": 27.12
+    },
+    {
+      "id": "HT-2607",
+      "price_clp": 112000000,
+      "roi_pct": 34.71
+    },
+    {
+      "id": "HT-2608",
+      "price_clp": 90000000,
+      "roi_pct": 160.0
+    }
+  ],
+  "rejected": [
+    {
+      "id": "HT-2602",
+      "failed_constraints": [
+        "distancia_transporte",
+        "estacionamiento"
+      ]
+    },
+    {
+      "id": "HT-2603",
+      "failed_constraints": [
+        "distancia_transporte",
+        "mascotas"
+      ]
+    },
+    {
+      "id": "HT-2604",
+      "failed_constraints": [
+        "dormitorios"
+      ]
+    },
+    {
+      "id": "HT-2605",
+      "failed_constraints": [
+        "dormitorios",
+        "distancia_transporte"
+      ]
+    },
+    {
+      "id": "HT-2606",
+      "failed_constraints": [
+        "prebudget"
+      ]
+    },
+    {
+      "id": "mascotas_no_explicita",
+      "failed_constraints": [
+        "mascotas"
+      ]
+    }
+  ]
+}

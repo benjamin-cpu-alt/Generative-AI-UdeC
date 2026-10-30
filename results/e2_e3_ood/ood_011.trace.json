@@ -1,0 +1,254 @@
+{
+  "facts": {
+    "OOD-1101": {
+      "location": "Independencia",
+      "bedrooms": null,
+      "price_text": "3.300 UF",
+      "rent_text": "600",
+      "distance_metro_text": "350 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 20.0,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"Independencia\",\n  \"bedrooms_text\": \"1B\",\n  \"price_text\": \"UF 3.300\",\n  \"rent_text\": \"Arriendo 600k\",\n  \"distance_metro_text\": \"Metro a 350m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": null,\n  \"pets_text\": \"Mascotas OK hasta 20kg\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Independencia",
+        "bedrooms_text": "1B",
+        "price_text": "UF 3.300",
+        "rent_text": "Arriendo 600k",
+        "distance_metro_text": "Metro a 350m",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "Mascotas OK hasta 20kg",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "parking_text: recuperado del aviso ('Est.')"
+      ]
+    },
+    "OOD-1102": {
+      "location": "Independencia",
+      "bedrooms": 1,
+      "price_text": "2.900 UF",
+      "rent_text": null,
+      "distance_metro_text": "200 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"Independencia\",\n  \"bedrooms_text\": \"1D 1B\",\n  \"price_text\": \"UF 2.900\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro 200m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": null,\n  \"pets_text\": \"Mascotas OK\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Independencia",
+        "bedrooms_text": "1D 1B",
+        "price_text": "UF 2.900",
+        "rent_text": null,
+        "distance_metro_text": "Metro 200m",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "Mascotas OK",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "parking_text: recuperado del aviso ('Est.')"
+      ]
+    },
+    "OOD-1103": {
+      "location": "Recoleta",
+      "bedrooms": null,
+      "price_text": "3.400 UF",
+      "rent_text": null,
+      "distance_metro_text": "1 km",
+      "distance_bus_text": null,
+      "pets_policy": "no_permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"Recoleta\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.400\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro 1km\",\n  \"distance_bus_text\": null,\n  \"parking_text\": null,\n  \"pets_text\": \"Sin mascotas\",\n  \"acepta_mascotas\": \"no\",\n  \"acepta_perros\": \"no\",\n  \"acepta_gatos\": \"no\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Recoleta",
+        "bedrooms_text": null,
+        "price_text": "UF 3.400",
+        "rent_text": null,
+        "distance_metro_text": "Metro 1km",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "Sin mascotas",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no",
+        "acepta_gatos": "no"
+      },
+      "warnings": [
+        "parking_text: recuperado del aviso ('Est.')"
+      ]
+    },
+    "OOD-1104": {
+      "location": "Independencia",
+      "bedrooms": null,
+      "price_text": "3.380 UF",
+      "rent_text": null,
+      "distance_metro_text": "400 m",
+      "distance_bus_text": null,
+      "pets_policy": "no_permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"Independencia\",\n  \"bedrooms_text\": \"1B\",\n  \"price_text\": \"UF 3.380\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro 400m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": null,\n  \"pets_text\": \"Solo gatos\",\n  \"acepta_mascotas\": \"no\",\n  \"acepta_perros\": \"no\",\n  \"acepta_gatos\": \"no\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Independencia",
+        "bedrooms_text": "1B",
+        "price_text": "UF 3.380",
+        "rent_text": null,
+        "distance_metro_text": "Metro 400m",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "Solo gatos",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no",
+        "acepta_gatos": "no"
+      },
+      "warnings": [
+        "parking_text: recuperado del aviso ('Est.')"
+      ]
+    },
+    "OOD-1105": {
+      "location": "Independencia",
+      "bedrooms": null,
+      "price_text": "3.420 UF",
+      "rent_text": null,
+      "distance_metro_text": "600 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"Independencia\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.420\",\n  \"rent_text\": null,\n  \"distance_metro_text\": \"Metro 600m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": null,\n  \"pets_text\": \"Perros y gatos OK\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Independencia",
+        "bedrooms_text": null,
+        "price_text": "UF 3.420",
+        "rent_text": null,
+        "distance_metro_text": "Metro 600m",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "Perros y gatos OK",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "parking_text: recuperado del aviso ('Est.')"
+      ]
+    }
+  },
+  "decisions": {
+    "OOD-1101": {
+      "price_clp": 130020000,
+      "roi_pct": 0.01,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.300 UF' = 3300 UF -> 130,020,000 CLP <= 135,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=20.0 vs perro 15kg -> ok",
+        "distancia: metro='350 m' bus=None -> min=350 vs max 800",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "OOD-1102": {
+      "price_clp": 114260000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '2.900 UF' = 2900 UF -> 114,260,000 CLP <= 135,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='200 m' bus=None -> min=200 vs max 800",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "OOD-1103": {
+      "price_clp": 133960000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "distancia_transporte",
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.400 UF' = 3400 UF -> 133,960,000 CLP <= 135,000,000",
+        "mascotas: politica=no_permitidas especies=cualquiera max_kg=None vs perro 15kg -> FALLA",
+        "distancia: metro='1 km' bus=None -> min=1000 vs max 800",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "OOD-1104": {
+      "price_clp": 133172000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas",
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.380 UF' = 3380 UF -> 133,172,000 CLP <= 135,000,000",
+        "mascotas: politica=no_permitidas especies=cualquiera max_kg=None vs perro 15kg -> FALLA",
+        "distancia: metro='400 m' bus=None -> min=400 vs max 800",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "OOD-1105": {
+      "price_clp": 134748000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.420 UF' = 3420 UF -> 134,748,000 CLP <= 135,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 15kg -> ok",
+        "distancia: metro='600 m' bus=None -> min=600 vs max 800",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    }
+  }
+}

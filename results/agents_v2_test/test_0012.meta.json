@@ -1,0 +1,29 @@
+{
+  "case_id": "test_0012",
+  "run": "agents_v2_test",
+  "split": "test",
+  "mode": "agents",
+  "config": "full",
+  "model": "phi4-mini:latest",
+  "prompts": {
+    "lector": "v1",
+    "verificador": "v1",
+    "decisor": "v2"
+  },
+  "grounding_version": "g3",
+  "calls": 10,
+  "prompt_tokens": 8212,
+  "output_tokens": 1407,
+  "wall_s": 67.63,
+  "llm_s": 67.61,
+  "acciones": {
+    "llamadas_lector": 9,
+    "avisos_sin_dudas": 9,
+    "llamadas_decisor": 1,
+    "decisor_cerrar": 1
+  },
+  "mensajes": 32,
+  "done_reason": "stop",
+  "errors": [],
+  "timestamp": "2026-10-30T02:01:40"
+}

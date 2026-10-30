@@ -1,0 +1,33 @@
+{
+  "approved_matches": [
+    {
+      "id": "PROP-H18",
+      "price_clp": 56168400,
+      "roi_pct": 25.00
+    },
+    {
+      "id": "PROP-Y22",
+      "price_clp": 54118800,
+      "roi_pct": 19.00
+    },
+    {
+      "id": "PROP-W67",
+      "price_clp": 22463500,
+      "roi_pct": 17.00
+    }
+  ],
+  "rejected": [
+    {
+      "id": "PROP-T39",
+      "failed_constraints": ["Presupuesto Máximo de Compra"]
+    },
+    {
+      "id": "PROP-P84",
+      "failed_constraints": ["Distancia máxima a transporte público", "Mascotas: Tiene 1 perro de 25kg"]
+    },
+    {
+      "id": "PROP-Z96",
+      "failed_constraints": ["Distancia máxima a transporte público"]
+    }
+  ]
+}

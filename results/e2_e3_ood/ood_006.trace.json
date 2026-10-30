@@ -1,0 +1,237 @@
+{
+  "facts": {
+    "OOD-601": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "3.600 UF",
+      "rent_text": "$620.000",
+      "distance_metro_text": "200 metros",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\n  \"location_text\": \"Depto 2D/1B, 55 m², Santiago Centro\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.600\",\n  \"rent_text\": \"Arriendo: $620.000\",\n  \"distance_metro_text\": \"A 200 metros del Metro Universidad de Chile\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento asignado\",\n  \"pets_text\": \"acepta gatos y perros chicos\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"si\",\n  \"acepta_gatos\": \"si\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/1B, 55 m², Santiago Centro",
+        "bedrooms_text": null,
+        "price_text": "UF 3.600",
+        "rent_text": "Arriendo: $620.000",
+        "distance_metro_text": "A 200 metros del Metro Universidad de Chile",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento asignado",
+        "pets_text": "acepta gatos y perros chicos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "si"
+      },
+      "warnings": [
+        "bedrooms: recuperado del aviso completo ('2D/')"
+      ]
+    },
+    "OOD-602": {
+      "location": "Depto",
+      "bedrooms": 1,
+      "price_text": "3.100 UF",
+      "rent_text": "$70.000",
+      "distance_metro_text": "150 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto 1D/1B, 40 m², Santiago Centro\",\n  \"bedrooms_text\": \"1D/1B\",\n  \"price_text\": \"Valor UF 3.100\",\n  \"rent_text\": \"gastos comunes aproximados $70.000 mensuales\",\n  \"distance_metro_text\": \"A 150 m del metro\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"estacionamiento propio\",\n  \"pets_text\": \"Pet friendly\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 1D/1B, 40 m², Santiago Centro",
+        "bedrooms_text": "1D/1B",
+        "price_text": "Valor UF 3.100",
+        "rent_text": "gastos comunes aproximados $70.000 mensuales",
+        "distance_metro_text": "A 150 m del metro",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento propio",
+        "pets_text": "Pet friendly",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "OOD-603": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "$142.000.000",
+      "rent_text": null,
+      "distance_metro_text": "300 metros",
+      "distance_bus_text": null,
+      "pets_policy": "no_permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto 2D/2B\", \"bedrooms_text\": \"2D/2B\", \"price_text\": \"$142.000.000\", \"rent_text\": null, \"distance_metro_text\": \"A 300 metros del metro\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento propio.\", \"pets_text\": \"No acepta mascotas.\",\"acepta_mascotas\": \"no\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/2B",
+        "bedrooms_text": "2D/2B",
+        "price_text": "$142.000.000",
+        "rent_text": null,
+        "distance_metro_text": "A 300 metros del metro",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio.",
+        "pets_text": "No acepta mascotas.",
+        "acepta_mascotas": "no",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "OOD-604": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "3.900 UF",
+      "rent_text": "$600.000",
+      "distance_metro_text": "1,1 km",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 8.0,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Depto 2D/1B, 50 m², Santiago Centro\",\n  \"bedrooms_text\": \"2D/1B\",\n  \"price_text\": \"UF 3.900\",\n  \"rent_text\": \"Arriendo: $600.000\",\n  \"distance_metro_text\": \"A 1,1 km del metro.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio.\",\n  \"pets_text\": \"Acepta mascotas hasta 8 kilos.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/1B, 50 m², Santiago Centro",
+        "bedrooms_text": "2D/1B",
+        "price_text": "UF 3.900",
+        "rent_text": "Arriendo: $600.000",
+        "distance_metro_text": "A 1,1 km del metro.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio.",
+        "pets_text": "Acepta mascotas hasta 8 kilos.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "OOD-605": {
+      "location": "Depto",
+      "bedrooms": 2,
+      "price_text": "3.700 UF",
+      "rent_text": null,
+      "distance_metro_text": "400 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 3.0,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Depto 2D/1B\", \"bedrooms_text\": \"2D/1B\", \"price_text\": \"UF 3.700\", \"rent_text\": null, \"distance_metro_text\": \"A 400 m del metro\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento propio.\", \"pets_text\": \"aceptan mascotas hasta 3 kilos.\",\"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 2D/1B",
+        "bedrooms_text": "2D/1B",
+        "price_text": "UF 3.700",
+        "rent_text": null,
+        "distance_metro_text": "A 400 m del metro",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio.",
+        "pets_text": "aceptan mascotas hasta 3 kilos.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "OOD-601": {
+      "price_clp": 138960000,
+      "roi_pct": 5.35,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.600 UF' = 3600 UF -> 138,960,000 CLP <= 145,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='200 metros' bus=None -> min=200 vs max 700",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "OOD-602": {
+      "price_clp": 119660000,
+      "roi_pct": 0.7,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.100 UF' = 3100 UF -> 119,660,000 CLP <= 145,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs gato 4kg -> ok",
+        "distancia: metro='150 m' bus=None -> min=150 vs max 700",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-603": {
+      "price_clp": 142000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '$142.000.000' = 1.42e+08 CLP -> 142,000,000 CLP <= 145,000,000",
+        "mascotas: politica=no_permitidas especies=cualquiera max_kg=None vs gato 4kg -> FALLA",
+        "distancia: metro='300 metros' bus=None -> min=300 vs max 700",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-604": {
+      "price_clp": 150540000,
+      "roi_pct": 4.78,
+      "failed_constraints": [
+        "presupuesto",
+        "distancia_transporte"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.900 UF' = 3900 UF -> 150,540,000 CLP > 145,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=8.0 vs gato 4kg -> ok",
+        "distancia: metro='1,1 km' bus=None -> min=1100 vs max 700",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "OOD-605": {
+      "price_clp": 142820000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "mascotas"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.700 UF' = 3700 UF -> 142,820,000 CLP <= 145,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=3.0 vs gato 4kg -> FALLA",
+        "distancia: metro='400 m' bus=None -> min=400 vs max 700",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

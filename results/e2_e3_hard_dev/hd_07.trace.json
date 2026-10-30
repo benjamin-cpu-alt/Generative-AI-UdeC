@@ -1,0 +1,334 @@
+{
+  "facts": {
+    "HD-0701": {
+      "location": "MAIPU",
+      "bedrooms": 3,
+      "price_text": "3.700 UF",
+      "rent_text": "650.000",
+      "distance_metro_text": "300 m",
+      "distance_bus_text": "300 m",
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"MAIPU\",\n  \"bedrooms_text\": \"2B\",\n  \"price_text\": \"3.700UF\",\n  \"rent_text\": \"650.000\",\n  \"distance_metro_text\": \"Paradero troncal 300m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": null,\n  \"pets_text\": \"Mascotas OK\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "MAIPU",
+        "bedrooms_text": "2B",
+        "price_text": "3.700UF",
+        "rent_text": "650.000",
+        "distance_metro_text": "Paradero troncal 300m",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "Mascotas OK",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "distance_bus_text: recuperada del aviso (300 m)",
+        "bedrooms: recuperado del aviso completo ('3D/')"
+      ]
+    },
+    "HD-0702": {
+      "location": "Maipú",
+      "bedrooms": 3,
+      "price_text": "$139.000.000",
+      "rent_text": null,
+      "distance_metro_text": "600 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Maipú\", \"bedrooms_text\": \"3 dormitorios\", \"price_text\": \"$139.000.000\", \"rent_text\": null, \"distance_metro_text\": \"A 600 m del Metro Plaza de Maipú\", \"distance_bus_text\": null, \"parking_text\": \"estacionamiento propio\", \"pets_text\": \"acepta perros\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Maipú",
+        "bedrooms_text": "3 dormitorios",
+        "price_text": "$139.000.000",
+        "rent_text": null,
+        "distance_metro_text": "A 600 m del Metro Plaza de Maipú",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento propio",
+        "pets_text": "acepta perros",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": [
+        "pets_text: recuperado del aviso ('Perros de hasta cinco kilos.')"
+      ]
+    },
+    "HD-0703": {
+      "location": "Depto",
+      "bedrooms": null,
+      "price_text": "3.800 UF",
+      "rent_text": "16,5 UF",
+      "distance_metro_text": "850 metros",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": 10.0,
+      "parking": "no_mencionado",
+      "raw": "{\n  \"location_text\": \"Depto 3D 2B en Cerrillos.\",\n  \"bedrooms_text\": null,\n  \"price_text\": \"UF 3.800.\",\n  \"rent_text\": \"Arriendo 16,5 UF.\",\n  \"distance_metro_text\": \"A 850 metros del Metro Cerrillos.\",\n  \"distance_bus_text\": null,\n  \"parking_text\": null,\n  \"pets_text\": \"Acepta mascotas pequeñas de hasta 10 kg.\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Depto 3D 2B en Cerrillos.",
+        "bedrooms_text": null,
+        "price_text": "UF 3.800.",
+        "rent_text": "Arriendo 16,5 UF.",
+        "distance_metro_text": "A 850 metros del Metro Cerrillos.",
+        "distance_bus_text": null,
+        "parking_text": null,
+        "pets_text": "Acepta mascotas pequeñas de hasta 10 kg.",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HD-0704": {
+      "location": "Maipú",
+      "bedrooms": 2,
+      "price_text": "$128.000.000",
+      "rent_text": null,
+      "distance_metro_text": "500 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "visitas",
+      "raw": "{\"location_text\": \"Maipú, 2 dormitorios\", \"bedrooms_text\": \"2 dormitorios\", \"price_text\": \"$128.000.000\", \"rent_text\": null, \"distance_metro_text\": \"A 500 m del metro\", \"distance_bus_text\": null, \"parking_text\": \"estacionamiento de visitas disponible.\", \"pets_text\": \"Pet friendly\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Maipú, 2 dormitorios",
+        "bedrooms_text": "2 dormitorios",
+        "price_text": "$128.000.000",
+        "rent_text": null,
+        "distance_metro_text": "A 500 m del metro",
+        "distance_bus_text": null,
+        "parking_text": "estacionamiento de visitas disponible.",
+        "pets_text": "Pet friendly",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HD-0705": {
+      "location": "Maipú",
+      "bedrooms": 2,
+      "price_text": "3.890 UF",
+      "rent_text": null,
+      "distance_metro_text": "400 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [
+        "perro"
+      ],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\"location_text\": \"Maipú, 2D/2B\", \"bedrooms_text\": \"2D/2B\", \"price_text\": \"UF 3.890\", \"rent_text\": null, \"distance_metro_text\": \"A 400 m del metro\", \"distance_bus_text\": null, \"parking_text\": \"incluye estacionamiento\", \"pets_text\": \"Perros bienvenidos\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"si\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Maipú, 2D/2B",
+        "bedrooms_text": "2D/2B",
+        "price_text": "UF 3.890",
+        "rent_text": null,
+        "distance_metro_text": "A 400 m del metro",
+        "distance_bus_text": null,
+        "parking_text": "incluye estacionamiento",
+        "pets_text": "Perros bienvenidos",
+        "acepta_mascotas": "si",
+        "acepta_perros": "si",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HD-0706": {
+      "location": "Maipú",
+      "bedrooms": 1,
+      "price_text": "3.000 UF",
+      "rent_text": null,
+      "distance_metro_text": "300 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "asignado",
+      "raw": "{\"location_text\": \"Maipú, 1 dormitorio y una loggia que hoy se usa como dormitorio.\", \"bedrooms_text\": \"1 dormitorio\", \"price_text\": \"UF 3.000\", \"rent_text\": null, \"distance_metro_text\": \"A 300 m del metro.\", \"distance_bus_text\": null, \"parking_text\": \"Estacionamiento asignado.\", \"pets_text\": \"acepta mascotas\", \"acepta_mascotas\": \"si\", \"acepta_perros\": \"no_dice\", \"acepta_gatos\": \"no_dice\"}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Maipú, 1 dormitorio y una loggia que hoy se usa como dormitorio.",
+        "bedrooms_text": "1 dormitorio",
+        "price_text": "UF 3.000",
+        "rent_text": null,
+        "distance_metro_text": "A 300 m del metro.",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento asignado.",
+        "pets_text": "acepta mascotas",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    },
+    "HD-0707": {
+      "location": "Av",
+      "bedrooms": 2,
+      "price_text": "3.500 UF",
+      "rent_text": "$600.000",
+      "distance_metro_text": "450 m",
+      "distance_bus_text": null,
+      "pets_policy": "permitidas",
+      "pets_species": [],
+      "pets_max_kg": null,
+      "parking": "propio",
+      "raw": "{\n  \"location_text\": \"Av. Pajaritos 3200, Maipú\",\n  \"bedrooms_text\": \"2D/2B\",\n  \"price_text\": \"UF 3.500\",\n  \"rent_text\": \"Arriendo $600.000.\",\n  \"distance_metro_text\": \"Metro Las Parcelas a 450 m\",\n  \"distance_bus_text\": null,\n  \"parking_text\": \"Estacionamiento propio\",\n  \"pets_text\": \"Mascotas permitidas sin límite de peso\",\n  \"acepta_mascotas\": \"si\",\n  \"acepta_perros\": \"no_dice\",\n  \"acepta_gatos\": \"no_dice\"\n}",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "wall_s": 0.0,
+      "error": null,
+      "spans": {
+        "location_text": "Av. Pajaritos 3200, Maipú",
+        "bedrooms_text": "2D/2B",
+        "price_text": "UF 3.500",
+        "rent_text": "Arriendo $600.000.",
+        "distance_metro_text": "Metro Las Parcelas a 450 m",
+        "distance_bus_text": null,
+        "parking_text": "Estacionamiento propio",
+        "pets_text": "Mascotas permitidas sin límite de peso",
+        "acepta_mascotas": "si",
+        "acepta_perros": "no_dice",
+        "acepta_gatos": "no_dice"
+      },
+      "warnings": []
+    }
+  },
+  "decisions": {
+    "HD-0701": {
+      "price_clp": 144670000,
+      "roi_pct": 5.39,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.700 UF' = 3700 UF -> 144,670,000 CLP <= 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 8kg -> ok",
+        "distancia: metro='300 m' bus='300 m' -> min=300 vs max 900",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "HD-0702": {
+      "price_clp": 139000000,
+      "roi_pct": null,
+      "failed_constraints": [],
+      "preferred_location": true,
+      "notes": [
+        "precio '$139.000.000' = 1.39e+08 CLP -> 139,000,000 CLP <= 150,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 8kg -> ok",
+        "distancia: metro='600 m' bus=None -> min=600 vs max 900",
+        "dormitorios: 3 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HD-0703": {
+      "price_clp": 148580000,
+      "roi_pct": 0.0,
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.800 UF' = 3800 UF -> 148,580,000 CLP <= 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=10.0 vs perro 8kg -> ok",
+        "distancia: metro='850 metros' bus=None -> min=850 vs max 900",
+        "dormitorios: no verificable vs min 2",
+        "estacionamiento: no_mencionado (requerido=True)"
+      ]
+    },
+    "HD-0704": {
+      "price_clp": 128000000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "estacionamiento"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '$128.000.000' = 1.28e+08 CLP -> 128,000,000 CLP <= 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 8kg -> ok",
+        "distancia: metro='500 m' bus=None -> min=500 vs max 900",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: visitas (requerido=True)"
+      ]
+    },
+    "HD-0705": {
+      "price_clp": 152099000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "presupuesto"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.890 UF' = 3890 UF -> 152,099,000 CLP > 150,000,000",
+        "mascotas: politica=permitidas especies=['perro'] max_kg=None vs perro 8kg -> ok",
+        "distancia: metro='400 m' bus=None -> min=400 vs max 900",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    },
+    "HD-0706": {
+      "price_clp": 117300000,
+      "roi_pct": null,
+      "failed_constraints": [
+        "dormitorios"
+      ],
+      "preferred_location": true,
+      "notes": [
+        "precio '3.000 UF' = 3000 UF -> 117,300,000 CLP <= 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 8kg -> ok",
+        "distancia: metro='300 m' bus=None -> min=300 vs max 900",
+        "dormitorios: 1 vs min 2",
+        "estacionamiento: asignado (requerido=True)"
+      ]
+    },
+    "HD-0707": {
+      "price_clp": 136850000,
+      "roi_pct": 5.26,
+      "failed_constraints": [],
+      "preferred_location": false,
+      "notes": [
+        "precio '3.500 UF' = 3500 UF -> 136,850,000 CLP <= 150,000,000",
+        "mascotas: politica=permitidas especies=cualquiera max_kg=None vs perro 8kg -> ok",
+        "distancia: metro='450 m' bus=None -> min=450 vs max 900",
+        "dormitorios: 2 vs min 2",
+        "estacionamiento: propio (requerido=True)"
+      ]
+    }
+  }
+}

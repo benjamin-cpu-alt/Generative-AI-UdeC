@@ -1,0 +1,43 @@
+{
+  "approved_matches": [
+    {
+      "id": "OOD-206",
+      "price_clp": 120125000,
+      "roi_pct": 6.49
+    },
+    {
+      "id": "OOD-201",
+      "price_clp": 124000000,
+      "roi_pct": 0.01
+    }
+  ],
+  "rejected": [
+    {
+      "id": "OOD-202",
+      "failed_constraints": [
+        "dormitorios",
+        "estacionamiento"
+      ]
+    },
+    {
+      "id": "OOD-203",
+      "failed_constraints": [
+        "mascotas",
+        "distancia_transporte",
+        "dormitorios"
+      ]
+    },
+    {
+      "id": "OOD-204",
+      "failed_constraints": [
+        "presupuesto"
+      ]
+    },
+    {
+      "id": "OOD-205",
+      "failed_constraints": [
+        "mascotas"
+      ]
+    }
+  ]
+}

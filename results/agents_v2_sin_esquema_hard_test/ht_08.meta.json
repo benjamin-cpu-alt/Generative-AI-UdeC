@@ -1,0 +1,35 @@
+{
+  "case_id": "ht_08",
+  "run": "agents_v2_sin_esquema_hard_test",
+  "split": "hard_test",
+  "mode": "agents",
+  "config": "sin_esquema",
+  "model": "phi4-mini:latest",
+  "prompts": {
+    "lector": "v1",
+    "verificador": "v1",
+    "decisor": "v2"
+  },
+  "grounding_version": "g3",
+  "calls": 13,
+  "prompt_tokens": 10946,
+  "output_tokens": 1607,
+  "wall_s": 79.3,
+  "llm_s": 79.28,
+  "acciones": {
+    "llamadas_lector": 8,
+    "avisos_sin_dudas": 4,
+    "llamadas_verificador": 4,
+    "verificador_sin_objeciones": 4,
+    "llamadas_decisor": 1,
+    "decisor_cerrar": 1
+  },
+  "mensajes": 28,
+  "done_reason": "error",
+  "errors": [
+    "Verificador: salida sin objeto JSON",
+    "Verificador: salida sin objeto JSON",
+    "Verificador: salida sin objeto JSON"
+  ],
+  "timestamp": "2026-10-29T19:46:33"
+}

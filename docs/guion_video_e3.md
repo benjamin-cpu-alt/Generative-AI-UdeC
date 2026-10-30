@@ -34,7 +34,7 @@ corrida v1 y se revisó que las trazas v2 muestran lo mismo):
 | 1:20–1:40 | `agents.show …/real_b2_005.trace.jsonl --aviso REAL-23` | El aviso que la E2 rechazaba: el Verificador encuentra el precio y la herramienta lo valida. |
 | 1:40–1:55 | `agents.show …/real_b1_004.trace.jsonl --aviso REAL-08` | Convención acordada en la revisión: sin política de mascotas no se descarta, va al final. |
 | 1:55–2:25 | `agents.show results/agents_v2_hard_test/ht_27.trace.jsonl --aviso HT-2708` | Dónde falla: el Verificador solo revisa lo que la herramienta marca; la E2 acertaba por la razón equivocada. |
-| 2:25–3:00 | Tablas (`bash scripts/run_e3.sh tablas` o el PDF) | hard_test: E1 23/30 vs 11/30 de la E2, rechazos falsos 18 % vs 42 %, 6 aprobaciones indebidas; ablaciones; real_e3 20/20. |
+| 2:25–3:00 | Tablas (`bash scripts/run_e3.sh tablas` o el PDF) | hard_test: E1 23/30 vs 11/30 de la E2, rechazos falsos 18 % vs 42 %, 6 aprobaciones indebidas. Ablaciones: sin herramientas el Decisor no produce un JSON válido (0/30); sin evidencia literal se duplican las aprobaciones indebidas. real_e3 20/20, test 50/51. |
 
 Comandos (desde la raíz del repo, sin llamar al modelo):
 

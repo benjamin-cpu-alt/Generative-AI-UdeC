@@ -1,0 +1,37 @@
+{
+  "case_id": "ht_03",
+  "run": "agents_v2_sin_herramientas_decisor_hard_test",
+  "split": "hard_test",
+  "mode": "agents",
+  "config": "sin_herramientas_decisor",
+  "model": "phi4-mini:latest",
+  "prompts": {
+    "lector": "v1",
+    "verificador": "v1",
+    "decisor": "v2"
+  },
+  "grounding_version": "g3",
+  "calls": 18,
+  "prompt_tokens": 16109,
+  "output_tokens": 2503,
+  "wall_s": 118.45,
+  "llm_s": 118.42,
+  "acciones": {
+    "llamadas_lector": 8,
+    "avisos_sin_dudas": 2,
+    "llamadas_verificador": 9,
+    "verificador_no_verificable": 1,
+    "verificador_corregir": 7,
+    "comprobar_ok": 3,
+    "comprobar_rechaza": 4,
+    "verificador_sin_objeciones": 2,
+    "dudas_sin_resolver": 2,
+    "llamadas_decisor": 1
+  },
+  "mensajes": 39,
+  "done_reason": "error",
+  "errors": [
+    "Decisor: Unterminated string starting at: line 149 column 13 (char 3325)"
+  ],
+  "timestamp": "2026-10-30T00:52:19"
+}

@@ -1,0 +1,34 @@
+{
+  "approved_matches": [
+    {
+      "id": "OOD-1003",
+      "price_clp": 585000000,
+      "roi_pct": 0.00
+    },
+    {
+      "id": "OOD-1006",
+      "price_clp": 6544000,
+      "roi_pct": 12.07
+    },
+    {
+      "id": "OOD-1001",
+      "price_clp": 4500000,
+      "roi_pct": 6.21
+    },
+    {
+      "id": "OOD-1005",
+      "price_clp": 4680000,
+      "roi_pct": 7.83
+    }
+  ],
+  "rejected": [
+    {
+      "id": "OOD-1002",
+      "failed_constraints": ["Hard Constraint 2: Dormitorios: Mínimo 3 dormitorios reales (un estudio, loft o monoambiente cuenta como 1)."]
+    },
+    {
+      "id": "OOD-1004",
+      "failed_constraints": ["Hard Constraint 1: Presupuesto Máximo de Compra: $180.000.000 CLP (usa el valor de la UF de hoy si el precio viene en UF).", "Hard Constraint 2: Dormitorios: Mínimo 3 dormitorios reales (un estudio, loft o monoambiente cuenta como 1)."]
+    }
+  ]
+}
