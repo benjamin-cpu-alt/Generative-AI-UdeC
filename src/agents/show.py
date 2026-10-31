@@ -4,6 +4,7 @@ Es lo que se ve en el video: cada mensaje con su emisor, su destino y su conteni
   python -m agents.show results/agents_v1_real_e3/real_b2_003.trace.jsonl
   python -m agents.show <traza> --aviso REAL-23        # solo los mensajes de un aviso
   python -m agents.show <traza> --pausa 0.6            # mensaje a mensaje (para grabar)
+  python -m agents.show <traza> --pasos 12-14,28       # solo esos pasos (para que quepan en pantalla)
 """
 from __future__ import annotations
 
@@ -61,11 +62,30 @@ def resumen(m: dict) -> str:
     return json.dumps(c, ensure_ascii=False)
 
 
+def imprimir(m: dict, color: bool) -> None:
+    head = f"{m['paso']:>3} {_who(m['de'], color)} → {_who(m['para'], color)}  [{m['tipo']}]"
+    if m.get("aviso"):
+        head += f"  {DIM if color else ''}{m['aviso']}{RESET if color else ''}"
+    print(head)
+    for ln in resumen(m).splitlines():
+        print(textwrap.fill(ln, 110, initial_indent="      ", subsequent_indent="        "))
+    sys.stdout.flush()
+
+
+def pasos(spec: str) -> set:
+    out = set()
+    for parte in spec.split(","):
+        a, _, b = parte.partition("-")
+        out.update(range(int(a), int(b or a) + 1))
+    return out
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("traza")
     ap.add_argument("--aviso")
     ap.add_argument("--pausa", type=float, default=0.0)
+    ap.add_argument("--pasos", type=pasos)
     ap.add_argument("--sin-color", action="store_true")
     a = ap.parse_args(argv)
     color = not a.sin_color and sys.stdout.isatty()
@@ -73,13 +93,9 @@ def main(argv=None) -> int:
         m = json.loads(line)
         if a.aviso and m.get("aviso") not in (None, a.aviso):
             continue
-        head = f"{m['paso']:>3} {_who(m['de'], color)} → {_who(m['para'], color)}  [{m['tipo']}]"
-        if m.get("aviso"):
-            head += f"  {DIM if color else ''}{m['aviso']}{RESET if color else ''}"
-        print(head)
-        body = resumen(m)
-        for ln in body.splitlines():
-            print(textwrap.fill(ln, 110, initial_indent="      ", subsequent_indent="        "))
+        if a.pasos and m["paso"] not in a.pasos:
+            continue
+        imprimir(m, color)
         if a.pausa:
             time.sleep(a.pausa)
     return 0

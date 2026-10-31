@@ -219,6 +219,21 @@ def test_flujo_completo_corrige_jerga_y_aprueba():
     assert [m["paso"] for m in tr.mensajes] == list(range(1, len(tr.mensajes) + 1))
 
 
+
+def test_modo_vivo_emite_cada_mensaje_sin_cambiar_la_traza():
+    def fake():
+        return FakeLLM(lambda u: {"revisiones": []}, lambda u: {"accion": "cerrar", "consultas": []})
+    vistos = []
+    out_vivo, tr_vivo = Sistema(Config(), fake()).run_case(_case([PROP]), al_emitir=vistos.append)
+    out, tr = Sistema(Config(), fake()).run_case(_case([PROP]))
+    assert vistos == tr_vivo.mensajes
+    assert out_vivo == out and tr_vivo.jsonl() == tr.jsonl()
+
+
+def test_show_filtra_pasos():
+    from agents.show import pasos
+    assert pasos("12-14,28") == {12, 13, 14, 28}
+
 def test_sin_correccion_el_precio_en_jerga_queda_no_verificable():
     fake = FakeLLM(lambda u: {"revisiones": []}, lambda u: {"accion": "cerrar", "consultas": []})
     out, _ = Sistema(Config(), fake).run_case(_case([PROP]))

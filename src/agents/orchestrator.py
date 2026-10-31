@@ -111,6 +111,7 @@ class Traza:
     wall_s: float = 0.0
     errores: List[str] = field(default_factory=list)
     acciones: Dict[str, int] = field(default_factory=dict)
+    al_emitir: Optional[Callable[[Dict], None]] = field(default=None, repr=False)   # --vivo: imprime cada mensaje
 
     def msg(self, de: str, para: str, tipo: str, contenido, aviso: Optional[str] = None, **extra) -> None:
         m = {"paso": len(self.mensajes) + 1, "de": de, "para": para, "tipo": tipo}
@@ -119,6 +120,8 @@ class Traza:
         m["contenido"] = contenido
         m.update(extra)
         self.mensajes.append(m)
+        if self.al_emitir:
+            self.al_emitir(m)
 
     def contar(self, clave: str, n: int = 1) -> None:
         self.acciones[clave] = self.acciones.get(clave, 0) + n
@@ -393,8 +396,8 @@ class Sistema:
         return obj
 
     # ---------------------------------------------------------------- caso ----
-    def run_case(self, case: Case) -> Tuple[Dict, Traza]:
-        tr = Traza(case.id)
+    def run_case(self, case: Case, al_emitir: Optional[Callable[[Dict], None]] = None) -> Tuple[Dict, Traza]:
+        tr = Traza(case.id, al_emitir=al_emitir)
         self._resueltos = set()
         tr.msg("orquestador", "Lector", "inicio",
                {"config": asdict(self.cfg), "avisos": [p.id for p in case.properties]})

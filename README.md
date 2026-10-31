@@ -240,44 +240,47 @@ python3 -m pytest tests/test_agents.py -q                           # sin Ollama
 
 ### Reproducir lo que muestra el video de la E3
 
-El video reproduce, mensaje a mensaje, trazas reales de la corrida final (`agents_v2_*`). Las
-trazas están versionadas, así que los pasos 1 a 3 no necesitan Ollama ni GPU. Desde la raíz del
-repositorio:
+El video es una sola toma, sin cortes: corre en vivo un caso de avisos reales con `--vivo`, que
+imprime cada mensaje entre agentes apenas se produce, y después muestra tres trazas de la corrida
+final (`agents_v2_*`). `bash docs/demo_video.sh` corre esas cuatro escenas, una por cada Enter. Las trazas están versionadas, así que los pasos
+2 a 4 no necesitan Ollama ni GPU. Desde la raíz del repositorio:
 
 ```bash
 pip install -r requirements.txt       # Python ≥ 3.9
-python3 -m pytest tests -q            # 352 tests, sin Ollama ni red
+python3 -m pytest tests -q            # 354 tests, sin Ollama ni red
 export PYTHONPATH=src                 # en Windows (PowerShell): $env:PYTHONPATH="src"
 ```
 
-1. **Avisos reales** (`real_e3/`, doble anotación humana). Los mensajes entre agentes y la salida final:
-
-   ```bash
-   python3 -m agents.show results/agents_v2_real_e3/real_b2_004.trace.jsonl --pausa 0.4   # Lector → anclar → Verificador → comprobar → Decisor → JSON
-   python3 -m agents.show results/agents_v2_real_e3/real_b2_004.trace.jsonl --aviso REAL-04   # bucle de relectura cortado a las 2 rondas
-   python3 -m agents.show results/agents_v2_real_e3/real_b2_005.trace.jsonl --aviso REAL-23   # el aviso que la E2 rechazaba: el Verificador recupera «Precio: UF 2.490.»
-   python3 -m agents.show results/agents_v2_real_e3/real_b1_004.trace.jsonl --aviso REAL-08   # convención E3: sin política de mascotas, va al final
-   ```
-
-2. **Caso de fallo** (HT-2708, aprobación indebida por estacionamiento):
-
-   ```bash
-   python3 -m agents.show results/agents_v2_hard_test/ht_27.trace.jsonl --aviso HT-2708
-   ```
-
-3. **Tablas** del final del video y del PDF, desde `results/` (no llama al modelo):
-
-   ```bash
-   bash scripts/run_e3.sh tablas
-   ```
-
-4. **En vivo** (llama al modelo, ~1 min por caso). Temperatura 0 y semilla fija: en la misma
-   máquina la traza nueva debería coincidir con la versionada; en otro hardware puede variar algún mensaje:
+1. **En vivo** (`real_e3/`, avisos de portales con doble anotación humana; llama al modelo: ~70 s
+   en la M4 enchufada, ~220 s a batería). Temperatura 0 y semilla fija: en la M4 salen los mismos
+   mensajes y el mismo JSON que en la traza versionada (verificado el 31-oct); en otro hardware
+   puede variar algún mensaje.
 
    ```bash
    ollama pull phi4-mini:latest       # digest 78fad5d182a7, Q4_K_M, 2,5 GB
-   python3 -m agents.run --split real_e3 --only real_b2_004 --run demo_video --force
-   python3 -m agents.show results/demo_video/real_b2_004.trace.jsonl
+   python3 -m agents.run --split real_e3 --only real_b2_004 --run demo_video --force --vivo   # Lector → anclar → Verificador → comprobar → Decisor → JSON
+   ```
+
+   Sin Ollama, la misma traza de la corrida final:
+   `python3 -m agents.show results/agents_v2_real_e3/real_b2_004.trace.jsonl --pausa 1.8`.
+
+2. **Otros avisos reales:**
+
+   ```bash
+   python3 -m agents.show results/agents_v2_real_e3/real_b2_005.trace.jsonl --aviso REAL-23 --pasos 12-14,28   # el aviso que la E2 rechazaba: el Verificador recupera «Precio: UF 2.490.»
+   python3 -m agents.show results/agents_v2_real_e3/real_b1_004.trace.jsonl --aviso REAL-08 --pasos 28-31,35   # convención E3: sin política de mascotas, va al final
+   ```
+
+3. **Caso de fallo** (HT-2708, aprobación indebida por estacionamiento):
+
+   ```bash
+   python3 -m agents.show results/agents_v2_hard_test/ht_27.trace.jsonl --aviso HT-2708 --pasos 30-31,36-37
+   ```
+
+4. **Tablas** del final del video y del PDF, desde `results/` (no llama al modelo):
+
+   ```bash
+   bash scripts/run_e3.sh tablas
    ```
 
 Guion con los tiempos y qué se dice en cada tramo: [`docs/guion_video_e3.md`](docs/guion_video_e3.md).
@@ -331,7 +334,7 @@ docs/e2_pipeline.md         # la solución en detalle: intervención, ablaciones
 docs/scout.md               # scout: supuestos sobre cada portal, ética del scraping, límites
 src/scout/        # extensión posterior a la E2: busca avisos reales en 5 portales y los analiza
 experiments/      # evidencia de la E1 (logs de prompting directo, benchmarks de hardware)
-tests/            # 352 tests (pytest), sin Ollama ni red
+tests/            # 354 tests (pytest), sin Ollama ni red
 ```
 
 ### 1. Prompt y verificador determinista
@@ -515,7 +518,7 @@ Esta sección es la del video de la E2 (baseline vs solución v5 + g3).
 ```bash
 ollama pull phi4-mini:latest          # digest 78fad5d182a7, Q4_K_M, 2,5 GB
 pip install -r requirements.txt       # Python ≥ 3.9
-python3 -m pytest tests -q            # 352 tests, sin Ollama
+python3 -m pytest tests -q            # 354 tests, sin Ollama
 
 cd src
 # baseline y solución sobre el MISMO caso, en vivo, con el veredicto de ambos (~50 s)

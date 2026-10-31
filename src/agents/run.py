@@ -8,6 +8,7 @@
 Uso:
   python -m agents.run --split hard_dev --run agents_v1_hard_dev
   python -m agents.run --split hard_test --run agents_sin_retro_hard_test --sin retro
+  python -m agents.run --split real_e3 --only real_b2_004 --run demo_video --force --vivo   # video
   python -m agents.show results/agents_v1_hard_dev/hd_01.trace.jsonl     # ver una traza
 """
 from __future__ import annotations
@@ -20,6 +21,7 @@ from pathlib import Path
 
 from matcher.schema import Case
 
+from . import show
 from .orchestrator import Config, Sistema
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -37,6 +39,7 @@ def main(argv=None) -> int:
     ap.add_argument("--only", nargs="*")
     ap.add_argument("--limit", type=int)
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--vivo", action="store_true", help="imprime cada mensaje entre agentes apenas se produce (video)")
     a = ap.parse_args(argv)
 
     cfg = Config(model=a.model, **{k: False for k in a.sin})
@@ -54,7 +57,8 @@ def main(argv=None) -> int:
             print(f"[{i}/{len(cases)}] {case.id}: ya existe, se omite", flush=True)
             continue
         t0 = time.time()
-        result, tr = sistema.run_case(case)
+        result, tr = sistema.run_case(case, al_emitir=(lambda m: show.imprimir(m, sys.stdout.isatty()))
+                                      if a.vivo else None)
         txt.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
         (out / f"{case.id}.trace.jsonl").write_text(tr.jsonl(), encoding="utf-8")
         meta = {"case_id": case.id, "run": a.run, "split": a.split, "mode": "agents", "config": cfg.nombre,
