@@ -2,7 +2,6 @@
 # Video E3 en una sola toma, sin cortes: cada Enter pasa a la escena siguiente.
 # Antes de mostrar cada escena, el script escribe en pantalla el comando exacto que va a correr.
 #   bash docs/demo_video.sh          (desde la raíz del repositorio)
-# Guion: docs/guion_video_e3.md
 set -u
 cd "$(dirname "$0")/.."
 export PYTHONPATH=src

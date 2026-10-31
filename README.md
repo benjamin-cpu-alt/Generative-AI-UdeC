@@ -283,8 +283,6 @@ export PYTHONPATH=src                 # en Windows (PowerShell): $env:PYTHONPATH
    bash scripts/run_e3.sh tablas
    ```
 
-Guion con los tiempos y qué se dice en cada tramo: [`docs/guion_video_e3.md`](docs/guion_video_e3.md).
-
 ## Entregable 2
 
 ### Estructura
