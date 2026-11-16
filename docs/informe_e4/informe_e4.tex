@@ -2,6 +2,7 @@
 % Todas las cifras salen de results/ vía `bash scripts/run_e4.sh tablas` y de ft/lector/ (ver docs/e4_finetuning.md).
 % En rojo (\pend{}): lo que el equipo debe completar antes de entregar (video, Hugging Face, revisión a mano).
 % Si no cabe en una página: bajar `height` del gráfico de pérdida o quitar la última frase de la sección 6.
+% En \texttt, un guion doble se escribe -{}- (si no, sale como raya).
 \documentclass[9pt,a4paper]{extarticle}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -52,7 +53,7 @@
 % ------------------------------------------------------------------ grafo --
 \begin{center}
 \begin{tikzpicture}[
-  font=\scriptsize, node distance=5mm and 7mm,
+  font=\scriptsize, node distance=5mm and 11mm,
   ag/.style={draw, rounded corners=3pt, fill=blue!8, draw=blue!60!black, align=center, inner sep=3pt, text width=27mm, minimum height=13mm},
   ft/.style={ag, fill=orange!22, draw=orange!85!black, line width=1.3pt},
   tool/.style={draw, fill=green!9, draw=green!45!black, align=center, inner sep=2pt, text width=21mm, minimum height=8mm},
@@ -88,42 +89,42 @@
 \end{tikzpicture}
 \end{center}
 \vspace{-7pt}
-{\scriptsize \textbf{Naranja ($\star$): el agente ajustado}; los otros dos agentes (azul) usan el phi4-mini base. Verde: herramientas Python, sin modelo. Rojo discontinuo: los tres bucles, con su presupuesto. \alto{}: parada.}
+{\scriptsize \textbf{Naranja ($\star$): el agente ajustado}; azul: agentes con el phi4-mini base; verde: herramientas Python, sin modelo; rojo discontinuo: los tres bucles y su máximo; \alto{}: parada.}
 
 \begin{multicols}{2}
 \section{Continuidad y elección del agente}
-Misma tarea, juez y entradas que E1--E3; el fallo de la E1 que queda es la lectura del aviso. \textbf{¿Qué agente?} Re-ejecutamos el orquestador con las salidas grabadas en las trazas de la E3 sobre \cod{hard\_test} (\cod{scripts/atribucion\_e3.py}) y atribuimos cada campo mal leído: de 218 errores de primera lectura, \textbf{162 nacen en el Lector} (117 son dormitorios en \cod{null} ante «3D», «2 hab.»), 56 en la herramienta \cod{anclar}; en 16 de los 26 avisos mal juzgados el dato decisivo viene del Lector. \textbf{¿Por qué pesos y no más prompt?} El prompt ya pide «copia el fragmento de los dormitorios»: no falta una regla, el modelo no reconoce esas formas. Y en la E2 iterar ese mismo prompt empeoró: 21 $\to$ 13 $\to$ 8 $\to$ 8/30 en dev. El \textbf{control} lo mide: Lector base + 8 ejemplos few-shot de los mismos datos.
+Misma tarea, juez y entradas que E1--E3. \textbf{¿Qué agente?} Re-ejecutamos el orquestador con las salidas grabadas en las trazas de la E3 sobre \cod{hard\_test} (\cod{scripts/atribucion\_e3.py}): de 218 errores de primera lectura, \textbf{162 nacen en el Lector} (117 son dormitorios en \cod{null} ante «3D», «2 hab.») y 56 en la herramienta \cod{anclar}. \textbf{¿Por qué pesos y no más prompt?} El prompt ya pide copiar ese fragmento: no falta una regla, el modelo no reconoce esas formas; y en la E2 iterar el prompt empeoró (21 $\to$ 13 $\to$ 8 $\to$ 8/30 en dev). El \textbf{control} lo mide: Lector base + 8 ejemplos few-shot de los mismos datos.
 
 \section{Cómo corren los bucles (comentario de la E3)}
-\textbf{Agente} = llamada al modelo con su prompt; escribe una \emph{acción} de un \cod{enum} que decide a quién va el trabajo. \textbf{Herramienta} = función Python: calcula o valida y devuelve su resultado; nunca elige el paso siguiente. El \textbf{orquestador} (\cod{Sistema.run\_case}) es un \cod{while} de Python, no un agente: lee la acción, entrega el mensaje y cuenta vueltas. \textbf{Relectura}: el Verificador escribe \cod{releer} y el Lector relee esos campos ($\le$2). \textbf{Reintento}: \cod{comprobar} rechaza con un motivo y el Verificador decide otra vez ($\le$1). \textbf{Consulta}: el Decisor escribe \cod{consultar(id, campo)}, el Verificador revisa y el Decisor decide de nuevo ($\le$1). \textbf{Parada}: \cod{cerrar}, o presupuesto agotado. \cod{agents.show --roles} marca AGENTE/HERRAMIENTA y numera cada vuelta en la traza (lo muestra el video).
+\textbf{Agente} = llamada al modelo con su prompt; devuelve una \emph{acción} de un \cod{enum} que decide a quién va el trabajo. \textbf{Herramienta} = función Python: calcula o valida y devuelve su resultado; nunca elige el paso siguiente. El \textbf{orquestador} es un \cod{while} de Python, no un agente: lee la acción, entrega el mensaje y cuenta vueltas. \textbf{Relectura}: el Verificador responde \cod{releer} y el Lector relee esos campos ($\le$2). \textbf{Reintento}: \cod{comprobar} rechaza con un motivo y el Verificador decide otra vez ($\le$1). \textbf{Consulta}: el Decisor responde \cod{consultar(id, campo)} y el Verificador revisa ese dato ($\le$1). \textbf{Parada}: \cod{cerrar}, o presupuesto agotado. \cod{agents.show -{}-roles} lo marca en cada traza y en el video.
 
 \section{Datos de entrenamiento}
-\textbf{1.146 pares} entrada$\to$salida del rol del Lector (1.038 entrenamiento, 108 validación), con el mismo mensaje que arma el orquestador. \textbf{1.083 sintéticos} (\cod{scripts/ft/build\_lector\_data.py}, semilla fija): frases de bancos propios en 6 estilos, cada una con el fragmento a copiar marcado, así que la salida es correcta \emph{por construcción}. \textbf{63 autoetiquetados}: salidas del phi4-mini base sobre \cod{train} que coinciden con el \cod{truth} en los 7 campos. Ningún modelo más grande generó ni etiquetó. Todo ejemplo pasa por \cod{anclar} (13 descartados). \textbf{Revisión a mano}: 60 al azar, \pend{XX/60 correctos}. \textbf{Separación}: se descarta todo ejemplo con 8 palabras seguidas en común con un set de evaluación (4, todos de \cod{hard\_dev}; 0 con \cod{hard\_test}, \cod{real\_e3}, \cod{test}); un test lo repite.
+\textbf{1.146 pares} entrada$\to$salida del rol del Lector (1.038 entrenamiento, 108 validación). \textbf{1.083 sintéticos} (\cod{scripts/ft/build\_lector\_data.py}): frases propias en 6 estilos con el fragmento a copiar marcado, así que la salida es correcta \emph{por construcción}. \textbf{63 autoetiquetados}: salidas del phi4-mini base sobre \cod{train} que coinciden con el \cod{truth}. Ningún modelo más grande generó ni etiquetó. \textbf{Revisión a mano}: 60 al azar, \pend{XX/60 correctos}. \textbf{Separación}: se descarta todo ejemplo con 8 palabras seguidas en común con un set de evaluación (4, todos de \cod{hard\_dev}); un test lo repite.
 
 \section{Entrenamiento}
 {\scriptsize
 \begin{minipage}[c]{0.47\columnwidth}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{@{}ll@{}}
 \toprule
 Método & LoRA, \cod{mlx-lm} 0.29.1\\
-Base & Phi-4-mini-instruct\\
 Módulos & atención + MLP, 16 capas\\
-Rango / $\alpha$ / dropout & 16 / 32 / 0,05\\
+Rango / $\alpha$ / drop. & 16 / 32 / 0,05\\
 Parámetros & 11,5 M (0,30\,\%)\\
 Optimizador & AdamW, wd 0,01\\
 Tasa & 1,5e-4, warmup + coseno\\
-Lote efectivo & 4 (1 $\times$ acumulación 4)\\
+Lote efectivo & 4 (1 $\times$ acum. 4)\\
 Ejemplos vistos & 1.300 (1,25 épocas)\\
 Hardware & MacBook Air M4, 16 GB\\
-Tiempo / memoria & \textbf{202 min} / 6,7 GB\\
+Tiempo / mem. & \textbf{202 min} / 6,7 GB\\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{minipage}\hfill
-\begin{minipage}[c]{0.52\columnwidth}
+\begin{minipage}[c]{0.50\columnwidth}
 \begin{tikzpicture}
-\begin{axis}[width=1.08\linewidth, height=3.7cm, ymode=log, xmin=0, xmax=1300, ymin=0.0015, ymax=1,
-  xlabel={ejemplos vistos}, ylabel={pérdida (log)}, tick label style={font=\tiny}, label style={font=\tiny},
-  xlabel style={yshift=4pt}, ylabel style={yshift=-5pt}, grid=major, grid style={gray!20},
+\begin{axis}[width=\linewidth, height=3.2cm, ymode=log, xmin=0, xmax=1300, ymin=0.0015, ymax=1,
+  xlabel={ejemplos vistos (pérdida en escala log)}, tick label style={font=\tiny}, label style={font=\tiny},
+  xlabel style={yshift=4pt}, grid=major, grid style={gray!20},
   legend style={font=\tiny, draw=none, fill=none, at={(0.98,0.97)}, anchor=north east}, legend cell align=left]
 \addplot[blue!55, thin] coordinates {(20,0.473)(40,0.233)(60,0.112)(80,0.076)(100,0.087)(120,0.056)(140,0.083)(160,0.062)(180,0.046)(200,0.073)(220,0.05)(240,0.034)(260,0.071)(280,0.064)(300,0.02)(320,0.03)(340,0.043)(360,0.016)(380,0.012)(400,0.018)(420,0.023)(440,0.032)(460,0.008)(480,0.035)(500,0.029)(520,0.012)(540,0.02)(560,0.014)(580,0.019)(600,0.011)(620,0.019)(640,0.008)(660,0.031)(680,0.03)(700,0.018)(720,0.04)(740,0.018)(760,0.011)(780,0.011)(800,0.01)(820,0.016)(840,0.005)(860,0.007)(880,0.005)(900,0.013)(920,0.016)(940,0.018)(960,0.016)(980,0.004)(1000,0.01)(1020,0.004)(1040,0.01)(1060,0.006)(1080,0.003)(1100,0.004)(1120,0.005)(1140,0.006)(1160,0.003)(1180,0.003)(1200,0.005)(1220,0.002)(1240,0.004)(1260,0.003)(1280,0.002)(1300,0.004)};
 \addplot[red!75!black, thick, mark=*, mark size=1.1pt] coordinates {(1,0.69)(260,0.028)(520,0.017)(780,0.01)(1040,0.007)(1300,0.006)};
@@ -132,7 +133,7 @@ Tiempo / memoria & \textbf{202 min} / 6,7 GB\\
 \end{tikzpicture}
 \end{minipage}}
 
-Pérdida solo sobre la respuesta; la validación no se separa de la de entrenamiento: se usa el último checkpoint. El adaptador (GGUF, 23 MB) se monta en Ollama sobre el mismo \cod{phi4-mini:latest} (Q4\_K\_M) de la E3.
+Pérdida solo sobre la respuesta; se usa el último checkpoint. El adaptador (GGUF, 23 MB) se monta en Ollama sobre el mismo \cod{phi4-mini:latest} de la E3.
 
 \section{Resultados (mismas entradas, mismo juez)}
 {\scriptsize
@@ -170,12 +171,12 @@ Regresión: full · aprob. ind. & E2 & E3 & \textbf{E4} & Control\\
 \bottomrule
 \end{tabularx}}
 
-\textbf{Lectura.} El ajuste ataca lo que se buscaba: los errores del Lector bajan de 162 a 22, el Verificador recibe menos de la mitad de trabajo y las respuestas exactas suben de 5 a 16/30 (en los 11 casos donde E3 y E4 difieren, acierta E4; McNemar $p{=}0{,}001$). \textbf{Lo que los pesos consiguen y el prompt no} es más chico: el control ya baja los errores del Lector a 26; E4 le gana por 5 casos exactos (16 vs 11, ninguno en contra, $p{=}0{,}06$) y 5 rechazos falsos, con la mitad de tokens. Con 30 casos la ventaja es consistente pero no concluyente. El costo: \cod{e1\_strict} baja un caso y hay 2 aprobaciones indebidas nuevas en \cod{hard\_test} y 1 en los avisos reales (sección 6); \cod{test} y \cod{ood} no empeoran.
+\textbf{Lectura.} Los errores del Lector bajan de 162 a 22 y las respuestas exactas suben de 5 a 16/30 (11 casos a favor, 0 en contra; McNemar $p{=}0{,}001$). \textbf{Lo que los pesos consiguen y el prompt no} es más chico: el control ya baja esos errores a 26; E4 le gana por 5 casos exactos (5 a 0, $p{=}0{,}06$) y 5 rechazos falsos, con la mitad de tokens: consistente, pero no concluyente con 30 casos. Costo: 2 aprobaciones indebidas nuevas en \cod{hard\_test} y 1 en los avisos reales; \cod{test} y \cod{ood} no empeoran.
 
 \section{Caso de fallo}
-\cod{HT-0906} (traza \cod{results/agents\_ft\_hard\_test/ht\_09}): «Macul, 2D. UF 2.900. A 300 m del metro. Gatos sí. Estacionamiento: no; hay estacionamiento en calle.»; el comprador exige estacionamiento. Con el Lector base, dormitorios quedaba \cod{null}, el aviso pasaba por el Verificador y se rechazaba bien. El Lector ajustado \textbf{sí copia «2D»}, pero corta el estacionamiento en «Estacionamiento: no»; \cod{anclar} lo lee como \emph{propio} sin marcar duda, el aviso \textbf{se salta al Verificador} y se \textbf{aprueba indebidamente} (HT-0107 es igual). Con un Lector mejor, 167 avisos (antes 64) van directo al Decisor y los errores silenciosos de \cod{anclar} ya no tienen quién los vea. \textbf{En un aviso real} (\cod{REAL-38}, \cod{real\_b1\_008}) el Lector ajustado lee mejor la comuna; el Verificador base recibe entonces otro mensaje, inventa «propio» citando «estación de metro» y \cod{comprobar} lo acepta porque busca \cod{estac}. Ajustar un agente cambia lo que ven los demás. No corregimos nada tras ver los sets de evaluación.
+\cod{HT-0906} (\cod{results/agents\_ft\_hard\_test/ht\_09}): «Macul, 2D. [\dots] Estacionamiento: no; hay estacionamiento en calle.»; el comprador exige estacionamiento. Con el Lector base pasaba por el Verificador y se rechazaba bien. El Lector ajustado \textbf{sí copia «2D»}, pero corta en «Estacionamiento: no»; \cod{anclar} lo lee como \emph{propio} sin marcar duda, el aviso \textbf{se salta al Verificador} y se \textbf{aprueba indebidamente}. \textbf{Aviso real} \cod{REAL-38}: el Lector ajustado lee mejor la comuna, el Verificador base recibe otro mensaje, inventa «propio» citando «estación de metro» y \cod{comprobar} lo acepta. Ajustar un agente cambia lo que ven los demás; no corregimos nada tras ver los sets de evaluación.
 
 \section{Reproducibilidad}
-README, sección E4: \cod{bash docs/demo\_video\_e4.sh} reproduce el video; \cod{bash scripts/run\_e4.sh tablas} regenera las tablas desde \cod{results/} sin modelo, y \cod{datos|entrenar|modelo} rehace datos, adaptador y modelo de Ollama. \cod{SHA256SUMS} fija los pesos evaluados; \cod{subir\_hf.py --verificar} comprueba los publicados. Tests sin Ollama: \cod{pytest tests}.
+README, sección E4: \cod{bash docs/demo\_video\_e4.sh} reproduce el video y \cod{bash scripts/run\_e4.sh tablas} regenera las tablas sin modelo. \cod{SHA256SUMS} fija los pesos evaluados.
 \end{multicols}
 \end{document}
