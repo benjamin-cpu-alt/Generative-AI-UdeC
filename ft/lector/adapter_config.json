@@ -1,0 +1,53 @@
+{
+    "adapter_path": "ft/lector",
+    "batch_size": 1,
+    "config": "/Users/CarlaMaureiraV/Documents/2026/5to an\u0303o Udec/Semestre 10/Electivo/Proyecto Ia Generativa/Generative-AI-UdeC/ft/lector/config_efectiva.yaml",
+    "data": "data/ft_lector",
+    "fine_tune_type": "lora",
+    "grad_accumulation_steps": 4,
+    "grad_checkpoint": true,
+    "iters": 1300,
+    "learning_rate": 0.00015,
+    "lora_parameters": {
+        "keys": [
+            "self_attn.qkv_proj",
+            "self_attn.o_proj",
+            "mlp.gate_up_proj",
+            "mlp.down_proj"
+        ],
+        "rank": 16,
+        "scale": 2.0,
+        "dropout": 0.05
+    },
+    "lr_schedule": {
+        "name": "cosine_decay",
+        "warmup": 20,
+        "warmup_init": 1e-06,
+        "arguments": [
+            0.00015,
+            325,
+            1.5e-05
+        ]
+    },
+    "mask_prompt": true,
+    "max_seq_length": 1280,
+    "model": "/Users/CarlaMaureiraV/.cache/huggingface/hub/models--mlx-community--Phi-4-mini-instruct-8bit/snapshots/93b273a5497a4fcdcfb7ac00143565506b4f72e4",
+    "num_layers": 16,
+    "optimizer": "adamw",
+    "optimizer_config": {
+        "adamw": {
+            "weight_decay": 0.01
+        }
+    },
+    "project_name": null,
+    "report_to": null,
+    "resume_adapter_file": null,
+    "save_every": 260,
+    "seed": 0,
+    "steps_per_eval": 260,
+    "steps_per_report": 20,
+    "test": false,
+    "test_batches": 500,
+    "train": true,
+    "val_batches": -1
+}

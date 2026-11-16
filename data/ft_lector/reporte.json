@@ -1,0 +1,68 @@
+{
+  "seed": 20261112,
+  "intentados": 1100,
+  "sinteticos": 1083,
+  "autoetiquetados": 63,
+  "train": 1038,
+  "valid": 108,
+  "relectura": 113,
+  "descartes_por_herramienta": {
+    "mascotas:silencioso": 13
+  },
+  "descartes_por_solapamiento_con_evaluacion": 4,
+  "duplicados": 0,
+  "estado_por_campo": {
+    "arriendo:con_duda": 77,
+    "arriendo:directo": 1006,
+    "comuna:directo": 1083,
+    "distancia:con_duda": 70,
+    "distancia:directo": 1013,
+    "dormitorios:con_duda": 194,
+    "dormitorios:directo": 889,
+    "estacionamiento:con_duda": 93,
+    "estacionamiento:directo": 990,
+    "mascotas:con_duda": 33,
+    "mascotas:directo": 1050,
+    "precio:con_duda": 242,
+    "precio:directo": 841
+  },
+  "por_estilo": {
+    "comas": 226,
+    "lineas": 86,
+    "portal": 423,
+    "ficha": 89,
+    "whatsapp": 133,
+    "mayusculas": 126
+  },
+  "tags": {
+    "arriendo_uf": 140,
+    "cifra_palabras": 270,
+    "comuna_posicion": 850,
+    "correccion": 88,
+    "dist_formato": 344,
+    "dist_multiple": 165,
+    "distractor": 105,
+    "dorm_no_cuenta": 261,
+    "dorm_notacion": 536,
+    "estac_ambiguo": 221,
+    "estilo": 710,
+    "jerga_monto": 306,
+    "mascota_condicion": 482,
+    "mascota_silencio": 200,
+    "multi_monto": 245
+  },
+  "sets_de_evaluacion_comprobados": [
+    "hard_test",
+    "hard_dev",
+    "real_e3",
+    "real",
+    "real_fallo",
+    "test",
+    "ood"
+  ],
+  "sha256": {
+    "train.jsonl": "f17b2adc5d4a437fc28e4d087c3e92f8d1a303bd7e63beff7e3156834dce1527",
+    "valid.jsonl": "1df587184edd9768aebd0510eb1569b270e7ac1a28bf36d2d0821c8f9ecf3247",
+    "ejemplos.jsonl": "b04bcfc411228c6ba19ed795d57bcfed9f16d0419925033cc98855ecd14f3cd0"
+  }
+}

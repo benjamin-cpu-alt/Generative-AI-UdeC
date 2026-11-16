@@ -5,6 +5,15 @@ Es lo que se ve en el video: cada mensaje con su emisor, su destino y su conteni
   python -m agents.show <traza> --aviso REAL-23        # solo los mensajes de un aviso
   python -m agents.show <traza> --pausa 0.6            # mensaje a mensaje (para grabar)
   python -m agents.show <traza> --pasos 12-14,28       # solo esos pasos (para que quepan en pantalla)
+  python -m agents.show <traza> --roles                # marca AGENTE / HERRAMIENTA y cada vuelta de bucle
+
+Con --roles cada mensaje dice qué es quien lo envía y quien lo recibe:
+  AGENTE        llama al modelo y DECIDE qué pasa después (Lector, Verificador, Decisor)
+  HERRAMIENTA   función de Python, sin modelo: calcula o valida, nunca decide (anclar, comprobar,
+                evaluar, ordenar)
+  orquestador   el bucle de Python que entrega cada mensaje y corta por presupuesto
+y cada vez que un agente le devuelve trabajo a otro agente se anuncia la vuelta del bucle
+(↺ relectura, ↺ reintento, ↺ consulta) con su número y su máximo.
 """
 from __future__ import annotations
 
@@ -62,8 +71,76 @@ def resumen(m: dict) -> str:
     return json.dumps(c, ensure_ascii=False)
 
 
-def imprimir(m: dict, color: bool) -> None:
-    head = f"{m['paso']:>3} {_who(m['de'], color)} → {_who(m['para'], color)}  [{m['tipo']}]"
+AGENTES = ("Lector", "Verificador", "Decisor")
+LEYENDA = """AGENTE       llama al modelo (phi4-mini) y DECIDE el siguiente paso: Lector · Verificador · Decisor
+HERRAMIENTA  función de Python, sin modelo; calcula o valida, no decide: anclar · comprobar · evaluar · ordenar
+orquestador  bucle de Python: entrega cada mensaje a su destino y corta los bucles por presupuesto
+↺            un agente le devuelve trabajo a otro agente (bucle entre agentes), con su vuelta y su máximo"""
+
+
+def rol(nombre: str) -> str:
+    if nombre in AGENTES:
+        return "AGENTE "
+    if nombre.startswith("herramienta:"):
+        return "HERRAMIENTA "
+    return ""
+
+
+class Bucles:
+    """Reconoce, mensaje a mensaje, cada vuelta de un bucle entre agentes y la numera.
+    Los máximos salen de la configuración que el orquestador escribe en el primer mensaje."""
+
+    def __init__(self):
+        self.max = {"relectura": 2, "reintento": 1, "consulta": 1}
+        self.n = {}
+        self.ronda_consulta = 0
+        self.en_consulta = False
+
+    def anotar(self, m: dict):
+        de, para, tipo, av = m["de"], m["para"], m["tipo"], m.get("aviso")
+        if tipo == "inicio":
+            c = m["contenido"].get("config", {})
+            self.max = {"relectura": c.get("max_relecturas", 2), "reintento": c.get("max_retro", 1),
+                        "consulta": c.get("max_consultas", 1)}
+            return None
+        if de == "Verificador" and para == "Lector":
+            k = self._mas(("relectura", av))
+            return (f"↺ BUCLE DE RELECTURA, vuelta {k} de máx. {self.max['relectura']}: el Verificador (agente) "
+                    f"decide `releer` y el aviso vuelve al Lector (agente)")
+        if de == "Verificador" and tipo == "retro":
+            k = self._mas(("reintento", av))
+            return (f"↺ BUCLE DE REINTENTO, vuelta {k} de máx. {self.max['reintento']}: la herramienta comprobar "
+                    f"rechazó la corrección y el Verificador (agente) decide de nuevo")
+        if de == "Decisor" and para == "Verificador":
+            self.ronda_consulta += 1
+            return (f"↺ BUCLE DE CONSULTA, vuelta {self.ronda_consulta} de máx. {self.max['consulta']}: el Decisor "
+                    f"(agente) decide `consultar` y el aviso vuelve al Verificador (agente)")
+        if de == "orquestador" and tipo in ("sin_relectura", "sin_reintento", "cierre_por_presupuesto"):
+            return "■ FIN DEL BUCLE por presupuesto: el orquestador no ejecuta otra vuelta"
+        if de == "Decisor" and tipo == "cerrar":
+            return "■ CONDICIÓN DE PARADA: el Decisor (agente) decide `cerrar`; la herramienta ordenar arma el JSON"
+        return None
+
+    def _mas(self, clave) -> int:
+        self.n[clave] = self.n.get(clave, 0) + 1
+        return self.n[clave]
+
+
+def imprimir(m: dict, color: bool, bucles: "Bucles" = None) -> None:
+    """Imprime un mensaje. Con `bucles` (opción --roles) marca el rol de emisor y receptor
+    (AGENTE / HERRAMIENTA) y anuncia cada vuelta de un bucle entre agentes."""
+    nota = bucles.anotar(m) if bucles else None
+    if nota:
+        print(f"    {BOLD if color else ''}{nota}{RESET if color else ''}")
+    def nombre(n: str) -> str:      # con roles: «HERRAMIENTA comprobar», no «herramienta:comprobar»
+        if not bucles:
+            return _who(n, color)
+        corto = n.split(":", 1)[1] if n.startswith("herramienta:") else n
+        return rol(n) + (_who(n, color).replace(n, corto) if color else corto)
+    de, para = nombre(m["de"]), nombre(m["para"])
+    head = f"{m['paso']:>3} {de} → {para}  [{m['tipo']}]"
+    if m.get("modelo"):
+        head += f"  modelo: {BOLD if color else ''}{m['modelo']}{RESET if color else ''}"
     if m.get("aviso"):
         head += f"  {DIM if color else ''}{m['aviso']}{RESET if color else ''}"
     print(head)
@@ -87,15 +164,20 @@ def main(argv=None) -> int:
     ap.add_argument("--pausa", type=float, default=0.0)
     ap.add_argument("--pasos", type=pasos)
     ap.add_argument("--sin-color", action="store_true")
+    ap.add_argument("--roles", action="store_true",
+                    help="marca AGENTE / HERRAMIENTA en cada mensaje y anuncia cada vuelta de bucle")
     a = ap.parse_args(argv)
     color = not a.sin_color and sys.stdout.isatty()
+    bucles = Bucles() if a.roles else None
+    if a.roles:
+        print(LEYENDA + "\n")
     for line in open(a.traza, encoding="utf-8"):
         m = json.loads(line)
-        if a.aviso and m.get("aviso") not in (None, a.aviso):
+        if (a.aviso and m.get("aviso") not in (None, a.aviso)) or (a.pasos and m["paso"] not in a.pasos):
+            if bucles:
+                bucles.anotar(m)      # los mensajes ocultos también cuentan vueltas
             continue
-        if a.pasos and m["paso"] not in a.pasos:
-            continue
-        imprimir(m, color)
+        imprimir(m, color, bucles)
         if a.pausa:
             time.sleep(a.pausa)
     return 0

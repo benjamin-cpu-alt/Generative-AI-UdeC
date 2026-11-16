@@ -1,0 +1,53 @@
+# Fine-tuning del Lector (E4): LoRA sobre Phi-4-mini-instruct con mlx-lm.
+# Se usa con scripts/ft/train_lector.py, que fija la revisión del modelo base y guarda el log.
+#
+# Modelo base: los mismos pesos de Phi-4-mini-instruct que usa el sistema (phi4-mini de Ollama),
+# en la conversión de 8 bits de mlx-community para que el entrenamiento quepa en 16 GB.
+model: mlx-community/Phi-4-mini-instruct-8bit
+revision: 93b273a5497a4fcdcfb7ac00143565506b4f72e4
+
+train: true
+data: data/ft_lector            # train.jsonl y valid.jsonl (scripts/ft/build_lector_data.py)
+adapter_path: ft/lector
+fine_tune_type: lora
+seed: 0
+
+# Qué se entrena: adaptadores de rango 16 en las 4 proyecciones lineales (atención y MLP)
+# de las últimas 16 de las 32 capas. alpha = scale * rank = 32.
+num_layers: 16
+lora_parameters:
+  keys: ["self_attn.qkv_proj", "self_attn.o_proj", "mlp.gate_up_proj", "mlp.down_proj"]
+  rank: 16
+  scale: 2.0
+  dropout: 0.05
+
+# Pérdida: entropía cruzada solo sobre la respuesta del asistente (el JSON de fragmentos);
+# el system y el aviso no cuentan (mask_prompt).
+mask_prompt: true
+max_seq_length: 1280
+
+# Optimización: 1.300 ejemplos vistos (1,25 épocas de 1.038), de a uno, acumulando el gradiente
+# de 4 ejemplos por paso del optimizador: 325 pasos con lote efectivo 4. El calendario de la
+# tasa de aprendizaje se mide en pasos del optimizador (20 de calentamiento, coseno hasta 325).
+# Lote 1 + gradient checkpointing es lo que cabe en 16 GB sin paginar (pico 6,5 GB).
+batch_size: 1
+grad_accumulation_steps: 4
+iters: 1300
+optimizer: adamw
+optimizer_config:
+  adamw:
+    weight_decay: 0.01
+learning_rate: 1.5e-4
+lr_schedule:
+  name: cosine_decay
+  warmup: 20
+  warmup_init: 1.0e-6
+  arguments: [1.5e-4, 325, 1.5e-5]
+grad_checkpoint: true
+
+# Curvas: pérdida de entrenamiento cada 20 ejemplos; validación completa (108 ejemplos) y
+# checkpoint cada 260 ejemplos (65 pasos del optimizador, un cuarto de época).
+steps_per_report: 20
+steps_per_eval: 260
+val_batches: -1
+save_every: 260

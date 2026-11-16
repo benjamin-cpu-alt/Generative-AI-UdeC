@@ -1,0 +1,37 @@
+{
+  "case_id": "ht_16",
+  "run": "agents_ft_hard_test",
+  "split": "hard_test",
+  "mode": "agents",
+  "config": "full",
+  "model": "phi4-mini:latest",
+  "modelos": {
+    "lector": "phi4-mini-lector-ft",
+    "verificador": "phi4-mini:latest",
+    "decisor": "phi4-mini:latest"
+  },
+  "prompts": {
+    "lector": "v1",
+    "verificador": "v1",
+    "decisor": "v2"
+  },
+  "grounding_version": "g3",
+  "calls": 10,
+  "prompt_tokens": 7559,
+  "output_tokens": 1353,
+  "wall_s": 67.43,
+  "llm_s": 67.42,
+  "acciones": {
+    "llamadas_lector": 8,
+    "avisos_sin_dudas": 7,
+    "llamadas_verificador": 1,
+    "verificador_corregir": 2,
+    "comprobar_ok": 2,
+    "llamadas_decisor": 1,
+    "decisor_cerrar": 1
+  },
+  "mensajes": 31,
+  "done_reason": "stop",
+  "errors": [],
+  "timestamp": "2026-11-13T05:16:26"
+}

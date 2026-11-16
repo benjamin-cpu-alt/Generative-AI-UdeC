@@ -1,0 +1,38 @@
+{
+  "case_id": "real_b2_001",
+  "run": "agents_ft_real_e3",
+  "split": "real_e3",
+  "mode": "agents",
+  "config": "full",
+  "model": "phi4-mini:latest",
+  "modelos": {
+    "lector": "phi4-mini-lector-ft",
+    "verificador": "phi4-mini:latest",
+    "decisor": "phi4-mini:latest"
+  },
+  "prompts": {
+    "lector": "v1",
+    "verificador": "v1",
+    "decisor": "v2"
+  },
+  "grounding_version": "g3",
+  "calls": 10,
+  "prompt_tokens": 10845,
+  "output_tokens": 894,
+  "wall_s": 93.03,
+  "llm_s": 93.02,
+  "acciones": {
+    "llamadas_lector": 4,
+    "llamadas_verificador": 5,
+    "verificador_corregir": 5,
+    "comprobar_rechaza": 4,
+    "comprobar_ok": 1,
+    "avisos_sin_dudas": 1,
+    "llamadas_decisor": 1,
+    "decisor_cerrar": 1
+  },
+  "mensajes": 24,
+  "done_reason": "stop",
+  "errors": [],
+  "timestamp": "2026-11-13T13:06:38"
+}

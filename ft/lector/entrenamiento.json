@@ -1,0 +1,70 @@
+{
+  "fecha": "2026-11-13 04:22",
+  "duracion_min": 202.5,
+  "hardware": {
+    "equipo": "arm64",
+    "chip": "Apple M4",
+    "memoria_gb": 16,
+    "sistema": "macOS 26.6.2"
+  },
+  "software": {
+    "python": "3.9.6",
+    "mlx": "0.29.3",
+    "mlx_lm": "0.29.1"
+  },
+  "modelo_base": {
+    "repo": "mlx-community/Phi-4-mini-instruct-8bit",
+    "revision": "93b273a5497a4fcdcfb7ac00143565506b4f72e4"
+  },
+  "datos": {
+    "train.jsonl": "f17b2adc5d4a437fc28e4d087c3e92f8d1a303bd7e63beff7e3156834dce1527",
+    "valid.jsonl": "1df587184edd9768aebd0510eb1569b270e7ac1a28bf36d2d0821c8f9ecf3247"
+  },
+  "config": {
+    "num_layers": 16,
+    "lora_parameters": {
+      "keys": [
+        "self_attn.qkv_proj",
+        "self_attn.o_proj",
+        "mlp.gate_up_proj",
+        "mlp.down_proj"
+      ],
+      "rank": 16,
+      "scale": 2.0,
+      "dropout": 0.05
+    },
+    "batch_size": 1,
+    "grad_accumulation_steps": 4,
+    "iters": 1300,
+    "optimizer": "adamw",
+    "optimizer_config": {
+      "adamw": {
+        "weight_decay": 0.01
+      }
+    },
+    "learning_rate": 0.00015,
+    "lr_schedule": {
+      "name": "cosine_decay",
+      "warmup": 20,
+      "warmup_init": 1e-06,
+      "arguments": [
+        0.00015,
+        325,
+        1.5e-05
+      ]
+    },
+    "mask_prompt": true,
+    "max_seq_length": 1280,
+    "seed": 0
+  },
+  "pico_mem_gb": 6.675,
+  "tokens_entrenados": 166223,
+  "val_loss_por_checkpoint": {
+    "1": 0.69,
+    "260": 0.028,
+    "520": 0.017,
+    "780": 0.01,
+    "1040": 0.007,
+    "1300": 0.006
+  }
+}

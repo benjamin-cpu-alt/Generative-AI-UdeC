@@ -58,9 +58,29 @@ modelo (por eso comparte tokens y tiempos con su origen, que queda en `meta.json
 | `baseline_phi4_hard_dev` | baseline sobre hard_dev | modelo |
 | `tools_phi4_v5_hard_dev_g3` | solución E2 (v5 + g3) sobre hard_dev: el control de dificultad | modelo |
 
-Sobre `hard_test` no hay corridas de modelo todavía: el set está congelado y se corre una
-sola vez por sistema (ver `data/cases/hard_test/README.md`). Las métricas de la E3 salen de
+`hard_test` está congelado y se corre una sola vez por sistema (ver
+`data/cases/hard_test/README.md`). Las métricas salen de
 `python3 -m matcher.metrics --cases ../data/cases/<split> --runs ...`.
+
+## E3 y E4: los cuatro sistemas y el control (`<set>` = `hard_dev`, `hard_test`, `real_e3`, `test`, `ood`)
+
+Todas las corridas de agentes guardan, por caso, la respuesta (`.txt`), el costo y las acciones
+(`.meta.json`) y la conversación completa entre agentes y herramientas (`.trace.jsonl`; se lee con
+`python3 -m agents.show <traza> --roles`).
+
+| Carpeta | Qué es | Tipo |
+|---|---|---|
+| `baseline_e3_<set>` | E1: prompt directo, phi4-mini base | modelo |
+| `e2_e3_<set>` | E2: extractor + herramientas (v5 + g3) | modelo |
+| `agents_v2_<set>` | E3: tres agentes, los tres con phi4-mini base | modelo |
+| `agents_v2_sin_*_hard_test` | ablaciones de la E3 | modelo |
+| `agents_ft_<set>` | **E4**: los mismos agentes; el Lector usa `phi4-mini-lector-ft` (base + adaptador LoRA) | modelo |
+| `agents_ctrl_<set>` | control de la E4: Lector base + 8 ejemplos few-shot (`prompts/lector/v2_fewshot.md`) | modelo |
+| `lector_eval/` | el Lector solo (sin el resto del sistema) sobre ejemplos de validación | modelo |
+
+`bash scripts/run_e4.sh tablas` regenera desde aquí todas las tablas de la E4, la atribución de
+errores por agente y el conteo de llamadas y bucles, sin llamar al modelo. `logs_e4/` y `demo_e4/`
+no se versionan.
 
 ## Otros
 

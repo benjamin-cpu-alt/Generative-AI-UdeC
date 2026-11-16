@@ -10,6 +10,7 @@ Uso:
   python -m agents.run --split hard_test --run agents_sin_retro_hard_test --sin retro
   python -m agents.run --split real_e3 --only real_b2_004 --run demo_video --force --vivo   # video
   python -m agents.show results/agents_v1_hard_dev/hd_01.trace.jsonl     # ver una traza
+  python -m agents.run --split hard_dev --run agents_ft_hard_dev --modelo-lector phi4-mini-lector-ft   # E4
 """
 from __future__ import annotations
 
@@ -35,14 +36,21 @@ def main(argv=None) -> int:
     ap.add_argument("--split", required=True)
     ap.add_argument("--run", required=True)
     ap.add_argument("--model", default="phi4-mini:latest")
+    ap.add_argument("--modelo-lector", help="E4: modelo de Ollama solo para el Lector (p.ej. phi4-mini-lector-ft); "
+                                            "Verificador y Decisor siguen con --model")
+    ap.add_argument("--lector", default="v1", help="versión del prompt del Lector (v2_fewshot = control de la E4)")
+    ap.add_argument("--num-ctx-lector", type=int, default=2048, help="contexto del Lector (4096 con v2_fewshot)")
     ap.add_argument("--sin", nargs="*", default=[], choices=ABLACIONES, help="técnicas a quitar (ablación)")
     ap.add_argument("--only", nargs="*")
     ap.add_argument("--limit", type=int)
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--vivo", action="store_true", help="imprime cada mensaje entre agentes apenas se produce (video)")
+    ap.add_argument("--roles", action="store_true",
+                    help="con --vivo: marca AGENTE / HERRAMIENTA y anuncia cada vuelta de bucle entre agentes")
     a = ap.parse_args(argv)
 
-    cfg = Config(model=a.model, **{k: False for k in a.sin})
+    cfg = Config(model=a.model, model_lector=a.modelo_lector, lector=a.lector, num_ctx_lector=a.num_ctx_lector,
+                 **{k: False for k in a.sin})
     sistema = Sistema(cfg)
     cases = [Case.load(p) for p in sorted((CASES_DIR / a.split).glob("*.json"))]
     if a.only:
@@ -50,20 +58,25 @@ def main(argv=None) -> int:
     cases = cases[: a.limit] if a.limit else cases
     out = RESULTS_DIR / a.run
     out.mkdir(parents=True, exist_ok=True)
-    print(f"agentes config={cfg.nombre} split={a.split} run={a.run} casos={len(cases)}", flush=True)
+    print(f"agentes config={cfg.nombre} split={a.split} run={a.run} casos={len(cases)} "
+          f"lector={cfg.modelo_de('lector')} (prompt {cfg.lector})", flush=True)
     for i, case in enumerate(cases, 1):
         txt = out / f"{case.id}.txt"
         if txt.exists() and not a.force:
             print(f"[{i}/{len(cases)}] {case.id}: ya existe, se omite", flush=True)
             continue
         t0 = time.time()
-        result, tr = sistema.run_case(case, al_emitir=(lambda m: show.imprimir(m, sys.stdout.isatty()))
+        bucles = show.Bucles() if (a.vivo and a.roles) else None
+        if bucles:
+            print(show.LEYENDA + "\n")
+        result, tr = sistema.run_case(case, al_emitir=(lambda m: show.imprimir(m, sys.stdout.isatty(), bucles))
                                       if a.vivo else None)
         txt.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
         (out / f"{case.id}.trace.jsonl").write_text(tr.jsonl(), encoding="utf-8")
         meta = {"case_id": case.id, "run": a.run, "split": a.split, "mode": "agents", "config": cfg.nombre,
-                "model": cfg.model, "prompts": {"lector": cfg.lector, "verificador": cfg.verificador,
-                                                "decisor": cfg.decisor},
+                "model": cfg.model,
+                "modelos": {ag: cfg.modelo_de(ag) for ag in ("lector", "verificador", "decisor")},
+                "prompts": {"lector": cfg.lector, "verificador": cfg.verificador, "decisor": cfg.decisor},
                 "grounding_version": cfg.grounding, "calls": tr.llamadas, "prompt_tokens": tr.prompt_tokens,
                 "output_tokens": tr.output_tokens, "wall_s": round(time.time() - t0, 2),
                 "llm_s": round(tr.wall_s, 2), "acciones": tr.acciones, "mensajes": len(tr.mensajes),

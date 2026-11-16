@@ -1,0 +1,7 @@
+# Lector con fine-tuning (E4) = el phi4-mini de Ollama + el adaptador LoRA entrenado.
+# Los pesos base no cambian (digest 78fad5d182a7, Q4_K_M): son los mismos que usan el
+# Verificador y el Decisor. El adaptador se descarga de Hugging Face (ver README).
+#
+#   ollama create phi4-mini-lector-ft -f ft/lector/Modelfile
+FROM phi4-mini:latest
+ADAPTER ./lector-lora-f16.gguf

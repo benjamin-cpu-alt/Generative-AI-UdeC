@@ -1,0 +1,215 @@
+{
+ "modelo": "phi4-mini-lector-ft",
+ "prompt": "lector/v1",
+ "set": "valid",
+ "avisos": 6,
+ "por_campo": {
+  "comuna": {
+   "directo": 6,
+   "con_duda": 0,
+   "silencioso": 0
+  },
+  "dormitorios": {
+   "directo": 5,
+   "con_duda": 1,
+   "silencioso": 0
+  },
+  "precio": {
+   "directo": 6,
+   "con_duda": 0,
+   "silencioso": 0
+  },
+  "arriendo": {
+   "directo": 6,
+   "con_duda": 0,
+   "silencioso": 0
+  },
+  "distancia": {
+   "directo": 6,
+   "con_duda": 0,
+   "silencioso": 0
+  },
+  "estacionamiento": {
+   "directo": 6,
+   "con_duda": 0,
+   "silencioso": 0
+  },
+  "mascotas": {
+   "directo": 6,
+   "con_duda": 0,
+   "silencioso": 0
+  }
+ },
+ "campos_directos": 41,
+ "campos_con_duda": 1,
+ "campos_silenciosos": 0,
+ "campos_total": 42,
+ "errores_origen_lector": {},
+ "errores_origen_lector_total": 0,
+ "avisos_que_van_al_verificador": 3,
+ "dudas_marcadas": 4,
+ "segundos": 57,
+ "copia_exacta": {
+  "location_text": 6,
+  "bedrooms_text": 6,
+  "price_text": 6,
+  "rent_text": 6,
+  "distance_metro_text": 6,
+  "distance_bus_text": 6,
+  "parking_text": 6,
+  "pets_text": 6,
+  "todos": 6
+ },
+ "detalle": [
+  {
+   "aviso": "FT-0268",
+   "spans": {
+    "location_text": "Huechuraba",
+    "bedrooms_text": "1 dormitorio, 1 baño",
+    "price_text": "UF 3.470,25",
+    "rent_text": "Arriendo referencial $640.000 al mes",
+    "distance_metro_text": "A 650 mts del Metro Departamental",
+    "distance_bus_text": null,
+    "parking_text": "Incluye estacionamiento",
+    "pets_text": "Solo gatos",
+    "acepta_mascotas": "si",
+    "acepta_perros": "no",
+    "acepta_gatos": "si"
+   },
+   "campos": {
+    "comuna": "directo",
+    "dormitorios": "directo",
+    "precio": "directo",
+    "arriendo": "directo",
+    "distancia": "directo",
+    "estacionamiento": "directo",
+    "mascotas": "directo"
+   }
+  },
+  {
+   "aviso": "FT-0386",
+   "spans": {
+    "location_text": "Vitacura",
+    "bedrooms_text": "Dormitorios: 3",
+    "price_text": "$188.000.000",
+    "rent_text": null,
+    "distance_metro_text": "Metro: 700 mts",
+    "distance_bus_text": null,
+    "parking_text": "Estacionamiento: sí",
+    "pets_text": "Mascotas: sí",
+    "acepta_mascotas": "si",
+    "acepta_perros": "si",
+    "acepta_gatos": "si"
+   },
+   "campos": {
+    "comuna": "directo",
+    "dormitorios": "con_duda",
+    "precio": "directo",
+    "arriendo": "directo",
+    "distancia": "directo",
+    "estacionamiento": "directo",
+    "mascotas": "directo"
+   }
+  },
+  {
+   "aviso": "FT-0666",
+   "spans": {
+    "location_text": "Calera de Tango, sector plaza",
+    "bedrooms_text": "2D/3B",
+    "price_text": "UF 4.450",
+    "rent_text": null,
+    "distance_metro_text": "A 1,4 km del Metro Simón Bolívar",
+    "distance_bus_text": "Paradero troncal a 300 m",
+    "parking_text": "Incluye estacionamiento",
+    "pets_text": "Únicamente se permiten gatos",
+    "acepta_mascotas": "si",
+    "acepta_perros": "no",
+    "acepta_gatos": "si"
+   },
+   "campos": {
+    "comuna": "directo",
+    "dormitorios": "directo",
+    "precio": "directo",
+    "arriendo": "directo",
+    "distancia": "directo",
+    "estacionamiento": "directo",
+    "mascotas": "directo"
+   }
+  },
+  {
+   "aviso": "FT-0764",
+   "spans": {
+    "location_text": "Peñalolén",
+    "bedrooms_text": "1D",
+    "price_text": "3.170UF",
+    "rent_text": null,
+    "distance_metro_text": "Metro Lo Valledor a 550 mts",
+    "distance_bus_text": null,
+    "parking_text": null,
+    "pets_text": "Solo se admiten perros",
+    "acepta_mascotas": "si",
+    "acepta_perros": "si",
+    "acepta_gatos": "no"
+   },
+   "campos": {
+    "comuna": "directo",
+    "dormitorios": "directo",
+    "precio": "directo",
+    "arriendo": "directo",
+    "distancia": "directo",
+    "estacionamiento": "directo",
+    "mascotas": "directo"
+   }
+  },
+  {
+   "aviso": "FT-0547",
+   "spans": {
+    "location_text": "Casa en Conchalí",
+    "bedrooms_text": "3D/1B",
+    "price_text": "UF 2040",
+    "rent_text": null,
+    "distance_metro_text": "A 6 cuadras del metro",
+    "distance_bus_text": null,
+    "parking_text": "No tiene estacionamiento",
+    "pets_text": "No admite mascotas",
+    "acepta_mascotas": "no",
+    "acepta_perros": "no",
+    "acepta_gatos": "no"
+   },
+   "campos": {
+    "comuna": "directo",
+    "dormitorios": "directo",
+    "precio": "directo",
+    "arriendo": "directo",
+    "distancia": "directo",
+    "estacionamiento": "directo",
+    "mascotas": "directo"
+   }
+  },
+  {
+   "aviso": "FT-1089",
+   "spans": {
+    "location_text": "Depto en San Joaquín",
+    "bedrooms_text": "3D + loggia",
+    "price_text": "163 millones",
+    "rent_text": null,
+    "distance_metro_text": "Metro a 900 metros",
+    "distance_bus_text": null,
+    "parking_text": "Estacionamiento para 3 autos",
+    "pets_text": null,
+    "acepta_mascotas": "no_dice",
+    "acepta_perros": "no_dice",
+    "acepta_gatos": "no_dice"
+   },
+   "campos": {
+    "comuna": "directo",
+    "dormitorios": "directo",
+    "precio": "directo",
+    "arriendo": "directo",
+    "distancia": "directo",
+    "estacionamiento": "directo",
+    "mascotas": "directo"
+   }
+  }
+ ]
+}

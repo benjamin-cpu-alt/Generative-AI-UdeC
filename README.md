@@ -36,6 +36,115 @@ Detalle y tablas completas en [`docs/comparacion_modelos.md`](docs/comparacion_m
 * Ejecutado 100% de forma local (Edge AI) en un entorno híbrido: Workstation Windows (NVIDIA RTX 3050 6GB) y Apple Silicon (MacBook Air M4), utilizando Ollama con cuantización a 4-bits.
 * Los registros de evidencia empírica están disponibles en la carpeta `/experiments`, demostrando que los modelos de 3B a 8B fallan catastróficamente en tareas matemáticas y de retención lógica si no están apoyados por descomposición y herramientas deterministas.
 
+## Entregable 4: fine-tuning del Lector
+
+La E4 ajusta con LoRA el modelo de **un** agente del sistema de la E3, el **Lector**, sobre el
+mismo phi4-mini. El Verificador y el Decisor siguen con el modelo base, y prompts, herramientas,
+orquestador y juez no cambian. Todo el detalle (elección del agente con evidencia de las trazas,
+datos, entrenamiento, resultados, caso de fallo) está en
+[`docs/e4_finetuning.md`](docs/e4_finetuning.md); el informe de una página, en
+[`docs/informe_e4/informe_e4.tex`](docs/informe_e4/informe_e4.tex).
+
+- **Pesos publicados:** <https://huggingface.co/USUARIO_HF/phi4-mini-lector-lora> (adaptador GGUF
+  para Ollama y el mismo adaptador en formato MLX). `ft/lector/SHA256SUMS` fija los archivos con
+  los que se obtuvieron los resultados.
+- **Datos:** [`data/ft_lector/`](data/ft_lector/README.md), 1.146 pares entrada → salida,
+  regenerables con `scripts/ft/build_lector_data.py`.
+- **Entrenamiento:** [`scripts/ft/`](scripts/ft) (`lector_lora.yaml`, `train_lector.py`);
+  registro, curvas y hardware en [`ft/lector/`](ft/lector).
+- **Prompts:** uno por agente en `prompts/<agente>/<versión>.md`. La E4 usa los mismos de la E3
+  (Lector `v1`, Verificador `v1`, Decisor `v2`); el control usa `prompts/lector/v2_fewshot.md`.
+- **Trazas:** `results/agents_ft_<set>/` (E4) y `results/agents_ctrl_<set>/` (control).
+
+**Cómo se llaman los agentes y en qué se diferencian de las herramientas.** Un agente es una
+llamada al modelo con su prompt, y su salida es una acción de un `enum` que decide a quién va el
+trabajo. Una herramienta es una función de Python, sin modelo: calcula o valida y devuelve su
+resultado, nunca elige el paso siguiente. El orquestador es un bucle de Python que entrega cada
+mensaje y cuenta las vueltas de los tres bucles (relectura, reintento, consulta). Explicación con
+pseudocódigo en [`docs/e4_finetuning.md` §2](docs/e4_finetuning.md#2-cómo-se-llaman-los-agentes-entre-sí-y-en-qué-se-diferencian-de-las-herramientas);
+`python3 -m agents.show <traza> --roles` lo muestra sobre cualquier traza.
+
+**Resultado principal** (`hard_test`, 30 casos, 240 avisos, corrido una sola vez):
+
+| Sistema | e1_strict | full_correct | exactitud por aviso | aprob. indebida | rechazo falso |
+|---|---|---|---|---|---|
+| E3 · agentes (Lector base) | **23/30** | 5/30 | 214/240 | **6/127** | 20/113 |
+| **E4 · Lector con LoRA** | 22/30 | **16/30** | **225/240** | 8/127 | **7/113** |
+| Control · Lector base + 8 few-shot | **23/30** | 11/30 | 221/240 | 7/127 | 12/113 |
+
+Los errores de lectura que nacen en el Lector bajan de 162 (E3) a 22 (control: 26); las llamadas
+al Verificador, de 315 a 134. El control recupera buena parte de la mejora; los pesos le ganan
+por 5 casos exactos y 5 rechazos falsos con la mitad de tokens. A cambio aparecen 2 aprobaciones
+indebidas nuevas: es el caso de fallo (HT-0906).
+
+**Regresión** en los sets donde la E3 ya andaba bien (`full_correct`): `test` 50 → **51/51** y
+`ood` 10 → **11/12**, sin aprobaciones indebidas; en los 20 casos de avisos reales (`real_e3`)
+20 → **19/20**, por una aprobación indebida (REAL-38) que también comete el control. Ahí el Lector
+ajustado lee mejor, y lo que falla es el Verificador base con la herramienta `comprobar`: es el
+segundo caso de fallo de [`docs/e4_finetuning.md` §7](docs/e4_finetuning.md).
+
+### Reproducir lo que muestra el video de la E4
+
+El video corre el Lector base y el ajustado sobre el mismo aviso real, después el sistema completo
+en vivo con el Lector ajustado (con cada mensaje entre agentes y herramientas en pantalla), y por
+último el caso de fallo. `bash docs/demo_video_e4.sh` corre esas escenas, una por cada Enter
+(`--grabado` las muestra desde las trazas guardadas, sin Ollama).
+
+1. **Instalar** (Python ≥ 3.9) y comprobar sin modelo:
+
+   ```bash
+   pip install -r requirements.txt
+   python3 -m pytest tests -q            # sin Ollama ni red
+   export PYTHONPATH=src
+   ```
+
+2. **Montar el Lector ajustado en Ollama.** El adaptador se descarga de Hugging Face y se monta
+   sobre el mismo `phi4-mini:latest` que usan los otros dos agentes:
+
+   ```bash
+   ollama pull phi4-mini:latest       # digest 78fad5d182a7, Q4_K_M, 2,5 GB
+   pip install huggingface_hub
+   huggingface-cli download USUARIO_HF/phi4-mini-lector-lora lector-lora-f16.gguf --local-dir ft/lector
+   shasum -a 256 -c ft/lector/SHA256SUMS --ignore-missing   # el adaptador es el de los resultados
+   ollama create phi4-mini-lector-ft -f ft/lector/Modelfile
+   ```
+
+3. **Base contra ajustado sobre el mismo aviso real** (`real_e3`, avisos de portales). Los dos
+   reciben exactamente el mismo mensaje; se ve qué copia cada uno, qué lee la herramienta `anclar`
+   y qué campos tendría que revisar el Verificador:
+
+   ```bash
+   python3 -m agents.comparar --split real_e3 --caso real_b1_006 --aviso REAL-18
+   ```
+
+4. **El sistema completo en vivo con el Lector ajustado**, marcando AGENTE / HERRAMIENTA y cada
+   vuelta de bucle (~1–2 min en un M4 enchufado):
+
+   ```bash
+   python3 -m agents.run --split real_e3 --only real_b1_006 --run demo_e4 --force --vivo --roles \
+       --modelo-lector phi4-mini-lector-ft
+   ```
+
+   Sin Ollama, la traza de la corrida final:
+   `python3 -m agents.show results/agents_ft_real_e3/real_b1_006.trace.jsonl --roles --pausa 1.5`.
+
+5. **Caso de fallo** (HT-0906, aprobación indebida por estacionamiento), sin Ollama:
+
+   ```bash
+   python3 -m agents.show results/agents_ft_hard_test/ht_09.trace.jsonl --aviso HT-0906 --roles
+   ```
+
+6. **Tablas** del video y del PDF, desde `results/` (no llama al modelo):
+
+   ```bash
+   bash scripts/run_e4.sh tablas
+   ```
+
+Rehacer todo: `bash scripts/run_e4.sh datos` (datos y prompt del control), `entrenar` (LoRA con
+`mlx-lm` en Apple Silicon, ~3,5 h en un M4 de 16 GB; requiere `pip install -r
+scripts/ft/requirements.txt` en un entorno `.venv-ft`), `modelo` (GGUF + `ollama create`) y
+`todo` (todas las corridas y tablas).
+
 ## Entregable 3: un benchmark que no se sature
 
 La E2 cerró con 51/51 en test (etiqueta `e2-final`). Antes de construir los agentes de la E3

@@ -75,9 +75,32 @@ def decisor_schema(ids: List[str]) -> Dict:
     }
 
 
+def mensaje_lector(p: Dict[str, str], pid: str, texto: str,
+                   pedidos: Optional[Dict[str, str]] = None) -> Tuple[str, Dict]:
+    """(mensaje de usuario, JSON Schema) de una llamada al Lector: primera lectura, o
+    relectura de los campos que devuelve el Verificador. Lo usa también
+    `scripts/ft/build_lector_data.py`, para que los ejemplos de entrenamiento tengan
+    exactamente el formato que el agente ve en el sistema."""
+    if pedidos is None:
+        return llm.render(p["inicial"], id=pid, texto=texto), SPANS_SCHEMA_V5
+    spans = sorted({k for c in pedidos for k in SPAN_DE[c]})
+    if "pets_text" in spans:
+        spans += ["acepta_mascotas", "acepta_perros", "acepta_gatos"]
+    schema = {"type": "object", "required": spans,
+              "properties": {k: SPANS_SCHEMA_V5["properties"][k] for k in spans}}
+    lista = "\n".join(f"- {' y '.join(SPAN_DE[c])}: {m}" for c, m in pedidos.items())
+    return llm.render(p["relectura"], id=pid, texto=texto, pedidos=lista), schema
+
+
 @dataclass
 class Config:
     model: str = "phi4-mini:latest"
+    # E4: modelo propio de un agente (None = el modelo base de arriba). El Lector con
+    # fine-tuning es `phi4-mini-lector-ft` (el mismo phi4-mini + adaptador LoRA, ver docs/e4_finetuning.md).
+    model_lector: Optional[str] = None
+    model_verificador: Optional[str] = None
+    model_decisor: Optional[str] = None
+    num_ctx_lector: int = 2048         # el control few-shot (prompts/lector/v2_fewshot.md) necesita 4096
     lector: str = "v1"
     verificador: str = "v1"
     decisor: str = "v2"               # v2: convención E3 (mascotas sin_confirmar, estudio = 1)
@@ -99,6 +122,9 @@ class Config:
         quitadas = [k for k in ("esquema", "literal", "refinar", "releer", "consultar", "retro",
                                 "herramientas_decisor") if not getattr(self, k)]
         return "full" if not quitadas else "sin_" + "_".join(quitadas)
+
+    def modelo_de(self, agente: str) -> str:
+        return getattr(self, f"model_{agente.lower()}", None) or self.model
 
 
 @dataclass
@@ -141,7 +167,7 @@ class Sistema:
 
     # ------------------------------------------------------------- llamadas ----
     def _llm(self, tr: Traza, agente: str, system: str, user: str, schema: Dict, **kw) -> Dict:
-        obj, meta = self.call(self.cfg.model, system, user, schema, esquema=self.cfg.esquema, **kw)
+        obj, meta = self.call(self.cfg.modelo_de(agente), system, user, schema, esquema=self.cfg.esquema, **kw)
         tr.llamadas += 1
         tr.prompt_tokens += meta["prompt_tokens"]
         tr.output_tokens += meta["output_tokens"]
@@ -154,18 +180,8 @@ class Sistema:
     # --------------------------------------------------------------- Lector ----
     def lector(self, tr: Traza, prop: Property, pedidos: Optional[Dict[str, str]] = None) -> Dict:
         p = self.p["lector"]
-        if pedidos is None:
-            user = llm.render(p["inicial"], id=prop.id, texto=prop.text)
-            schema = SPANS_SCHEMA_V5
-        else:
-            spans = sorted({k for c in pedidos for k in SPAN_DE[c]})
-            if "pets_text" in spans:
-                spans += ["acepta_mascotas", "acepta_perros", "acepta_gatos"]
-            schema = {"type": "object", "required": spans,
-                      "properties": {k: SPANS_SCHEMA_V5["properties"][k] for k in spans}}
-            lista = "\n".join(f"- {' y '.join(SPAN_DE[c])}: {m}" for c, m in pedidos.items())
-            user = llm.render(p["relectura"], id=prop.id, texto=prop.text, pedidos=lista)
-        obj = self._llm(tr, "Lector", p["system"], user, schema)
+        user, schema = mensaje_lector(p, prop.id, prop.text, pedidos)
+        obj = self._llm(tr, "Lector", p["system"], user, schema, num_ctx=self.cfg.num_ctx_lector)
         spans_out = {k: obj.get(k) for k in schema["properties"]}
         if self.cfg.esquema is False:   # sin esquema las respuestas cerradas pueden faltar
             for k, v in spans_out.items():   # y un "fragmento" puede llegar como número o lista
@@ -175,8 +191,14 @@ class Sistema:
                 if k in spans_out and spans_out[k] not in grounding.ANSWERS:
                     spans_out[k] = "no_dice"
         tr.msg("Lector", "herramienta:anclar", "spans" if pedidos is None else "relectura",
-               spans_out, aviso=prop.id)
+               spans_out, aviso=prop.id, **self._modelo("Lector"))
         return spans_out
+
+    def _modelo(self, agente: str) -> Dict[str, str]:
+        """Etiqueta `modelo` del mensaje, solo si el agente no usa el modelo base (E4): los
+        mensajes de una corrida de la E3 quedan iguales a los de sus trazas versionadas."""
+        m = self.cfg.modelo_de(agente)
+        return {"modelo": m} if m != self.cfg.model else {}
 
     # ---------------------------------------------------------- Verificador ----
     def tabla(self, spans: Dict, h: Dict, marcar: Dict[str, str]) -> str:
@@ -205,7 +227,7 @@ class Sistema:
         destino = ("Lector" if any(r.get("accion") == "releer" for r in revs)
                    else "herramienta:comprobar" if any(r.get("accion") == "corregir" for r in revs)
                    else "Decisor")
-        tr.msg("Verificador", destino, modo, revs, aviso=prop.id)
+        tr.msg("Verificador", destino, modo, revs, aviso=prop.id, **self._modelo("Verificador"))
         for r in revs:
             tr.contar(f"verificador_{r.get('accion')}")
         if not revs:
@@ -377,7 +399,7 @@ class Sistema:
         if accion == "consultar" and not consultas:
             accion = "cerrar"
         tr.msg("Decisor", "herramienta:ordenar" if accion == "cerrar" else "Verificador", accion,
-               {"accion": accion, "consultas": consultas, "propuesta": obj})
+               {"accion": accion, "consultas": consultas, "propuesta": obj}, **self._modelo("Decisor"))
         tr.contar(f"decisor_{accion}")
         return {"accion": accion, "consultas": consultas}
 
